@@ -1,6 +1,6 @@
-﻿namespace MyStores
+﻿namespace MyStores.View
 {
-    partial class Form1
+    partial class LoginForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,10 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            SuspendLayout();
+            // 
+            // LoginForm
+            // 
+            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1894, 1009);
+            Name = "LoginForm";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "MyStores Home Page";
+            ResumeLayout(false);
         }
 
         #endregion
