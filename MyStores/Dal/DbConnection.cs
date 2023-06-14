@@ -1,13 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.SqlClient;
 
 namespace MyStores.Dal
 {
-    internal class DbConnection
+    /// <summary>
+    /// This class is used to set up the database connection
+    /// </summary>
+    public class DbConnection
     {
-
+        /// <summary>
+        /// Gets the connection.
+        /// </summary>
+        /// <returns></returns>
+        public static SqlConnection GetConnection()
+        {
+            const string connectionString = "Data Source=(localDB)\\MSSQLLocalDB;Initial Catalog=MyStores; Integrated Security=True";
+            return new SqlConnection(connectionString);
+        }
     }
 }
