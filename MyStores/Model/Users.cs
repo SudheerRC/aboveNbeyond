@@ -1,4 +1,6 @@
-﻿namespace MyStores.Model
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace MyStores.Model
 {
     public class Users
     {
@@ -12,9 +14,10 @@
 
         public string LastName { get; set; }
 
+        [Phone]
         public string PhoneNumber { get; set; }
 
-        public string DOB { get; set; }
+        public DateTime DOB { get; set; }
 
         public string Gender { get; set; }
 
