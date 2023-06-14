@@ -1,3 +1,5 @@
+using MyStores.View;
+
 namespace MyStores
 {
     internal static class Program
