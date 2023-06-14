@@ -55,11 +55,6 @@ namespace MyStores.UserControls
             }
         }
 
-        private void ClearButton_Click(object sender, EventArgs e)
-        {
-            ClearFields();
-        }
-
         private void ClearFields()
         {
             emailTextBox.Clear();
@@ -69,12 +64,14 @@ namespace MyStores.UserControls
 
         private void EmailTextBox_GotFocus(object sender, EventArgs e)
         {
-            ClearFields();
+           emailTextBox.Clear();
+           errorLabel.Visible = false;
         }
 
         private void PasswordTextBox_GotFocus(object sender, EventArgs e)
         {
-            ClearFields();
+            passwordTextBox.Clear();
+            errorLabel.Visible = false;
         }
 
     }

@@ -9,12 +9,15 @@ namespace MyStores.View
         public LoginForm()
         {
             InitializeComponent();
+            loginUserControl.Visible = true;
+            groupBox.Visible = true;
+            signUpUserControl.Visible = false;
             _controller = new MyStoresController();
         }
 
-        private void signUpLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void SignUpLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            loginUserControl.Visible = false;
+            signUpUserControl.Visible = true;
         }
     }
 }

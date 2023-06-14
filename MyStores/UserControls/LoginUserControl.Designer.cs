@@ -30,7 +30,6 @@
         {
             passwordTextBox = new MaskedTextBox();
             errorLabel = new Label();
-            clearButton = new Button();
             loginButton = new Button();
             emailTextBox = new TextBox();
             passwordLabel = new Label();
@@ -60,21 +59,11 @@
             errorLabel.UseWaitCursor = true;
             errorLabel.Visible = false;
             // 
-            // clearButton
-            // 
-            clearButton.BackColor = Color.White;
-            clearButton.Location = new Point(391, 383);
-            clearButton.Name = "clearButton";
-            clearButton.Size = new Size(150, 46);
-            clearButton.TabIndex = 14;
-            clearButton.Text = "Clear";
-            clearButton.UseVisualStyleBackColor = false;
-            clearButton.Click += ClearButton_Click;
-            // 
             // loginButton
             // 
             loginButton.BackColor = Color.White;
-            loginButton.Location = new Point(69, 383);
+            loginButton.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            loginButton.Location = new Point(241, 373);
             loginButton.Name = "loginButton";
             loginButton.Size = new Size(150, 46);
             loginButton.TabIndex = 13;
@@ -128,7 +117,6 @@
             BackColor = Color.MistyRose;
             Controls.Add(passwordTextBox);
             Controls.Add(errorLabel);
-            Controls.Add(clearButton);
             Controls.Add(loginButton);
             Controls.Add(emailTextBox);
             Controls.Add(passwordLabel);
@@ -144,7 +132,6 @@
 
         private MaskedTextBox passwordTextBox;
         private Label errorLabel;
-        private Button clearButton;
         private Button loginButton;
         private TextBox emailTextBox;
         private Label passwordLabel;

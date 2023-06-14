@@ -33,6 +33,7 @@
             signUpLinkLabel = new LinkLabel();
             newLabel = new Label();
             loginUserControl = new UserControls.LoginUserControl();
+            signUpUserControl = new UserControls.SignUpUserControl();
             groupBox.SuspendLayout();
             SuspendLayout();
             // 
@@ -51,13 +52,14 @@
             // signUpLinkLabel
             // 
             signUpLinkLabel.AutoSize = true;
+            signUpLinkLabel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             signUpLinkLabel.Location = new Point(304, 35);
             signUpLinkLabel.Name = "signUpLinkLabel";
-            signUpLinkLabel.Size = new Size(175, 32);
+            signUpLinkLabel.Size = new Size(195, 37);
             signUpLinkLabel.TabIndex = 7;
             signUpLinkLabel.TabStop = true;
             signUpLinkLabel.Text = "Click to Signup";
-            signUpLinkLabel.LinkClicked += signUpLinkLabel_LinkClicked;
+            signUpLinkLabel.LinkClicked += SignUpLinkLabel_LinkClicked;
             // 
             // newLabel
             // 
@@ -77,12 +79,22 @@
             loginUserControl.Size = new Size(646, 456);
             loginUserControl.TabIndex = 1;
             // 
+            // signUpUserControl
+            // 
+            signUpUserControl.BackColor = Color.MistyRose;
+            signUpUserControl.Location = new Point(273, 88);
+            signUpUserControl.Name = "signUpUserControl";
+            signUpUserControl.Size = new Size(1346, 820);
+            signUpUserControl.TabIndex = 2;
+            signUpUserControl.Visible = false;
+            // 
             // LoginForm
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1894, 1009);
+            Controls.Add(signUpUserControl);
             Controls.Add(loginUserControl);
             Controls.Add(groupBox);
             MaximizeBox = false;
@@ -103,5 +115,6 @@
         private LinkLabel signUpLinkLabel;
         private Label newLabel;
         private UserControls.LoginUserControl loginUserControl;
+        private UserControls.SignUpUserControl signUpUserControl;
     }
 }
