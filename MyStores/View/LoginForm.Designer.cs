@@ -29,154 +29,166 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
-            groupBox = new GroupBox();
-            passwordTextBox = new MaskedTextBox();
-            signUpLinkLabel = new LinkLabel();
-            newLabel = new Label();
-            errorLabel = new Label();
-            clearButton = new Button();
-            loginButton = new Button();
-            usernameTextBox = new TextBox();
-            passwordLabel = new Label();
-            usernameLabel = new Label();
-            label1 = new Label();
-            groupBox.SuspendLayout();
-            SuspendLayout();
+            this.groupBox = new System.Windows.Forms.GroupBox();
+            this.passwordTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.signUpLinkLabel = new System.Windows.Forms.LinkLabel();
+            this.newLabel = new System.Windows.Forms.Label();
+            this.errorLabel = new System.Windows.Forms.Label();
+            this.clearButton = new System.Windows.Forms.Button();
+            this.loginButton = new System.Windows.Forms.Button();
+            this.usernameTextBox = new System.Windows.Forms.TextBox();
+            this.passwordLabel = new System.Windows.Forms.Label();
+            this.usernameLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox.SuspendLayout();
+            this.SuspendLayout();
             // 
             // groupBox
             // 
-            groupBox.BackColor = Color.MistyRose;
-            groupBox.Controls.Add(passwordTextBox);
-            groupBox.Controls.Add(signUpLinkLabel);
-            groupBox.Controls.Add(newLabel);
-            groupBox.Controls.Add(errorLabel);
-            groupBox.Controls.Add(clearButton);
-            groupBox.Controls.Add(loginButton);
-            groupBox.Controls.Add(usernameTextBox);
-            groupBox.Controls.Add(passwordLabel);
-            groupBox.Controls.Add(usernameLabel);
-            groupBox.Controls.Add(label1);
-            groupBox.ForeColor = Color.Black;
-            groupBox.Location = new Point(511, 214);
-            groupBox.Name = "groupBox";
-            groupBox.Size = new Size(870, 512);
-            groupBox.TabIndex = 0;
-            groupBox.TabStop = false;
+            this.groupBox.BackColor = System.Drawing.Color.MistyRose;
+            this.groupBox.Controls.Add(this.passwordTextBox);
+            this.groupBox.Controls.Add(this.signUpLinkLabel);
+            this.groupBox.Controls.Add(this.newLabel);
+            this.groupBox.Controls.Add(this.errorLabel);
+            this.groupBox.Controls.Add(this.clearButton);
+            this.groupBox.Controls.Add(this.loginButton);
+            this.groupBox.Controls.Add(this.usernameTextBox);
+            this.groupBox.Controls.Add(this.passwordLabel);
+            this.groupBox.Controls.Add(this.usernameLabel);
+            this.groupBox.Controls.Add(this.label1);
+            this.groupBox.ForeColor = System.Drawing.Color.Black;
+            this.groupBox.Location = new System.Drawing.Point(314, 134);
+            this.groupBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox.Name = "groupBox";
+            this.groupBox.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox.Size = new System.Drawing.Size(535, 320);
+            this.groupBox.TabIndex = 0;
+            this.groupBox.TabStop = false;
             // 
             // passwordTextBox
             // 
-            passwordTextBox.Location = new Point(414, 234);
-            passwordTextBox.Name = "passwordTextBox";
-            passwordTextBox.PasswordChar = '*';
-            passwordTextBox.Size = new Size(288, 39);
-            passwordTextBox.TabIndex = 4;
+            this.passwordTextBox.Location = new System.Drawing.Point(255, 146);
+            this.passwordTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.passwordTextBox.Name = "passwordTextBox";
+            this.passwordTextBox.PasswordChar = '*';
+            this.passwordTextBox.Size = new System.Drawing.Size(179, 27);
+            this.passwordTextBox.TabIndex = 4;
             // 
             // signUpLinkLabel
             // 
-            signUpLinkLabel.AutoSize = true;
-            signUpLinkLabel.Location = new Point(444, 455);
-            signUpLinkLabel.Name = "signUpLinkLabel";
-            signUpLinkLabel.Size = new Size(175, 32);
-            signUpLinkLabel.TabIndex = 7;
-            signUpLinkLabel.TabStop = true;
-            signUpLinkLabel.Text = "Click to Signup";
+            this.signUpLinkLabel.AutoSize = true;
+            this.signUpLinkLabel.Location = new System.Drawing.Point(273, 284);
+            this.signUpLinkLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.signUpLinkLabel.Name = "signUpLinkLabel";
+            this.signUpLinkLabel.Size = new System.Drawing.Size(108, 20);
+            this.signUpLinkLabel.TabIndex = 7;
+            this.signUpLinkLabel.TabStop = true;
+            this.signUpLinkLabel.Text = "Click to Signup";
             // 
             // newLabel
             // 
-            newLabel.AutoSize = true;
-            newLabel.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            newLabel.Location = new Point(290, 449);
-            newLabel.Name = "newLabel";
-            newLabel.Size = new Size(158, 41);
-            newLabel.TabIndex = 8;
-            newLabel.Text = "New here?";
+            this.newLabel.AutoSize = true;
+            this.newLabel.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.newLabel.Location = new System.Drawing.Point(178, 281);
+            this.newLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.newLabel.Name = "newLabel";
+            this.newLabel.Size = new System.Drawing.Size(102, 25);
+            this.newLabel.TabIndex = 8;
+            this.newLabel.Text = "New here?";
             // 
             // errorLabel
             // 
-            errorLabel.AutoSize = true;
-            errorLabel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            errorLabel.Location = new Point(183, 291);
-            errorLabel.Name = "errorLabel";
-            errorLabel.Size = new Size(125, 37);
-            errorLabel.TabIndex = 7;
-            errorLabel.Text = "Error text";
-            errorLabel.Visible = false;
+            this.errorLabel.AutoSize = true;
+            this.errorLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.errorLabel.Location = new System.Drawing.Point(113, 182);
+            this.errorLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.errorLabel.Name = "errorLabel";
+            this.errorLabel.Size = new System.Drawing.Size(81, 23);
+            this.errorLabel.TabIndex = 7;
+            this.errorLabel.Text = "Error text";
+            this.errorLabel.Visible = false;
             // 
             // clearButton
             // 
-            clearButton.BackColor = Color.White;
-            clearButton.Location = new Point(522, 366);
-            clearButton.Name = "clearButton";
-            clearButton.Size = new Size(150, 46);
-            clearButton.TabIndex = 6;
-            clearButton.Text = "Clear";
-            clearButton.UseVisualStyleBackColor = false;
-            clearButton.Click += ClearButton_Click;
+            this.clearButton.BackColor = System.Drawing.Color.White;
+            this.clearButton.Location = new System.Drawing.Point(321, 229);
+            this.clearButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.clearButton.Name = "clearButton";
+            this.clearButton.Size = new System.Drawing.Size(92, 29);
+            this.clearButton.TabIndex = 6;
+            this.clearButton.Text = "Clear";
+            this.clearButton.UseVisualStyleBackColor = false;
             // 
             // loginButton
             // 
-            loginButton.BackColor = Color.White;
-            loginButton.Location = new Point(200, 366);
-            loginButton.Name = "loginButton";
-            loginButton.Size = new Size(150, 46);
-            loginButton.TabIndex = 5;
-            loginButton.Text = "Login";
-            loginButton.UseVisualStyleBackColor = false;
-            loginButton.Click += LoginButton_Click;
+            this.loginButton.BackColor = System.Drawing.Color.White;
+            this.loginButton.Location = new System.Drawing.Point(123, 229);
+            this.loginButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.loginButton.Name = "loginButton";
+            this.loginButton.Size = new System.Drawing.Size(92, 29);
+            this.loginButton.TabIndex = 5;
+            this.loginButton.Text = "Login";
+            this.loginButton.UseVisualStyleBackColor = false;
             // 
             // usernameTextBox
             // 
-            usernameTextBox.Location = new Point(414, 136);
-            usernameTextBox.Name = "usernameTextBox";
-            usernameTextBox.Size = new Size(290, 39);
-            usernameTextBox.TabIndex = 3;
+            this.usernameTextBox.Location = new System.Drawing.Point(255, 85);
+            this.usernameTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.usernameTextBox.Name = "usernameTextBox";
+            this.usernameTextBox.Size = new System.Drawing.Size(180, 27);
+            this.usernameTextBox.TabIndex = 3;
             // 
             // passwordLabel
             // 
-            passwordLabel.AutoSize = true;
-            passwordLabel.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            passwordLabel.Location = new Point(156, 231);
-            passwordLabel.Name = "passwordLabel";
-            passwordLabel.Size = new Size(143, 41);
-            passwordLabel.TabIndex = 2;
-            passwordLabel.Text = "Password";
+            this.passwordLabel.AutoSize = true;
+            this.passwordLabel.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.passwordLabel.Location = new System.Drawing.Point(96, 144);
+            this.passwordLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.passwordLabel.Name = "passwordLabel";
+            this.passwordLabel.Size = new System.Drawing.Size(91, 25);
+            this.passwordLabel.TabIndex = 2;
+            this.passwordLabel.Text = "Password";
             // 
             // usernameLabel
             // 
-            usernameLabel.AutoSize = true;
-            usernameLabel.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            usernameLabel.Location = new Point(156, 130);
-            usernameLabel.Name = "usernameLabel";
-            usernameLabel.Size = new Size(152, 41);
-            usernameLabel.TabIndex = 1;
-            usernameLabel.Text = "Username";
+            this.usernameLabel.AutoSize = true;
+            this.usernameLabel.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.usernameLabel.Location = new System.Drawing.Point(96, 81);
+            this.usernameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.usernameLabel.Name = "usernameLabel";
+            this.usernameLabel.Size = new System.Drawing.Size(97, 25);
+            this.usernameLabel.TabIndex = 1;
+            this.usernameLabel.Text = "Username";
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(376, 35);
-            label1.Name = "label1";
-            label1.Size = new Size(114, 58);
-            label1.TabIndex = 0;
-            label1.Text = "Login";
-            label1.UseCompatibleTextRendering = true;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(231, 22);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(71, 37);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Login";
+            this.label1.UseCompatibleTextRendering = true;
             // 
             // LoginForm
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            ClientSize = new Size(1894, 1009);
-            Controls.Add(groupBox);
-            MaximizeBox = false;
-            MinimizeBox = false;
-            Name = "LoginForm";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "MyStores Home Page";
-            groupBox.ResumeLayout(false);
-            groupBox.PerformLayout();
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(1166, 631);
+            this.Controls.Add(this.groupBox);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "LoginForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "MyStores Home Page";
+            this.groupBox.ResumeLayout(false);
+            this.groupBox.PerformLayout();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
