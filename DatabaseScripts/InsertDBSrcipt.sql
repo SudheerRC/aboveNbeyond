@@ -35,9 +35,9 @@ SET IDENTITY_INSERT [dbo].[UserDetails] OFF
 
 SET ANSI_PADDING OFF
 GO
-INSERT [dbo].[Users] ([userName], [password], [email], [userID]) VALUES ('test', 'test@123', 'test123@gmail.com', 1)
-INSERT [dbo].[Users] ([userName], [password], [email], [userID]) VALUES ('user', 'user@123', 'user123@gmail.com', 2)
-INSERT [dbo].[Users] ([userName], [password], [email], [userID]) VALUES ('mystores', 'mystores@123', 'mystores@gmail.com', 3)
+INSERT [dbo].[Users] ([password], [email], [userID]) VALUES ('test@123', 'test123@gmail.com', 1)
+INSERT [dbo].[Users] ([password], [email], [userID]) VALUES ('user@123', 'user123@gmail.com', 2)
+INSERT [dbo].[Users] ([password], [email], [userID]) VALUES ('mystores@123', 'mystores@gmail.com', 3)
 
 SET ANSI_PADDING OFF
 GO
