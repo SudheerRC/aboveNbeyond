@@ -86,7 +86,9 @@
             Controls.Add(loginUserControl);
             Controls.Add(groupBox);
             MaximizeBox = false;
+            MaximumSize = new Size(1920, 1080);
             MinimizeBox = false;
+            MinimumSize = new Size(1920, 1080);
             Name = "LoginForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "MyStores Home Page";
