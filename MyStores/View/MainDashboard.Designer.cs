@@ -31,7 +31,7 @@
             this.mainContainer = new System.Windows.Forms.SplitContainer();
             this.workspaceContainer = new System.Windows.Forms.SplitContainer();
             this.storeContainer = new System.Windows.Forms.SplitContainer();
-            this.label1 = new System.Windows.Forms.Label();
+            this.storeNameLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.mainContainer)).BeginInit();
             this.mainContainer.Panel2.SuspendLayout();
             this.mainContainer.SuspendLayout();
@@ -48,6 +48,10 @@
             this.mainContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainContainer.Location = new System.Drawing.Point(0, 0);
             this.mainContainer.Name = "mainContainer";
+            // 
+            // mainContainer.Panel1
+            // 
+            this.mainContainer.Panel1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             // 
             // mainContainer.Panel2
             // 
@@ -80,19 +84,22 @@
             // 
             // storeContainer.Panel1
             // 
-            this.storeContainer.Panel1.Controls.Add(this.label1);
+            this.storeContainer.Panel1.Controls.Add(this.storeNameLabel);
             this.storeContainer.Size = new System.Drawing.Size(1176, 1041);
             this.storeContainer.SplitterDistance = 140;
             this.storeContainer.SplitterWidth = 11;
             this.storeContainer.TabIndex = 0;
             // 
-            // label1
+            // storeNameLabel
             // 
-            this.label1.Location = new System.Drawing.Point(478, 54);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 23);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
+            this.storeNameLabel.Font = new System.Drawing.Font("Segoe UI", 33F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.storeNameLabel.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.storeNameLabel.Location = new System.Drawing.Point(165, 23);
+            this.storeNameLabel.Name = "storeNameLabel";
+            this.storeNameLabel.Size = new System.Drawing.Size(849, 68);
+            this.storeNameLabel.TabIndex = 0;
+            this.storeNameLabel.Text = "Store Name";
+            this.storeNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MainDashboard
             // 
@@ -122,6 +129,6 @@
         private SplitContainer mainContainer;
         private SplitContainer workspaceContainer;
         private SplitContainer storeContainer;
-        private Label label1;
+        private Label storeNameLabel;
     }
 }
