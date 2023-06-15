@@ -21,5 +21,10 @@ namespace MyStores.Controller
         {
             return _storesDal.CheckEmail(email);
         }
+
+        public void RegisterUser(Users newUser)
+        {
+            _storesDal.RegisterUser(newUser);
+        }
     }
 }

@@ -27,7 +27,6 @@ namespace MyStores.UserControls
                 errorLabel.Text = "You've successfully logged in";
                 errorLabel.Visible = true;
                 errorLabel.ForeColor = Color.Green;
-                ClearFields();
             }
             else if (emailTextBox.Text == String.Empty)
             {
@@ -64,13 +63,11 @@ namespace MyStores.UserControls
 
         private void EmailTextBox_GotFocus(object sender, EventArgs e)
         {
-           emailTextBox.Clear();
-           errorLabel.Visible = false;
+            errorLabel.Visible = false;
         }
 
         private void PasswordTextBox_GotFocus(object sender, EventArgs e)
         {
-            passwordTextBox.Clear();
             errorLabel.Visible = false;
         }
 

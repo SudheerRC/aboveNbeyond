@@ -1,5 +1,10 @@
-﻿using System.Data.SqlClient;
+﻿using System.Data.Common;
+using System.Data;
+using System.Data.SqlClient;
 using MyStores.Model;
+using static System.Windows.Forms.AxHost;
+using System.Diagnostics.Metrics;
+using System.Reflection.Emit;
 
 namespace MyStores.Dal
 {
@@ -34,6 +39,52 @@ namespace MyStores.Dal
             command.Parameters["@email"].Value = email;
             int count = Convert.ToInt32(command.ExecuteScalar());
             return count == 1;
+        }
+
+        public void RegisterUser(Users newUser)
+        {
+            using var connection = DbConnection.GetConnection();
+            connection.Open();
+            using var command = new SqlCommand("registerUser", connection);
+            command.CommandType = CommandType.StoredProcedure;
+
+            command.Parameters.Add("@firstName", System.Data.SqlDbType.VarChar);
+            command.Parameters["@firstName"].Value = newUser.FirstName;
+
+            command.Parameters.Add("@lastName", System.Data.SqlDbType.VarChar);
+            command.Parameters["@lastName"].Value = newUser.LastName;
+
+            command.Parameters.Add("@dateOfBirth", System.Data.SqlDbType.DateTime);
+            command.Parameters["@dateOfBirth"].Value = newUser.DOB;
+
+            command.Parameters.Add("@gender", System.Data.SqlDbType.VarChar);
+            command.Parameters["@gender"].Value = newUser.Gender;
+
+            command.Parameters.Add("@streetAddress", System.Data.SqlDbType.VarChar);
+            command.Parameters["@streetAddress"].Value = newUser.StreetAddress;
+
+            command.Parameters.Add("@city", System.Data.SqlDbType.VarChar);
+            command.Parameters["@city"].Value = newUser.City;
+
+            command.Parameters.Add("@state", System.Data.SqlDbType.VarChar);
+            command.Parameters["@state"].Value = newUser.State;
+
+            command.Parameters.Add("@zipCode", System.Data.SqlDbType.VarChar);
+            command.Parameters["@zipCode"].Value = newUser.ZipCode;
+
+            command.Parameters.Add("@country", System.Data.SqlDbType.VarChar);
+            command.Parameters["@country"].Value = newUser.Country;
+
+            command.Parameters.Add("@phoneNumber", System.Data.SqlDbType.Char);
+            command.Parameters["@phoneNumber"].Value = newUser.PhoneNumber;
+
+            command.Parameters.Add("@email", System.Data.SqlDbType.VarChar);
+            command.Parameters["@email"].Value = newUser.Email;
+
+            command.Parameters.Add("@password", System.Data.SqlDbType.VarChar);
+            command.Parameters["@password"].Value = newUser.Password;
+
+            command.ExecuteNonQuery();
         }
     }
 }
