@@ -51,14 +51,15 @@
             // 
             // mainContainer.Panel1
             // 
+            this.mainContainer.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
             this.mainContainer.Panel1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             // 
             // mainContainer.Panel2
             // 
             this.mainContainer.Panel2.Controls.Add(this.workspaceContainer);
             this.mainContainer.Size = new System.Drawing.Size(1904, 1041);
-            this.mainContainer.SplitterDistance = 350;
-            this.mainContainer.SplitterWidth = 11;
+            this.mainContainer.SplitterDistance = 263;
+            this.mainContainer.SplitterWidth = 1;
             this.mainContainer.TabIndex = 0;
             // 
             // workspaceContainer
@@ -70,9 +71,13 @@
             // workspaceContainer.Panel1
             // 
             this.workspaceContainer.Panel1.Controls.Add(this.storeContainer);
-            this.workspaceContainer.Size = new System.Drawing.Size(1543, 1041);
-            this.workspaceContainer.SplitterDistance = 1176;
-            this.workspaceContainer.SplitterWidth = 11;
+            // 
+            // workspaceContainer.Panel2
+            // 
+            this.workspaceContainer.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
+            this.workspaceContainer.Size = new System.Drawing.Size(1640, 1041);
+            this.workspaceContainer.SplitterDistance = 1352;
+            this.workspaceContainer.SplitterWidth = 1;
             this.workspaceContainer.TabIndex = 0;
             // 
             // storeContainer
@@ -84,19 +89,24 @@
             // 
             // storeContainer.Panel1
             // 
+            this.storeContainer.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(123)))), ((int)(((byte)(213)))));
             this.storeContainer.Panel1.Controls.Add(this.storeNameLabel);
-            this.storeContainer.Size = new System.Drawing.Size(1176, 1041);
+            // 
+            // storeContainer.Panel2
+            // 
+            this.storeContainer.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(205)))), ((int)(((byte)(232)))));
+            this.storeContainer.Size = new System.Drawing.Size(1352, 1041);
             this.storeContainer.SplitterDistance = 140;
-            this.storeContainer.SplitterWidth = 11;
+            this.storeContainer.SplitterWidth = 1;
             this.storeContainer.TabIndex = 0;
             // 
             // storeNameLabel
             // 
             this.storeNameLabel.Font = new System.Drawing.Font("Segoe UI", 33F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.storeNameLabel.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.storeNameLabel.Location = new System.Drawing.Point(165, 23);
+            this.storeNameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
+            this.storeNameLabel.Location = new System.Drawing.Point(3, 23);
             this.storeNameLabel.Name = "storeNameLabel";
-            this.storeNameLabel.Size = new System.Drawing.Size(849, 68);
+            this.storeNameLabel.Size = new System.Drawing.Size(1346, 68);
             this.storeNameLabel.TabIndex = 0;
             this.storeNameLabel.Text = "Store Name";
             this.storeNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -105,8 +115,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1904, 1041);
             this.Controls.Add(this.mainContainer);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainDashboard";
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
