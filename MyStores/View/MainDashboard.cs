@@ -1,12 +1,22 @@
-﻿using MyStores.UserControls;
+﻿using MyStores.Model;
+using MyStores.UserControls;
+
+using MyStores.UserControls;
 
 namespace MyStores.View
 {
     public partial class MainDashboard : Form
     {
+        private Users _owner;
         public MainDashboard()
         {
             InitializeComponent();
+            _owner = new Users();
+        }
+
+        public void SetOwner(Users setUser)
+        {
+            _owner = setUser;
             this.populateHomePanel();
         }
 
@@ -18,6 +28,7 @@ namespace MyStores.View
 
         private void populateHomePanel()
         {
+            AddStoreUserControl[] homeChips = new AddStoreUserControl[99];
             homeFlowLayoutPanel.Controls.Add(new AddStoreUserControl());
             StoreChipUserControl[] homeChips = new StoreChipUserControl[99];
 

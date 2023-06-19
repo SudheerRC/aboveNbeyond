@@ -75,6 +75,7 @@
             // 
             this.mainContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainContainer.Location = new System.Drawing.Point(0, 0);
+            this.mainContainer.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.mainContainer.Name = "mainContainer";
             // 
             // mainContainer.Panel1
@@ -87,17 +88,18 @@
             // mainContainer.Panel2
             // 
             this.mainContainer.Panel2.Controls.Add(this.workspaceContainer);
-            this.mainContainer.Size = new System.Drawing.Size(1904, 1041);
-            this.mainContainer.SplitterDistance = 213;
+            this.mainContainer.Size = new System.Drawing.Size(2176, 1388);
+            this.mainContainer.SplitterDistance = 243;
             this.mainContainer.SplitterWidth = 1;
             this.mainContainer.TabIndex = 0;
             // 
             // navigationPanel
             // 
             this.navigationPanel.Controls.Add(this.homeMenuButton);
-            this.navigationPanel.Location = new System.Drawing.Point(3, 159);
+            this.navigationPanel.Location = new System.Drawing.Point(3, 212);
+            this.navigationPanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.navigationPanel.Name = "navigationPanel";
-            this.navigationPanel.Size = new System.Drawing.Size(208, 576);
+            this.navigationPanel.Size = new System.Drawing.Size(238, 768);
             this.navigationPanel.TabIndex = 2;
             // 
             // homeMenuButton
@@ -114,9 +116,10 @@
             this.homeMenuButton.Image = ((System.Drawing.Image)(resources.GetObject("homeMenuButton.Image")));
             this.homeMenuButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.homeMenuButton.Location = new System.Drawing.Point(0, 0);
+            this.homeMenuButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.homeMenuButton.Name = "homeMenuButton";
             this.homeMenuButton.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            this.homeMenuButton.Size = new System.Drawing.Size(208, 50);
+            this.homeMenuButton.Size = new System.Drawing.Size(238, 67);
             this.homeMenuButton.TabIndex = 2;
             this.homeMenuButton.Text = "Home";
             this.homeMenuButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -124,15 +127,17 @@
             // 
             // logoPanel
             // 
-            this.logoPanel.Location = new System.Drawing.Point(3, 3);
+            this.logoPanel.Location = new System.Drawing.Point(3, 4);
+            this.logoPanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.logoPanel.Name = "logoPanel";
-            this.logoPanel.Size = new System.Drawing.Size(208, 137);
+            this.logoPanel.Size = new System.Drawing.Size(238, 183);
             this.logoPanel.TabIndex = 0;
             // 
             // workspaceContainer
             // 
             this.workspaceContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.workspaceContainer.Location = new System.Drawing.Point(0, 0);
+            this.workspaceContainer.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.workspaceContainer.Name = "workspaceContainer";
             // 
             // workspaceContainer.Panel1
@@ -145,8 +150,8 @@
             this.workspaceContainer.Panel2.Controls.Add(this.searchPanel);
             this.workspaceContainer.Panel2.Controls.Add(this.windowOpPanel);
             this.workspaceContainer.Panel2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.workspaceContainer.Size = new System.Drawing.Size(1690, 1041);
-            this.workspaceContainer.SplitterDistance = 1393;
+            this.workspaceContainer.Size = new System.Drawing.Size(1932, 1388);
+            this.workspaceContainer.SplitterDistance = 1592;
             this.workspaceContainer.SplitterWidth = 1;
             this.workspaceContainer.TabIndex = 0;
             // 
@@ -154,6 +159,7 @@
             // 
             this.storeContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.storeContainer.Location = new System.Drawing.Point(0, 0);
+            this.storeContainer.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.storeContainer.Name = "storeContainer";
             this.storeContainer.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -175,9 +181,9 @@
             // 
             this.storeNameLabel.Font = new System.Drawing.Font("Segoe UI", 33F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.storeNameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
-            this.storeNameLabel.Location = new System.Drawing.Point(3, 23);
+            this.storeNameLabel.Location = new System.Drawing.Point(3, 31);
             this.storeNameLabel.Name = "storeNameLabel";
-            this.storeNameLabel.Size = new System.Drawing.Size(1390, 68);
+            this.storeNameLabel.Size = new System.Drawing.Size(1589, 91);
             this.storeNameLabel.TabIndex = 0;
             this.storeNameLabel.Text = "Store Name";
             this.storeNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -185,9 +191,10 @@
             // searchPanel
             // 
             this.searchPanel.Controls.Add(this.searchInputPanel);
-            this.searchPanel.Location = new System.Drawing.Point(3, 104);
+            this.searchPanel.Location = new System.Drawing.Point(3, 139);
+            this.searchPanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.searchPanel.Name = "searchPanel";
-            this.searchPanel.Size = new System.Drawing.Size(290, 299);
+            this.searchPanel.Size = new System.Drawing.Size(331, 399);
             this.searchPanel.TabIndex = 7;
             // 
             // searchInputPanel
@@ -196,25 +203,28 @@
             this.searchInputPanel.Controls.Add(this.searchButtonPanel);
             this.searchInputPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.searchInputPanel.Location = new System.Drawing.Point(0, 0);
+            this.searchInputPanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.searchInputPanel.Name = "searchInputPanel";
-            this.searchInputPanel.Size = new System.Drawing.Size(290, 35);
+            this.searchInputPanel.Size = new System.Drawing.Size(331, 47);
             this.searchInputPanel.TabIndex = 0;
             // 
             // searchTextBox
             // 
             this.searchTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.searchTextBox.Location = new System.Drawing.Point(0, 0);
+            this.searchTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.searchTextBox.Name = "searchTextBox";
-            this.searchTextBox.Size = new System.Drawing.Size(255, 35);
+            this.searchTextBox.Size = new System.Drawing.Size(291, 42);
             this.searchTextBox.TabIndex = 6;
             // 
             // searchButtonPanel
             // 
             this.searchButtonPanel.Controls.Add(this.searchButton);
             this.searchButtonPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.searchButtonPanel.Location = new System.Drawing.Point(255, 0);
+            this.searchButtonPanel.Location = new System.Drawing.Point(291, 0);
+            this.searchButtonPanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.searchButtonPanel.Name = "searchButtonPanel";
-            this.searchButtonPanel.Size = new System.Drawing.Size(35, 35);
+            this.searchButtonPanel.Size = new System.Drawing.Size(40, 47);
             this.searchButtonPanel.TabIndex = 0;
             // 
             // searchButton
@@ -229,9 +239,10 @@
             this.searchButton.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.searchButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
             this.searchButton.Image = ((System.Drawing.Image)(resources.GetObject("searchButton.Image")));
-            this.searchButton.Location = new System.Drawing.Point(5, 0);
+            this.searchButton.Location = new System.Drawing.Point(6, 0);
+            this.searchButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(30, 35);
+            this.searchButton.Size = new System.Drawing.Size(34, 47);
             this.searchButton.TabIndex = 7;
             this.searchButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.searchButton.UseVisualStyleBackColor = false;
@@ -241,9 +252,10 @@
             this.windowOpPanel.Controls.Add(this.minPanel);
             this.windowOpPanel.Controls.Add(this.maxPanel);
             this.windowOpPanel.Controls.Add(this.closePanel);
-            this.windowOpPanel.Location = new System.Drawing.Point(168, 0);
+            this.windowOpPanel.Location = new System.Drawing.Point(192, 0);
+            this.windowOpPanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.windowOpPanel.Name = "windowOpPanel";
-            this.windowOpPanel.Size = new System.Drawing.Size(128, 45);
+            this.windowOpPanel.Size = new System.Drawing.Size(146, 60);
             this.windowOpPanel.TabIndex = 5;
             // 
             // minPanel
@@ -251,8 +263,9 @@
             this.minPanel.Controls.Add(this.minButton);
             this.minPanel.Dock = System.Windows.Forms.DockStyle.Right;
             this.minPanel.Location = new System.Drawing.Point(-1, 0);
+            this.minPanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.minPanel.Name = "minPanel";
-            this.minPanel.Size = new System.Drawing.Size(43, 45);
+            this.minPanel.Size = new System.Drawing.Size(49, 60);
             this.minPanel.TabIndex = 4;
             // 
             // minButton
@@ -268,9 +281,10 @@
             this.minButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
             this.minButton.Image = ((System.Drawing.Image)(resources.GetObject("minButton.Image")));
             this.minButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.minButton.Location = new System.Drawing.Point(-7, 0);
+            this.minButton.Location = new System.Drawing.Point(-8, 0);
+            this.minButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.minButton.Name = "minButton";
-            this.minButton.Size = new System.Drawing.Size(50, 45);
+            this.minButton.Size = new System.Drawing.Size(57, 60);
             this.minButton.TabIndex = 3;
             this.minButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.minButton.UseVisualStyleBackColor = false;
@@ -279,9 +293,10 @@
             // 
             this.maxPanel.Controls.Add(this.maxButton);
             this.maxPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.maxPanel.Location = new System.Drawing.Point(42, 0);
+            this.maxPanel.Location = new System.Drawing.Point(48, 0);
+            this.maxPanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.maxPanel.Name = "maxPanel";
-            this.maxPanel.Size = new System.Drawing.Size(43, 45);
+            this.maxPanel.Size = new System.Drawing.Size(49, 60);
             this.maxPanel.TabIndex = 0;
             // 
             // maxButton
@@ -297,9 +312,10 @@
             this.maxButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
             this.maxButton.Image = ((System.Drawing.Image)(resources.GetObject("maxButton.Image")));
             this.maxButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.maxButton.Location = new System.Drawing.Point(-7, 0);
+            this.maxButton.Location = new System.Drawing.Point(-8, 0);
+            this.maxButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.maxButton.Name = "maxButton";
-            this.maxButton.Size = new System.Drawing.Size(50, 45);
+            this.maxButton.Size = new System.Drawing.Size(57, 60);
             this.maxButton.TabIndex = 3;
             this.maxButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.maxButton.UseVisualStyleBackColor = false;
@@ -308,9 +324,10 @@
             // 
             this.closePanel.Controls.Add(this.closeButton);
             this.closePanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.closePanel.Location = new System.Drawing.Point(85, 0);
+            this.closePanel.Location = new System.Drawing.Point(97, 0);
+            this.closePanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.closePanel.Name = "closePanel";
-            this.closePanel.Size = new System.Drawing.Size(43, 45);
+            this.closePanel.Size = new System.Drawing.Size(49, 60);
             this.closePanel.TabIndex = 4;
             // 
             // closeButton
@@ -326,9 +343,10 @@
             this.closeButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
             this.closeButton.Image = ((System.Drawing.Image)(resources.GetObject("closeButton.Image")));
             this.closeButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.closeButton.Location = new System.Drawing.Point(-7, 0);
+            this.closeButton.Location = new System.Drawing.Point(-8, 0);
+            this.closeButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.closeButton.Name = "closeButton";
-            this.closeButton.Size = new System.Drawing.Size(50, 45);
+            this.closeButton.Size = new System.Drawing.Size(57, 60);
             this.closeButton.TabIndex = 3;
             this.closeButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.closeButton.UseVisualStyleBackColor = false;
@@ -344,12 +362,13 @@
             // 
             // MainDashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.ClientSize = new System.Drawing.Size(2176, 1388);
             this.Controls.Add(this.mainContainer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "MainDashboard";
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

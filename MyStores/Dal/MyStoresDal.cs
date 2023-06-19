@@ -82,5 +82,34 @@ namespace MyStores.Dal
 
             command.ExecuteNonQuery();
         }
+
+        public void AddStore(Store newStore)
+        {
+            using var connection = DbConnection.GetConnection();
+            connection.Open();
+            string query = "INSERT INTO Stores(ownerID, streetAddress, city, state, zipCode, country) " +
+                           "VALUES (@ownerId, @streetAddress, @city, @state, @zipCode, @country)";
+            using var command = new SqlCommand(query, connection);
+
+            command.Parameters.Add("@ownerId", System.Data.SqlDbType.Int);
+            command.Parameters["@ownerId"].Value = newStore.OwnerId;
+
+            command.Parameters.Add("@streetAddress", System.Data.SqlDbType.VarChar);
+            command.Parameters["@streetAddress"].Value = newStore.StreetAddress;
+
+            command.Parameters.Add("@city", System.Data.SqlDbType.VarChar);
+            command.Parameters["@city"].Value = newStore.City;
+
+            command.Parameters.Add("@state", System.Data.SqlDbType.VarChar);
+            command.Parameters["@state"].Value = newStore.State;
+
+            command.Parameters.Add("@zipCode", System.Data.SqlDbType.VarChar);
+            command.Parameters["@zipCode"].Value = newStore.ZipCode;
+
+            command.Parameters.Add("@country", System.Data.SqlDbType.VarChar);
+            command.Parameters["@country"].Value = newStore.Country;
+
+            command.ExecuteNonQuery();
+        }
     }
 }
