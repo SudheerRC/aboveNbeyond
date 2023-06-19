@@ -78,5 +78,12 @@ namespace MyStores.UserControls
             errorLabel.Visible = false;
         }
 
+        private void LoginUserControl_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar.Equals(Convert.ToChar(13)))
+            {
+                LoginButton_Click(sender, e);
+            }
+        }
     }
 }
