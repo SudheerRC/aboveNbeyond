@@ -1,4 +1,5 @@
 ﻿using MyStores.Model;
+using MyStores.UserControls;
 
 namespace MyStores.View
 {
@@ -20,6 +21,11 @@ namespace MyStores.View
         {
             DialogResult = DialogResult.OK;
             this.Close();
+        }
+
+        private void populateHomePanel()
+        {
+            AddStoreUserControl[] homeChips = new AddStoreUserControl[99];
         }
     }
 }
