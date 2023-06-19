@@ -45,6 +45,7 @@
             this.storeNameLabel.TabIndex = 2;
             this.storeNameLabel.Text = "Add Store";
             this.storeNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.storeNameLabel.Click += new System.EventHandler(this.storeNameLabel_Click);
             // 
             // storeImagePictureBox
             // 
@@ -54,6 +55,7 @@
             this.storeImagePictureBox.Size = new System.Drawing.Size(99, 100);
             this.storeImagePictureBox.TabIndex = 4;
             this.storeImagePictureBox.TabStop = false;
+            this.storeImagePictureBox.Click += new System.EventHandler(this.storeImagePictureBox_Click);
             // 
             // AddStoreUserControl
             // 

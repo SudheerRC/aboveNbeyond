@@ -47,6 +47,7 @@
             this.storeImagePictureBox.Size = new System.Drawing.Size(99, 100);
             this.storeImagePictureBox.TabIndex = 10;
             this.storeImagePictureBox.TabStop = false;
+            this.storeImagePictureBox.Click += new System.EventHandler(this.storeImagePictureBox_Click);
             // 
             // storeNameLabel
             // 
@@ -59,6 +60,7 @@
             this.storeNameLabel.TabIndex = 8;
             this.storeNameLabel.Text = "Store Name";
             this.storeNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.storeNameLabel.Click += new System.EventHandler(this.storeNameLabel_Click);
             // 
             // cityLabel
             // 
@@ -71,6 +73,7 @@
             this.cityLabel.TabIndex = 7;
             this.cityLabel.Text = "city";
             this.cityLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.cityLabel.Click += new System.EventHandler(this.cityLabel_Click);
             // 
             // managerPanel
             // 
@@ -92,6 +95,7 @@
             this.managerNameLabel.TabIndex = 8;
             this.managerNameLabel.Text = "Name";
             this.managerNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.managerNameLabel.Click += new System.EventHandler(this.managerNameLabel_Click);
             // 
             // managerLabel
             // 
@@ -115,6 +119,8 @@
             this.Controls.Add(this.managerPanel);
             this.Name = "StoreChipUserControl";
             this.Size = new System.Drawing.Size(160, 200);
+            this.Load += new System.EventHandler(this.StoreChipUserControl_Load);
+            this.Click += new System.EventHandler(this.StoreChipUserControl_Click);
             ((System.ComponentModel.ISupportInitialize)(this.storeImagePictureBox)).EndInit();
             this.managerPanel.ResumeLayout(false);
             this.ResumeLayout(false);
