@@ -17,9 +17,24 @@ namespace MyStores.UserControls
             InitializeComponent();
         }
 
+        private void chipClick()
+        {
+
+        }
+
         private void AddStoreUserControl_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Hi");
+            chipClick();
+        }
+
+        private void storeImagePictureBox_Click(object sender, EventArgs e)
+        {
+            chipClick();
+        }
+
+        private void storeNameLabel_Click(object sender, EventArgs e)
+        {
+            chipClick();
         }
     }
 }

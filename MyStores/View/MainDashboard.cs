@@ -1,8 +1,6 @@
 ﻿using MyStores.Model;
 using MyStores.UserControls;
 
-using MyStores.UserControls;
-
 namespace MyStores.View
 {
     public partial class MainDashboard : Form
@@ -28,11 +26,14 @@ namespace MyStores.View
 
         private void populateHomePanel()
         {
-            AddStoreUserControl[] homeChips = new AddStoreUserControl[99];
             homeFlowLayoutPanel.Controls.Add(new AddStoreUserControl());
             //StoreChipUserControl[] homeChips = new StoreChipUserControl[99];
 
+            for (int i = 0; i < homeChips.Length; i++)
+            {
+                homeChips[i] = new StoreChipUserControl();
 
+            }
         }
     }
 }
