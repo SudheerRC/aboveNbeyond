@@ -45,6 +45,7 @@
             passwordTextBox.PasswordChar = '*';
             passwordTextBox.Size = new Size(157, 23);
             passwordTextBox.TabIndex = 12;
+            passwordTextBox.GotFocus += PasswordTextBox_GotFocus;
             // 
             // errorLabel
             // 
@@ -80,6 +81,7 @@
             emailTextBox.Name = "emailTextBox";
             emailTextBox.Size = new Size(158, 23);
             emailTextBox.TabIndex = 11;
+            emailTextBox.GotFocus += EmailTextBox_GotFocus;
             // 
             // passwordLabel
             // 

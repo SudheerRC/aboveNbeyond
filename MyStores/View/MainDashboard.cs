@@ -1,6 +1,5 @@
 ﻿using MyStores.Model;
 using MyStores.UserControls;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace MyStores.View
 {
@@ -57,7 +56,7 @@ namespace MyStores.View
             System.Drawing.Rectangle screenRectangle = Screen.GetWorkingArea(this);
             this.MaximizedBounds = screenRectangle;
             this.maxButton.Visible = false;
-            this.Location = new System.Drawing.Point(0,0);
+            this.Location = new System.Drawing.Point(0, 0);
             this.WindowState = FormWindowState.Maximized;
         }
 
