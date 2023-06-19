@@ -48,6 +48,7 @@
             this.maxButton = new System.Windows.Forms.Button();
             this.closePanel = new System.Windows.Forms.Panel();
             this.closeButton = new System.Windows.Forms.Button();
+            this.homeFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.mainContainer)).BeginInit();
             this.mainContainer.Panel1.SuspendLayout();
             this.mainContainer.Panel2.SuspendLayout();
@@ -59,6 +60,7 @@
             this.workspaceContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.storeContainer)).BeginInit();
             this.storeContainer.Panel1.SuspendLayout();
+            this.storeContainer.Panel2.SuspendLayout();
             this.storeContainer.SuspendLayout();
             this.searchPanel.SuspendLayout();
             this.searchInputPanel.SuspendLayout();
@@ -163,6 +165,7 @@
             // storeContainer.Panel2
             // 
             this.storeContainer.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(211)))), ((int)(((byte)(177)))));
+            this.storeContainer.Panel2.Controls.Add(this.homeFlowLayoutPanel);
             this.storeContainer.Size = new System.Drawing.Size(1393, 1041);
             this.storeContainer.SplitterDistance = 140;
             this.storeContainer.SplitterWidth = 1;
@@ -331,6 +334,14 @@
             this.closeButton.UseVisualStyleBackColor = false;
             this.closeButton.Click += new System.EventHandler(this.closeButton_Click_1);
             // 
+            // homeFlowLayoutPanel
+            // 
+            this.homeFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.homeFlowLayoutPanel.Location = new System.Drawing.Point(0, 0);
+            this.homeFlowLayoutPanel.Name = "homeFlowLayoutPanel";
+            this.homeFlowLayoutPanel.Size = new System.Drawing.Size(1393, 900);
+            this.homeFlowLayoutPanel.TabIndex = 0;
+            // 
             // MainDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -353,6 +364,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.workspaceContainer)).EndInit();
             this.workspaceContainer.ResumeLayout(false);
             this.storeContainer.Panel1.ResumeLayout(false);
+            this.storeContainer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.storeContainer)).EndInit();
             this.storeContainer.ResumeLayout(false);
             this.searchPanel.ResumeLayout(false);
@@ -388,5 +400,6 @@
         private Panel searchInputPanel;
         private Panel searchButtonPanel;
         private Button searchButton;
+        private FlowLayoutPanel homeFlowLayoutPanel;
     }
 }

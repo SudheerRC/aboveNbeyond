@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MyStores.UserControls;
 
 namespace MyStores.View
 {
@@ -20,6 +21,13 @@ namespace MyStores.View
         private void closeButton_Click_1(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void populateHomePanel()
+        {
+            AddStoreUserControl[] homeChips = new AddStoreUserControl[99];
+
+
         }
     }
 }
