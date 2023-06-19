@@ -24,8 +24,6 @@ namespace MyStores.UserControls
         public string _city { get; set; }
         public string _managers { get; set; }
 
-        public 
-
         #endregion
 
         private void chipClick()
