@@ -26,7 +26,6 @@ namespace MyStores.View
 
         private void populateHomePanel()
         {
-            homeFlowLayoutPanel.Controls.Add(new AddStoreUserControl());
             StoreChipUserControl[] homeChips = new StoreChipUserControl[99];
 
             for (int i = 0; i < homeChips.Length; i++)
@@ -34,6 +33,11 @@ namespace MyStores.View
                 homeChips[i] = new StoreChipUserControl();
 
             }
+        }
+
+        private void addStoreUserControl1_Click(object sender, EventArgs e)
+        {
+            this.populateHomePanel();
         }
     }
 }
