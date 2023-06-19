@@ -26,6 +26,7 @@ namespace MyStores.UserControls
             if (_controller.CheckUserLogin(user))
             {
                 using var mainForm = new MainDashboard();
+                mainForm.SetOwner(user);
                 var result = mainForm.ShowDialog();
                 if (result == DialogResult.OK)
                 {

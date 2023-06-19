@@ -26,5 +26,10 @@ namespace MyStores.Controller
         {
             _storesDal.RegisterUser(newUser);
         }
+
+        public void AddStore(Store newStore)
+        {
+            _storesDal.AddStore(newStore);
+        }
     }
 }
