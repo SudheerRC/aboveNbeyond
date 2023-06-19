@@ -33,13 +33,18 @@ namespace MyStores.View
             for (int i = 0; i < homeChips.Length; i++)
             {
                 homeChips[i] = new StoreChipUserControl();
-                 
+
             }
         }
 
         private void addStoreUserControl1_Click(object sender, EventArgs e)
         {
             this.populateHomePanel();
+        }
+
+        private void MainDashboard_Load(object sender, EventArgs e)
+        {
+            addStoreUserControl.SetOwner(_owner);
         }
 
         private void maxButton_Click(object sender, EventArgs e)

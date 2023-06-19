@@ -29,306 +29,305 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddStoreForm));
-            this.groupBox = new System.Windows.Forms.GroupBox();
-            this.storeNameErrorLabel = new System.Windows.Forms.Label();
-            this.cityErrorLabel = new System.Windows.Forms.Label();
-            this.stateErrorLabel = new System.Windows.Forms.Label();
-            this.errorLabel = new System.Windows.Forms.Label();
-            this.clearButton = new System.Windows.Forms.Button();
-            this.addStoreButton = new System.Windows.Forms.Button();
-            this.titleLabel = new System.Windows.Forms.Label();
-            this.storeNametextBox = new System.Windows.Forms.TextBox();
-            this.storeNamelabel = new System.Windows.Forms.Label();
-            this.countryTextBox = new System.Windows.Forms.TextBox();
-            this.zipcodeTextBox = new System.Windows.Forms.TextBox();
-            this.zipcodeLabel = new System.Windows.Forms.Label();
-            this.stateTextBox = new System.Windows.Forms.TextBox();
-            this.stateLabel = new System.Windows.Forms.Label();
-            this.cityTextBox = new System.Windows.Forms.TextBox();
-            this.cityLabel = new System.Windows.Forms.Label();
-            this.streetAddressTextBox = new System.Windows.Forms.TextBox();
-            this.streetAddLabel = new System.Windows.Forms.Label();
-            this.countryLabel = new System.Windows.Forms.Label();
-            this.groupBox.SuspendLayout();
-            this.SuspendLayout();
+            groupBox = new GroupBox();
+            storeNameErrorLabel = new Label();
+            cityErrorLabel = new Label();
+            stateErrorLabel = new Label();
+            errorLabel = new Label();
+            clearButton = new Button();
+            addStoreButton = new Button();
+            titleLabel = new Label();
+            storeNametextBox = new TextBox();
+            storeNamelabel = new Label();
+            countryTextBox = new TextBox();
+            zipcodeTextBox = new TextBox();
+            zipcodeLabel = new Label();
+            stateTextBox = new TextBox();
+            stateLabel = new Label();
+            cityTextBox = new TextBox();
+            cityLabel = new Label();
+            streetAddressTextBox = new TextBox();
+            streetAddLabel = new Label();
+            countryLabel = new Label();
+            groupBox.SuspendLayout();
+            SuspendLayout();
             // 
             // groupBox
             // 
-            this.groupBox.BackColor = System.Drawing.Color.MistyRose;
-            this.groupBox.Controls.Add(this.storeNameErrorLabel);
-            this.groupBox.Controls.Add(this.cityErrorLabel);
-            this.groupBox.Controls.Add(this.stateErrorLabel);
-            this.groupBox.Controls.Add(this.errorLabel);
-            this.groupBox.Controls.Add(this.clearButton);
-            this.groupBox.Controls.Add(this.addStoreButton);
-            this.groupBox.Controls.Add(this.titleLabel);
-            this.groupBox.Controls.Add(this.storeNametextBox);
-            this.groupBox.Controls.Add(this.storeNamelabel);
-            this.groupBox.Controls.Add(this.countryTextBox);
-            this.groupBox.Controls.Add(this.zipcodeTextBox);
-            this.groupBox.Controls.Add(this.zipcodeLabel);
-            this.groupBox.Controls.Add(this.stateTextBox);
-            this.groupBox.Controls.Add(this.stateLabel);
-            this.groupBox.Controls.Add(this.cityTextBox);
-            this.groupBox.Controls.Add(this.cityLabel);
-            this.groupBox.Controls.Add(this.streetAddressTextBox);
-            this.groupBox.Controls.Add(this.streetAddLabel);
-            this.groupBox.Controls.Add(this.countryLabel);
-            this.groupBox.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.groupBox.Location = new System.Drawing.Point(25, 12);
-            this.groupBox.Name = "groupBox";
-            this.groupBox.Size = new System.Drawing.Size(366, 420);
-            this.groupBox.TabIndex = 0;
-            this.groupBox.TabStop = false;
+            groupBox.BackColor = Color.MistyRose;
+            groupBox.Controls.Add(storeNameErrorLabel);
+            groupBox.Controls.Add(cityErrorLabel);
+            groupBox.Controls.Add(stateErrorLabel);
+            groupBox.Controls.Add(errorLabel);
+            groupBox.Controls.Add(clearButton);
+            groupBox.Controls.Add(addStoreButton);
+            groupBox.Controls.Add(titleLabel);
+            groupBox.Controls.Add(storeNametextBox);
+            groupBox.Controls.Add(storeNamelabel);
+            groupBox.Controls.Add(countryTextBox);
+            groupBox.Controls.Add(zipcodeTextBox);
+            groupBox.Controls.Add(zipcodeLabel);
+            groupBox.Controls.Add(stateTextBox);
+            groupBox.Controls.Add(stateLabel);
+            groupBox.Controls.Add(cityTextBox);
+            groupBox.Controls.Add(cityLabel);
+            groupBox.Controls.Add(streetAddressTextBox);
+            groupBox.Controls.Add(streetAddLabel);
+            groupBox.Controls.Add(countryLabel);
+            groupBox.ForeColor = SystemColors.ControlText;
+            groupBox.Location = new Point(25, 12);
+            groupBox.Name = "groupBox";
+            groupBox.Size = new Size(366, 420);
+            groupBox.TabIndex = 0;
+            groupBox.TabStop = false;
             // 
             // storeNameErrorLabel
             // 
-            this.storeNameErrorLabel.AutoSize = true;
-            this.storeNameErrorLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.storeNameErrorLabel.ForeColor = System.Drawing.Color.Red;
-            this.storeNameErrorLabel.Location = new System.Drawing.Point(75, 101);
-            this.storeNameErrorLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.storeNameErrorLabel.Name = "storeNameErrorLabel";
-            this.storeNameErrorLabel.Size = new System.Drawing.Size(55, 15);
-            this.storeNameErrorLabel.TabIndex = 71;
-            this.storeNameErrorLabel.Text = "Error text";
-            this.storeNameErrorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.storeNameErrorLabel.UseWaitCursor = true;
-            this.storeNameErrorLabel.Visible = false;
+            storeNameErrorLabel.AutoSize = true;
+            storeNameErrorLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            storeNameErrorLabel.ForeColor = Color.Red;
+            storeNameErrorLabel.Location = new Point(75, 101);
+            storeNameErrorLabel.Margin = new Padding(2, 0, 2, 0);
+            storeNameErrorLabel.Name = "storeNameErrorLabel";
+            storeNameErrorLabel.Size = new Size(55, 15);
+            storeNameErrorLabel.TabIndex = 71;
+            storeNameErrorLabel.Text = "Error text";
+            storeNameErrorLabel.TextAlign = ContentAlignment.MiddleCenter;
+            storeNameErrorLabel.UseWaitCursor = true;
+            storeNameErrorLabel.Visible = false;
             // 
             // cityErrorLabel
             // 
-            this.cityErrorLabel.AutoSize = true;
-            this.cityErrorLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cityErrorLabel.ForeColor = System.Drawing.Color.Red;
-            this.cityErrorLabel.Location = new System.Drawing.Point(75, 192);
-            this.cityErrorLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.cityErrorLabel.Name = "cityErrorLabel";
-            this.cityErrorLabel.Size = new System.Drawing.Size(55, 15);
-            this.cityErrorLabel.TabIndex = 70;
-            this.cityErrorLabel.Text = "Error text";
-            this.cityErrorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.cityErrorLabel.UseWaitCursor = true;
-            this.cityErrorLabel.Visible = false;
+            cityErrorLabel.AutoSize = true;
+            cityErrorLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            cityErrorLabel.ForeColor = Color.Red;
+            cityErrorLabel.Location = new Point(75, 192);
+            cityErrorLabel.Margin = new Padding(2, 0, 2, 0);
+            cityErrorLabel.Name = "cityErrorLabel";
+            cityErrorLabel.Size = new Size(55, 15);
+            cityErrorLabel.TabIndex = 70;
+            cityErrorLabel.Text = "Error text";
+            cityErrorLabel.TextAlign = ContentAlignment.MiddleCenter;
+            cityErrorLabel.UseWaitCursor = true;
+            cityErrorLabel.Visible = false;
             // 
             // stateErrorLabel
             // 
-            this.stateErrorLabel.AutoSize = true;
-            this.stateErrorLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.stateErrorLabel.ForeColor = System.Drawing.Color.Red;
-            this.stateErrorLabel.Location = new System.Drawing.Point(75, 236);
-            this.stateErrorLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.stateErrorLabel.Name = "stateErrorLabel";
-            this.stateErrorLabel.Size = new System.Drawing.Size(55, 15);
-            this.stateErrorLabel.TabIndex = 69;
-            this.stateErrorLabel.Text = "Error text";
-            this.stateErrorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.stateErrorLabel.UseWaitCursor = true;
-            this.stateErrorLabel.Visible = false;
+            stateErrorLabel.AutoSize = true;
+            stateErrorLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            stateErrorLabel.ForeColor = Color.Red;
+            stateErrorLabel.Location = new Point(75, 236);
+            stateErrorLabel.Margin = new Padding(2, 0, 2, 0);
+            stateErrorLabel.Name = "stateErrorLabel";
+            stateErrorLabel.Size = new Size(55, 15);
+            stateErrorLabel.TabIndex = 69;
+            stateErrorLabel.Text = "Error text";
+            stateErrorLabel.TextAlign = ContentAlignment.MiddleCenter;
+            stateErrorLabel.UseWaitCursor = true;
+            stateErrorLabel.Visible = false;
             // 
             // errorLabel
             // 
-            this.errorLabel.AutoSize = true;
-            this.errorLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.errorLabel.Location = new System.Drawing.Point(53, 334);
-            this.errorLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.errorLabel.Name = "errorLabel";
-            this.errorLabel.Size = new System.Drawing.Size(66, 19);
-            this.errorLabel.TabIndex = 68;
-            this.errorLabel.Text = "Error text";
-            this.errorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.errorLabel.UseWaitCursor = true;
-            this.errorLabel.Visible = false;
+            errorLabel.AutoSize = true;
+            errorLabel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            errorLabel.Location = new Point(53, 334);
+            errorLabel.Margin = new Padding(2, 0, 2, 0);
+            errorLabel.Name = "errorLabel";
+            errorLabel.Size = new Size(66, 19);
+            errorLabel.TabIndex = 68;
+            errorLabel.Text = "Error text";
+            errorLabel.TextAlign = ContentAlignment.MiddleCenter;
+            errorLabel.UseWaitCursor = true;
+            errorLabel.Visible = false;
             // 
             // clearButton
             // 
-            this.clearButton.BackColor = System.Drawing.Color.White;
-            this.clearButton.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.clearButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.clearButton.Location = new System.Drawing.Point(226, 366);
-            this.clearButton.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.clearButton.Name = "clearButton";
-            this.clearButton.Size = new System.Drawing.Size(81, 31);
-            this.clearButton.TabIndex = 67;
-            this.clearButton.Text = "Clear";
-            this.clearButton.UseVisualStyleBackColor = false;
-            this.clearButton.Click += new System.EventHandler(this.ClearButton_Click);
+            clearButton.BackColor = Color.White;
+            clearButton.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            clearButton.ForeColor = SystemColors.ControlText;
+            clearButton.Location = new Point(226, 366);
+            clearButton.Margin = new Padding(2, 1, 2, 1);
+            clearButton.Name = "clearButton";
+            clearButton.Size = new Size(81, 31);
+            clearButton.TabIndex = 67;
+            clearButton.Text = "Clear";
+            clearButton.UseVisualStyleBackColor = false;
+            clearButton.Click += ClearButton_Click;
             // 
             // addStoreButton
             // 
-            this.addStoreButton.BackColor = System.Drawing.Color.White;
-            this.addStoreButton.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.addStoreButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.addStoreButton.Location = new System.Drawing.Point(53, 366);
-            this.addStoreButton.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.addStoreButton.Name = "addStoreButton";
-            this.addStoreButton.Size = new System.Drawing.Size(98, 31);
-            this.addStoreButton.TabIndex = 66;
-            this.addStoreButton.Text = "Add Store";
-            this.addStoreButton.UseVisualStyleBackColor = false;
-            this.addStoreButton.Click += new System.EventHandler(this.AddStoreButton_Click);
+            addStoreButton.BackColor = Color.White;
+            addStoreButton.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            addStoreButton.ForeColor = SystemColors.ControlText;
+            addStoreButton.Location = new Point(53, 366);
+            addStoreButton.Margin = new Padding(2, 1, 2, 1);
+            addStoreButton.Name = "addStoreButton";
+            addStoreButton.Size = new Size(98, 31);
+            addStoreButton.TabIndex = 66;
+            addStoreButton.Text = "Add Store";
+            addStoreButton.UseVisualStyleBackColor = false;
+            addStoreButton.Click += AddStoreButton_Click;
             // 
             // titleLabel
             // 
-            this.titleLabel.AutoSize = true;
-            this.titleLabel.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.titleLabel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.titleLabel.Location = new System.Drawing.Point(125, 19);
-            this.titleLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(97, 31);
-            this.titleLabel.TabIndex = 65;
-            this.titleLabel.Text = "Add Store";
-            this.titleLabel.UseCompatibleTextRendering = true;
+            titleLabel.AutoSize = true;
+            titleLabel.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            titleLabel.ForeColor = SystemColors.ControlText;
+            titleLabel.Location = new Point(125, 19);
+            titleLabel.Margin = new Padding(2, 0, 2, 0);
+            titleLabel.Name = "titleLabel";
+            titleLabel.Size = new Size(97, 31);
+            titleLabel.TabIndex = 65;
+            titleLabel.Text = "Add Store";
+            titleLabel.UseCompatibleTextRendering = true;
             // 
             // storeNametextBox
             // 
-            this.storeNametextBox.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.storeNametextBox.Location = new System.Drawing.Point(160, 70);
-            this.storeNametextBox.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.storeNametextBox.Name = "storeNametextBox";
-            this.storeNametextBox.Size = new System.Drawing.Size(158, 23);
-            this.storeNametextBox.TabIndex = 64;
-            this.storeNametextBox.GotFocus += new System.EventHandler(this.StoreNameTextBox_GotFocus);
+            storeNametextBox.ForeColor = SystemColors.WindowText;
+            storeNametextBox.Location = new Point(160, 70);
+            storeNametextBox.Margin = new Padding(2, 1, 2, 1);
+            storeNametextBox.Name = "storeNametextBox";
+            storeNametextBox.Size = new Size(158, 23);
+            storeNametextBox.TabIndex = 55;
+            storeNametextBox.GotFocus += StoreNameTextBox_GotFocus;
             // 
             // storeNamelabel
             // 
-            this.storeNamelabel.AutoSize = true;
-            this.storeNamelabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.storeNamelabel.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.storeNamelabel.Location = new System.Drawing.Point(43, 70);
-            this.storeNamelabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.storeNamelabel.Name = "storeNamelabel";
-            this.storeNamelabel.Size = new System.Drawing.Size(87, 19);
-            this.storeNamelabel.TabIndex = 63;
-            this.storeNamelabel.Text = "Store Name*";
+            storeNamelabel.AutoSize = true;
+            storeNamelabel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            storeNamelabel.ForeColor = SystemColors.WindowText;
+            storeNamelabel.Location = new Point(43, 70);
+            storeNamelabel.Margin = new Padding(2, 0, 2, 0);
+            storeNamelabel.Name = "storeNamelabel";
+            storeNamelabel.Size = new Size(87, 19);
+            storeNamelabel.TabIndex = 63;
+            storeNamelabel.Text = "Store Name*";
             // 
             // countryTextBox
             // 
-            this.countryTextBox.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.countryTextBox.Location = new System.Drawing.Point(160, 304);
-            this.countryTextBox.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.countryTextBox.Name = "countryTextBox";
-            this.countryTextBox.Size = new System.Drawing.Size(158, 23);
-            this.countryTextBox.TabIndex = 62;
+            countryTextBox.ForeColor = SystemColors.WindowText;
+            countryTextBox.Location = new Point(160, 304);
+            countryTextBox.Margin = new Padding(2, 1, 2, 1);
+            countryTextBox.Name = "countryTextBox";
+            countryTextBox.Size = new Size(158, 23);
+            countryTextBox.TabIndex = 65;
             // 
             // zipcodeTextBox
             // 
-            this.zipcodeTextBox.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.zipcodeTextBox.Location = new System.Drawing.Point(160, 260);
-            this.zipcodeTextBox.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.zipcodeTextBox.Name = "zipcodeTextBox";
-            this.zipcodeTextBox.Size = new System.Drawing.Size(158, 23);
-            this.zipcodeTextBox.TabIndex = 61;
-            this.zipcodeTextBox.TextChanged += new System.EventHandler(this.ZipcodeTextBox_TextChanged);
-            this.zipcodeTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ZipcodeTextBox_KeyPress);
+            zipcodeTextBox.ForeColor = SystemColors.WindowText;
+            zipcodeTextBox.Location = new Point(160, 260);
+            zipcodeTextBox.Margin = new Padding(2, 1, 2, 1);
+            zipcodeTextBox.Name = "zipcodeTextBox";
+            zipcodeTextBox.Size = new Size(158, 23);
+            zipcodeTextBox.TabIndex = 63;
+            zipcodeTextBox.TextChanged += ZipcodeTextBox_TextChanged;
+            zipcodeTextBox.KeyPress += ZipcodeTextBox_KeyPress;
             // 
             // zipcodeLabel
             // 
-            this.zipcodeLabel.AutoSize = true;
-            this.zipcodeLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.zipcodeLabel.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.zipcodeLabel.Location = new System.Drawing.Point(43, 259);
-            this.zipcodeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.zipcodeLabel.Name = "zipcodeLabel";
-            this.zipcodeLabel.Size = new System.Drawing.Size(70, 19);
-            this.zipcodeLabel.TabIndex = 60;
-            this.zipcodeLabel.Text = "Zip Code*";
+            zipcodeLabel.AutoSize = true;
+            zipcodeLabel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            zipcodeLabel.ForeColor = SystemColors.WindowText;
+            zipcodeLabel.Location = new Point(43, 259);
+            zipcodeLabel.Margin = new Padding(2, 0, 2, 0);
+            zipcodeLabel.Name = "zipcodeLabel";
+            zipcodeLabel.Size = new Size(70, 19);
+            zipcodeLabel.TabIndex = 60;
+            zipcodeLabel.Text = "Zip Code*";
             // 
             // stateTextBox
             // 
-            this.stateTextBox.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.stateTextBox.Location = new System.Drawing.Point(160, 207);
-            this.stateTextBox.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.stateTextBox.Name = "stateTextBox";
-            this.stateTextBox.Size = new System.Drawing.Size(158, 23);
-            this.stateTextBox.TabIndex = 59;
-            this.stateTextBox.GotFocus += new System.EventHandler(this.StateTextBox_GotFocus);
+            stateTextBox.ForeColor = SystemColors.WindowText;
+            stateTextBox.Location = new Point(160, 207);
+            stateTextBox.Margin = new Padding(2, 1, 2, 1);
+            stateTextBox.Name = "stateTextBox";
+            stateTextBox.Size = new Size(158, 23);
+            stateTextBox.TabIndex = 61;
+            stateTextBox.GotFocus += StateTextBox_GotFocus;
             // 
             // stateLabel
             // 
-            this.stateLabel.AutoSize = true;
-            this.stateLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.stateLabel.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.stateLabel.Location = new System.Drawing.Point(43, 207);
-            this.stateLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.stateLabel.Name = "stateLabel";
-            this.stateLabel.Size = new System.Drawing.Size(46, 19);
-            this.stateLabel.TabIndex = 58;
-            this.stateLabel.Text = "State*";
+            stateLabel.AutoSize = true;
+            stateLabel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            stateLabel.ForeColor = SystemColors.WindowText;
+            stateLabel.Location = new Point(43, 207);
+            stateLabel.Margin = new Padding(2, 0, 2, 0);
+            stateLabel.Name = "stateLabel";
+            stateLabel.Size = new Size(46, 19);
+            stateLabel.TabIndex = 58;
+            stateLabel.Text = "State*";
             // 
             // cityTextBox
             // 
-            this.cityTextBox.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.cityTextBox.Location = new System.Drawing.Point(160, 165);
-            this.cityTextBox.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.cityTextBox.Name = "cityTextBox";
-            this.cityTextBox.Size = new System.Drawing.Size(158, 23);
-            this.cityTextBox.TabIndex = 57;
-            this.cityTextBox.GotFocus += new System.EventHandler(this.CityTextBox_GotFocus);
+            cityTextBox.ForeColor = SystemColors.WindowText;
+            cityTextBox.Location = new Point(160, 165);
+            cityTextBox.Margin = new Padding(2, 1, 2, 1);
+            cityTextBox.Name = "cityTextBox";
+            cityTextBox.Size = new Size(158, 23);
+            cityTextBox.TabIndex = 59;
+            cityTextBox.GotFocus += CityTextBox_GotFocus;
             // 
             // cityLabel
             // 
-            this.cityLabel.AutoSize = true;
-            this.cityLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cityLabel.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.cityLabel.Location = new System.Drawing.Point(43, 164);
-            this.cityLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.cityLabel.Name = "cityLabel";
-            this.cityLabel.Size = new System.Drawing.Size(39, 19);
-            this.cityLabel.TabIndex = 56;
-            this.cityLabel.Text = "City*";
+            cityLabel.AutoSize = true;
+            cityLabel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            cityLabel.ForeColor = SystemColors.WindowText;
+            cityLabel.Location = new Point(43, 164);
+            cityLabel.Margin = new Padding(2, 0, 2, 0);
+            cityLabel.Name = "cityLabel";
+            cityLabel.Size = new Size(39, 19);
+            cityLabel.TabIndex = 56;
+            cityLabel.Text = "City*";
             // 
             // streetAddressTextBox
             // 
-            this.streetAddressTextBox.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.streetAddressTextBox.Location = new System.Drawing.Point(160, 123);
-            this.streetAddressTextBox.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.streetAddressTextBox.Name = "streetAddressTextBox";
-            this.streetAddressTextBox.Size = new System.Drawing.Size(158, 23);
-            this.streetAddressTextBox.TabIndex = 55;
+            streetAddressTextBox.ForeColor = SystemColors.WindowText;
+            streetAddressTextBox.Location = new Point(160, 123);
+            streetAddressTextBox.Margin = new Padding(2, 1, 2, 1);
+            streetAddressTextBox.Name = "streetAddressTextBox";
+            streetAddressTextBox.Size = new Size(158, 23);
+            streetAddressTextBox.TabIndex = 57;
             // 
             // streetAddLabel
             // 
-            this.streetAddLabel.AutoSize = true;
-            this.streetAddLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.streetAddLabel.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.streetAddLabel.Location = new System.Drawing.Point(43, 123);
-            this.streetAddLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.streetAddLabel.Name = "streetAddLabel";
-            this.streetAddLabel.Size = new System.Drawing.Size(98, 19);
-            this.streetAddLabel.TabIndex = 54;
-            this.streetAddLabel.Text = "Street Address";
+            streetAddLabel.AutoSize = true;
+            streetAddLabel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            streetAddLabel.ForeColor = SystemColors.WindowText;
+            streetAddLabel.Location = new Point(43, 123);
+            streetAddLabel.Margin = new Padding(2, 0, 2, 0);
+            streetAddLabel.Name = "streetAddLabel";
+            streetAddLabel.Size = new Size(98, 19);
+            streetAddLabel.TabIndex = 54;
+            streetAddLabel.Text = "Street Address";
             // 
             // countryLabel
             // 
-            this.countryLabel.AutoSize = true;
-            this.countryLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.countryLabel.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.countryLabel.Location = new System.Drawing.Point(43, 305);
-            this.countryLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.countryLabel.Name = "countryLabel";
-            this.countryLabel.Size = new System.Drawing.Size(59, 19);
-            this.countryLabel.TabIndex = 53;
-            this.countryLabel.Text = "Country";
+            countryLabel.AutoSize = true;
+            countryLabel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            countryLabel.ForeColor = SystemColors.WindowText;
+            countryLabel.Location = new Point(43, 305);
+            countryLabel.Margin = new Padding(2, 0, 2, 0);
+            countryLabel.Name = "countryLabel";
+            countryLabel.Size = new Size(59, 19);
+            countryLabel.TabIndex = 53;
+            countryLabel.Text = "Country";
             // 
             // AddStoreForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(420, 468);
-            this.Controls.Add(this.groupBox);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "AddStoreForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AddStoreForm";
-            this.groupBox.ResumeLayout(false);
-            this.groupBox.PerformLayout();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            ClientSize = new Size(420, 468);
+            Controls.Add(groupBox);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "AddStoreForm";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "AddStoreForm";
+            groupBox.ResumeLayout(false);
+            groupBox.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion

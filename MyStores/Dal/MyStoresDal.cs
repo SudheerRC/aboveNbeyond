@@ -83,6 +83,27 @@ namespace MyStores.Dal
             command.ExecuteNonQuery();
         }
 
+        public int GetUserId(string email)
+        {
+            int userId = 0;
+            using var connection = DbConnection.GetConnection();
+            connection.Open();
+            string query = "select userID from Users where email = @email";
+            using var command = new SqlCommand(query, connection);
+
+            command.Parameters.Add("@email", System.Data.SqlDbType.VarChar);
+            command.Parameters["@email"].Value = email;
+            using var reader = command.ExecuteReader();
+
+            var userIdOrdinal = reader.GetOrdinal("userID");
+            while (reader.Read())
+            {
+                userId = reader.GetInt32(userIdOrdinal);
+            }
+
+            return userId;
+        }
+
         public void AddStore(Store newStore)
         {
             using var connection = DbConnection.GetConnection();

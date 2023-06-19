@@ -6,10 +6,17 @@ namespace MyStores.View
     public partial class AddStoreForm : Form
     {
         private readonly MyStoresController _controller;
+        private Users _owner;
         public AddStoreForm()
         {
             InitializeComponent();
             _controller = new MyStoresController();
+            _owner = new Users();
+        }
+
+        public void SetOwner(Users setUser)
+        {
+            _owner = setUser;
         }
 
         private void ZipcodeTextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -50,6 +57,7 @@ namespace MyStores.View
 
                 var newStore = new Store
                 {
+                    OwnerId = _owner.UserId,
                     Name = storeNametextBox.Text,
                     StreetAddress = streetAddressTextBox.Text,
                     City = cityTextBox.Text,

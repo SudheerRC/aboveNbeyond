@@ -1,33 +1,42 @@
-﻿using MyStores.View;
+﻿using MyStores.Model;
+using MyStores.View;
 
 namespace MyStores.UserControls
 {
     public partial class AddStoreUserControl : UserControl
     {
+        private Users _owner;
         public AddStoreUserControl()
         {
             InitializeComponent();
+            _owner = new Users();
         }
 
-        private void chipClick()
+        public void SetOwner(Users setUser)
+        {
+            _owner = setUser;
+        }
+
+        private void ChipClick()
         {
             using var addStore = new AddStoreForm();
+            addStore.SetOwner(_owner);
             addStore.ShowDialog();
         }
 
         private void AddStoreUserControl_Click(object sender, EventArgs e)
         {
-            chipClick();
+            ChipClick();
         }
 
         private void storeImagePictureBox_Click(object sender, EventArgs e)
         {
-            chipClick();
+            ChipClick();
         }
 
         private void storeNameLabel_Click(object sender, EventArgs e)
         {
-            chipClick();
+            ChipClick();
         }
     }
 }

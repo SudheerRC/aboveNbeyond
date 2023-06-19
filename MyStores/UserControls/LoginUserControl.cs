@@ -18,6 +18,7 @@ namespace MyStores.UserControls
         {
             string email = emailTextBox.Text;
             string password = passwordTextBox.Text;
+
             var user = new Users
             {
                 Email = email,
@@ -25,6 +26,7 @@ namespace MyStores.UserControls
             };
             if (_controller.CheckUserLogin(user))
             {
+                user.UserId = _controller.GetUserId(email);
                 using var mainForm = new MainDashboard();
                 mainForm.SetOwner(user);
                 var result = mainForm.ShowDialog();
