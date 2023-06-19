@@ -36,5 +36,10 @@ namespace MyStores.Controller
         {
             return _storesDal.GetUserStores(userId);
         }
+
+        public int GetUserId(string email)
+        {
+            return _storesDal.GetUserId(email);
+        }
     }
 }
