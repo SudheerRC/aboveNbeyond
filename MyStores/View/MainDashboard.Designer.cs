@@ -1291,6 +1291,8 @@
         private Panel panel4;
         private Panel panel2;
         private Panel panel1;
+        private Panel panel7;
+        private Label label1;
         private UserControls.AddStoreUserControl addStoreUserControl;
         private Button restoreButton;
         private UserControls.IconUserControl AddVendorIcon;
