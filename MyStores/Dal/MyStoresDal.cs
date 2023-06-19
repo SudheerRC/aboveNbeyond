@@ -114,5 +114,53 @@ namespace MyStores.Dal
 
             command.ExecuteNonQuery();
         }
+
+        public List<Store> GetUserStores(int ownerId)
+        {
+            var stores = new List<Store>();
+            using var connection = DbConnection.GetConnection();
+            connection.Open();
+
+            string query = "select storeID, ownerID, storeName, streetAddress, city, state, zipCode, country from Stores where ownerID = @ownerId;";
+            using var command = new SqlCommand(query, connection);
+
+            command.Parameters.Add("@ownerId", System.Data.SqlDbType.Int);
+            command.Parameters["@ownerId"].Value = ownerId;
+            using var reader = command.ExecuteReader();
+
+            var storeIdOrdinal = reader.GetOrdinal("storeID");
+            var ownerIdOrdinal = reader.GetOrdinal("ownerID");
+            var nameOrdinal = reader.GetOrdinal("storeName");
+            var streetOrdinal = reader.GetOrdinal("streetAddress");
+            var cityOrdinal = reader.GetOrdinal("city");
+            var stateOrdinal = reader.GetOrdinal("state");
+            var zipOrdinal = reader.GetOrdinal("zipCode");
+            var countryOrdinal = reader.GetOrdinal("country");
+
+            while (reader.Read())
+            {
+                var storeId = reader.GetInt32(storeIdOrdinal);
+                var ownerIdC = reader.GetInt32(ownerIdOrdinal);
+                var name = reader.GetString(nameOrdinal);
+                var street = reader.IsDBNull(streetOrdinal) ? "" : reader.GetString(streetOrdinal);
+                var city = reader.GetString(cityOrdinal);
+                var state = reader.GetString(stateOrdinal);
+                var zip = reader.IsDBNull(zipOrdinal) ? "" : reader.GetString(zipOrdinal);
+                var country = reader.IsDBNull(countryOrdinal) ? "" : reader.GetString(countryOrdinal);
+
+                stores.Add(new Store
+                {
+                    Id = storeId,
+                    OwnerId = ownerIdC,
+                    Name = name,
+                    StreetAddress = street,
+                    City = city,
+                    State = state,
+                    ZipCode = zip,
+                    Country = country
+                });
+            }
+            return stores;
+        }
     }
 }

@@ -31,5 +31,10 @@ namespace MyStores.Controller
         {
             _storesDal.AddStore(newStore);
         }
+
+        public List<Store> GetUserStores(int userId)
+        {
+            return _storesDal.GetUserStores(userId);
+        }
     }
 }

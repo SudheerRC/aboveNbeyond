@@ -5,7 +5,7 @@ namespace MyStores.View
 {
     public partial class AddStoreForm : Form
     {
-        private MyStoresController _controller;
+        private readonly MyStoresController _controller;
         public AddStoreForm()
         {
             InitializeComponent();
