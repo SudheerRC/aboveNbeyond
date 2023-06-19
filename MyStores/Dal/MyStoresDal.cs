@@ -1,10 +1,6 @@
-﻿using System.Data.Common;
-using System.Data;
+﻿using System.Data;
 using System.Data.SqlClient;
 using MyStores.Model;
-using static System.Windows.Forms.AxHost;
-using System.Diagnostics.Metrics;
-using System.Reflection.Emit;
 
 namespace MyStores.Dal
 {

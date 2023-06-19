@@ -25,11 +25,15 @@ namespace MyStores.UserControls
             };
             if (_controller.CheckUserLogin(user))
             {
-                errorLabel.Text = "You've successfully logged in";
-                errorLabel.Visible = true;
-                errorLabel.ForeColor = Color.Green;
-                var MainForm = new MainDashboard();
-                MainForm.Show();
+                using var mainForm = new MainDashboard();
+                var result = mainForm.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    errorLabel.Text = "You've been successfully logged out.";
+                    errorLabel.Visible = true;
+                    errorLabel.ForeColor = Color.Green;
+                    ClearFields();
+                }
             }
             else if (emailTextBox.Text == String.Empty)
             {
@@ -61,7 +65,6 @@ namespace MyStores.UserControls
         {
             emailTextBox.Clear();
             passwordTextBox.Clear();
-            errorLabel.Visible = false;
         }
 
         private void EmailTextBox_GotFocus(object sender, EventArgs e)
