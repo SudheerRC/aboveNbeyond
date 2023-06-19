@@ -12,6 +12,11 @@ namespace MyStores.View
             InitializeComponent();
             _owner = new Users();
             formScaling();
+            homePanel.Parent = storeContainer.Panel2;
+            homePanel.Dock = DockStyle.Fill;
+            storeFrontPanel.Parent = storeContainer.Panel2;
+            storeFrontPanel.Dock = DockStyle.Fill;
+            AddVendorIcon.IconName = "Add Vendor";
         }
 
         public void SetOwner(Users setUser)
@@ -82,6 +87,16 @@ namespace MyStores.View
         {
             this.maxButton.Visible = true;
             formScaling();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            storeFrontPanel.BringToFront();
+        }
+
+        private void AddVendorIcon_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("OK");
         }
     }
 }

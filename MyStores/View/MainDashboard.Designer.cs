@@ -44,10 +44,8 @@
             this.workspaceContainer = new System.Windows.Forms.SplitContainer();
             this.storeContainer = new System.Windows.Forms.SplitContainer();
             this.storeNameLabel = new System.Windows.Forms.Label();
-            this.homePanel = new System.Windows.Forms.Panel();
-            this.homeFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.addStoreUserControl = new MyStores.UserControls.AddStoreUserControl();
             this.storeFrontPanel = new System.Windows.Forms.Panel();
+            this.AddVendorIcon = new MyStores.UserControls.IconUserControl();
             this.panel13 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
@@ -60,14 +58,15 @@
             this.label3 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.homePanel = new System.Windows.Forms.Panel();
+            this.homeFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.addStoreUserControl = new MyStores.UserControls.AddStoreUserControl();
             this.searchPanel = new System.Windows.Forms.Panel();
             this.searchInputPanel = new System.Windows.Forms.Panel();
             this.searchTextBox = new System.Windows.Forms.TextBox();
@@ -94,8 +93,6 @@
             this.storeContainer.Panel1.SuspendLayout();
             this.storeContainer.Panel2.SuspendLayout();
             this.storeContainer.SuspendLayout();
-            this.homePanel.SuspendLayout();
-            this.homeFlowLayoutPanel.SuspendLayout();
             this.storeFrontPanel.SuspendLayout();
             this.panel13.SuspendLayout();
             this.panel12.SuspendLayout();
@@ -103,7 +100,8 @@
             this.panel10.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel8.SuspendLayout();
-            this.panel7.SuspendLayout();
+            this.homePanel.SuspendLayout();
+            this.homeFlowLayoutPanel.SuspendLayout();
             this.searchPanel.SuspendLayout();
             this.searchInputPanel.SuspendLayout();
             this.searchButtonPanel.SuspendLayout();
@@ -170,7 +168,7 @@
             this.navigationPanel.Controls.Add(this.homeMenuButton);
             this.navigationPanel.Location = new System.Drawing.Point(3, 159);
             this.navigationPanel.Name = "navigationPanel";
-            this.navigationPanel.Size = new System.Drawing.Size(208, 576);
+            this.navigationPanel.Size = new System.Drawing.Size(205, 576);
             this.navigationPanel.TabIndex = 2;
             // 
             // button8
@@ -188,7 +186,7 @@
             this.button8.Location = new System.Drawing.Point(0, 350);
             this.button8.Name = "button8";
             this.button8.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            this.button8.Size = new System.Drawing.Size(208, 50);
+            this.button8.Size = new System.Drawing.Size(205, 50);
             this.button8.TabIndex = 9;
             this.button8.Text = "Add Vendor";
             this.button8.UseVisualStyleBackColor = false;
@@ -208,7 +206,7 @@
             this.button7.Location = new System.Drawing.Point(0, 300);
             this.button7.Name = "button7";
             this.button7.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            this.button7.Size = new System.Drawing.Size(208, 50);
+            this.button7.Size = new System.Drawing.Size(205, 50);
             this.button7.TabIndex = 8;
             this.button7.Text = "Search Vendor";
             this.button7.UseVisualStyleBackColor = false;
@@ -228,7 +226,7 @@
             this.button6.Location = new System.Drawing.Point(0, 250);
             this.button6.Name = "button6";
             this.button6.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            this.button6.Size = new System.Drawing.Size(208, 50);
+            this.button6.Size = new System.Drawing.Size(205, 50);
             this.button6.TabIndex = 7;
             this.button6.Text = "Search product";
             this.button6.UseVisualStyleBackColor = false;
@@ -249,7 +247,7 @@
             this.button4.Location = new System.Drawing.Point(0, 200);
             this.button4.Name = "button4";
             this.button4.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            this.button4.Size = new System.Drawing.Size(208, 50);
+            this.button4.Size = new System.Drawing.Size(205, 50);
             this.button4.TabIndex = 6;
             this.button4.Text = "Vendors";
             this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -271,11 +269,12 @@
             this.button3.Location = new System.Drawing.Point(0, 150);
             this.button3.Name = "button3";
             this.button3.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            this.button3.Size = new System.Drawing.Size(208, 50);
+            this.button3.Size = new System.Drawing.Size(205, 50);
             this.button3.TabIndex = 5;
             this.button3.Text = "Orders";
             this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -292,7 +291,7 @@
             this.button2.Location = new System.Drawing.Point(0, 100);
             this.button2.Name = "button2";
             this.button2.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            this.button2.Size = new System.Drawing.Size(208, 50);
+            this.button2.Size = new System.Drawing.Size(205, 50);
             this.button2.TabIndex = 4;
             this.button2.Text = "Add product";
             this.button2.UseVisualStyleBackColor = false;
@@ -313,7 +312,7 @@
             this.button1.Location = new System.Drawing.Point(0, 50);
             this.button1.Name = "button1";
             this.button1.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(208, 50);
+            this.button1.Size = new System.Drawing.Size(205, 50);
             this.button1.TabIndex = 3;
             this.button1.Text = "Products";
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -335,7 +334,7 @@
             this.homeMenuButton.Location = new System.Drawing.Point(0, 0);
             this.homeMenuButton.Name = "homeMenuButton";
             this.homeMenuButton.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            this.homeMenuButton.Size = new System.Drawing.Size(208, 50);
+            this.homeMenuButton.Size = new System.Drawing.Size(205, 50);
             this.homeMenuButton.TabIndex = 2;
             this.homeMenuButton.Text = "Home";
             this.homeMenuButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -384,8 +383,8 @@
             // storeContainer.Panel2
             // 
             this.storeContainer.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(211)))), ((int)(((byte)(177)))));
-            this.storeContainer.Panel2.Controls.Add(this.homePanel);
             this.storeContainer.Panel2.Controls.Add(this.storeFrontPanel);
+            this.storeContainer.Panel2.Controls.Add(this.homePanel);
             this.storeContainer.Size = new System.Drawing.Size(1393, 1041);
             this.storeContainer.SplitterDistance = 140;
             this.storeContainer.SplitterWidth = 1;
@@ -402,59 +401,38 @@
             this.storeNameLabel.Text = "Store Name";
             this.storeNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // homePanel
-            // 
-            this.homePanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.homePanel.Controls.Add(this.homeFlowLayoutPanel);
-            this.homePanel.Location = new System.Drawing.Point(0, 0);
-            this.homePanel.Name = "homePanel";
-            this.homePanel.Size = new System.Drawing.Size(1393, 909);
-            this.homePanel.TabIndex = 1;
-            // 
-            // homeFlowLayoutPanel
-            // 
-            this.homeFlowLayoutPanel.Controls.Add(this.addStoreUserControl);
-            this.homeFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.homeFlowLayoutPanel.Location = new System.Drawing.Point(0, 0);
-            this.homeFlowLayoutPanel.Margin = new System.Windows.Forms.Padding(0, 2, 3, 2);
-            this.homeFlowLayoutPanel.Name = "homeFlowLayoutPanel";
-            this.homeFlowLayoutPanel.Size = new System.Drawing.Size(1393, 909);
-            this.homeFlowLayoutPanel.TabIndex = 0;
-            // 
-            // addStoreUserControl
-            // 
-            this.addStoreUserControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
-            this.addStoreUserControl.Location = new System.Drawing.Point(3, 3);
-            this.addStoreUserControl.Name = "addStoreUserControl";
-            this.addStoreUserControl.Size = new System.Drawing.Size(160, 200);
-            this.addStoreUserControl.TabIndex = 0;
-            // 
             // storeFrontPanel
             // 
-            this.storeFrontPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.storeFrontPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.storeFrontPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.storeFrontPanel.Controls.Add(this.AddVendorIcon);
             this.storeFrontPanel.Controls.Add(this.panel13);
             this.storeFrontPanel.Controls.Add(this.panel12);
             this.storeFrontPanel.Controls.Add(this.panel11);
             this.storeFrontPanel.Controls.Add(this.panel10);
             this.storeFrontPanel.Controls.Add(this.panel9);
             this.storeFrontPanel.Controls.Add(this.panel8);
-            this.storeFrontPanel.Controls.Add(this.panel7);
             this.storeFrontPanel.Controls.Add(this.panel6);
             this.storeFrontPanel.Controls.Add(this.panel5);
             this.storeFrontPanel.Controls.Add(this.panel3);
             this.storeFrontPanel.Controls.Add(this.panel4);
             this.storeFrontPanel.Controls.Add(this.panel2);
             this.storeFrontPanel.Controls.Add(this.panel1);
-            this.storeFrontPanel.Location = new System.Drawing.Point(7, 0);
+            this.storeFrontPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.storeFrontPanel.Location = new System.Drawing.Point(0, 0);
             this.storeFrontPanel.Name = "storeFrontPanel";
-            this.storeFrontPanel.Size = new System.Drawing.Size(1393, 909);
+            this.storeFrontPanel.Size = new System.Drawing.Size(1393, 900);
             this.storeFrontPanel.TabIndex = 0;
+            // 
+            // AddVendorIcon
+            // 
+            this.AddVendorIcon.Icon = ((System.Drawing.Image)(resources.GetObject("AddVendorIcon.Icon")));
+            this.AddVendorIcon.IconName = null;
+            this.AddVendorIcon.Location = new System.Drawing.Point(242, 250);
+            this.AddVendorIcon.Name = "AddVendorIcon";
+            this.AddVendorIcon.Size = new System.Drawing.Size(97, 109);
+            this.AddVendorIcon.TabIndex = 6;
+            this.AddVendorIcon.Click += new System.EventHandler(this.AddVendorIcon_Click);
             // 
             // panel13
             // 
@@ -564,24 +542,6 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Add Manger";
             // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.panel7.Controls.Add(this.label1);
-            this.panel7.Location = new System.Drawing.Point(238, 250);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(97, 93);
-            this.panel7.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(24, 78);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Add Vendor";
-            // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.Blue;
@@ -630,14 +590,43 @@
             this.panel1.Size = new System.Drawing.Size(200, 100);
             this.panel1.TabIndex = 0;
             // 
+            // homePanel
+            // 
+            this.homePanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.homePanel.Controls.Add(this.homeFlowLayoutPanel);
+            this.homePanel.Location = new System.Drawing.Point(0, 0);
+            this.homePanel.Name = "homePanel";
+            this.homePanel.Size = new System.Drawing.Size(1393, 918);
+            this.homePanel.TabIndex = 1;
+            // 
+            // homeFlowLayoutPanel
+            // 
+            this.homeFlowLayoutPanel.Controls.Add(this.addStoreUserControl);
+            this.homeFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.homeFlowLayoutPanel.Location = new System.Drawing.Point(0, 0);
+            this.homeFlowLayoutPanel.Margin = new System.Windows.Forms.Padding(0, 2, 3, 2);
+            this.homeFlowLayoutPanel.Name = "homeFlowLayoutPanel";
+            this.homeFlowLayoutPanel.Size = new System.Drawing.Size(1393, 918);
+            this.homeFlowLayoutPanel.TabIndex = 0;
+            // 
+            // addStoreUserControl
+            // 
+            this.addStoreUserControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
+            this.addStoreUserControl.Location = new System.Drawing.Point(3, 3);
+            this.addStoreUserControl.Name = "addStoreUserControl";
+            this.addStoreUserControl.Size = new System.Drawing.Size(160, 200);
+            this.addStoreUserControl.TabIndex = 0;
+            // 
             // searchPanel
             // 
             this.searchPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.searchPanel.Controls.Add(this.searchInputPanel);
-            this.searchPanel.Location = new System.Drawing.Point(3, 106);
+            this.searchPanel.Location = new System.Drawing.Point(0, 105);
             this.searchPanel.Name = "searchPanel";
-            this.searchPanel.Size = new System.Drawing.Size(297, 299);
+            this.searchPanel.Size = new System.Drawing.Size(312, 299);
             this.searchPanel.TabIndex = 7;
             // 
             // searchInputPanel
@@ -647,7 +636,7 @@
             this.searchInputPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.searchInputPanel.Location = new System.Drawing.Point(0, 0);
             this.searchInputPanel.Name = "searchInputPanel";
-            this.searchInputPanel.Size = new System.Drawing.Size(297, 35);
+            this.searchInputPanel.Size = new System.Drawing.Size(312, 35);
             this.searchInputPanel.TabIndex = 0;
             // 
             // searchTextBox
@@ -656,14 +645,14 @@
             this.searchTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.searchTextBox.Location = new System.Drawing.Point(0, 0);
             this.searchTextBox.Name = "searchTextBox";
-            this.searchTextBox.Size = new System.Drawing.Size(262, 35);
+            this.searchTextBox.Size = new System.Drawing.Size(277, 35);
             this.searchTextBox.TabIndex = 6;
             // 
             // searchButtonPanel
             // 
             this.searchButtonPanel.Controls.Add(this.searchButton);
             this.searchButtonPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.searchButtonPanel.Location = new System.Drawing.Point(262, 0);
+            this.searchButtonPanel.Location = new System.Drawing.Point(277, 0);
             this.searchButtonPanel.Name = "searchButtonPanel";
             this.searchButtonPanel.Size = new System.Drawing.Size(35, 35);
             this.searchButtonPanel.TabIndex = 0;
@@ -684,6 +673,7 @@
             // 
             // windowOpPanel
             // 
+            this.windowOpPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.windowOpPanel.Controls.Add(this.minPanel);
             this.windowOpPanel.Controls.Add(this.maxPanel);
             this.windowOpPanel.Controls.Add(this.closePanel);
@@ -830,8 +820,6 @@
             this.storeContainer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.storeContainer)).EndInit();
             this.storeContainer.ResumeLayout(false);
-            this.homePanel.ResumeLayout(false);
-            this.homeFlowLayoutPanel.ResumeLayout(false);
             this.storeFrontPanel.ResumeLayout(false);
             this.panel13.ResumeLayout(false);
             this.panel13.PerformLayout();
@@ -845,8 +833,8 @@
             this.panel9.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
+            this.homePanel.ResumeLayout(false);
+            this.homeFlowLayoutPanel.ResumeLayout(false);
             this.searchPanel.ResumeLayout(false);
             this.searchInputPanel.ResumeLayout(false);
             this.searchInputPanel.PerformLayout();
@@ -903,8 +891,6 @@
         private Label label3;
         private Panel panel8;
         private Label label2;
-        private Panel panel7;
-        private Label label1;
         private Panel panel6;
         private Panel panel5;
         private Panel panel3;
@@ -913,5 +899,6 @@
         private Panel panel1;
         private UserControls.AddStoreUserControl addStoreUserControl;
         private Button restoreButton;
+        private UserControls.IconUserControl AddVendorIcon;
     }
 }
