@@ -16,5 +16,10 @@ namespace MyStores.View
         {
             InitializeComponent();
         }
+
+        private void closeButton_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using MyStores.Controller;
 using MyStores.Model;
+using MyStores.View;
 
 namespace MyStores.UserControls
 {
@@ -27,6 +28,8 @@ namespace MyStores.UserControls
                 errorLabel.Text = "You've successfully logged in";
                 errorLabel.Visible = true;
                 errorLabel.ForeColor = Color.Green;
+                var MainForm = new MainDashboard();
+                MainForm.Show();
             }
             else if (emailTextBox.Text == String.Empty)
             {
