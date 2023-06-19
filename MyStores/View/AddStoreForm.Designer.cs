@@ -101,7 +101,7 @@
             this.cityErrorLabel.AutoSize = true;
             this.cityErrorLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cityErrorLabel.ForeColor = System.Drawing.Color.Red;
-            this.cityErrorLabel.Location = new System.Drawing.Point(75, 187);
+            this.cityErrorLabel.Location = new System.Drawing.Point(75, 192);
             this.cityErrorLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.cityErrorLabel.Name = "cityErrorLabel";
             this.cityErrorLabel.Size = new System.Drawing.Size(55, 15);
@@ -322,6 +322,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AddStoreForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddStoreForm";
             this.groupBox.ResumeLayout(false);
             this.groupBox.PerformLayout();
