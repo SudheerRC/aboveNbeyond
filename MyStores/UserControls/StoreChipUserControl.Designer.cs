@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StoreChipUserControl));
-            this.openButton = new System.Windows.Forms.Button();
             this.storeImagePictureBox = new System.Windows.Forms.PictureBox();
             this.storeNameLabel = new System.Windows.Forms.Label();
             this.cityLabel = new System.Windows.Forms.Label();
@@ -39,18 +38,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.storeImagePictureBox)).BeginInit();
             this.managerPanel.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // openButton
-            // 
-            this.openButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.openButton.BackColor = System.Drawing.Color.White;
-            this.openButton.Location = new System.Drawing.Point(0, 0);
-            this.openButton.Name = "openButton";
-            this.openButton.Size = new System.Drawing.Size(160, 200);
-            this.openButton.TabIndex = 9;
-            this.openButton.UseVisualStyleBackColor = false;
-            this.openButton.Visible = false;
-            this.openButton.Click += new System.EventHandler(this.openButton_Click);
             // 
             // storeImagePictureBox
             // 
@@ -121,7 +108,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.openButton);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
             this.Controls.Add(this.storeImagePictureBox);
             this.Controls.Add(this.storeNameLabel);
             this.Controls.Add(this.cityLabel);
@@ -135,8 +122,6 @@
         }
 
         #endregion
-
-        private Button openButton;
         private PictureBox storeImagePictureBox;
         private Label storeNameLabel;
         private Label cityLabel;

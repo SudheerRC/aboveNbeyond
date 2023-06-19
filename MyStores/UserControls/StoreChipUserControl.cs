@@ -16,10 +16,5 @@ namespace MyStores.UserControls
         {
             InitializeComponent();
         }
-
-        private void openButton_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Store");
-        }
     }
 }

@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddStoreUserControl));
             this.storeNameLabel = new System.Windows.Forms.Label();
             this.storeImagePictureBox = new System.Windows.Forms.PictureBox();
-            this.openButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.storeImagePictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,28 +55,16 @@
             this.storeImagePictureBox.TabIndex = 4;
             this.storeImagePictureBox.TabStop = false;
             // 
-            // openButton
-            // 
-            this.openButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.openButton.BackColor = System.Drawing.Color.White;
-            this.openButton.Location = new System.Drawing.Point(0, 0);
-            this.openButton.Name = "openButton";
-            this.openButton.Size = new System.Drawing.Size(160, 200);
-            this.openButton.TabIndex = 3;
-            this.openButton.UseVisualStyleBackColor = false;
-            this.openButton.Visible = false;
-            this.openButton.Click += new System.EventHandler(this.openButton_Click);
-            // 
             // AddStoreUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
-            this.Controls.Add(this.openButton);
             this.Controls.Add(this.storeImagePictureBox);
             this.Controls.Add(this.storeNameLabel);
             this.Name = "AddStoreUserControl";
             this.Size = new System.Drawing.Size(160, 200);
+            this.Click += new System.EventHandler(this.AddStoreUserControl_Click);
             ((System.ComponentModel.ISupportInitialize)(this.storeImagePictureBox)).EndInit();
             this.ResumeLayout(false);
 
@@ -86,6 +73,5 @@
         #endregion
         private Label storeNameLabel;
         private PictureBox storeImagePictureBox;
-        private Button openButton;
     }
 }
