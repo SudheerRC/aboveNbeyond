@@ -43,9 +43,11 @@
             groupBox.Controls.Add(signUpLinkLabel);
             groupBox.Controls.Add(newLabel);
             groupBox.ForeColor = Color.Black;
-            groupBox.Location = new Point(631, 762);
+            groupBox.Location = new Point(340, 357);
+            groupBox.Margin = new Padding(2, 1, 2, 1);
             groupBox.Name = "groupBox";
-            groupBox.Size = new Size(646, 100);
+            groupBox.Padding = new Padding(2, 1, 2, 1);
+            groupBox.Size = new Size(348, 47);
             groupBox.TabIndex = 0;
             groupBox.TabStop = false;
             // 
@@ -53,9 +55,10 @@
             // 
             signUpLinkLabel.AutoSize = true;
             signUpLinkLabel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            signUpLinkLabel.Location = new Point(304, 35);
+            signUpLinkLabel.Location = new Point(164, 16);
+            signUpLinkLabel.Margin = new Padding(2, 0, 2, 0);
             signUpLinkLabel.Name = "signUpLinkLabel";
-            signUpLinkLabel.Size = new Size(195, 37);
+            signUpLinkLabel.Size = new Size(100, 19);
             signUpLinkLabel.TabIndex = 7;
             signUpLinkLabel.TabStop = true;
             signUpLinkLabel.Text = "Click to Signup";
@@ -65,42 +68,46 @@
             // 
             newLabel.AutoSize = true;
             newLabel.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            newLabel.Location = new Point(150, 29);
+            newLabel.Location = new Point(81, 14);
+            newLabel.Margin = new Padding(2, 0, 2, 0);
             newLabel.Name = "newLabel";
-            newLabel.Size = new Size(158, 41);
+            newLabel.Size = new Size(79, 20);
             newLabel.TabIndex = 8;
             newLabel.Text = "New here?";
             // 
             // loginUserControl
             // 
             loginUserControl.BackColor = Color.MistyRose;
-            loginUserControl.Location = new Point(631, 210);
+            loginUserControl.Location = new Point(340, 98);
+            loginUserControl.Margin = new Padding(1, 0, 1, 0);
             loginUserControl.Name = "loginUserControl";
-            loginUserControl.Size = new Size(646, 456);
+            loginUserControl.Size = new Size(348, 214);
             loginUserControl.TabIndex = 1;
             // 
             // signUpUserControl
             // 
             signUpUserControl.BackColor = Color.MistyRose;
-            signUpUserControl.Location = new Point(273, 88);
+            signUpUserControl.Location = new Point(147, 41);
+            signUpUserControl.Margin = new Padding(1, 0, 1, 0);
             signUpUserControl.Name = "signUpUserControl";
-            signUpUserControl.Size = new Size(1346, 820);
+            signUpUserControl.Size = new Size(725, 384);
             signUpUserControl.TabIndex = 2;
             signUpUserControl.Visible = false;
             // 
             // LoginForm
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            ClientSize = new Size(1894, 1009);
+            ClientSize = new Size(1025, 488);
             Controls.Add(signUpUserControl);
             Controls.Add(loginUserControl);
             Controls.Add(groupBox);
+            Margin = new Padding(2, 1, 2, 1);
             MaximizeBox = false;
-            MaximumSize = new Size(1920, 1080);
+            MaximumSize = new Size(1041, 527);
             MinimizeBox = false;
-            MinimumSize = new Size(1920, 1080);
+            MinimumSize = new Size(1041, 527);
             Name = "LoginForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "MyStores Home Page";

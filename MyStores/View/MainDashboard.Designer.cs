@@ -329,7 +329,7 @@
             this.closeButton.TabIndex = 3;
             this.closeButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.closeButton.UseVisualStyleBackColor = false;
-            this.closeButton.Click += new System.EventHandler(this.closeButton_Click_1);
+            this.closeButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
             // MainDashboard
             // 
