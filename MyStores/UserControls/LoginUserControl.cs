@@ -87,5 +87,6 @@ namespace MyStores.UserControls
                 LoginButton_Click(sender, e);
             }
         }
+        
     }
 }

@@ -183,6 +183,7 @@
             // 
             // storeNametextBox
             // 
+            storeNametextBox.BorderStyle = BorderStyle.FixedSingle;
             storeNametextBox.ForeColor = SystemColors.WindowText;
             storeNametextBox.Location = new Point(160, 70);
             storeNametextBox.Margin = new Padding(2, 1, 2, 1);
