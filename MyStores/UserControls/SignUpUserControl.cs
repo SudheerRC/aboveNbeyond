@@ -75,6 +75,7 @@ namespace MyStores.UserControls
                 emailErrorLabel.Visible = false;
                 passwordErrorLabel.Visible = false;
                 phoneErrorLabel.Visible = false;
+                errorLabel.Visible = false;
                 var newUser = new Users
                 {
                     FirstName = fnameTextBox.Text,

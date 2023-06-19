@@ -30,7 +30,7 @@ namespace MyStores.View
         {
             AddStoreUserControl[] homeChips = new AddStoreUserControl[99];
             homeFlowLayoutPanel.Controls.Add(new AddStoreUserControl());
-            StoreChipUserControl[] homeChips = new StoreChipUserControl[99];
+            //StoreChipUserControl[] homeChips = new StoreChipUserControl[99];
 
 
         }
