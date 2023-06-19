@@ -87,12 +87,15 @@ namespace MyStores.Dal
         {
             using var connection = DbConnection.GetConnection();
             connection.Open();
-            string query = "INSERT INTO Stores(ownerID, streetAddress, city, state, zipCode, country) " +
-                           "VALUES (@ownerId, @streetAddress, @city, @state, @zipCode, @country)";
+            string query = "INSERT INTO Stores(ownerID, storeName, streetAddress, city, state, zipCode, country) " +
+                           "VALUES (@ownerId, @storeName, @streetAddress, @city, @state, @zipCode, @country)";
             using var command = new SqlCommand(query, connection);
 
             command.Parameters.Add("@ownerId", System.Data.SqlDbType.Int);
             command.Parameters["@ownerId"].Value = newStore.OwnerId;
+
+            command.Parameters.Add("@storeName", System.Data.SqlDbType.VarChar);
+            command.Parameters["@storeName"].Value = newStore.Name;
 
             command.Parameters.Add("@streetAddress", System.Data.SqlDbType.VarChar);
             command.Parameters["@streetAddress"].Value = newStore.StreetAddress;

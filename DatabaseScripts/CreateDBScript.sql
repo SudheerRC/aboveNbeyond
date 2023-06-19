@@ -112,6 +112,7 @@ GO
 CREATE TABLE [dbo].[Stores](
 	[storeID] [int] IDENTITY(1,1) NOT NULL,
 	[ownerID] [int] NOT NULL REFERENCES UserDetails(userID),
+	[storeName] [varchar](50),
 	[streetAddress] [varchar](50),
 	[city] [varchar](50),
 	[state] [varchar](50),

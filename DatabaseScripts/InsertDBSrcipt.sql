@@ -42,8 +42,8 @@ INSERT [dbo].[Users] ([password], [email], [userID]) VALUES ('mystores@123', 'my
 SET ANSI_PADDING OFF
 GO
 SET IDENTITY_INSERT [dbo].[Stores] ON
-INSERT [dbo].[Stores] ([storeID], [ownerID], [streetAddress], [city], [state], [zipCode], [country]) VALUES (1, 1, '564-skyline view', 'Carrollton', 'Georgia', '30118', 'United States')
-INSERT [dbo].[Stores] ([storeID], [ownerID], [streetAddress], [city], [state], [zipCode], [country]) VALUES (2, 2, '45-Old school road', 'Newnan', 'Georgia', '30112', 'United States')
+INSERT [dbo].[Stores] ([storeID], [ownerID], [storeName], [streetAddress], [city], [state], [zipCode], [country]) VALUES (1, 1, 'Skyline View Shoppette', '564-skyline view', 'Carrollton', 'Georgia', '30118', 'United States')
+INSERT [dbo].[Stores] ([storeID], [ownerID], [streetAddress], [city], [state], [zipCode], [country]) VALUES (2, 2, 'School road Store', '45-Old school road', 'Newnan', 'Georgia', '30112', 'United States')
 SET IDENTITY_INSERT [dbo].[Stores] OFF
 
 SET ANSI_PADDING OFF
