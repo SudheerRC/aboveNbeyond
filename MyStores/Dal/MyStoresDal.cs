@@ -1,8 +1,6 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
-using System.Security.Cryptography.X509Certificates;
 using MyStores.Model;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace MyStores.Dal
 {
@@ -247,7 +245,7 @@ namespace MyStores.Dal
             connection.Open();
 
             string query =
-                "SELECT productID, productName, productSize, description, departmentName, barcode, sellingPrice FROM PRODUCT WHERE ProductName LIKE '%@productName%'";
+                "SELECT productID, productName, productSize, description, departmentName, barcode, sellingPrice FROM PRODUCT WHERE ProductName LIKE '%'+ @productName +'%'";
             using var command = new SqlCommand(query, connection);
 
             command.Parameters.Add("@productName", System.Data.SqlDbType.VarChar);
@@ -396,7 +394,7 @@ namespace MyStores.Dal
             connection.Open();
 
             string query =
-                "SELECT vendorID, vendorName, streetAddress, city, state, zipCode, country, phoneNumber FROM Vendor WHERE vendorName LIKE '%@vendorName%'";
+                "SELECT vendorID, vendorName, streetAddress, city, state, zipCode, country, phoneNumber FROM Vendor WHERE vendorName LIKE '%' + @vendorName+ '%'";
             using var command = new SqlCommand(query, connection);
 
             command.Parameters.Add("@vendorName", System.Data.SqlDbType.VarChar);
@@ -552,7 +550,7 @@ namespace MyStores.Dal
             connection.Open();
 
             string query =
-                "SELECT storeID, ownerID, storeName, streetAddress, city, state, zipCode, country FROM Stores WHERE storeName LIKE '%@storeName%'";
+                "SELECT storeID, ownerID, storeName, streetAddress, city, state, zipCode, country FROM Stores WHERE storeName LIKE '%' + @storeName + '%'";
             using var command = new SqlCommand(query, connection);
 
             command.Parameters.Add("@storeName", System.Data.SqlDbType.VarChar);
@@ -787,7 +785,7 @@ namespace MyStores.Dal
             connection.Open();
 
             string query =
-                "SELECT vendorID, purchasePrice, Inventory.sellingPrice, quantity, Inventory.productID FROM Product,Inventory WHERE Inventory.productID = Product.productID and Inventory.storeID = @storeID and ProductName LIKE '%@productName%'";
+                "SELECT vendorID, purchasePrice, Inventory.sellingPrice, quantity, Inventory.productID FROM Product,Inventory WHERE Inventory.productID = Product.productID and Inventory.storeID = @storeID and ProductName LIKE '%' + @productName +'%'";
             using var command = new SqlCommand(query, connection);
 
             command.Parameters.Add("@storeID", System.Data.SqlDbType.Int);
