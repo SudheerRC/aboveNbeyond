@@ -364,7 +364,7 @@
             mainHomeTabUserControl.Location = new Point(0, 0);
             mainHomeTabUserControl.Margin = new Padding(11, 13, 11, 13);
             mainHomeTabUserControl.Name = "mainHomeTabUserControl";
-            mainHomeTabUserControl.Size = new Size(2587, 2005);
+            mainHomeTabUserControl.Size = new Size(2587, 2009);
             mainHomeTabUserControl.TabIndex = 0;
             // 
             // searchPanel
@@ -374,7 +374,7 @@
             searchPanel.Location = new Point(6, 226);
             searchPanel.Margin = new Padding(6);
             searchPanel.Name = "searchPanel";
-            searchPanel.Size = new Size(588, 638);
+            searchPanel.Size = new Size(592, 638);
             searchPanel.TabIndex = 7;
             // 
             // searchInputPanel
@@ -385,7 +385,7 @@
             searchInputPanel.Location = new Point(0, 0);
             searchInputPanel.Margin = new Padding(6);
             searchInputPanel.Name = "searchInputPanel";
-            searchInputPanel.Size = new Size(588, 75);
+            searchInputPanel.Size = new Size(592, 75);
             searchInputPanel.TabIndex = 0;
             // 
             // searchTextBox
@@ -397,14 +397,14 @@
             searchTextBox.Margin = new Padding(6);
             searchTextBox.Name = "searchTextBox";
             searchTextBox.PlaceholderText = "Coming in the next iteration";
-            searchTextBox.Size = new Size(523, 63);
+            searchTextBox.Size = new Size(527, 63);
             searchTextBox.TabIndex = 6;
             // 
             // searchButtonPanel
             // 
             searchButtonPanel.Controls.Add(searchButton);
             searchButtonPanel.Dock = DockStyle.Right;
-            searchButtonPanel.Location = new Point(523, 0);
+            searchButtonPanel.Location = new Point(527, 0);
             searchButtonPanel.Margin = new Padding(6);
             searchButtonPanel.Name = "searchButtonPanel";
             searchButtonPanel.Size = new Size(65, 75);
