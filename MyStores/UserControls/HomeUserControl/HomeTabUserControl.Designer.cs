@@ -31,13 +31,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeTabUserControl));
             this.homeFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.AddStoreButton = new System.Windows.Forms.Button();
+            this.mainStoreFrontUserControl = new MyStores.UserControls.HomeUserControl.StoreFrontUserControl();
+            this.storeFrontPanel = new System.Windows.Forms.Panel();
             this.homeFlowLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // homeFlowLayoutPanel
             // 
             this.homeFlowLayoutPanel.Controls.Add(this.AddStoreButton);
-            this.homeFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.homeFlowLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this.homeFlowLayoutPanel.Margin = new System.Windows.Forms.Padding(18);
             this.homeFlowLayoutPanel.Name = "homeFlowLayoutPanel";
@@ -63,11 +64,29 @@
             this.AddStoreButton.UseVisualStyleBackColor = false;
             this.AddStoreButton.Click += new System.EventHandler(this.AddStoreButton_Click);
             // 
+            // mainStoreFrontUserControl
+            // 
+            this.mainStoreFrontUserControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(211)))), ((int)(((byte)(177)))));
+            this.mainStoreFrontUserControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainStoreFrontUserControl.Location = new System.Drawing.Point(0, 0);
+            this.mainStoreFrontUserControl.Name = "mainStoreFrontUserControl";
+            this.mainStoreFrontUserControl.Size = new System.Drawing.Size(1390, 900);
+            this.mainStoreFrontUserControl.TabIndex = 2;
+            // 
+            // storeFrontPanel
+            // 
+            this.storeFrontPanel.Location = new System.Drawing.Point(21, 227);
+            this.storeFrontPanel.Name = "storeFrontPanel";
+            this.storeFrontPanel.Size = new System.Drawing.Size(1390, 900);
+            this.storeFrontPanel.TabIndex = 1;
+            // 
             // HomeTabUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(211)))), ((int)(((byte)(177)))));
+            this.Controls.Add(this.mainStoreFrontUserControl);
+            this.Controls.Add(this.storeFrontPanel);
             this.Controls.Add(this.homeFlowLayoutPanel);
             this.Name = "HomeTabUserControl";
             this.Size = new System.Drawing.Size(1390, 900);
@@ -81,5 +100,7 @@
 
         private FlowLayoutPanel homeFlowLayoutPanel;
         private Button AddStoreButton;
+        private StoreFrontUserControl mainStoreFrontUserControl;
+        private Panel storeFrontPanel;
     }
 }
