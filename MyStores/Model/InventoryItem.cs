@@ -6,7 +6,9 @@
 
         public int Quantity { get; set; }
 
-        public double Price { get; set; }
+        public double SellingPrice { get; set; }
+
+        public double PurchasePrice { get; set; }
 
         public Product? Item { get; set; }
     }

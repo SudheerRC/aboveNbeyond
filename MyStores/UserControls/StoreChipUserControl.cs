@@ -24,6 +24,7 @@ namespace MyStores.UserControls
         private string _name;
         private string _city;
         private string _managers;
+        private int _id;
 
         [Category("Custom Props")]
         public Image Icon
@@ -66,6 +67,17 @@ namespace MyStores.UserControls
             {
                 _managers = value;
                 managerNameLabel.Text = value;
+            }
+        }
+
+        [Category("Custom Props")]
+        public int Id
+        {
+            get { return _id; }
+            set
+            {
+                _id = value;
+                idLabel.Text = value.ToString();
             }
         }
 
