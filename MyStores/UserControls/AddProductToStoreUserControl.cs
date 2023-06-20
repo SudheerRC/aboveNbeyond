@@ -11,6 +11,9 @@ namespace MyStores.UserControls
         {
             InitializeComponent();
             _controller = new MyStoresController();
+
+            messageLabel.Text = @"The above are vendors you have added to this store. If you don't find the vendor " +
+                                @"you are looking for, consider adding them to your list by clicking the link below";
         }
 
         public void SetStore(int id)
@@ -20,13 +23,14 @@ namespace MyStores.UserControls
 
         private void hideAllPanels()
         {
-            vendorInfoPanel.Visible = false;
+            vendorPanel.Visible = false;
             pricePanel.Visible = false;
             productLookUpPanel.Visible = false;
         }
 
         private void loadVendorComboBox()
         {
+            vendorComboBox.DataSource = null;
             vendorComboBox.Items.Clear();
             List<Vendor> vendorList = _controller.SearchVendorByStoreId(_storeId);
             vendorComboBox.DataSource = vendorList;
@@ -66,18 +70,21 @@ namespace MyStores.UserControls
 
         private void nextButton_Click(object sender, EventArgs e)
         {
-            if (vendorInfoPanel.Visible)
+            if (vendorPanel.Visible)
             {
                 hideAllPanels();
+                productLookUpPanel.BringToFront();
                 productLookUpPanel.Visible = true;
-                previousButton.Visible = true;
+                previousButton.Enabled = true;
 
             }
             else if (productLookUpPanel.Visible)
             {
                 hideAllPanels();
+                pricePanel.BringToFront();
                 pricePanel.Visible = true;
                 nextButton.Enabled = false;
+                addButton.Enabled = true;
             }
         }
 
@@ -86,6 +93,7 @@ namespace MyStores.UserControls
             if (pricePanel.Visible)
             {
                 hideAllPanels();
+                productLookUpPanel.BringToFront();
                 productLookUpPanel.Visible = true;
                 nextButton.Visible = true;
                 addButton.Enabled = false;
@@ -94,7 +102,8 @@ namespace MyStores.UserControls
             else if (productLookUpPanel.Visible)
             {
                 hideAllPanels();
-                vendorInfoPanel.Visible = true;
+                vendorPanel.BringToFront();
+                vendorPanel.Visible = true;
                 nextButton.Enabled = true;
                 previousButton.Enabled = false;
             }
@@ -151,8 +160,8 @@ namespace MyStores.UserControls
             loadVendorComboBox();
 
             hideAllPanels();
-            vendorInfoPanel.BringToFront();
-            vendorInfoPanel.Visible = true;
+            vendorPanel.BringToFront();
+            vendorPanel.Visible = true;
         }
 
         private void searchButton_Click(object sender, EventArgs e)
@@ -242,6 +251,14 @@ namespace MyStores.UserControls
         private void AddProductToStoreUserControl_Load(object sender, EventArgs e)
         {
             resetControl();
+            setPanelParents();
+        }
+
+        private void setPanelParents()
+        {
+            vendorPanel.Parent = this;
+            pricePanel.Parent = this;
+            productLookUpPanel.Parent = this;
         }
     }
 }

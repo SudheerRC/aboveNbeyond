@@ -540,6 +540,43 @@ namespace MyStores.Dal
             return vendors;
         }
 
+        public List<Users> GetAllManagersOfStore(int storeId)
+        {
+            var managers = new List<Users>();
+            using var connection = DbConnection.GetConnection();
+            connection.Open();
+
+            string query =
+                "SELECT firstName, lastName, userID FROM UserDetails, StoreManagers " +
+                "WHERE userID = managerID AND storeID = @storeId";
+            using var command = new SqlCommand(query, connection);
+
+            command.Parameters.Add("@storeId", System.Data.SqlDbType.Int);
+            command.Parameters["@storeId"].Value = storeId;
+            using var reader = command.ExecuteReader();
+
+            var userIdOrdinal = reader.GetOrdinal("userID");
+            var firstNameOrdinal = reader.GetOrdinal("firstName");
+            var lastNameOrdinal = reader.GetOrdinal("lastName");
+
+            while (reader.Read())
+            {
+                var userId = reader.GetInt32(userIdOrdinal);
+                var firstName = reader.GetString(firstNameOrdinal);
+                var lastName = reader.GetString(lastNameOrdinal);
+
+                managers.Add(new Users
+                {
+                    FirstName = firstName,
+                    LastName = lastName,
+                    UserId = userId
+
+                });
+            }
+
+            return managers;
+        }
+
         /// <summary>
         /// Search based on the store name.
         /// </summary>

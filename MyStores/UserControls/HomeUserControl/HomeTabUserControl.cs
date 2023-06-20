@@ -37,7 +37,7 @@ namespace MyStores.UserControls.HomeUserControl
                 homeChips[i] = new StoreChipUserControl();
 
                 var managersNames = "Not Assigned";
-                List<Users> managers = storeList[i].Managers;
+                List<Users> managers = _controller.GetAllManagersOfStore(storeList[i].Id);
                 managersNames = ManagersNames(managers, managersNames);
 
                 homeChips[i].StoreName = storeList[i].Name;

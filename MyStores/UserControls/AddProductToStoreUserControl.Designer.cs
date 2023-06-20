@@ -196,7 +196,7 @@
             this.nextButton.ForeColor = System.Drawing.Color.White;
             this.nextButton.Location = new System.Drawing.Point(373, 378);
             this.nextButton.Name = "nextButton";
-            this.nextButton.Size = new System.Drawing.Size(87, 36);
+            this.nextButton.Size = new System.Drawing.Size(87, 31);
             this.nextButton.TabIndex = 6;
             this.nextButton.Text = "Next";
             this.nextButton.UseVisualStyleBackColor = false;
@@ -204,11 +204,10 @@
             // 
             // productLookUpPanel
             // 
-            this.productLookUpPanel.Controls.Add(this.vendorPanel);
             this.productLookUpPanel.Controls.Add(this.headingLabel);
             this.productLookUpPanel.Controls.Add(this.searchInputPanel);
             this.productLookUpPanel.Controls.Add(this.inventoryListView);
-            this.productLookUpPanel.Location = new System.Drawing.Point(0, 0);
+            this.productLookUpPanel.Location = new System.Drawing.Point(3, 3);
             this.productLookUpPanel.Name = "productLookUpPanel";
             this.productLookUpPanel.Size = new System.Drawing.Size(633, 369);
             this.productLookUpPanel.TabIndex = 7;
@@ -219,7 +218,7 @@
             this.vendorPanel.Controls.Add(this.vendorHeadingLabel);
             this.vendorPanel.Controls.Add(this.vendorComboBox);
             this.vendorPanel.Controls.Add(this.vendorPanelTitleLabel);
-            this.vendorPanel.Location = new System.Drawing.Point(0, 0);
+            this.vendorPanel.Location = new System.Drawing.Point(3, 3);
             this.vendorPanel.Name = "vendorPanel";
             this.vendorPanel.Size = new System.Drawing.Size(633, 369);
             this.vendorPanel.TabIndex = 14;
@@ -241,7 +240,6 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.addVendorToStoreButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
-            this.addVendorToStoreButton.Enabled = false;
             this.addVendorToStoreButton.FlatAppearance.BorderSize = 0;
             this.addVendorToStoreButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addVendorToStoreButton.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -469,7 +467,7 @@
             this.previousButton.ForeColor = System.Drawing.Color.White;
             this.previousButton.Location = new System.Drawing.Point(174, 378);
             this.previousButton.Name = "previousButton";
-            this.previousButton.Size = new System.Drawing.Size(87, 36);
+            this.previousButton.Size = new System.Drawing.Size(87, 31);
             this.previousButton.TabIndex = 8;
             this.previousButton.Text = "Previous";
             this.previousButton.UseVisualStyleBackColor = false;
@@ -488,7 +486,7 @@
             this.addButton.ForeColor = System.Drawing.Color.White;
             this.addButton.Location = new System.Drawing.Point(274, 378);
             this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(87, 36);
+            this.addButton.Size = new System.Drawing.Size(87, 31);
             this.addButton.TabIndex = 9;
             this.addButton.Text = "Add";
             this.addButton.UseVisualStyleBackColor = false;
@@ -499,12 +497,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.BlanchedAlmond;
+            this.Controls.Add(this.vendorPanel);
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.previousButton);
             this.Controls.Add(this.nextButton);
             this.Controls.Add(this.pricePanel);
             this.Name = "AddProductToStoreUserControl";
-            this.Size = new System.Drawing.Size(639, 423);
+            this.Size = new System.Drawing.Size(639, 418);
             this.Load += new System.EventHandler(this.AddProductToStoreUserControl_Load);
             this.searchInputPanel.ResumeLayout(false);
             this.searchInputPanel.PerformLayout();
