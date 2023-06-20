@@ -24,7 +24,7 @@ namespace MyStores.UserControls
             addStore.ShowDialog();
         }
 
-        private void AddStoreUserControl_Click(object sender, EventArgs e)
+        private void addStoreUserControl_Click(object sender, EventArgs e)
         {
             ChipClick();
         }

@@ -20,9 +20,70 @@ namespace MyStores.UserControls
 
         #region Properties
 
-        public string _storeName { get; set; }
-        public string _city { get; set; }
-        public string _managers { get; set; }
+        private Image _icon;
+        private string _name;
+        private string _city;
+        private string _managers;
+
+        [Category("Custom Props")]
+        public Image Icon
+        {
+            get { return _icon; }
+            set
+            {
+                _icon = value;
+                storeImagePictureBox.Image = value;
+            }
+        }
+
+        [Category("Custom Props")]
+        public string StoreName
+        {
+            get { return _name; }
+            set
+            {
+                _name = value;
+                storeNameLabel.Text = value;
+            }
+        }
+
+        [Category("Custom Props")]
+        public string City
+        {
+            get { return _city; }
+            set
+            {
+                _city = value;
+                cityLabel.Text = value;
+            }
+        }
+
+        [Category("Custom Props")]
+        public string Managers
+        {
+            get { return _managers; }
+            set
+            {
+                _managers = value;
+                managerNameLabel.Text = value;
+            }
+        }
+
+        #endregion
+
+        #region Hover
+
+        private void StoreChipUserControl_MouseEnter(object sender, EventArgs e)
+        {
+            this.BackColor = Color.FromArgb(28, 44, 98);
+            this.storeImagePictureBox.BackColor = Color.FromArgb(28, 44, 98);
+        }
+
+        private void StoreChipUserControl_MouseLeave(object sender, EventArgs e)
+        {
+            this.BackColor = Color.FromArgb(28, 44, 78);
+            this.storeImagePictureBox.BackColor = Color.FromArgb(28, 44, 78);
+        }
 
         #endregion
 

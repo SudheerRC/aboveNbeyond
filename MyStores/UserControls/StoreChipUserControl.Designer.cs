@@ -121,6 +121,8 @@
             this.Size = new System.Drawing.Size(160, 200);
             this.Load += new System.EventHandler(this.StoreChipUserControl_Load);
             this.Click += new System.EventHandler(this.StoreChipUserControl_Click);
+            this.MouseEnter += new System.EventHandler(this.StoreChipUserControl_MouseEnter);
+            this.MouseLeave += new System.EventHandler(this.StoreChipUserControl_MouseLeave);
             ((System.ComponentModel.ISupportInitialize)(this.storeImagePictureBox)).EndInit();
             this.managerPanel.ResumeLayout(false);
             this.ResumeLayout(false);
