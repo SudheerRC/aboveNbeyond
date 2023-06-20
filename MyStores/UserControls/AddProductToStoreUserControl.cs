@@ -32,10 +32,9 @@ namespace MyStores.UserControls
         private void loadVendorComboBox()
         {
             vendorComboBox.Items.Clear();
-            vendorComboBox.DisplayMember = "Name";
-            vendorComboBox.ValueMember = "Id";
-            vendorComboBox.DataSource = _controller.SearchVendorByStoreId(_storeId);
-            vendorComboBox.SelectedIndex = 0;
+            List<Vendor> vendorList = _controller.SearchVendorByStoreId(_storeId);
+            vendorComboBox.DataSource = vendorList;
+            vendorComboBox.SelectedIndex.Equals(0);
         }
 
         public void refreshListView()

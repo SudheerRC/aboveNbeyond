@@ -446,7 +446,7 @@ namespace MyStores.Dal
             connection.Open();
 
             string query =
-                "SELECT v.vendorID, vendorName, streetAddress, city, state, zipCode, country, phoneNumber FROM Vendor as v, StoreVendors as s WHERE v.vendorID = s.vendorID AND s.storeID = @storeId ";
+                "SELECT Vendor.vendorID, vendorName, streetAddress, city, state, zipCode, country, phoneNumber FROM Vendor, StoreVendors WHERE Vendor.vendorID = StoreVendors.vendorID AND StoreVendors.storeID = @storeId ";
             using var command = new SqlCommand(query, connection);
 
             command.Parameters.Add("@storeId", System.Data.SqlDbType.Int);
@@ -497,7 +497,7 @@ namespace MyStores.Dal
             connection.Open();
 
             string query =
-                "SELECT v.vendorID, vendorName, streetAddress, city, state, zipCode, country, phoneNumber FROM Vendor";
+                "SELECT vendorID, vendorName, streetAddress, city, state, zipCode, country, phoneNumber FROM Vendor";
             using var command = new SqlCommand(query, connection);
 
             using var reader = command.ExecuteReader();

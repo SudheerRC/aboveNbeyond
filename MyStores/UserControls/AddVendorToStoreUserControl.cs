@@ -71,8 +71,6 @@ namespace MyStores.UserControls
         private void loadVendorComboBox()
         {
             vendorComboBox.Items.Clear();
-            vendorComboBox.DisplayMember = "Name";
-            vendorComboBox.ValueMember = "Id";
             vendorComboBox.DataSource = _controller.GetAllVendors();
             vendorComboBox.SelectedIndex = 0;
         }

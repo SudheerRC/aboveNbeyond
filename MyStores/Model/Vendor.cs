@@ -20,5 +20,10 @@ namespace MyStores.Model
 
         [Phone]
         public string PhoneNumber { get; set; }
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }

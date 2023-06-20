@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddVendorToStoreUserControl));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.closeVendorFormPictureBox = new System.Windows.Forms.PictureBox();
             this.addVendorToStoreButton = new System.Windows.Forms.Button();
             this.vendorInfoPanel = new System.Windows.Forms.Panel();
             this.addVendorButton = new System.Windows.Forms.Button();
@@ -43,14 +44,13 @@
             this.vendorName = new System.Windows.Forms.ColumnHeader();
             this.city = new System.Windows.Forms.ColumnHeader();
             this.phoneNumber = new System.Windows.Forms.ColumnHeader();
-            this.closeVendorFormPictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.closeVendorFormPictureBox)).BeginInit();
             this.vendorInfoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.infoGraphicPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.closeVendorFormPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -78,13 +78,23 @@
             this.splitContainer1.SplitterDistance = 386;
             this.splitContainer1.TabIndex = 0;
             // 
+            // closeVendorFormPictureBox
+            // 
+            this.closeVendorFormPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("closeVendorFormPictureBox.Image")));
+            this.closeVendorFormPictureBox.Location = new System.Drawing.Point(168, 562);
+            this.closeVendorFormPictureBox.Name = "closeVendorFormPictureBox";
+            this.closeVendorFormPictureBox.Size = new System.Drawing.Size(48, 48);
+            this.closeVendorFormPictureBox.TabIndex = 108;
+            this.closeVendorFormPictureBox.TabStop = false;
+            this.closeVendorFormPictureBox.Visible = false;
+            this.closeVendorFormPictureBox.Click += new System.EventHandler(this.closeVendorFormPictureBox_Click);
+            // 
             // addVendorToStoreButton
             // 
             this.addVendorToStoreButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.addVendorToStoreButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
-            this.addVendorToStoreButton.Enabled = false;
             this.addVendorToStoreButton.FlatAppearance.BorderSize = 0;
             this.addVendorToStoreButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addVendorToStoreButton.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -114,7 +124,6 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.addVendorButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
-            this.addVendorButton.Enabled = false;
             this.addVendorButton.FlatAppearance.BorderSize = 0;
             this.addVendorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addVendorButton.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -224,17 +233,6 @@
             this.phoneNumber.Text = "Phone Number";
             this.phoneNumber.Width = 220;
             // 
-            // closeVendorFormPictureBox
-            // 
-            this.closeVendorFormPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("closeVendorFormPictureBox.Image")));
-            this.closeVendorFormPictureBox.Location = new System.Drawing.Point(168, 562);
-            this.closeVendorFormPictureBox.Name = "closeVendorFormPictureBox";
-            this.closeVendorFormPictureBox.Size = new System.Drawing.Size(48, 48);
-            this.closeVendorFormPictureBox.TabIndex = 108;
-            this.closeVendorFormPictureBox.TabStop = false;
-            this.closeVendorFormPictureBox.Visible = false;
-            this.closeVendorFormPictureBox.Click += new System.EventHandler(this.closeVendorFormPictureBox_Click);
-            // 
             // AddVendorToStoreUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -247,9 +245,9 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.closeVendorFormPictureBox)).EndInit();
             this.vendorInfoPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.infoGraphicPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.closeVendorFormPictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }

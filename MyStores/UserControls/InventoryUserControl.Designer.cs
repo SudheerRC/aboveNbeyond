@@ -126,6 +126,7 @@
             // 
             // searchInputPanel
             // 
+            this.searchInputPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.searchInputPanel.Controls.Add(this.searchTextBox);
             this.searchInputPanel.Controls.Add(this.searchButtonPanel);
             this.searchInputPanel.Location = new System.Drawing.Point(111, 21);
@@ -138,13 +139,13 @@
             this.searchTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.searchTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.searchTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.searchTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.searchTextBox.Location = new System.Drawing.Point(0, 0);
             this.searchTextBox.Multiline = true;
             this.searchTextBox.Name = "searchTextBox";
             this.searchTextBox.PlaceholderText = "Search for products in inventory";
-            this.searchTextBox.Size = new System.Drawing.Size(262, 35);
+            this.searchTextBox.Size = new System.Drawing.Size(260, 33);
             this.searchTextBox.TabIndex = 1;
             this.searchTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -152,9 +153,9 @@
             // 
             this.searchButtonPanel.Controls.Add(this.searchButton);
             this.searchButtonPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.searchButtonPanel.Location = new System.Drawing.Point(262, 0);
+            this.searchButtonPanel.Location = new System.Drawing.Point(260, 0);
             this.searchButtonPanel.Name = "searchButtonPanel";
-            this.searchButtonPanel.Size = new System.Drawing.Size(35, 35);
+            this.searchButtonPanel.Size = new System.Drawing.Size(35, 33);
             this.searchButtonPanel.TabIndex = 0;
             // 
             // searchButton
@@ -167,7 +168,7 @@
             this.searchButton.Image = ((System.Drawing.Image)(resources.GetObject("searchButton.Image")));
             this.searchButton.Location = new System.Drawing.Point(0, 0);
             this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(35, 35);
+            this.searchButton.Size = new System.Drawing.Size(35, 33);
             this.searchButton.TabIndex = 2;
             this.searchButton.UseVisualStyleBackColor = false;
             this.searchButton.Click += new System.EventHandler(this.searchButton_Click_1);
