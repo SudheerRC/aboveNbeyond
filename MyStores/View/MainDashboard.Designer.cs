@@ -44,6 +44,7 @@
             this.workspaceContainer = new System.Windows.Forms.SplitContainer();
             this.storeContainer = new System.Windows.Forms.SplitContainer();
             this.storeNameLabel = new System.Windows.Forms.Label();
+            this.mainStoreFrontUserControl = new MyStores.UserControls.HomeUserControl.StoreFrontUserControl();
             this.mainHomeTabUserControl = new MyStores.UserControls.HomeUserControl.HomeTabUserControl();
             this.searchPanel = new System.Windows.Forms.Panel();
             this.searchInputPanel = new System.Windows.Forms.Panel();
@@ -352,6 +353,7 @@
             // storeContainer.Panel2
             // 
             this.storeContainer.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(211)))), ((int)(((byte)(177)))));
+            this.storeContainer.Panel2.Controls.Add(this.mainStoreFrontUserControl);
             this.storeContainer.Panel2.Controls.Add(this.mainHomeTabUserControl);
             this.storeContainer.Size = new System.Drawing.Size(1393, 1041);
             this.storeContainer.SplitterDistance = 140;
@@ -369,6 +371,17 @@
             this.storeNameLabel.Text = "Store Name";
             this.storeNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // mainStoreFrontUserControl
+            // 
+            this.mainStoreFrontUserControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.mainStoreFrontUserControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(211)))), ((int)(((byte)(177)))));
+            this.mainStoreFrontUserControl.Location = new System.Drawing.Point(1, 0);
+            this.mainStoreFrontUserControl.Name = "mainStoreFrontUserControl";
+            this.mainStoreFrontUserControl.Size = new System.Drawing.Size(1390, 900);
+            this.mainStoreFrontUserControl.TabIndex = 1;
+            // 
             // mainHomeTabUserControl
             // 
             this.mainHomeTabUserControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -377,7 +390,7 @@
             this.mainHomeTabUserControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(211)))), ((int)(((byte)(177)))));
             this.mainHomeTabUserControl.Location = new System.Drawing.Point(0, 0);
             this.mainHomeTabUserControl.Name = "mainHomeTabUserControl";
-            this.mainHomeTabUserControl.Size = new System.Drawing.Size(1393, 903);
+            this.mainHomeTabUserControl.Size = new System.Drawing.Size(1393, 909);
             this.mainHomeTabUserControl.TabIndex = 0;
             // 
             // searchPanel
@@ -387,7 +400,7 @@
             this.searchPanel.Controls.Add(this.searchInputPanel);
             this.searchPanel.Location = new System.Drawing.Point(3, 106);
             this.searchPanel.Name = "searchPanel";
-            this.searchPanel.Size = new System.Drawing.Size(297, 299);
+            this.searchPanel.Size = new System.Drawing.Size(303, 299);
             this.searchPanel.TabIndex = 7;
             // 
             // searchInputPanel
@@ -397,7 +410,7 @@
             this.searchInputPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.searchInputPanel.Location = new System.Drawing.Point(0, 0);
             this.searchInputPanel.Name = "searchInputPanel";
-            this.searchInputPanel.Size = new System.Drawing.Size(297, 35);
+            this.searchInputPanel.Size = new System.Drawing.Size(303, 35);
             this.searchInputPanel.TabIndex = 0;
             // 
             // searchTextBox
@@ -406,14 +419,14 @@
             this.searchTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.searchTextBox.Location = new System.Drawing.Point(0, 0);
             this.searchTextBox.Name = "searchTextBox";
-            this.searchTextBox.Size = new System.Drawing.Size(262, 35);
+            this.searchTextBox.Size = new System.Drawing.Size(268, 35);
             this.searchTextBox.TabIndex = 6;
             // 
             // searchButtonPanel
             // 
             this.searchButtonPanel.Controls.Add(this.searchButton);
             this.searchButtonPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.searchButtonPanel.Location = new System.Drawing.Point(262, 0);
+            this.searchButtonPanel.Location = new System.Drawing.Point(268, 0);
             this.searchButtonPanel.Name = "searchButtonPanel";
             this.searchButtonPanel.Size = new System.Drawing.Size(35, 35);
             this.searchButtonPanel.TabIndex = 0;
@@ -625,5 +638,6 @@
         private Button button1;
         private Button restoreButton;
         private UserControls.HomeUserControl.HomeTabUserControl mainHomeTabUserControl;
+        private UserControls.HomeUserControl.StoreFrontUserControl mainStoreFrontUserControl;
     }
 }

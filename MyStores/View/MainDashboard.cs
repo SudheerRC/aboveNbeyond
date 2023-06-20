@@ -13,35 +13,27 @@ namespace MyStores.View
             formScaling();
 
             mainHomeTabUserControl.Parent = storeContainer.Panel2;
+            mainHomeTabUserControl.Dock = DockStyle.Top;
+            mainStoreFrontUserControl.Parent = storeContainer.Panel2;
+            mainStoreFrontUserControl.Dock = DockStyle.Top;
         }
 
         public void SetOwner(Users setUser)
         {
             _owner = setUser;
             mainHomeTabUserControl.SetOwner(_owner);
-            this.populateHomePanel();
+        }
+
+        private void hideAllUserControls()
+        {
+            mainHomeTabUserControl.Visible = false;
+            mainStoreFrontUserControl.Visible = false;
         }
 
         private void CloseButton_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.OK;
             this.Close();
-        }
-
-        private void populateHomePanel()
-        {
-            StoreChipUserControl[] homeChips = new StoreChipUserControl[99];
-
-            for (int i = 0; i < homeChips.Length; i++)
-            {
-                homeChips[i] = new StoreChipUserControl();
-
-            }
-        }
-
-        private void addStoreUserControl1_Click(object sender, EventArgs e)
-        {
-            this.populateHomePanel();
         }
 
         private void MainDashboard_Load(object sender, EventArgs e)
@@ -86,14 +78,10 @@ namespace MyStores.View
             formScaling();
         }
 
-        private void AddVendorIcon_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("OK");
-        }
-
         private void homeMenuButton_Click(object sender, EventArgs e)
         {
-            mainHomeTabUserControl.BringToFront();
+            hideAllUserControls();
+            mainHomeTabUserControl.Visible = true;
         }
     }
 }
