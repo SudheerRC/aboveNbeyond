@@ -207,31 +207,36 @@
             // 
             // storeVendorListView
             // 
+            this.storeVendorListView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.storeVendorListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.vendorName,
             this.city,
             this.phoneNumber});
             this.storeVendorListView.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.storeVendorListView.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.storeVendorListView.FullRowSelect = true;
+            this.storeVendorListView.GridLines = true;
             this.storeVendorListView.Location = new System.Drawing.Point(4, 65);
             this.storeVendorListView.Name = "storeVendorListView";
             this.storeVendorListView.Size = new System.Drawing.Size(412, 548);
             this.storeVendorListView.TabIndex = 0;
             this.storeVendorListView.UseCompatibleStateImageBehavior = false;
+            this.storeVendorListView.View = System.Windows.Forms.View.Details;
             // 
             // vendorName
             // 
             this.vendorName.Text = "Vendor Name";
-            this.vendorName.Width = 220;
+            this.vendorName.Width = 140;
             // 
             // city
             // 
             this.city.Text = "City";
-            this.city.Width = 220;
+            this.city.Width = 140;
             // 
             // phoneNumber
             // 
             this.phoneNumber.Text = "Phone Number";
-            this.phoneNumber.Width = 220;
+            this.phoneNumber.Width = 130;
             // 
             // AddVendorToStoreUserControl
             // 

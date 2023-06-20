@@ -51,8 +51,10 @@ namespace MyStores.UserControls
 
         private void loadVendorComboBox()
         {
+            vendorComboBox.DataSource = null;
             vendorComboBox.Items.Clear();
-            vendorComboBox.DataSource = _controller.GetAllVendors();
+            List<Vendor> vendorList = _controller.GetAllVendors();
+            vendorComboBox.DataSource = vendorList;
             vendorComboBox.SelectedIndex = 0;
         }
 

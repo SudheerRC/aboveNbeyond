@@ -50,6 +50,7 @@
             // 
             // inventoryListView
             // 
+            this.inventoryListView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.inventoryListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.barcode,
             this.productName,
@@ -62,24 +63,24 @@
             this.edit,
             this.delete});
             this.inventoryListView.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.inventoryListView.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.inventoryListView.GridLines = true;
             this.inventoryListView.Location = new System.Drawing.Point(0, 80);
             this.inventoryListView.Name = "inventoryListView";
             this.inventoryListView.Size = new System.Drawing.Size(1384, 704);
             this.inventoryListView.TabIndex = 0;
             this.inventoryListView.UseCompatibleStateImageBehavior = false;
-            this.inventoryListView.View = System.Windows.Forms.View.List;
+            this.inventoryListView.View = System.Windows.Forms.View.Details;
             // 
             // barcode
             // 
-            this.barcode.DisplayIndex = 3;
             this.barcode.Text = "Barcode";
-            this.barcode.Width = 220;
+            this.barcode.Width = 160;
             // 
             // productName
             // 
-            this.productName.DisplayIndex = 0;
             this.productName.Text = "Product Name";
-            this.productName.Width = 220;
+            this.productName.Width = 280;
             // 
             // description
             // 
@@ -88,40 +89,35 @@
             // 
             // productSize
             // 
-            this.productSize.DisplayIndex = 1;
-            this.productSize.Text = "Product Size";
-            this.productSize.Width = 220;
+            this.productSize.Text = "Size";
+            this.productSize.Width = 90;
             // 
             // sellingPrice
             // 
             this.sellingPrice.Text = "Selling Price";
-            this.sellingPrice.Width = 220;
+            this.sellingPrice.Width = 110;
             // 
             // purchasePrice
             // 
-            this.purchasePrice.DisplayIndex = 9;
             this.purchasePrice.Text = "Purchase Price";
-            this.purchasePrice.Width = 220;
+            this.purchasePrice.Width = 110;
             // 
             // vendorName
             // 
-            this.vendorName.DisplayIndex = 8;
             this.vendorName.Text = "Vendor Name";
-            this.vendorName.Width = 220;
+            this.vendorName.Width = 140;
             // 
             // quantity
             // 
             this.quantity.Text = "Quantity";
-            this.quantity.Width = 220;
+            this.quantity.Width = 90;
             // 
             // edit
             // 
-            this.edit.DisplayIndex = 5;
             this.edit.Text = "";
             // 
             // delete
             // 
-            this.delete.DisplayIndex = 6;
             this.delete.Text = "";
             // 
             // searchInputPanel

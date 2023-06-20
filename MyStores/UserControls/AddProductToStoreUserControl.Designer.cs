@@ -131,6 +131,7 @@
             // 
             // inventoryListView
             // 
+            this.inventoryListView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.inventoryListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.productId,
             this.barcode,
@@ -138,48 +139,50 @@
             this.description,
             this.productSize,
             this.sellingPrice});
+            this.inventoryListView.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.inventoryListView.GridLines = true;
             this.inventoryListView.Location = new System.Drawing.Point(0, 176);
             this.inventoryListView.Name = "inventoryListView";
             this.inventoryListView.Size = new System.Drawing.Size(633, 172);
             this.inventoryListView.TabIndex = 5;
             this.inventoryListView.UseCompatibleStateImageBehavior = false;
-            this.inventoryListView.View = System.Windows.Forms.View.List;
+            this.inventoryListView.View = System.Windows.Forms.View.Details;
             // 
             // productId
             // 
             this.productId.DisplayIndex = 5;
-            this.productId.Text = "Product ID";
-            this.productId.Width = 220;
+            this.productId.Text = "ID";
+            this.productId.Width = 40;
             // 
             // barcode
             // 
             this.barcode.DisplayIndex = 0;
             this.barcode.Text = "Barcode";
-            this.barcode.Width = 220;
+            this.barcode.Width = 80;
             // 
             // productName
             // 
             this.productName.DisplayIndex = 1;
             this.productName.Text = "Product Name";
-            this.productName.Width = 220;
+            this.productName.Width = 180;
             // 
             // description
             // 
             this.description.DisplayIndex = 2;
             this.description.Text = "Description";
-            this.description.Width = 220;
+            this.description.Width = 140;
             // 
             // productSize
             // 
             this.productSize.DisplayIndex = 3;
             this.productSize.Text = "Product Size";
-            this.productSize.Width = 220;
+            this.productSize.Width = 90;
             // 
             // sellingPrice
             // 
             this.sellingPrice.DisplayIndex = 4;
             this.sellingPrice.Text = "Selling Price";
-            this.sellingPrice.Width = 220;
+            this.sellingPrice.Width = 90;
             // 
             // nextButton
             // 
