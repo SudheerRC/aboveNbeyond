@@ -1,5 +1,4 @@
 ﻿using MyStores.Model;
-using MyStores.UserControls;
 
 namespace MyStores.View
 {
@@ -79,6 +78,12 @@ namespace MyStores.View
         {
             hideAllUserControls();
             mainHomeTabUserControl.Visible = true;
+        }
+
+        private void LogoutButton_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.OK;
+            this.Close();
         }
     }
 }
