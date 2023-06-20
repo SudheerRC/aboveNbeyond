@@ -81,9 +81,9 @@
             // 
             // mainContainer
             // 
-            mainContainer.Dock = DockStyle.Fill;
-            mainContainer.Location = new Point(0, 0);
-            mainContainer.Name = "mainContainer";
+            this.mainContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainContainer.Location = new System.Drawing.Point(0, 0);
+            this.mainContainer.Name = "mainContainer";
             // 
             // mainContainer.Panel1
             // 
@@ -96,11 +96,11 @@
             // 
             // mainContainer.Panel2
             // 
-            mainContainer.Panel2.Controls.Add(workspaceContainer);
-            mainContainer.Size = new Size(1904, 1041);
-            mainContainer.SplitterDistance = 209;
-            mainContainer.SplitterWidth = 1;
-            mainContainer.TabIndex = 0;
+            this.mainContainer.Panel2.Controls.Add(this.workspaceContainer);
+            this.mainContainer.Size = new System.Drawing.Size(1904, 1041);
+            this.mainContainer.SplitterDistance = 209;
+            this.mainContainer.SplitterWidth = 1;
+            this.mainContainer.TabIndex = 0;
             // 
             // logoutButton
             // 
@@ -268,63 +268,63 @@
             // 
             // logoPanel
             // 
-            logoPanel.Location = new Point(3, 3);
-            logoPanel.Name = "logoPanel";
-            logoPanel.Size = new Size(208, 137);
-            logoPanel.TabIndex = 0;
+            this.logoPanel.Location = new System.Drawing.Point(3, 3);
+            this.logoPanel.Name = "logoPanel";
+            this.logoPanel.Size = new System.Drawing.Size(208, 137);
+            this.logoPanel.TabIndex = 0;
             // 
             // workspaceContainer
             // 
-            workspaceContainer.Dock = DockStyle.Fill;
-            workspaceContainer.Location = new Point(0, 0);
-            workspaceContainer.Name = "workspaceContainer";
+            this.workspaceContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.workspaceContainer.Location = new System.Drawing.Point(0, 0);
+            this.workspaceContainer.Name = "workspaceContainer";
             // 
             // workspaceContainer.Panel1
             // 
-            workspaceContainer.Panel1.Controls.Add(storeContainer);
+            this.workspaceContainer.Panel1.Controls.Add(this.storeContainer);
             // 
             // workspaceContainer.Panel2
             // 
-            workspaceContainer.Panel2.BackColor = Color.FromArgb(28, 44, 78);
-            workspaceContainer.Panel2.Controls.Add(searchPanel);
-            workspaceContainer.Panel2.Controls.Add(windowOpPanel);
-            workspaceContainer.Panel2.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            workspaceContainer.Size = new Size(1694, 1041);
-            workspaceContainer.SplitterDistance = 1393;
-            workspaceContainer.SplitterWidth = 1;
-            workspaceContainer.TabIndex = 0;
+            this.workspaceContainer.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
+            this.workspaceContainer.Panel2.Controls.Add(this.searchPanel);
+            this.workspaceContainer.Panel2.Controls.Add(this.windowOpPanel);
+            this.workspaceContainer.Panel2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.workspaceContainer.Size = new System.Drawing.Size(1694, 1041);
+            this.workspaceContainer.SplitterDistance = 1393;
+            this.workspaceContainer.SplitterWidth = 1;
+            this.workspaceContainer.TabIndex = 0;
             // 
             // storeContainer
             // 
-            storeContainer.Dock = DockStyle.Fill;
-            storeContainer.Location = new Point(0, 0);
-            storeContainer.Name = "storeContainer";
-            storeContainer.Orientation = Orientation.Horizontal;
+            this.storeContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.storeContainer.Location = new System.Drawing.Point(0, 0);
+            this.storeContainer.Name = "storeContainer";
+            this.storeContainer.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
             // storeContainer.Panel1
             // 
-            storeContainer.Panel1.BackColor = Color.FromArgb(155, 123, 213);
-            storeContainer.Panel1.Controls.Add(storeNameLabel);
+            this.storeContainer.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(123)))), ((int)(((byte)(213)))));
+            this.storeContainer.Panel1.Controls.Add(this.storeNameLabel);
             // 
             // storeContainer.Panel2
             // 
-            storeContainer.Panel2.BackColor = Color.FromArgb(227, 211, 177);
-            storeContainer.Panel2.Controls.Add(mainHomeTabUserControl);
-            storeContainer.Size = new Size(1393, 1041);
-            storeContainer.SplitterDistance = 140;
-            storeContainer.SplitterWidth = 1;
-            storeContainer.TabIndex = 0;
+            this.storeContainer.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(211)))), ((int)(((byte)(177)))));
+            this.storeContainer.Panel2.Controls.Add(this.mainHomeTabUserControl);
+            this.storeContainer.Size = new System.Drawing.Size(1393, 1041);
+            this.storeContainer.SplitterDistance = 140;
+            this.storeContainer.SplitterWidth = 1;
+            this.storeContainer.TabIndex = 0;
             // 
             // storeNameLabel
             // 
-            storeNameLabel.Font = new Font("Segoe UI", 33F, FontStyle.Bold, GraphicsUnit.Point);
-            storeNameLabel.ForeColor = Color.FromArgb(28, 44, 78);
-            storeNameLabel.Location = new Point(3, 23);
-            storeNameLabel.Name = "storeNameLabel";
-            storeNameLabel.Size = new Size(1390, 68);
-            storeNameLabel.TabIndex = 0;
-            storeNameLabel.Text = "Store Name";
-            storeNameLabel.TextAlign = ContentAlignment.MiddleCenter;
+            this.storeNameLabel.Font = new System.Drawing.Font("Segoe UI", 33F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.storeNameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
+            this.storeNameLabel.Location = new System.Drawing.Point(3, 23);
+            this.storeNameLabel.Name = "storeNameLabel";
+            this.storeNameLabel.Size = new System.Drawing.Size(1390, 68);
+            this.storeNameLabel.TabIndex = 0;
+            this.storeNameLabel.Text = "Store Name";
+            this.storeNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // mainHomeTabUserControl
             // 
@@ -334,6 +334,14 @@
             mainHomeTabUserControl.Name = "mainHomeTabUserControl";
             mainHomeTabUserControl.Size = new Size(1393, 900);
             mainHomeTabUserControl.TabIndex = 0;
+            this.mainHomeTabUserControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.mainHomeTabUserControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(211)))), ((int)(((byte)(177)))));
+            this.mainHomeTabUserControl.Location = new System.Drawing.Point(0, 0);
+            this.mainHomeTabUserControl.Name = "mainHomeTabUserControl";
+            this.mainHomeTabUserControl.Size = new System.Drawing.Size(1393, 918);
+            this.mainHomeTabUserControl.TabIndex = 0;
             // 
             // searchPanel
             // 
@@ -343,6 +351,13 @@
             searchPanel.Name = "searchPanel";
             searchPanel.Size = new Size(297, 299);
             searchPanel.TabIndex = 7;
+            this.searchPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.searchPanel.Controls.Add(this.searchInputPanel);
+            this.searchPanel.Location = new System.Drawing.Point(3, 106);
+            this.searchPanel.Name = "searchPanel";
+            this.searchPanel.Size = new System.Drawing.Size(294, 299);
+            this.searchPanel.TabIndex = 7;
             // 
             // searchInputPanel
             // 
@@ -353,6 +368,13 @@
             searchInputPanel.Name = "searchInputPanel";
             searchInputPanel.Size = new Size(297, 35);
             searchInputPanel.TabIndex = 0;
+            this.searchInputPanel.Controls.Add(this.searchTextBox);
+            this.searchInputPanel.Controls.Add(this.searchButtonPanel);
+            this.searchInputPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.searchInputPanel.Location = new System.Drawing.Point(0, 0);
+            this.searchInputPanel.Name = "searchInputPanel";
+            this.searchInputPanel.Size = new System.Drawing.Size(294, 35);
+            this.searchInputPanel.TabIndex = 0;
             // 
             // searchTextBox
             // 
@@ -363,6 +385,12 @@
             searchTextBox.Name = "searchTextBox";
             searchTextBox.Size = new Size(262, 35);
             searchTextBox.TabIndex = 6;
+            this.searchTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.searchTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.searchTextBox.Location = new System.Drawing.Point(0, 0);
+            this.searchTextBox.Name = "searchTextBox";
+            this.searchTextBox.Size = new System.Drawing.Size(259, 35);
+            this.searchTextBox.TabIndex = 6;
             // 
             // searchButtonPanel
             // 
@@ -372,6 +400,12 @@
             searchButtonPanel.Name = "searchButtonPanel";
             searchButtonPanel.Size = new Size(35, 35);
             searchButtonPanel.TabIndex = 0;
+            this.searchButtonPanel.Controls.Add(this.searchButton);
+            this.searchButtonPanel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.searchButtonPanel.Location = new System.Drawing.Point(259, 0);
+            this.searchButtonPanel.Name = "searchButtonPanel";
+            this.searchButtonPanel.Size = new System.Drawing.Size(35, 35);
+            this.searchButtonPanel.TabIndex = 0;
             // 
             // searchButton
             // 
@@ -388,127 +422,123 @@
             // 
             // windowOpPanel
             // 
-            windowOpPanel.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            windowOpPanel.Controls.Add(minPanel);
-            windowOpPanel.Controls.Add(maxPanel);
-            windowOpPanel.Controls.Add(closePanel);
-            windowOpPanel.Dock = DockStyle.Top;
-            windowOpPanel.Location = new Point(0, 0);
-            windowOpPanel.Name = "windowOpPanel";
-            windowOpPanel.Size = new Size(300, 45);
-            windowOpPanel.TabIndex = 5;
+            this.windowOpPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.windowOpPanel.Controls.Add(this.minPanel);
+            this.windowOpPanel.Controls.Add(this.maxPanel);
+            this.windowOpPanel.Controls.Add(this.closePanel);
+            this.windowOpPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.windowOpPanel.Location = new System.Drawing.Point(0, 0);
+            this.windowOpPanel.Name = "windowOpPanel";
+            this.windowOpPanel.Size = new System.Drawing.Size(300, 45);
+            this.windowOpPanel.TabIndex = 5;
             // 
             // minPanel
             // 
-            minPanel.Controls.Add(minButton);
-            minPanel.Dock = DockStyle.Right;
-            minPanel.Location = new Point(169, 0);
-            minPanel.Name = "minPanel";
-            minPanel.Size = new Size(43, 45);
-            minPanel.TabIndex = 4;
+            this.minPanel.Controls.Add(this.minButton);
+            this.minPanel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.minPanel.Location = new System.Drawing.Point(169, 0);
+            this.minPanel.Name = "minPanel";
+            this.minPanel.Size = new System.Drawing.Size(43, 45);
+            this.minPanel.TabIndex = 4;
             // 
             // minButton
             // 
-            minButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            minButton.BackColor = Color.FromArgb(252, 251, 255);
-            minButton.Dock = DockStyle.Right;
-            minButton.FlatAppearance.BorderColor = Color.FromArgb(28, 44, 78);
-            minButton.FlatAppearance.BorderSize = 0;
-            minButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(227, 211, 177);
-            minButton.FlatStyle = FlatStyle.Flat;
-            minButton.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
-            minButton.ForeColor = Color.FromArgb(252, 251, 255);
-            minButton.Image = (Image)resources.GetObject("minButton.Image");
-            minButton.ImageAlign = ContentAlignment.MiddleLeft;
-            minButton.Location = new Point(-7, 0);
-            minButton.Name = "minButton";
-            minButton.Size = new Size(50, 45);
-            minButton.TabIndex = 3;
-            minButton.TextAlign = ContentAlignment.BottomCenter;
-            minButton.UseVisualStyleBackColor = false;
-            minButton.Click += minButton_Click;
+            this.minButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.minButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            this.minButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.minButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
+            this.minButton.FlatAppearance.BorderSize = 0;
+            this.minButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(211)))), ((int)(((byte)(177)))));
+            this.minButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.minButton.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.minButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            this.minButton.Image = ((System.Drawing.Image)(resources.GetObject("minButton.Image")));
+            this.minButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.minButton.Location = new System.Drawing.Point(-7, 0);
+            this.minButton.Name = "minButton";
+            this.minButton.Size = new System.Drawing.Size(50, 45);
+            this.minButton.TabIndex = 3;
+            this.minButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.minButton.UseVisualStyleBackColor = false;
             // 
             // maxPanel
             // 
-            maxPanel.Controls.Add(restoreButton);
-            maxPanel.Controls.Add(maxButton);
-            maxPanel.Dock = DockStyle.Right;
-            maxPanel.Location = new Point(212, 0);
-            maxPanel.Name = "maxPanel";
-            maxPanel.Size = new Size(45, 45);
-            maxPanel.TabIndex = 0;
+            this.maxPanel.Controls.Add(this.restoreButton);
+            this.maxPanel.Controls.Add(this.maxButton);
+            this.maxPanel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.maxPanel.Location = new System.Drawing.Point(212, 0);
+            this.maxPanel.Name = "maxPanel";
+            this.maxPanel.Size = new System.Drawing.Size(45, 45);
+            this.maxPanel.TabIndex = 0;
             // 
             // restoreButton
             // 
-            restoreButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            restoreButton.BackColor = Color.FromArgb(252, 251, 255);
-            restoreButton.Dock = DockStyle.Right;
-            restoreButton.FlatAppearance.BorderColor = Color.FromArgb(28, 44, 78);
-            restoreButton.FlatAppearance.BorderSize = 0;
-            restoreButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(227, 211, 177);
-            restoreButton.FlatStyle = FlatStyle.Flat;
-            restoreButton.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
-            restoreButton.ForeColor = Color.FromArgb(252, 251, 255);
-            restoreButton.Image = (Image)resources.GetObject("restoreButton.Image");
-            restoreButton.ImageAlign = ContentAlignment.MiddleLeft;
-            restoreButton.Location = new Point(-55, 0);
-            restoreButton.Name = "restoreButton";
-            restoreButton.Size = new Size(50, 45);
-            restoreButton.TabIndex = 4;
-            restoreButton.TextAlign = ContentAlignment.BottomCenter;
-            restoreButton.UseVisualStyleBackColor = false;
-            restoreButton.Click += restoreButton_Click;
+            this.restoreButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.restoreButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            this.restoreButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.restoreButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
+            this.restoreButton.FlatAppearance.BorderSize = 0;
+            this.restoreButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(211)))), ((int)(((byte)(177)))));
+            this.restoreButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.restoreButton.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.restoreButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            this.restoreButton.Image = ((System.Drawing.Image)(resources.GetObject("restoreButton.Image")));
+            this.restoreButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.restoreButton.Location = new System.Drawing.Point(-55, 0);
+            this.restoreButton.Name = "restoreButton";
+            this.restoreButton.Size = new System.Drawing.Size(50, 45);
+            this.restoreButton.TabIndex = 4;
+            this.restoreButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.restoreButton.UseVisualStyleBackColor = false;
             // 
             // maxButton
             // 
-            maxButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            maxButton.BackColor = Color.FromArgb(252, 251, 255);
-            maxButton.Dock = DockStyle.Right;
-            maxButton.FlatAppearance.BorderColor = Color.FromArgb(28, 44, 78);
-            maxButton.FlatAppearance.BorderSize = 0;
-            maxButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(227, 211, 177);
-            maxButton.FlatStyle = FlatStyle.Flat;
-            maxButton.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
-            maxButton.ForeColor = Color.FromArgb(252, 251, 255);
-            maxButton.Image = (Image)resources.GetObject("maxButton.Image");
-            maxButton.ImageAlign = ContentAlignment.MiddleLeft;
-            maxButton.Location = new Point(-5, 0);
-            maxButton.Name = "maxButton";
-            maxButton.Size = new Size(50, 45);
-            maxButton.TabIndex = 3;
-            maxButton.TextAlign = ContentAlignment.BottomCenter;
-            maxButton.UseVisualStyleBackColor = false;
-            maxButton.Click += maxButton_Click;
+            this.maxButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.maxButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            this.maxButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.maxButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
+            this.maxButton.FlatAppearance.BorderSize = 0;
+            this.maxButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(211)))), ((int)(((byte)(177)))));
+            this.maxButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.maxButton.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.maxButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            this.maxButton.Image = ((System.Drawing.Image)(resources.GetObject("maxButton.Image")));
+            this.maxButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.maxButton.Location = new System.Drawing.Point(-5, 0);
+            this.maxButton.Name = "maxButton";
+            this.maxButton.Size = new System.Drawing.Size(50, 45);
+            this.maxButton.TabIndex = 3;
+            this.maxButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.maxButton.UseVisualStyleBackColor = false;
             // 
             // closePanel
             // 
-            closePanel.Controls.Add(closeButton);
-            closePanel.Dock = DockStyle.Right;
-            closePanel.Location = new Point(257, 0);
-            closePanel.Name = "closePanel";
-            closePanel.Size = new Size(43, 45);
-            closePanel.TabIndex = 4;
+            this.closePanel.Controls.Add(this.closeButton);
+            this.closePanel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.closePanel.Location = new System.Drawing.Point(257, 0);
+            this.closePanel.Name = "closePanel";
+            this.closePanel.Size = new System.Drawing.Size(43, 45);
+            this.closePanel.TabIndex = 4;
             // 
             // closeButton
             // 
-            closeButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            closeButton.BackColor = Color.FromArgb(252, 251, 255);
-            closeButton.Dock = DockStyle.Right;
-            closeButton.FlatAppearance.BorderColor = Color.FromArgb(28, 44, 78);
-            closeButton.FlatAppearance.BorderSize = 0;
-            closeButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(227, 211, 177);
-            closeButton.FlatStyle = FlatStyle.Flat;
-            closeButton.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
-            closeButton.ForeColor = Color.FromArgb(252, 251, 255);
-            closeButton.Image = (Image)resources.GetObject("closeButton.Image");
-            closeButton.ImageAlign = ContentAlignment.MiddleLeft;
-            closeButton.Location = new Point(-7, 0);
-            closeButton.Name = "closeButton";
-            closeButton.Size = new Size(50, 45);
-            closeButton.TabIndex = 3;
-            closeButton.TextAlign = ContentAlignment.BottomCenter;
-            closeButton.UseVisualStyleBackColor = false;
-            closeButton.Click += CloseButton_Click;
+            this.closeButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.closeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            this.closeButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.closeButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
+            this.closeButton.FlatAppearance.BorderSize = 0;
+            this.closeButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(211)))), ((int)(((byte)(177)))));
+            this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.closeButton.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.closeButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            this.closeButton.Image = ((System.Drawing.Image)(resources.GetObject("closeButton.Image")));
+            this.closeButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.closeButton.Location = new System.Drawing.Point(-7, 0);
+            this.closeButton.Name = "closeButton";
+            this.closeButton.Size = new System.Drawing.Size(50, 45);
+            this.closeButton.TabIndex = 3;
+            this.closeButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.closeButton.UseVisualStyleBackColor = false;
             // 
             // searchProductSubMenuButton
             // 
@@ -533,39 +563,39 @@
             // 
             // MainDashboard
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            ClientSize = new Size(1904, 1041);
-            Controls.Add(mainContainer);
-            FormBorderStyle = FormBorderStyle.None;
-            Name = "MainDashboard";
-            RightToLeftLayout = true;
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "MyStores";
-            Load += MainDashboard_Load;
-            mainContainer.Panel1.ResumeLayout(false);
-            mainContainer.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)mainContainer).EndInit();
-            mainContainer.ResumeLayout(false);
-            navigationPanel.ResumeLayout(false);
-            workspaceContainer.Panel1.ResumeLayout(false);
-            workspaceContainer.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)workspaceContainer).EndInit();
-            workspaceContainer.ResumeLayout(false);
-            storeContainer.Panel1.ResumeLayout(false);
-            storeContainer.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)storeContainer).EndInit();
-            storeContainer.ResumeLayout(false);
-            searchPanel.ResumeLayout(false);
-            searchInputPanel.ResumeLayout(false);
-            searchInputPanel.PerformLayout();
-            searchButtonPanel.ResumeLayout(false);
-            windowOpPanel.ResumeLayout(false);
-            minPanel.ResumeLayout(false);
-            maxPanel.ResumeLayout(false);
-            closePanel.ResumeLayout(false);
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.Controls.Add(this.mainContainer);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "MainDashboard";
+            this.RightToLeftLayout = true;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "MyStores";
+            this.mainContainer.Panel1.ResumeLayout(false);
+            this.mainContainer.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.mainContainer)).EndInit();
+            this.mainContainer.ResumeLayout(false);
+            this.navigationPanel.ResumeLayout(false);
+            this.workspaceContainer.Panel1.ResumeLayout(false);
+            this.workspaceContainer.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.workspaceContainer)).EndInit();
+            this.workspaceContainer.ResumeLayout(false);
+            this.storeContainer.Panel1.ResumeLayout(false);
+            this.storeContainer.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.storeContainer)).EndInit();
+            this.storeContainer.ResumeLayout(false);
+            this.searchPanel.ResumeLayout(false);
+            this.searchInputPanel.ResumeLayout(false);
+            this.searchInputPanel.PerformLayout();
+            this.searchButtonPanel.ResumeLayout(false);
+            this.windowOpPanel.ResumeLayout(false);
+            this.minPanel.ResumeLayout(false);
+            this.maxPanel.ResumeLayout(false);
+            this.closePanel.ResumeLayout(false);
+            this.ResumeLayout(false);
+
         }
 
         #endregion

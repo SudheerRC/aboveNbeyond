@@ -639,7 +639,7 @@ namespace MyStores.Dal
             connection.Open();
 
             string query =
-                "SELECT vendorID, purchasePrice, sellingPrice, quantity AND productID FROM Product,Inventory WHERE Inventory.productID = Product.productID and Inventory.storeID = @storeID and ProductName LIKE '%@productName%'";
+                "SELECT vendorID, purchasePrice, Inventory.sellingPrice, quantity, Inventory.productID FROM Product,Inventory WHERE Inventory.productID = Product.productID and Inventory.storeID = @storeID and ProductName LIKE '%@productName%'";
             using var command = new SqlCommand(query, connection);
 
             command.Parameters.Add("@storeID", System.Data.SqlDbType.Int);
