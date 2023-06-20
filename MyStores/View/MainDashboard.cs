@@ -14,8 +14,6 @@ namespace MyStores.View
 
             mainHomeTabUserControl.Parent = storeContainer.Panel2;
             mainHomeTabUserControl.Dock = DockStyle.Top;
-            mainStoreFrontUserControl.Parent = storeContainer.Panel2;
-            mainStoreFrontUserControl.Dock = DockStyle.Top;
         }
 
         public void SetOwner(Users setUser)
@@ -27,7 +25,6 @@ namespace MyStores.View
         private void hideAllUserControls()
         {
             mainHomeTabUserControl.Visible = false;
-            mainStoreFrontUserControl.Visible = false;
         }
 
         private void CloseButton_Click(object sender, EventArgs e)
