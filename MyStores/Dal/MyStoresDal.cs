@@ -25,6 +25,11 @@ namespace MyStores.Dal
             return count == 1;
         }
 
+        /// <summary>
+        /// Checks the email.
+        /// </summary>
+        /// <param name="email">The email.</param>
+        /// <returns></returns>
         public bool CheckEmail(string email)
         {
             using var connection = DbConnection.GetConnection();
@@ -37,6 +42,10 @@ namespace MyStores.Dal
             return count == 1;
         }
 
+        /// <summary>
+        /// Registers the user.
+        /// </summary>
+        /// <param name="newUser">The new user.</param>
         public void RegisterUser(Users newUser)
         {
             using var connection = DbConnection.GetConnection();
@@ -83,6 +92,11 @@ namespace MyStores.Dal
             command.ExecuteNonQuery();
         }
 
+        /// <summary>
+        /// Gets the user id.
+        /// </summary>
+        /// <param name="email">The email.</param>
+        /// <returns></returns>
         public int GetUserId(string email)
         {
             int userId = 0;
@@ -104,6 +118,10 @@ namespace MyStores.Dal
             return userId;
         }
 
+        /// <summary>
+        /// Adds the store.
+        /// </summary>
+        /// <param name="newStore">The new store.</param>
         public void AddStore(Store newStore)
         {
             using var connection = DbConnection.GetConnection();
@@ -136,6 +154,11 @@ namespace MyStores.Dal
             command.ExecuteNonQuery();
         }
 
+        /// <summary>
+        /// Gets the user stores.
+        /// </summary>
+        /// <param name="ownerId">The owner id.</param>
+        /// <returns></returns>
         public List<Store> GetUserStores(int ownerId)
         {
             var stores = new List<Store>();
@@ -184,6 +207,11 @@ namespace MyStores.Dal
             return stores;
         }
 
+        /// <summary>
+        /// Searches the product.
+        /// </summary>
+        /// <param name="productName">Name of the product.</param>
+        /// <returns></returns>
         public List<Product> SearchProduct(String productName)
         {
             var products = new List<Product>();
@@ -230,6 +258,11 @@ namespace MyStores.Dal
             return products;
         }
 
+        /// <summary>
+        /// Search based on the product barcode.
+        /// </summary>
+        /// <param name="barCode">The bar code.</param>
+        /// <returns></returns>
         public List<Product> SearchProductBarcode(String barCode)
         {
             var products = new List<Product>();
@@ -276,7 +309,11 @@ namespace MyStores.Dal
             return products;
         }
 
-
+        /// <summary>
+        /// Search based on the vendor name.
+        /// </summary>
+        /// <param name="vendorName">Name of the vendor.</param>
+        /// <returns></returns>
         public List<Vendor> SearchVendor(String vendorName)
         {
             var vendors = new List<Vendor>();
@@ -327,6 +364,11 @@ namespace MyStores.Dal
             return vendors;
         }
 
+        /// <summary>
+        /// Search based on the store name.
+        /// </summary>
+        /// <param name="storeName">Name of the store.</param>
+        /// <returns></returns>
         public List<Store> SearchStore(String storeName)
         {
             var stores = new List<Store>();
@@ -377,6 +419,10 @@ namespace MyStores.Dal
             return stores;
         }
 
+        /// <summary>
+        /// Adds the product.
+        /// </summary>
+        /// <param name="newProduct">The new product.</param>
         public void AddProduct(Product newProduct)
         {
             using var connection = DbConnection.GetConnection();
@@ -406,6 +452,10 @@ namespace MyStores.Dal
             command.ExecuteNonQuery();
         }
 
+        /// <summary>
+        /// Adds the vendor.
+        /// </summary>
+        /// <param name="vendor">The vendor.</param>
         public void AddVendor(Vendor vendor)
         {
             using var connection = DbConnection.GetConnection();
