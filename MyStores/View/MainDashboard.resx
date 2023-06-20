@@ -71,7 +71,7 @@
         F8/CiOXRE0bMxbMwYk3TNLPUdd9ovrQM2Ia1EgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="button4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="vendorsMenuButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         DAAACwwBP0AiyAAAAapJREFUaEPt1bEuBVEQxvGlQCLRSnQaL6BR6zyDzgsotUqth9CpqbyBSqdRKzQS
@@ -84,7 +84,7 @@
         F8/CiOXRE0bMxbMwYk3TNLPUdd9ovrQM2Ia1EgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="button3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ordersMenuButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         DAAACwwBP0AiyAAAAapJREFUaEPt1bEuBVEQxvGlQCLRSnQaL6BR6zyDzgsotUqth9CpqbyBSqdRKzQS
@@ -97,10 +97,10 @@
         F8/CiOXRE0bMxbMwYk3TNLPUdd9ovrQM2Ia1EgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="productsMenuButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EQAACxEBf2RfkQAAATFJREFUaEPtkzFOw0AURH0QqDkL4qTQcCegJBvWXqeFjTQVzG4GJDK/+M96Xf7o
+        EAAACxABrSO9dQAAATFJREFUaEPtkzFOw0AURH0QqDkL4qTQcCegJBvWXqeFjTQVzG4GJDK/+M96Xf7o
         yZGXJEmSWNTSHtZje9uO+2cke9NrO7R7ZI45/5ANRLC3vSBzDDuMJDLHsKNIInMMO4okMsewo0gicww7
         iiQyx7CjSCIzSZJLsA/IKbJ02IhTZOmwEafI0mEjTpGlw0Zm4kyGbczEmQ4bmYkzGbYxE2c6bGQmzmTY
         xkyc6bCRmTiTYRszcabDRpwiS4eNOEWWDhtxiiwdNuIUWTpsxCmydNiIU2TpsBGnyNJhI06RpcNGnCJL
