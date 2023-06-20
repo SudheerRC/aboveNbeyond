@@ -36,7 +36,7 @@
             this.addVendorButton = new System.Windows.Forms.Button();
             this.messageLabel = new System.Windows.Forms.Label();
             this.infoGraphicPictureBox = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.selectVendorLabel = new System.Windows.Forms.Label();
             this.vendorComboBox = new System.Windows.Forms.ComboBox();
             this.mainAddVendorUserControl = new MyStores.UserControls.AddVendorUserControl();
             this.infoLabel = new System.Windows.Forms.Label();
@@ -64,7 +64,7 @@
             this.splitContainer1.Panel1.Controls.Add(this.closeVendorFormPictureBox);
             this.splitContainer1.Panel1.Controls.Add(this.addVendorToStoreButton);
             this.splitContainer1.Panel1.Controls.Add(this.vendorInfoPanel);
-            this.splitContainer1.Panel1.Controls.Add(this.label4);
+            this.splitContainer1.Panel1.Controls.Add(this.selectVendorLabel);
             this.splitContainer1.Panel1.Controls.Add(this.vendorComboBox);
             this.splitContainer1.Panel1.Controls.Add(this.mainAddVendorUserControl);
             this.splitContainer1.Panel1.Padding = new System.Windows.Forms.Padding(4);
@@ -157,15 +157,15 @@
             this.infoGraphicPictureBox.TabIndex = 0;
             this.infoGraphicPictureBox.TabStop = false;
             // 
-            // label4
+            // selectVendorLabel
             // 
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(15, 35);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(137, 35);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "Select Vendor:";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.selectVendorLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.selectVendorLabel.Location = new System.Drawing.Point(15, 35);
+            this.selectVendorLabel.Name = "selectVendorLabel";
+            this.selectVendorLabel.Size = new System.Drawing.Size(137, 35);
+            this.selectVendorLabel.TabIndex = 13;
+            this.selectVendorLabel.Text = "Select Vendor:";
+            this.selectVendorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // vendorComboBox
             // 
@@ -241,6 +241,7 @@
             this.Controls.Add(this.splitContainer1);
             this.Name = "AddVendorToStoreUserControl";
             this.Size = new System.Drawing.Size(810, 617);
+            this.Load += new System.EventHandler(this.AddVendorToStoreUserControl_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -262,7 +263,7 @@
         private ColumnHeader city;
         private ColumnHeader phoneNumber;
         private Label infoLabel;
-        private Label label4;
+        private Label selectVendorLabel;
         private ComboBox vendorComboBox;
         private Button addVendorToStoreButton;
         private Panel vendorInfoPanel;

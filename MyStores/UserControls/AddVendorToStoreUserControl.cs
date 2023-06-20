@@ -13,11 +13,6 @@ namespace MyStores.UserControls
             InitializeComponent();
             _owner = new Users();
             _controller = new MyStoresController();
-
-            messageLabel.Text = @"If you do not find a vendor in the above list, consider adding them to your list by clicking the link below";
-
-            loadVendorComboBox();
-            loadListView();
         }
 
         public void SetStore(int id)
@@ -90,6 +85,15 @@ namespace MyStores.UserControls
             {
                 MessageBox.Show("You cannot add this Vendor as they are already added for this store");
             }
+        }
+
+        private void AddVendorToStoreUserControl_Load(object sender, EventArgs e)
+        {
+            messageLabel.Text = @"If you do not find a vendor in the above list, " +
+                                @"consider adding them to your list by clicking the link below";
+
+            loadVendorComboBox();
+            loadListView();
         }
     }
 }

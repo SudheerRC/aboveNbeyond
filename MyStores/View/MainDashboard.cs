@@ -9,10 +9,6 @@ namespace MyStores.View
         {
             InitializeComponent();
             _owner = new Users();
-            FormScaling();
-
-            mainHomeTabUserControl.Parent = storeContainer.Panel2;
-            mainHomeTabUserControl.Dock = DockStyle.Top;
         }
 
         public void SetOwner(Users setUser)
@@ -35,11 +31,22 @@ namespace MyStores.View
         private void MainDashboard_Load(object sender, EventArgs e)
         {
             mainHomeTabUserControl.SetOwner(_owner);
+
+            mainHomeTabUserControl.Parent = storeContainer.Panel2;
+            mainHomeTabUserControl.Dock = DockStyle.Top;
+
+            mainProductsTabUserControl.Parent = storeContainer.Panel2;
+            mainProductsTabUserControl.Dock = DockStyle.Top;
+
+            mainVendorTabUserControl.Parent = storeContainer.Panel2;
+            mainVendorTabUserControl.Dock = DockStyle.Top;
+
+            FormScaling();
         }
 
         private void maxButton_Click(object sender, EventArgs e)
         {
-            System.Drawing.Rectangle screenRectangle = Screen.GetWorkingArea(this);
+            Rectangle screenRectangle = Screen.GetWorkingArea(this);
             this.MaximizedBounds = screenRectangle;
             this.maxButton.Visible = false;
             this.Location = new System.Drawing.Point(0, 0);
@@ -162,7 +169,20 @@ namespace MyStores.View
 
         private void addProductSubMenuButton_Click(object sender, EventArgs e)
         {
+            hideAllUserControls();
+            mainProductsTabUserControl.Visible = true;
+        }
 
+        private void searchVendorSubMenuButton_Click(object sender, EventArgs e)
+        {
+            hideAllUserControls();
+            mainVendorTabUserControl.Visible = true;
+        }
+
+        private void addVendorSubMenuButton_Click(object sender, EventArgs e)
+        {
+            hideAllUserControls();
+            mainVendorTabUserControl.Visible = true;
         }
     }
 }
