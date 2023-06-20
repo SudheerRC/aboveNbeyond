@@ -47,6 +47,26 @@ namespace MyStores.Controller
             _storesDal.AddProduct(product);
         }
 
+        public List<Product> SearchProduct(String productName)
+        {
+            return _storesDal.SearchProduct(productName);
+        }
+
+        public List<Vendor> SearchVendors(String vendorName)
+        {
+            return _storesDal.SearchVendor(vendorName);
+        }
+
+        public List<Product> SearchProductBarcode(String productBarcode)
+        {
+            return _storesDal.SearchProductBarcode(productBarcode);
+        }
+
+        public List<Store> SearchStore(String storeName)
+        {
+            return _storesDal.SearchStore(storeName);
+        }
+
         public void AddVendor(Vendor vendor)
         {
             _storesDal.AddVendor(vendor);

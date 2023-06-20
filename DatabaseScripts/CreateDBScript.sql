@@ -44,7 +44,6 @@ GO
 CREATE TABLE [dbo].[Vendor](
 	[vendorID] [int] IDENTITY(1,1) NOT NULL,
 	[vendorName] [varchar](50) NOT NULL,
-	[departmentName] [varchar](50),
 	[streetAddress] [varchar](50),
 	[city] [varchar](50),
 	[state] [varchar](50),
