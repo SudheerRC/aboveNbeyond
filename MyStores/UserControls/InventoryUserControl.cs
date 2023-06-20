@@ -26,10 +26,14 @@ namespace MyStores.UserControls
 
         private void loadListView()
         {
-            refreshListView();
-            foreach (var ii in _controller.SearchInventoryItem(_storeId))
+            List<InventoryItem> inventoryItems = _controller.SearchInventoryItem(_storeId);
+            if (inventoryItems.Count > 0)
             {
-                FeedListView(ii);
+                refreshListView();
+                foreach (var ii in inventoryItems)
+                {
+                    FeedListView(ii);
+                }
             }
         }
 
@@ -51,10 +55,14 @@ namespace MyStores.UserControls
         {
             var inputText = searchTextBox.Text;
 
-            refreshListView();
-            foreach (var ii in _controller.SearchProductWithStoreIdAndName(_storeId, inputText))
+            List<InventoryItem> inventoryItems = _controller.SearchProductWithStoreIdAndName(_storeId, inputText);
+            if (inventoryItems.Count > 0)
             {
-                FeedListView(ii);
+                refreshListView();
+                foreach (var ii in inventoryItems)
+                {
+                    FeedListView(ii);
+                }
             }
         }
     }

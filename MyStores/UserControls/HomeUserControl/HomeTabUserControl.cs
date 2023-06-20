@@ -46,6 +46,7 @@ namespace MyStores.UserControls.HomeUserControl
                 homeChips[i].Id = storeList[i].Id;
 
                 homeFlowLayoutPanel.Controls.Add(homeChips[i]);
+                
                 homeChips[i].Click += new EventHandler(StoreHomeChip_Click);
             }
         }

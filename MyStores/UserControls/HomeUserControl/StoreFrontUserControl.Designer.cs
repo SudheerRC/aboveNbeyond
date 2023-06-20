@@ -49,13 +49,15 @@
             // 
             // highlightTableLayoutPanel
             // 
+            this.highlightTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.highlightTableLayoutPanel.ColumnCount = 5;
             this.highlightTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.highlightTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.highlightTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 321F));
             this.highlightTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 213F));
             this.highlightTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 217F));
-            this.highlightTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.highlightTableLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this.highlightTableLayoutPanel.Name = "highlightTableLayoutPanel";
             this.highlightTableLayoutPanel.RowCount = 1;
@@ -66,6 +68,9 @@
             // 
             // AddVendorButton
             // 
+            this.AddVendorButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.AddVendorButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
             this.AddVendorButton.FlatAppearance.BorderSize = 0;
             this.AddVendorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -84,6 +89,9 @@
             // 
             // addProductButton
             // 
+            this.addProductButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.addProductButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
             this.addProductButton.FlatAppearance.BorderSize = 0;
             this.addProductButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -102,6 +110,9 @@
             // 
             // inventoryButton
             // 
+            this.inventoryButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.inventoryButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
             this.inventoryButton.FlatAppearance.BorderSize = 0;
             this.inventoryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -120,6 +131,9 @@
             // 
             // orderButton
             // 
+            this.orderButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.orderButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
             this.orderButton.Enabled = false;
             this.orderButton.FlatAppearance.BorderSize = 0;
@@ -138,6 +152,9 @@
             // 
             // exitStoreButton
             // 
+            this.exitStoreButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.exitStoreButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
             this.exitStoreButton.FlatAppearance.BorderSize = 0;
             this.exitStoreButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -156,6 +173,9 @@
             // 
             // storeExpandedPanel
             // 
+            this.storeExpandedPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.storeExpandedPanel.BackColor = System.Drawing.Color.White;
             this.storeExpandedPanel.Controls.Add(this.mainAddProductToStoreUserControl);
             this.storeExpandedPanel.Controls.Add(this.mainAddVendorToStoreUserControl);
@@ -170,6 +190,9 @@
             // 
             // mainAddProductToStoreUserControl
             // 
+            this.mainAddProductToStoreUserControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.mainAddProductToStoreUserControl.BackColor = System.Drawing.Color.BlanchedAlmond;
             this.mainAddProductToStoreUserControl.Location = new System.Drawing.Point(414, 196);
             this.mainAddProductToStoreUserControl.Name = "mainAddProductToStoreUserControl";
@@ -178,6 +201,9 @@
             // 
             // mainAddVendorToStoreUserControl
             // 
+            this.mainAddVendorToStoreUserControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.mainAddVendorToStoreUserControl.BackColor = System.Drawing.Color.BlanchedAlmond;
             this.mainAddVendorToStoreUserControl.Location = new System.Drawing.Point(299, 117);
             this.mainAddVendorToStoreUserControl.Name = "mainAddVendorToStoreUserControl";
@@ -186,6 +212,9 @@
             // 
             // mainAddManagerUserControl
             // 
+            this.mainAddManagerUserControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.mainAddManagerUserControl.BackColor = System.Drawing.Color.BlanchedAlmond;
             this.mainAddManagerUserControl.Location = new System.Drawing.Point(535, 255);
             this.mainAddManagerUserControl.Name = "mainAddManagerUserControl";
@@ -202,9 +231,11 @@
             // 
             // backButton
             // 
+            this.backButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.backButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.backButton.BackColor = System.Drawing.Color.White;
-            this.backButton.Dock = System.Windows.Forms.DockStyle.Right;
             this.backButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
             this.backButton.FlatAppearance.BorderSize = 0;
             this.backButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(211)))), ((int)(((byte)(177)))));
@@ -223,6 +254,9 @@
             // 
             // mainInventoryUserControl
             // 
+            this.mainInventoryUserControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.mainInventoryUserControl.Location = new System.Drawing.Point(2, 0);
             this.mainInventoryUserControl.Name = "mainInventoryUserControl";
             this.mainInventoryUserControl.Size = new System.Drawing.Size(1384, 784);
@@ -230,6 +264,9 @@
             // 
             // addManagerButton
             // 
+            this.addManagerButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.addManagerButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
             this.addManagerButton.FlatAppearance.BorderSize = 0;
             this.addManagerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

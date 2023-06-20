@@ -63,15 +63,15 @@ namespace MyStores.View
         private void FormScaling()
         {
             System.Drawing.Rectangle screenRectangle = Screen.GetWorkingArea(this);
-            var oldWidth = screenRectangle.Width;
-            var oldHeight = screenRectangle.Height;
+            //var oldWidth = screenRectangle.Width;
+            //var oldHeight = screenRectangle.Height;
 
-            var scalingPercentage = 0.75;
-            var newWidth = Convert.ToInt32(oldWidth * scalingPercentage);
-            var newHeight = Convert.ToInt32(oldHeight * scalingPercentage);
+            //var scalingPercentage = 0.75;
+            //var newWidth = Convert.ToInt32(oldWidth * scalingPercentage);
+            //var newHeight = Convert.ToInt32(oldHeight * scalingPercentage);
 
-            screenRectangle.Size = new Size(newWidth, newHeight);
-            screenRectangle.Location = new System.Drawing.Point((oldWidth - newWidth) / 2, (oldHeight - newHeight) / 2);
+            //screenRectangle.Size = new Size(newWidth, newHeight);
+            //screenRectangle.Location = new System.Drawing.Point((oldWidth - newWidth) / 2, (oldHeight - newHeight) / 2);
 
             this.MaximizedBounds = screenRectangle;
             this.WindowState = FormWindowState.Maximized;

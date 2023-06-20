@@ -68,5 +68,10 @@ namespace MyStores.UserControls
         {
 
         }
+
+        private void iconPictureBox_MouseClick(object sender, MouseEventArgs e)
+        {
+
+        }
     }
 }

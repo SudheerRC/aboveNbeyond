@@ -56,6 +56,7 @@
             this.iconPictureBox.TabIndex = 2;
             this.iconPictureBox.TabStop = false;
             this.iconPictureBox.Click += new System.EventHandler(this.iconPictureBox_Click);
+            this.iconPictureBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.iconPictureBox_MouseClick);
             // 
             // iconLabel
             // 

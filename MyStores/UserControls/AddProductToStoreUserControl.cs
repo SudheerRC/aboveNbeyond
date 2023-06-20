@@ -157,11 +157,11 @@ namespace MyStores.UserControls
 
             inventoryListView.Items.Clear();
             searchTextBox.Text = "";
-            loadVendorComboBox();
 
             hideAllPanels();
             vendorPanel.BringToFront();
             vendorPanel.Visible = true;
+            loadVendorComboBox();
         }
 
         private void searchButton_Click(object sender, EventArgs e)

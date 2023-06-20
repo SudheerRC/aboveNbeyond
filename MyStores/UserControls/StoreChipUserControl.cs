@@ -87,29 +87,34 @@ namespace MyStores.UserControls
 
         private void StoreChipUserControl_MouseEnter(object sender, EventArgs e)
         {
-            this.BackColor = Color.FromArgb(28, 44, 98);
-            this.storeImagePictureBox.BackColor = Color.FromArgb(28, 44, 98);
+            var rang = Color.FromArgb(28, 44, 98);
+            this.BackColor = rang;
+            this.storeImagePictureBox.BackColor = rang;
+            this.cityLabel.BackColor = rang;
+            this.managerLabel.BackColor = rang;
+            this.managerNameLabel.BackColor = rang;
+            this.storeNameLabel.BackColor = rang;
         }
 
         private void StoreChipUserControl_MouseLeave(object sender, EventArgs e)
         {
-            this.BackColor = Color.FromArgb(28, 44, 78);
-            this.storeImagePictureBox.BackColor = Color.FromArgb(28, 44, 78);
+            var rang = Color.FromArgb(28, 44, 78);
+            this.BackColor = rang;
+            this.storeImagePictureBox.BackColor = rang;
+            this.cityLabel.BackColor = rang;
+            this.managerLabel.BackColor = rang;
+            this.managerNameLabel.BackColor = rang;
+            this.storeNameLabel.BackColor = rang;
         }
 
         #endregion
 
         private void chipClick()
         {
-
+            this.Parent.Hide();
         }
 
         private void managerNameLabel_Click(object sender, EventArgs e)
-        {
-            chipClick();
-        }
-
-        private void StoreChipUserControl_Load(object sender, EventArgs e)
         {
             chipClick();
         }
@@ -130,6 +135,16 @@ namespace MyStores.UserControls
         }
 
         private void StoreChipUserControl_Click(object sender, EventArgs e)
+        {
+            chipClick();
+        }
+
+        private void StoreChipUserControl_MouseDown(object sender, MouseEventArgs e)
+        {
+            chipClick();
+        }
+
+        private void managerLabel_Click(object sender, EventArgs e)
         {
             chipClick();
         }

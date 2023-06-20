@@ -268,7 +268,7 @@ namespace MyStores.Dal
                 var description = reader.GetString(descriptionOrdinal);
                 var department = reader.GetString(departmentNameOrdinal);
                 var barcode = reader.GetString(barcodeOrdinal);
-                var sellingPrice = reader.GetInt32(sellingPriceOrdinal);
+                var sellingPrice = reader.GetDecimal(sellingPriceOrdinal);
 
                 products.Add(new Product
                 {
@@ -277,7 +277,7 @@ namespace MyStores.Dal
                     Name = name,
                     ProductSize = size,
                     DepartmentName = department,
-                    SellingPrice = sellingPrice,
+                    SellingPrice = Decimal.ToDouble(sellingPrice),
                     Barcode = barcode
                 });
             }

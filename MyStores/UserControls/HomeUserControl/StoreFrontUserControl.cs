@@ -58,6 +58,7 @@ namespace MyStores.UserControls.HomeUserControl
         private void exitStoreButton_Click(object sender, EventArgs e)
         {
             this.Hide();
+            this.Parent.Show();
         }
 
         private void inventoryButton_Click(object sender, EventArgs e)
