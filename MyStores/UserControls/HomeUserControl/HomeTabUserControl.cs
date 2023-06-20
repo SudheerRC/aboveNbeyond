@@ -58,9 +58,10 @@ namespace MyStores.UserControls.HomeUserControl
             string name = _controller.GetStoreName(id);
             
             mainStoreFrontUserControl.Visible = true;
+            mainStoreFrontUserControl.SetStoreId(id);
             mainStoreFrontUserControl.BringToFront();
             mainStoreFrontUserControl.SetOwner(_owner);
-            mainStoreFrontUserControl.SetStoreId(id);
+            
         }
 
         private static string ManagersNames(List<Users>? managers, string managersNames)

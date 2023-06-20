@@ -111,7 +111,7 @@ namespace MyStores.UserControls
 
         private void chipClick()
         {
-            this.Parent.Hide();
+            //this.Parent.Hide();
         }
 
         private void managerNameLabel_Click(object sender, EventArgs e)

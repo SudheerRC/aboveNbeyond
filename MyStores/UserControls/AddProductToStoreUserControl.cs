@@ -76,7 +76,7 @@ namespace MyStores.UserControls
                 productLookUpPanel.BringToFront();
                 productLookUpPanel.Visible = true;
                 previousButton.Enabled = true;
-
+                nextButton.Enabled = false;
             }
             else if (productLookUpPanel.Visible)
             {
@@ -154,6 +154,7 @@ namespace MyStores.UserControls
         {
             addButton.Enabled = false;
             previousButton.Enabled = false;
+            nextButton.Enabled = true;
 
             inventoryListView.Items.Clear();
             searchTextBox.Text = "";
@@ -259,6 +260,11 @@ namespace MyStores.UserControls
             vendorPanel.Parent = this;
             pricePanel.Parent = this;
             productLookUpPanel.Parent = this;
+        }
+
+        private void inventoryListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            nextButton.Enabled = true;
         }
     }
 }

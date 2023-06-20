@@ -147,6 +147,7 @@
             this.inventoryListView.TabIndex = 5;
             this.inventoryListView.UseCompatibleStateImageBehavior = false;
             this.inventoryListView.View = System.Windows.Forms.View.Details;
+            this.inventoryListView.SelectedIndexChanged += new System.EventHandler(this.inventoryListView_SelectedIndexChanged);
             // 
             // productId
             // 
@@ -305,6 +306,7 @@
             // 
             // pricePanel
             // 
+            this.pricePanel.Controls.Add(this.productLookUpPanel);
             this.pricePanel.Controls.Add(this.sellingPriceErrorLabel);
             this.pricePanel.Controls.Add(this.quantityErrorLabel);
             this.pricePanel.Controls.Add(this.purchasePriceErrorLabel);
@@ -315,7 +317,6 @@
             this.pricePanel.Controls.Add(this.sellingPriceTextBox);
             this.pricePanel.Controls.Add(this.purchasePriceTextBox);
             this.pricePanel.Controls.Add(this.titleLabel);
-            this.pricePanel.Controls.Add(this.productLookUpPanel);
             this.pricePanel.Location = new System.Drawing.Point(3, 3);
             this.pricePanel.Name = "pricePanel";
             this.pricePanel.Size = new System.Drawing.Size(633, 369);

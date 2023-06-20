@@ -44,6 +44,7 @@ namespace MyStores.UserControls.HomeUserControl
             expandPanel();
             backButton.Visible = true;
             backButtonPanel.BringToFront();
+
             mainAddProductToStoreUserControl.SetStore(_storeId);
             mainAddProductToStoreUserControl.BringToFront();
             mainAddProductToStoreUserControl.Visible = true;
