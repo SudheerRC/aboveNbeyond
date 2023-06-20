@@ -6,17 +6,16 @@ namespace MyStores.UserControls
     public partial class AddManagerUserControl : UserControl
     {
         private readonly MyStoresController _controller;
-        private Store _store;
+        private int _storeId;
         public AddManagerUserControl()
         {
             InitializeComponent();
             _controller = new MyStoresController();
-            _store = new Store();
         }
 
-        public void SetStore(Store store)
+        public void SetStore(int id)
         {
-            _store = store;
+            _storeId = id;
         }
 
         private void addButton_Click(object sender, EventArgs e)
@@ -25,6 +24,7 @@ namespace MyStores.UserControls
             {
                 emailErrorLabel.Text = "Email must not be empty.";
                 emailErrorLabel.Visible = true;
+                emailErrorLabel.ForeColor = Color.Red;
             }
 
             if (!emailErrorLabel.Visible)
@@ -33,14 +33,24 @@ namespace MyStores.UserControls
                 {
                     string email = emailTextBox.Text;
                     int userId = _controller.GetUserId(email);
-                    int storeId = _store.Id;
+                    int storeId = _storeId;
                     _controller.AddManager(userId, storeId);
                     emailErrorLabel.Text = email + " has been added as a manager to this store";
                     emailErrorLabel.ForeColor = Color.Green;
                     emailErrorLabel.Visible = true;
                 }
+                else
+                {
+                    emailErrorLabel.Text = "It seems you're not registered." + Environment.NewLine + "Please register with us";
+                    emailErrorLabel.Visible = true;
+                    emailErrorLabel.ForeColor = Color.Red;
+                }
             }
+        }
 
+        private void EmailTextBox_GotFocus(object sender, EventArgs e)
+        {
+            emailErrorLabel.Visible = false;
         }
     }
 }

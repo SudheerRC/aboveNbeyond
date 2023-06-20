@@ -2,9 +2,16 @@
 {
     public partial class StoreFrontUserControl : UserControl
     {
+        private int _storeId;
         public StoreFrontUserControl()
         {
             InitializeComponent();
+            hideAllUserControls();
+        }
+
+        public void SetStoreId(int id)
+        {
+            _storeId = id;
         }
 
         private void hideAllUserControls()
@@ -12,6 +19,7 @@
             mainAddProductUserControl.Visible = false;
             mainInventoryUserControl.Visible = false;
             mainAddVendorUserControl.Visible = false;
+            mainAddManagerUserControl.Visible = false;
         }
 
         private void backButton_Click(object sender, EventArgs e)
@@ -51,6 +59,15 @@
             mainAddVendorUserControl.BringToFront();
             backButtonPanel.BringToFront();
             mainAddVendorUserControl.Visible = true;
+        }
+
+        private void MainAddManagerButton_Click(object sender, EventArgs e)
+        {
+            expandPanel();
+            mainAddManagerUserControl.BringToFront();
+            mainAddManagerUserControl.SetStore(_storeId);
+            backButtonPanel.BringToFront();
+            mainAddManagerUserControl.Visible = true;
         }
     }
 }

@@ -40,7 +40,7 @@
             titleLabel.AutoSize = true;
             titleLabel.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
             titleLabel.ForeColor = SystemColors.ControlText;
-            titleLabel.Location = new Point(71, 9);
+            titleLabel.Location = new Point(113, 15);
             titleLabel.Margin = new Padding(2, 0, 2, 0);
             titleLabel.Name = "titleLabel";
             titleLabel.Size = new Size(130, 31);
@@ -65,17 +65,18 @@
             // 
             // emailTextBox
             // 
-            emailTextBox.Location = new Point(121, 57);
+            emailTextBox.Location = new Point(158, 57);
             emailTextBox.Margin = new Padding(2, 1, 2, 1);
             emailTextBox.Name = "emailTextBox";
             emailTextBox.Size = new Size(183, 23);
             emailTextBox.TabIndex = 91;
+            emailTextBox.GotFocus += EmailTextBox_GotFocus;
             // 
             // emailLabel
             // 
             emailLabel.AutoSize = true;
             emailLabel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            emailLabel.Location = new Point(23, 61);
+            emailLabel.Location = new Point(35, 61);
             emailLabel.Margin = new Padding(2, 0, 2, 0);
             emailLabel.Name = "emailLabel";
             emailLabel.Size = new Size(47, 19);
@@ -86,7 +87,7 @@
             // 
             addButton.BackColor = Color.White;
             addButton.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            addButton.Location = new Point(104, 112);
+            addButton.Location = new Point(136, 127);
             addButton.Margin = new Padding(2, 1, 2, 1);
             addButton.Name = "addButton";
             addButton.Size = new Size(81, 29);
@@ -106,7 +107,7 @@
             Controls.Add(emailLabel);
             Controls.Add(titleLabel);
             Name = "AddManagerUserControl";
-            Size = new Size(341, 151);
+            Size = new Size(395, 168);
             ResumeLayout(false);
             PerformLayout();
         }

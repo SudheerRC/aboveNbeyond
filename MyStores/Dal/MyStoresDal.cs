@@ -210,6 +210,30 @@ namespace MyStores.Dal
         }
 
         /// <summary>
+        /// Gives the name of the Vendor by the given vendor Id.
+        /// </summary>
+        /// <param name="vendorId">Vendor Id.</param>
+        /// <returns>Name of the vendor</returns>
+        public string nameOfVendorWithId(int vendorId)
+        {
+            using var connection = DbConnection.GetConnection();
+            connection.Open();
+
+            string query =
+                "SELECT vendorName FROM Vendor WHERE vendorID = @ID";
+            using var command = new SqlCommand(query, connection);
+
+            command.Parameters.Add("@ID", System.Data.SqlDbType.VarChar);
+            command.Parameters["@ID"].Value = vendorId;
+            using var reader = command.ExecuteReader();
+
+            var vendorNameOrdinal = reader.GetOrdinal("vendorName");
+            var name = reader.GetString(vendorNameOrdinal);
+
+            return name;
+        }
+
+        /// <summary>
         /// Searches the product.
         /// </summary>
         /// <param name="productName">Name of the product.</param>
@@ -259,6 +283,51 @@ namespace MyStores.Dal
             }
 
             return products;
+        }
+
+        /// <summary>
+        /// Searches the product.
+        /// </summary>
+        /// <param name="productId">Id of the product.</param>
+        /// <returns>Product object</returns>
+        public Product SearchProductWithId(int productId)
+        {
+            using var connection = DbConnection.GetConnection();
+            connection.Open();
+
+            string query =
+                "SELECT productName, productSize, description, departmentName, barcode, sellingPrice FROM PRODUCT WHERE productID = @productId";
+            using var command = new SqlCommand(query, connection);
+
+            command.Parameters.Add("@productId", System.Data.SqlDbType.Int);
+            command.Parameters["@productId"].Value = productId;
+            using var reader = command.ExecuteReader();
+            
+            var productNameOrdinal = reader.GetOrdinal("productName");
+            var productSizeOrdinal = reader.GetOrdinal("productSize");
+            var descriptionOrdinal = reader.GetOrdinal("description");
+            var departmentNameOrdinal = reader.GetOrdinal("departmentName");
+            var barcodeOrdinal = reader.GetOrdinal("barcode");
+            var sellingPriceOrdinal = reader.GetOrdinal("sellingPrice");
+            var name = reader.GetString(productNameOrdinal);
+            var size = reader.GetString(productSizeOrdinal);
+            var description = reader.GetString(descriptionOrdinal);
+            var department = reader.GetString(departmentNameOrdinal);
+            var barcode = reader.GetString(barcodeOrdinal);
+            var sellingPrice = reader.GetInt32(sellingPriceOrdinal);
+
+            var foundProduct = new Product
+            {
+                Id = productId,
+                Description = description,
+                Name = name,
+                ProductSize = size,
+                DepartmentName = department,
+                SellingPrice = sellingPrice,
+                Barcode = barcode
+            };
+
+            return foundProduct;
         }
 
         /// <summary>
@@ -510,8 +579,8 @@ namespace MyStores.Dal
             command.Parameters.Add("@storeId", System.Data.SqlDbType.Int);
             command.Parameters["@storeId"].Value = storeId;
 
-            command.Parameters.Add("@userId", System.Data.SqlDbType.Int);
-            command.Parameters["@userId"].Value = userId;
+            command.Parameters.Add("@managerId", System.Data.SqlDbType.Int);
+            command.Parameters["@managerId"].Value = userId;
 
             command.ExecuteNonQuery();
         }
@@ -563,14 +632,14 @@ namespace MyStores.Dal
             return products;
         }
 
-        public List<Product> SearchProductWithStoreIdAndName(int storeId, String productName)
+        public List<InventoryItem> SearchProductWithStoreIdAndName(int storeId, String productName)
         {
-            var products = new List<Product>();
+            var inventoryItems = new List<InventoryItem>();
             using var connection = DbConnection.GetConnection();
             connection.Open();
 
             string query =
-                "SELECT productID, productName, productSize, description, departmentName, barcode, sellingPrice FROM Product,Inventory WHERE Inventory.productID = Product.productID and Inventory.storeID = @storeID and ProductName LIKE '%@productName%'";
+                "SELECT vendorID, purchasePrice, Inventory.sellingPrice, quantity, Inventory.productID FROM Product,Inventory WHERE Inventory.productID = Product.productID and Inventory.storeID = @storeID and ProductName LIKE '%@productName%'";
             using var command = new SqlCommand(query, connection);
 
             command.Parameters.Add("@storeID", System.Data.SqlDbType.Int);
@@ -579,37 +648,35 @@ namespace MyStores.Dal
             command.Parameters["@productName"].Value = productName;
             using var reader = command.ExecuteReader();
 
-            var productIdOrdinal = reader.GetOrdinal("productID");
-            var productNameOrdinal = reader.GetOrdinal("productName");
-            var productSizeOrdinal = reader.GetOrdinal("productSize");
-            var descriptionOrdinal = reader.GetOrdinal("description");
-            var departmentNameOrdinal = reader.GetOrdinal("departmentName");
-            var barcodeOrdinal = reader.GetOrdinal("barcode");
+            var vendorIdOrdinal = reader.GetOrdinal("vendorID");
+            var purchasePriceOrdinal = reader.GetOrdinal("purchasePrice");
             var sellingPriceOrdinal = reader.GetOrdinal("sellingPrice");
+            var quantityOrdinal = reader.GetOrdinal("quantity");
+            var productIdOrdinal = reader.GetOrdinal("productID");
 
             while (reader.Read())
             {
+                var vendorId = reader.GetInt32(vendorIdOrdinal);
+                var purchasePrice = reader.GetDouble(purchasePriceOrdinal);
+                var sellingPrice = reader.GetDouble(sellingPriceOrdinal);
+                var quantity = reader.GetInt32(quantityOrdinal);
                 var productId = reader.GetInt32(productIdOrdinal);
-                var name = reader.GetString(productNameOrdinal);
-                var size = reader.GetString(productSizeOrdinal);
-                var description = reader.GetString(descriptionOrdinal);
-                var department = reader.GetString(departmentNameOrdinal);
-                var barcode = reader.GetString(barcodeOrdinal);
-                var sellingPrice = reader.GetInt32(sellingPriceOrdinal);
 
-                products.Add(new Product
+                inventoryItems.Add(new InventoryItem
                 {
-                    Id = productId,
-                    Description = description,
-                    Name = name,
-                    ProductSize = size,
-                    DepartmentName = department,
+                    VendorId = vendorId,
+                    Quantity = quantity,
                     SellingPrice = sellingPrice,
-                    Barcode = barcode
+                    PurchasePrice = purchasePrice,
+                    Item = new Product
+                    {
+                        Id = productId
+                    }
+
                 });
             }
 
-            return products;
+            return inventoryItems;
         }
 
         public List<InventoryItem> SearchInventory(int storeId)
@@ -619,7 +686,7 @@ namespace MyStores.Dal
             connection.Open();
 
             string query =
-                "SELECT  vendorID, purchasePrice, sellingPrice and quantity FROM Inventory WHERE Inventory.storeID = @storeID";
+                "SELECT vendorID, purchasePrice, sellingPrice, quantity, productID FROM Inventory WHERE Inventory.storeID = @storeID";
             using var command = new SqlCommand(query, connection);
 
             command.Parameters.Add("@storeID", System.Data.SqlDbType.VarChar);
@@ -630,6 +697,7 @@ namespace MyStores.Dal
             var purchasePriceOrdinal = reader.GetOrdinal("purchasePrice");
             var sellingPriceOrdinal = reader.GetOrdinal("sellingPrice");
             var quantityOrdinal = reader.GetOrdinal("quantity");
+            var productIdOrdinal = reader.GetOrdinal("productID");
 
             while (reader.Read())
             {
@@ -637,6 +705,7 @@ namespace MyStores.Dal
                 var purchasePrice = reader.GetDouble(purchasePriceOrdinal);
                 var sellingPrice = reader.GetDouble(sellingPriceOrdinal);
                 var quantity = reader.GetInt32(quantityOrdinal);
+                var productId = reader.GetInt32(productIdOrdinal);
 
                 inventoryItems.Add(new InventoryItem
                 {
@@ -644,7 +713,11 @@ namespace MyStores.Dal
                     Quantity = quantity,
                     SellingPrice = sellingPrice,
                     PurchasePrice = purchasePrice,
-                   
+                    Item = new Product
+                    {
+                        Id = productId
+                    }
+
                 });
             }
 

@@ -126,10 +126,12 @@ namespace MyStores.Controller
         }
 
         /// <summary>
-        /// Adds the vendor.
+        /// Searches the name of the product with store identifier and.
         /// </summary>
-        /// <param name="vendor">The vendor.</param>
-        public List<Product> SearchProductWithStoreIdAndName(int storeId, String productName)
+        /// <param name="storeId">The store identifier.</param>
+        /// <param name="productName">Name of the product.</param>
+        /// <returns>List of Inventory Items</returns>
+        public List<InventoryItem> SearchProductWithStoreIdAndName(int storeId, String productName)
         {
             return _storesDal.SearchProductWithStoreIdAndName(storeId, productName);
         }
@@ -147,6 +149,26 @@ namespace MyStores.Controller
         public void AddManager(int userId, int storeId)
         {
             _storesDal.AddManager(userId, storeId);
+        }
+
+        /// <summary>
+        /// Gives the name of the Vendor by the given vendor Id.
+        /// </summary>
+        /// <param name="vendorId">Vendor Id.</param>
+        /// <returns>Name of the vendor</returns>
+        public string nameOfVendorWithId(int vendorId)
+        {
+            return _storesDal.nameOfVendorWithId(vendorId);
+        }
+
+        /// <summary>
+        /// Searches the product.
+        /// </summary>
+        /// <param name="productId">Id of the product.</param>
+        /// <returns>Product object</returns>
+        public Product SearchProductWithId(int productId)
+        {
+            return _storesDal.SearchProductWithId(productId);
         }
     }
 }
