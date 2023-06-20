@@ -379,7 +379,7 @@
             mainHomeTabUserControl.BackColor = Color.FromArgb(227, 211, 177);
             mainHomeTabUserControl.Location = new Point(0, 0);
             mainHomeTabUserControl.Name = "mainHomeTabUserControl";
-            mainHomeTabUserControl.Size = new Size(1393, 915);
+            mainHomeTabUserControl.Size = new Size(1393, 918);
             mainHomeTabUserControl.TabIndex = 0;
             // 
             // searchPanel
@@ -388,7 +388,7 @@
             searchPanel.Controls.Add(searchInputPanel);
             searchPanel.Location = new Point(3, 106);
             searchPanel.Name = "searchPanel";
-            searchPanel.Size = new Size(309, 299);
+            searchPanel.Size = new Size(312, 299);
             searchPanel.TabIndex = 7;
             // 
             // searchInputPanel
@@ -398,7 +398,7 @@
             searchInputPanel.Dock = DockStyle.Top;
             searchInputPanel.Location = new Point(0, 0);
             searchInputPanel.Name = "searchInputPanel";
-            searchInputPanel.Size = new Size(309, 35);
+            searchInputPanel.Size = new Size(312, 35);
             searchInputPanel.TabIndex = 0;
             // 
             // searchTextBox
@@ -407,14 +407,14 @@
             searchTextBox.Dock = DockStyle.Fill;
             searchTextBox.Location = new Point(0, 0);
             searchTextBox.Name = "searchTextBox";
-            searchTextBox.Size = new Size(274, 35);
+            searchTextBox.Size = new Size(277, 35);
             searchTextBox.TabIndex = 6;
             // 
             // searchButtonPanel
             // 
             searchButtonPanel.Controls.Add(searchButton);
             searchButtonPanel.Dock = DockStyle.Right;
-            searchButtonPanel.Location = new Point(274, 0);
+            searchButtonPanel.Location = new Point(277, 0);
             searchButtonPanel.Name = "searchButtonPanel";
             searchButtonPanel.Size = new Size(35, 35);
             searchButtonPanel.TabIndex = 0;
