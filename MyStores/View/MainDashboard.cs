@@ -11,18 +11,14 @@ namespace MyStores.View
             InitializeComponent();
             _owner = new Users();
             formScaling();
-            homePanel.Parent = storeContainer.Panel2;
-            homePanel.Dock = DockStyle.Fill;
-            storeFrontPanel.Parent = storeContainer.Panel2;
-            storeFrontPanel.Dock = DockStyle.Fill;
 
-            homeTabUserControl.BringToFront();
+            mainHomeTabUserControl.Parent = storeContainer.Panel2;
         }
 
         public void SetOwner(Users setUser)
         {
             _owner = setUser;
-            homeTabUserControl.SetOwner(_owner);
+            mainHomeTabUserControl.SetOwner(_owner);
             this.populateHomePanel();
         }
 
@@ -50,7 +46,7 @@ namespace MyStores.View
 
         private void MainDashboard_Load(object sender, EventArgs e)
         {
-            homeTabUserControl.SetOwner(_owner);
+            mainHomeTabUserControl.SetOwner(_owner);
         }
 
         private void maxButton_Click(object sender, EventArgs e)
@@ -90,11 +86,6 @@ namespace MyStores.View
             formScaling();
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            storeFrontPanel.BringToFront();
-        }
-
         private void AddVendorIcon_Click(object sender, EventArgs e)
         {
             MessageBox.Show("OK");
@@ -102,7 +93,7 @@ namespace MyStores.View
 
         private void homeMenuButton_Click(object sender, EventArgs e)
         {
-            homeTabUserControl.BringToFront();
+            mainHomeTabUserControl.BringToFront();
         }
     }
 }
