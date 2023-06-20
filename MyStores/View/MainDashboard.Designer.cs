@@ -567,14 +567,6 @@
             closeButton.UseVisualStyleBackColor = false;
             closeButton.Click += CloseButton_Click;
             // 
-            // addStoreUserControl
-            // 
-            addStoreUserControl.BackColor = Color.FromArgb(28, 44, 78);
-            addStoreUserControl.Location = new Point(362, 3);
-            addStoreUserControl.Name = "addStoreUserControl";
-            addStoreUserControl.Size = new Size(160, 200);
-            addStoreUserControl.TabIndex = 0;
-            // 
             // MainDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
