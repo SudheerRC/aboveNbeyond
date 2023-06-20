@@ -228,6 +228,7 @@ namespace MyStores.Dal
             using var reader = command.ExecuteReader();
 
             var vendorNameOrdinal = reader.GetOrdinal("vendorName");
+
             var name = reader.GetString(vendorNameOrdinal);
 
             return name;
@@ -840,8 +841,8 @@ namespace MyStores.Dal
             while (reader.Read())
             {
                 var vendorId = reader.GetInt32(vendorIdOrdinal);
-                var purchasePrice = reader.GetDouble(purchasePriceOrdinal);
-                var sellingPrice = reader.GetDouble(sellingPriceOrdinal);
+                decimal purchasePrice = reader.GetDecimal(purchasePriceOrdinal);
+                decimal sellingPrice = reader.GetDecimal(sellingPriceOrdinal);
                 var quantity = reader.GetInt32(quantityOrdinal);
                 var productId = reader.GetInt32(productIdOrdinal);
 
@@ -849,8 +850,8 @@ namespace MyStores.Dal
                 {
                     VendorId = vendorId,
                     Quantity = quantity,
-                    SellingPrice = sellingPrice,
-                    PurchasePrice = purchasePrice,
+                    SellingPrice = decimal.ToDouble(sellingPrice),
+                    PurchasePrice = decimal.ToDouble(purchasePrice),
                     Item = new Product
                     {
                         Id = productId
