@@ -52,8 +52,11 @@ namespace MyStores.UserControls.HomeUserControl
 
         private void StoreHomeChip_Click(object sender, EventArgs e)
         {
-           UserControl current = (UserControl)sender;
-           MessageBox.Show(current.Controls["idLabel"].Text);
+            UserControl current = (UserControl)sender;
+            int id = int.Parse(current.Controls["idLabel"].Text);
+            mainStoreFrontUserControl.Visible = true;
+            mainStoreFrontUserControl.BringToFront();
+            mainStoreFrontUserControl.SetStoreId(id);
         }
 
         private static string ManagersNames(List<Users>? managers, string managersNames)
