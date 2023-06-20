@@ -1,17 +1,27 @@
-﻿namespace MyStores.UserControls.HomeUserControl
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using MyStores.Model;
+
+namespace MyStores.UserControls.HomeUserControl
 {
     public partial class StoreFrontUserControl : UserControl
     {
         private int _storeId;
+        private Users _owner;
         public StoreFrontUserControl()
         {
             InitializeComponent();
             hideAllUserControls();
+            _owner = new Users();
         }
 
         public void SetStoreId(int id)
         {
             _storeId = id;
+        }
+
+        public void SetOwner(Users setUser)
+        {
+            _owner = setUser;
         }
 
         private void hideAllUserControls()
@@ -35,6 +45,7 @@
             backButton.Visible = true;
             backButtonPanel.BringToFront();
             mainAddProductToStoreUserControl.SetStore(_storeId);
+            mainAddProductToStoreUserControl.BringToFront();
             mainAddProductToStoreUserControl.Visible = true;
         }
 
@@ -63,6 +74,8 @@
         {
             expandPanel();
             mainAddVendorToStoreUserControl.BringToFront();
+            mainAddVendorToStoreUserControl.SetStore(_storeId);
+            mainAddVendorToStoreUserControl.SetOwner(_owner);
             backButton.Visible = true;
             backButtonPanel.BringToFront();
             mainAddVendorToStoreUserControl.Visible = true;

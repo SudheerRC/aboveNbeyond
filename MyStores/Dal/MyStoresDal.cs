@@ -2,6 +2,7 @@
 using System.Data.SqlClient;
 using System.Security.Cryptography.X509Certificates;
 using MyStores.Model;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace MyStores.Dal
 {
@@ -891,6 +892,22 @@ namespace MyStores.Dal
                 name = reader.GetString(storeNameOrdinal);
             }
             return name;
+        }
+
+        public bool CheckStoreVendorExists(int storeId, int vendorId)
+        {
+            using var connection = DbConnection.GetConnection();
+            connection.Open();
+            string query = "select count(*) from StoreVendors where storeID = @storeId and vendorId = @vendorId";
+
+            using var command = new SqlCommand(query, connection);
+            command.Parameters.Add("@storeId", System.Data.SqlDbType.Int);
+            command.Parameters["@storeId"].Value = storeId;
+
+            command.Parameters.Add("@vendorId", System.Data.SqlDbType.Int);
+            command.Parameters["@vendorId"].Value = vendorId;
+            int count = Convert.ToInt32(command.ExecuteScalar());
+            return count >= 1;
         }
     }
 }
