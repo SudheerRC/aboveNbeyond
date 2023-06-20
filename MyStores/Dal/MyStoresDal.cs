@@ -614,51 +614,41 @@ namespace MyStores.Dal
 
         public List<InventoryItem> SearchInventory(int storeId)
         {
-            var stores = new List<InventoryItem>();
+            var inventoryItems = new List<InventoryItem>();
             using var connection = DbConnection.GetConnection();
             connection.Open();
 
             string query =
-                "SELECT inventoryID, vendorID, productID, storeID, purchasePrice, sellingPrice and quantity FROM Inventory WHERE Inventory.storeID = @storeID";
+                "SELECT  vendorID, purchasePrice, sellingPrice and quantity FROM Inventory WHERE Inventory.storeID = @storeID";
             using var command = new SqlCommand(query, connection);
 
             command.Parameters.Add("@storeID", System.Data.SqlDbType.VarChar);
             command.Parameters["@storeID"].Value = storeId;
             using var reader = command.ExecuteReader();
 
-            var inventoryIdOrdinal = reader.GetOrdinal("inventoryID");
             var vendorIdOrdinal = reader.GetOrdinal("vendorID");
-            var productIdOrdinal = reader.GetOrdinal("productID");
-            var storeIdOrdinal = reader.GetOrdinal("storeID");
             var purchasePriceOrdinal = reader.GetOrdinal("purchasePrice");
             var sellingPriceOrdinal = reader.GetOrdinal("sellingPrice");
             var quantityOrdinal = reader.GetOrdinal("quantity");
 
             while (reader.Read())
             {
-                var inventoryId = reader.GetInt32(inventoryIdOrdinal);
                 var vendorId = reader.GetInt32(vendorIdOrdinal);
-                var productId = reader.GetInt32(productIdOrdinal);
-                var storeID = reader.GetInt32(storeIdOrdinal);
-                var purchasePrice = reader.GetString(purchasePriceOrdinal);
-                var sellingPrice = reader.GetString(sellingPriceOrdinal);
-                var quantity = reader.GetString(quantityOrdinal);
+                var purchasePrice = reader.GetDouble(purchasePriceOrdinal);
+                var sellingPrice = reader.GetDouble(sellingPriceOrdinal);
+                var quantity = reader.GetInt32(quantityOrdinal);
 
-                stores.Add(new InventoryItem
+                inventoryItems.Add(new InventoryItem
                 {
-                    //Id = storeID,
-                    //OwnerId = ownerId,
-                    //Name = name,
-                    //StreetAddress = streetAddress,
-                    //City = city,
-                    //State = state,
-                    //ZipCode = zipCode,
-                    //Country = country,
-
+                    VendorId = vendorId,
+                    Quantity = quantity,
+                    SellingPrice = sellingPrice,
+                    PurchasePrice = purchasePrice,
+                   
                 });
             }
 
-            return stores;
+            return inventoryItems;
         }
     }
 }

@@ -134,6 +134,11 @@ namespace MyStores.Controller
             return _storesDal.SearchProductWithStoreIdAndName(storeId, productName);
         }
 
+        public List<InventoryItem> SearchInventoryItem(int storeId)
+        {
+            return _storesDal.SearchInventory(storeId);
+        }
+
         public void AddVendor(Vendor vendor)
         {
             _storesDal.AddVendor(vendor);
