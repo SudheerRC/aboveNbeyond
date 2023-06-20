@@ -1,5 +1,6 @@
 ﻿using MyStores.Controller;
 using MyStores.Model;
+using System.Windows.Forms;
 
 namespace MyStores.UserControls
 {
@@ -11,6 +12,8 @@ namespace MyStores.UserControls
         {
             InitializeComponent();
             _controller = new MyStoresController();
+            hideAllPanels();
+            vendorInfoPanel.Visible = true;
             loadVendorComboBox();
         }
 
@@ -106,6 +109,7 @@ namespace MyStores.UserControls
         {
             var selectedVendor = vendorComboBox.SelectedItem as Vendor;
             var selectedProduct = inventoryListView.SelectedItems;
+            var inventoryItem = new InventoryItem();
 
             var currentVendorId = selectedVendor.Id;
             var currentProductId = Convert.ToInt32(selectedProduct[0].Text);
@@ -113,21 +117,47 @@ namespace MyStores.UserControls
             var purchasePrice = Convert.ToDouble(purchasePriceTextBox.Text);
             var quantity = Convert.ToInt32(quantityTextBox.Text);
 
-            var inventoryItem = new InventoryItem
+            try
             {
-                VendorId = currentVendorId,
-                Item = new Product
+                if (!ValidateFields())
                 {
-                    Id = currentProductId
-                },
-                PurchasePrice = purchasePrice,
-                SellingPrice = currentSellingPrice,
-                Quantity = quantity
-            };
+                    purchasePriceErrorLabel.Visible = false;
+                    sellingPriceErrorLabel.Visible = false;
+                    quantityErrorLabel.Visible = false;
 
-            _controller.AddInventory(inventoryItem, _storeId);
-            MessageBox.Show(@"Successfully added the product to your inventory!");
+                    inventoryItem.VendorId = currentVendorId;
+                    inventoryItem.Item = new Product
+                    {
+                        Id = currentProductId
+                    };
+                    inventoryItem.PurchasePrice = purchasePrice;
+                    inventoryItem.SellingPrice = currentSellingPrice;
+                    inventoryItem.Quantity = quantity;
 
+                    _controller.AddInventory(inventoryItem, _storeId);
+                    MessageBox.Show(@"Successfully added the product to your inventory!");
+
+                    resetControl();
+                }
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show(@"Please clear the errors and try again to add.");
+            }
+        }
+
+        private void resetControl()
+        {
+            addButton.Enabled = false;
+            previousButton.Enabled = false;
+
+            inventoryListView.Items.Clear();
+            searchTextBox.Text = "";
+            loadVendorComboBox();
+
+            hideAllPanels();
+            vendorInfoPanel.BringToFront();
+            vendorInfoPanel.Visible = true;
         }
 
         private void searchButton_Click(object sender, EventArgs e)
@@ -142,6 +172,76 @@ namespace MyStores.UserControls
             {
                 MessageBox.Show(@"Please enter a valid text or number in the search field.");
             }
+        }
+
+        private bool ValidateFields()
+        {
+            bool result = false;
+            double price;
+            int quantity;
+            if (string.IsNullOrEmpty(purchasePriceTextBox.Text))
+            {
+                purchasePriceErrorLabel.Text = @"Purchase price cannot be empty";
+                purchasePriceErrorLabel.Visible = true;
+                result = true;
+            }
+
+            if (string.IsNullOrEmpty(sellingPriceTextBox.Text))
+            {
+                sellingPriceErrorLabel.Text = @"Product's selling price cannot be empty";
+                sellingPriceErrorLabel.Visible = true;
+                result = true;
+            }
+
+            if (string.IsNullOrEmpty(quantityTextBox.Text))
+            {
+                quantityErrorLabel.Text = @"Quantity cannot be empty";
+                quantityErrorLabel.Visible = true;
+                result = true;
+            }
+
+            if (!double.TryParse(purchasePriceTextBox.Text, out price))
+            {
+                purchasePriceErrorLabel.Text = @"Product's purchase price must be a valid number";
+                purchasePriceErrorLabel.Visible = true;
+                result = true;
+            }
+
+            if (!double.TryParse(sellingPriceTextBox.Text, out price))
+            {
+                sellingPriceErrorLabel.Text = @"Product's selling price must be a valid number";
+                sellingPriceErrorLabel.Visible = true;
+                result = true;
+            }
+
+            if (!int.TryParse(quantityTextBox.Text, out quantity))
+            {
+                quantityErrorLabel.Text = @"Quantity must be a valid number";
+                quantityErrorLabel.Visible = true;
+                result = true;
+            }
+
+            return result;
+        }
+
+        private void addVendorToStoreButton_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+        }
+
+        private void purchasePriceTextBox_TextChanged(object sender, EventArgs e)
+        {
+            purchasePriceErrorLabel.Visible = false;
+        }
+
+        private void sellingPriceTextBox_TextChanged(object sender, EventArgs e)
+        {
+            sellingPriceErrorLabel.Visible = false;
+        }
+
+        private void quantityTextBox_TextChanged(object sender, EventArgs e)
+        {
+            quantityErrorLabel.Visible = false;
         }
     }
 }
