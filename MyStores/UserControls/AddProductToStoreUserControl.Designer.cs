@@ -204,10 +204,10 @@
             // 
             // productLookUpPanel
             // 
+            this.productLookUpPanel.Controls.Add(this.vendorPanel);
             this.productLookUpPanel.Controls.Add(this.headingLabel);
             this.productLookUpPanel.Controls.Add(this.searchInputPanel);
             this.productLookUpPanel.Controls.Add(this.inventoryListView);
-            this.productLookUpPanel.Controls.Add(this.vendorPanel);
             this.productLookUpPanel.Location = new System.Drawing.Point(0, 0);
             this.productLookUpPanel.Name = "productLookUpPanel";
             this.productLookUpPanel.Size = new System.Drawing.Size(633, 369);

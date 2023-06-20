@@ -19,5 +19,20 @@ namespace MyStores.UserControls
         {
             _owner = setUser;
         }
+
+        private void refreshListButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void VendorTabUserControl_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

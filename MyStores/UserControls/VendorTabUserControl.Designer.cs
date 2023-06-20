@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VendorTabUserControl));
             this.mainAddVendorUserControl = new MyStores.UserControls.AddVendorUserControl();
             this.searchVendorPanel = new System.Windows.Forms.Panel();
+            this.refreshListButton = new System.Windows.Forms.Button();
             this.mainVendorListView = new System.Windows.Forms.ListView();
             this.vendorName = new System.Windows.Forms.ColumnHeader();
             this.city = new System.Windows.Forms.ColumnHeader();
@@ -42,7 +43,6 @@
             this.searchTextBox = new System.Windows.Forms.TextBox();
             this.searchButtonPanel = new System.Windows.Forms.Panel();
             this.searchButton = new System.Windows.Forms.Button();
-            this.refreshListButton = new System.Windows.Forms.Button();
             this.searchVendorPanel.SuspendLayout();
             this.searchInputPanel.SuspendLayout();
             this.searchButtonPanel.SuspendLayout();
@@ -66,8 +66,27 @@
             this.searchVendorPanel.Size = new System.Drawing.Size(950, 700);
             this.searchVendorPanel.TabIndex = 1;
             // 
+            // refreshListButton
+            // 
+            this.refreshListButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.refreshListButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
+            this.refreshListButton.FlatAppearance.BorderSize = 0;
+            this.refreshListButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.refreshListButton.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.refreshListButton.ForeColor = System.Drawing.Color.White;
+            this.refreshListButton.Location = new System.Drawing.Point(772, 10);
+            this.refreshListButton.Name = "refreshListButton";
+            this.refreshListButton.Size = new System.Drawing.Size(166, 44);
+            this.refreshListButton.TabIndex = 108;
+            this.refreshListButton.Text = "Refresh List";
+            this.refreshListButton.UseVisualStyleBackColor = false;
+            this.refreshListButton.Click += new System.EventHandler(this.refreshListButton_Click);
+            // 
             // mainVendorListView
             // 
+            this.mainVendorListView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.mainVendorListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.vendorName,
             this.city,
@@ -76,41 +95,44 @@
             this.zipCode,
             this.country});
             this.mainVendorListView.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.mainVendorListView.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.mainVendorListView.GridLines = true;
             this.mainVendorListView.Location = new System.Drawing.Point(0, 73);
             this.mainVendorListView.Name = "mainVendorListView";
             this.mainVendorListView.Size = new System.Drawing.Size(950, 627);
             this.mainVendorListView.TabIndex = 3;
             this.mainVendorListView.UseCompatibleStateImageBehavior = false;
+            this.mainVendorListView.View = System.Windows.Forms.View.Details;
             // 
             // vendorName
             // 
             this.vendorName.Text = "Vendor Name";
-            this.vendorName.Width = 220;
+            this.vendorName.Width = 180;
             // 
             // city
             // 
             this.city.Text = "City";
-            this.city.Width = 220;
+            this.city.Width = 110;
             // 
             // phoneNumber
             // 
             this.phoneNumber.Text = "Phone Number";
-            this.phoneNumber.Width = 220;
+            this.phoneNumber.Width = 110;
             // 
             // stateName
             // 
             this.stateName.Text = "State Name";
-            this.stateName.Width = 220;
+            this.stateName.Width = 110;
             // 
             // zipCode
             // 
             this.zipCode.Text = "Zip Code";
-            this.zipCode.Width = 220;
+            this.zipCode.Width = 110;
             // 
             // country
             // 
             this.country.Text = "Country";
-            this.country.Width = 220;
+            this.country.Width = 120;
             // 
             // searchInputPanel
             // 
@@ -158,23 +180,7 @@
             this.searchButton.Size = new System.Drawing.Size(36, 35);
             this.searchButton.TabIndex = 2;
             this.searchButton.UseVisualStyleBackColor = false;
-            // 
-            // refreshListButton
-            // 
-            this.refreshListButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.refreshListButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
-            this.refreshListButton.FlatAppearance.BorderSize = 0;
-            this.refreshListButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.refreshListButton.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.refreshListButton.ForeColor = System.Drawing.Color.White;
-            this.refreshListButton.Location = new System.Drawing.Point(772, 10);
-            this.refreshListButton.Name = "refreshListButton";
-            this.refreshListButton.Size = new System.Drawing.Size(166, 44);
-            this.refreshListButton.TabIndex = 108;
-            this.refreshListButton.Text = "Refresh List";
-            this.refreshListButton.UseVisualStyleBackColor = false;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // VendorTabUserControl
             // 
@@ -185,6 +191,7 @@
             this.Controls.Add(this.mainAddVendorUserControl);
             this.Name = "VendorTabUserControl";
             this.Size = new System.Drawing.Size(1390, 900);
+            this.Load += new System.EventHandler(this.VendorTabUserControl_Load);
             this.searchVendorPanel.ResumeLayout(false);
             this.searchInputPanel.ResumeLayout(false);
             this.searchInputPanel.PerformLayout();
