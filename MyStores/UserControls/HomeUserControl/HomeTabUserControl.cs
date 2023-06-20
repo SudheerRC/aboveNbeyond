@@ -43,9 +43,17 @@ namespace MyStores.UserControls.HomeUserControl
                 homeChips[i].StoreName = storeList[i].Name;
                 homeChips[i].City = storeList[i].City;
                 homeChips[i].Managers = managersNames;
+                homeChips[i].Id = storeList[i].Id;
 
                 homeFlowLayoutPanel.Controls.Add(homeChips[i]);
+                homeChips[i].Click += new EventHandler(StoreHomeChip_Click);
             }
+        }
+
+        private void StoreHomeChip_Click(object sender, EventArgs e)
+        {
+           UserControl current = (UserControl)sender;
+           MessageBox.Show(current.Controls["idLabel"].Text);
         }
 
         private static string ManagersNames(List<Users>? managers, string managersNames)

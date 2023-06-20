@@ -10,7 +10,7 @@ namespace MyStores.View
         {
             InitializeComponent();
             _owner = new Users();
-            formScaling();
+            FormScaling();
 
             mainHomeTabUserControl.Parent = storeContainer.Panel2;
             mainHomeTabUserControl.Dock = DockStyle.Top;
@@ -55,7 +55,7 @@ namespace MyStores.View
             WindowState = FormWindowState.Minimized;
         }
 
-        private void formScaling()
+        private void FormScaling()
         {
             System.Drawing.Rectangle screenRectangle = Screen.GetWorkingArea(this);
             var oldWidth = screenRectangle.Width;
@@ -75,7 +75,7 @@ namespace MyStores.View
         private void restoreButton_Click(object sender, EventArgs e)
         {
             this.maxButton.Visible = true;
-            formScaling();
+            FormScaling();
         }
 
         private void homeMenuButton_Click(object sender, EventArgs e)
