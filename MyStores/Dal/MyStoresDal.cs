@@ -909,5 +909,56 @@ namespace MyStores.Dal
             int count = Convert.ToInt32(command.ExecuteScalar());
             return count >= 1;
         }
+
+        public List<Vendor> SearchVendorsWithName(string inputName)
+        {
+            var vendors = new List<Vendor>();
+            using var connection = DbConnection.GetConnection();
+            connection.Open();
+
+            string query =
+                "SELECT vendorID, vendorName, streetAddress, city, state, zipCode, country, phoneNumber FROM Vendor where vendorName LIKE '%' + @inputName + '%'";
+            using var command = new SqlCommand(query, connection);
+            command.Parameters.Add("@inputName", System.Data.SqlDbType.VarChar);
+            command.Parameters["@inputName"].Value = inputName;
+
+            using var reader = command.ExecuteReader();
+
+            var vendorIdOrdinal = reader.GetOrdinal("vendorID");
+            var vendorNameOrdinal = reader.GetOrdinal("vendorName");
+            var streetAddressOrdinal = reader.GetOrdinal("streetAddress");
+            var cityOrdinal = reader.GetOrdinal("city");
+            var stateOrdinal = reader.GetOrdinal("state");
+            var zipCodeOrdinal = reader.GetOrdinal("zipCode");
+            var countryOrdinal = reader.GetOrdinal("country");
+            var phoneNumberOrdinal = reader.GetOrdinal("phoneNumber");
+
+            while (reader.Read())
+            {
+                var vendorId = reader.GetInt32(vendorIdOrdinal);
+                var name = reader.GetString(vendorNameOrdinal);
+                var streetAddress = reader.GetString(streetAddressOrdinal);
+                var city = reader.GetString(cityOrdinal);
+                var state = reader.GetString(stateOrdinal);
+                var zipCode = reader.GetString(zipCodeOrdinal);
+                var country = reader.GetString(countryOrdinal);
+                var phoneNumber = reader.GetString(phoneNumberOrdinal);
+
+                vendors.Add(new Vendor
+                {
+                    Id = vendorId,
+                    Name = name,
+                    StreetAddress = streetAddress,
+                    City = city,
+                    State = state,
+                    ZipCode = zipCode,
+                    Country = country,
+                    PhoneNumber = phoneNumber
+
+                });
+            }
+
+            return vendors;
+        }
     }
 }
