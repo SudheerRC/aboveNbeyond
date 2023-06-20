@@ -1,5 +1,6 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
+using System.Security.Cryptography.X509Certificates;
 using MyStores.Model;
 
 namespace MyStores.Dal
@@ -214,7 +215,7 @@ namespace MyStores.Dal
         /// </summary>
         /// <param name="vendorId">Vendor Id.</param>
         /// <returns>Name of the vendor</returns>
-        public string nameOfVendorWithId(int vendorId)
+        public string NameOfVendorWithId(int vendorId)
         {
             using var connection = DbConnection.GetConnection();
             connection.Open();
@@ -722,6 +723,28 @@ namespace MyStores.Dal
             }
 
             return inventoryItems;
+        }
+
+        public string GetStoreName(int storeId)
+        {
+            string name = "";
+            using var connection = DbConnection.GetConnection();
+            connection.Open();
+
+            string query =
+                "SELECT  storeName FROM Stores WHERE storeID = @storeId";
+            using var command = new SqlCommand(query, connection);
+
+            command.Parameters.Add("@storeId", System.Data.SqlDbType.Int);
+            command.Parameters["@storeId"].Value = storeId;
+            using var reader = command.ExecuteReader();
+
+            var storeNameOrdinal = reader.GetOrdinal("storeName");
+            while (reader.Read())
+            {
+                name = reader.GetString(storeNameOrdinal);
+            }
+            return name;
         }
     }
 }

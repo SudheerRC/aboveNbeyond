@@ -156,9 +156,9 @@ namespace MyStores.Controller
         /// </summary>
         /// <param name="vendorId">Vendor Id.</param>
         /// <returns>Name of the vendor</returns>
-        public string nameOfVendorWithId(int vendorId)
+        public string NameOfVendorWithId(int vendorId)
         {
-            return _storesDal.nameOfVendorWithId(vendorId);
+            return _storesDal.NameOfVendorWithId(vendorId);
         }
 
         /// <summary>
@@ -169,6 +169,16 @@ namespace MyStores.Controller
         public Product SearchProductWithId(int productId)
         {
             return _storesDal.SearchProductWithId(productId);
+        }
+
+        /// <summary>
+        /// Gets the name of the store.
+        /// </summary>
+        /// <param name="id">The store id.</param>
+        /// <returns></returns>
+        public string GetStoreName(int id)
+        {
+            return _storesDal.GetStoreName(id);
         }
     }
 }

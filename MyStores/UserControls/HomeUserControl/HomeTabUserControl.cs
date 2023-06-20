@@ -54,6 +54,8 @@ namespace MyStores.UserControls.HomeUserControl
         {
             UserControl current = (UserControl)sender;
             int id = int.Parse(current.Controls["idLabel"].Text);
+            string name = _controller.GetStoreName(id);
+            
             mainStoreFrontUserControl.Visible = true;
             mainStoreFrontUserControl.BringToFront();
             mainStoreFrontUserControl.SetStoreId(id);

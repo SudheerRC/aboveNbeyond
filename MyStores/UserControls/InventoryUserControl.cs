@@ -40,7 +40,7 @@ namespace MyStores.UserControls
         private void FeedListView(InventoryItem ii)
         {
             var vendorId = ii.VendorId;
-            var myVendorName = _controller.nameOfVendorWithId(vendorId);
+            var myVendorName = _controller.NameOfVendorWithId(vendorId);
             var currentProduct = _controller.SearchProductWithId(ii.Item.Id);
             string[] row =
             {
