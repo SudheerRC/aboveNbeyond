@@ -183,5 +183,102 @@ namespace MyStores.Dal
             }
             return stores;
         }
+
+        public List<Product> SearchProduct(String productName)
+        {
+            var products = new List<Product>();
+            using var connection = DbConnection.GetConnection();
+            connection.Open();
+
+            string query = "SELECT productID, productName, productSize, description, departmentName, barcode, sellingPrice FROM PRODUCT WHERE ProductName LIKE '%@productName%'";
+            using var command = new SqlCommand(query, connection);
+
+            command.Parameters.Add("@productName", System.Data.SqlDbType.VarChar);
+            command.Parameters["@productName"].Value = productName;
+            using var reader = command.ExecuteReader();
+
+            var productIdOrdinal = reader.GetOrdinal("productID");
+            var productNameOrdinal = reader.GetOrdinal("productName");
+            var productSizeOrdinal = reader.GetOrdinal("productSize");
+            var descriptionOrdinal = reader.GetOrdinal("description");
+            var departmentNameOrdinal = reader.GetOrdinal("departmentName");
+            var barcodeOrdinal = reader.GetOrdinal("barcode");
+            var sellingPriceOrdinal = reader.GetOrdinal("sellingPrice");
+
+            while (reader.Read())
+            {
+                var productId = reader.GetInt32(productIdOrdinal);
+                var name = reader.GetString(productNameOrdinal);
+                var size = reader.GetString(productSizeOrdinal);
+                var description = reader.GetString(descriptionOrdinal);
+                var department = reader.GetString(departmentNameOrdinal);
+                var barcode = reader.GetString(barcodeOrdinal);
+                var sellingPrice = reader.GetInt32(sellingPriceOrdinal);
+
+                products.Add(new Product
+                {
+                    Id = productId,
+                    Description = description,
+                    Name = name,
+                    ProductSize = size,
+                    DepartmentName = department,
+                    SellingPrice = sellingPrice,
+                    Barcode = barcode
+                });
+            }
+
+            return products;
+        }
+
+
+        public List<Vendor> SearchVendor(String vendorName)
+        {
+            var vendors = new List<Vendor>();
+            using var connection = DbConnection.GetConnection();
+            connection.Open();
+
+            string query = "SELECT vendorID, vendorName, streetAddress, city, state, zipCode, country, phoneNumber FROM Vendor WHERE vendorName LIKE '%@vendorName%'";
+            using var command = new SqlCommand(query, connection);
+
+            command.Parameters.Add("@vendorName", System.Data.SqlDbType.VarChar);
+            command.Parameters["@vendorName"].Value = vendorName;
+            using var reader = command.ExecuteReader();
+
+            var vendorIdOrdinal = reader.GetOrdinal("vendorID");
+            var vendorNameOrdinal = reader.GetOrdinal("vendorName");
+            var streetAddressOrdinal = reader.GetOrdinal("streetAddress");
+            var cityOrdinal = reader.GetOrdinal("city");
+            var stateOrdinal = reader.GetOrdinal("state");
+            var zipCodeOrdinal = reader.GetOrdinal("zipCode");
+            var countryOrdinal = reader.GetOrdinal("country");
+            var phoneNumberOrdinal = reader.GetOrdinal("phoneNumber");
+
+            while (reader.Read())
+            {
+                var vendorId = reader.GetInt32(vendorIdOrdinal);
+                var name = reader.GetString(vendorNameOrdinal);
+                var streetAddress = reader.GetString(streetAddressOrdinal);
+                var city = reader.GetString(cityOrdinal);
+                var state = reader.GetString(stateOrdinal);
+                var zipCode = reader.GetString(zipCodeOrdinal);
+                var country = reader.GetString(countryOrdinal);
+                var phoneNumber = reader.GetString(phoneNumberOrdinal);
+
+                vendors.Add(new Vendor
+                {
+                    Id = vendorId,
+                    Name = name,
+                    StreetAddress = streetAddress,
+                    City = city,
+                    State = state,
+                    ZipCode = zipCode,
+                    Country = country,
+                    PhoneNumber = phoneNumber
+
+                });
+            }
+
+            return vendors;
+        }
     }
 }

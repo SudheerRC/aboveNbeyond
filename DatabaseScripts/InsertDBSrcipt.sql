@@ -19,10 +19,10 @@ SET IDENTITY_INSERT [dbo].[Product] OFF
 SET ANSI_PADDING OFF
 GO
 SET IDENTITY_INSERT [dbo].[Vendor] ON
-INSERT [dbo].[Vendor] ([vendorID], [vendorName], [departmentName], [streetAddress], [city], [state], [zipCode], [country], [phoneNumber]) VALUES (1, 'coke beverages', 'soda', '65-South Street', 'Greenland', 'South Carolina', '30824', 'United States', '6541239877')
-INSERT [dbo].[Vendor] ([vendorID], [vendorName], [departmentName], [streetAddress], [city], [state], [zipCode], [country], [phoneNumber]) VALUES (2, 'Mikes beverages', 'beer', '24-Town Hills', 'Brewman', 'Georgia', '30115', 'United States', '9987654321')
-INSERT [dbo].[Vendor] ([vendorID], [vendorName], [departmentName], [streetAddress], [city], [state], [zipCode], [country], [phoneNumber]) VALUES (3, 'cigarette', 'tobacco', '2564-Brewman Road', 'Douglasville', 'Georgia', '30455', 'United States', '9874561234')
-INSERT [dbo].[Vendor] ([vendorID], [vendorName], [departmentName], [streetAddress], [city], [state], [zipCode], [country], [phoneNumber]) VALUES (4, 'candy limited', 'chocolates', '65-South Street', 'Greenland', 'South Carolina', '30824', 'United States', '6541239877')
+INSERT [dbo].[Vendor] ([vendorID], [vendorName], [streetAddress], [city], [state], [zipCode], [country], [phoneNumber]) VALUES (1, 'coke beverages', '65-South Street', 'Greenland', 'South Carolina', '30824', 'United States', '6541239877')
+INSERT [dbo].[Vendor] ([vendorID], [vendorName], [streetAddress], [city], [state], [zipCode], [country], [phoneNumber]) VALUES (2, 'Mikes beverages', '24-Town Hills', 'Brewman', 'Georgia', '30115', 'United States', '9987654321')
+INSERT [dbo].[Vendor] ([vendorID], [vendorName], [streetAddress], [city], [state], [zipCode], [country], [phoneNumber]) VALUES (3, 'cigarette', '2564-Brewman Road', 'Douglasville', 'Georgia', '30455', 'United States', '9874561234')
+INSERT [dbo].[Vendor] ([vendorID], [vendorName], [streetAddress], [city], [state], [zipCode], [country], [phoneNumber]) VALUES (4, 'candy limited', '65-South Street', 'Greenland', 'South Carolina', '30824', 'United States', '6541239877')
 SET IDENTITY_INSERT [dbo].[Vendor] OFF
 
 SET ANSI_PADDING OFF
