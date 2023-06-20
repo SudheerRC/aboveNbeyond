@@ -665,6 +665,35 @@ namespace MyStores.Dal
             command.ExecuteNonQuery();
         }
 
+        public void AddInventory(InventoryItem inventoryItem, int storeId)
+        {
+            using var connection = DbConnection.GetConnection();
+            connection.Open();
+            string query = "INSERT Inventory (vendorID, productID, storeID, purchasePrice, sellingPrice, quantity) " +
+                           "VALUES (@vendorID, @productID, @storeID, @purchasePrice, @sellingPrice, @quantity)";
+            using var command = new SqlCommand(query, connection);
+
+            command.Parameters.Add("@vendorID", System.Data.SqlDbType.Int);
+            command.Parameters["@vendorID"].Value = inventoryItem.VendorId;
+
+            command.Parameters.Add("@productID", System.Data.SqlDbType.Int);
+            command.Parameters["@productID"].Value = inventoryItem.Item.Id;
+
+            command.Parameters.Add("@storeID", System.Data.SqlDbType.Int);
+            command.Parameters["@storeID"].Value = storeId;
+
+            command.Parameters.Add("@purchasePrice", System.Data.SqlDbType.Decimal);
+            command.Parameters["@purchasePrice"].Value = inventoryItem.PurchasePrice;
+
+            command.Parameters.Add("@sellingPrice", System.Data.SqlDbType.Decimal);
+            command.Parameters["@sellingPrice"].Value = inventoryItem.SellingPrice;
+
+            command.Parameters.Add("@quantity", System.Data.SqlDbType.Int);
+            command.Parameters["@quantity"].Value = inventoryItem.Quantity;
+
+            command.ExecuteNonQuery();
+        }
+
         public void AddVendorToStore(int vendorId, int storeId)
         {
             using var connection = DbConnection.GetConnection();

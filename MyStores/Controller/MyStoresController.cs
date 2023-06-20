@@ -195,5 +195,10 @@ namespace MyStores.Controller
         {
             _storesDal.AddVendorToStore(vendorId, storeId);
         }
+
+        public void AddInventory(InventoryItem inventoryItem, int storeId)
+        {
+            _storesDal.AddInventory(inventoryItem, storeId);
+        }
     }
 }
