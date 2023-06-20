@@ -417,6 +417,7 @@
             // 
             // infoGraphicPictureBox
             // 
+            this.infoGraphicPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("infoGraphicPictureBox.Image")));
             this.infoGraphicPictureBox.Location = new System.Drawing.Point(11, 11);
             this.infoGraphicPictureBox.Name = "infoGraphicPictureBox";
             this.infoGraphicPictureBox.Size = new System.Drawing.Size(48, 48);
