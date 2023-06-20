@@ -46,7 +46,7 @@
 
         private void exitStoreButton_Click(object sender, EventArgs e)
         {
-            this.Parent.Controls.Remove(this);
+            this.Hide();
         }
 
         private void inventoryButton_Click(object sender, EventArgs e)

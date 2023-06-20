@@ -54,20 +54,6 @@ namespace MyStores.UserControls
             storeVendorListView.Items.Add(listItem);
         }
 
-        private List<Vendor> getAllVendorList()
-        {
-            List<Vendor> vendorList = new List<Vendor>();
-            List<Store> storeList = _controller.GetUserStores(_owner.UserId);
-
-            foreach (Store store in storeList)
-            {
-                List<Vendor> currentStoresVendors = _controller.SearchVendorByStoreId(store.Id);
-                vendorList.AddRange(currentStoresVendors);
-            }
-
-            return vendorList;
-        }
-
         private void loadVendorComboBox()
         {
             vendorComboBox.Items.Clear();
@@ -77,10 +63,10 @@ namespace MyStores.UserControls
 
         private void addVendorButton_Click(object sender, EventArgs e)
         {
-            mainAddVendorUserControl.BringToFront();
-            closeVendorFormPictureBox.BringToFront();
             vendorInfoPanel.Visible = false;
+            mainAddVendorUserControl.BringToFront();
             mainAddVendorUserControl.Visible = true;
+            closeVendorFormPictureBox.BringToFront();
             closeVendorFormPictureBox.Visible = true;
         }
 
