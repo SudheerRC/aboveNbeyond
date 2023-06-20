@@ -123,9 +123,10 @@
             // 
             // logoutButton
             // 
+            this.logoutButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.logoutButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.logoutButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
-            this.logoutButton.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.logoutButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
             this.logoutButton.FlatAppearance.BorderSize = 0;
             this.logoutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -148,9 +149,10 @@
             // 
             // addVendorSubMenuButton
             // 
+            this.addVendorSubMenuButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.addVendorSubMenuButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.addVendorSubMenuButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
-            this.addVendorSubMenuButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.addVendorSubMenuButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
             this.addVendorSubMenuButton.FlatAppearance.BorderSize = 0;
             this.addVendorSubMenuButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -172,9 +174,10 @@
             // 
             // searchVendorSubMenuButton
             // 
+            this.searchVendorSubMenuButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.searchVendorSubMenuButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.searchVendorSubMenuButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
-            this.searchVendorSubMenuButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.searchVendorSubMenuButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
             this.searchVendorSubMenuButton.FlatAppearance.BorderSize = 0;
             this.searchVendorSubMenuButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -196,9 +199,10 @@
             // 
             // vendorsMenuButton
             // 
+            this.vendorsMenuButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.vendorsMenuButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.vendorsMenuButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
-            this.vendorsMenuButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.vendorsMenuButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
             this.vendorsMenuButton.FlatAppearance.BorderSize = 0;
             this.vendorsMenuButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -220,9 +224,10 @@
             // 
             // addProductSubMenuButton
             // 
+            this.addProductSubMenuButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.addProductSubMenuButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.addProductSubMenuButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
-            this.addProductSubMenuButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.addProductSubMenuButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
             this.addProductSubMenuButton.FlatAppearance.BorderSize = 0;
             this.addProductSubMenuButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -244,9 +249,10 @@
             // 
             // productsMenuButton
             // 
+            this.productsMenuButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.productsMenuButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.productsMenuButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
-            this.productsMenuButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.productsMenuButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
             this.productsMenuButton.FlatAppearance.BorderSize = 0;
             this.productsMenuButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -268,9 +274,10 @@
             // 
             // homeMenuButton
             // 
+            this.homeMenuButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.homeMenuButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.homeMenuButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
-            this.homeMenuButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.homeMenuButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
             this.homeMenuButton.FlatAppearance.BorderSize = 0;
             this.homeMenuButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -364,7 +371,7 @@
             this.mainVendorTabUserControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(211)))), ((int)(((byte)(177)))));
             this.mainVendorTabUserControl.Location = new System.Drawing.Point(8, 11);
             this.mainVendorTabUserControl.Name = "mainVendorTabUserControl";
-            this.mainVendorTabUserControl.Size = new System.Drawing.Size(1390, 909);
+            this.mainVendorTabUserControl.Size = new System.Drawing.Size(1390, 912);
             this.mainVendorTabUserControl.TabIndex = 2;
             // 
             // mainProductsTabUserControl
@@ -375,7 +382,7 @@
             this.mainProductsTabUserControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(211)))), ((int)(((byte)(177)))));
             this.mainProductsTabUserControl.Location = new System.Drawing.Point(10, 15);
             this.mainProductsTabUserControl.Name = "mainProductsTabUserControl";
-            this.mainProductsTabUserControl.Size = new System.Drawing.Size(1390, 909);
+            this.mainProductsTabUserControl.Size = new System.Drawing.Size(1390, 912);
             this.mainProductsTabUserControl.TabIndex = 1;
             // 
             // mainHomeTabUserControl
@@ -387,7 +394,7 @@
             this.mainHomeTabUserControl.Location = new System.Drawing.Point(0, 0);
             this.mainHomeTabUserControl.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.mainHomeTabUserControl.Name = "mainHomeTabUserControl";
-            this.mainHomeTabUserControl.Size = new System.Drawing.Size(1405, 944);
+            this.mainHomeTabUserControl.Size = new System.Drawing.Size(1405, 947);
             this.mainHomeTabUserControl.TabIndex = 0;
             // 
             // searchPanel
@@ -398,7 +405,7 @@
             this.searchPanel.Location = new System.Drawing.Point(4, 144);
             this.searchPanel.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.searchPanel.Name = "searchPanel";
-            this.searchPanel.Size = new System.Drawing.Size(301, 349);
+            this.searchPanel.Size = new System.Drawing.Size(304, 349);
             this.searchPanel.TabIndex = 7;
             // 
             // searchInputPanel
@@ -409,7 +416,7 @@
             this.searchInputPanel.Location = new System.Drawing.Point(0, 0);
             this.searchInputPanel.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.searchInputPanel.Name = "searchInputPanel";
-            this.searchInputPanel.Size = new System.Drawing.Size(301, 35);
+            this.searchInputPanel.Size = new System.Drawing.Size(304, 35);
             this.searchInputPanel.TabIndex = 0;
             // 
             // searchTextBox
@@ -417,7 +424,7 @@
             this.searchTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.searchTextBox.Dock = System.Windows.Forms.DockStyle.Right;
             this.searchTextBox.Enabled = false;
-            this.searchTextBox.Location = new System.Drawing.Point(5, 0);
+            this.searchTextBox.Location = new System.Drawing.Point(8, 0);
             this.searchTextBox.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.searchTextBox.Name = "searchTextBox";
             this.searchTextBox.PlaceholderText = "Coming in the next iteration";
@@ -428,7 +435,7 @@
             // 
             this.searchButtonPanel.Controls.Add(this.searchButton);
             this.searchButtonPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.searchButtonPanel.Location = new System.Drawing.Point(266, 0);
+            this.searchButtonPanel.Location = new System.Drawing.Point(269, 0);
             this.searchButtonPanel.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.searchButtonPanel.Name = "searchButtonPanel";
             this.searchButtonPanel.Size = new System.Drawing.Size(35, 35);
