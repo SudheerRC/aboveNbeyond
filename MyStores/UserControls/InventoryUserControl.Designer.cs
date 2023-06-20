@@ -30,18 +30,20 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InventoryUserControl));
             this.inventoryListView = new System.Windows.Forms.ListView();
+            this.barcode = new System.Windows.Forms.ColumnHeader();
+            this.productName = new System.Windows.Forms.ColumnHeader();
+            this.description = new System.Windows.Forms.ColumnHeader();
+            this.productSize = new System.Windows.Forms.ColumnHeader();
+            this.sellingPrice = new System.Windows.Forms.ColumnHeader();
+            this.purchasePrice = new System.Windows.Forms.ColumnHeader();
+            this.vendorName = new System.Windows.Forms.ColumnHeader();
+            this.quantity = new System.Windows.Forms.ColumnHeader();
+            this.edit = new System.Windows.Forms.ColumnHeader();
+            this.delete = new System.Windows.Forms.ColumnHeader();
             this.searchInputPanel = new System.Windows.Forms.Panel();
             this.searchTextBox = new System.Windows.Forms.TextBox();
             this.searchButtonPanel = new System.Windows.Forms.Panel();
             this.searchButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.productName = new System.Windows.Forms.ColumnHeader();
-            this.productSize = new System.Windows.Forms.ColumnHeader();
-            this.description = new System.Windows.Forms.ColumnHeader();
-            this.barcode = new System.Windows.Forms.ColumnHeader();
-            this.sellingPrice = new System.Windows.Forms.ColumnHeader();
-            this.edit = new System.Windows.Forms.ColumnHeader();
-            this.delete = new System.Windows.Forms.ColumnHeader();
             this.searchInputPanel.SuspendLayout();
             this.searchButtonPanel.SuspendLayout();
             this.SuspendLayout();
@@ -54,6 +56,9 @@
             this.description,
             this.productSize,
             this.sellingPrice,
+            this.purchasePrice,
+            this.vendorName,
+            this.quantity,
             this.edit,
             this.delete});
             this.inventoryListView.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -63,6 +68,61 @@
             this.inventoryListView.TabIndex = 0;
             this.inventoryListView.UseCompatibleStateImageBehavior = false;
             this.inventoryListView.View = System.Windows.Forms.View.List;
+            // 
+            // barcode
+            // 
+            this.barcode.DisplayIndex = 3;
+            this.barcode.Text = "Barcode";
+            this.barcode.Width = 220;
+            // 
+            // productName
+            // 
+            this.productName.DisplayIndex = 0;
+            this.productName.Text = "Product Name";
+            this.productName.Width = 220;
+            // 
+            // description
+            // 
+            this.description.Text = "Description";
+            this.description.Width = 220;
+            // 
+            // productSize
+            // 
+            this.productSize.DisplayIndex = 1;
+            this.productSize.Text = "Product Size";
+            this.productSize.Width = 220;
+            // 
+            // sellingPrice
+            // 
+            this.sellingPrice.Text = "Selling Price";
+            this.sellingPrice.Width = 220;
+            // 
+            // purchasePrice
+            // 
+            this.purchasePrice.DisplayIndex = 9;
+            this.purchasePrice.Text = "Purchase Price";
+            this.purchasePrice.Width = 220;
+            // 
+            // vendorName
+            // 
+            this.vendorName.DisplayIndex = 8;
+            this.vendorName.Text = "Vendor Name";
+            this.vendorName.Width = 220;
+            // 
+            // quantity
+            // 
+            this.quantity.Text = "Quantity";
+            this.quantity.Width = 220;
+            // 
+            // edit
+            // 
+            this.edit.DisplayIndex = 5;
+            this.edit.Text = "";
+            // 
+            // delete
+            // 
+            this.delete.DisplayIndex = 6;
+            this.delete.Text = "";
             // 
             // searchInputPanel
             // 
@@ -90,7 +150,6 @@
             // 
             // searchButtonPanel
             // 
-            this.searchButtonPanel.Controls.Add(this.button1);
             this.searchButtonPanel.Controls.Add(this.searchButton);
             this.searchButtonPanel.Dock = System.Windows.Forms.DockStyle.Right;
             this.searchButtonPanel.Location = new System.Drawing.Point(262, 0);
@@ -108,59 +167,10 @@
             this.searchButton.Image = ((System.Drawing.Image)(resources.GetObject("searchButton.Image")));
             this.searchButton.Location = new System.Drawing.Point(0, 0);
             this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(0, 0);
-            this.searchButton.TabIndex = 0;
+            this.searchButton.Size = new System.Drawing.Size(35, 35);
+            this.searchButton.TabIndex = 2;
             this.searchButton.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(35, 35);
-            this.button1.TabIndex = 2;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // productName
-            // 
-            this.productName.DisplayIndex = 0;
-            this.productName.Text = "Product Name";
-            this.productName.Width = 220;
-            // 
-            // productSize
-            // 
-            this.productSize.DisplayIndex = 1;
-            this.productSize.Text = "Product Size";
-            this.productSize.Width = 220;
-            // 
-            // description
-            // 
-            this.description.Text = "Description";
-            this.description.Width = 220;
-            // 
-            // barcode
-            // 
-            this.barcode.DisplayIndex = 3;
-            this.barcode.Text = "Barcode";
-            this.barcode.Width = 220;
-            // 
-            // sellingPrice
-            // 
-            this.sellingPrice.Text = "Selling Price";
-            this.sellingPrice.Width = 220;
-            // 
-            // edit
-            // 
-            this.edit.Text = "";
-            // 
-            // delete
-            // 
-            this.delete.Text = "";
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click_1);
             // 
             // InventoryUserControl
             // 
@@ -183,7 +193,6 @@
         private Panel searchInputPanel;
         private TextBox searchTextBox;
         private Panel searchButtonPanel;
-        private Button button1;
         private Button searchButton;
         private ColumnHeader barcode;
         private ColumnHeader productName;
@@ -192,5 +201,8 @@
         private ColumnHeader sellingPrice;
         private ColumnHeader edit;
         private ColumnHeader delete;
+        private ColumnHeader purchasePrice;
+        private ColumnHeader vendorName;
+        private ColumnHeader quantity;
     }
 }
