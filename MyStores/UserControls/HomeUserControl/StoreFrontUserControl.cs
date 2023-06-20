@@ -16,9 +16,9 @@
 
         private void hideAllUserControls()
         {
-            mainAddProductToStoreUserControl`.Visible = false;
+            mainAddProductToStoreUserControl.Visible = false;
             mainInventoryUserControl.Visible = false;
-            mainAddVendorToStoreUserControl`.Visible = false;
+            mainAddVendorToStoreUserControl.Visible = false;
             mainAddManagerUserControl.Visible = false;
         }
 
