@@ -85,5 +85,19 @@ namespace MyStores.View
             DialogResult = DialogResult.OK;
             this.Close();
         }
+
+        #region Hover
+
+        private void homeMenuButton_MouseEnter(object sender, EventArgs e)
+        {
+            homeMenuButton.ForeColor = Color.FromArgb(227, 211, 177);
+        }
+
+        private void homeMenuButton_MouseLeave(object sender, EventArgs e)
+        {
+            homeMenuButton.ForeColor = Color.FromArgb(252, 251, 255);
+        }
+
+        #endregion
     }
 }
