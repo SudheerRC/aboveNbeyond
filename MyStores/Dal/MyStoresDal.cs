@@ -510,8 +510,8 @@ namespace MyStores.Dal
             command.Parameters.Add("@storeId", System.Data.SqlDbType.Int);
             command.Parameters["@storeId"].Value = storeId;
 
-            command.Parameters.Add("@userId", System.Data.SqlDbType.Int);
-            command.Parameters["@userId"].Value = userId;
+            command.Parameters.Add("@managerId", System.Data.SqlDbType.Int);
+            command.Parameters["@managerId"].Value = userId;
 
             command.ExecuteNonQuery();
         }
