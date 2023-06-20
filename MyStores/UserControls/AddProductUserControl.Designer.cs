@@ -48,6 +48,9 @@
             clearButton = new Button();
             addButton = new Button();
             errorLabel = new Label();
+            nameErrorLabel = new Label();
+            priceErrorLabel = new Label();
+            barcodeErrorLabel = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox).BeginInit();
             imageGroupBox.SuspendLayout();
             SuspendLayout();
@@ -72,6 +75,7 @@
             nameTextBox.Name = "nameTextBox";
             nameTextBox.Size = new Size(158, 23);
             nameTextBox.TabIndex = 67;
+            nameTextBox.GotFocus += NameTextBox_GotFocus;
             // 
             // productNameLabel
             // 
@@ -80,9 +84,9 @@
             productNameLabel.Location = new Point(35, 66);
             productNameLabel.Margin = new Padding(2, 0, 2, 0);
             productNameLabel.Name = "productNameLabel";
-            productNameLabel.Size = new Size(95, 19);
+            productNameLabel.Size = new Size(101, 19);
             productNameLabel.TabIndex = 68;
-            productNameLabel.Text = "Product name";
+            productNameLabel.Text = "Product name*";
             // 
             // descriptionLabel
             // 
@@ -148,6 +152,8 @@
             priceTextBox.Name = "priceTextBox";
             priceTextBox.Size = new Size(151, 23);
             priceTextBox.TabIndex = 76;
+            priceTextBox.GotFocus += PriceTextBox_GotFocus;
+            priceTextBox.KeyPress += priceTextBox_KeyPress;
             // 
             // sellingPriceLabel
             // 
@@ -156,9 +162,9 @@
             sellingPriceLabel.Location = new Point(42, 320);
             sellingPriceLabel.Margin = new Padding(2, 0, 2, 0);
             sellingPriceLabel.Name = "sellingPriceLabel";
-            sellingPriceLabel.Size = new Size(81, 19);
+            sellingPriceLabel.Size = new Size(87, 19);
             sellingPriceLabel.TabIndex = 77;
-            sellingPriceLabel.Text = "Selling Price";
+            sellingPriceLabel.Text = "Selling Price*";
             // 
             // barcodeTextBox
             // 
@@ -167,6 +173,8 @@
             barcodeTextBox.Name = "barcodeTextBox";
             barcodeTextBox.Size = new Size(151, 23);
             barcodeTextBox.TabIndex = 78;
+            barcodeTextBox.GotFocus += BarcodeTextBox_GotFocus;
+            barcodeTextBox.KeyPress += BarcodeTextBox_KeyPress;
             // 
             // barcodeLabel
             // 
@@ -175,9 +183,9 @@
             barcodeLabel.Location = new Point(42, 373);
             barcodeLabel.Margin = new Padding(2, 0, 2, 0);
             barcodeLabel.Name = "barcodeLabel";
-            barcodeLabel.Size = new Size(58, 19);
+            barcodeLabel.Size = new Size(64, 19);
             barcodeLabel.TabIndex = 79;
-            barcodeLabel.Text = "Barcode";
+            barcodeLabel.Text = "Barcode*";
             // 
             // imageLabel
             // 
@@ -240,6 +248,7 @@
             addButton.TabIndex = 83;
             addButton.Text = "Add Product";
             addButton.UseVisualStyleBackColor = false;
+            addButton.Click += AddButton_Click;
             // 
             // errorLabel
             // 
@@ -255,11 +264,59 @@
             errorLabel.UseWaitCursor = true;
             errorLabel.Visible = false;
             // 
+            // nameErrorLabel
+            // 
+            nameErrorLabel.AutoSize = true;
+            nameErrorLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            nameErrorLabel.ForeColor = Color.Red;
+            nameErrorLabel.Location = new Point(58, 97);
+            nameErrorLabel.Margin = new Padding(2, 0, 2, 0);
+            nameErrorLabel.Name = "nameErrorLabel";
+            nameErrorLabel.Size = new Size(55, 15);
+            nameErrorLabel.TabIndex = 86;
+            nameErrorLabel.Text = "Error text";
+            nameErrorLabel.TextAlign = ContentAlignment.MiddleCenter;
+            nameErrorLabel.UseWaitCursor = true;
+            nameErrorLabel.Visible = false;
+            // 
+            // priceErrorLabel
+            // 
+            priceErrorLabel.AutoSize = true;
+            priceErrorLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            priceErrorLabel.ForeColor = Color.Red;
+            priceErrorLabel.Location = new Point(58, 348);
+            priceErrorLabel.Margin = new Padding(2, 0, 2, 0);
+            priceErrorLabel.Name = "priceErrorLabel";
+            priceErrorLabel.Size = new Size(55, 15);
+            priceErrorLabel.TabIndex = 87;
+            priceErrorLabel.Text = "Error text";
+            priceErrorLabel.TextAlign = ContentAlignment.MiddleCenter;
+            priceErrorLabel.UseWaitCursor = true;
+            priceErrorLabel.Visible = false;
+            // 
+            // barcodeErrorLabel
+            // 
+            barcodeErrorLabel.AutoSize = true;
+            barcodeErrorLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            barcodeErrorLabel.ForeColor = Color.Red;
+            barcodeErrorLabel.Location = new Point(58, 407);
+            barcodeErrorLabel.Margin = new Padding(2, 0, 2, 0);
+            barcodeErrorLabel.Name = "barcodeErrorLabel";
+            barcodeErrorLabel.Size = new Size(55, 15);
+            barcodeErrorLabel.TabIndex = 88;
+            barcodeErrorLabel.Text = "Error text";
+            barcodeErrorLabel.TextAlign = ContentAlignment.MiddleCenter;
+            barcodeErrorLabel.UseWaitCursor = true;
+            barcodeErrorLabel.Visible = false;
+            // 
             // AddProductUserControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Bisque;
+            Controls.Add(barcodeErrorLabel);
+            Controls.Add(priceErrorLabel);
+            Controls.Add(nameErrorLabel);
             Controls.Add(errorLabel);
             Controls.Add(clearButton);
             Controls.Add(addButton);
@@ -279,7 +336,7 @@
             Controls.Add(productNameLabel);
             Controls.Add(titleLabel);
             Name = "AddProductUserControl";
-            Size = new Size(359, 619);
+            Size = new Size(359, 627);
             ((System.ComponentModel.ISupportInitialize)pictureBox).EndInit();
             imageGroupBox.ResumeLayout(false);
             imageGroupBox.PerformLayout();
@@ -309,5 +366,8 @@
         private Button clearButton;
         private Button addButton;
         private Label errorLabel;
+        private Label nameErrorLabel;
+        private Label priceErrorLabel;
+        private Label barcodeErrorLabel;
     }
 }
