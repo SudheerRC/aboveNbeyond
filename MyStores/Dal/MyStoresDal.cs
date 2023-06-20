@@ -487,5 +487,26 @@ namespace MyStores.Dal
 
             command.ExecuteNonQuery();
         }
+
+        /// <summary>
+        /// Adds the manager.
+        /// </summary>
+        /// <param name="userId">The user id.</param>
+        /// <param name="storeId">The store id.</param>
+        public void AddManager(int userId, int storeId)
+        {
+            using var connection = DbConnection.GetConnection();
+            connection.Open();
+            string query = "INSERT INTO StoreManagers (storeID, managerID) VALUES (@storeId, @managerId)";
+            using var command = new SqlCommand(query, connection);
+
+            command.Parameters.Add("@storeId", System.Data.SqlDbType.Int);
+            command.Parameters["@storeId"].Value = storeId;
+
+            command.Parameters.Add("@userId", System.Data.SqlDbType.Int);
+            command.Parameters["@userId"].Value = userId;
+
+            command.ExecuteNonQuery();
+        }
     }
 }

@@ -133,5 +133,10 @@ namespace MyStores.Controller
         {
             _storesDal.AddVendor(vendor);
         }
+
+        public void AddManager(int userId, int storeId)
+        {
+            _storesDal.AddManager(userId, storeId);
+        }
     }
 }
