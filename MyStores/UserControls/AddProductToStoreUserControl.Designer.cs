@@ -35,6 +35,7 @@
             this.searchButton = new System.Windows.Forms.Button();
             this.headingLabel = new System.Windows.Forms.Label();
             this.inventoryListView = new System.Windows.Forms.ListView();
+            this.productId = new System.Windows.Forms.ColumnHeader();
             this.barcode = new System.Windows.Forms.ColumnHeader();
             this.productName = new System.Windows.Forms.ColumnHeader();
             this.description = new System.Windows.Forms.ColumnHeader();
@@ -42,7 +43,18 @@
             this.sellingPrice = new System.Windows.Forms.ColumnHeader();
             this.nextButton = new System.Windows.Forms.Button();
             this.productLookUpPanel = new System.Windows.Forms.Panel();
+            this.vendorPanel = new System.Windows.Forms.Panel();
+            this.vendorInfoPanel = new System.Windows.Forms.Panel();
+            this.addVendorToStoreButton = new System.Windows.Forms.Button();
+            this.messageLabel = new System.Windows.Forms.Label();
+            this.infoGraphicPictureBox = new System.Windows.Forms.PictureBox();
+            this.vendorHeadingLabel = new System.Windows.Forms.Label();
+            this.vendorComboBox = new System.Windows.Forms.ComboBox();
+            this.vendorPanelTitleLabel = new System.Windows.Forms.Label();
             this.pricePanel = new System.Windows.Forms.Panel();
+            this.sellingPriceErrorLabel = new System.Windows.Forms.Label();
+            this.quantityErrorLabel = new System.Windows.Forms.Label();
+            this.purchasePriceErrorLabel = new System.Windows.Forms.Label();
             this.quantityLabel = new System.Windows.Forms.Label();
             this.sellingPriceLabel = new System.Windows.Forms.Label();
             this.purchasePriceLabel = new System.Windows.Forms.Label();
@@ -52,25 +64,13 @@
             this.titleLabel = new System.Windows.Forms.Label();
             this.previousButton = new System.Windows.Forms.Button();
             this.addButton = new System.Windows.Forms.Button();
-            this.vendorPanel = new System.Windows.Forms.Panel();
-            this.vendorInfoPanel = new System.Windows.Forms.Panel();
-            this.addVendorToStoreButton = new System.Windows.Forms.Button();
-            this.messageLabel = new System.Windows.Forms.Label();
-            this.infoGraphicPictureBox = new System.Windows.Forms.PictureBox();
-            this.vendorHeadingLabel = new System.Windows.Forms.Label();
-            this.vendorComboBox = new System.Windows.Forms.ComboBox();
-            this.vendorPanelTitleLabel = new System.Windows.Forms.Label();
-            this.productId = new System.Windows.Forms.ColumnHeader();
-            this.purchasePriceErrorLabel = new System.Windows.Forms.Label();
-            this.quantityErrorLabel = new System.Windows.Forms.Label();
-            this.sellingPriceErrorLabel = new System.Windows.Forms.Label();
             this.searchInputPanel.SuspendLayout();
             this.searchButtonPanel.SuspendLayout();
             this.productLookUpPanel.SuspendLayout();
-            this.pricePanel.SuspendLayout();
             this.vendorPanel.SuspendLayout();
             this.vendorInfoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.infoGraphicPictureBox)).BeginInit();
+            this.pricePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // searchInputPanel
@@ -145,6 +145,12 @@
             this.inventoryListView.UseCompatibleStateImageBehavior = false;
             this.inventoryListView.View = System.Windows.Forms.View.List;
             // 
+            // productId
+            // 
+            this.productId.DisplayIndex = 5;
+            this.productId.Text = "Product ID";
+            this.productId.Width = 220;
+            // 
             // barcode
             // 
             this.barcode.DisplayIndex = 0;
@@ -204,6 +210,98 @@
             this.productLookUpPanel.Size = new System.Drawing.Size(633, 369);
             this.productLookUpPanel.TabIndex = 7;
             // 
+            // vendorPanel
+            // 
+            this.vendorPanel.Controls.Add(this.vendorInfoPanel);
+            this.vendorPanel.Controls.Add(this.vendorHeadingLabel);
+            this.vendorPanel.Controls.Add(this.vendorComboBox);
+            this.vendorPanel.Controls.Add(this.vendorPanelTitleLabel);
+            this.vendorPanel.Location = new System.Drawing.Point(0, 0);
+            this.vendorPanel.Name = "vendorPanel";
+            this.vendorPanel.Size = new System.Drawing.Size(633, 369);
+            this.vendorPanel.TabIndex = 14;
+            // 
+            // vendorInfoPanel
+            // 
+            this.vendorInfoPanel.Controls.Add(this.addVendorToStoreButton);
+            this.vendorInfoPanel.Controls.Add(this.messageLabel);
+            this.vendorInfoPanel.Controls.Add(this.infoGraphicPictureBox);
+            this.vendorInfoPanel.Location = new System.Drawing.Point(107, 160);
+            this.vendorInfoPanel.Name = "vendorInfoPanel";
+            this.vendorInfoPanel.Padding = new System.Windows.Forms.Padding(8);
+            this.vendorInfoPanel.Size = new System.Drawing.Size(426, 170);
+            this.vendorInfoPanel.TabIndex = 12;
+            // 
+            // addVendorToStoreButton
+            // 
+            this.addVendorToStoreButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.addVendorToStoreButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
+            this.addVendorToStoreButton.Enabled = false;
+            this.addVendorToStoreButton.FlatAppearance.BorderSize = 0;
+            this.addVendorToStoreButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addVendorToStoreButton.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.addVendorToStoreButton.ForeColor = System.Drawing.Color.White;
+            this.addVendorToStoreButton.Location = new System.Drawing.Point(133, 121);
+            this.addVendorToStoreButton.Name = "addVendorToStoreButton";
+            this.addVendorToStoreButton.Size = new System.Drawing.Size(170, 41);
+            this.addVendorToStoreButton.TabIndex = 15;
+            this.addVendorToStoreButton.Text = "Add Vendor to Store";
+            this.addVendorToStoreButton.UseVisualStyleBackColor = false;
+            this.addVendorToStoreButton.Click += new System.EventHandler(this.addVendorToStoreButton_Click);
+            // 
+            // messageLabel
+            // 
+            this.messageLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.messageLabel.Location = new System.Drawing.Point(65, 11);
+            this.messageLabel.Name = "messageLabel";
+            this.messageLabel.Size = new System.Drawing.Size(350, 101);
+            this.messageLabel.TabIndex = 13;
+            this.messageLabel.Text = "Info Message";
+            // 
+            // infoGraphicPictureBox
+            // 
+            this.infoGraphicPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("infoGraphicPictureBox.Image")));
+            this.infoGraphicPictureBox.Location = new System.Drawing.Point(11, 11);
+            this.infoGraphicPictureBox.Name = "infoGraphicPictureBox";
+            this.infoGraphicPictureBox.Size = new System.Drawing.Size(48, 48);
+            this.infoGraphicPictureBox.TabIndex = 0;
+            this.infoGraphicPictureBox.TabStop = false;
+            // 
+            // vendorHeadingLabel
+            // 
+            this.vendorHeadingLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.vendorHeadingLabel.Location = new System.Drawing.Point(107, 92);
+            this.vendorHeadingLabel.Name = "vendorHeadingLabel";
+            this.vendorHeadingLabel.Size = new System.Drawing.Size(111, 35);
+            this.vendorHeadingLabel.TabIndex = 11;
+            this.vendorHeadingLabel.Text = "Vendor:";
+            this.vendorHeadingLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // vendorComboBox
+            // 
+            this.vendorComboBox.DropDownHeight = 110;
+            this.vendorComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.vendorComboBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.vendorComboBox.FormattingEnabled = true;
+            this.vendorComboBox.IntegralHeight = false;
+            this.vendorComboBox.Location = new System.Drawing.Point(271, 97);
+            this.vendorComboBox.MaxDropDownItems = 99;
+            this.vendorComboBox.Name = "vendorComboBox";
+            this.vendorComboBox.Size = new System.Drawing.Size(262, 29);
+            this.vendorComboBox.TabIndex = 9;
+            // 
+            // vendorPanelTitleLabel
+            // 
+            this.vendorPanelTitleLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.vendorPanelTitleLabel.Location = new System.Drawing.Point(3, 19);
+            this.vendorPanelTitleLabel.Name = "vendorPanelTitleLabel";
+            this.vendorPanelTitleLabel.Size = new System.Drawing.Size(627, 51);
+            this.vendorPanelTitleLabel.TabIndex = 4;
+            this.vendorPanelTitleLabel.Text = "Please select the vendor that supplies the product";
+            this.vendorPanelTitleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // pricePanel
             // 
             this.pricePanel.Controls.Add(this.sellingPriceErrorLabel);
@@ -221,6 +319,51 @@
             this.pricePanel.Name = "pricePanel";
             this.pricePanel.Size = new System.Drawing.Size(633, 369);
             this.pricePanel.TabIndex = 8;
+            // 
+            // sellingPriceErrorLabel
+            // 
+            this.sellingPriceErrorLabel.AutoSize = true;
+            this.sellingPriceErrorLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.sellingPriceErrorLabel.ForeColor = System.Drawing.Color.Red;
+            this.sellingPriceErrorLabel.Location = new System.Drawing.Point(308, 247);
+            this.sellingPriceErrorLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.sellingPriceErrorLabel.Name = "sellingPriceErrorLabel";
+            this.sellingPriceErrorLabel.Size = new System.Drawing.Size(55, 15);
+            this.sellingPriceErrorLabel.TabIndex = 110;
+            this.sellingPriceErrorLabel.Text = "Error text";
+            this.sellingPriceErrorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.sellingPriceErrorLabel.UseWaitCursor = true;
+            this.sellingPriceErrorLabel.Visible = false;
+            // 
+            // quantityErrorLabel
+            // 
+            this.quantityErrorLabel.AutoSize = true;
+            this.quantityErrorLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.quantityErrorLabel.ForeColor = System.Drawing.Color.Red;
+            this.quantityErrorLabel.Location = new System.Drawing.Point(308, 321);
+            this.quantityErrorLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.quantityErrorLabel.Name = "quantityErrorLabel";
+            this.quantityErrorLabel.Size = new System.Drawing.Size(55, 15);
+            this.quantityErrorLabel.TabIndex = 109;
+            this.quantityErrorLabel.Text = "Error text";
+            this.quantityErrorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.quantityErrorLabel.UseWaitCursor = true;
+            this.quantityErrorLabel.Visible = false;
+            // 
+            // purchasePriceErrorLabel
+            // 
+            this.purchasePriceErrorLabel.AutoSize = true;
+            this.purchasePriceErrorLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.purchasePriceErrorLabel.ForeColor = System.Drawing.Color.Red;
+            this.purchasePriceErrorLabel.Location = new System.Drawing.Point(308, 170);
+            this.purchasePriceErrorLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.purchasePriceErrorLabel.Name = "purchasePriceErrorLabel";
+            this.purchasePriceErrorLabel.Size = new System.Drawing.Size(55, 15);
+            this.purchasePriceErrorLabel.TabIndex = 108;
+            this.purchasePriceErrorLabel.Text = "Error text";
+            this.purchasePriceErrorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.purchasePriceErrorLabel.UseWaitCursor = true;
+            this.purchasePriceErrorLabel.Visible = false;
             // 
             // quantityLabel
             // 
@@ -348,149 +491,6 @@
             this.addButton.UseVisualStyleBackColor = false;
             this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
-            // vendorPanel
-            // 
-            this.vendorPanel.Controls.Add(this.vendorInfoPanel);
-            this.vendorPanel.Controls.Add(this.vendorHeadingLabel);
-            this.vendorPanel.Controls.Add(this.vendorComboBox);
-            this.vendorPanel.Controls.Add(this.vendorPanelTitleLabel);
-            this.vendorPanel.Location = new System.Drawing.Point(0, 0);
-            this.vendorPanel.Name = "vendorPanel";
-            this.vendorPanel.Size = new System.Drawing.Size(633, 369);
-            this.vendorPanel.TabIndex = 14;
-            // 
-            // vendorInfoPanel
-            // 
-            this.vendorInfoPanel.Controls.Add(this.addVendorToStoreButton);
-            this.vendorInfoPanel.Controls.Add(this.messageLabel);
-            this.vendorInfoPanel.Controls.Add(this.infoGraphicPictureBox);
-            this.vendorInfoPanel.Location = new System.Drawing.Point(107, 160);
-            this.vendorInfoPanel.Name = "vendorInfoPanel";
-            this.vendorInfoPanel.Padding = new System.Windows.Forms.Padding(8);
-            this.vendorInfoPanel.Size = new System.Drawing.Size(426, 170);
-            this.vendorInfoPanel.TabIndex = 12;
-            // 
-            // addVendorToStoreButton
-            // 
-            this.addVendorToStoreButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.addVendorToStoreButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
-            this.addVendorToStoreButton.Enabled = false;
-            this.addVendorToStoreButton.FlatAppearance.BorderSize = 0;
-            this.addVendorToStoreButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addVendorToStoreButton.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.addVendorToStoreButton.ForeColor = System.Drawing.Color.White;
-            this.addVendorToStoreButton.Location = new System.Drawing.Point(133, 121);
-            this.addVendorToStoreButton.Name = "addVendorToStoreButton";
-            this.addVendorToStoreButton.Size = new System.Drawing.Size(170, 41);
-            this.addVendorToStoreButton.TabIndex = 15;
-            this.addVendorToStoreButton.Text = "Add Vendor to Store";
-            this.addVendorToStoreButton.UseVisualStyleBackColor = false;
-            this.addVendorToStoreButton.Click += new System.EventHandler(this.addVendorToStoreButton_Click);
-            // 
-            // messageLabel
-            // 
-            this.messageLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.messageLabel.Location = new System.Drawing.Point(65, 11);
-            this.messageLabel.Name = "messageLabel";
-            this.messageLabel.Size = new System.Drawing.Size(350, 101);
-            this.messageLabel.TabIndex = 13;
-            this.messageLabel.Text = "Info Message";
-            // 
-            // infoGraphicPictureBox
-            // 
-            this.infoGraphicPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("infoGraphicPictureBox.Image")));
-            this.infoGraphicPictureBox.Location = new System.Drawing.Point(11, 11);
-            this.infoGraphicPictureBox.Name = "infoGraphicPictureBox";
-            this.infoGraphicPictureBox.Size = new System.Drawing.Size(48, 48);
-            this.infoGraphicPictureBox.TabIndex = 0;
-            this.infoGraphicPictureBox.TabStop = false;
-            // 
-            // vendorHeadingLabel
-            // 
-            this.vendorHeadingLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.vendorHeadingLabel.Location = new System.Drawing.Point(107, 92);
-            this.vendorHeadingLabel.Name = "vendorHeadingLabel";
-            this.vendorHeadingLabel.Size = new System.Drawing.Size(111, 35);
-            this.vendorHeadingLabel.TabIndex = 11;
-            this.vendorHeadingLabel.Text = "Vendor:";
-            this.vendorHeadingLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // vendorComboBox
-            // 
-            this.vendorComboBox.DropDownHeight = 110;
-            this.vendorComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.vendorComboBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.vendorComboBox.FormattingEnabled = true;
-            this.vendorComboBox.IntegralHeight = false;
-            this.vendorComboBox.Location = new System.Drawing.Point(271, 97);
-            this.vendorComboBox.MaxDropDownItems = 99;
-            this.vendorComboBox.Name = "vendorComboBox";
-            this.vendorComboBox.Size = new System.Drawing.Size(262, 29);
-            this.vendorComboBox.TabIndex = 9;
-            // 
-            // vendorPanelTitleLabel
-            // 
-            this.vendorPanelTitleLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.vendorPanelTitleLabel.Location = new System.Drawing.Point(3, 19);
-            this.vendorPanelTitleLabel.Name = "vendorPanelTitleLabel";
-            this.vendorPanelTitleLabel.Size = new System.Drawing.Size(627, 51);
-            this.vendorPanelTitleLabel.TabIndex = 4;
-            this.vendorPanelTitleLabel.Text = "Please select the vendor that supplies the product";
-            this.vendorPanelTitleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // productId
-            // 
-            this.productId.DisplayIndex = 5;
-            this.productId.Text = "Product ID";
-            this.productId.Width = 220;
-            // 
-            // purchasePriceErrorLabel
-            // 
-            this.purchasePriceErrorLabel.AutoSize = true;
-            this.purchasePriceErrorLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.purchasePriceErrorLabel.ForeColor = System.Drawing.Color.Red;
-            this.purchasePriceErrorLabel.Location = new System.Drawing.Point(308, 170);
-            this.purchasePriceErrorLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.purchasePriceErrorLabel.Name = "purchasePriceErrorLabel";
-            this.purchasePriceErrorLabel.Size = new System.Drawing.Size(55, 15);
-            this.purchasePriceErrorLabel.TabIndex = 108;
-            this.purchasePriceErrorLabel.Text = "Error text";
-            this.purchasePriceErrorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.purchasePriceErrorLabel.UseWaitCursor = true;
-            this.purchasePriceErrorLabel.Visible = false;
-            // 
-            // quantityErrorLabel
-            // 
-            this.quantityErrorLabel.AutoSize = true;
-            this.quantityErrorLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.quantityErrorLabel.ForeColor = System.Drawing.Color.Red;
-            this.quantityErrorLabel.Location = new System.Drawing.Point(308, 321);
-            this.quantityErrorLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.quantityErrorLabel.Name = "quantityErrorLabel";
-            this.quantityErrorLabel.Size = new System.Drawing.Size(55, 15);
-            this.quantityErrorLabel.TabIndex = 109;
-            this.quantityErrorLabel.Text = "Error text";
-            this.quantityErrorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.quantityErrorLabel.UseWaitCursor = true;
-            this.quantityErrorLabel.Visible = false;
-            // 
-            // sellingPriceErrorLabel
-            // 
-            this.sellingPriceErrorLabel.AutoSize = true;
-            this.sellingPriceErrorLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.sellingPriceErrorLabel.ForeColor = System.Drawing.Color.Red;
-            this.sellingPriceErrorLabel.Location = new System.Drawing.Point(308, 247);
-            this.sellingPriceErrorLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.sellingPriceErrorLabel.Name = "sellingPriceErrorLabel";
-            this.sellingPriceErrorLabel.Size = new System.Drawing.Size(55, 15);
-            this.sellingPriceErrorLabel.TabIndex = 110;
-            this.sellingPriceErrorLabel.Text = "Error text";
-            this.sellingPriceErrorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.sellingPriceErrorLabel.UseWaitCursor = true;
-            this.sellingPriceErrorLabel.Visible = false;
-            // 
             // AddProductToStoreUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -502,15 +502,16 @@
             this.Controls.Add(this.pricePanel);
             this.Name = "AddProductToStoreUserControl";
             this.Size = new System.Drawing.Size(639, 423);
+            this.Load += new System.EventHandler(this.AddProductToStoreUserControl_Load);
             this.searchInputPanel.ResumeLayout(false);
             this.searchInputPanel.PerformLayout();
             this.searchButtonPanel.ResumeLayout(false);
             this.productLookUpPanel.ResumeLayout(false);
-            this.pricePanel.ResumeLayout(false);
-            this.pricePanel.PerformLayout();
             this.vendorPanel.ResumeLayout(false);
             this.vendorInfoPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.infoGraphicPictureBox)).EndInit();
+            this.pricePanel.ResumeLayout(false);
+            this.pricePanel.PerformLayout();
             this.ResumeLayout(false);
 
         }

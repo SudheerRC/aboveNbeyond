@@ -1,6 +1,5 @@
 ﻿using MyStores.Controller;
 using MyStores.Model;
-using System.Windows.Forms;
 
 namespace MyStores.UserControls
 {
@@ -12,9 +11,6 @@ namespace MyStores.UserControls
         {
             InitializeComponent();
             _controller = new MyStoresController();
-            hideAllPanels();
-            vendorInfoPanel.Visible = true;
-            loadVendorComboBox();
         }
 
         public void SetStore(int id)
@@ -241,6 +237,11 @@ namespace MyStores.UserControls
         private void quantityTextBox_TextChanged(object sender, EventArgs e)
         {
             quantityErrorLabel.Visible = false;
+        }
+
+        private void AddProductToStoreUserControl_Load(object sender, EventArgs e)
+        {
+            resetControl();
         }
     }
 }

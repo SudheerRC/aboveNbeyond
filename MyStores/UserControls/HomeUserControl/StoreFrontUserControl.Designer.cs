@@ -36,13 +36,13 @@
             this.orderButton = new System.Windows.Forms.Button();
             this.exitStoreButton = new System.Windows.Forms.Button();
             this.storeExpandedPanel = new System.Windows.Forms.Panel();
+            this.mainAddProductToStoreUserControl = new MyStores.UserControls.AddProductToStoreUserControl();
             this.mainAddVendorToStoreUserControl = new MyStores.UserControls.AddVendorToStoreUserControl();
             this.mainAddManagerUserControl = new MyStores.UserControls.AddManagerUserControl();
             this.backButtonPanel = new System.Windows.Forms.Panel();
             this.backButton = new System.Windows.Forms.Button();
             this.mainInventoryUserControl = new MyStores.UserControls.InventoryUserControl();
             this.addManagerButton = new System.Windows.Forms.Button();
-            this.mainAddProductToStoreUserControl = new MyStores.UserControls.AddProductToStoreUserControl();
             this.storeExpandedPanel.SuspendLayout();
             this.backButtonPanel.SuspendLayout();
             this.SuspendLayout();
@@ -80,6 +80,7 @@
             this.AddVendorButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.AddVendorButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.AddVendorButton.UseVisualStyleBackColor = false;
+            this.AddVendorButton.Click += new System.EventHandler(this.AddVendorButton_Click);
             // 
             // addProductButton
             // 
@@ -97,6 +98,7 @@
             this.addProductButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.addProductButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.addProductButton.UseVisualStyleBackColor = false;
+            this.addProductButton.Click += new System.EventHandler(this.addProductButton_Click);
             // 
             // inventoryButton
             // 
@@ -114,6 +116,7 @@
             this.inventoryButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.inventoryButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.inventoryButton.UseVisualStyleBackColor = false;
+            this.inventoryButton.Click += new System.EventHandler(this.inventoryButton_Click);
             // 
             // orderButton
             // 
@@ -149,6 +152,7 @@
             this.exitStoreButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.exitStoreButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.exitStoreButton.UseVisualStyleBackColor = false;
+            this.exitStoreButton.Click += new System.EventHandler(this.exitStoreButton_Click);
             // 
             // storeExpandedPanel
             // 
@@ -163,6 +167,14 @@
             this.storeExpandedPanel.Size = new System.Drawing.Size(1384, 784);
             this.storeExpandedPanel.TabIndex = 8;
             this.storeExpandedPanel.Visible = false;
+            // 
+            // mainAddProductToStoreUserControl
+            // 
+            this.mainAddProductToStoreUserControl.BackColor = System.Drawing.Color.BlanchedAlmond;
+            this.mainAddProductToStoreUserControl.Location = new System.Drawing.Point(414, 196);
+            this.mainAddProductToStoreUserControl.Name = "mainAddProductToStoreUserControl";
+            this.mainAddProductToStoreUserControl.Size = new System.Drawing.Size(639, 423);
+            this.mainAddProductToStoreUserControl.TabIndex = 10;
             // 
             // mainAddVendorToStoreUserControl
             // 
@@ -207,6 +219,7 @@
             this.backButton.TabIndex = 3;
             this.backButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.backButton.UseVisualStyleBackColor = false;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
             // mainInventoryUserControl
             // 
@@ -231,21 +244,13 @@
             this.addManagerButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.addManagerButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.addManagerButton.UseVisualStyleBackColor = false;
-            // 
-            // mainAddProductToStoreUserControl
-            // 
-            this.mainAddProductToStoreUserControl.BackColor = System.Drawing.Color.BlanchedAlmond;
-            this.mainAddProductToStoreUserControl.Location = new System.Drawing.Point(414, 196);
-            this.mainAddProductToStoreUserControl.Name = "mainAddProductToStoreUserControl";
-            this.mainAddProductToStoreUserControl.Size = new System.Drawing.Size(639, 423);
-            this.mainAddProductToStoreUserControl.TabIndex = 10;
+            this.addManagerButton.Click += new System.EventHandler(this.MainAddManagerButton_Click);
             // 
             // StoreFrontUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(211)))), ((int)(((byte)(177)))));
-            this.Controls.Add(this.storeExpandedPanel);
             this.Controls.Add(this.exitStoreButton);
             this.Controls.Add(this.orderButton);
             this.Controls.Add(this.inventoryButton);
@@ -253,6 +258,7 @@
             this.Controls.Add(this.AddVendorButton);
             this.Controls.Add(this.highlightTableLayoutPanel);
             this.Controls.Add(this.addManagerButton);
+            this.Controls.Add(this.storeExpandedPanel);
             this.Name = "StoreFrontUserControl";
             this.Size = new System.Drawing.Size(1390, 900);
             this.storeExpandedPanel.ResumeLayout(false);
