@@ -232,9 +232,9 @@
             zipcodeLabel.Location = new Point(43, 259);
             zipcodeLabel.Margin = new Padding(2, 0, 2, 0);
             zipcodeLabel.Name = "zipcodeLabel";
-            zipcodeLabel.Size = new Size(70, 19);
+            zipcodeLabel.Size = new Size(64, 19);
             zipcodeLabel.TabIndex = 60;
-            zipcodeLabel.Text = "Zip Code*";
+            zipcodeLabel.Text = "Zip Code";
             // 
             // stateTextBox
             // 

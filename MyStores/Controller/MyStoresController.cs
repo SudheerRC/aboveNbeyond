@@ -41,5 +41,10 @@ namespace MyStores.Controller
         {
             return _storesDal.GetUserId(email);
         }
+
+        public void AddProduct(Product product)
+        {
+            _storesDal.AddProduct(product);
+        }
     }
 }

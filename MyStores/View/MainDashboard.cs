@@ -15,12 +15,14 @@ namespace MyStores.View
             homePanel.Dock = DockStyle.Fill;
             storeFrontPanel.Parent = storeContainer.Panel2;
             storeFrontPanel.Dock = DockStyle.Fill;
-            AddVendorIcon.IconName = "Add Vendor";
+
+            homeTabUserControl.BringToFront();
         }
 
         public void SetOwner(Users setUser)
         {
             _owner = setUser;
+            homeTabUserControl.SetOwner(_owner);
             this.populateHomePanel();
         }
 
@@ -48,7 +50,7 @@ namespace MyStores.View
 
         private void MainDashboard_Load(object sender, EventArgs e)
         {
-            addStoreUserControl.SetOwner(_owner);
+            homeTabUserControl.SetOwner(_owner);
         }
 
         private void maxButton_Click(object sender, EventArgs e)
@@ -96,6 +98,11 @@ namespace MyStores.View
         private void AddVendorIcon_Click(object sender, EventArgs e)
         {
             MessageBox.Show("OK");
+        }
+
+        private void homeMenuButton_Click(object sender, EventArgs e)
+        {
+            homeTabUserControl.BringToFront();
         }
     }
 }

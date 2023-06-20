@@ -66,7 +66,7 @@
             this.Controls.Add(this.storeNameLabel);
             this.Name = "AddStoreUserControl";
             this.Size = new System.Drawing.Size(160, 200);
-            this.Click += new System.EventHandler(this.AddStoreUserControl_Click);
+            this.Click += new System.EventHandler(this.addStoreUserControl_Click);
             ((System.ComponentModel.ISupportInitialize)(this.storeImagePictureBox)).EndInit();
             this.ResumeLayout(false);
 

@@ -280,5 +280,34 @@ namespace MyStores.Dal
 
             return vendors;
         }
+
+        public void AddProduct(Product newProduct)
+        {
+            using var connection = DbConnection.GetConnection();
+            connection.Open();
+            string query = "INSERT INTO Product(productName, productSize, description, departmentName, barcode, sellingPrice) " +
+                           "VALUES (@name, @size, @description, @department, @barcode, @price)";
+            using var command = new SqlCommand(query, connection);
+
+            command.Parameters.Add("@name", System.Data.SqlDbType.VarChar);
+            command.Parameters["@name"].Value = newProduct.Name;
+
+            command.Parameters.Add("@size", System.Data.SqlDbType.VarChar);
+            command.Parameters["@size"].Value = newProduct.ProductSize;
+
+            command.Parameters.Add("@description", System.Data.SqlDbType.VarChar);
+            command.Parameters["@description"].Value = newProduct.Description;
+
+            command.Parameters.Add("@department", System.Data.SqlDbType.VarChar);
+            command.Parameters["@department"].Value = newProduct.DepartmentName;
+
+            command.Parameters.Add("@barcode", System.Data.SqlDbType.VarChar);
+            command.Parameters["@barcode"].Value = newProduct.Barcode;
+
+            command.Parameters.Add("@price", System.Data.SqlDbType.Decimal);
+            command.Parameters["@price"].Value = newProduct.SellingPrice;
+
+            command.ExecuteNonQuery();
+        }
     }
 }

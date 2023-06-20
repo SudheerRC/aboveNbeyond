@@ -443,7 +443,7 @@
             passwordTextBox.Name = "passwordTextBox";
             passwordTextBox.PasswordChar = '*';
             passwordTextBox.Size = new Size(157, 23);
-            passwordTextBox.TabIndex = 59;
+            passwordTextBox.TabIndex = 5;
             // 
             // SignUpUserControl
             // 
