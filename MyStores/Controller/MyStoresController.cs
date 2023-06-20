@@ -67,6 +67,11 @@ namespace MyStores.Controller
             return _storesDal.SearchStore(storeName);
         }
 
+        public List<Product> SearchProductWithStoreIdAndName(int storeId, String productName)
+        {
+            return _storesDal.SearchProductWithStoreIdAndName(storeId, productName);
+        }
+
         public void AddVendor(Vendor vendor)
         {
             _storesDal.AddVendor(vendor);

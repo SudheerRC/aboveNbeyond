@@ -142,7 +142,8 @@ namespace MyStores.Dal
             using var connection = DbConnection.GetConnection();
             connection.Open();
 
-            string query = "select storeID, ownerID, storeName, streetAddress, city, state, zipCode, country from Stores where ownerID = @ownerId;";
+            string query =
+                "select storeID, ownerID, storeName, streetAddress, city, state, zipCode, country from Stores where ownerID = @ownerId;";
             using var command = new SqlCommand(query, connection);
 
             command.Parameters.Add("@ownerId", System.Data.SqlDbType.Int);
@@ -181,6 +182,7 @@ namespace MyStores.Dal
                     Country = country
                 });
             }
+
             return stores;
         }
 
@@ -190,7 +192,8 @@ namespace MyStores.Dal
             using var connection = DbConnection.GetConnection();
             connection.Open();
 
-            string query = "SELECT productID, productName, productSize, description, departmentName, barcode, sellingPrice FROM PRODUCT WHERE ProductName LIKE '%@productName%'";
+            string query =
+                "SELECT productID, productName, productSize, description, departmentName, barcode, sellingPrice FROM PRODUCT WHERE ProductName LIKE '%@productName%'";
             using var command = new SqlCommand(query, connection);
 
             command.Parameters.Add("@productName", System.Data.SqlDbType.VarChar);
@@ -236,7 +239,8 @@ namespace MyStores.Dal
             using var connection = DbConnection.GetConnection();
             connection.Open();
 
-            string query = "SELECT productID, productName, productSize, description, departmentName, barcode, sellingPrice FROM PRODUCT WHERE barcode = @barcode";
+            string query =
+                "SELECT productID, productName, productSize, description, departmentName, barcode, sellingPrice FROM PRODUCT WHERE barcode = @barcode";
             using var command = new SqlCommand(query, connection);
 
             command.Parameters.Add("@barcode", System.Data.SqlDbType.VarChar);
@@ -283,7 +287,8 @@ namespace MyStores.Dal
             using var connection = DbConnection.GetConnection();
             connection.Open();
 
-            string query = "SELECT vendorID, vendorName, streetAddress, city, state, zipCode, country, phoneNumber FROM Vendor WHERE vendorName LIKE '%@vendorName%'";
+            string query =
+                "SELECT vendorID, vendorName, streetAddress, city, state, zipCode, country, phoneNumber FROM Vendor WHERE vendorName LIKE '%@vendorName%'";
             using var command = new SqlCommand(query, connection);
 
             command.Parameters.Add("@vendorName", System.Data.SqlDbType.VarChar);
@@ -333,7 +338,8 @@ namespace MyStores.Dal
             using var connection = DbConnection.GetConnection();
             connection.Open();
 
-            string query = "SELECT storeID, ownerID, storeName, streetAddress, city, state, zipCode, country FROM Stores WHERE storeName LIKE '%@storeName%'";
+            string query =
+                "SELECT storeID, ownerID, storeName, streetAddress, city, state, zipCode, country FROM Stores WHERE storeName LIKE '%@storeName%'";
             using var command = new SqlCommand(query, connection);
 
             command.Parameters.Add("@storeName", System.Data.SqlDbType.VarChar);
@@ -381,8 +387,9 @@ namespace MyStores.Dal
         {
             using var connection = DbConnection.GetConnection();
             connection.Open();
-            string query = "INSERT INTO Product(productName, productSize, description, departmentName, barcode, sellingPrice) " +
-                           "VALUES (@name, @size, @description, @department, @barcode, @price)";
+            string query =
+                "INSERT INTO Product(productName, productSize, description, departmentName, barcode, sellingPrice) " +
+                "VALUES (@name, @size, @description, @department, @barcode, @price)";
             using var command = new SqlCommand(query, connection);
 
             command.Parameters.Add("@name", System.Data.SqlDbType.VarChar);
@@ -436,6 +443,151 @@ namespace MyStores.Dal
             command.Parameters["@phoneNumber"].Value = vendor.PhoneNumber;
 
             command.ExecuteNonQuery();
+        }
+
+        public List<Product> SearchProductWithStoreId(int storeId)
+        {
+            var products = new List<Product>();
+            using var connection = DbConnection.GetConnection();
+            connection.Open();
+
+            string query =
+                "SELECT productID, productName, productSize, description, departmentName, barcode, sellingPrice FROM Product,Inventory WHERE Inventory.productID = Product.productID and Inventory.storeID = @storeID";
+            using var command = new SqlCommand(query, connection);
+
+            command.Parameters.Add("@storeID", System.Data.SqlDbType.Int);
+            command.Parameters["@storeID"].Value = storeId;
+            using var reader = command.ExecuteReader();
+
+            var productIdOrdinal = reader.GetOrdinal("productID");
+            var productNameOrdinal = reader.GetOrdinal("productName");
+            var productSizeOrdinal = reader.GetOrdinal("productSize");
+            var descriptionOrdinal = reader.GetOrdinal("description");
+            var departmentNameOrdinal = reader.GetOrdinal("departmentName");
+            var barcodeOrdinal = reader.GetOrdinal("barcode");
+            var sellingPriceOrdinal = reader.GetOrdinal("sellingPrice");
+
+            while (reader.Read())
+            {
+                var productId = reader.GetInt32(productIdOrdinal);
+                var name = reader.GetString(productNameOrdinal);
+                var size = reader.GetString(productSizeOrdinal);
+                var description = reader.GetString(descriptionOrdinal);
+                var department = reader.GetString(departmentNameOrdinal);
+                var barcode = reader.GetString(barcodeOrdinal);
+                var sellingPrice = reader.GetInt32(sellingPriceOrdinal);
+
+                products.Add(new Product
+                {
+                    Id = productId,
+                    Description = description,
+                    Name = name,
+                    ProductSize = size,
+                    DepartmentName = department,
+                    SellingPrice = sellingPrice,
+                    Barcode = barcode
+                });
+            }
+
+            return products;
+        }
+
+        public List<Product> SearchProductWithStoreIdAndName(int storeId, String productName)
+        {
+            var products = new List<Product>();
+            using var connection = DbConnection.GetConnection();
+            connection.Open();
+
+            string query =
+                "SELECT productID, productName, productSize, description, departmentName, barcode, sellingPrice FROM Product,Inventory WHERE Inventory.productID = Product.productID and Inventory.storeID = @storeID and ProductName LIKE '%@productName%'";
+            using var command = new SqlCommand(query, connection);
+
+            command.Parameters.Add("@storeID", System.Data.SqlDbType.Int);
+            command.Parameters["@storeID"].Value = storeId;
+            command.Parameters.Add("@productName", System.Data.SqlDbType.VarChar);
+            command.Parameters["@productName"].Value = productName;
+            using var reader = command.ExecuteReader();
+
+            var productIdOrdinal = reader.GetOrdinal("productID");
+            var productNameOrdinal = reader.GetOrdinal("productName");
+            var productSizeOrdinal = reader.GetOrdinal("productSize");
+            var descriptionOrdinal = reader.GetOrdinal("description");
+            var departmentNameOrdinal = reader.GetOrdinal("departmentName");
+            var barcodeOrdinal = reader.GetOrdinal("barcode");
+            var sellingPriceOrdinal = reader.GetOrdinal("sellingPrice");
+
+            while (reader.Read())
+            {
+                var productId = reader.GetInt32(productIdOrdinal);
+                var name = reader.GetString(productNameOrdinal);
+                var size = reader.GetString(productSizeOrdinal);
+                var description = reader.GetString(descriptionOrdinal);
+                var department = reader.GetString(departmentNameOrdinal);
+                var barcode = reader.GetString(barcodeOrdinal);
+                var sellingPrice = reader.GetInt32(sellingPriceOrdinal);
+
+                products.Add(new Product
+                {
+                    Id = productId,
+                    Description = description,
+                    Name = name,
+                    ProductSize = size,
+                    DepartmentName = department,
+                    SellingPrice = sellingPrice,
+                    Barcode = barcode
+                });
+            }
+
+            return products;
+        }
+
+        public List<InventoryItem> SearchInventory(int storeId)
+        {
+            var stores = new List<InventoryItem>();
+            using var connection = DbConnection.GetConnection();
+            connection.Open();
+
+            string query =
+                "SELECT inventoryID, vendorID, productID, storeID, purchasePrice, sellingPrice and quantity FROM Inventory WHERE Inventory.storeID = @storeID";
+            using var command = new SqlCommand(query, connection);
+
+            command.Parameters.Add("@storeID", System.Data.SqlDbType.VarChar);
+            command.Parameters["@storeID"].Value = storeId;
+            using var reader = command.ExecuteReader();
+
+            var inventoryIdOrdinal = reader.GetOrdinal("inventoryID");
+            var vendorIdOrdinal = reader.GetOrdinal("vendorID");
+            var productIdOrdinal = reader.GetOrdinal("productID");
+            var storeIdOrdinal = reader.GetOrdinal("storeID");
+            var purchasePriceOrdinal = reader.GetOrdinal("purchasePrice");
+            var sellingPriceOrdinal = reader.GetOrdinal("sellingPrice");
+            var quantityOrdinal = reader.GetOrdinal("quantity");
+
+            while (reader.Read())
+            {
+                var inventoryId = reader.GetInt32(inventoryIdOrdinal);
+                var vendorId = reader.GetInt32(vendorIdOrdinal);
+                var productId = reader.GetInt32(productIdOrdinal);
+                var storeID = reader.GetInt32(storeIdOrdinal);
+                var purchasePrice = reader.GetString(purchasePriceOrdinal);
+                var sellingPrice = reader.GetString(sellingPriceOrdinal);
+                var quantity = reader.GetString(quantityOrdinal);
+
+                stores.Add(new InventoryItem
+                {
+                    //Id = storeID,
+                    //OwnerId = ownerId,
+                    //Name = name,
+                    //StreetAddress = streetAddress,
+                    //City = city,
+                    //State = state,
+                    //ZipCode = zipCode,
+                    //Country = country,
+
+                });
+            }
+
+            return stores;
         }
     }
 }
