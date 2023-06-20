@@ -230,6 +230,52 @@ namespace MyStores.Dal
             return products;
         }
 
+        public List<Product> SearchProductBarcode(String barCode)
+        {
+            var products = new List<Product>();
+            using var connection = DbConnection.GetConnection();
+            connection.Open();
+
+            string query = "SELECT productID, productName, productSize, description, departmentName, barcode, sellingPrice FROM PRODUCT WHERE barcode = @barcode";
+            using var command = new SqlCommand(query, connection);
+
+            command.Parameters.Add("@barcode", System.Data.SqlDbType.VarChar);
+            command.Parameters["@barcode"].Value = barCode;
+            using var reader = command.ExecuteReader();
+
+            var productIdOrdinal = reader.GetOrdinal("productID");
+            var productNameOrdinal = reader.GetOrdinal("productName");
+            var productSizeOrdinal = reader.GetOrdinal("productSize");
+            var descriptionOrdinal = reader.GetOrdinal("description");
+            var departmentNameOrdinal = reader.GetOrdinal("departmentName");
+            var barcodeOrdinal = reader.GetOrdinal("barcode");
+            var sellingPriceOrdinal = reader.GetOrdinal("sellingPrice");
+
+            while (reader.Read())
+            {
+                var productId = reader.GetInt32(productIdOrdinal);
+                var name = reader.GetString(productNameOrdinal);
+                var size = reader.GetString(productSizeOrdinal);
+                var description = reader.GetString(descriptionOrdinal);
+                var department = reader.GetString(departmentNameOrdinal);
+                var barcode = reader.GetString(barcodeOrdinal);
+                var sellingPrice = reader.GetInt32(sellingPriceOrdinal);
+
+                products.Add(new Product
+                {
+                    Id = productId,
+                    Description = description,
+                    Name = name,
+                    ProductSize = size,
+                    DepartmentName = department,
+                    SellingPrice = sellingPrice,
+                    Barcode = barcode
+                });
+            }
+
+            return products;
+        }
+
 
         public List<Vendor> SearchVendor(String vendorName)
         {
