@@ -327,6 +327,56 @@ namespace MyStores.Dal
             return vendors;
         }
 
+        public List<Store> SearchStore(String storeName)
+        {
+            var stores = new List<Store>();
+            using var connection = DbConnection.GetConnection();
+            connection.Open();
+
+            string query = "SELECT storeID, ownerID, storeName, streetAddress, city, state, zipCode, country FROM Stores WHERE storeName LIKE '%@storeName%'";
+            using var command = new SqlCommand(query, connection);
+
+            command.Parameters.Add("@storeName", System.Data.SqlDbType.VarChar);
+            command.Parameters["@storeName"].Value = storeName;
+            using var reader = command.ExecuteReader();
+
+            var storeIdOrdinal = reader.GetOrdinal("storeID");
+            var ownerIdOrdinal = reader.GetOrdinal("ownerID");
+            var storeNameOrdinal = reader.GetOrdinal("storeName");
+            var streetAddressOrdinal = reader.GetOrdinal("streetAddress");
+            var cityOrdinal = reader.GetOrdinal("city");
+            var stateOrdinal = reader.GetOrdinal("state");
+            var zipCodeOrdinal = reader.GetOrdinal("zipCode");
+            var countryOrdinal = reader.GetOrdinal("country");
+
+            while (reader.Read())
+            {
+                var storeId = reader.GetInt32(storeIdOrdinal);
+                var ownerId = reader.GetInt32(ownerIdOrdinal);
+                var name = reader.GetString(storeNameOrdinal);
+                var streetAddress = reader.GetString(streetAddressOrdinal);
+                var city = reader.GetString(cityOrdinal);
+                var state = reader.GetString(stateOrdinal);
+                var zipCode = reader.GetString(zipCodeOrdinal);
+                var country = reader.GetString(countryOrdinal);
+
+                stores.Add(new Store
+                {
+                    Id = storeId,
+                    OwnerId = ownerId,
+                    Name = name,
+                    StreetAddress = streetAddress,
+                    City = city,
+                    State = state,
+                    ZipCode = zipCode,
+                    Country = country,
+
+                });
+            }
+
+            return stores;
+        }
+
         public void AddProduct(Product newProduct)
         {
             using var connection = DbConnection.GetConnection();
