@@ -206,6 +206,11 @@ namespace MyStores.Controller
            return _storesDal.CheckStoreVendorExists(storeId, vendorId);
         }
 
+        public List<Vendor> SearchVendorsWithName(string name)
+        {
+            return _storesDal.SearchVendorsWithName(name);
+        }
+
         public List<Users> GetAllManagersOfStore(int storeId)
         {
             return _storesDal.GetAllManagersOfStore(storeId);

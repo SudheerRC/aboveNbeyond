@@ -1,8 +1,6 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
-using System.Security.Cryptography.X509Certificates;
 using MyStores.Model;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace MyStores.Dal
 {
@@ -247,7 +245,7 @@ namespace MyStores.Dal
             connection.Open();
 
             string query =
-                "SELECT productID, productName, productSize, description, departmentName, barcode, sellingPrice FROM PRODUCT WHERE ProductName LIKE '%@productName%'";
+                "SELECT productID, productName, productSize, description, departmentName, barcode, sellingPrice FROM PRODUCT WHERE ProductName LIKE '%'+ @productName +'%'";
             using var command = new SqlCommand(query, connection);
 
             command.Parameters.Add("@productName", System.Data.SqlDbType.VarChar);
@@ -396,7 +394,7 @@ namespace MyStores.Dal
             connection.Open();
 
             string query =
-                "SELECT vendorID, vendorName, streetAddress, city, state, zipCode, country, phoneNumber FROM Vendor WHERE vendorName LIKE '%@vendorName%'";
+                "SELECT vendorID, vendorName, streetAddress, city, state, zipCode, country, phoneNumber FROM Vendor WHERE vendorName LIKE '%' + @vendorName+ '%'";
             using var command = new SqlCommand(query, connection);
 
             command.Parameters.Add("@vendorName", System.Data.SqlDbType.VarChar);
@@ -589,7 +587,7 @@ namespace MyStores.Dal
             connection.Open();
 
             string query =
-                "SELECT storeID, ownerID, storeName, streetAddress, city, state, zipCode, country FROM Stores WHERE storeName LIKE '%@storeName%'";
+                "SELECT storeID, ownerID, storeName, streetAddress, city, state, zipCode, country FROM Stores WHERE storeName LIKE '%' + @storeName + '%'";
             using var command = new SqlCommand(query, connection);
 
             command.Parameters.Add("@storeName", System.Data.SqlDbType.VarChar);
@@ -824,7 +822,7 @@ namespace MyStores.Dal
             connection.Open();
 
             string query =
-                "SELECT vendorID, purchasePrice, Inventory.sellingPrice, quantity, Inventory.productID FROM Product,Inventory WHERE Inventory.productID = Product.productID and Inventory.storeID = @storeID and ProductName LIKE '%@productName%'";
+                "SELECT vendorID, purchasePrice, Inventory.sellingPrice, quantity, Inventory.productID FROM Product,Inventory WHERE Inventory.productID = Product.productID and Inventory.storeID = @storeID and ProductName LIKE '%' + @productName +'%'";
             using var command = new SqlCommand(query, connection);
 
             command.Parameters.Add("@storeID", System.Data.SqlDbType.Int);
@@ -945,6 +943,57 @@ namespace MyStores.Dal
             command.Parameters["@vendorId"].Value = vendorId;
             int count = Convert.ToInt32(command.ExecuteScalar());
             return count >= 1;
+        }
+
+        public List<Vendor> SearchVendorsWithName(string inputName)
+        {
+            var vendors = new List<Vendor>();
+            using var connection = DbConnection.GetConnection();
+            connection.Open();
+
+            string query =
+                "SELECT vendorID, vendorName, streetAddress, city, state, zipCode, country, phoneNumber FROM Vendor where vendorName LIKE '%' + @inputName + '%'";
+            using var command = new SqlCommand(query, connection);
+            command.Parameters.Add("@inputName", System.Data.SqlDbType.VarChar);
+            command.Parameters["@inputName"].Value = inputName;
+
+            using var reader = command.ExecuteReader();
+
+            var vendorIdOrdinal = reader.GetOrdinal("vendorID");
+            var vendorNameOrdinal = reader.GetOrdinal("vendorName");
+            var streetAddressOrdinal = reader.GetOrdinal("streetAddress");
+            var cityOrdinal = reader.GetOrdinal("city");
+            var stateOrdinal = reader.GetOrdinal("state");
+            var zipCodeOrdinal = reader.GetOrdinal("zipCode");
+            var countryOrdinal = reader.GetOrdinal("country");
+            var phoneNumberOrdinal = reader.GetOrdinal("phoneNumber");
+
+            while (reader.Read())
+            {
+                var vendorId = reader.GetInt32(vendorIdOrdinal);
+                var name = reader.GetString(vendorNameOrdinal);
+                var streetAddress = reader.GetString(streetAddressOrdinal);
+                var city = reader.GetString(cityOrdinal);
+                var state = reader.GetString(stateOrdinal);
+                var zipCode = reader.GetString(zipCodeOrdinal);
+                var country = reader.GetString(countryOrdinal);
+                var phoneNumber = reader.GetString(phoneNumberOrdinal);
+
+                vendors.Add(new Vendor
+                {
+                    Id = vendorId,
+                    Name = name,
+                    StreetAddress = streetAddress,
+                    City = city,
+                    State = state,
+                    ZipCode = zipCode,
+                    Country = country,
+                    PhoneNumber = phoneNumber
+
+                });
+            }
+
+            return vendors;
         }
     }
 }
