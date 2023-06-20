@@ -39,6 +39,7 @@
             this.homeFlowLayoutPanel.Controls.Add(this.AddStoreButton);
             this.homeFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.homeFlowLayoutPanel.Location = new System.Drawing.Point(0, 0);
+            this.homeFlowLayoutPanel.Margin = new System.Windows.Forms.Padding(18);
             this.homeFlowLayoutPanel.Name = "homeFlowLayoutPanel";
             this.homeFlowLayoutPanel.Padding = new System.Windows.Forms.Padding(18);
             this.homeFlowLayoutPanel.Size = new System.Drawing.Size(1390, 900);
@@ -47,6 +48,7 @@
             // AddStoreButton
             // 
             this.AddStoreButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
+            this.AddStoreButton.FlatAppearance.BorderSize = 0;
             this.AddStoreButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddStoreButton.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.AddStoreButton.ForeColor = System.Drawing.Color.White;

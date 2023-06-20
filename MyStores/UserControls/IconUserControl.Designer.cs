@@ -55,6 +55,7 @@
             this.iconPictureBox.Size = new System.Drawing.Size(97, 84);
             this.iconPictureBox.TabIndex = 2;
             this.iconPictureBox.TabStop = false;
+            this.iconPictureBox.Click += new System.EventHandler(this.iconPictureBox_Click);
             // 
             // iconLabel
             // 
@@ -68,6 +69,7 @@
             this.iconLabel.TabIndex = 1;
             this.iconLabel.Text = "Name";
             this.iconLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.iconLabel.Click += new System.EventHandler(this.iconLabel_Click);
             // 
             // IconUserControl
             // 
@@ -77,6 +79,7 @@
             this.Controls.Add(this.iconPanel);
             this.Name = "IconUserControl";
             this.Size = new System.Drawing.Size(100, 112);
+            this.Click += new System.EventHandler(this.IconUserControl_Click);
             this.iconPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox)).EndInit();
             this.ResumeLayout(false);

@@ -53,5 +53,20 @@ namespace MyStores.UserControls
         }
 
         #endregion
+
+        private void iconPictureBox_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void iconLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void IconUserControl_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
