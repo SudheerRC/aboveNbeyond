@@ -58,6 +58,7 @@ namespace MyStores.UserControls.HomeUserControl
             
             mainStoreFrontUserControl.Visible = true;
             mainStoreFrontUserControl.BringToFront();
+            mainStoreFrontUserControl.SetOwner(_owner);
             mainStoreFrontUserControl.SetStoreId(id);
         }
 

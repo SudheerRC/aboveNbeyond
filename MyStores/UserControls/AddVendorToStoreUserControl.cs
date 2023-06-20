@@ -81,8 +81,15 @@ namespace MyStores.UserControls
         private void addVendorToStoreButton_Click(object sender, EventArgs e)
         {
             var selectedVendor = vendorComboBox.SelectedItem as Vendor;
-            _controller.AddVendorToStore(selectedVendor.Id, _storeId);
-            loadListView();
+            if (!_controller.CheckStoreVendorExists(_storeId, selectedVendor.Id))
+            {
+                _controller.AddVendorToStore(selectedVendor.Id, _storeId);
+                loadListView();
+            }
+            else
+            {
+                MessageBox.Show("You cannot add this Vendor as they are already added for this store");
+            }
         }
     }
 }

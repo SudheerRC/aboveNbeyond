@@ -200,5 +200,10 @@ namespace MyStores.Controller
         {
             _storesDal.AddInventory(inventoryItem, storeId);
         }
+
+        public bool CheckStoreVendorExists(int storeId, int vendorId)
+        {
+           return _storesDal.CheckStoreVendorExists(storeId, vendorId);
+        }
     }
 }
