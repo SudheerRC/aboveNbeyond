@@ -29,55 +29,54 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainDashboard));
-            mainContainer = new SplitContainer();
-            logoutButton = new Button();
-            navigationPanel = new Panel();
-            searchProductSubMenuButton = new Button();
-            addVendorSubMenuButton = new Button();
-            searchVendorSubMenuButton = new Button();
-            vendorsMenuButton = new Button();
-            addProductSubMenuButton = new Button();
-            productsMenuButton = new Button();
-            homeMenuButton = new Button();
-            logoPanel = new Panel();
-            workspaceContainer = new SplitContainer();
-            storeContainer = new SplitContainer();
-            storeNameLabel = new Label();
-            mainHomeTabUserControl = new UserControls.HomeUserControl.HomeTabUserControl();
-            searchPanel = new Panel();
-            searchInputPanel = new Panel();
-            searchTextBox = new TextBox();
-            searchButtonPanel = new Panel();
-            searchButton = new Button();
-            windowOpPanel = new Panel();
-            minPanel = new Panel();
-            minButton = new Button();
-            maxPanel = new Panel();
-            restoreButton = new Button();
-            maxButton = new Button();
-            closePanel = new Panel();
-            closeButton = new Button();
-            ((System.ComponentModel.ISupportInitialize)mainContainer).BeginInit();
-            mainContainer.Panel1.SuspendLayout();
-            mainContainer.Panel2.SuspendLayout();
-            mainContainer.SuspendLayout();
-            navigationPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)workspaceContainer).BeginInit();
-            workspaceContainer.Panel1.SuspendLayout();
-            workspaceContainer.Panel2.SuspendLayout();
-            workspaceContainer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)storeContainer).BeginInit();
-            storeContainer.Panel1.SuspendLayout();
-            storeContainer.Panel2.SuspendLayout();
-            storeContainer.SuspendLayout();
-            searchPanel.SuspendLayout();
-            searchInputPanel.SuspendLayout();
-            searchButtonPanel.SuspendLayout();
-            windowOpPanel.SuspendLayout();
-            minPanel.SuspendLayout();
-            maxPanel.SuspendLayout();
-            closePanel.SuspendLayout();
-            SuspendLayout();
+            this.mainContainer = new System.Windows.Forms.SplitContainer();
+            this.logoutButton = new System.Windows.Forms.Button();
+            this.navigationPanel = new System.Windows.Forms.Panel();
+            this.addVendorSubMenuButton = new System.Windows.Forms.Button();
+            this.searchVendorSubMenuButton = new System.Windows.Forms.Button();
+            this.vendorsMenuButton = new System.Windows.Forms.Button();
+            this.addProductSubMenuButton = new System.Windows.Forms.Button();
+            this.productsMenuButton = new System.Windows.Forms.Button();
+            this.homeMenuButton = new System.Windows.Forms.Button();
+            this.logoPanel = new System.Windows.Forms.Panel();
+            this.workspaceContainer = new System.Windows.Forms.SplitContainer();
+            this.storeContainer = new System.Windows.Forms.SplitContainer();
+            this.storeNameLabel = new System.Windows.Forms.Label();
+            this.mainHomeTabUserControl = new MyStores.UserControls.HomeUserControl.HomeTabUserControl();
+            this.searchPanel = new System.Windows.Forms.Panel();
+            this.searchInputPanel = new System.Windows.Forms.Panel();
+            this.searchTextBox = new System.Windows.Forms.TextBox();
+            this.searchButtonPanel = new System.Windows.Forms.Panel();
+            this.searchButton = new System.Windows.Forms.Button();
+            this.windowOpPanel = new System.Windows.Forms.Panel();
+            this.minPanel = new System.Windows.Forms.Panel();
+            this.minButton = new System.Windows.Forms.Button();
+            this.maxPanel = new System.Windows.Forms.Panel();
+            this.restoreButton = new System.Windows.Forms.Button();
+            this.maxButton = new System.Windows.Forms.Button();
+            this.closePanel = new System.Windows.Forms.Panel();
+            this.closeButton = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.mainContainer)).BeginInit();
+            this.mainContainer.Panel1.SuspendLayout();
+            this.mainContainer.Panel2.SuspendLayout();
+            this.mainContainer.SuspendLayout();
+            this.navigationPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.workspaceContainer)).BeginInit();
+            this.workspaceContainer.Panel1.SuspendLayout();
+            this.workspaceContainer.Panel2.SuspendLayout();
+            this.workspaceContainer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.storeContainer)).BeginInit();
+            this.storeContainer.Panel1.SuspendLayout();
+            this.storeContainer.Panel2.SuspendLayout();
+            this.storeContainer.SuspendLayout();
+            this.searchPanel.SuspendLayout();
+            this.searchInputPanel.SuspendLayout();
+            this.searchButtonPanel.SuspendLayout();
+            this.windowOpPanel.SuspendLayout();
+            this.minPanel.SuspendLayout();
+            this.maxPanel.SuspendLayout();
+            this.closePanel.SuspendLayout();
+            this.SuspendLayout();
             // 
             // mainContainer
             // 
@@ -105,193 +104,179 @@
             // 
             // logoutButton
             // 
-            logoutButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            logoutButton.BackColor = Color.FromArgb(28, 44, 78);
-            logoutButton.FlatAppearance.BorderColor = Color.FromArgb(28, 44, 78);
-            logoutButton.FlatAppearance.BorderSize = 0;
-            logoutButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(227, 211, 177);
-            logoutButton.FlatStyle = FlatStyle.Flat;
-            logoutButton.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
-            logoutButton.ForeColor = Color.FromArgb(252, 251, 255);
-            logoutButton.Image = (Image)resources.GetObject("logoutButton.Image");
-            logoutButton.ImageAlign = ContentAlignment.MiddleLeft;
-            logoutButton.Location = new Point(0, 2071);
-            logoutButton.Margin = new Padding(6);
-            logoutButton.Name = "logoutButton";
-            logoutButton.Padding = new Padding(4, 0, 0, 0);
-            logoutButton.Size = new Size(364, 107);
-            logoutButton.TabIndex = 7;
-            logoutButton.Text = "Logout";
-            logoutButton.TextAlign = ContentAlignment.BottomRight;
-            logoutButton.UseVisualStyleBackColor = false;
-            logoutButton.Click += LogoutButton_Click;
+            this.logoutButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.logoutButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.logoutButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
+            this.logoutButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
+            this.logoutButton.FlatAppearance.BorderSize = 0;
+            this.logoutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.logoutButton.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.logoutButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            this.logoutButton.Image = ((System.Drawing.Image)(resources.GetObject("logoutButton.Image")));
+            this.logoutButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.logoutButton.Location = new System.Drawing.Point(3, 960);
+            this.logoutButton.Name = "logoutButton";
+            this.logoutButton.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.logoutButton.Size = new System.Drawing.Size(201, 69);
+            this.logoutButton.TabIndex = 7;
+            this.logoutButton.Text = "Logout";
+            this.logoutButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.logoutButton.UseVisualStyleBackColor = false;
+            this.logoutButton.Click += new System.EventHandler(this.LogoutButton_Click);
+            this.logoutButton.MouseEnter += new System.EventHandler(this.logoutButton_MouseEnter);
+            this.logoutButton.MouseLeave += new System.EventHandler(this.logoutButton_MouseLeave);
             // 
             // navigationPanel
             // 
-            navigationPanel.AutoScroll = true;
-            navigationPanel.Controls.Add(searchProductSubMenuButton);
-            navigationPanel.Controls.Add(addVendorSubMenuButton);
-            navigationPanel.Controls.Add(searchVendorSubMenuButton);
-            navigationPanel.Controls.Add(vendorsMenuButton);
-            navigationPanel.Controls.Add(addProductSubMenuButton);
-            navigationPanel.Controls.Add(productsMenuButton);
-            navigationPanel.Controls.Add(homeMenuButton);
-            navigationPanel.Location = new Point(6, 358);
-            navigationPanel.Margin = new Padding(6);
-            navigationPanel.Name = "navigationPanel";
-            navigationPanel.Size = new Size(373, 1229);
-            navigationPanel.TabIndex = 2;
-            // 
-            // searchProductSubMenuButton
-            // 
-            searchProductSubMenuButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            searchProductSubMenuButton.BackColor = Color.FromArgb(28, 44, 78);
-            searchProductSubMenuButton.Dock = DockStyle.Top;
-            searchProductSubMenuButton.FlatAppearance.BorderColor = Color.FromArgb(28, 44, 78);
-            searchProductSubMenuButton.FlatAppearance.BorderSize = 0;
-            searchProductSubMenuButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(227, 211, 177);
-            searchProductSubMenuButton.FlatStyle = FlatStyle.Flat;
-            searchProductSubMenuButton.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            searchProductSubMenuButton.ForeColor = Color.FromArgb(252, 251, 255);
-            searchProductSubMenuButton.ImageAlign = ContentAlignment.MiddleLeft;
-            searchProductSubMenuButton.Location = new Point(0, 335);
-            searchProductSubMenuButton.Margin = new Padding(6);
-            searchProductSubMenuButton.Name = "searchProductSubMenuButton";
-            searchProductSubMenuButton.Padding = new Padding(4, 0, 0, 0);
-            searchProductSubMenuButton.Size = new Size(373, 94);
-            searchProductSubMenuButton.TabIndex = 5;
-            searchProductSubMenuButton.Text = "Search Product";
-            searchProductSubMenuButton.TextAlign = ContentAlignment.BottomRight;
-            searchProductSubMenuButton.UseVisualStyleBackColor = false;
+            this.navigationPanel.AutoScroll = true;
+            this.navigationPanel.Controls.Add(this.addVendorSubMenuButton);
+            this.navigationPanel.Controls.Add(this.searchVendorSubMenuButton);
+            this.navigationPanel.Controls.Add(this.vendorsMenuButton);
+            this.navigationPanel.Controls.Add(this.addProductSubMenuButton);
+            this.navigationPanel.Controls.Add(this.productsMenuButton);
+            this.navigationPanel.Controls.Add(this.homeMenuButton);
+            this.navigationPanel.Location = new System.Drawing.Point(3, 168);
+            this.navigationPanel.Name = "navigationPanel";
+            this.navigationPanel.Size = new System.Drawing.Size(201, 576);
+            this.navigationPanel.TabIndex = 2;
             // 
             // addVendorSubMenuButton
             // 
-            addVendorSubMenuButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            addVendorSubMenuButton.BackColor = Color.FromArgb(28, 44, 78);
-            addVendorSubMenuButton.FlatAppearance.BorderColor = Color.FromArgb(28, 44, 78);
-            addVendorSubMenuButton.FlatAppearance.BorderSize = 0;
-            addVendorSubMenuButton.FlatStyle = FlatStyle.Flat;
-            addVendorSubMenuButton.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            addVendorSubMenuButton.ForeColor = Color.FromArgb(252, 251, 255);
-            addVendorSubMenuButton.ImageAlign = ContentAlignment.MiddleLeft;
-            addVendorSubMenuButton.Location = new Point(17, 625);
-            addVendorSubMenuButton.Margin = new Padding(6);
-            addVendorSubMenuButton.Name = "addVendorSubMenuButton";
-            addVendorSubMenuButton.Padding = new Padding(4, 0, 0, 0);
-            addVendorSubMenuButton.Size = new Size(321, 79);
-            addVendorSubMenuButton.TabIndex = 9;
-            addVendorSubMenuButton.Text = "Add Vendor";
-            addVendorSubMenuButton.TextAlign = ContentAlignment.BottomRight;
-            addVendorSubMenuButton.UseVisualStyleBackColor = false;
+            this.addVendorSubMenuButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.addVendorSubMenuButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
+            this.addVendorSubMenuButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.addVendorSubMenuButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
+            this.addVendorSubMenuButton.FlatAppearance.BorderSize = 0;
+            this.addVendorSubMenuButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addVendorSubMenuButton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.addVendorSubMenuButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            this.addVendorSubMenuButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.addVendorSubMenuButton.Location = new System.Drawing.Point(0, 295);
+            this.addVendorSubMenuButton.Name = "addVendorSubMenuButton";
+            this.addVendorSubMenuButton.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.addVendorSubMenuButton.Size = new System.Drawing.Size(201, 44);
+            this.addVendorSubMenuButton.TabIndex = 9;
+            this.addVendorSubMenuButton.Text = "Add Vendor";
+            this.addVendorSubMenuButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.addVendorSubMenuButton.UseVisualStyleBackColor = false;
+            this.addVendorSubMenuButton.MouseEnter += new System.EventHandler(this.addVendorSubMenuButton_MouseEnter);
+            this.addVendorSubMenuButton.MouseLeave += new System.EventHandler(this.addVendorSubMenuButton_MouseLeave);
             // 
             // searchVendorSubMenuButton
             // 
-            searchVendorSubMenuButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            searchVendorSubMenuButton.BackColor = Color.FromArgb(28, 44, 78);
-            searchVendorSubMenuButton.FlatAppearance.BorderColor = Color.FromArgb(28, 44, 78);
-            searchVendorSubMenuButton.FlatAppearance.BorderSize = 0;
-            searchVendorSubMenuButton.FlatStyle = FlatStyle.Flat;
-            searchVendorSubMenuButton.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            searchVendorSubMenuButton.ForeColor = Color.FromArgb(252, 251, 255);
-            searchVendorSubMenuButton.ImageAlign = ContentAlignment.MiddleLeft;
-            searchVendorSubMenuButton.Location = new Point(17, 550);
-            searchVendorSubMenuButton.Margin = new Padding(6);
-            searchVendorSubMenuButton.Name = "searchVendorSubMenuButton";
-            searchVendorSubMenuButton.Padding = new Padding(4, 0, 0, 0);
-            searchVendorSubMenuButton.Size = new Size(342, 81);
-            searchVendorSubMenuButton.TabIndex = 8;
-            searchVendorSubMenuButton.Text = "Search Vendor";
-            searchVendorSubMenuButton.TextAlign = ContentAlignment.BottomRight;
-            searchVendorSubMenuButton.UseVisualStyleBackColor = false;
+            this.searchVendorSubMenuButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.searchVendorSubMenuButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
+            this.searchVendorSubMenuButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.searchVendorSubMenuButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
+            this.searchVendorSubMenuButton.FlatAppearance.BorderSize = 0;
+            this.searchVendorSubMenuButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.searchVendorSubMenuButton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.searchVendorSubMenuButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            this.searchVendorSubMenuButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.searchVendorSubMenuButton.Location = new System.Drawing.Point(0, 251);
+            this.searchVendorSubMenuButton.Name = "searchVendorSubMenuButton";
+            this.searchVendorSubMenuButton.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.searchVendorSubMenuButton.Size = new System.Drawing.Size(201, 44);
+            this.searchVendorSubMenuButton.TabIndex = 8;
+            this.searchVendorSubMenuButton.Text = "Search Vendor";
+            this.searchVendorSubMenuButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.searchVendorSubMenuButton.UseVisualStyleBackColor = false;
+            this.searchVendorSubMenuButton.MouseEnter += new System.EventHandler(this.searchVendorSubMenuButton_MouseEnter);
+            this.searchVendorSubMenuButton.MouseLeave += new System.EventHandler(this.searchVendorSubMenuButton_MouseLeave);
             // 
             // vendorsMenuButton
             // 
-            vendorsMenuButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            vendorsMenuButton.BackColor = Color.FromArgb(28, 44, 78);
-            vendorsMenuButton.FlatAppearance.BorderColor = Color.FromArgb(28, 44, 78);
-            vendorsMenuButton.FlatAppearance.BorderSize = 0;
-            vendorsMenuButton.FlatStyle = FlatStyle.Flat;
-            vendorsMenuButton.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
-            vendorsMenuButton.ForeColor = Color.FromArgb(252, 251, 255);
-            vendorsMenuButton.Image = (Image)resources.GetObject("vendorsMenuButton.Image");
-            vendorsMenuButton.ImageAlign = ContentAlignment.MiddleLeft;
-            vendorsMenuButton.Location = new Point(0, 467);
-            vendorsMenuButton.Margin = new Padding(6);
-            vendorsMenuButton.Name = "vendorsMenuButton";
-            vendorsMenuButton.Padding = new Padding(4, 0, 0, 0);
-            vendorsMenuButton.Size = new Size(364, 90);
-            vendorsMenuButton.TabIndex = 7;
-            vendorsMenuButton.Text = "Vendors";
-            vendorsMenuButton.TextAlign = ContentAlignment.BottomRight;
-            vendorsMenuButton.UseVisualStyleBackColor = false;
+            this.vendorsMenuButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.vendorsMenuButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
+            this.vendorsMenuButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.vendorsMenuButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
+            this.vendorsMenuButton.FlatAppearance.BorderSize = 0;
+            this.vendorsMenuButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.vendorsMenuButton.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.vendorsMenuButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            this.vendorsMenuButton.Image = ((System.Drawing.Image)(resources.GetObject("vendorsMenuButton.Image")));
+            this.vendorsMenuButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.vendorsMenuButton.Location = new System.Drawing.Point(0, 182);
+            this.vendorsMenuButton.Name = "vendorsMenuButton";
+            this.vendorsMenuButton.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.vendorsMenuButton.Size = new System.Drawing.Size(201, 69);
+            this.vendorsMenuButton.TabIndex = 7;
+            this.vendorsMenuButton.Text = "Vendors";
+            this.vendorsMenuButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.vendorsMenuButton.UseVisualStyleBackColor = false;
+            this.vendorsMenuButton.MouseEnter += new System.EventHandler(this.vendorsMenuButton_MouseEnter);
+            this.vendorsMenuButton.MouseLeave += new System.EventHandler(this.vendorsMenuButton_MouseLeave);
             // 
             // addProductSubMenuButton
             // 
-            addProductSubMenuButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            addProductSubMenuButton.BackColor = Color.FromArgb(28, 44, 78);
-            addProductSubMenuButton.Dock = DockStyle.Top;
-            addProductSubMenuButton.FlatAppearance.BorderColor = Color.FromArgb(28, 44, 78);
-            addProductSubMenuButton.FlatAppearance.BorderSize = 0;
-            addProductSubMenuButton.FlatStyle = FlatStyle.Flat;
-            addProductSubMenuButton.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            addProductSubMenuButton.ForeColor = Color.FromArgb(252, 251, 255);
-            addProductSubMenuButton.ImageAlign = ContentAlignment.MiddleLeft;
-            addProductSubMenuButton.Location = new Point(0, 241);
-            addProductSubMenuButton.Margin = new Padding(6);
-            addProductSubMenuButton.Name = "addProductSubMenuButton";
-            addProductSubMenuButton.Padding = new Padding(4, 0, 0, 0);
-            addProductSubMenuButton.Size = new Size(373, 94);
-            addProductSubMenuButton.TabIndex = 4;
-            addProductSubMenuButton.Text = "Add Product";
-            addProductSubMenuButton.TextAlign = ContentAlignment.BottomRight;
-            addProductSubMenuButton.UseVisualStyleBackColor = false;
+            this.addProductSubMenuButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.addProductSubMenuButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
+            this.addProductSubMenuButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.addProductSubMenuButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
+            this.addProductSubMenuButton.FlatAppearance.BorderSize = 0;
+            this.addProductSubMenuButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addProductSubMenuButton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.addProductSubMenuButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            this.addProductSubMenuButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.addProductSubMenuButton.Location = new System.Drawing.Point(0, 138);
+            this.addProductSubMenuButton.Name = "addProductSubMenuButton";
+            this.addProductSubMenuButton.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.addProductSubMenuButton.Size = new System.Drawing.Size(201, 44);
+            this.addProductSubMenuButton.TabIndex = 4;
+            this.addProductSubMenuButton.Text = "Add Product";
+            this.addProductSubMenuButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.addProductSubMenuButton.UseVisualStyleBackColor = false;
+            this.addProductSubMenuButton.Click += new System.EventHandler(this.addProductSubMenuButton_Click);
+            this.addProductSubMenuButton.MouseEnter += new System.EventHandler(this.addProductSubMenuButton_MouseEnter);
+            this.addProductSubMenuButton.MouseLeave += new System.EventHandler(this.addProductSubMenuButton_MouseLeave);
             // 
             // productsMenuButton
             // 
-            productsMenuButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            productsMenuButton.BackColor = Color.FromArgb(28, 44, 78);
-            productsMenuButton.Dock = DockStyle.Top;
-            productsMenuButton.FlatAppearance.BorderColor = Color.FromArgb(28, 44, 78);
-            productsMenuButton.FlatAppearance.BorderSize = 0;
-            productsMenuButton.FlatStyle = FlatStyle.Flat;
-            productsMenuButton.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
-            productsMenuButton.ForeColor = Color.FromArgb(252, 251, 255);
-            productsMenuButton.Image = (Image)resources.GetObject("productsMenuButton.Image");
-            productsMenuButton.ImageAlign = ContentAlignment.MiddleLeft;
-            productsMenuButton.Location = new Point(0, 147);
-            productsMenuButton.Margin = new Padding(6);
-            productsMenuButton.Name = "productsMenuButton";
-            productsMenuButton.Padding = new Padding(4, 0, 0, 0);
-            productsMenuButton.Size = new Size(373, 94);
-            productsMenuButton.TabIndex = 3;
-            productsMenuButton.Text = "Products";
-            productsMenuButton.TextAlign = ContentAlignment.BottomRight;
-            productsMenuButton.UseVisualStyleBackColor = false;
+            this.productsMenuButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.productsMenuButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
+            this.productsMenuButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.productsMenuButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
+            this.productsMenuButton.FlatAppearance.BorderSize = 0;
+            this.productsMenuButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.productsMenuButton.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.productsMenuButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            this.productsMenuButton.Image = ((System.Drawing.Image)(resources.GetObject("productsMenuButton.Image")));
+            this.productsMenuButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.productsMenuButton.Location = new System.Drawing.Point(0, 69);
+            this.productsMenuButton.Name = "productsMenuButton";
+            this.productsMenuButton.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.productsMenuButton.Size = new System.Drawing.Size(201, 69);
+            this.productsMenuButton.TabIndex = 3;
+            this.productsMenuButton.Text = "Products";
+            this.productsMenuButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.productsMenuButton.UseVisualStyleBackColor = false;
+            this.productsMenuButton.MouseEnter += new System.EventHandler(this.productsMenuButton_MouseEnter);
+            this.productsMenuButton.MouseLeave += new System.EventHandler(this.productsMenuButton_MouseLeave);
             // 
             // homeMenuButton
             // 
-            homeMenuButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            homeMenuButton.BackColor = Color.FromArgb(28, 44, 78);
-            homeMenuButton.Dock = DockStyle.Top;
-            homeMenuButton.FlatAppearance.BorderColor = Color.FromArgb(28, 44, 78);
-            homeMenuButton.FlatAppearance.BorderSize = 0;
-            homeMenuButton.FlatStyle = FlatStyle.Flat;
-            homeMenuButton.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
-            homeMenuButton.ForeColor = Color.FromArgb(252, 251, 255);
-            homeMenuButton.Image = (Image)resources.GetObject("homeMenuButton.Image");
-            homeMenuButton.ImageAlign = ContentAlignment.MiddleLeft;
-            homeMenuButton.Location = new Point(0, 0);
-            homeMenuButton.Margin = new Padding(6);
-            homeMenuButton.Name = "homeMenuButton";
-            homeMenuButton.Padding = new Padding(4, 0, 0, 0);
-            homeMenuButton.Size = new Size(373, 147);
-            homeMenuButton.TabIndex = 2;
-            homeMenuButton.Text = "Home";
-            homeMenuButton.TextAlign = ContentAlignment.MiddleRight;
-            homeMenuButton.UseVisualStyleBackColor = false;
-            homeMenuButton.Click += homeMenuButton_Click;
-            homeMenuButton.MouseEnter += homeMenuButton_MouseEnter;
-            homeMenuButton.MouseLeave += homeMenuButton_MouseLeave;
+            this.homeMenuButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.homeMenuButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
+            this.homeMenuButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.homeMenuButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
+            this.homeMenuButton.FlatAppearance.BorderSize = 0;
+            this.homeMenuButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.homeMenuButton.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.homeMenuButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            this.homeMenuButton.Image = ((System.Drawing.Image)(resources.GetObject("homeMenuButton.Image")));
+            this.homeMenuButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.homeMenuButton.Location = new System.Drawing.Point(0, 0);
+            this.homeMenuButton.Name = "homeMenuButton";
+            this.homeMenuButton.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.homeMenuButton.Size = new System.Drawing.Size(201, 69);
+            this.homeMenuButton.TabIndex = 2;
+            this.homeMenuButton.Text = "Home";
+            this.homeMenuButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.homeMenuButton.UseVisualStyleBackColor = false;
+            this.homeMenuButton.Click += new System.EventHandler(this.homeMenuButton_Click);
+            this.homeMenuButton.MouseEnter += new System.EventHandler(this.homeMenuButton_MouseEnter);
+            this.homeMenuButton.MouseLeave += new System.EventHandler(this.homeMenuButton_MouseLeave);
             // 
             // logoPanel
             // 
@@ -359,56 +344,54 @@
             // 
             // mainHomeTabUserControl
             // 
-            mainHomeTabUserControl.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            mainHomeTabUserControl.BackColor = Color.FromArgb(227, 211, 177);
-            mainHomeTabUserControl.Location = new Point(0, 0);
-            mainHomeTabUserControl.Margin = new Padding(11, 13, 11, 13);
-            mainHomeTabUserControl.Name = "mainHomeTabUserControl";
-            mainHomeTabUserControl.Size = new Size(2587, 2009);
-            mainHomeTabUserControl.TabIndex = 0;
+            this.mainHomeTabUserControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.mainHomeTabUserControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(211)))), ((int)(((byte)(177)))));
+            this.mainHomeTabUserControl.Location = new System.Drawing.Point(0, 0);
+            this.mainHomeTabUserControl.Name = "mainHomeTabUserControl";
+            this.mainHomeTabUserControl.Size = new System.Drawing.Size(1393, 936);
+            this.mainHomeTabUserControl.TabIndex = 0;
             // 
             // searchPanel
             // 
-            searchPanel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            searchPanel.Controls.Add(searchInputPanel);
-            searchPanel.Location = new Point(6, 226);
-            searchPanel.Margin = new Padding(6);
-            searchPanel.Name = "searchPanel";
-            searchPanel.Size = new Size(592, 638);
-            searchPanel.TabIndex = 7;
+            this.searchPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.searchPanel.Controls.Add(this.searchInputPanel);
+            this.searchPanel.Location = new System.Drawing.Point(3, 106);
+            this.searchPanel.Name = "searchPanel";
+            this.searchPanel.Size = new System.Drawing.Size(300, 299);
+            this.searchPanel.TabIndex = 7;
             // 
             // searchInputPanel
             // 
-            searchInputPanel.Controls.Add(searchTextBox);
-            searchInputPanel.Controls.Add(searchButtonPanel);
-            searchInputPanel.Dock = DockStyle.Top;
-            searchInputPanel.Location = new Point(0, 0);
-            searchInputPanel.Margin = new Padding(6);
-            searchInputPanel.Name = "searchInputPanel";
-            searchInputPanel.Size = new Size(592, 75);
-            searchInputPanel.TabIndex = 0;
+            this.searchInputPanel.Controls.Add(this.searchTextBox);
+            this.searchInputPanel.Controls.Add(this.searchButtonPanel);
+            this.searchInputPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.searchInputPanel.Location = new System.Drawing.Point(0, 0);
+            this.searchInputPanel.Name = "searchInputPanel";
+            this.searchInputPanel.Size = new System.Drawing.Size(300, 35);
+            this.searchInputPanel.TabIndex = 0;
             // 
             // searchTextBox
             // 
-            searchTextBox.BorderStyle = BorderStyle.FixedSingle;
-            searchTextBox.Dock = DockStyle.Fill;
-            searchTextBox.Enabled = false;
-            searchTextBox.Location = new Point(0, 0);
-            searchTextBox.Margin = new Padding(6);
-            searchTextBox.Name = "searchTextBox";
-            searchTextBox.PlaceholderText = "Coming in the next iteration";
-            searchTextBox.Size = new Size(527, 63);
-            searchTextBox.TabIndex = 6;
+            this.searchTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.searchTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.searchTextBox.Enabled = false;
+            this.searchTextBox.Location = new System.Drawing.Point(0, 0);
+            this.searchTextBox.Name = "searchTextBox";
+            this.searchTextBox.PlaceholderText = "Coming in the next iteration";
+            this.searchTextBox.Size = new System.Drawing.Size(265, 35);
+            this.searchTextBox.TabIndex = 6;
             // 
             // searchButtonPanel
             // 
-            searchButtonPanel.Controls.Add(searchButton);
-            searchButtonPanel.Dock = DockStyle.Right;
-            searchButtonPanel.Location = new Point(527, 0);
-            searchButtonPanel.Margin = new Padding(6);
-            searchButtonPanel.Name = "searchButtonPanel";
-            searchButtonPanel.Size = new Size(65, 75);
-            searchButtonPanel.TabIndex = 0;
+            this.searchButtonPanel.Controls.Add(this.searchButton);
+            this.searchButtonPanel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.searchButtonPanel.Location = new System.Drawing.Point(265, 0);
+            this.searchButtonPanel.Name = "searchButtonPanel";
+            this.searchButtonPanel.Size = new System.Drawing.Size(35, 35);
+            this.searchButtonPanel.TabIndex = 0;
             // 
             // searchButton
             // 
@@ -623,6 +606,5 @@
         private Button productsMenuButton;
         private Button restoreButton;
         private UserControls.HomeUserControl.HomeTabUserControl mainHomeTabUserControl;
-        private Button searchProductSubMenuButton;
     }
 }

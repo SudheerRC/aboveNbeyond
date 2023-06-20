@@ -98,6 +98,71 @@ namespace MyStores.View
             homeMenuButton.ForeColor = Color.FromArgb(252, 251, 255);
         }
 
+        private void productsMenuButton_MouseEnter(object sender, EventArgs e)
+        {
+            productsMenuButton.ForeColor = Color.FromArgb(227, 211, 177);
+        }
+
+        private void productsMenuButton_MouseLeave(object sender, EventArgs e)
+        {
+            productsMenuButton.ForeColor = Color.FromArgb(252, 251, 255);
+        }
+
+        private void addProductSubMenuButton_MouseEnter(object sender, EventArgs e)
+        {
+            addProductSubMenuButton.ForeColor = Color.FromArgb(227, 211, 177);
+        }
+
+        private void addProductSubMenuButton_MouseLeave(object sender, EventArgs e)
+        {
+            addProductSubMenuButton.ForeColor = Color.FromArgb(252, 251, 255);
+        }
+
+        private void vendorsMenuButton_MouseEnter(object sender, EventArgs e)
+        {
+            vendorsMenuButton.ForeColor = Color.FromArgb(227, 211, 177);
+        }
+
+        private void vendorsMenuButton_MouseLeave(object sender, EventArgs e)
+        {
+            vendorsMenuButton.ForeColor = Color.FromArgb(252, 251, 255);
+        }
+
+        private void searchVendorSubMenuButton_MouseEnter(object sender, EventArgs e)
+        {
+            searchVendorSubMenuButton.ForeColor = Color.FromArgb(227, 211, 177);
+        }
+
+        private void searchVendorSubMenuButton_MouseLeave(object sender, EventArgs e)
+        {
+            searchVendorSubMenuButton.ForeColor = Color.FromArgb(252, 251, 255);
+        }
+
+        private void addVendorSubMenuButton_MouseEnter(object sender, EventArgs e)
+        {
+            addVendorSubMenuButton.ForeColor = Color.FromArgb(227, 211, 177);
+        }
+
+        private void addVendorSubMenuButton_MouseLeave(object sender, EventArgs e)
+        {
+            addVendorSubMenuButton.ForeColor = Color.FromArgb(252, 251, 255);
+        }
+
+        private void logoutButton_MouseEnter(object sender, EventArgs e)
+        {
+            logoutButton.ForeColor = Color.FromArgb(227, 211, 177);
+        }
+
+        private void logoutButton_MouseLeave(object sender, EventArgs e)
+        {
+            logoutButton.ForeColor = Color.FromArgb(252, 251, 255);
+        }
+
         #endregion
+
+        private void addProductSubMenuButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
