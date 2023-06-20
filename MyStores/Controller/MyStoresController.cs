@@ -46,5 +46,10 @@ namespace MyStores.Controller
         {
             _storesDal.AddProduct(product);
         }
+
+        public void AddVendor(Vendor vendor)
+        {
+            _storesDal.AddVendor(vendor);
+        }
     }
 }
