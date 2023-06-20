@@ -190,5 +190,10 @@ namespace MyStores.Controller
         {
             return _storesDal.GetAllVendors();
         }
+
+        public void AddVendorToStore(int vendorId, int storeId)
+        {
+            _storesDal.AddVendorToStore(vendorId, storeId);
+        }
     }
 }

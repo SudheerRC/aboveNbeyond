@@ -665,6 +665,23 @@ namespace MyStores.Dal
             command.ExecuteNonQuery();
         }
 
+        public void AddVendorToStore(int vendorId, int storeId)
+        {
+            using var connection = DbConnection.GetConnection();
+            connection.Open();
+            string query = "INSERT StoreVendors (vendorID, storeID) " +
+                           "VALUES (@vendorId, @storeId)";
+            using var command = new SqlCommand(query, connection);
+
+            command.Parameters.Add("@vendorId", System.Data.SqlDbType.Int);
+            command.Parameters["@vendorId"].Value = vendorId;
+
+            command.Parameters.Add("@storeId", System.Data.SqlDbType.Int);
+            command.Parameters["@storeId"].Value = storeId;
+
+            command.ExecuteNonQuery();
+        }
+
         /// <summary>
         /// Adds the manager.
         /// </summary>
