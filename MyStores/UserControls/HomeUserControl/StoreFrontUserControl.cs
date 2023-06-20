@@ -49,6 +49,7 @@
         {
             expandPanel();
             mainInventoryUserControl.BringToFront();
+            mainInventoryUserControl.SetStore(_storeId);
             backButtonPanel.BringToFront();
             mainInventoryUserControl.Visible = true;
         }

@@ -23,6 +23,11 @@ namespace MyStores.UserControls
             loadListView();
         }
 
+        public void SetStore(int id)
+        {
+            _storeId = id;
+        }
+
         public void refreshListView()
         {
             inventoryListView.Items.Clear();

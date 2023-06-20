@@ -180,5 +180,10 @@ namespace MyStores.Controller
         {
             return _storesDal.GetStoreName(id);
         }
+
+        public List<Vendor> SearchVendorByStoreId(int storeId)
+        {
+            return _storesDal.SearchVendorByStoreId(storeId);
+        }
     }
 }
