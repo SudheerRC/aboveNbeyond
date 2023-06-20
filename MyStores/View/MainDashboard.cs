@@ -20,6 +20,8 @@ namespace MyStores.View
         private void hideAllUserControls()
         {
             mainHomeTabUserControl.Visible = false;
+            mainProductsTabUserControl.Visible = false;
+            mainVendorTabUserControl.Visible = false;
         }
 
         private void CloseButton_Click(object sender, EventArgs e)
