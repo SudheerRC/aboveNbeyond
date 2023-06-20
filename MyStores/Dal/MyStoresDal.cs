@@ -405,5 +405,37 @@ namespace MyStores.Dal
 
             command.ExecuteNonQuery();
         }
+
+        public void AddVendor(Vendor vendor)
+        {
+            using var connection = DbConnection.GetConnection();
+            connection.Open();
+            string query = "INSERT Vendor (vendorName, streetAddress, city, state, zipCode, country, phoneNumber) " +
+                           "VALUES (@vendorName, @streetAddress, @city, @state, @zipCode, @country, @phoneNumber)";
+            using var command = new SqlCommand(query, connection);
+
+            command.Parameters.Add("@vendorName", System.Data.SqlDbType.VarChar);
+            command.Parameters["@vendorName"].Value = vendor.Name;
+
+            command.Parameters.Add("@streetAddress", System.Data.SqlDbType.VarChar);
+            command.Parameters["@streetAddress"].Value = vendor.StreetAddress;
+
+            command.Parameters.Add("@city", System.Data.SqlDbType.VarChar);
+            command.Parameters["@city"].Value = vendor.City;
+
+            command.Parameters.Add("@state", System.Data.SqlDbType.VarChar);
+            command.Parameters["@state"].Value = vendor.State;
+
+            command.Parameters.Add("@zipCode", System.Data.SqlDbType.VarChar);
+            command.Parameters["@zipCode"].Value = vendor.ZipCode;
+
+            command.Parameters.Add("@country", System.Data.SqlDbType.VarChar);
+            command.Parameters["@country"].Value = vendor.Country;
+
+            command.Parameters.Add("@phoneNumber", System.Data.SqlDbType.VarChar);
+            command.Parameters["@phoneNumber"].Value = vendor.PhoneNumber;
+
+            command.ExecuteNonQuery();
+        }
     }
 }

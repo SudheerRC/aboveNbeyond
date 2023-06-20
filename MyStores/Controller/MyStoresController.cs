@@ -66,5 +66,10 @@ namespace MyStores.Controller
         {
             return _storesDal.SearchStore(storeName);
         }
+
+        public void AddVendor(Vendor vendor)
+        {
+            _storesDal.AddVendor(vendor);
+        }
     }
 }

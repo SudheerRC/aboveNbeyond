@@ -444,6 +444,7 @@
             passwordTextBox.PasswordChar = '*';
             passwordTextBox.Size = new Size(157, 23);
             passwordTextBox.TabIndex = 5;
+            passwordTextBox.GotFocus += PasswordTextBox_GotFocus;
             // 
             // SignUpUserControl
             // 
