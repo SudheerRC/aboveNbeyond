@@ -1,5 +1,9 @@
-﻿using MyStores.Controller;
+﻿using System.Net.Mail;
+using System.Reflection;
+using System.Windows.Forms.VisualStyles;
+using MyStores.Controller;
 using MyStores.Model;
+using MyStores.UserControls.CustomButton;
 using MyStores.View;
 
 namespace MyStores.UserControls.HomeUserControl
@@ -26,7 +30,7 @@ namespace MyStores.UserControls.HomeUserControl
         {
             homeFlowLayoutPanel.Controls.Clear();
 
-            StoreChipUserControl[] homeChips = new StoreChipUserControl[99];
+            NewStoreChipUserControl[] homeChips = new NewStoreChipUserControl[99];
 
             List<Store> storeList = _controller.GetUserStores(_owner.UserId);
 
@@ -34,27 +38,65 @@ namespace MyStores.UserControls.HomeUserControl
 
             for (int i = 0; i < storeList.Count; i++)
             {
-                homeChips[i] = new StoreChipUserControl();
+                //homeChips[i] = new StoreChipUserControl();
 
-                var managersNames = "Not Assigned";
-                List<Users> managers = _controller.GetAllManagersOfStore(storeList[i].Id);
-                managersNames = ManagersNames(managers, managersNames);
+                //var managersNames = "Not Assigned";
+                //List<Users> managers = _controller.GetAllManagersOfStore(storeList[i].Id);
+                //managersNames = ManagersNames(managers, managersNames);
 
-                homeChips[i].StoreName = storeList[i].Name;
-                homeChips[i].City = storeList[i].City;
-                homeChips[i].Managers = managersNames;
-                homeChips[i].Id = storeList[i].Id;
+                //homeChips[i].Controls = storeList[i].Name;
+                //homeChips[i].City = storeList[i].City;
+                //homeChips[i].Managers = managersNames;
+                //homeChips[i].Id = storeList[i].Id;
 
-                homeFlowLayoutPanel.Controls.Add(homeChips[i]);
-                
-                homeChips[i].Click += new EventHandler(StoreHomeChip_Click);
+                //homeFlowLayoutPanel.Controls.Add(homeChips[i]);
+
+                //Rectangle chipRectangle = new Rectangle((homeChips[i].Location), new Size(homeChips[i].Width, homeChips[i].Height));
+                //var clickPannel = new Panel
+                //{
+                //    Location = chipRectangle.Location,
+                //    Size = chipRectangle.Size,
+                //    BackColor = Color.Transparent
+                //};
+                //var zButton = new ButtonZ();
+                //zButton.Parent = clickPanel;
+                //zButton.Dock = DockStyle.Fill;
+
+                //zButton.Click += new EventHandler(StoreHomeChip_Click);
+
+                var storeButton = CreateCustomButton();
+                storeButton.Text = storeList[i].Name;
+                storeButton.Name = Convert.ToString(storeList[i].Id);
+
+                homeFlowLayoutPanel.Controls.Add(storeButton);
+
+                storeButton.Click += new EventHandler(StoreHomeChip_Click);
             }
+        }
+
+        private Button CreateCustomButton()
+        {
+
+            var newButton = new Button();
+
+            newButton.Size = AddStoreButton.Size;
+            newButton.BackColor = AddStoreButton.BackColor;
+            newButton.ForeColor = AddStoreButton.ForeColor;
+            newButton.FlatStyle = AddStoreButton.FlatStyle;
+            newButton.TextAlign = AddStoreButton.TextAlign;
+            newButton.Font = AddStoreButton.Font;
+            newButton.TextImageRelation = AddStoreButton.TextImageRelation;
+
+            newButton.Image = Image.FromFile("..\\..\\..\\Images\\icons\\Store.png");
+            newButton.ImageAlign = AddStoreButton.ImageAlign;
+
+            return newButton;
         }
 
         private void StoreHomeChip_Click(object sender, EventArgs e)
         {
-            UserControl current = (UserControl)sender;
-            int id = int.Parse(current.Controls["idLabel"].Text);
+            Button current = (Button)sender;
+            int id = int.Parse(current.Name);
             string name = _controller.GetStoreName(id);
             
             mainStoreFrontUserControl.Visible = true;
