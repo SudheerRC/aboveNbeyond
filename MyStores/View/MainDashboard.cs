@@ -43,6 +43,9 @@ namespace MyStores.View
             mainVendorTabUserControl.Parent = storeContainer.Panel2;
             mainVendorTabUserControl.Dock = DockStyle.Top;
 
+            hideAllUserControls();
+            mainHomeTabUserControl.Visible = true;
+
             FormScaling();
         }
 

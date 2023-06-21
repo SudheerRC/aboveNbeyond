@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StoreFrontUserControl));
             this.highlightTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.storeNameLabel = new System.Windows.Forms.Label();
             this.AddVendorButton = new System.Windows.Forms.Button();
             this.addProductButton = new System.Windows.Forms.Button();
             this.inventoryButton = new System.Windows.Forms.Button();
@@ -43,6 +44,7 @@
             this.backButton = new System.Windows.Forms.Button();
             this.mainInventoryUserControl = new MyStores.UserControls.InventoryUserControl();
             this.addManagerButton = new System.Windows.Forms.Button();
+            this.highlightTableLayoutPanel.SuspendLayout();
             this.storeExpandedPanel.SuspendLayout();
             this.backButtonPanel.SuspendLayout();
             this.SuspendLayout();
@@ -53,11 +55,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.highlightTableLayoutPanel.ColumnCount = 5;
-            this.highlightTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.highlightTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.highlightTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 321F));
-            this.highlightTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 213F));
-            this.highlightTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 217F));
+            this.highlightTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.47658F));
+            this.highlightTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70.52341F));
+            this.highlightTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 836F));
+            this.highlightTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 164F));
+            this.highlightTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 110F));
+            this.highlightTableLayoutPanel.Controls.Add(this.storeNameLabel, 2, 0);
             this.highlightTableLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this.highlightTableLayoutPanel.Name = "highlightTableLayoutPanel";
             this.highlightTableLayoutPanel.RowCount = 1;
@@ -65,6 +68,20 @@
             this.highlightTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.highlightTableLayoutPanel.Size = new System.Drawing.Size(1390, 107);
             this.highlightTableLayoutPanel.TabIndex = 1;
+            // 
+            // storeNameLabel
+            // 
+            this.storeNameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.storeNameLabel.Font = new System.Drawing.Font("Segoe UI", 33F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.storeNameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
+            this.storeNameLabel.Location = new System.Drawing.Point(282, 0);
+            this.storeNameLabel.Name = "storeNameLabel";
+            this.storeNameLabel.Size = new System.Drawing.Size(830, 107);
+            this.storeNameLabel.TabIndex = 1;
+            this.storeNameLabel.Text = "Name";
+            this.storeNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // AddVendorButton
             // 
@@ -299,6 +316,7 @@
             this.Name = "StoreFrontUserControl";
             this.Size = new System.Drawing.Size(1390, 900);
             this.Load += new System.EventHandler(this.StoreFrontUserControl_Load);
+            this.highlightTableLayoutPanel.ResumeLayout(false);
             this.storeExpandedPanel.ResumeLayout(false);
             this.backButtonPanel.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -321,5 +339,6 @@
         private Button addManagerButton;
         private AddVendorToStoreUserControl mainAddVendorToStoreUserControl;
         private AddProductToStoreUserControl mainAddProductToStoreUserControl;
+        private Label storeNameLabel;
     }
 }

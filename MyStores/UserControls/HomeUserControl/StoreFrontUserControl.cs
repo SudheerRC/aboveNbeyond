@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualBasic.ApplicationServices;
+using MyStores.Controller;
 using MyStores.Model;
 
 namespace MyStores.UserControls.HomeUserControl
@@ -7,16 +8,21 @@ namespace MyStores.UserControls.HomeUserControl
     {
         private int _storeId;
         private Users _owner;
+        private readonly MyStoresController _controller;
+
         public StoreFrontUserControl()
         {
             InitializeComponent();
             hideAllUserControls();
             _owner = new Users();
+            _controller = new MyStoresController();
         }
 
         public void SetStoreId(int id)
         {
             _storeId = id;
+            var fullName = _controller.GetStoreName(_storeId);
+            storeNameLabel.Text = fullName;
         }
 
         public void SetOwner(Users setUser)
