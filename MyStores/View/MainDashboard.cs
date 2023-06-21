@@ -186,5 +186,15 @@ namespace MyStores.View
             hideAllUserControls();
             mainVendorTabUserControl.Visible = true;
         }
+
+        private void productsMenuButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Coming soon!!!");
+        }
+
+        private void vendorsMenuButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Coming soon!!!");
+        }
     }
 }

@@ -13,7 +13,7 @@ namespace MyStores.UserControls
             _controller = new MyStoresController();
 
             messageLabel.Text = @"The above are vendors you have added to this store. If you don't find the vendor " +
-                                @"you are looking for, consider adding them to your list by clicking the link below";
+                                @"you are looking for, consider adding them to your list by going back and clicking on add vendors icon";
         }
 
         public void SetStore(int id)
@@ -111,18 +111,19 @@ namespace MyStores.UserControls
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            var selectedVendor = vendorComboBox.SelectedItem as Vendor;
-            var selectedProduct = inventoryListView.SelectedItems;
-            var inventoryItem = new InventoryItem();
-
-            var currentVendorId = selectedVendor.Id;
-            var currentProductId = Convert.ToInt32(selectedProduct[0].Text);
-            var currentSellingPrice = Convert.ToDouble(sellingPriceTextBox.Text);
-            var purchasePrice = Convert.ToDouble(purchasePriceTextBox.Text);
-            var quantity = Convert.ToInt32(quantityTextBox.Text);
-
             try
             {
+                var selectedVendor = vendorComboBox.SelectedItem as Vendor;
+                var selectedProduct = inventoryListView.SelectedItems;
+                var inventoryItem = new InventoryItem();
+
+                var currentVendorId = selectedVendor.Id;
+                var currentProductId = Convert.ToInt32(selectedProduct[0].Text);
+                var currentSellingPrice = Convert.ToDouble(sellingPriceTextBox.Text);
+                var purchasePrice = Convert.ToDouble(purchasePriceTextBox.Text);
+                var quantity = Convert.ToInt32(quantityTextBox.Text);
+
+
                 if (!ValidateFields())
                 {
                     purchasePriceErrorLabel.Visible = false;
@@ -143,10 +144,11 @@ namespace MyStores.UserControls
 
                     resetControl();
                 }
+               
             }
             catch (FormatException)
             {
-                MessageBox.Show(@"Please clear the errors and try again to add.");
+                //MessageBox.Show(@"Please clear the errors and try again to add.");
             }
         }
 
