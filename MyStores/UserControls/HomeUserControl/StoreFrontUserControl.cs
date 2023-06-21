@@ -37,6 +37,7 @@ namespace MyStores.UserControls.HomeUserControl
             storeExpandedPanel.Visible = false;
             backButton.Visible = false;
             hideAllUserControls();
+            mainAddVendorToStoreUserControl.refreshListView();
         }
 
         private void addProductButton_Click(object sender, EventArgs e)
@@ -67,9 +68,9 @@ namespace MyStores.UserControls.HomeUserControl
             expandPanel();
             mainInventoryUserControl.BringToFront();
             mainInventoryUserControl.SetStore(_storeId);
-            backButton.Visible = true;
-            backButtonPanel.BringToFront();
             mainInventoryUserControl.Visible = true;
+            backButtonPanel.BringToFront();
+            backButton.Visible = true;
         }
 
         private void AddVendorButton_Click(object sender, EventArgs e)
@@ -78,9 +79,10 @@ namespace MyStores.UserControls.HomeUserControl
             mainAddVendorToStoreUserControl.BringToFront();
             mainAddVendorToStoreUserControl.SetStore(_storeId);
             mainAddVendorToStoreUserControl.SetOwner(_owner);
-            backButton.Visible = true;
-            backButtonPanel.BringToFront();
+            mainAddVendorToStoreUserControl.AddVendorToStoreUserControl_Load(sender, e);
             mainAddVendorToStoreUserControl.Visible = true;
+            backButtonPanel.BringToFront();
+            backButton.Visible = true;
         }
 
         private void MainAddManagerButton_Click(object sender, EventArgs e)
@@ -91,6 +93,18 @@ namespace MyStores.UserControls.HomeUserControl
             backButton.Visible = true;
             backButtonPanel.BringToFront();
             mainAddManagerUserControl.Visible = true;
+        }
+
+        private void StoreFrontUserControl_Load(object sender, EventArgs e)
+        {
+            mainInventoryUserControl.SetStore(_storeId);
+
+            mainAddVendorToStoreUserControl.SetStore(_storeId);
+            mainAddVendorToStoreUserControl.SetOwner(_owner);
+
+            mainAddManagerUserControl.SetStore(_storeId);
+
+            mainAddProductToStoreUserControl.SetStore(_storeId);
         }
     }
 }

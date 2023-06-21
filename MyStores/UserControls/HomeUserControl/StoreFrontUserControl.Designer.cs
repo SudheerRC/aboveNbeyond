@@ -298,6 +298,7 @@
             this.Controls.Add(this.storeExpandedPanel);
             this.Name = "StoreFrontUserControl";
             this.Size = new System.Drawing.Size(1390, 900);
+            this.Load += new System.EventHandler(this.StoreFrontUserControl_Load);
             this.storeExpandedPanel.ResumeLayout(false);
             this.backButtonPanel.ResumeLayout(false);
             this.ResumeLayout(false);

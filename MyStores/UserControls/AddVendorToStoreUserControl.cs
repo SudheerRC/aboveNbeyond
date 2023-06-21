@@ -28,14 +28,23 @@ namespace MyStores.UserControls
         public void refreshListView()
         {
             storeVendorListView.Items.Clear();
+            storeVendorListView.Refresh();
         }
 
         private void loadListView()
         {
             refreshListView();
-            foreach (var vendor in _controller.SearchVendorByStoreId(_storeId))
+            var vendors = _controller.SearchVendorByStoreId(_storeId);
+            if (vendors.Count != 0)
             {
-                FeedListView(vendor);
+                foreach (var vendor in vendors)
+                {
+                    FeedListView(vendor);
+                }
+            }
+            else
+            {
+                storeVendorListView.Items.Clear();
             }
         }
 
@@ -65,6 +74,7 @@ namespace MyStores.UserControls
             mainAddVendorUserControl.Visible = true;
             closeVendorFormPictureBox.BringToFront();
             closeVendorFormPictureBox.Visible = true;
+            loadListView();
         }
 
         private void closeVendorFormPictureBox_Click(object sender, EventArgs e)
@@ -73,6 +83,7 @@ namespace MyStores.UserControls
             mainAddVendorUserControl.Visible = false;
             closeVendorFormPictureBox.Visible = false;
             loadVendorComboBox();
+            loadListView();
         }
 
         private void addVendorToStoreButton_Click(object sender, EventArgs e)
@@ -89,7 +100,7 @@ namespace MyStores.UserControls
             }
         }
 
-        private void AddVendorToStoreUserControl_Load(object sender, EventArgs e)
+        public void AddVendorToStoreUserControl_Load(object sender, EventArgs e)
         {
             messageLabel.Text = @"If you do not find a vendor in the above list, " +
                                 @"consider adding them to your list by clicking the link below";
