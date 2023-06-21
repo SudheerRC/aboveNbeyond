@@ -22,6 +22,10 @@ namespace MyStores.View
             mainHomeTabUserControl.Visible = false;
             mainProductsTabUserControl.Visible = false;
             mainVendorTabUserControl.Visible = false;
+
+            mainHomeTabUserControl.Dock = DockStyle.None;
+            mainProductsTabUserControl.Dock = DockStyle.None;
+            mainVendorTabUserControl.Dock = DockStyle.None;
         }
 
         private void CloseButton_Click(object sender, EventArgs e)
@@ -33,10 +37,11 @@ namespace MyStores.View
         private void MainDashboard_Load(object sender, EventArgs e)
         {
             mainHomeTabUserControl.SetOwner(_owner);
-
+            
+            hideAllUserControls();
             anchorUserControls();
 
-            hideAllUserControls();
+            mainHomeTabUserControl.Dock = DockStyle.Fill;
             mainHomeTabUserControl.Visible = true;
 
             FormScaling();
@@ -45,21 +50,21 @@ namespace MyStores.View
         private void anchorUserControls()
         {
             mainHomeTabUserControl.Parent = storeContainer.Panel2;
+            mainHomeTabUserControl.Location = storeContainer.Panel2.Location;
             mainHomeTabUserControl.Anchor = AnchorStyles.Bottom;
             mainHomeTabUserControl.Anchor = AnchorStyles.Top;
-            mainHomeTabUserControl.Anchor = AnchorStyles.Left;
             mainHomeTabUserControl.Anchor = AnchorStyles.Right;
 
             mainProductsTabUserControl.Parent = storeContainer.Panel2;
+            mainProductsTabUserControl.Location = storeContainer.Panel2.Location;
             mainProductsTabUserControl.Anchor = AnchorStyles.Bottom;
             mainProductsTabUserControl.Anchor = AnchorStyles.Top;
-            mainProductsTabUserControl.Anchor = AnchorStyles.Left;
             mainProductsTabUserControl.Anchor = AnchorStyles.Right;
 
             mainVendorTabUserControl.Parent = storeContainer.Panel2;
+            mainVendorTabUserControl.Location = storeContainer.Panel2.Location;
             mainVendorTabUserControl.Anchor = AnchorStyles.Bottom;
             mainVendorTabUserControl.Anchor = AnchorStyles.Top;
-            mainVendorTabUserControl.Anchor = AnchorStyles.Left;
             mainVendorTabUserControl.Anchor = AnchorStyles.Right;
         }
 
@@ -103,6 +108,8 @@ namespace MyStores.View
         private void homeMenuButton_Click(object sender, EventArgs e)
         {
             hideAllUserControls();
+            anchorUserControls();
+            mainHomeTabUserControl.Dock = DockStyle.Fill;
             mainHomeTabUserControl.Visible = true;
         }
 
@@ -112,7 +119,7 @@ namespace MyStores.View
             this.Close();
         }
 
-        #region Hover
+        #region MenuButtonHover
 
         private void homeMenuButton_MouseEnter(object sender, EventArgs e)
         {
@@ -189,18 +196,24 @@ namespace MyStores.View
         private void addProductSubMenuButton_Click(object sender, EventArgs e)
         {
             hideAllUserControls();
+            anchorUserControls();
+            mainProductsTabUserControl.Dock = DockStyle.Fill;
             mainProductsTabUserControl.Visible = true;
         }
 
         private void searchVendorSubMenuButton_Click(object sender, EventArgs e)
         {
             hideAllUserControls();
+            anchorUserControls();
+            mainVendorTabUserControl.Dock = DockStyle.Fill;
             mainVendorTabUserControl.Visible = true;
         }
 
         private void addVendorSubMenuButton_Click(object sender, EventArgs e)
         {
             hideAllUserControls();
+            anchorUserControls();
+            mainVendorTabUserControl.Dock = DockStyle.Fill;
             mainVendorTabUserControl.Visible = true;
         }
 
