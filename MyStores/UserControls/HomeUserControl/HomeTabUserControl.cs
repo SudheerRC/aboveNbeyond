@@ -18,7 +18,7 @@ namespace MyStores.UserControls.HomeUserControl
             InitializeComponent();
             _controller = new MyStoresController();
             _owner = new Users();
-            loadHome();
+            //loadHome();
         }
 
         public void SetOwner(Users setUser)

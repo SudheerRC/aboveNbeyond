@@ -45,7 +45,6 @@
             this.productLookUpPanel = new System.Windows.Forms.Panel();
             this.vendorPanel = new System.Windows.Forms.Panel();
             this.vendorInfoPanel = new System.Windows.Forms.Panel();
-            this.addVendorToStoreButton = new System.Windows.Forms.Button();
             this.messageLabel = new System.Windows.Forms.Label();
             this.infoGraphicPictureBox = new System.Windows.Forms.PictureBox();
             this.vendorHeadingLabel = new System.Windows.Forms.Label();
@@ -226,7 +225,6 @@
             // 
             // vendorInfoPanel
             // 
-            this.vendorInfoPanel.Controls.Add(this.addVendorToStoreButton);
             this.vendorInfoPanel.Controls.Add(this.messageLabel);
             this.vendorInfoPanel.Controls.Add(this.infoGraphicPictureBox);
             this.vendorInfoPanel.Location = new System.Drawing.Point(107, 160);
@@ -234,24 +232,6 @@
             this.vendorInfoPanel.Padding = new System.Windows.Forms.Padding(8);
             this.vendorInfoPanel.Size = new System.Drawing.Size(426, 170);
             this.vendorInfoPanel.TabIndex = 12;
-            // 
-            // addVendorToStoreButton
-            // 
-            this.addVendorToStoreButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.addVendorToStoreButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
-            this.addVendorToStoreButton.FlatAppearance.BorderSize = 0;
-            this.addVendorToStoreButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addVendorToStoreButton.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.addVendorToStoreButton.ForeColor = System.Drawing.Color.White;
-            this.addVendorToStoreButton.Location = new System.Drawing.Point(133, 121);
-            this.addVendorToStoreButton.Name = "addVendorToStoreButton";
-            this.addVendorToStoreButton.Size = new System.Drawing.Size(170, 41);
-            this.addVendorToStoreButton.TabIndex = 15;
-            this.addVendorToStoreButton.Text = "Add Vendor to Store";
-            this.addVendorToStoreButton.UseVisualStyleBackColor = false;
-            this.addVendorToStoreButton.Click += new System.EventHandler(this.addVendorToStoreButton_Click);
             // 
             // messageLabel
             // 
@@ -545,7 +525,6 @@
         private Button addButton;
         private Panel vendorPanel;
         private Panel vendorInfoPanel;
-        private Button addVendorToStoreButton;
         private Label messageLabel;
         private PictureBox infoGraphicPictureBox;
         private Label vendorHeadingLabel;

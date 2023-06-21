@@ -68,7 +68,7 @@ namespace MyStores.UserControls
             }
             catch (FormatException)
             {
-                errorLabel.Text = "Please meet the necessary requirements to add a product successfully.";
+                errorLabel.Text = "Please give all the details to add.";
                 errorLabel.ForeColor = Color.Red;
                 errorLabel.Visible = true;
             }
@@ -110,7 +110,7 @@ namespace MyStores.UserControls
 
             if (string.IsNullOrEmpty(barcodeTextBox.Text))
             {
-                barcodeErrorLabel.Text = "Product's selling price cannot be empty";
+                barcodeErrorLabel.Text = "Product's barcode cannot be empty";
                 barcodeErrorLabel.Visible = true;
                 result = true;
             }

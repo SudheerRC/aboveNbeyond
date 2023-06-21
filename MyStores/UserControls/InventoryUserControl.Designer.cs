@@ -167,7 +167,7 @@
             this.searchButton.Size = new System.Drawing.Size(35, 33);
             this.searchButton.TabIndex = 2;
             this.searchButton.UseVisualStyleBackColor = false;
-            this.searchButton.Click += new System.EventHandler(this.searchButton_Click_1);
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // InventoryUserControl
             // 
@@ -177,6 +177,7 @@
             this.Controls.Add(this.inventoryListView);
             this.Name = "InventoryUserControl";
             this.Size = new System.Drawing.Size(1384, 784);
+            this.Load += new System.EventHandler(this.InventoryUserControl_Load);
             this.searchInputPanel.ResumeLayout(false);
             this.searchInputPanel.PerformLayout();
             this.searchButtonPanel.ResumeLayout(false);

@@ -11,7 +11,6 @@ namespace MyStores.UserControls
         {
             InitializeComponent();
             _controller = new MyStoresController();
-            loadListView();
         }
 
         public void SetStore(int id)
@@ -51,7 +50,12 @@ namespace MyStores.UserControls
             inventoryListView.Items.Add(listItem);
         }
 
-        private void searchButton_Click_1(object sender, EventArgs e)
+        private void InventoryUserControl_Load(object sender, EventArgs e)
+        {
+            loadListView();
+        }
+
+        private void searchButton_Click(object sender, EventArgs e)
         {
             var inputText = searchTextBox.Text;
 
@@ -63,6 +67,13 @@ namespace MyStores.UserControls
                 {
                     FeedListView(ii);
                 }
+                searchTextBox.Clear();
+            }
+            else
+            {
+                MessageBox.Show(@"There are no products with your search input. Please try again!");
+                searchTextBox.Clear();
+                refreshListView();
             }
         }
     }
