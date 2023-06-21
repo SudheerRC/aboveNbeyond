@@ -12,22 +12,22 @@ namespace MyStores.UserControls.CustomButton
     public class ButtonZ : System.Windows.Forms.Button
     {
         Color clr1, clr2;
-        private Color color1 = Color.DodgerBlue;
-        private Color color2 = Color.MidnightBlue;
-        private Color m_hovercolor1 = Color.Turquoise;
-        private Color m_hovercolor2 = Color.DarkSlateGray;
-        private int color1Transparent = 250;
-        private int color2Transparent = 250;
-        private Color clickcolor1 = Color.Yellow;
-        private Color clickcolor2 = Color.Red;
-        private int angle = 90;
+        private Color color1 = Color.Transparent;
+        private Color color2 = Color.Transparent;
+        private Color m_hovercolor1 = Color.Transparent;
+        private Color m_hovercolor2 = Color.Transparent;
+        private int color1Transparent = 10;
+        private int color2Transparent = 10;
+        private Color clickcolor1 = Color.Transparent;
+        private Color clickcolor2 = Color.Transparent;
+        private int angle = 66;
         private int textX = 100;
         private int textY = 25;
         private String text = "";
-        public Color buttonborder_1 = Color.FromArgb(220, 220, 220);
-        public Color buttonborder_2 = Color.FromArgb(150, 150, 150);
-        public Boolean showButtonText = true;
-        public int borderWidth = 2;
+        public Color buttonborder_1 = Color.Transparent;
+        public Color buttonborder_2 = Color.Transparent;
+        public Boolean showButtonText = false;
+        public int borderWidth = 0;
         public Color borderColor = Color.Transparent;
 
         public enum ButtonsShapes
@@ -48,7 +48,25 @@ namespace MyStores.UserControls.CustomButton
             }
         }
 
-        public String ButtonText
+        public String StoreNameText
+        {
+            get { return text; }
+            set { text = value; Invalidate(); }
+        }
+
+        public String CityNameText
+        {
+            get { return text; }
+            set { text = value; Invalidate(); }
+        }
+
+        public String ManagerLabelText
+        {
+            get { return text; }
+            set { text = value; Invalidate(); }
+        }
+
+        public String ManagerNamesText
         {
             get { return text; }
             set { text = value; Invalidate(); }
@@ -186,13 +204,19 @@ namespace MyStores.UserControls.CustomButton
 
         public ButtonZ()
         {
-            this.Size = new Size(100, 40);
+            this.Size = new Size(160, 200);
+            this.buttonShape = ButtonsShapes.RoundRect;
             this.BackColor = Color.Transparent;
             this.FlatStyle = FlatStyle.Flat;
             this.FlatAppearance.BorderSize = 0;
             this.FlatAppearance.MouseOverBackColor = Color.Transparent;
             this.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            text = this.Text;
+
+            StoreNameText = "Store Name";
+            CityNameText = "City";
+            ManagerLabelText = "Manager: ";
+            ManagerNamesText = "Not Assigned";
+            
         }
 
 
