@@ -55,6 +55,7 @@
             this.AddStoreButton.Image = ((System.Drawing.Image)(resources.GetObject("AddStoreButton.Image")));
             this.AddStoreButton.Location = new System.Drawing.Point(21, 21);
             this.AddStoreButton.Name = "AddStoreButton";
+            this.AddStoreButton.Padding = new System.Windows.Forms.Padding(6);
             this.AddStoreButton.Size = new System.Drawing.Size(160, 200);
             this.AddStoreButton.TabIndex = 1;
             this.AddStoreButton.Text = "Add Store";

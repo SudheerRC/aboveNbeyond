@@ -87,6 +87,7 @@ namespace MyStores.UserControls.HomeUserControl
             newButton.Font = AddStoreButton.Font;
             newButton.TextImageRelation = AddStoreButton.TextImageRelation;
             newButton.FlatAppearance.BorderSize = AddStoreButton.FlatAppearance.BorderSize;
+            newButton.Padding = AddStoreButton.Padding;
 
             newButton.Image = Image.FromFile("..\\..\\..\\Images\\icons\\Store.png");
             newButton.ImageAlign = AddStoreButton.ImageAlign;

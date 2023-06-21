@@ -34,19 +34,33 @@ namespace MyStores.View
         {
             mainHomeTabUserControl.SetOwner(_owner);
 
-            mainHomeTabUserControl.Parent = storeContainer.Panel2;
-            mainHomeTabUserControl.Dock = DockStyle.Top;
-
-            mainProductsTabUserControl.Parent = storeContainer.Panel2;
-            mainProductsTabUserControl.Dock = DockStyle.Top;
-
-            mainVendorTabUserControl.Parent = storeContainer.Panel2;
-            mainVendorTabUserControl.Dock = DockStyle.Top;
+            anchorUserControls();
 
             hideAllUserControls();
             mainHomeTabUserControl.Visible = true;
 
             FormScaling();
+        }
+
+        private void anchorUserControls()
+        {
+            mainHomeTabUserControl.Parent = storeContainer.Panel2;
+            mainHomeTabUserControl.Anchor = AnchorStyles.Bottom;
+            mainHomeTabUserControl.Anchor = AnchorStyles.Top;
+            mainHomeTabUserControl.Anchor = AnchorStyles.Left;
+            mainHomeTabUserControl.Anchor = AnchorStyles.Right;
+
+            mainProductsTabUserControl.Parent = storeContainer.Panel2;
+            mainProductsTabUserControl.Anchor = AnchorStyles.Bottom;
+            mainProductsTabUserControl.Anchor = AnchorStyles.Top;
+            mainProductsTabUserControl.Anchor = AnchorStyles.Left;
+            mainProductsTabUserControl.Anchor = AnchorStyles.Right;
+
+            mainVendorTabUserControl.Parent = storeContainer.Panel2;
+            mainVendorTabUserControl.Anchor = AnchorStyles.Bottom;
+            mainVendorTabUserControl.Anchor = AnchorStyles.Top;
+            mainVendorTabUserControl.Anchor = AnchorStyles.Left;
+            mainVendorTabUserControl.Anchor = AnchorStyles.Right;
         }
 
         private void maxButton_Click(object sender, EventArgs e)
