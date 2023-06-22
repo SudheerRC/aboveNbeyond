@@ -113,19 +113,19 @@ namespace MyStores.UserControls
         {
             try
             {
-                var selectedVendor = vendorComboBox.SelectedItem as Vendor;
-                var selectedProduct = inventoryListView.SelectedItems;
-                var inventoryItem = new InventoryItem();
-
-                var currentVendorId = selectedVendor.Id;
-                var currentProductId = Convert.ToInt32(selectedProduct[0].Text);
-                var currentSellingPrice = Convert.ToDouble(sellingPriceTextBox.Text);
-                var purchasePrice = Convert.ToDouble(purchasePriceTextBox.Text);
-                var quantity = Convert.ToInt32(quantityTextBox.Text);
-
 
                 if (!ValidateFields())
                 {
+                    var selectedVendor = vendorComboBox.SelectedItem as Vendor;
+                    var selectedProduct = inventoryListView.SelectedItems;
+                    var inventoryItem = new InventoryItem();
+
+                    var currentVendorId = selectedVendor.Id;
+                    var currentProductId = Convert.ToInt32(selectedProduct[0].Text);
+                    var currentSellingPrice = Convert.ToDouble(sellingPriceTextBox.Text);
+                    var purchasePrice = Convert.ToDouble(purchasePriceTextBox.Text);
+                    var quantity = Convert.ToInt32(quantityTextBox.Text);
+
                     purchasePriceErrorLabel.Visible = false;
                     sellingPriceErrorLabel.Visible = false;
                     quantityErrorLabel.Visible = false;
@@ -152,7 +152,7 @@ namespace MyStores.UserControls
             }
         }
 
-        private void resetControl()
+        public void resetControl()
         {
             addButton.Enabled = false;
             previousButton.Enabled = false;

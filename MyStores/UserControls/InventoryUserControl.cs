@@ -21,19 +21,21 @@ namespace MyStores.UserControls
         public void refreshListView()
         {
             inventoryListView.Items.Clear();
+            inventoryListView.Refresh();
         }
 
-        private void loadListView()
+        public void loadListView()
         {
+            refreshListView();
             List<InventoryItem> inventoryItems = _controller.SearchInventoryItem(_storeId);
             if (inventoryItems.Count > 0)
             {
-                refreshListView();
                 foreach (var ii in inventoryItems)
                 {
                     FeedListView(ii);
                 }
             }
+            inventoryListView.Refresh();
         }
 
         private void FeedListView(InventoryItem ii)
@@ -75,6 +77,11 @@ namespace MyStores.UserControls
                 searchTextBox.Clear();
                 refreshListView();
             }
+        }
+
+        private void refreshListButton_Click(object sender, EventArgs e)
+        {
+            loadListView();
         }
     }
 }

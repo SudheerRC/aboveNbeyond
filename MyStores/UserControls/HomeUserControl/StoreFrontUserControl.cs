@@ -45,6 +45,9 @@ namespace MyStores.UserControls.HomeUserControl
             hideAllUserControls();
             storeButtonsPanel.Visible = true;
             mainAddVendorToStoreUserControl.refreshListView();
+            mainInventoryUserControl.refreshListView();
+            mainAddProductToStoreUserControl.resetControl();
+            mainAddManagerUserControl.clearControl();
         }
 
         private void addProductButton_Click(object sender, EventArgs e)
@@ -76,6 +79,7 @@ namespace MyStores.UserControls.HomeUserControl
             expandPanel();
             mainInventoryUserControl.BringToFront();
             mainInventoryUserControl.SetStore(_storeId);
+            mainInventoryUserControl.loadListView();
             mainInventoryUserControl.Visible = true;
             backButtonPanel.BringToFront();
             backButtonPanel.Visible = true;

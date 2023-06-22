@@ -18,6 +18,12 @@ namespace MyStores.UserControls
             _storeId = id;
         }
 
+        public void clearControl()
+        {
+            emailErrorLabel.Visible = false;
+            emailTextBox.Text = string.Empty;
+        }
+
         private void addButton_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(emailTextBox.Text))
