@@ -85,7 +85,7 @@ namespace MyStores.View
 
         private void FormScaling()
         {
-            System.Drawing.Rectangle screenRectangle = Screen.GetWorkingArea(this);
+            //System.Drawing.Rectangle screenRectangle = Screen.GetWorkingArea(this);
             //var oldWidth = screenRectangle.Width;
             //var oldHeight = screenRectangle.Height;
 

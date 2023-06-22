@@ -56,7 +56,7 @@
             nameErrorLabel.AutoSize = true;
             nameErrorLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             nameErrorLabel.ForeColor = Color.Red;
-            nameErrorLabel.Location = new Point(73, 86);
+            nameErrorLabel.Location = new Point(73, 81);
             nameErrorLabel.Margin = new Padding(2, 0, 2, 0);
             nameErrorLabel.Name = "nameErrorLabel";
             nameErrorLabel.Size = new Size(70, 20);
@@ -70,7 +70,7 @@
             // 
             errorLabel.AutoSize = true;
             errorLabel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            errorLabel.Location = new Point(57, 472);
+            errorLabel.Location = new Point(57, 462);
             errorLabel.Margin = new Padding(2, 0, 2, 0);
             errorLabel.Name = "errorLabel";
             errorLabel.Size = new Size(81, 23);
@@ -84,7 +84,7 @@
             // 
             clearButton.BackColor = Color.White;
             clearButton.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            clearButton.Location = new Point(245, 513);
+            clearButton.Location = new Point(245, 497);
             clearButton.Margin = new Padding(2, 1, 2, 1);
             clearButton.Name = "clearButton";
             clearButton.Size = new Size(93, 39);
@@ -97,7 +97,7 @@
             // 
             addButton.BackColor = Color.White;
             addButton.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            addButton.Location = new Point(57, 513);
+            addButton.Location = new Point(57, 497);
             addButton.Margin = new Padding(2, 1, 2, 1);
             addButton.Name = "addButton";
             addButton.Size = new Size(93, 39);
@@ -149,7 +149,7 @@
             phoneErrorLabel.AutoSize = true;
             phoneErrorLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             phoneErrorLabel.ForeColor = Color.Red;
-            phoneErrorLabel.Location = new Point(73, 439);
+            phoneErrorLabel.Location = new Point(73, 429);
             phoneErrorLabel.Margin = new Padding(2, 0, 2, 0);
             phoneErrorLabel.Name = "phoneErrorLabel";
             phoneErrorLabel.Size = new Size(70, 20);
@@ -161,7 +161,7 @@
             // 
             // countryTextBox
             // 
-            countryTextBox.Location = new Point(181, 350);
+            countryTextBox.Location = new Point(181, 340);
             countryTextBox.Margin = new Padding(2, 1, 2, 1);
             countryTextBox.Name = "countryTextBox";
             countryTextBox.Size = new Size(180, 27);
@@ -169,7 +169,7 @@
             // 
             // zipcodeTextBox
             // 
-            zipcodeTextBox.Location = new Point(181, 295);
+            zipcodeTextBox.Location = new Point(181, 285);
             zipcodeTextBox.Margin = new Padding(2, 1, 2, 1);
             zipcodeTextBox.Name = "zipcodeTextBox";
             zipcodeTextBox.Size = new Size(180, 27);
@@ -181,7 +181,7 @@
             // 
             zipcodeLabel.AutoSize = true;
             zipcodeLabel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            zipcodeLabel.Location = new Point(47, 294);
+            zipcodeLabel.Location = new Point(47, 284);
             zipcodeLabel.Margin = new Padding(2, 0, 2, 0);
             zipcodeLabel.Name = "zipcodeLabel";
             zipcodeLabel.Size = new Size(79, 23);
@@ -190,7 +190,7 @@
             // 
             // stateTextBox
             // 
-            stateTextBox.Location = new Point(181, 239);
+            stateTextBox.Location = new Point(181, 229);
             stateTextBox.Margin = new Padding(2, 1, 2, 1);
             stateTextBox.Name = "stateTextBox";
             stateTextBox.Size = new Size(180, 27);
@@ -200,7 +200,7 @@
             // 
             stateLabel.AutoSize = true;
             stateLabel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            stateLabel.Location = new Point(47, 239);
+            stateLabel.Location = new Point(47, 229);
             stateLabel.Margin = new Padding(2, 0, 2, 0);
             stateLabel.Name = "stateLabel";
             stateLabel.Size = new Size(48, 23);
@@ -209,7 +209,7 @@
             // 
             // cityTextBox
             // 
-            cityTextBox.Location = new Point(181, 179);
+            cityTextBox.Location = new Point(181, 169);
             cityTextBox.Margin = new Padding(2, 1, 2, 1);
             cityTextBox.Name = "cityTextBox";
             cityTextBox.Size = new Size(180, 27);
@@ -219,7 +219,7 @@
             // 
             cityLabel.AutoSize = true;
             cityLabel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            cityLabel.Location = new Point(47, 178);
+            cityLabel.Location = new Point(47, 168);
             cityLabel.Margin = new Padding(2, 0, 2, 0);
             cityLabel.Name = "cityLabel";
             cityLabel.Size = new Size(39, 23);
@@ -228,7 +228,7 @@
             // 
             // streetAddressTextBox
             // 
-            streetAddressTextBox.Location = new Point(181, 120);
+            streetAddressTextBox.Location = new Point(181, 110);
             streetAddressTextBox.Margin = new Padding(2, 1, 2, 1);
             streetAddressTextBox.Name = "streetAddressTextBox";
             streetAddressTextBox.Size = new Size(180, 27);
@@ -238,7 +238,7 @@
             // 
             streetAddLabel.AutoSize = true;
             streetAddLabel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            streetAddLabel.Location = new Point(47, 120);
+            streetAddLabel.Location = new Point(47, 110);
             streetAddLabel.Margin = new Padding(2, 0, 2, 0);
             streetAddLabel.Name = "streetAddLabel";
             streetAddLabel.Size = new Size(119, 23);
@@ -247,7 +247,7 @@
             // 
             // phoneNumTextBox
             // 
-            phoneNumTextBox.Location = new Point(181, 404);
+            phoneNumTextBox.Location = new Point(181, 394);
             phoneNumTextBox.Margin = new Padding(2, 1, 2, 1);
             phoneNumTextBox.Name = "phoneNumTextBox";
             phoneNumTextBox.Size = new Size(180, 27);
@@ -260,7 +260,7 @@
             // 
             phoneNumLabel.AutoSize = true;
             phoneNumLabel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            phoneNumLabel.Location = new Point(47, 403);
+            phoneNumLabel.Location = new Point(47, 393);
             phoneNumLabel.Margin = new Padding(2, 0, 2, 0);
             phoneNumLabel.Name = "phoneNumLabel";
             phoneNumLabel.Size = new Size(131, 23);
@@ -271,7 +271,7 @@
             // 
             countryLabel.AutoSize = true;
             countryLabel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            countryLabel.Location = new Point(47, 351);
+            countryLabel.Location = new Point(47, 341);
             countryLabel.Margin = new Padding(2, 0, 2, 0);
             countryLabel.Name = "countryLabel";
             countryLabel.Size = new Size(71, 23);
@@ -306,7 +306,7 @@
             Controls.Add(titleLabel);
             Margin = new Padding(3, 4, 3, 4);
             Name = "AddVendorUserControl";
-            Size = new Size(405, 566);
+            Size = new Size(405, 550);
             ResumeLayout(false);
             PerformLayout();
         }

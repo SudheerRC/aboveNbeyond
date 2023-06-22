@@ -374,6 +374,7 @@
             // 
             // mainAddVendorUserControl
             // 
+            mainAddVendorUserControl.AutoScroll = true;
             mainAddVendorUserControl.BackColor = Color.BlanchedAlmond;
             mainAddVendorUserControl.Location = new Point(216, 10);
             mainAddVendorUserControl.Margin = new Padding(3, 4, 3, 4);
@@ -399,7 +400,7 @@
             mainProductsTabUserControl.Location = new Point(238, 20);
             mainProductsTabUserControl.Margin = new Padding(7, 8, 7, 8);
             mainProductsTabUserControl.Name = "mainProductsTabUserControl";
-            mainProductsTabUserControl.Size = new Size(377, 11102);
+            mainProductsTabUserControl.Size = new Size(371, 22252);
             mainProductsTabUserControl.TabIndex = 1;
             // 
             // searchPanel
@@ -409,7 +410,7 @@
             searchPanel.Location = new Point(6, 181);
             searchPanel.Margin = new Padding(2, 1, 2, 1);
             searchPanel.Name = "searchPanel";
-            searchPanel.Size = new Size(200, 309);
+            searchPanel.Size = new Size(206, 309);
             searchPanel.TabIndex = 7;
             // 
             // searchInputPanel
@@ -420,7 +421,7 @@
             searchInputPanel.Location = new Point(0, 0);
             searchInputPanel.Margin = new Padding(2, 1, 2, 1);
             searchInputPanel.Name = "searchInputPanel";
-            searchInputPanel.Size = new Size(200, 32);
+            searchInputPanel.Size = new Size(206, 32);
             searchInputPanel.TabIndex = 0;
             // 
             // searchTextBox

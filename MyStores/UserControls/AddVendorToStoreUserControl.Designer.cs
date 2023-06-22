@@ -83,7 +83,7 @@
             // closeVendorFormPictureBox
             // 
             closeVendorFormPictureBox.Image = (Image)resources.GetObject("closeVendorFormPictureBox.Image");
-            closeVendorFormPictureBox.Location = new Point(175, 509);
+            closeVendorFormPictureBox.Location = new Point(175, 502);
             closeVendorFormPictureBox.Margin = new Padding(3, 4, 3, 4);
             closeVendorFormPictureBox.Name = "closeVendorFormPictureBox";
             closeVendorFormPictureBox.Size = new Size(55, 64);
@@ -94,7 +94,7 @@
             // 
             // addVendorToStoreButton
             // 
-            addVendorToStoreButton.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            addVendorToStoreButton.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             addVendorToStoreButton.BackColor = Color.FromArgb(28, 44, 78);
             addVendorToStoreButton.FlatAppearance.BorderSize = 0;
             addVendorToStoreButton.FlatStyle = FlatStyle.Flat;
