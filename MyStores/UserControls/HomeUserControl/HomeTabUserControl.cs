@@ -100,12 +100,12 @@ namespace MyStores.UserControls.HomeUserControl
             Button current = (Button)sender;
             int id = int.Parse(current.Name);
             string name = _controller.GetStoreName(id);
-            
+
             mainStoreFrontUserControl.Visible = true;
             mainStoreFrontUserControl.SetStoreId(id);
             mainStoreFrontUserControl.BringToFront();
             mainStoreFrontUserControl.SetOwner(_owner);
-            
+
         }
 
         private static string ManagersNames(List<Users>? managers, string managersNames)

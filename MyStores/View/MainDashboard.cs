@@ -22,10 +22,12 @@ namespace MyStores.View
             mainHomeTabUserControl.Visible = false;
             mainProductsTabUserControl.Visible = false;
             mainVendorTabUserControl.Visible = false;
+            mainAddVendorUserControl.Visible = false;
 
             mainHomeTabUserControl.Dock = DockStyle.None;
             mainProductsTabUserControl.Dock = DockStyle.None;
             mainVendorTabUserControl.Dock = DockStyle.None;
+            mainAddVendorUserControl.Dock = DockStyle.None;
         }
 
         private void CloseButton_Click(object sender, EventArgs e)
@@ -37,7 +39,7 @@ namespace MyStores.View
         private void MainDashboard_Load(object sender, EventArgs e)
         {
             mainHomeTabUserControl.SetOwner(_owner);
-            
+
             hideAllUserControls();
             anchorUserControls();
 
@@ -50,22 +52,21 @@ namespace MyStores.View
         private void anchorUserControls()
         {
             mainHomeTabUserControl.Parent = storeContainer.Panel2;
-            mainHomeTabUserControl.Location = storeContainer.Panel2.Location;
             mainHomeTabUserControl.Anchor = AnchorStyles.Bottom;
             mainHomeTabUserControl.Anchor = AnchorStyles.Top;
             mainHomeTabUserControl.Anchor = AnchorStyles.Right;
 
             mainProductsTabUserControl.Parent = storeContainer.Panel2;
-            mainProductsTabUserControl.Location = storeContainer.Panel2.Location;
             mainProductsTabUserControl.Anchor = AnchorStyles.Bottom;
             mainProductsTabUserControl.Anchor = AnchorStyles.Top;
             mainProductsTabUserControl.Anchor = AnchorStyles.Right;
 
             mainVendorTabUserControl.Parent = storeContainer.Panel2;
-            mainVendorTabUserControl.Location = storeContainer.Panel2.Location;
             mainVendorTabUserControl.Anchor = AnchorStyles.Bottom;
             mainVendorTabUserControl.Anchor = AnchorStyles.Top;
             mainVendorTabUserControl.Anchor = AnchorStyles.Right;
+
+            mainAddVendorUserControl.Parent = storeContainer.Panel2;
         }
 
         private void maxButton_Click(object sender, EventArgs e)
@@ -95,8 +96,8 @@ namespace MyStores.View
             //screenRectangle.Size = new Size(newWidth, newHeight);
             //screenRectangle.Location = new System.Drawing.Point((oldWidth - newWidth) / 2, (oldHeight - newHeight) / 2);
 
-            this.MaximizedBounds = screenRectangle;
-            this.WindowState = FormWindowState.Maximized;
+            //this.MaximizedBounds = screenRectangle;
+            //this.WindowState = FormWindowState.Maximized;
         }
 
         private void restoreButton_Click(object sender, EventArgs e)
@@ -213,8 +214,8 @@ namespace MyStores.View
         {
             hideAllUserControls();
             anchorUserControls();
-            mainVendorTabUserControl.Dock = DockStyle.Fill;
-            mainVendorTabUserControl.Visible = true;
+            mainAddVendorUserControl.Dock = DockStyle.Fill;
+            mainAddVendorUserControl.Visible = true;
         }
 
         private void productsMenuButton_Click(object sender, EventArgs e)
@@ -225,6 +226,11 @@ namespace MyStores.View
         private void vendorsMenuButton_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Coming soon!!!");
+        }
+
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

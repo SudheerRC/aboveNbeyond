@@ -40,10 +40,10 @@
             titleLabel.AutoSize = true;
             titleLabel.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
             titleLabel.ForeColor = SystemColors.ControlText;
-            titleLabel.Location = new Point(113, 15);
+            titleLabel.Location = new Point(129, 20);
             titleLabel.Margin = new Padding(2, 0, 2, 0);
             titleLabel.Name = "titleLabel";
-            titleLabel.Size = new Size(130, 31);
+            titleLabel.Size = new Size(162, 37);
             titleLabel.TabIndex = 90;
             titleLabel.Text = "Add Manager";
             titleLabel.UseCompatibleTextRendering = true;
@@ -53,10 +53,10 @@
             emailErrorLabel.AutoSize = true;
             emailErrorLabel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             emailErrorLabel.ForeColor = Color.Red;
-            emailErrorLabel.Location = new Point(35, 91);
+            emailErrorLabel.Location = new Point(40, 121);
             emailErrorLabel.Margin = new Padding(2, 0, 2, 0);
             emailErrorLabel.Name = "emailErrorLabel";
-            emailErrorLabel.Size = new Size(66, 19);
+            emailErrorLabel.Size = new Size(81, 23);
             emailErrorLabel.TabIndex = 93;
             emailErrorLabel.Text = "Error text";
             emailErrorLabel.TextAlign = ContentAlignment.MiddleCenter;
@@ -65,10 +65,10 @@
             // 
             // emailTextBox
             // 
-            emailTextBox.Location = new Point(158, 57);
+            emailTextBox.Location = new Point(181, 76);
             emailTextBox.Margin = new Padding(2, 1, 2, 1);
             emailTextBox.Name = "emailTextBox";
-            emailTextBox.Size = new Size(183, 23);
+            emailTextBox.Size = new Size(209, 27);
             emailTextBox.TabIndex = 91;
             emailTextBox.GotFocus += EmailTextBox_GotFocus;
             // 
@@ -76,10 +76,10 @@
             // 
             emailLabel.AutoSize = true;
             emailLabel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            emailLabel.Location = new Point(35, 61);
+            emailLabel.Location = new Point(40, 81);
             emailLabel.Margin = new Padding(2, 0, 2, 0);
             emailLabel.Name = "emailLabel";
-            emailLabel.Size = new Size(47, 19);
+            emailLabel.Size = new Size(58, 23);
             emailLabel.TabIndex = 92;
             emailLabel.Text = "Email*";
             // 
@@ -87,10 +87,10 @@
             // 
             addButton.BackColor = Color.White;
             addButton.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            addButton.Location = new Point(136, 127);
+            addButton.Location = new Point(155, 169);
             addButton.Margin = new Padding(2, 1, 2, 1);
             addButton.Name = "addButton";
-            addButton.Size = new Size(81, 29);
+            addButton.Size = new Size(93, 39);
             addButton.TabIndex = 105;
             addButton.Text = "Add Product";
             addButton.UseVisualStyleBackColor = false;
@@ -98,16 +98,17 @@
             // 
             // AddManagerUserControl
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.BlanchedAlmond;
+            BackColor = Color.FromArgb(227, 211, 177);
             Controls.Add(addButton);
             Controls.Add(emailErrorLabel);
             Controls.Add(emailTextBox);
             Controls.Add(emailLabel);
             Controls.Add(titleLabel);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "AddManagerUserControl";
-            Size = new Size(395, 168);
+            Size = new Size(451, 224);
             ResumeLayout(false);
             PerformLayout();
         }

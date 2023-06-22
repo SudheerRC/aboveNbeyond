@@ -29,305 +29,267 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StoreFrontUserControl));
-            this.highlightTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.storeNameLabel = new System.Windows.Forms.Label();
-            this.AddVendorButton = new System.Windows.Forms.Button();
-            this.addProductButton = new System.Windows.Forms.Button();
-            this.inventoryButton = new System.Windows.Forms.Button();
-            this.orderButton = new System.Windows.Forms.Button();
-            this.exitStoreButton = new System.Windows.Forms.Button();
-            this.storeExpandedPanel = new System.Windows.Forms.Panel();
-            this.mainAddProductToStoreUserControl = new MyStores.UserControls.AddProductToStoreUserControl();
-            this.mainAddVendorToStoreUserControl = new MyStores.UserControls.AddVendorToStoreUserControl();
-            this.mainAddManagerUserControl = new MyStores.UserControls.AddManagerUserControl();
-            this.backButtonPanel = new System.Windows.Forms.Panel();
-            this.backButton = new System.Windows.Forms.Button();
-            this.mainInventoryUserControl = new MyStores.UserControls.InventoryUserControl();
-            this.addManagerButton = new System.Windows.Forms.Button();
-            this.highlightTableLayoutPanel.SuspendLayout();
-            this.storeExpandedPanel.SuspendLayout();
-            this.backButtonPanel.SuspendLayout();
-            this.SuspendLayout();
-            // 
-            // highlightTableLayoutPanel
-            // 
-            this.highlightTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.highlightTableLayoutPanel.ColumnCount = 5;
-            this.highlightTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.47658F));
-            this.highlightTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70.52341F));
-            this.highlightTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 836F));
-            this.highlightTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 164F));
-            this.highlightTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 110F));
-            this.highlightTableLayoutPanel.Controls.Add(this.storeNameLabel, 2, 0);
-            this.highlightTableLayoutPanel.Location = new System.Drawing.Point(0, 0);
-            this.highlightTableLayoutPanel.Name = "highlightTableLayoutPanel";
-            this.highlightTableLayoutPanel.RowCount = 1;
-            this.highlightTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.highlightTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.highlightTableLayoutPanel.Size = new System.Drawing.Size(1390, 107);
-            this.highlightTableLayoutPanel.TabIndex = 1;
-            // 
-            // storeNameLabel
-            // 
-            this.storeNameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.storeNameLabel.Font = new System.Drawing.Font("Segoe UI", 33F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.storeNameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
-            this.storeNameLabel.Location = new System.Drawing.Point(282, 0);
-            this.storeNameLabel.Name = "storeNameLabel";
-            this.storeNameLabel.Size = new System.Drawing.Size(830, 107);
-            this.storeNameLabel.TabIndex = 1;
-            this.storeNameLabel.Text = "Name";
-            this.storeNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            AddVendorButton = new Button();
+            addProductButton = new Button();
+            inventoryButton = new Button();
+            orderButton = new Button();
+            exitStoreButton = new Button();
+            storeExpandedPanel = new Panel();
+            mainAddVendorToStoreUserControl = new AddVendorToStoreUserControl();
+            mainAddProductToStoreUserControl = new AddProductToStoreUserControl();
+            mainAddManagerUserControl = new AddManagerUserControl();
+            mainInventoryUserControl = new InventoryUserControl();
+            backButtonPanel = new Panel();
+            backButton = new Button();
+            addManagerButton = new Button();
+            storeNameLabel = new Label();
+            storeButtonsPanel = new Panel();
+            storeExpandedPanel.SuspendLayout();
+            backButtonPanel.SuspendLayout();
+            storeButtonsPanel.SuspendLayout();
+            SuspendLayout();
             // 
             // AddVendorButton
             // 
-            this.AddVendorButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.AddVendorButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
-            this.AddVendorButton.FlatAppearance.BorderSize = 0;
-            this.AddVendorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddVendorButton.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.AddVendorButton.ForeColor = System.Drawing.Color.White;
-            this.AddVendorButton.Image = ((System.Drawing.Image)(resources.GetObject("AddVendorButton.Image")));
-            this.AddVendorButton.Location = new System.Drawing.Point(183, 256);
-            this.AddVendorButton.Name = "AddVendorButton";
-            this.AddVendorButton.Size = new System.Drawing.Size(160, 159);
-            this.AddVendorButton.TabIndex = 2;
-            this.AddVendorButton.Text = "Add Vendor";
-            this.AddVendorButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.AddVendorButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.AddVendorButton.UseVisualStyleBackColor = false;
-            this.AddVendorButton.Click += new System.EventHandler(this.AddVendorButton_Click);
+            AddVendorButton.BackColor = Color.FromArgb(28, 44, 78);
+            AddVendorButton.FlatAppearance.BorderSize = 0;
+            AddVendorButton.FlatStyle = FlatStyle.Flat;
+            AddVendorButton.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            AddVendorButton.ForeColor = Color.White;
+            AddVendorButton.Image = (Image)resources.GetObject("AddVendorButton.Image");
+            AddVendorButton.Location = new Point(26, 11);
+            AddVendorButton.Margin = new Padding(3, 4, 3, 4);
+            AddVendorButton.Name = "AddVendorButton";
+            AddVendorButton.Size = new Size(130, 150);
+            AddVendorButton.TabIndex = 2;
+            AddVendorButton.Text = "Add Vendor";
+            AddVendorButton.TextAlign = ContentAlignment.BottomCenter;
+            AddVendorButton.TextImageRelation = TextImageRelation.ImageAboveText;
+            AddVendorButton.UseVisualStyleBackColor = false;
+            AddVendorButton.Click += AddVendorButton_Click;
             // 
             // addProductButton
             // 
-            this.addProductButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.addProductButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
-            this.addProductButton.FlatAppearance.BorderSize = 0;
-            this.addProductButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addProductButton.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.addProductButton.ForeColor = System.Drawing.Color.White;
-            this.addProductButton.Image = ((System.Drawing.Image)(resources.GetObject("addProductButton.Image")));
-            this.addProductButton.Location = new System.Drawing.Point(372, 525);
-            this.addProductButton.Name = "addProductButton";
-            this.addProductButton.Size = new System.Drawing.Size(160, 159);
-            this.addProductButton.TabIndex = 4;
-            this.addProductButton.Text = "Add Product";
-            this.addProductButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.addProductButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.addProductButton.UseVisualStyleBackColor = false;
-            this.addProductButton.Click += new System.EventHandler(this.addProductButton_Click);
+            addProductButton.BackColor = Color.FromArgb(28, 44, 78);
+            addProductButton.FlatAppearance.BorderSize = 0;
+            addProductButton.FlatStyle = FlatStyle.Flat;
+            addProductButton.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            addProductButton.ForeColor = Color.White;
+            addProductButton.Image = (Image)resources.GetObject("addProductButton.Image");
+            addProductButton.Location = new Point(178, 182);
+            addProductButton.Margin = new Padding(3, 4, 3, 4);
+            addProductButton.Name = "addProductButton";
+            addProductButton.Size = new Size(140, 150);
+            addProductButton.TabIndex = 4;
+            addProductButton.Text = "Add Product";
+            addProductButton.TextAlign = ContentAlignment.BottomCenter;
+            addProductButton.TextImageRelation = TextImageRelation.ImageAboveText;
+            addProductButton.UseVisualStyleBackColor = false;
+            addProductButton.Click += addProductButton_Click;
             // 
             // inventoryButton
             // 
-            this.inventoryButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.inventoryButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
-            this.inventoryButton.FlatAppearance.BorderSize = 0;
-            this.inventoryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.inventoryButton.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.inventoryButton.ForeColor = System.Drawing.Color.White;
-            this.inventoryButton.Image = ((System.Drawing.Image)(resources.GetObject("inventoryButton.Image")));
-            this.inventoryButton.Location = new System.Drawing.Point(555, 256);
-            this.inventoryButton.Name = "inventoryButton";
-            this.inventoryButton.Size = new System.Drawing.Size(160, 159);
-            this.inventoryButton.TabIndex = 5;
-            this.inventoryButton.Text = "Inventory";
-            this.inventoryButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.inventoryButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.inventoryButton.UseVisualStyleBackColor = false;
-            this.inventoryButton.Click += new System.EventHandler(this.inventoryButton_Click);
+            inventoryButton.BackColor = Color.FromArgb(28, 44, 78);
+            inventoryButton.FlatAppearance.BorderSize = 0;
+            inventoryButton.FlatStyle = FlatStyle.Flat;
+            inventoryButton.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            inventoryButton.ForeColor = Color.White;
+            inventoryButton.Image = (Image)resources.GetObject("inventoryButton.Image");
+            inventoryButton.Location = new Point(338, 14);
+            inventoryButton.Margin = new Padding(3, 4, 3, 4);
+            inventoryButton.Name = "inventoryButton";
+            inventoryButton.Size = new Size(140, 150);
+            inventoryButton.TabIndex = 5;
+            inventoryButton.Text = "Inventory";
+            inventoryButton.TextAlign = ContentAlignment.BottomCenter;
+            inventoryButton.TextImageRelation = TextImageRelation.ImageAboveText;
+            inventoryButton.UseVisualStyleBackColor = false;
+            inventoryButton.Click += inventoryButton_Click;
             // 
             // orderButton
             // 
-            this.orderButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.orderButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
-            this.orderButton.Enabled = false;
-            this.orderButton.FlatAppearance.BorderSize = 0;
-            this.orderButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.orderButton.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.orderButton.ForeColor = System.Drawing.Color.White;
-            this.orderButton.Image = ((System.Drawing.Image)(resources.GetObject("orderButton.Image")));
-            this.orderButton.Location = new System.Drawing.Point(952, 256);
-            this.orderButton.Name = "orderButton";
-            this.orderButton.Size = new System.Drawing.Size(160, 159);
-            this.orderButton.TabIndex = 6;
-            this.orderButton.Text = "Order";
-            this.orderButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.orderButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.orderButton.UseVisualStyleBackColor = false;
+            orderButton.BackColor = Color.FromArgb(28, 44, 78);
+            orderButton.Enabled = false;
+            orderButton.FlatAppearance.BorderSize = 0;
+            orderButton.FlatStyle = FlatStyle.Flat;
+            orderButton.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            orderButton.ForeColor = Color.White;
+            orderButton.Image = (Image)resources.GetObject("orderButton.Image");
+            orderButton.Location = new Point(660, 11);
+            orderButton.Margin = new Padding(3, 4, 3, 4);
+            orderButton.Name = "orderButton";
+            orderButton.Size = new Size(140, 150);
+            orderButton.TabIndex = 6;
+            orderButton.Text = "Order";
+            orderButton.TextAlign = ContentAlignment.BottomCenter;
+            orderButton.TextImageRelation = TextImageRelation.ImageAboveText;
+            orderButton.UseVisualStyleBackColor = false;
             // 
             // exitStoreButton
             // 
-            this.exitStoreButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.exitStoreButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
-            this.exitStoreButton.FlatAppearance.BorderSize = 0;
-            this.exitStoreButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exitStoreButton.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.exitStoreButton.ForeColor = System.Drawing.Color.White;
-            this.exitStoreButton.Image = ((System.Drawing.Image)(resources.GetObject("exitStoreButton.Image")));
-            this.exitStoreButton.Location = new System.Drawing.Point(1215, 729);
-            this.exitStoreButton.Name = "exitStoreButton";
-            this.exitStoreButton.Size = new System.Drawing.Size(160, 159);
-            this.exitStoreButton.TabIndex = 7;
-            this.exitStoreButton.Text = "Exit Store";
-            this.exitStoreButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.exitStoreButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.exitStoreButton.UseVisualStyleBackColor = false;
-            this.exitStoreButton.Click += new System.EventHandler(this.exitStoreButton_Click);
+            exitStoreButton.BackColor = Color.FromArgb(28, 44, 78);
+            exitStoreButton.FlatAppearance.BorderSize = 0;
+            exitStoreButton.FlatStyle = FlatStyle.Flat;
+            exitStoreButton.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            exitStoreButton.ForeColor = Color.White;
+            exitStoreButton.Image = (Image)resources.GetObject("exitStoreButton.Image");
+            exitStoreButton.Location = new Point(338, 353);
+            exitStoreButton.Margin = new Padding(3, 4, 3, 4);
+            exitStoreButton.Name = "exitStoreButton";
+            exitStoreButton.Size = new Size(140, 150);
+            exitStoreButton.TabIndex = 7;
+            exitStoreButton.Text = "Exit Store";
+            exitStoreButton.TextAlign = ContentAlignment.BottomCenter;
+            exitStoreButton.TextImageRelation = TextImageRelation.ImageAboveText;
+            exitStoreButton.UseVisualStyleBackColor = false;
+            exitStoreButton.Click += exitStoreButton_Click;
             // 
             // storeExpandedPanel
             // 
-            this.storeExpandedPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.storeExpandedPanel.BackColor = System.Drawing.Color.White;
-            this.storeExpandedPanel.Controls.Add(this.mainAddProductToStoreUserControl);
-            this.storeExpandedPanel.Controls.Add(this.mainAddVendorToStoreUserControl);
-            this.storeExpandedPanel.Controls.Add(this.mainAddManagerUserControl);
-            this.storeExpandedPanel.Controls.Add(this.backButtonPanel);
-            this.storeExpandedPanel.Controls.Add(this.mainInventoryUserControl);
-            this.storeExpandedPanel.Location = new System.Drawing.Point(3, 113);
-            this.storeExpandedPanel.Name = "storeExpandedPanel";
-            this.storeExpandedPanel.Size = new System.Drawing.Size(1384, 784);
-            this.storeExpandedPanel.TabIndex = 8;
-            this.storeExpandedPanel.Visible = false;
-            // 
-            // mainAddProductToStoreUserControl
-            // 
-            this.mainAddProductToStoreUserControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.mainAddProductToStoreUserControl.BackColor = System.Drawing.Color.BlanchedAlmond;
-            this.mainAddProductToStoreUserControl.Location = new System.Drawing.Point(414, 196);
-            this.mainAddProductToStoreUserControl.Name = "mainAddProductToStoreUserControl";
-            this.mainAddProductToStoreUserControl.Size = new System.Drawing.Size(639, 423);
-            this.mainAddProductToStoreUserControl.TabIndex = 10;
+            storeExpandedPanel.BackColor = Color.FromArgb(227, 211, 177);
+            storeExpandedPanel.Controls.Add(mainAddProductToStoreUserControl);
+            storeExpandedPanel.Controls.Add(mainAddManagerUserControl);
+            storeExpandedPanel.Controls.Add(mainInventoryUserControl);
+            storeExpandedPanel.Controls.Add(mainAddVendorToStoreUserControl);
+            storeExpandedPanel.Location = new Point(70, 58);
+            storeExpandedPanel.Margin = new Padding(3, 4, 3, 4);
+            storeExpandedPanel.Name = "storeExpandedPanel";
+            storeExpandedPanel.Size = new Size(778, 776);
+            storeExpandedPanel.TabIndex = 8;
+            storeExpandedPanel.Visible = false;
             // 
             // mainAddVendorToStoreUserControl
             // 
-            this.mainAddVendorToStoreUserControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.mainAddVendorToStoreUserControl.BackColor = System.Drawing.Color.BlanchedAlmond;
-            this.mainAddVendorToStoreUserControl.Location = new System.Drawing.Point(299, 117);
-            this.mainAddVendorToStoreUserControl.Name = "mainAddVendorToStoreUserControl";
-            this.mainAddVendorToStoreUserControl.Size = new System.Drawing.Size(810, 617);
-            this.mainAddVendorToStoreUserControl.TabIndex = 9;
+            mainAddVendorToStoreUserControl.BackColor = Color.BlanchedAlmond;
+            mainAddVendorToStoreUserControl.Location = new Point(0, 0);
+            mainAddVendorToStoreUserControl.Margin = new Padding(3, 5, 3, 5);
+            mainAddVendorToStoreUserControl.Name = "mainAddVendorToStoreUserControl";
+            mainAddVendorToStoreUserControl.Size = new Size(778, 823);
+            mainAddVendorToStoreUserControl.TabIndex = 9;
+            // 
+            // mainAddProductToStoreUserControl
+            // 
+            mainAddProductToStoreUserControl.BackColor = Color.BlanchedAlmond;
+            mainAddProductToStoreUserControl.Location = new Point(0, 0);
+            mainAddProductToStoreUserControl.Margin = new Padding(3, 5, 3, 5);
+            mainAddProductToStoreUserControl.Name = "mainAddProductToStoreUserControl";
+            mainAddProductToStoreUserControl.Size = new Size(730, 557);
+            mainAddProductToStoreUserControl.TabIndex = 10;
             // 
             // mainAddManagerUserControl
             // 
-            this.mainAddManagerUserControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.mainAddManagerUserControl.BackColor = System.Drawing.Color.BlanchedAlmond;
-            this.mainAddManagerUserControl.Location = new System.Drawing.Point(535, 255);
-            this.mainAddManagerUserControl.Name = "mainAddManagerUserControl";
-            this.mainAddManagerUserControl.Size = new System.Drawing.Size(367, 169);
-            this.mainAddManagerUserControl.TabIndex = 8;
-            // 
-            // backButtonPanel
-            // 
-            this.backButtonPanel.Controls.Add(this.backButton);
-            this.backButtonPanel.Location = new System.Drawing.Point(26, 25);
-            this.backButtonPanel.Name = "backButtonPanel";
-            this.backButtonPanel.Size = new System.Drawing.Size(43, 45);
-            this.backButtonPanel.TabIndex = 5;
-            // 
-            // backButton
-            // 
-            this.backButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.backButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.backButton.BackColor = System.Drawing.Color.White;
-            this.backButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
-            this.backButton.FlatAppearance.BorderSize = 0;
-            this.backButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(211)))), ((int)(((byte)(177)))));
-            this.backButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.backButton.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.backButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
-            this.backButton.Image = ((System.Drawing.Image)(resources.GetObject("backButton.Image")));
-            this.backButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.backButton.Location = new System.Drawing.Point(-7, 0);
-            this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(50, 45);
-            this.backButton.TabIndex = 3;
-            this.backButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.backButton.UseVisualStyleBackColor = false;
-            this.backButton.Click += new System.EventHandler(this.backButton_Click);
+            mainAddManagerUserControl.BackColor = Color.BlanchedAlmond;
+            mainAddManagerUserControl.Location = new Point(151, 1);
+            mainAddManagerUserControl.Margin = new Padding(3, 5, 3, 5);
+            mainAddManagerUserControl.Name = "mainAddManagerUserControl";
+            mainAddManagerUserControl.Size = new Size(524, 167);
+            mainAddManagerUserControl.TabIndex = 8;
             // 
             // mainInventoryUserControl
             // 
-            this.mainInventoryUserControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.mainInventoryUserControl.Location = new System.Drawing.Point(2, 0);
-            this.mainInventoryUserControl.Name = "mainInventoryUserControl";
-            this.mainInventoryUserControl.Size = new System.Drawing.Size(1384, 784);
-            this.mainInventoryUserControl.TabIndex = 6;
+            mainInventoryUserControl.Location = new Point(0, 1);
+            mainInventoryUserControl.Margin = new Padding(3, 5, 3, 5);
+            mainInventoryUserControl.Name = "mainInventoryUserControl";
+            mainInventoryUserControl.Size = new Size(778, 772);
+            mainInventoryUserControl.TabIndex = 6;
+            // 
+            // backButtonPanel
+            // 
+            backButtonPanel.Controls.Add(backButton);
+            backButtonPanel.Location = new Point(14, 58);
+            backButtonPanel.Margin = new Padding(3, 4, 3, 4);
+            backButtonPanel.Name = "backButtonPanel";
+            backButtonPanel.Size = new Size(50, 48);
+            backButtonPanel.TabIndex = 5;
+            // 
+            // backButton
+            // 
+            backButton.AutoSize = true;
+            backButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            backButton.BackColor = Color.FromArgb(227, 211, 177);
+            backButton.Dock = DockStyle.Right;
+            backButton.FlatAppearance.BorderColor = Color.FromArgb(28, 44, 78);
+            backButton.FlatAppearance.BorderSize = 0;
+            backButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(252, 251, 255);
+            backButton.FlatStyle = FlatStyle.Flat;
+            backButton.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
+            backButton.ForeColor = Color.FromArgb(252, 251, 255);
+            backButton.Image = (Image)resources.GetObject("backButton.Image");
+            backButton.ImageAlign = ContentAlignment.MiddleLeft;
+            backButton.Location = new Point(-4, 0);
+            backButton.Margin = new Padding(3, 4, 3, 4);
+            backButton.Name = "backButton";
+            backButton.Size = new Size(54, 48);
+            backButton.TabIndex = 3;
+            backButton.TextAlign = ContentAlignment.BottomCenter;
+            backButton.UseVisualStyleBackColor = false;
+            backButton.Click += backButton_Click;
             // 
             // addManagerButton
             // 
-            this.addManagerButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.addManagerButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
-            this.addManagerButton.FlatAppearance.BorderSize = 0;
-            this.addManagerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addManagerButton.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.addManagerButton.ForeColor = System.Drawing.Color.White;
-            this.addManagerButton.Image = ((System.Drawing.Image)(resources.GetObject("addManagerButton.Image")));
-            this.addManagerButton.Location = new System.Drawing.Point(783, 525);
-            this.addManagerButton.Name = "addManagerButton";
-            this.addManagerButton.Size = new System.Drawing.Size(160, 159);
-            this.addManagerButton.TabIndex = 9;
-            this.addManagerButton.Text = "Add Manager";
-            this.addManagerButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.addManagerButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.addManagerButton.UseVisualStyleBackColor = false;
-            this.addManagerButton.Click += new System.EventHandler(this.MainAddManagerButton_Click);
+            addManagerButton.BackColor = Color.FromArgb(28, 44, 78);
+            addManagerButton.FlatAppearance.BorderSize = 0;
+            addManagerButton.FlatStyle = FlatStyle.Flat;
+            addManagerButton.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            addManagerButton.ForeColor = Color.White;
+            addManagerButton.Image = (Image)resources.GetObject("addManagerButton.Image");
+            addManagerButton.Location = new Point(505, 182);
+            addManagerButton.Margin = new Padding(3, 4, 3, 4);
+            addManagerButton.Name = "addManagerButton";
+            addManagerButton.Size = new Size(140, 150);
+            addManagerButton.TabIndex = 9;
+            addManagerButton.Text = "Add Manager";
+            addManagerButton.TextAlign = ContentAlignment.BottomCenter;
+            addManagerButton.TextImageRelation = TextImageRelation.ImageAboveText;
+            addManagerButton.UseVisualStyleBackColor = false;
+            addManagerButton.Click += MainAddManagerButton_Click;
+            // 
+            // storeNameLabel
+            // 
+            storeNameLabel.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+            storeNameLabel.ForeColor = Color.FromArgb(28, 44, 78);
+            storeNameLabel.Location = new Point(3, 0);
+            storeNameLabel.Name = "storeNameLabel";
+            storeNameLabel.Size = new Size(845, 45);
+            storeNameLabel.TabIndex = 1;
+            storeNameLabel.Text = "Name";
+            storeNameLabel.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // storeButtonsPanel
+            // 
+            storeButtonsPanel.Controls.Add(AddVendorButton);
+            storeButtonsPanel.Controls.Add(orderButton);
+            storeButtonsPanel.Controls.Add(addManagerButton);
+            storeButtonsPanel.Controls.Add(inventoryButton);
+            storeButtonsPanel.Controls.Add(exitStoreButton);
+            storeButtonsPanel.Controls.Add(addProductButton);
+            storeButtonsPanel.Location = new Point(3, 48);
+            storeButtonsPanel.Name = "storeButtonsPanel";
+            storeButtonsPanel.Size = new Size(845, 522);
+            storeButtonsPanel.TabIndex = 10;
             // 
             // StoreFrontUserControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(211)))), ((int)(((byte)(177)))));
-            this.Controls.Add(this.exitStoreButton);
-            this.Controls.Add(this.orderButton);
-            this.Controls.Add(this.inventoryButton);
-            this.Controls.Add(this.addProductButton);
-            this.Controls.Add(this.AddVendorButton);
-            this.Controls.Add(this.highlightTableLayoutPanel);
-            this.Controls.Add(this.addManagerButton);
-            this.Controls.Add(this.storeExpandedPanel);
-            this.Name = "StoreFrontUserControl";
-            this.Size = new System.Drawing.Size(1390, 900);
-            this.Load += new System.EventHandler(this.StoreFrontUserControl_Load);
-            this.highlightTableLayoutPanel.ResumeLayout(false);
-            this.storeExpandedPanel.ResumeLayout(false);
-            this.backButtonPanel.ResumeLayout(false);
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            BackColor = Color.FromArgb(227, 211, 177);
+            Controls.Add(storeNameLabel);
+            Controls.Add(backButtonPanel);
+            Controls.Add(storeExpandedPanel);
+            Controls.Add(storeButtonsPanel);
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "StoreFrontUserControl";
+            Size = new Size(852, 841);
+            Load += StoreFrontUserControl_Load;
+            storeExpandedPanel.ResumeLayout(false);
+            backButtonPanel.ResumeLayout(false);
+            backButtonPanel.PerformLayout();
+            storeButtonsPanel.ResumeLayout(false);
+            ResumeLayout(false);
         }
 
         #endregion
-
-        private TableLayoutPanel highlightTableLayoutPanel;
         private Button AddVendorButton;
         private Button addProductButton;
         private Button inventoryButton;
@@ -342,5 +304,6 @@
         private AddVendorToStoreUserControl mainAddVendorToStoreUserControl;
         private AddProductToStoreUserControl mainAddProductToStoreUserControl;
         private Label storeNameLabel;
+        private Panel storeButtonsPanel;
     }
 }

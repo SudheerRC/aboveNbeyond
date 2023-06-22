@@ -144,7 +144,7 @@ namespace MyStores.UserControls
 
                     resetControl();
                 }
-               
+
             }
             catch (FormatException)
             {

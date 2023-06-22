@@ -28,27 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.mainAddProductUserControl = new MyStores.UserControls.AddProductUserControl();
-            this.SuspendLayout();
+            mainAddProductUserControl = new AddProductUserControl();
+            SuspendLayout();
             // 
             // mainAddProductUserControl
             // 
-            this.mainAddProductUserControl.BackColor = System.Drawing.Color.BlanchedAlmond;
-            this.mainAddProductUserControl.Location = new System.Drawing.Point(537, 119);
-            this.mainAddProductUserControl.Name = "mainAddProductUserControl";
-            this.mainAddProductUserControl.Size = new System.Drawing.Size(359, 627);
-            this.mainAddProductUserControl.TabIndex = 0;
+            mainAddProductUserControl.BackColor = Color.BlanchedAlmond;
+            mainAddProductUserControl.Location = new Point(0, 0);
+            mainAddProductUserControl.Margin = new Padding(3, 5, 3, 5);
+            mainAddProductUserControl.Name = "mainAddProductUserControl";
+            mainAddProductUserControl.Size = new Size(410, 836);
+            mainAddProductUserControl.TabIndex = 0;
             // 
             // ProductsTabUserControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(211)))), ((int)(((byte)(177)))));
-            this.Controls.Add(this.mainAddProductUserControl);
-            this.Name = "ProductsTabUserControl";
-            this.Size = new System.Drawing.Size(1390, 900);
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(227, 211, 177);
+            Controls.Add(mainAddProductUserControl);
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "ProductsTabUserControl";
+            Size = new Size(409, 819);
+            ResumeLayout(false);
         }
 
         #endregion

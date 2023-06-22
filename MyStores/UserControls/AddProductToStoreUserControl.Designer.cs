@@ -29,474 +29,468 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddProductToStoreUserControl));
-            this.searchInputPanel = new System.Windows.Forms.Panel();
-            this.searchTextBox = new System.Windows.Forms.TextBox();
-            this.searchButtonPanel = new System.Windows.Forms.Panel();
-            this.searchButton = new System.Windows.Forms.Button();
-            this.headingLabel = new System.Windows.Forms.Label();
-            this.inventoryListView = new System.Windows.Forms.ListView();
-            this.productId = new System.Windows.Forms.ColumnHeader();
-            this.barcode = new System.Windows.Forms.ColumnHeader();
-            this.productName = new System.Windows.Forms.ColumnHeader();
-            this.description = new System.Windows.Forms.ColumnHeader();
-            this.productSize = new System.Windows.Forms.ColumnHeader();
-            this.sellingPrice = new System.Windows.Forms.ColumnHeader();
-            this.nextButton = new System.Windows.Forms.Button();
-            this.productLookUpPanel = new System.Windows.Forms.Panel();
-            this.vendorPanel = new System.Windows.Forms.Panel();
-            this.vendorInfoPanel = new System.Windows.Forms.Panel();
-            this.messageLabel = new System.Windows.Forms.Label();
-            this.infoGraphicPictureBox = new System.Windows.Forms.PictureBox();
-            this.vendorHeadingLabel = new System.Windows.Forms.Label();
-            this.vendorComboBox = new System.Windows.Forms.ComboBox();
-            this.vendorPanelTitleLabel = new System.Windows.Forms.Label();
-            this.pricePanel = new System.Windows.Forms.Panel();
-            this.sellingPriceErrorLabel = new System.Windows.Forms.Label();
-            this.quantityErrorLabel = new System.Windows.Forms.Label();
-            this.purchasePriceErrorLabel = new System.Windows.Forms.Label();
-            this.quantityLabel = new System.Windows.Forms.Label();
-            this.sellingPriceLabel = new System.Windows.Forms.Label();
-            this.purchasePriceLabel = new System.Windows.Forms.Label();
-            this.quantityTextBox = new System.Windows.Forms.TextBox();
-            this.sellingPriceTextBox = new System.Windows.Forms.TextBox();
-            this.purchasePriceTextBox = new System.Windows.Forms.TextBox();
-            this.titleLabel = new System.Windows.Forms.Label();
-            this.previousButton = new System.Windows.Forms.Button();
-            this.addButton = new System.Windows.Forms.Button();
-            this.searchInputPanel.SuspendLayout();
-            this.searchButtonPanel.SuspendLayout();
-            this.productLookUpPanel.SuspendLayout();
-            this.vendorPanel.SuspendLayout();
-            this.vendorInfoPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.infoGraphicPictureBox)).BeginInit();
-            this.pricePanel.SuspendLayout();
-            this.SuspendLayout();
+            searchInputPanel = new Panel();
+            searchTextBox = new TextBox();
+            searchButtonPanel = new Panel();
+            searchButton = new Button();
+            headingLabel = new Label();
+            inventoryListView = new ListView();
+            productId = new ColumnHeader();
+            barcode = new ColumnHeader();
+            productName = new ColumnHeader();
+            description = new ColumnHeader();
+            productSize = new ColumnHeader();
+            sellingPrice = new ColumnHeader();
+            nextButton = new Button();
+            productLookUpPanel = new Panel();
+            vendorPanel = new Panel();
+            vendorInfoPanel = new Panel();
+            messageLabel = new Label();
+            infoGraphicPictureBox = new PictureBox();
+            vendorHeadingLabel = new Label();
+            vendorComboBox = new ComboBox();
+            vendorPanelTitleLabel = new Label();
+            pricePanel = new Panel();
+            sellingPriceErrorLabel = new Label();
+            quantityErrorLabel = new Label();
+            purchasePriceErrorLabel = new Label();
+            quantityLabel = new Label();
+            sellingPriceLabel = new Label();
+            purchasePriceLabel = new Label();
+            quantityTextBox = new TextBox();
+            sellingPriceTextBox = new TextBox();
+            purchasePriceTextBox = new TextBox();
+            titleLabel = new Label();
+            previousButton = new Button();
+            addButton = new Button();
+            searchInputPanel.SuspendLayout();
+            searchButtonPanel.SuspendLayout();
+            productLookUpPanel.SuspendLayout();
+            vendorPanel.SuspendLayout();
+            vendorInfoPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)infoGraphicPictureBox).BeginInit();
+            pricePanel.SuspendLayout();
+            SuspendLayout();
             // 
             // searchInputPanel
             // 
-            this.searchInputPanel.Controls.Add(this.searchTextBox);
-            this.searchInputPanel.Controls.Add(this.searchButtonPanel);
-            this.searchInputPanel.Location = new System.Drawing.Point(160, 91);
-            this.searchInputPanel.Name = "searchInputPanel";
-            this.searchInputPanel.Size = new System.Drawing.Size(297, 35);
-            this.searchInputPanel.TabIndex = 3;
+            searchInputPanel.Controls.Add(searchTextBox);
+            searchInputPanel.Controls.Add(searchButtonPanel);
+            searchInputPanel.Location = new Point(183, 121);
+            searchInputPanel.Margin = new Padding(3, 4, 3, 4);
+            searchInputPanel.Name = "searchInputPanel";
+            searchInputPanel.Size = new Size(339, 47);
+            searchInputPanel.TabIndex = 3;
             // 
             // searchTextBox
             // 
-            this.searchTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.searchTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.searchTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.searchTextBox.Location = new System.Drawing.Point(0, 0);
-            this.searchTextBox.Multiline = true;
-            this.searchTextBox.Name = "searchTextBox";
-            this.searchTextBox.PlaceholderText = "Search for a product here";
-            this.searchTextBox.Size = new System.Drawing.Size(262, 35);
-            this.searchTextBox.TabIndex = 2;
-            this.searchTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            searchTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            searchTextBox.BorderStyle = BorderStyle.None;
+            searchTextBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            searchTextBox.Location = new Point(0, 0);
+            searchTextBox.Margin = new Padding(3, 4, 3, 4);
+            searchTextBox.Multiline = true;
+            searchTextBox.Name = "searchTextBox";
+            searchTextBox.PlaceholderText = "Search for a product here";
+            searchTextBox.Size = new Size(299, 47);
+            searchTextBox.TabIndex = 2;
+            searchTextBox.TextAlign = HorizontalAlignment.Center;
             // 
             // searchButtonPanel
             // 
-            this.searchButtonPanel.Controls.Add(this.searchButton);
-            this.searchButtonPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.searchButtonPanel.Location = new System.Drawing.Point(262, 0);
-            this.searchButtonPanel.Name = "searchButtonPanel";
-            this.searchButtonPanel.Size = new System.Drawing.Size(35, 35);
-            this.searchButtonPanel.TabIndex = 0;
+            searchButtonPanel.Controls.Add(searchButton);
+            searchButtonPanel.Dock = DockStyle.Right;
+            searchButtonPanel.Location = new Point(299, 0);
+            searchButtonPanel.Margin = new Padding(3, 4, 3, 4);
+            searchButtonPanel.Name = "searchButtonPanel";
+            searchButtonPanel.Size = new Size(40, 47);
+            searchButtonPanel.TabIndex = 0;
             // 
             // searchButton
             // 
-            this.searchButton.BackColor = System.Drawing.Color.White;
-            this.searchButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.searchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.searchButton.Image = ((System.Drawing.Image)(resources.GetObject("searchButton.Image")));
-            this.searchButton.Location = new System.Drawing.Point(0, 0);
-            this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(35, 35);
-            this.searchButton.TabIndex = 3;
-            this.searchButton.UseVisualStyleBackColor = false;
-            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
+            searchButton.BackColor = Color.White;
+            searchButton.Dock = DockStyle.Right;
+            searchButton.FlatStyle = FlatStyle.Flat;
+            searchButton.Image = (Image)resources.GetObject("searchButton.Image");
+            searchButton.Location = new Point(0, 0);
+            searchButton.Margin = new Padding(3, 4, 3, 4);
+            searchButton.Name = "searchButton";
+            searchButton.Size = new Size(40, 47);
+            searchButton.TabIndex = 3;
+            searchButton.UseVisualStyleBackColor = false;
+            searchButton.Click += searchButton_Click;
             // 
             // headingLabel
             // 
-            this.headingLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.headingLabel.Location = new System.Drawing.Point(126, 19);
-            this.headingLabel.Name = "headingLabel";
-            this.headingLabel.Size = new System.Drawing.Size(368, 51);
-            this.headingLabel.TabIndex = 4;
-            this.headingLabel.Text = "Please enter product details to Add";
-            this.headingLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            headingLabel.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            headingLabel.Location = new Point(144, 25);
+            headingLabel.Name = "headingLabel";
+            headingLabel.Size = new Size(421, 68);
+            headingLabel.TabIndex = 4;
+            headingLabel.Text = "Please enter product details to Add";
+            headingLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // inventoryListView
             // 
-            this.inventoryListView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.inventoryListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.productId,
-            this.barcode,
-            this.productName,
-            this.description,
-            this.productSize,
-            this.sellingPrice});
-            this.inventoryListView.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.inventoryListView.GridLines = true;
-            this.inventoryListView.Location = new System.Drawing.Point(0, 176);
-            this.inventoryListView.Name = "inventoryListView";
-            this.inventoryListView.Size = new System.Drawing.Size(633, 172);
-            this.inventoryListView.TabIndex = 5;
-            this.inventoryListView.UseCompatibleStateImageBehavior = false;
-            this.inventoryListView.View = System.Windows.Forms.View.Details;
-            this.inventoryListView.SelectedIndexChanged += new System.EventHandler(this.inventoryListView_SelectedIndexChanged);
+            inventoryListView.BorderStyle = BorderStyle.None;
+            inventoryListView.Columns.AddRange(new ColumnHeader[] { productId, barcode, productName, description, productSize, sellingPrice });
+            inventoryListView.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            inventoryListView.GridLines = true;
+            inventoryListView.Location = new Point(0, 235);
+            inventoryListView.Margin = new Padding(3, 4, 3, 4);
+            inventoryListView.Name = "inventoryListView";
+            inventoryListView.Size = new Size(723, 229);
+            inventoryListView.TabIndex = 5;
+            inventoryListView.UseCompatibleStateImageBehavior = false;
+            inventoryListView.View = System.Windows.Forms.View.Details;
+            inventoryListView.SelectedIndexChanged += inventoryListView_SelectedIndexChanged;
             // 
             // productId
             // 
-            this.productId.DisplayIndex = 5;
-            this.productId.Text = "ID";
-            this.productId.Width = 40;
+            productId.DisplayIndex = 5;
+            productId.Text = "ID";
+            productId.Width = 40;
             // 
             // barcode
             // 
-            this.barcode.DisplayIndex = 0;
-            this.barcode.Text = "Barcode";
-            this.barcode.Width = 80;
+            barcode.DisplayIndex = 0;
+            barcode.Text = "Barcode";
+            barcode.Width = 80;
             // 
             // productName
             // 
-            this.productName.DisplayIndex = 1;
-            this.productName.Text = "Product Name";
-            this.productName.Width = 180;
+            productName.DisplayIndex = 1;
+            productName.Text = "Product Name";
+            productName.Width = 180;
             // 
             // description
             // 
-            this.description.DisplayIndex = 2;
-            this.description.Text = "Description";
-            this.description.Width = 140;
+            description.DisplayIndex = 2;
+            description.Text = "Description";
+            description.Width = 140;
             // 
             // productSize
             // 
-            this.productSize.DisplayIndex = 3;
-            this.productSize.Text = "Product Size";
-            this.productSize.Width = 90;
+            productSize.DisplayIndex = 3;
+            productSize.Text = "Product Size";
+            productSize.Width = 90;
             // 
             // sellingPrice
             // 
-            this.sellingPrice.DisplayIndex = 4;
-            this.sellingPrice.Text = "Selling Price";
-            this.sellingPrice.Width = 90;
+            sellingPrice.DisplayIndex = 4;
+            sellingPrice.Text = "Selling Price";
+            sellingPrice.Width = 90;
             // 
             // nextButton
             // 
-            this.nextButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.nextButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
-            this.nextButton.FlatAppearance.BorderSize = 0;
-            this.nextButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.nextButton.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.nextButton.ForeColor = System.Drawing.Color.White;
-            this.nextButton.Location = new System.Drawing.Point(373, 378);
-            this.nextButton.Name = "nextButton";
-            this.nextButton.Size = new System.Drawing.Size(87, 31);
-            this.nextButton.TabIndex = 6;
-            this.nextButton.Text = "Next";
-            this.nextButton.UseVisualStyleBackColor = false;
-            this.nextButton.Click += new System.EventHandler(this.nextButton_Click);
+            nextButton.BackColor = Color.FromArgb(28, 44, 78);
+            nextButton.FlatAppearance.BorderSize = 0;
+            nextButton.FlatStyle = FlatStyle.Flat;
+            nextButton.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            nextButton.ForeColor = Color.White;
+            nextButton.Location = new Point(426, 485);
+            nextButton.Margin = new Padding(3, 4, 3, 4);
+            nextButton.Name = "nextButton";
+            nextButton.Size = new Size(99, 41);
+            nextButton.TabIndex = 6;
+            nextButton.Text = "Next";
+            nextButton.UseVisualStyleBackColor = false;
+            nextButton.Click += nextButton_Click;
             // 
             // productLookUpPanel
             // 
-            this.productLookUpPanel.Controls.Add(this.headingLabel);
-            this.productLookUpPanel.Controls.Add(this.searchInputPanel);
-            this.productLookUpPanel.Controls.Add(this.inventoryListView);
-            this.productLookUpPanel.Location = new System.Drawing.Point(3, 3);
-            this.productLookUpPanel.Name = "productLookUpPanel";
-            this.productLookUpPanel.Size = new System.Drawing.Size(633, 369);
-            this.productLookUpPanel.TabIndex = 7;
+            productLookUpPanel.Controls.Add(headingLabel);
+            productLookUpPanel.Controls.Add(searchInputPanel);
+            productLookUpPanel.Controls.Add(inventoryListView);
+            productLookUpPanel.Location = new Point(3, 4);
+            productLookUpPanel.Margin = new Padding(3, 4, 3, 4);
+            productLookUpPanel.Name = "productLookUpPanel";
+            productLookUpPanel.Size = new Size(723, 464);
+            productLookUpPanel.TabIndex = 7;
             // 
             // vendorPanel
             // 
-            this.vendorPanel.Controls.Add(this.vendorInfoPanel);
-            this.vendorPanel.Controls.Add(this.vendorHeadingLabel);
-            this.vendorPanel.Controls.Add(this.vendorComboBox);
-            this.vendorPanel.Controls.Add(this.vendorPanelTitleLabel);
-            this.vendorPanel.Location = new System.Drawing.Point(3, 3);
-            this.vendorPanel.Name = "vendorPanel";
-            this.vendorPanel.Size = new System.Drawing.Size(633, 369);
-            this.vendorPanel.TabIndex = 14;
+            vendorPanel.Controls.Add(vendorInfoPanel);
+            vendorPanel.Controls.Add(vendorHeadingLabel);
+            vendorPanel.Controls.Add(vendorComboBox);
+            vendorPanel.Controls.Add(vendorPanelTitleLabel);
+            vendorPanel.Location = new Point(3, 4);
+            vendorPanel.Margin = new Padding(3, 4, 3, 4);
+            vendorPanel.Name = "vendorPanel";
+            vendorPanel.Size = new Size(723, 468);
+            vendorPanel.TabIndex = 14;
             // 
             // vendorInfoPanel
             // 
-            this.vendorInfoPanel.Controls.Add(this.messageLabel);
-            this.vendorInfoPanel.Controls.Add(this.infoGraphicPictureBox);
-            this.vendorInfoPanel.Location = new System.Drawing.Point(107, 160);
-            this.vendorInfoPanel.Name = "vendorInfoPanel";
-            this.vendorInfoPanel.Padding = new System.Windows.Forms.Padding(8);
-            this.vendorInfoPanel.Size = new System.Drawing.Size(426, 170);
-            this.vendorInfoPanel.TabIndex = 12;
+            vendorInfoPanel.Controls.Add(messageLabel);
+            vendorInfoPanel.Controls.Add(infoGraphicPictureBox);
+            vendorInfoPanel.Location = new Point(122, 193);
+            vendorInfoPanel.Margin = new Padding(3, 4, 3, 4);
+            vendorInfoPanel.Name = "vendorInfoPanel";
+            vendorInfoPanel.Padding = new Padding(9, 11, 9, 11);
+            vendorInfoPanel.Size = new Size(487, 227);
+            vendorInfoPanel.TabIndex = 12;
             // 
             // messageLabel
             // 
-            this.messageLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.messageLabel.Location = new System.Drawing.Point(65, 11);
-            this.messageLabel.Name = "messageLabel";
-            this.messageLabel.Size = new System.Drawing.Size(350, 101);
-            this.messageLabel.TabIndex = 13;
-            this.messageLabel.Text = "Info Message";
+            messageLabel.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            messageLabel.Location = new Point(74, 15);
+            messageLabel.Name = "messageLabel";
+            messageLabel.Size = new Size(400, 135);
+            messageLabel.TabIndex = 13;
+            messageLabel.Text = "Info Message";
             // 
             // infoGraphicPictureBox
             // 
-            this.infoGraphicPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("infoGraphicPictureBox.Image")));
-            this.infoGraphicPictureBox.Location = new System.Drawing.Point(11, 11);
-            this.infoGraphicPictureBox.Name = "infoGraphicPictureBox";
-            this.infoGraphicPictureBox.Size = new System.Drawing.Size(48, 48);
-            this.infoGraphicPictureBox.TabIndex = 0;
-            this.infoGraphicPictureBox.TabStop = false;
+            infoGraphicPictureBox.Image = (Image)resources.GetObject("infoGraphicPictureBox.Image");
+            infoGraphicPictureBox.Location = new Point(13, 15);
+            infoGraphicPictureBox.Margin = new Padding(3, 4, 3, 4);
+            infoGraphicPictureBox.Name = "infoGraphicPictureBox";
+            infoGraphicPictureBox.Size = new Size(55, 64);
+            infoGraphicPictureBox.TabIndex = 0;
+            infoGraphicPictureBox.TabStop = false;
             // 
             // vendorHeadingLabel
             // 
-            this.vendorHeadingLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.vendorHeadingLabel.Location = new System.Drawing.Point(107, 92);
-            this.vendorHeadingLabel.Name = "vendorHeadingLabel";
-            this.vendorHeadingLabel.Size = new System.Drawing.Size(111, 35);
-            this.vendorHeadingLabel.TabIndex = 11;
-            this.vendorHeadingLabel.Text = "Vendor:";
-            this.vendorHeadingLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            vendorHeadingLabel.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            vendorHeadingLabel.Location = new Point(122, 103);
+            vendorHeadingLabel.Name = "vendorHeadingLabel";
+            vendorHeadingLabel.Size = new Size(127, 47);
+            vendorHeadingLabel.TabIndex = 11;
+            vendorHeadingLabel.Text = "Vendor:";
+            vendorHeadingLabel.TextAlign = ContentAlignment.MiddleRight;
             // 
             // vendorComboBox
             // 
-            this.vendorComboBox.DropDownHeight = 110;
-            this.vendorComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.vendorComboBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.vendorComboBox.FormattingEnabled = true;
-            this.vendorComboBox.IntegralHeight = false;
-            this.vendorComboBox.Location = new System.Drawing.Point(271, 97);
-            this.vendorComboBox.MaxDropDownItems = 99;
-            this.vendorComboBox.Name = "vendorComboBox";
-            this.vendorComboBox.Size = new System.Drawing.Size(262, 29);
-            this.vendorComboBox.TabIndex = 9;
+            vendorComboBox.DropDownHeight = 110;
+            vendorComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            vendorComboBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            vendorComboBox.FormattingEnabled = true;
+            vendorComboBox.IntegralHeight = false;
+            vendorComboBox.Location = new Point(310, 109);
+            vendorComboBox.Margin = new Padding(3, 4, 3, 4);
+            vendorComboBox.MaxDropDownItems = 99;
+            vendorComboBox.Name = "vendorComboBox";
+            vendorComboBox.Size = new Size(299, 36);
+            vendorComboBox.TabIndex = 9;
             // 
             // vendorPanelTitleLabel
             // 
-            this.vendorPanelTitleLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.vendorPanelTitleLabel.Location = new System.Drawing.Point(3, 19);
-            this.vendorPanelTitleLabel.Name = "vendorPanelTitleLabel";
-            this.vendorPanelTitleLabel.Size = new System.Drawing.Size(627, 51);
-            this.vendorPanelTitleLabel.TabIndex = 4;
-            this.vendorPanelTitleLabel.Text = "Please select the vendor that supplies the product";
-            this.vendorPanelTitleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            vendorPanelTitleLabel.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            vendorPanelTitleLabel.Location = new Point(3, 12);
+            vendorPanelTitleLabel.Name = "vendorPanelTitleLabel";
+            vendorPanelTitleLabel.Size = new Size(717, 68);
+            vendorPanelTitleLabel.TabIndex = 4;
+            vendorPanelTitleLabel.Text = "Please select the vendor that supplies the product";
+            vendorPanelTitleLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // pricePanel
             // 
-            this.pricePanel.Controls.Add(this.productLookUpPanel);
-            this.pricePanel.Controls.Add(this.sellingPriceErrorLabel);
-            this.pricePanel.Controls.Add(this.quantityErrorLabel);
-            this.pricePanel.Controls.Add(this.purchasePriceErrorLabel);
-            this.pricePanel.Controls.Add(this.quantityLabel);
-            this.pricePanel.Controls.Add(this.sellingPriceLabel);
-            this.pricePanel.Controls.Add(this.purchasePriceLabel);
-            this.pricePanel.Controls.Add(this.quantityTextBox);
-            this.pricePanel.Controls.Add(this.sellingPriceTextBox);
-            this.pricePanel.Controls.Add(this.purchasePriceTextBox);
-            this.pricePanel.Controls.Add(this.titleLabel);
-            this.pricePanel.Location = new System.Drawing.Point(3, 3);
-            this.pricePanel.Name = "pricePanel";
-            this.pricePanel.Size = new System.Drawing.Size(633, 369);
-            this.pricePanel.TabIndex = 8;
+            pricePanel.Controls.Add(sellingPriceErrorLabel);
+            pricePanel.Controls.Add(quantityErrorLabel);
+            pricePanel.Controls.Add(purchasePriceErrorLabel);
+            pricePanel.Controls.Add(quantityLabel);
+            pricePanel.Controls.Add(sellingPriceLabel);
+            pricePanel.Controls.Add(purchasePriceLabel);
+            pricePanel.Controls.Add(quantityTextBox);
+            pricePanel.Controls.Add(sellingPriceTextBox);
+            pricePanel.Controls.Add(purchasePriceTextBox);
+            pricePanel.Controls.Add(titleLabel);
+            pricePanel.Controls.Add(productLookUpPanel);
+            pricePanel.Location = new Point(3, 4);
+            pricePanel.Margin = new Padding(3, 4, 3, 4);
+            pricePanel.Name = "pricePanel";
+            pricePanel.Size = new Size(723, 468);
+            pricePanel.TabIndex = 8;
             // 
             // sellingPriceErrorLabel
             // 
-            this.sellingPriceErrorLabel.AutoSize = true;
-            this.sellingPriceErrorLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.sellingPriceErrorLabel.ForeColor = System.Drawing.Color.Red;
-            this.sellingPriceErrorLabel.Location = new System.Drawing.Point(308, 247);
-            this.sellingPriceErrorLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.sellingPriceErrorLabel.Name = "sellingPriceErrorLabel";
-            this.sellingPriceErrorLabel.Size = new System.Drawing.Size(55, 15);
-            this.sellingPriceErrorLabel.TabIndex = 110;
-            this.sellingPriceErrorLabel.Text = "Error text";
-            this.sellingPriceErrorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.sellingPriceErrorLabel.UseWaitCursor = true;
-            this.sellingPriceErrorLabel.Visible = false;
+            sellingPriceErrorLabel.AutoSize = true;
+            sellingPriceErrorLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            sellingPriceErrorLabel.ForeColor = Color.Red;
+            sellingPriceErrorLabel.Location = new Point(352, 329);
+            sellingPriceErrorLabel.Margin = new Padding(2, 0, 2, 0);
+            sellingPriceErrorLabel.Name = "sellingPriceErrorLabel";
+            sellingPriceErrorLabel.Size = new Size(70, 20);
+            sellingPriceErrorLabel.TabIndex = 110;
+            sellingPriceErrorLabel.Text = "Error text";
+            sellingPriceErrorLabel.TextAlign = ContentAlignment.MiddleCenter;
+            sellingPriceErrorLabel.UseWaitCursor = true;
+            sellingPriceErrorLabel.Visible = false;
             // 
             // quantityErrorLabel
             // 
-            this.quantityErrorLabel.AutoSize = true;
-            this.quantityErrorLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.quantityErrorLabel.ForeColor = System.Drawing.Color.Red;
-            this.quantityErrorLabel.Location = new System.Drawing.Point(308, 321);
-            this.quantityErrorLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.quantityErrorLabel.Name = "quantityErrorLabel";
-            this.quantityErrorLabel.Size = new System.Drawing.Size(55, 15);
-            this.quantityErrorLabel.TabIndex = 109;
-            this.quantityErrorLabel.Text = "Error text";
-            this.quantityErrorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.quantityErrorLabel.UseWaitCursor = true;
-            this.quantityErrorLabel.Visible = false;
+            quantityErrorLabel.AutoSize = true;
+            quantityErrorLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            quantityErrorLabel.ForeColor = Color.Red;
+            quantityErrorLabel.Location = new Point(352, 428);
+            quantityErrorLabel.Margin = new Padding(2, 0, 2, 0);
+            quantityErrorLabel.Name = "quantityErrorLabel";
+            quantityErrorLabel.Size = new Size(70, 20);
+            quantityErrorLabel.TabIndex = 109;
+            quantityErrorLabel.Text = "Error text";
+            quantityErrorLabel.TextAlign = ContentAlignment.MiddleCenter;
+            quantityErrorLabel.UseWaitCursor = true;
+            quantityErrorLabel.Visible = false;
             // 
             // purchasePriceErrorLabel
             // 
-            this.purchasePriceErrorLabel.AutoSize = true;
-            this.purchasePriceErrorLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.purchasePriceErrorLabel.ForeColor = System.Drawing.Color.Red;
-            this.purchasePriceErrorLabel.Location = new System.Drawing.Point(308, 170);
-            this.purchasePriceErrorLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.purchasePriceErrorLabel.Name = "purchasePriceErrorLabel";
-            this.purchasePriceErrorLabel.Size = new System.Drawing.Size(55, 15);
-            this.purchasePriceErrorLabel.TabIndex = 108;
-            this.purchasePriceErrorLabel.Text = "Error text";
-            this.purchasePriceErrorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.purchasePriceErrorLabel.UseWaitCursor = true;
-            this.purchasePriceErrorLabel.Visible = false;
+            purchasePriceErrorLabel.AutoSize = true;
+            purchasePriceErrorLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            purchasePriceErrorLabel.ForeColor = Color.Red;
+            purchasePriceErrorLabel.Location = new Point(352, 227);
+            purchasePriceErrorLabel.Margin = new Padding(2, 0, 2, 0);
+            purchasePriceErrorLabel.Name = "purchasePriceErrorLabel";
+            purchasePriceErrorLabel.Size = new Size(70, 20);
+            purchasePriceErrorLabel.TabIndex = 108;
+            purchasePriceErrorLabel.Text = "Error text";
+            purchasePriceErrorLabel.TextAlign = ContentAlignment.MiddleCenter;
+            purchasePriceErrorLabel.UseWaitCursor = true;
+            purchasePriceErrorLabel.Visible = false;
             // 
             // quantityLabel
             // 
-            this.quantityLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.quantityLabel.Location = new System.Drawing.Point(21, 283);
-            this.quantityLabel.Name = "quantityLabel";
-            this.quantityLabel.Size = new System.Drawing.Size(234, 35);
-            this.quantityLabel.TabIndex = 13;
-            this.quantityLabel.Text = "Quantity:";
-            this.quantityLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            quantityLabel.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            quantityLabel.Location = new Point(24, 377);
+            quantityLabel.Name = "quantityLabel";
+            quantityLabel.Size = new Size(267, 47);
+            quantityLabel.TabIndex = 13;
+            quantityLabel.Text = "Quantity:";
+            quantityLabel.TextAlign = ContentAlignment.MiddleRight;
             // 
             // sellingPriceLabel
             // 
-            this.sellingPriceLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.sellingPriceLabel.Location = new System.Drawing.Point(21, 209);
-            this.sellingPriceLabel.Name = "sellingPriceLabel";
-            this.sellingPriceLabel.Size = new System.Drawing.Size(234, 35);
-            this.sellingPriceLabel.TabIndex = 12;
-            this.sellingPriceLabel.Text = "Selling price:";
-            this.sellingPriceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            sellingPriceLabel.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            sellingPriceLabel.Location = new Point(24, 279);
+            sellingPriceLabel.Name = "sellingPriceLabel";
+            sellingPriceLabel.Size = new Size(267, 47);
+            sellingPriceLabel.TabIndex = 12;
+            sellingPriceLabel.Text = "Selling price:";
+            sellingPriceLabel.TextAlign = ContentAlignment.MiddleRight;
             // 
             // purchasePriceLabel
             // 
-            this.purchasePriceLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.purchasePriceLabel.Location = new System.Drawing.Point(21, 132);
-            this.purchasePriceLabel.Name = "purchasePriceLabel";
-            this.purchasePriceLabel.Size = new System.Drawing.Size(234, 35);
-            this.purchasePriceLabel.TabIndex = 10;
-            this.purchasePriceLabel.Text = "Purchase price:";
-            this.purchasePriceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            purchasePriceLabel.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            purchasePriceLabel.Location = new Point(24, 176);
+            purchasePriceLabel.Name = "purchasePriceLabel";
+            purchasePriceLabel.Size = new Size(267, 47);
+            purchasePriceLabel.TabIndex = 10;
+            purchasePriceLabel.Text = "Purchase price:";
+            purchasePriceLabel.TextAlign = ContentAlignment.MiddleRight;
             // 
             // quantityTextBox
             // 
-            this.quantityTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.quantityTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.quantityTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.quantityTextBox.Location = new System.Drawing.Point(308, 283);
-            this.quantityTextBox.Multiline = true;
-            this.quantityTextBox.Name = "quantityTextBox";
-            this.quantityTextBox.PlaceholderText = "Enter quantity";
-            this.quantityTextBox.Size = new System.Drawing.Size(262, 35);
-            this.quantityTextBox.TabIndex = 8;
-            this.quantityTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.quantityTextBox.TextChanged += new System.EventHandler(this.quantityTextBox_TextChanged);
+            quantityTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            quantityTextBox.BorderStyle = BorderStyle.None;
+            quantityTextBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            quantityTextBox.Location = new Point(352, 377);
+            quantityTextBox.Margin = new Padding(3, 4, 3, 4);
+            quantityTextBox.Multiline = true;
+            quantityTextBox.Name = "quantityTextBox";
+            quantityTextBox.PlaceholderText = "Enter quantity";
+            quantityTextBox.Size = new Size(299, 43);
+            quantityTextBox.TabIndex = 8;
+            quantityTextBox.TextAlign = HorizontalAlignment.Center;
+            quantityTextBox.TextChanged += quantityTextBox_TextChanged;
             // 
             // sellingPriceTextBox
             // 
-            this.sellingPriceTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.sellingPriceTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.sellingPriceTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.sellingPriceTextBox.Location = new System.Drawing.Point(308, 209);
-            this.sellingPriceTextBox.Multiline = true;
-            this.sellingPriceTextBox.Name = "sellingPriceTextBox";
-            this.sellingPriceTextBox.PlaceholderText = "Enter selling price";
-            this.sellingPriceTextBox.Size = new System.Drawing.Size(262, 35);
-            this.sellingPriceTextBox.TabIndex = 7;
-            this.sellingPriceTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.sellingPriceTextBox.TextChanged += new System.EventHandler(this.sellingPriceTextBox_TextChanged);
+            sellingPriceTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            sellingPriceTextBox.BorderStyle = BorderStyle.None;
+            sellingPriceTextBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            sellingPriceTextBox.Location = new Point(352, 279);
+            sellingPriceTextBox.Margin = new Padding(3, 4, 3, 4);
+            sellingPriceTextBox.Multiline = true;
+            sellingPriceTextBox.Name = "sellingPriceTextBox";
+            sellingPriceTextBox.PlaceholderText = "Enter selling price";
+            sellingPriceTextBox.Size = new Size(299, 46);
+            sellingPriceTextBox.TabIndex = 7;
+            sellingPriceTextBox.TextAlign = HorizontalAlignment.Center;
+            sellingPriceTextBox.TextChanged += sellingPriceTextBox_TextChanged;
             // 
             // purchasePriceTextBox
             // 
-            this.purchasePriceTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.purchasePriceTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.purchasePriceTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.purchasePriceTextBox.Location = new System.Drawing.Point(308, 132);
-            this.purchasePriceTextBox.Multiline = true;
-            this.purchasePriceTextBox.Name = "purchasePriceTextBox";
-            this.purchasePriceTextBox.PlaceholderText = "Enter purchase price";
-            this.purchasePriceTextBox.Size = new System.Drawing.Size(262, 35);
-            this.purchasePriceTextBox.TabIndex = 6;
-            this.purchasePriceTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.purchasePriceTextBox.TextChanged += new System.EventHandler(this.purchasePriceTextBox_TextChanged);
+            purchasePriceTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            purchasePriceTextBox.BorderStyle = BorderStyle.None;
+            purchasePriceTextBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            purchasePriceTextBox.Location = new Point(352, 176);
+            purchasePriceTextBox.Margin = new Padding(3, 4, 3, 4);
+            purchasePriceTextBox.Multiline = true;
+            purchasePriceTextBox.Name = "purchasePriceTextBox";
+            purchasePriceTextBox.PlaceholderText = "Enter purchase price";
+            purchasePriceTextBox.Size = new Size(299, 47);
+            purchasePriceTextBox.TabIndex = 6;
+            purchasePriceTextBox.TextAlign = HorizontalAlignment.Center;
+            purchasePriceTextBox.TextChanged += purchasePriceTextBox_TextChanged;
             // 
             // titleLabel
             // 
-            this.titleLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.titleLabel.Location = new System.Drawing.Point(126, 19);
-            this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(368, 51);
-            this.titleLabel.TabIndex = 4;
-            this.titleLabel.Text = "Please enter product details to Add";
-            this.titleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            titleLabel.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            titleLabel.Location = new Point(144, 25);
+            titleLabel.Name = "titleLabel";
+            titleLabel.Size = new Size(421, 68);
+            titleLabel.TabIndex = 4;
+            titleLabel.Text = "Please enter product details to Add";
+            titleLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // previousButton
             // 
-            this.previousButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.previousButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
-            this.previousButton.Enabled = false;
-            this.previousButton.FlatAppearance.BorderSize = 0;
-            this.previousButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.previousButton.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.previousButton.ForeColor = System.Drawing.Color.White;
-            this.previousButton.Location = new System.Drawing.Point(174, 378);
-            this.previousButton.Name = "previousButton";
-            this.previousButton.Size = new System.Drawing.Size(87, 31);
-            this.previousButton.TabIndex = 8;
-            this.previousButton.Text = "Previous";
-            this.previousButton.UseVisualStyleBackColor = false;
-            this.previousButton.Click += new System.EventHandler(this.previousButton_Click);
+            previousButton.BackColor = Color.FromArgb(28, 44, 78);
+            previousButton.Enabled = false;
+            previousButton.FlatAppearance.BorderSize = 0;
+            previousButton.FlatStyle = FlatStyle.Flat;
+            previousButton.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            previousButton.ForeColor = Color.White;
+            previousButton.Location = new Point(199, 485);
+            previousButton.Margin = new Padding(3, 4, 3, 4);
+            previousButton.Name = "previousButton";
+            previousButton.Size = new Size(99, 41);
+            previousButton.TabIndex = 8;
+            previousButton.Text = "Previous";
+            previousButton.UseVisualStyleBackColor = false;
+            previousButton.Click += previousButton_Click;
             // 
             // addButton
             // 
-            this.addButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.addButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
-            this.addButton.Enabled = false;
-            this.addButton.FlatAppearance.BorderSize = 0;
-            this.addButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addButton.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.addButton.ForeColor = System.Drawing.Color.White;
-            this.addButton.Location = new System.Drawing.Point(274, 378);
-            this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(87, 31);
-            this.addButton.TabIndex = 9;
-            this.addButton.Text = "Add";
-            this.addButton.UseVisualStyleBackColor = false;
-            this.addButton.Click += new System.EventHandler(this.addButton_Click);
+            addButton.BackColor = Color.FromArgb(28, 44, 78);
+            addButton.Enabled = false;
+            addButton.FlatAppearance.BorderSize = 0;
+            addButton.FlatStyle = FlatStyle.Flat;
+            addButton.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            addButton.ForeColor = Color.White;
+            addButton.Location = new Point(313, 485);
+            addButton.Margin = new Padding(3, 4, 3, 4);
+            addButton.Name = "addButton";
+            addButton.Size = new Size(99, 41);
+            addButton.TabIndex = 9;
+            addButton.Text = "Add";
+            addButton.UseVisualStyleBackColor = false;
+            addButton.Click += addButton_Click;
             // 
             // AddProductToStoreUserControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.BlanchedAlmond;
-            this.Controls.Add(this.vendorPanel);
-            this.Controls.Add(this.addButton);
-            this.Controls.Add(this.previousButton);
-            this.Controls.Add(this.nextButton);
-            this.Controls.Add(this.pricePanel);
-            this.Name = "AddProductToStoreUserControl";
-            this.Size = new System.Drawing.Size(639, 418);
-            this.Load += new System.EventHandler(this.AddProductToStoreUserControl_Load);
-            this.searchInputPanel.ResumeLayout(false);
-            this.searchInputPanel.PerformLayout();
-            this.searchButtonPanel.ResumeLayout(false);
-            this.productLookUpPanel.ResumeLayout(false);
-            this.vendorPanel.ResumeLayout(false);
-            this.vendorInfoPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.infoGraphicPictureBox)).EndInit();
-            this.pricePanel.ResumeLayout(false);
-            this.pricePanel.PerformLayout();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(227, 211, 177);
+            Controls.Add(addButton);
+            Controls.Add(previousButton);
+            Controls.Add(nextButton);
+            Controls.Add(pricePanel);
+            Controls.Add(vendorPanel);
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "AddProductToStoreUserControl";
+            Size = new Size(730, 534);
+            Load += AddProductToStoreUserControl_Load;
+            searchInputPanel.ResumeLayout(false);
+            searchInputPanel.PerformLayout();
+            searchButtonPanel.ResumeLayout(false);
+            productLookUpPanel.ResumeLayout(false);
+            vendorPanel.ResumeLayout(false);
+            vendorInfoPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)infoGraphicPictureBox).EndInit();
+            pricePanel.ResumeLayout(false);
+            pricePanel.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion

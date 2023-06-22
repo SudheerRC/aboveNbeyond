@@ -29,62 +29,65 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeTabUserControl));
-            this.homeFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.AddStoreButton = new System.Windows.Forms.Button();
-            this.mainStoreFrontUserControl = new MyStores.UserControls.HomeUserControl.StoreFrontUserControl();
-            this.homeFlowLayoutPanel.SuspendLayout();
-            this.SuspendLayout();
+            homeFlowLayoutPanel = new FlowLayoutPanel();
+            AddStoreButton = new Button();
+            mainStoreFrontUserControl = new StoreFrontUserControl();
+            homeFlowLayoutPanel.SuspendLayout();
+            SuspendLayout();
             // 
             // homeFlowLayoutPanel
             // 
-            this.homeFlowLayoutPanel.Controls.Add(this.AddStoreButton);
-            this.homeFlowLayoutPanel.Location = new System.Drawing.Point(0, 0);
-            this.homeFlowLayoutPanel.Margin = new System.Windows.Forms.Padding(18);
-            this.homeFlowLayoutPanel.Name = "homeFlowLayoutPanel";
-            this.homeFlowLayoutPanel.Padding = new System.Windows.Forms.Padding(18);
-            this.homeFlowLayoutPanel.Size = new System.Drawing.Size(1390, 900);
-            this.homeFlowLayoutPanel.TabIndex = 0;
+            homeFlowLayoutPanel.Controls.Add(AddStoreButton);
+            homeFlowLayoutPanel.Location = new Point(0, 0);
+            homeFlowLayoutPanel.Margin = new Padding(21, 24, 21, 24);
+            homeFlowLayoutPanel.Name = "homeFlowLayoutPanel";
+            homeFlowLayoutPanel.Padding = new Padding(21, 24, 21, 24);
+            homeFlowLayoutPanel.Size = new Size(1007, 676);
+            homeFlowLayoutPanel.TabIndex = 0;
             // 
             // AddStoreButton
             // 
-            this.AddStoreButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
-            this.AddStoreButton.FlatAppearance.BorderSize = 0;
-            this.AddStoreButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddStoreButton.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.AddStoreButton.ForeColor = System.Drawing.Color.White;
-            this.AddStoreButton.Image = ((System.Drawing.Image)(resources.GetObject("AddStoreButton.Image")));
-            this.AddStoreButton.Location = new System.Drawing.Point(21, 21);
-            this.AddStoreButton.Name = "AddStoreButton";
-            this.AddStoreButton.Padding = new System.Windows.Forms.Padding(6);
-            this.AddStoreButton.Size = new System.Drawing.Size(160, 200);
-            this.AddStoreButton.TabIndex = 1;
-            this.AddStoreButton.Text = "Add Store";
-            this.AddStoreButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.AddStoreButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.AddStoreButton.UseVisualStyleBackColor = false;
-            this.AddStoreButton.Click += new System.EventHandler(this.AddStoreButton_Click);
+            AddStoreButton.BackColor = Color.FromArgb(28, 44, 78);
+            AddStoreButton.FlatAppearance.BorderSize = 0;
+            AddStoreButton.FlatStyle = FlatStyle.Flat;
+            AddStoreButton.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            AddStoreButton.ForeColor = Color.White;
+            AddStoreButton.Image = (Image)resources.GetObject("AddStoreButton.Image");
+            AddStoreButton.Location = new Point(24, 28);
+            AddStoreButton.Margin = new Padding(3, 4, 3, 4);
+            AddStoreButton.Name = "AddStoreButton";
+            AddStoreButton.Padding = new Padding(7, 8, 7, 8);
+            AddStoreButton.Size = new Size(150, 170);
+            AddStoreButton.TabIndex = 1;
+            AddStoreButton.Text = "Add Store";
+            AddStoreButton.TextAlign = ContentAlignment.BottomCenter;
+            AddStoreButton.TextImageRelation = TextImageRelation.ImageAboveText;
+            AddStoreButton.UseVisualStyleBackColor = false;
+            AddStoreButton.Click += AddStoreButton_Click;
             // 
             // mainStoreFrontUserControl
             // 
-            this.mainStoreFrontUserControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(211)))), ((int)(((byte)(177)))));
-            this.mainStoreFrontUserControl.Location = new System.Drawing.Point(0, 0);
-            this.mainStoreFrontUserControl.Name = "mainStoreFrontUserControl";
-            this.mainStoreFrontUserControl.Size = new System.Drawing.Size(1390, 900);
-            this.mainStoreFrontUserControl.TabIndex = 2;
+            mainStoreFrontUserControl.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            mainStoreFrontUserControl.BackColor = Color.FromArgb(227, 211, 177);
+            mainStoreFrontUserControl.Location = new Point(0, 0);
+            mainStoreFrontUserControl.Margin = new Padding(3, 5, 3, 5);
+            mainStoreFrontUserControl.Name = "mainStoreFrontUserControl";
+            mainStoreFrontUserControl.Size = new Size(1007, 676);
+            mainStoreFrontUserControl.TabIndex = 2;
             // 
             // HomeTabUserControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(211)))), ((int)(((byte)(177)))));
-            this.Controls.Add(this.homeFlowLayoutPanel);
-            this.Controls.Add(this.mainStoreFrontUserControl);
-            this.Name = "HomeTabUserControl";
-            this.Size = new System.Drawing.Size(1390, 900);
-            this.Load += new System.EventHandler(this.HomeTabUserControl_Load);
-            this.homeFlowLayoutPanel.ResumeLayout(false);
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(227, 211, 177);
+            Controls.Add(homeFlowLayoutPanel);
+            Controls.Add(mainStoreFrontUserControl);
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "HomeTabUserControl";
+            Size = new Size(1011, 680);
+            Load += HomeTabUserControl_Load;
+            homeFlowLayoutPanel.ResumeLayout(false);
+            ResumeLayout(false);
         }
 
         #endregion
