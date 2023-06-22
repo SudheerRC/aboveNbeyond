@@ -1,4 +1,4 @@
-﻿using System.Data.SqlClient;
+﻿using Microsoft.Data.SqlClient;
 
 namespace MyStores.Dal
 {
@@ -13,8 +13,19 @@ namespace MyStores.Dal
         /// <returns></returns>
         public static SqlConnection GetConnection()
         {
-            const string connectionString = "Data Source=(localDB)\\MSSQLLocalDB;Initial Catalog=MyStores; Integrated Security=True";
-            return new SqlConnection(connectionString);
+            SqlConnectionStringBuilder conn = new SqlConnectionStringBuilder
+            {
+                //Azure SQL Server Name 
+                DataSource = "myserver0622.database.windows.net",
+                //User to connect to Azure
+                UserID = "azureuser",
+                //Password used in Azure
+                Password = "Admin@0622",
+                //Azure database name
+                InitialCatalog = "MyStores"
+            };
+
+            return new SqlConnection(conn.ConnectionString);
         }
     }
 }
