@@ -89,7 +89,7 @@ namespace MyStores.UserControls.HomeUserControl
             newButton.FlatAppearance.BorderSize = AddStoreButton.FlatAppearance.BorderSize;
             newButton.Padding = AddStoreButton.Padding;
 
-            newButton.Image = Image.FromFile("..\\..\\..\\Images\\icons\\Store.png");
+            newButton.Image = VipButton.Image;
             newButton.ImageAlign = AddStoreButton.ImageAlign;
 
             return newButton;

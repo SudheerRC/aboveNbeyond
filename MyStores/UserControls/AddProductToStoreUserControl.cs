@@ -84,7 +84,10 @@ namespace MyStores.UserControls
                 pricePanel.BringToFront();
                 pricePanel.Visible = true;
                 nextButton.Enabled = false;
+                addButton.BringToFront();
                 addButton.Enabled = true;
+                addButton.Visible = true;
+                nextButton.Visible = false;
             }
         }
 
@@ -97,7 +100,7 @@ namespace MyStores.UserControls
                 productLookUpPanel.Visible = true;
                 nextButton.Visible = true;
                 addButton.Enabled = false;
-
+                addButton.Visible = false;
             }
             else if (productLookUpPanel.Visible)
             {
@@ -154,9 +157,12 @@ namespace MyStores.UserControls
 
         public void resetControl()
         {
-            addButton.Enabled = false;
+            addButton.Visible = false;
             previousButton.Enabled = false;
+            nextButton.BringToFront();
+            nextButton.Visible = true;
             nextButton.Enabled = true;
+            
 
             inventoryListView.Items.Clear();
             searchTextBox.Text = "";

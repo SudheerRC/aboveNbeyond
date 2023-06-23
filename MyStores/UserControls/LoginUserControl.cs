@@ -29,9 +29,11 @@ namespace MyStores.UserControls
                 user.UserId = _controller.GetUserId(email);
                 using var mainForm = new MainDashboard();
                 mainForm.SetOwner(user);
+                this.Parent.Hide();
                 var result = mainForm.ShowDialog();
                 if (result == DialogResult.OK)
                 {
+                    this.Parent.Show();
                     errorLabel.Text = "You've been successfully logged out.";
                     errorLabel.Visible = true;
                     errorLabel.ForeColor = Color.Green;
@@ -87,6 +89,17 @@ namespace MyStores.UserControls
                 LoginButton_Click(sender, e);
             }
         }
-        
+
+        public void SetLoginLabel()
+        {
+            errorLabel.Text = "You've Signed up successfully. Please login.";
+            errorLabel.Visible = true;
+            errorLabel.ForeColor = Color.Green;
+        }
+
+        private void LoginUserControl_Load(object sender, EventArgs e)
+        {
+            errorLabel.Visible = false;
+        }
     }
 }

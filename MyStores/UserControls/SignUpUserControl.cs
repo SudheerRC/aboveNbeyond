@@ -1,5 +1,6 @@
 ﻿using MyStores.Controller;
 using MyStores.Model;
+using MyStores.View;
 
 namespace MyStores.UserControls
 {
@@ -7,11 +8,14 @@ namespace MyStores.UserControls
     {
         private readonly List<string> _gender;
         private readonly MyStoresController _controller;
+        public bool _isSignedIn;
+
         public SignUpUserControl()
         {
             InitializeComponent();
             _gender = new List<string>();
             _controller = new MyStoresController();
+            _isSignedIn = false;
         }
 
         private void AddGender()
@@ -92,9 +96,8 @@ namespace MyStores.UserControls
                     ZipCode = zipcodeTextBox.Text,
                 };
                 _controller.RegisterUser(newUser);
-                errorLabel.Text = "You've been successfully signed up.";
-                errorLabel.ForeColor = Color.Green;
-                errorLabel.Visible = true;
+                _isSignedIn = true;
+                this.Hide();
             }
             else
             {

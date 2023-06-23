@@ -9,6 +9,88 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\background.jpg" />
+    <None Remove="Images\icons\add-manager-96.png" />
+    <None Remove="Images\icons\addmanager-24.png" />
+    <None Remove="Images\icons\addproduct-96.png" />
+    <None Remove="Images\icons\Close.png" />
+    <None Remove="Images\icons\exit-store-24.png" />
+    <None Remove="Images\icons\Home - Default.png" />
+    <None Remove="Images\icons\Home - Inverted.png" />
+    <None Remove="Images\icons\Home - Selected.png" />
+    <None Remove="Images\icons\Info.png" />
+    <None Remove="Images\icons\inventory-96.png" />
+    <None Remove="Images\icons\Inventory.png" />
+    <None Remove="Images\icons\Logout - 24.png" />
+    <None Remove="Images\icons\Logout - Inverted.png" />
+    <None Remove="Images\icons\Logout.png" />
+    <None Remove="Images\icons\Maximize.png" />
+    <None Remove="Images\icons\Minimize.png" />
+    <None Remove="Images\icons\New Store.png" />
+    <None Remove="Images\icons\order-96.png" />
+    <None Remove="Images\icons\orders.png" />
+    <None Remove="Images\icons\Picture.png" />
+    <None Remove="Images\icons\Product - Add.png" />
+    <None Remove="Images\icons\Product - Inverted.png" />
+    <None Remove="Images\icons\Product - Out of Stock.png" />
+    <None Remove="Images\icons\product-24.png" />
+    <None Remove="Images\icons\Product.png" />
+    <None Remove="Images\icons\Restore.png" />
+    <None Remove="Images\icons\Sales Highlight Chip - Inverted.png" />
+    <None Remove="Images\icons\Sales Highlight Chip.png" />
+    <None Remove="Images\icons\Search.png" />
+    <None Remove="Images\icons\store-24.png" />
+    <None Remove="Images\icons\store-48.png" />
+    <None Remove="Images\icons\Store.png" />
+    <None Remove="Images\icons\storeexit-96.png" />
+    <None Remove="Images\icons\Vendor - Inverted.png" />
+    <None Remove="Images\icons\vendor-24.png" />
+    <None Remove="Images\icons\vendor-96.png" />
+    <None Remove="Images\icons\Vendor.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Images\background.jpg" />
+    <Content Include="Images\icons\add-manager-96.png" />
+    <Content Include="Images\icons\addmanager-24.png" />
+    <Content Include="Images\icons\addproduct-96.png" />
+    <Content Include="Images\icons\Close.png" />
+    <Content Include="Images\icons\exit-store-24.png" />
+    <Content Include="Images\icons\Home - Default.png" />
+    <Content Include="Images\icons\Home - Inverted.png" />
+    <Content Include="Images\icons\Home - Selected.png" />
+    <Content Include="Images\icons\Info.png" />
+    <Content Include="Images\icons\inventory-96.png" />
+    <Content Include="Images\icons\Inventory.png" />
+    <Content Include="Images\icons\Logout - 24.png" />
+    <Content Include="Images\icons\Logout - Inverted.png" />
+    <Content Include="Images\icons\Logout.png" />
+    <Content Include="Images\icons\Maximize.png" />
+    <Content Include="Images\icons\Minimize.png" />
+    <Content Include="Images\icons\New Store.png" />
+    <Content Include="Images\icons\order-96.png" />
+    <Content Include="Images\icons\orders.png" />
+    <Content Include="Images\icons\Picture.png" />
+    <Content Include="Images\icons\Product - Add.png" />
+    <Content Include="Images\icons\Product - Inverted.png" />
+    <Content Include="Images\icons\Product - Out of Stock.png" />
+    <Content Include="Images\icons\product-24.png" />
+    <Content Include="Images\icons\Product.png" />
+    <Content Include="Images\icons\Restore.png" />
+    <Content Include="Images\icons\Sales Highlight Chip - Inverted.png" />
+    <Content Include="Images\icons\Sales Highlight Chip.png" />
+    <Content Include="Images\icons\Search.png" />
+    <Content Include="Images\icons\store-24.png" />
+    <Content Include="Images\icons\store-48.png" />
+    <Content Include="Images\icons\Store.png" />
+    <Content Include="Images\icons\storeexit-96.png" />
+    <Content Include="Images\icons\Vendor - Inverted.png" />
+    <Content Include="Images\icons\vendor-24.png" />
+    <Content Include="Images\icons\vendor-96.png" />
+    <Content Include="Images\icons\Vendor.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.1" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
   </ItemGroup>

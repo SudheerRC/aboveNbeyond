@@ -32,12 +32,14 @@
             this.homeFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.AddStoreButton = new System.Windows.Forms.Button();
             this.mainStoreFrontUserControl = new MyStores.UserControls.HomeUserControl.StoreFrontUserControl();
+            this.VipButton = new System.Windows.Forms.Button();
             this.homeFlowLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // homeFlowLayoutPanel
             // 
             this.homeFlowLayoutPanel.Controls.Add(this.AddStoreButton);
+            this.homeFlowLayoutPanel.Controls.Add(this.VipButton);
             this.homeFlowLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this.homeFlowLayoutPanel.Margin = new System.Windows.Forms.Padding(18);
             this.homeFlowLayoutPanel.Name = "homeFlowLayoutPanel";
@@ -74,6 +76,25 @@
             this.mainStoreFrontUserControl.Size = new System.Drawing.Size(881, 507);
             this.mainStoreFrontUserControl.TabIndex = 2;
             // 
+            // VipButton
+            // 
+            this.VipButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
+            this.VipButton.FlatAppearance.BorderSize = 0;
+            this.VipButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.VipButton.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.VipButton.ForeColor = System.Drawing.Color.White;
+            this.VipButton.Image = ((System.Drawing.Image)(resources.GetObject("VipButton.Image")));
+            this.VipButton.Location = new System.Drawing.Point(177, 21);
+            this.VipButton.Name = "VipButton";
+            this.VipButton.Padding = new System.Windows.Forms.Padding(6);
+            this.VipButton.Size = new System.Drawing.Size(150, 170);
+            this.VipButton.TabIndex = 2;
+            this.VipButton.Text = "Add Store";
+            this.VipButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.VipButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.VipButton.UseVisualStyleBackColor = false;
+            this.VipButton.Visible = false;
+            // 
             // HomeTabUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -94,5 +115,6 @@
         private FlowLayoutPanel homeFlowLayoutPanel;
         private Button AddStoreButton;
         private StoreFrontUserControl mainStoreFrontUserControl;
+        private Button VipButton;
     }
 }
