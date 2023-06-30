@@ -1,5 +1,4 @@
 using MyStores.Controller;
-using MyStores.Model;
 
 namespace MyStores.View
 {

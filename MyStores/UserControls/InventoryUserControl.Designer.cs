@@ -29,179 +29,170 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InventoryUserControl));
-            this.inventoryListView = new System.Windows.Forms.ListView();
-            this.barcode = new System.Windows.Forms.ColumnHeader();
-            this.productName = new System.Windows.Forms.ColumnHeader();
-            this.description = new System.Windows.Forms.ColumnHeader();
-            this.productSize = new System.Windows.Forms.ColumnHeader();
-            this.sellingPrice = new System.Windows.Forms.ColumnHeader();
-            this.purchasePrice = new System.Windows.Forms.ColumnHeader();
-            this.vendorName = new System.Windows.Forms.ColumnHeader();
-            this.quantity = new System.Windows.Forms.ColumnHeader();
-            this.edit = new System.Windows.Forms.ColumnHeader();
-            this.delete = new System.Windows.Forms.ColumnHeader();
-            this.searchInputPanel = new System.Windows.Forms.Panel();
-            this.searchTextBox = new System.Windows.Forms.TextBox();
-            this.searchButtonPanel = new System.Windows.Forms.Panel();
-            this.searchButton = new System.Windows.Forms.Button();
-            this.refreshListButton = new System.Windows.Forms.Button();
-            this.searchInputPanel.SuspendLayout();
-            this.searchButtonPanel.SuspendLayout();
-            this.SuspendLayout();
+            inventoryListView = new ListView();
+            barcode = new ColumnHeader();
+            productName = new ColumnHeader();
+            description = new ColumnHeader();
+            productSize = new ColumnHeader();
+            sellingPrice = new ColumnHeader();
+            purchasePrice = new ColumnHeader();
+            vendorName = new ColumnHeader();
+            quantity = new ColumnHeader();
+            edit = new ColumnHeader();
+            delete = new ColumnHeader();
+            searchInputPanel = new Panel();
+            searchTextBox = new TextBox();
+            searchButtonPanel = new Panel();
+            searchButton = new Button();
+            refreshListButton = new Button();
+            searchInputPanel.SuspendLayout();
+            searchButtonPanel.SuspendLayout();
+            SuspendLayout();
             // 
             // inventoryListView
             // 
-            this.inventoryListView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.inventoryListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.barcode,
-            this.productName,
-            this.description,
-            this.productSize,
-            this.sellingPrice,
-            this.purchasePrice,
-            this.vendorName,
-            this.quantity,
-            this.edit,
-            this.delete});
-            this.inventoryListView.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.inventoryListView.GridLines = true;
-            this.inventoryListView.Location = new System.Drawing.Point(10, 40);
-            this.inventoryListView.Name = "inventoryListView";
-            this.inventoryListView.Size = new System.Drawing.Size(1310, 328);
-            this.inventoryListView.TabIndex = 0;
-            this.inventoryListView.UseCompatibleStateImageBehavior = false;
-            this.inventoryListView.View = System.Windows.Forms.View.Details;
+            inventoryListView.BorderStyle = BorderStyle.None;
+            inventoryListView.Columns.AddRange(new ColumnHeader[] { barcode, productName, description, productSize, sellingPrice, purchasePrice, vendorName, quantity, edit, delete });
+            inventoryListView.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            inventoryListView.GridLines = true;
+            inventoryListView.Location = new Point(19, 85);
+            inventoryListView.Margin = new Padding(6, 6, 6, 6);
+            inventoryListView.Name = "inventoryListView";
+            inventoryListView.Size = new Size(2433, 700);
+            inventoryListView.TabIndex = 0;
+            inventoryListView.UseCompatibleStateImageBehavior = false;
+            inventoryListView.View = System.Windows.Forms.View.Details;
             // 
             // barcode
             // 
-            this.barcode.Text = "Barcode";
-            this.barcode.Width = 160;
+            barcode.Text = "Barcode";
+            barcode.Width = 160;
             // 
             // productName
             // 
-            this.productName.Text = "Product Name";
-            this.productName.Width = 280;
+            productName.Text = "Product Name";
+            productName.Width = 280;
             // 
             // description
             // 
-            this.description.Text = "Description";
-            this.description.Width = 220;
+            description.Text = "Description";
+            description.Width = 220;
             // 
             // productSize
             // 
-            this.productSize.Text = "Size";
-            this.productSize.Width = 90;
+            productSize.Text = "Size";
+            productSize.Width = 90;
             // 
             // sellingPrice
             // 
-            this.sellingPrice.Text = "Selling Price";
-            this.sellingPrice.Width = 110;
+            sellingPrice.Text = "Selling Price";
+            sellingPrice.Width = 110;
             // 
             // purchasePrice
             // 
-            this.purchasePrice.Text = "Purchase Price";
-            this.purchasePrice.Width = 110;
+            purchasePrice.Text = "Purchase Price";
+            purchasePrice.Width = 110;
             // 
             // vendorName
             // 
-            this.vendorName.Text = "Vendor Name";
-            this.vendorName.Width = 140;
+            vendorName.Text = "Vendor Name";
+            vendorName.Width = 140;
             // 
             // quantity
             // 
-            this.quantity.Text = "Quantity";
-            this.quantity.Width = 90;
+            quantity.Text = "Quantity";
+            quantity.Width = 90;
             // 
             // edit
             // 
-            this.edit.Text = "";
+            edit.Text = "";
             // 
             // delete
             // 
-            this.delete.Text = "";
+            delete.Text = "";
             // 
             // searchInputPanel
             // 
-            this.searchInputPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.searchInputPanel.Controls.Add(this.searchTextBox);
-            this.searchInputPanel.Controls.Add(this.searchButtonPanel);
-            this.searchInputPanel.Location = new System.Drawing.Point(10, 0);
-            this.searchInputPanel.Name = "searchInputPanel";
-            this.searchInputPanel.Size = new System.Drawing.Size(297, 35);
-            this.searchInputPanel.TabIndex = 1;
+            searchInputPanel.BorderStyle = BorderStyle.FixedSingle;
+            searchInputPanel.Controls.Add(searchTextBox);
+            searchInputPanel.Controls.Add(searchButtonPanel);
+            searchInputPanel.Location = new Point(19, 0);
+            searchInputPanel.Margin = new Padding(6, 6, 6, 6);
+            searchInputPanel.Name = "searchInputPanel";
+            searchInputPanel.Size = new Size(550, 72);
+            searchInputPanel.TabIndex = 1;
             // 
             // searchTextBox
             // 
-            this.searchTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.searchTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.searchTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.searchTextBox.Location = new System.Drawing.Point(0, 0);
-            this.searchTextBox.Multiline = true;
-            this.searchTextBox.Name = "searchTextBox";
-            this.searchTextBox.PlaceholderText = "Search for products in inventory";
-            this.searchTextBox.Size = new System.Drawing.Size(260, 33);
-            this.searchTextBox.TabIndex = 1;
-            this.searchTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            searchTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            searchTextBox.BorderStyle = BorderStyle.FixedSingle;
+            searchTextBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            searchTextBox.Location = new Point(0, 0);
+            searchTextBox.Margin = new Padding(6, 6, 6, 6);
+            searchTextBox.Multiline = true;
+            searchTextBox.Name = "searchTextBox";
+            searchTextBox.PlaceholderText = "Search for products in inventory";
+            searchTextBox.Size = new Size(481, 68);
+            searchTextBox.TabIndex = 1;
+            searchTextBox.TextAlign = HorizontalAlignment.Center;
             // 
             // searchButtonPanel
             // 
-            this.searchButtonPanel.Controls.Add(this.searchButton);
-            this.searchButtonPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.searchButtonPanel.Location = new System.Drawing.Point(260, 0);
-            this.searchButtonPanel.Name = "searchButtonPanel";
-            this.searchButtonPanel.Size = new System.Drawing.Size(35, 33);
-            this.searchButtonPanel.TabIndex = 0;
+            searchButtonPanel.Controls.Add(searchButton);
+            searchButtonPanel.Dock = DockStyle.Right;
+            searchButtonPanel.Location = new Point(483, 0);
+            searchButtonPanel.Margin = new Padding(6, 6, 6, 6);
+            searchButtonPanel.Name = "searchButtonPanel";
+            searchButtonPanel.Size = new Size(65, 70);
+            searchButtonPanel.TabIndex = 0;
             // 
             // searchButton
             // 
-            this.searchButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.searchButton.BackColor = System.Drawing.Color.White;
-            this.searchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.searchButton.Image = ((System.Drawing.Image)(resources.GetObject("searchButton.Image")));
-            this.searchButton.Location = new System.Drawing.Point(0, 0);
-            this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(35, 33);
-            this.searchButton.TabIndex = 2;
-            this.searchButton.UseVisualStyleBackColor = false;
-            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
+            searchButton.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            searchButton.BackColor = Color.White;
+            searchButton.FlatStyle = FlatStyle.Flat;
+            searchButton.Image = (Image)resources.GetObject("searchButton.Image");
+            searchButton.Location = new Point(0, 0);
+            searchButton.Margin = new Padding(6, 6, 6, 6);
+            searchButton.Name = "searchButton";
+            searchButton.Size = new Size(65, 70);
+            searchButton.TabIndex = 2;
+            searchButton.UseVisualStyleBackColor = false;
+            searchButton.Click += searchButton_Click;
             // 
             // refreshListButton
             // 
-            this.refreshListButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
-            this.refreshListButton.FlatAppearance.BorderSize = 0;
-            this.refreshListButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.refreshListButton.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.refreshListButton.ForeColor = System.Drawing.Color.White;
-            this.refreshListButton.Location = new System.Drawing.Point(514, 1);
-            this.refreshListButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.refreshListButton.Name = "refreshListButton";
-            this.refreshListButton.Size = new System.Drawing.Size(113, 34);
-            this.refreshListButton.TabIndex = 109;
-            this.refreshListButton.Text = "Refresh List";
-            this.refreshListButton.UseVisualStyleBackColor = false;
-            this.refreshListButton.Click += new System.EventHandler(this.refreshListButton_Click);
+            refreshListButton.BackColor = Color.FromArgb(28, 44, 78);
+            refreshListButton.FlatAppearance.BorderSize = 0;
+            refreshListButton.FlatStyle = FlatStyle.Flat;
+            refreshListButton.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            refreshListButton.ForeColor = Color.White;
+            refreshListButton.Location = new Point(955, 2);
+            refreshListButton.Margin = new Padding(7, 6, 7, 6);
+            refreshListButton.Name = "refreshListButton";
+            refreshListButton.Size = new Size(210, 73);
+            refreshListButton.TabIndex = 109;
+            refreshListButton.Text = "Refresh List";
+            refreshListButton.UseVisualStyleBackColor = false;
+            refreshListButton.Click += refreshListButton_Click;
             // 
             // InventoryUserControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(211)))), ((int)(((byte)(177)))));
-            this.Controls.Add(this.refreshListButton);
-            this.Controls.Add(this.searchInputPanel);
-            this.Controls.Add(this.inventoryListView);
-            this.Name = "InventoryUserControl";
-            this.Size = new System.Drawing.Size(1323, 369);
-            this.Load += new System.EventHandler(this.InventoryUserControl_Load);
-            this.searchInputPanel.ResumeLayout(false);
-            this.searchInputPanel.PerformLayout();
-            this.searchButtonPanel.ResumeLayout(false);
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
+            BackColor = Color.FromArgb(227, 211, 177);
+            Controls.Add(refreshListButton);
+            Controls.Add(searchInputPanel);
+            Controls.Add(inventoryListView);
+            Margin = new Padding(6, 6, 6, 6);
+            Name = "InventoryUserControl";
+            Size = new Size(2457, 787);
+            Load += InventoryUserControl_Load;
+            searchInputPanel.ResumeLayout(false);
+            searchInputPanel.PerformLayout();
+            searchButtonPanel.ResumeLayout(false);
+            ResumeLayout(false);
         }
 
         #endregion

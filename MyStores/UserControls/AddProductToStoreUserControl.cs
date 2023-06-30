@@ -26,6 +26,10 @@ namespace MyStores.UserControls
             vendorPanel.Visible = false;
             pricePanel.Visible = false;
             productLookUpPanel.Visible = false;
+            
+            quantityTextBox.Clear();
+            purchasePriceTextBox.Clear();
+            sellingPriceTextBox.Clear();
         }
 
         private void loadVendorComboBox()
@@ -109,6 +113,8 @@ namespace MyStores.UserControls
                 vendorPanel.Visible = true;
                 nextButton.Enabled = true;
                 previousButton.Enabled = false;
+                inventoryListView.Items.Clear();
+                searchTextBox.Clear();
             }
         }
 
@@ -162,7 +168,10 @@ namespace MyStores.UserControls
             nextButton.BringToFront();
             nextButton.Visible = true;
             nextButton.Enabled = true;
-            
+
+            sellingPriceTextBox.Clear();
+            purchasePriceTextBox.Clear();
+            quantityTextBox.Clear();
 
             inventoryListView.Items.Clear();
             searchTextBox.Text = "";
@@ -190,7 +199,8 @@ namespace MyStores.UserControls
         private bool ValidateFields()
         {
             bool result = false;
-            double price;
+            double purchasePrice;
+            double sellingPrice;
             int quantity;
             if (string.IsNullOrEmpty(purchasePriceTextBox.Text))
             {
@@ -213,18 +223,46 @@ namespace MyStores.UserControls
                 result = true;
             }
 
-            if (!double.TryParse(purchasePriceTextBox.Text, out price))
+            if (!purchasePriceErrorLabel.Visible)
             {
-                purchasePriceErrorLabel.Text = @"Product's purchase price must be a valid number";
-                purchasePriceErrorLabel.Visible = true;
-                result = true;
+                if (!double.TryParse(purchasePriceTextBox.Text, out purchasePrice))
+                {
+                    purchasePriceErrorLabel.Text = @"Product's purchase price must be a valid number";
+                    purchasePriceErrorLabel.Visible = true;
+                    result = true;
+                }
             }
 
-            if (!double.TryParse(sellingPriceTextBox.Text, out price))
+            if (!purchasePriceErrorLabel.Visible)
             {
-                sellingPriceErrorLabel.Text = @"Product's selling price must be a valid number";
-                sellingPriceErrorLabel.Visible = true;
-                result = true;
+                purchasePrice = Convert.ToDouble(purchasePriceTextBox.Text);
+                if (purchasePrice <= 0)
+                {
+                    purchasePriceErrorLabel.Text = @"Product's purchase price must be a valid positive number";
+                    purchasePriceErrorLabel.Visible = true;
+                    result = true;
+                }
+            }
+
+            if (!sellingPriceErrorLabel.Visible)
+            {
+                if (!double.TryParse(sellingPriceTextBox.Text, out sellingPrice))
+                {
+                    sellingPriceErrorLabel.Text = @"Product's selling price must be a valid number";
+                    sellingPriceErrorLabel.Visible = true;
+                    result = true;
+                }
+            }
+
+            if (!sellingPriceErrorLabel.Visible)
+            {
+                sellingPrice = Convert.ToDouble(sellingPriceTextBox.Text);
+                if (sellingPrice <= 0)
+                {
+                    sellingPriceErrorLabel.Text = @"Product's selling price must be a valid positive number";
+                    sellingPriceErrorLabel.Visible = true;
+                    result = true;
+                }
             }
 
             if (!int.TryParse(quantityTextBox.Text, out quantity))
