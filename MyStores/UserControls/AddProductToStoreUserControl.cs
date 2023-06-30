@@ -162,7 +162,7 @@ namespace MyStores.UserControls
             nextButton.BringToFront();
             nextButton.Visible = true;
             nextButton.Enabled = true;
-            
+
 
             inventoryListView.Items.Clear();
             searchTextBox.Text = "";
