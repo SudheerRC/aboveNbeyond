@@ -51,14 +51,15 @@
             // 
             // inventoryListView
             // 
+            inventoryListView.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             inventoryListView.BorderStyle = BorderStyle.None;
             inventoryListView.Columns.AddRange(new ColumnHeader[] { barcode, productName, description, productSize, sellingPrice, purchasePrice, vendorName, quantity, edit, delete });
             inventoryListView.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             inventoryListView.GridLines = true;
-            inventoryListView.Location = new Point(19, 85);
-            inventoryListView.Margin = new Padding(6, 6, 6, 6);
+            inventoryListView.Location = new Point(11, 53);
+            inventoryListView.Margin = new Padding(3, 4, 3, 4);
             inventoryListView.Name = "inventoryListView";
-            inventoryListView.Size = new Size(2433, 700);
+            inventoryListView.Size = new Size(1497, 437);
             inventoryListView.TabIndex = 0;
             inventoryListView.UseCompatibleStateImageBehavior = false;
             inventoryListView.View = System.Windows.Forms.View.Details;
@@ -116,10 +117,10 @@
             searchInputPanel.BorderStyle = BorderStyle.FixedSingle;
             searchInputPanel.Controls.Add(searchTextBox);
             searchInputPanel.Controls.Add(searchButtonPanel);
-            searchInputPanel.Location = new Point(19, 0);
-            searchInputPanel.Margin = new Padding(6, 6, 6, 6);
+            searchInputPanel.Location = new Point(11, 0);
+            searchInputPanel.Margin = new Padding(3, 4, 3, 4);
             searchInputPanel.Name = "searchInputPanel";
-            searchInputPanel.Size = new Size(550, 72);
+            searchInputPanel.Size = new Size(339, 46);
             searchInputPanel.TabIndex = 1;
             // 
             // searchTextBox
@@ -128,11 +129,11 @@
             searchTextBox.BorderStyle = BorderStyle.FixedSingle;
             searchTextBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             searchTextBox.Location = new Point(0, 0);
-            searchTextBox.Margin = new Padding(6, 6, 6, 6);
+            searchTextBox.Margin = new Padding(3, 4, 3, 4);
             searchTextBox.Multiline = true;
             searchTextBox.Name = "searchTextBox";
             searchTextBox.PlaceholderText = "Search for products in inventory";
-            searchTextBox.Size = new Size(481, 68);
+            searchTextBox.Size = new Size(297, 43);
             searchTextBox.TabIndex = 1;
             searchTextBox.TextAlign = HorizontalAlignment.Center;
             // 
@@ -140,10 +141,10 @@
             // 
             searchButtonPanel.Controls.Add(searchButton);
             searchButtonPanel.Dock = DockStyle.Right;
-            searchButtonPanel.Location = new Point(483, 0);
-            searchButtonPanel.Margin = new Padding(6, 6, 6, 6);
+            searchButtonPanel.Location = new Point(297, 0);
+            searchButtonPanel.Margin = new Padding(3, 4, 3, 4);
             searchButtonPanel.Name = "searchButtonPanel";
-            searchButtonPanel.Size = new Size(65, 70);
+            searchButtonPanel.Size = new Size(40, 44);
             searchButtonPanel.TabIndex = 0;
             // 
             // searchButton
@@ -153,9 +154,9 @@
             searchButton.FlatStyle = FlatStyle.Flat;
             searchButton.Image = (Image)resources.GetObject("searchButton.Image");
             searchButton.Location = new Point(0, 0);
-            searchButton.Margin = new Padding(6, 6, 6, 6);
+            searchButton.Margin = new Padding(3, 4, 3, 4);
             searchButton.Name = "searchButton";
-            searchButton.Size = new Size(65, 70);
+            searchButton.Size = new Size(40, 44);
             searchButton.TabIndex = 2;
             searchButton.UseVisualStyleBackColor = false;
             searchButton.Click += searchButton_Click;
@@ -167,10 +168,10 @@
             refreshListButton.FlatStyle = FlatStyle.Flat;
             refreshListButton.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             refreshListButton.ForeColor = Color.White;
-            refreshListButton.Location = new Point(955, 2);
-            refreshListButton.Margin = new Padding(7, 6, 7, 6);
+            refreshListButton.Location = new Point(587, 1);
+            refreshListButton.Margin = new Padding(5, 4, 5, 4);
             refreshListButton.Name = "refreshListButton";
-            refreshListButton.Size = new Size(210, 73);
+            refreshListButton.Size = new Size(129, 45);
             refreshListButton.TabIndex = 109;
             refreshListButton.Text = "Refresh List";
             refreshListButton.UseVisualStyleBackColor = false;
@@ -178,16 +179,16 @@
             // 
             // InventoryUserControl
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             BackColor = Color.FromArgb(227, 211, 177);
             Controls.Add(refreshListButton);
             Controls.Add(searchInputPanel);
             Controls.Add(inventoryListView);
-            Margin = new Padding(6, 6, 6, 6);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "InventoryUserControl";
-            Size = new Size(2457, 787);
+            Size = new Size(1512, 492);
             Load += InventoryUserControl_Load;
             searchInputPanel.ResumeLayout(false);
             searchInputPanel.PerformLayout();

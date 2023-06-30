@@ -173,6 +173,7 @@ namespace MyStores.UserControls
             purchasePriceTextBox.Clear();
             quantityTextBox.Clear();
 
+
             inventoryListView.Items.Clear();
             searchTextBox.Text = "";
 
