@@ -45,65 +45,31 @@ namespace MyStores.View
 
             mainHomeTabUserControl.Dock = DockStyle.Fill;
             mainHomeTabUserControl.Visible = true;
-
-            FormScaling();
         }
 
         private void anchorUserControls()
         {
-            mainHomeTabUserControl.Parent = storeContainer.Panel2;
+            mainHomeTabUserControl.Parent = mainPanel;
             mainHomeTabUserControl.Anchor = AnchorStyles.Bottom;
             mainHomeTabUserControl.Anchor = AnchorStyles.Top;
             mainHomeTabUserControl.Anchor = AnchorStyles.Right;
 
-            mainProductsTabUserControl.Parent = storeContainer.Panel2;
+            mainProductsTabUserControl.Parent = mainPanel;
             mainProductsTabUserControl.Anchor = AnchorStyles.Bottom;
             mainProductsTabUserControl.Anchor = AnchorStyles.Top;
             mainProductsTabUserControl.Anchor = AnchorStyles.Right;
 
-            mainVendorTabUserControl.Parent = storeContainer.Panel2;
+            mainVendorTabUserControl.Parent = mainPanel;
             mainVendorTabUserControl.Anchor = AnchorStyles.Bottom;
             mainVendorTabUserControl.Anchor = AnchorStyles.Top;
             mainVendorTabUserControl.Anchor = AnchorStyles.Right;
 
-            mainAddVendorUserControl.Parent = storeContainer.Panel2;
-        }
-
-        private void maxButton_Click(object sender, EventArgs e)
-        {
-            Rectangle screenRectangle = Screen.GetWorkingArea(this);
-            this.MaximizedBounds = screenRectangle;
-            this.maxButton.Visible = false;
-            this.Location = new System.Drawing.Point(0, 0);
-            this.WindowState = FormWindowState.Maximized;
+            mainAddVendorUserControl.Parent = mainPanel;
         }
 
         private void minButton_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
-        }
-
-        private void FormScaling()
-        {
-            //System.Drawing.Rectangle screenRectangle = Screen.GetWorkingArea(this);
-            //var oldWidth = screenRectangle.Width;
-            //var oldHeight = screenRectangle.Height;
-
-            //var scalingPercentage = 0.75;
-            //var newWidth = Convert.ToInt32(oldWidth * scalingPercentage);
-            //var newHeight = Convert.ToInt32(oldHeight * scalingPercentage);
-
-            //screenRectangle.Size = new Size(newWidth, newHeight);
-            //screenRectangle.Location = new System.Drawing.Point((oldWidth - newWidth) / 2, (oldHeight - newHeight) / 2);
-
-            //this.MaximizedBounds = screenRectangle;
-            //this.WindowState = FormWindowState.Maximized;
-        }
-
-        private void restoreButton_Click(object sender, EventArgs e)
-        {
-            this.maxButton.Visible = true;
-            FormScaling();
         }
 
         private void homeMenuButton_Click(object sender, EventArgs e)
