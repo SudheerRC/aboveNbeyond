@@ -179,3 +179,41 @@ CREATE TABLE [dbo].[StoreManagers](
 	[managerID] ASC
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[OrderDetails](
+	[orderID] [int] IDENTITY(1,1) NOT NULL,
+	[orderDate] [date],
+	[expectedDeliveryDate] [date],
+	[deliveredDate] [date]
+	[userID] [int] NOT NULL REFERENCES UserDetails(userID),
+ CONSTRAINT [PK_OrderDetails] PRIMARY KEY 
+(
+	[orderID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[Orders](
+	[orderID] [int] NOT NULL REFERENCES OrderDetails(orderID),
+	[invetoryID] [int] NOT NULL REFERENCES Inventory(inventoryID),
+	[purchasePrice] [decimal](7,2),
+	[quantity] [int],
+ CONSTRAINT [PK_Orders] PRIMARY KEY 
+(
+	[orderID] ASC,
+	[inventoryID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
