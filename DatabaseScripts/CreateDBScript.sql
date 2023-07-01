@@ -191,7 +191,7 @@ CREATE TABLE [dbo].[OrderDetails](
 	[orderID] [int] IDENTITY(1,1) NOT NULL,
 	[orderDate] [date],
 	[expectedDeliveryDate] [date],
-	[deliveredDate] [date]
+	[deliveredDate] [date],
 	[userID] [int] NOT NULL REFERENCES UserDetails(userID),
  CONSTRAINT [PK_OrderDetails] PRIMARY KEY 
 (
@@ -208,7 +208,7 @@ GO
 
 CREATE TABLE [dbo].[Orders](
 	[orderID] [int] NOT NULL REFERENCES OrderDetails(orderID),
-	[invetoryID] [int] NOT NULL REFERENCES Inventory(inventoryID),
+	[inventoryID] [int] NOT NULL REFERENCES Inventory(inventoryID),
 	[purchasePrice] [decimal](7,2),
 	[quantity] [int],
  CONSTRAINT [PK_Orders] PRIMARY KEY 
