@@ -301,9 +301,9 @@ namespace MyStores.Dal
             using var connection = DbConnection.GetConnection();
             connection.Open();
 
-            string query =
-                "SELECT productName, productSize, description, departmentName, barcode, sellingPrice, productImage " +
-                "FROM PRODUCT WHERE productID = @productId";
+            string query = "SELECT productName, productSize, description, departmentName, " +
+                           "barcode, sellingPrice, productImage " +
+                           "FROM PRODUCT WHERE productID = @productId";
             using var command = new SqlCommand(query, connection);
 
             command.Parameters.Add("@productId", System.Data.SqlDbType.Int);
@@ -336,14 +336,9 @@ namespace MyStores.Dal
                     ProductSize = size,
                     DepartmentName = department,
                     SellingPrice = decimal.ToDouble(sellingPrice),
+                    Image = GetBytesFromStream(imageStream),
                     Barcode = barcode
                 };
-
-                using MemoryStream ms = new MemoryStream();
-                {
-                    imageStream.CopyTo(ms);
-                    foundProduct.Image = ms.ToArray();
-                }
             }
 
             return foundProduct;
@@ -1019,6 +1014,15 @@ namespace MyStores.Dal
             }
 
             return vendors;
+        }
+
+        private byte[] GetBytesFromStream(Stream imageStream)
+        {
+            using MemoryStream ms = new MemoryStream();
+            {
+                imageStream.CopyTo(ms);
+                return ms.ToArray();
+            }
         }
 
     }
