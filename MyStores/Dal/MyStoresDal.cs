@@ -652,8 +652,8 @@ namespace MyStores.Dal
             using var connection = DbConnection.GetConnection();
             connection.Open();
             string query =
-                "INSERT INTO Product(productName, productSize, description, departmentName, barcode, sellingPrice) " +
-                "VALUES (@name, @size, @description, @department, @barcode, @price)";
+                "INSERT INTO Product(productName, productSize, description, departmentName, barcode, sellingPrice, productImage) " +
+                "VALUES (@name, @size, @description, @department, @barcode, @price, @image)";
             using var command = new SqlCommand(query, connection);
 
             command.Parameters.Add("@name", System.Data.SqlDbType.VarChar);
@@ -673,6 +673,9 @@ namespace MyStores.Dal
 
             command.Parameters.Add("@price", System.Data.SqlDbType.Decimal);
             command.Parameters["@price"].Value = newProduct.SellingPrice;
+
+            command.Parameters.Add("@image", System.Data.SqlDbType.Image);
+            command.Parameters["@image"].Value = newProduct.Image;
 
             command.ExecuteNonQuery();
         }

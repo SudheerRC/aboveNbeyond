@@ -29,84 +29,87 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HighlightChipUserControl));
-            this.chipPanel = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.highlightNameLabel = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.highlightChipPictureBox = new System.Windows.Forms.PictureBox();
-            this.chipPanel.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.highlightChipPictureBox)).BeginInit();
-            this.SuspendLayout();
+            chipPanel = new Panel();
+            highlightChipPictureBox = new PictureBox();
+            panel2 = new Panel();
+            label1 = new Label();
+            highlightNameLabel = new Label();
+            chipPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)highlightChipPictureBox).BeginInit();
+            panel2.SuspendLayout();
+            SuspendLayout();
             // 
             // chipPanel
             // 
-            this.chipPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
-            this.chipPanel.Controls.Add(this.highlightChipPictureBox);
-            this.chipPanel.Controls.Add(this.panel2);
-            this.chipPanel.Location = new System.Drawing.Point(3, 0);
-            this.chipPanel.Name = "chipPanel";
-            this.chipPanel.Size = new System.Drawing.Size(182, 55);
-            this.chipPanel.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.highlightNameLabel);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(39, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(143, 55);
-            this.panel2.TabIndex = 0;
-            // 
-            // highlightNameLabel
-            // 
-            this.highlightNameLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.highlightNameLabel.ForeColor = System.Drawing.Color.White;
-            this.highlightNameLabel.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.highlightNameLabel.Location = new System.Drawing.Point(0, 0);
-            this.highlightNameLabel.Name = "highlightNameLabel";
-            this.highlightNameLabel.Size = new System.Drawing.Size(143, 23);
-            this.highlightNameLabel.TabIndex = 0;
-            this.highlightNameLabel.Text = "Total Sales";
-            this.highlightNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label1
-            // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(0, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(143, 32);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "$ 4,082.96";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            chipPanel.BackColor = Color.FromArgb(28, 44, 78);
+            chipPanel.Controls.Add(highlightChipPictureBox);
+            chipPanel.Controls.Add(panel2);
+            chipPanel.Location = new Point(3, 0);
+            chipPanel.Margin = new Padding(3, 4, 3, 4);
+            chipPanel.Name = "chipPanel";
+            chipPanel.Size = new Size(208, 73);
+            chipPanel.TabIndex = 0;
             // 
             // highlightChipPictureBox
             // 
-            this.highlightChipPictureBox.BackColor = System.Drawing.Color.White;
-            this.highlightChipPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("highlightChipPictureBox.Image")));
-            this.highlightChipPictureBox.Location = new System.Drawing.Point(3, 3);
-            this.highlightChipPictureBox.Name = "highlightChipPictureBox";
-            this.highlightChipPictureBox.Size = new System.Drawing.Size(48, 48);
-            this.highlightChipPictureBox.TabIndex = 1;
-            this.highlightChipPictureBox.TabStop = false;
+            highlightChipPictureBox.BackColor = Color.White;
+            highlightChipPictureBox.Image = (Image)resources.GetObject("highlightChipPictureBox.Image");
+            highlightChipPictureBox.Location = new Point(3, 4);
+            highlightChipPictureBox.Margin = new Padding(3, 4, 3, 4);
+            highlightChipPictureBox.Name = "highlightChipPictureBox";
+            highlightChipPictureBox.Size = new Size(55, 64);
+            highlightChipPictureBox.TabIndex = 1;
+            highlightChipPictureBox.TabStop = false;
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(label1);
+            panel2.Controls.Add(highlightNameLabel);
+            panel2.Dock = DockStyle.Right;
+            panel2.Location = new Point(45, 0);
+            panel2.Margin = new Padding(3, 4, 3, 4);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(163, 73);
+            panel2.TabIndex = 0;
+            // 
+            // label1
+            // 
+            label1.Dock = DockStyle.Bottom;
+            label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(0, 30);
+            label1.Name = "label1";
+            label1.Size = new Size(163, 43);
+            label1.TabIndex = 1;
+            label1.Text = "$ 4,082.96";
+            label1.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // highlightNameLabel
+            // 
+            highlightNameLabel.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            highlightNameLabel.ForeColor = Color.White;
+            highlightNameLabel.ImageAlign = ContentAlignment.BottomLeft;
+            highlightNameLabel.Location = new Point(0, 0);
+            highlightNameLabel.Name = "highlightNameLabel";
+            highlightNameLabel.Size = new Size(163, 31);
+            highlightNameLabel.TabIndex = 0;
+            highlightNameLabel.Text = "Total Sales";
+            highlightNameLabel.TextAlign = ContentAlignment.MiddleRight;
             // 
             // HighlightChipUserControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.Controls.Add(this.chipPanel);
-            this.Name = "HighlightChipUserControl";
-            this.Size = new System.Drawing.Size(185, 58);
-            this.Load += new System.EventHandler(this.HighlightChipUserControl_Load);
-            this.chipPanel.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.highlightChipPictureBox)).EndInit();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ButtonShadow;
+            Controls.Add(chipPanel);
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "HighlightChipUserControl";
+            Size = new Size(211, 77);
+            Load += HighlightChipUserControl_Load;
+            chipPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)highlightChipPictureBox).EndInit();
+            panel2.ResumeLayout(false);
+            ResumeLayout(false);
         }
 
         #endregion
