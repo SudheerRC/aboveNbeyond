@@ -336,7 +336,7 @@ namespace MyStores.Dal
                     ProductSize = size,
                     DepartmentName = department,
                     SellingPrice = decimal.ToDouble(sellingPrice),
-                    Image = GetBytesFromStream(imageStream),
+                    Image = MagicImageConverter.GetBytesFromStream(imageStream),
                     Barcode = barcode
                 };
             }
@@ -1016,16 +1016,6 @@ namespace MyStores.Dal
             return vendors;
         }
 
-        private byte[] GetBytesFromStream(Stream imageStream)
-        {
-            using MemoryStream ms = new MemoryStream();
-            {
-                imageStream.CopyTo(ms);
-                return ms.ToArray();
-            }
-        }
-
-
         public List<InventoryItem> SearchInventoryWithVendorId(int vendorId)
         {
             var inventoryItems = new List<InventoryItem>();
@@ -1033,40 +1023,41 @@ namespace MyStores.Dal
             connection.Open();
 
             string query =
-                "SELECT vendorID, purchasePrice, Inventory.sellingPrice, quantity, Inventory.productID FROM Product,Inventory " +
-                "WHERE Inventory.productID = Product.productID and Inventory.storeID = @storeID and ProductName LIKE '%' + @productName +'%'";
-                "SELECT productName, description, productImage, "
+                "SELECT productName, description, productImage, purchasePrice, quantity, Inventory.productID FROM Product, Inventory " +
+                "WHERE Inventory.productID = Product.productID and Inventory.vendorId = @vendorId";
             using var command = new SqlCommand(query, connection);
 
-            command.Parameters.Add("@storeID", System.Data.SqlDbType.Int);
-            command.Parameters["@storeID"].Value = storeId;
-            command.Parameters.Add("@productName", System.Data.SqlDbType.VarChar);
-            command.Parameters["@productName"].Value = productName;
+            command.Parameters.Add("@vendorId", System.Data.SqlDbType.Int);
+            command.Parameters["@vendorId"].Value = vendorId;
             using var reader = command.ExecuteReader();
 
-            var vendorIdOrdinal = reader.GetOrdinal("vendorID");
+            var productNameOrdinal = reader.GetOrdinal("productName");
+            var descriptionOrdinal = reader.GetOrdinal("description");
             var purchasePriceOrdinal = reader.GetOrdinal("purchasePrice");
-            var sellingPriceOrdinal = reader.GetOrdinal("sellingPrice");
             var quantityOrdinal = reader.GetOrdinal("quantity");
+            var imageOrdinal = reader.GetOrdinal("productImage");
             var productIdOrdinal = reader.GetOrdinal("productID");
 
             while (reader.Read())
             {
-                var vendorId = reader.GetInt32(vendorIdOrdinal);
+                var name = reader.GetString(productNameOrdinal);
+                var description = reader.IsDBNull(descriptionOrdinal) ? "" : reader.GetString(descriptionOrdinal);
                 decimal purchasePrice = reader.GetDecimal(purchasePriceOrdinal);
-                decimal sellingPrice = reader.GetDecimal(sellingPriceOrdinal);
                 var quantity = reader.GetInt32(quantityOrdinal);
+                var imageStream = reader.GetStream(imageOrdinal);
                 var productId = reader.GetInt32(productIdOrdinal);
 
                 inventoryItems.Add(new InventoryItem
                 {
                     VendorId = vendorId,
                     Quantity = quantity,
-                    SellingPrice = decimal.ToDouble(sellingPrice),
                     PurchasePrice = decimal.ToDouble(purchasePrice),
                     Item = new Product
                     {
-                        Id = productId
+                        Id = productId,
+                        Name = name,
+                        Description = description,
+                        Image = MagicImageConverter.GetBytesFromStream(imageStream),
                     }
 
                 });

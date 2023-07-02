@@ -215,5 +215,9 @@ namespace MyStores.Controller
         {
             return _storesDal.GetAllManagersOfStore(storeId);
         }
-    }
+
+        public List<InventoryItem> SearchInventoryWithVendorId(int vendorId)
+        {
+            return _storesDal.SearchInventoryWithVendorId(vendorId);
+        }
 }

@@ -63,7 +63,7 @@ namespace MyStores.UserControls
                         ProductSize = sizeTextBox.Text,
                         Barcode = barcodeTextBox.Text,
                         DepartmentName = departmentTextBox.Text,
-                        Image = ConvertImageToByte(pictureBox.Image),
+                        Image = MagicImageConverter.ConvertImageToByte(pictureBox.Image),
                         SellingPrice = Double.Parse(priceTextBox.Text)
                     };
                     _controller.AddProduct(newProduct);
@@ -79,23 +79,6 @@ namespace MyStores.UserControls
                 errorLabel.ForeColor = Color.Red;
                 errorLabel.Visible = true;
             }
-        }
-
-        private Image ConvertByteToImage(byte[] data)
-        {
-            using MemoryStream ms = new MemoryStream(data);
-            {
-                return Image.FromStream(ms);
-            }
-        }
-
-        private byte[] ConvertImageToByte(Image img)
-        {
-            using MemoryStream ms = new MemoryStream();
-            {
-                img.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
-                return ms.ToArray();
-            };
         }
 
         private void priceTextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -179,7 +162,7 @@ namespace MyStores.UserControls
                 departmentTextBox.Text = product.DepartmentName;
                 priceTextBox.Text = Convert.ToString(product.SellingPrice);
                 barcodeTextBox.Text = product.Barcode;
-                savedPicture.Image = ConvertByteToImage(product.Image);
+                savedPicture.Image = MagicImageConverter.ConvertByteToImage(product.Image);
 
                 addButton.Visible = false;
                 editButton.Visible = true;
