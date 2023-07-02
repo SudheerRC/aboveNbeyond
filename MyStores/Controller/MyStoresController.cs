@@ -203,7 +203,7 @@ namespace MyStores.Controller
 
         public bool CheckStoreVendorExists(int storeId, int vendorId)
         {
-           return _storesDal.CheckStoreVendorExists(storeId, vendorId);
+            return _storesDal.CheckStoreVendorExists(storeId, vendorId);
         }
 
         public List<Vendor> SearchVendorsWithName(string name)
@@ -220,4 +220,5 @@ namespace MyStores.Controller
         {
             return _storesDal.SearchInventoryWithVendorId(vendorId);
         }
+    }
 }

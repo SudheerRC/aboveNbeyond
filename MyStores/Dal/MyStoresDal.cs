@@ -1060,10 +1060,10 @@ namespace MyStores.Dal
                         Image = MagicImageConverter.GetBytesFromStream(imageStream),
                     }
 
-        //        });
-        //    }
+                });
+            }
 
-        //    return inventoryItems;
-        //}
+            return inventoryItems;
+        }
     }
 }
