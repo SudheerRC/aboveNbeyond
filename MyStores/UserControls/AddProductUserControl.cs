@@ -1,5 +1,4 @@
-﻿using System.DirectoryServices.ActiveDirectory;
-using MyStores.Controller;
+﻿using MyStores.Controller;
 using MyStores.Model;
 
 namespace MyStores.UserControls
@@ -7,10 +6,16 @@ namespace MyStores.UserControls
     public partial class AddProductUserControl : UserControl
     {
         private readonly MyStoresController _controller;
+        private int _productId;
         public AddProductUserControl()
         {
             InitializeComponent();
             _controller = new MyStoresController();
+        }
+
+        public void SetProductId(int id)
+        {
+            _productId = id;
         }
 
         private void pictureBox_Click(object sender, EventArgs e)
@@ -49,6 +54,8 @@ namespace MyStores.UserControls
                     barcodeErrorLabel.Visible = false;
                     errorLabel.Visible = false;
 
+                    pictureBox.Image ??= defaultProductPicture.Image;
+
                     var newProduct = new Product
                     {
                         Name = nameTextBox.Text,
@@ -56,7 +63,7 @@ namespace MyStores.UserControls
                         ProductSize = sizeTextBox.Text,
                         Barcode = barcodeTextBox.Text,
                         DepartmentName = departmentTextBox.Text,
-                        Image = pictureBox.Image,
+                        Image = ConvertImageToByte(pictureBox.Image),
                         SellingPrice = Double.Parse(priceTextBox.Text)
                     };
                     _controller.AddProduct(newProduct);
@@ -72,6 +79,23 @@ namespace MyStores.UserControls
                 errorLabel.ForeColor = Color.Red;
                 errorLabel.Visible = true;
             }
+        }
+
+        private Image ConvertByteToImage(byte[] data)
+        {
+            using MemoryStream ms = new MemoryStream(data);
+            {
+                return Image.FromStream(ms);
+            }
+        }
+
+        private byte[] ConvertImageToByte(Image img)
+        {
+            using MemoryStream ms = new MemoryStream();
+            {
+                img.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                return ms.ToArray();
+            };
         }
 
         private void priceTextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -141,6 +165,31 @@ namespace MyStores.UserControls
         {
             barcodeErrorLabel.Visible = false;
             errorLabel.Visible = false;
+        }
+
+        private void AddProductUserControl_Load(object sender, EventArgs e)
+        {
+            if (_productId > 0)
+            {
+                var product = _controller.SearchProductWithId(_productId);
+
+                nameTextBox.Text = product.Name;
+                descriptionTextBox.Text = product.Description;
+                sizeTextBox.Text = product.ProductSize;
+                departmentTextBox.Text = product.DepartmentName;
+                priceTextBox.Text = Convert.ToString(product.SellingPrice);
+                barcodeTextBox.Text = product.Barcode;
+                savedPicture.Image = ConvertByteToImage(product.Image);
+
+                addButton.Visible = false;
+                editButton.Visible = true;
+            }
+            else
+            {
+                addButton.Visible = true;
+                editButton.Visible = false;
+            }
+
         }
     }
 }

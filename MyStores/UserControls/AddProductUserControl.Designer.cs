@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddProductUserControl));
             titleLabel = new Label();
             nameTextBox = new TextBox();
             productNameLabel = new Label();
@@ -51,8 +52,14 @@
             nameErrorLabel = new Label();
             priceErrorLabel = new Label();
             barcodeErrorLabel = new Label();
+            savedPicture = new PictureBox();
+            savedImage = new Label();
+            editButton = new Button();
+            defaultProductPicture = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox).BeginInit();
             imageGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)savedPicture).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)defaultProductPicture).BeginInit();
             SuspendLayout();
             // 
             // titleLabel
@@ -60,20 +67,20 @@
             titleLabel.AutoSize = true;
             titleLabel.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
             titleLabel.ForeColor = SystemColors.ControlText;
-            titleLabel.Location = new Point(95, 17);
-            titleLabel.Margin = new Padding(2, 0, 2, 0);
+            titleLabel.Location = new Point(176, 36);
+            titleLabel.Margin = new Padding(4, 0, 4, 0);
             titleLabel.Name = "titleLabel";
-            titleLabel.Size = new Size(121, 31);
+            titleLabel.Size = new Size(290, 58);
             titleLabel.TabIndex = 66;
-            titleLabel.Text = "Add Product";
+            titleLabel.Text = "Product Details";
             titleLabel.UseCompatibleTextRendering = true;
             // 
             // nameTextBox
             // 
-            nameTextBox.Location = new Point(152, 66);
-            nameTextBox.Margin = new Padding(2, 1, 2, 1);
+            nameTextBox.Location = new Point(282, 141);
+            nameTextBox.Margin = new Padding(4, 2, 4, 2);
             nameTextBox.Name = "nameTextBox";
-            nameTextBox.Size = new Size(158, 23);
+            nameTextBox.Size = new Size(290, 39);
             nameTextBox.TabIndex = 67;
             nameTextBox.GotFocus += NameTextBox_GotFocus;
             // 
@@ -81,10 +88,10 @@
             // 
             productNameLabel.AutoSize = true;
             productNameLabel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            productNameLabel.Location = new Point(35, 66);
-            productNameLabel.Margin = new Padding(2, 0, 2, 0);
+            productNameLabel.Location = new Point(65, 141);
+            productNameLabel.Margin = new Padding(4, 0, 4, 0);
             productNameLabel.Name = "productNameLabel";
-            productNameLabel.Size = new Size(101, 19);
+            productNameLabel.Size = new Size(193, 37);
             productNameLabel.TabIndex = 68;
             productNameLabel.Text = "Product name*";
             // 
@@ -92,65 +99,66 @@
             // 
             descriptionLabel.AutoSize = true;
             descriptionLabel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            descriptionLabel.Location = new Point(35, 140);
-            descriptionLabel.Margin = new Padding(2, 0, 2, 0);
+            descriptionLabel.Location = new Point(65, 299);
+            descriptionLabel.Margin = new Padding(4, 0, 4, 0);
             descriptionLabel.Name = "descriptionLabel";
-            descriptionLabel.Size = new Size(78, 19);
+            descriptionLabel.Size = new Size(152, 37);
             descriptionLabel.TabIndex = 70;
             descriptionLabel.Text = "Description";
             // 
             // descriptionTextBox
             // 
-            descriptionTextBox.Location = new Point(152, 122);
+            descriptionTextBox.Location = new Point(282, 260);
+            descriptionTextBox.Margin = new Padding(6);
             descriptionTextBox.Name = "descriptionTextBox";
-            descriptionTextBox.Size = new Size(158, 51);
+            descriptionTextBox.Size = new Size(290, 104);
             descriptionTextBox.TabIndex = 71;
             descriptionTextBox.Text = "";
             // 
             // sizeTextBox
             // 
-            sizeTextBox.Location = new Point(159, 218);
-            sizeTextBox.Margin = new Padding(2, 1, 2, 1);
+            sizeTextBox.Location = new Point(295, 465);
+            sizeTextBox.Margin = new Padding(4, 2, 4, 2);
             sizeTextBox.Name = "sizeTextBox";
-            sizeTextBox.Size = new Size(151, 23);
+            sizeTextBox.Size = new Size(277, 39);
             sizeTextBox.TabIndex = 72;
             // 
             // sizeLabel
             // 
             sizeLabel.AutoSize = true;
             sizeLabel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            sizeLabel.Location = new Point(42, 218);
-            sizeLabel.Margin = new Padding(2, 0, 2, 0);
+            sizeLabel.Location = new Point(78, 465);
+            sizeLabel.Margin = new Padding(4, 0, 4, 0);
             sizeLabel.Name = "sizeLabel";
-            sizeLabel.Size = new Size(83, 19);
+            sizeLabel.Size = new Size(160, 37);
             sizeLabel.TabIndex = 73;
             sizeLabel.Text = "Product size";
             // 
             // departmentTextBox
             // 
-            departmentTextBox.Location = new Point(159, 272);
-            departmentTextBox.Margin = new Padding(2, 1, 2, 1);
+            departmentTextBox.Location = new Point(295, 580);
+            departmentTextBox.Margin = new Padding(4, 2, 4, 2);
             departmentTextBox.Name = "departmentTextBox";
-            departmentTextBox.Size = new Size(151, 23);
+            departmentTextBox.Size = new Size(277, 39);
             departmentTextBox.TabIndex = 74;
             // 
             // departmentLabel
             // 
             departmentLabel.AutoSize = true;
             departmentLabel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            departmentLabel.Location = new Point(42, 272);
-            departmentLabel.Margin = new Padding(2, 0, 2, 0);
+            departmentLabel.Location = new Point(78, 580);
+            departmentLabel.Margin = new Padding(4, 0, 4, 0);
             departmentLabel.Name = "departmentLabel";
-            departmentLabel.Size = new Size(83, 19);
+            departmentLabel.Size = new Size(159, 37);
             departmentLabel.TabIndex = 75;
             departmentLabel.Text = "Department";
             // 
             // priceTextBox
             // 
-            priceTextBox.Location = new Point(159, 320);
-            priceTextBox.Margin = new Padding(2, 1, 2, 1);
+            priceTextBox.Location = new Point(295, 683);
+            priceTextBox.Margin = new Padding(4, 2, 4, 2);
             priceTextBox.Name = "priceTextBox";
-            priceTextBox.Size = new Size(151, 23);
+            priceTextBox.Size = new Size(277, 39);
             priceTextBox.TabIndex = 76;
             priceTextBox.GotFocus += PriceTextBox_GotFocus;
             priceTextBox.KeyPress += priceTextBox_KeyPress;
@@ -159,19 +167,19 @@
             // 
             sellingPriceLabel.AutoSize = true;
             sellingPriceLabel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            sellingPriceLabel.Location = new Point(42, 320);
-            sellingPriceLabel.Margin = new Padding(2, 0, 2, 0);
+            sellingPriceLabel.Location = new Point(78, 683);
+            sellingPriceLabel.Margin = new Padding(4, 0, 4, 0);
             sellingPriceLabel.Name = "sellingPriceLabel";
-            sellingPriceLabel.Size = new Size(87, 19);
+            sellingPriceLabel.Size = new Size(172, 37);
             sellingPriceLabel.TabIndex = 77;
             sellingPriceLabel.Text = "Selling Price*";
             // 
             // barcodeTextBox
             // 
-            barcodeTextBox.Location = new Point(159, 373);
-            barcodeTextBox.Margin = new Padding(2, 1, 2, 1);
+            barcodeTextBox.Location = new Point(295, 796);
+            barcodeTextBox.Margin = new Padding(4, 2, 4, 2);
             barcodeTextBox.Name = "barcodeTextBox";
-            barcodeTextBox.Size = new Size(151, 23);
+            barcodeTextBox.Size = new Size(277, 39);
             barcodeTextBox.TabIndex = 78;
             barcodeTextBox.GotFocus += BarcodeTextBox_GotFocus;
             barcodeTextBox.KeyPress += BarcodeTextBox_KeyPress;
@@ -180,10 +188,10 @@
             // 
             barcodeLabel.AutoSize = true;
             barcodeLabel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            barcodeLabel.Location = new Point(42, 373);
-            barcodeLabel.Margin = new Padding(2, 0, 2, 0);
+            barcodeLabel.Location = new Point(78, 796);
+            barcodeLabel.Margin = new Padding(4, 0, 4, 0);
             barcodeLabel.Name = "barcodeLabel";
-            barcodeLabel.Size = new Size(64, 19);
+            barcodeLabel.Size = new Size(124, 37);
             barcodeLabel.TabIndex = 79;
             barcodeLabel.Text = "Barcode*";
             // 
@@ -191,19 +199,20 @@
             // 
             imageLabel.AutoSize = true;
             imageLabel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            imageLabel.Location = new Point(42, 457);
-            imageLabel.Margin = new Padding(2, 0, 2, 0);
+            imageLabel.Location = new Point(78, 975);
+            imageLabel.Margin = new Padding(4, 0, 4, 0);
             imageLabel.Name = "imageLabel";
-            imageLabel.Size = new Size(47, 19);
+            imageLabel.Size = new Size(91, 37);
             imageLabel.TabIndex = 80;
             imageLabel.Text = "Image";
             // 
             // pictureBox
             // 
             pictureBox.Dock = DockStyle.Fill;
-            pictureBox.Location = new Point(3, 19);
+            pictureBox.Location = new Point(6, 38);
+            pictureBox.Margin = new Padding(6);
             pictureBox.Name = "pictureBox";
-            pictureBox.Size = new Size(161, 78);
+            pictureBox.Size = new Size(298, 169);
             pictureBox.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox.TabIndex = 81;
             pictureBox.TabStop = false;
@@ -212,9 +221,11 @@
             // imageGroupBox
             // 
             imageGroupBox.Controls.Add(pictureBox);
-            imageGroupBox.Location = new Point(159, 420);
+            imageGroupBox.Location = new Point(295, 896);
+            imageGroupBox.Margin = new Padding(6);
             imageGroupBox.Name = "imageGroupBox";
-            imageGroupBox.Size = new Size(167, 100);
+            imageGroupBox.Padding = new Padding(6);
+            imageGroupBox.Size = new Size(310, 213);
             imageGroupBox.TabIndex = 82;
             imageGroupBox.TabStop = false;
             imageGroupBox.Text = "Open Image";
@@ -228,10 +239,10 @@
             // 
             clearButton.BackColor = Color.White;
             clearButton.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            clearButton.Location = new Point(213, 571);
-            clearButton.Margin = new Padding(2, 1, 2, 1);
+            clearButton.Location = new Point(396, 1218);
+            clearButton.Margin = new Padding(4, 2, 4, 2);
             clearButton.Name = "clearButton";
-            clearButton.Size = new Size(81, 29);
+            clearButton.Size = new Size(150, 62);
             clearButton.TabIndex = 84;
             clearButton.Text = "Clear";
             clearButton.UseVisualStyleBackColor = false;
@@ -241,12 +252,12 @@
             // 
             addButton.BackColor = Color.White;
             addButton.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            addButton.Location = new Point(53, 571);
-            addButton.Margin = new Padding(2, 1, 2, 1);
+            addButton.Location = new Point(98, 1218);
+            addButton.Margin = new Padding(4, 2, 4, 2);
             addButton.Name = "addButton";
-            addButton.Size = new Size(81, 29);
+            addButton.Size = new Size(206, 62);
             addButton.TabIndex = 83;
-            addButton.Text = "Add Product";
+            addButton.Text = "Add";
             addButton.UseVisualStyleBackColor = false;
             addButton.Click += AddButton_Click;
             // 
@@ -254,10 +265,10 @@
             // 
             errorLabel.AutoSize = true;
             errorLabel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            errorLabel.Location = new Point(42, 540);
-            errorLabel.Margin = new Padding(2, 0, 2, 0);
+            errorLabel.Location = new Point(78, 1152);
+            errorLabel.Margin = new Padding(4, 0, 4, 0);
             errorLabel.Name = "errorLabel";
-            errorLabel.Size = new Size(66, 19);
+            errorLabel.Size = new Size(125, 37);
             errorLabel.TabIndex = 85;
             errorLabel.Text = "Error text";
             errorLabel.TextAlign = ContentAlignment.MiddleCenter;
@@ -269,10 +280,10 @@
             nameErrorLabel.AutoSize = true;
             nameErrorLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             nameErrorLabel.ForeColor = Color.Red;
-            nameErrorLabel.Location = new Point(58, 97);
-            nameErrorLabel.Margin = new Padding(2, 0, 2, 0);
+            nameErrorLabel.Location = new Point(108, 207);
+            nameErrorLabel.Margin = new Padding(4, 0, 4, 0);
             nameErrorLabel.Name = "nameErrorLabel";
-            nameErrorLabel.Size = new Size(55, 15);
+            nameErrorLabel.Size = new Size(111, 32);
             nameErrorLabel.TabIndex = 86;
             nameErrorLabel.Text = "Error text";
             nameErrorLabel.TextAlign = ContentAlignment.MiddleCenter;
@@ -284,10 +295,10 @@
             priceErrorLabel.AutoSize = true;
             priceErrorLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             priceErrorLabel.ForeColor = Color.Red;
-            priceErrorLabel.Location = new Point(58, 348);
-            priceErrorLabel.Margin = new Padding(2, 0, 2, 0);
+            priceErrorLabel.Location = new Point(108, 742);
+            priceErrorLabel.Margin = new Padding(4, 0, 4, 0);
             priceErrorLabel.Name = "priceErrorLabel";
-            priceErrorLabel.Size = new Size(55, 15);
+            priceErrorLabel.Size = new Size(111, 32);
             priceErrorLabel.TabIndex = 87;
             priceErrorLabel.Text = "Error text";
             priceErrorLabel.TextAlign = ContentAlignment.MiddleCenter;
@@ -299,21 +310,68 @@
             barcodeErrorLabel.AutoSize = true;
             barcodeErrorLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             barcodeErrorLabel.ForeColor = Color.Red;
-            barcodeErrorLabel.Location = new Point(58, 407);
-            barcodeErrorLabel.Margin = new Padding(2, 0, 2, 0);
+            barcodeErrorLabel.Location = new Point(108, 868);
+            barcodeErrorLabel.Margin = new Padding(4, 0, 4, 0);
             barcodeErrorLabel.Name = "barcodeErrorLabel";
-            barcodeErrorLabel.Size = new Size(55, 15);
+            barcodeErrorLabel.Size = new Size(111, 32);
             barcodeErrorLabel.TabIndex = 88;
             barcodeErrorLabel.Text = "Error text";
             barcodeErrorLabel.TextAlign = ContentAlignment.MiddleCenter;
             barcodeErrorLabel.UseWaitCursor = true;
             barcodeErrorLabel.Visible = false;
             // 
+            // savedPicture
+            // 
+            savedPicture.Location = new Point(710, 488);
+            savedPicture.Name = "savedPicture";
+            savedPicture.Size = new Size(366, 328);
+            savedPicture.SizeMode = PictureBoxSizeMode.AutoSize;
+            savedPicture.TabIndex = 89;
+            savedPicture.TabStop = false;
+            // 
+            // savedImage
+            // 
+            savedImage.AutoSize = true;
+            savedImage.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            savedImage.Location = new Point(720, 389);
+            savedImage.Margin = new Padding(4, 0, 4, 0);
+            savedImage.Name = "savedImage";
+            savedImage.Size = new Size(169, 37);
+            savedImage.TabIndex = 90;
+            savedImage.Text = "Saved Image";
+            // 
+            // editButton
+            // 
+            editButton.BackColor = Color.White;
+            editButton.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            editButton.Location = new Point(98, 1218);
+            editButton.Margin = new Padding(4, 2, 4, 2);
+            editButton.Name = "editButton";
+            editButton.Size = new Size(206, 62);
+            editButton.TabIndex = 91;
+            editButton.Text = "Edit";
+            editButton.UseVisualStyleBackColor = false;
+            editButton.Visible = false;
+            // 
+            // defaultProductPicture
+            // 
+            defaultProductPicture.Image = (Image)resources.GetObject("defaultProductPicture.Image");
+            defaultProductPicture.Location = new Point(824, 1077);
+            defaultProductPicture.Name = "defaultProductPicture";
+            defaultProductPicture.Size = new Size(96, 96);
+            defaultProductPicture.SizeMode = PictureBoxSizeMode.AutoSize;
+            defaultProductPicture.TabIndex = 92;
+            defaultProductPicture.TabStop = false;
+            defaultProductPicture.Visible = false;
+            // 
             // AddProductUserControl
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.BlanchedAlmond;
+            Controls.Add(defaultProductPicture);
+            Controls.Add(savedImage);
+            Controls.Add(savedPicture);
             Controls.Add(barcodeErrorLabel);
             Controls.Add(priceErrorLabel);
             Controls.Add(nameErrorLabel);
@@ -335,11 +393,16 @@
             Controls.Add(nameTextBox);
             Controls.Add(productNameLabel);
             Controls.Add(titleLabel);
+            Controls.Add(editButton);
+            Margin = new Padding(6);
             Name = "AddProductUserControl";
-            Size = new Size(359, 627);
+            Size = new Size(1191, 1338);
+            Load += AddProductUserControl_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox).EndInit();
             imageGroupBox.ResumeLayout(false);
             imageGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)savedPicture).EndInit();
+            ((System.ComponentModel.ISupportInitialize)defaultProductPicture).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -369,5 +432,9 @@
         private Label nameErrorLabel;
         private Label priceErrorLabel;
         private Label barcodeErrorLabel;
+        private PictureBox savedPicture;
+        private Label savedImage;
+        private Button editButton;
+        private PictureBox defaultProductPicture;
     }
 }
