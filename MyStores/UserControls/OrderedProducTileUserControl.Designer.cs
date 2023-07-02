@@ -39,6 +39,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.priceLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.passwordErrorLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,12 +60,13 @@
             this.productNameLinkLabel.TabIndex = 1;
             this.productNameLinkLabel.TabStop = true;
             this.productNameLinkLabel.Text = "Product Name";
+            this.productNameLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.productNameLinkLabel_LinkClicked);
             // 
             // descriptionLabel
             // 
             this.descriptionLabel.Location = new System.Drawing.Point(92, 40);
             this.descriptionLabel.Name = "descriptionLabel";
-            this.descriptionLabel.Size = new System.Drawing.Size(211, 69);
+            this.descriptionLabel.Size = new System.Drawing.Size(211, 51);
             this.descriptionLabel.TabIndex = 2;
             this.descriptionLabel.Text = "Description";
             // 
@@ -146,10 +148,26 @@
             this.label1.Text = "Quantity : ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // passwordErrorLabel
+            // 
+            this.passwordErrorLabel.AutoSize = true;
+            this.passwordErrorLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.passwordErrorLabel.ForeColor = System.Drawing.Color.Red;
+            this.passwordErrorLabel.Location = new System.Drawing.Point(92, 91);
+            this.passwordErrorLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.passwordErrorLabel.Name = "passwordErrorLabel";
+            this.passwordErrorLabel.Size = new System.Drawing.Size(55, 15);
+            this.passwordErrorLabel.TabIndex = 58;
+            this.passwordErrorLabel.Text = "Error text";
+            this.passwordErrorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.passwordErrorLabel.UseWaitCursor = true;
+            this.passwordErrorLabel.Visible = false;
+            // 
             // OrderedProducTileUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.passwordErrorLabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.priceLabel);
             this.Controls.Add(this.textBox1);
@@ -180,5 +198,6 @@
         private TextBox textBox1;
         private Label priceLabel;
         private Label label1;
+        private Label passwordErrorLabel;
     }
 }

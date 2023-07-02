@@ -35,5 +35,10 @@ namespace MyStores.UserControls
         {
             this.Hide();
         }
+
+        private void productNameLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
     }
 }

@@ -1011,5 +1011,54 @@ namespace MyStores.Dal
 
             return vendors;
         }
+
+        public List<InventoryItem> SearchInventoryWithVendorId(int vendorId)
+        {
+            var inventoryItems = new List<InventoryItem>();
+            using var connection = DbConnection.GetConnection();
+            connection.Open();
+
+            string query =
+                "SELECT vendorID, purchasePrice, Inventory.sellingPrice, quantity, Inventory.productID FROM Product,Inventory " +
+                "WHERE Inventory.productID = Product.productID and Inventory.storeID = @storeID and ProductName LIKE '%' + @productName +'%'";
+                "SELECT productName, description, productImage, "
+            using var command = new SqlCommand(query, connection);
+
+            command.Parameters.Add("@storeID", System.Data.SqlDbType.Int);
+            command.Parameters["@storeID"].Value = storeId;
+            command.Parameters.Add("@productName", System.Data.SqlDbType.VarChar);
+            command.Parameters["@productName"].Value = productName;
+            using var reader = command.ExecuteReader();
+
+            var vendorIdOrdinal = reader.GetOrdinal("vendorID");
+            var purchasePriceOrdinal = reader.GetOrdinal("purchasePrice");
+            var sellingPriceOrdinal = reader.GetOrdinal("sellingPrice");
+            var quantityOrdinal = reader.GetOrdinal("quantity");
+            var productIdOrdinal = reader.GetOrdinal("productID");
+
+            while (reader.Read())
+            {
+                var vendorId = reader.GetInt32(vendorIdOrdinal);
+                decimal purchasePrice = reader.GetDecimal(purchasePriceOrdinal);
+                decimal sellingPrice = reader.GetDecimal(sellingPriceOrdinal);
+                var quantity = reader.GetInt32(quantityOrdinal);
+                var productId = reader.GetInt32(productIdOrdinal);
+
+                inventoryItems.Add(new InventoryItem
+                {
+                    VendorId = vendorId,
+                    Quantity = quantity,
+                    SellingPrice = decimal.ToDouble(sellingPrice),
+                    PurchasePrice = decimal.ToDouble(purchasePrice),
+                    Item = new Product
+                    {
+                        Id = productId
+                    }
+
+                });
+            }
+
+            return inventoryItems;
+        }
     }
 }
