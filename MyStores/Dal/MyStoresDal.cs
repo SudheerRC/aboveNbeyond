@@ -302,7 +302,8 @@ namespace MyStores.Dal
             connection.Open();
 
             string query =
-                "SELECT productName, productSize, description, departmentName, barcode, sellingPrice FROM PRODUCT WHERE productID = @productId";
+                "SELECT productName, productSize, description, departmentName, barcode, sellingPrice, productImage " +
+                "FROM PRODUCT WHERE productID = @productId";
             using var command = new SqlCommand(query, connection);
 
             command.Parameters.Add("@productId", System.Data.SqlDbType.Int);
@@ -315,15 +316,17 @@ namespace MyStores.Dal
             var departmentNameOrdinal = reader.GetOrdinal("departmentName");
             var barcodeOrdinal = reader.GetOrdinal("barcode");
             var sellingPriceOrdinal = reader.GetOrdinal("sellingPrice");
+            var imageOrdinal = reader.GetOrdinal("productImage");
 
             while (reader.Read())
             {
                 var name = reader.GetString(productNameOrdinal);
-                var size = reader.GetString(productSizeOrdinal);
-                var description = reader.GetString(descriptionOrdinal);
-                var department = reader.GetString(departmentNameOrdinal);
-                var barcode = reader.GetString(barcodeOrdinal);
-                var sellingPrice = reader.GetDecimal(sellingPriceOrdinal);
+                var size = reader.IsDBNull(productSizeOrdinal) ? "" : reader.GetString(productSizeOrdinal);
+                var description = reader.IsDBNull(descriptionOrdinal) ? "" : reader.GetString(descriptionOrdinal);
+                var department = reader.IsDBNull(departmentNameOrdinal) ? "" : reader.GetString(departmentNameOrdinal);
+                var barcode = reader.IsDBNull(barcodeOrdinal) ? "" : reader.GetString(barcodeOrdinal);
+                var sellingPrice = reader.IsDBNull(sellingPriceOrdinal) ? -1 : reader.GetDecimal(sellingPriceOrdinal);
+                var imageStream = reader.GetStream(imageOrdinal);
 
                 foundProduct = new Product
                 {
@@ -335,8 +338,13 @@ namespace MyStores.Dal
                     SellingPrice = decimal.ToDouble(sellingPrice),
                     Barcode = barcode
                 };
-            }
 
+                using MemoryStream ms = new MemoryStream();
+                {
+                    imageStream.CopyTo(ms);
+                    foundProduct.Image = ms.ToArray();
+                }
+            }
 
             return foundProduct;
         }
@@ -942,6 +950,7 @@ namespace MyStores.Dal
             {
                 name = reader.GetString(storeNameOrdinal);
             }
+
             return name;
         }
 
@@ -1011,5 +1020,6 @@ namespace MyStores.Dal
 
             return vendors;
         }
+
     }
 }

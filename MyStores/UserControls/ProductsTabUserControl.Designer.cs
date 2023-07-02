@@ -35,20 +35,20 @@
             // 
             mainAddProductUserControl.BackColor = Color.BlanchedAlmond;
             mainAddProductUserControl.Location = new Point(0, 0);
-            mainAddProductUserControl.Margin = new Padding(3, 5, 3, 5);
+            mainAddProductUserControl.Margin = new Padding(5, 8, 5, 8);
             mainAddProductUserControl.Name = "mainAddProductUserControl";
-            mainAddProductUserControl.Size = new Size(410, 836);
+            mainAddProductUserControl.Size = new Size(1336, 1338);
             mainAddProductUserControl.TabIndex = 0;
             // 
             // ProductsTabUserControl
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(227, 211, 177);
             Controls.Add(mainAddProductUserControl);
-            Margin = new Padding(3, 4, 3, 4);
+            Margin = new Padding(5, 6, 5, 6);
             Name = "ProductsTabUserControl";
-            Size = new Size(409, 819);
+            Size = new Size(1429, 1338);
             ResumeLayout(false);
         }
 

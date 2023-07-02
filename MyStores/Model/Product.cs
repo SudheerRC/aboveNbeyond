@@ -16,7 +16,7 @@
 
         public string Barcode { get; set; }
 
-        public Image Image { get; set; }
+        public byte[] Image { get; set; }
 
     }
 }
