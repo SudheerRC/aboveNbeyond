@@ -92,7 +92,7 @@ namespace MyStores.Controller
         /// <returns></returns>
         public List<Product> SearchProduct(String productName)
         {
-            return _storesDal.SearchProduct(productName);
+            return _storesDal.SearchProductWithProductName(productName);
         }
 
         /// <summary>

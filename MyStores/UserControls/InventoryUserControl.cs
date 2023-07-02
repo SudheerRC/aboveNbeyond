@@ -55,13 +55,12 @@ namespace MyStores.UserControls
         private void InventoryUserControl_Load(object sender, EventArgs e)
         {
             loadListView();
+            criteriaComboBox.SelectedItem = "Product Name";
         }
 
         private void searchButton_Click(object sender, EventArgs e)
         {
-            var inputText = searchTextBox.Text;
-
-            List<InventoryItem> inventoryItems = _controller.SearchProductWithStoreIdAndName(_storeId, inputText);
+            List<InventoryItem> inventoryItems = GetInventoryItems();
             if (inventoryItems.Count > 0)
             {
                 refreshListView();
@@ -79,9 +78,82 @@ namespace MyStores.UserControls
             }
         }
 
+        private List<InventoryItem> GetInventoryItems()
+        {
+            var inputText = searchTextBox.Text;
+            List<InventoryItem> inventoryItems = new List<InventoryItem>();
+            if (criteriaComboBox.SelectedItem.Equals("Product Name"))
+            {
+                inventoryItems = _controller.SearchProductWithStoreIdAndName(_storeId, inputText);
+            }
+            else if (criteriaComboBox.SelectedItem.Equals("Description"))
+            {
+
+            }
+            else if (criteriaComboBox.SelectedItem.Equals("Barcode"))
+            {
+                searchTextBox.PlaceholderText = "Search for product based on Product's Barcode";
+            }
+            else if (criteriaComboBox.SelectedItem.Equals("Size"))
+            {
+                searchTextBox.PlaceholderText = "Search for product based on Product's Size";
+            }
+            else if (criteriaComboBox.SelectedItem.Equals("Vendor Name"))
+            {
+                searchTextBox.PlaceholderText = "Search for product based on Product's Vendor name";
+            }
+            else if (criteriaComboBox.SelectedItem.Equals("Selling Price"))
+            {
+                searchTextBox.PlaceholderText = "Search for product based on Product's Selling Price";
+            }
+            else if (criteriaComboBox.SelectedItem.Equals("Purchase Price"))
+            {
+                searchTextBox.PlaceholderText = "Search for product based on Product's Purchase Price";
+            }
+
+            return inventoryItems;
+        }
+
         private void refreshListButton_Click(object sender, EventArgs e)
         {
             loadListView();
+            criteriaComboBox.SelectedItem = "Product Name";
+        }
+
+        private void criteriaComboBox_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (criteriaComboBox.SelectedItem.Equals("Product Name"))
+            {
+                searchTextBox.PlaceholderText = "Search for product based on Product Name";
+            }
+            else if (criteriaComboBox.SelectedItem.Equals("Description"))
+            {
+                searchTextBox.PlaceholderText = "Search for product based on Product's Description";
+            }
+            else if (criteriaComboBox.SelectedItem.Equals("Barcode"))
+            {
+                searchTextBox.PlaceholderText = "Search for product based on Product's Barcode";
+            }
+            else if (criteriaComboBox.SelectedItem.Equals("Size"))
+            {
+                searchTextBox.PlaceholderText = "Search for product based on Product's Size";
+            }
+            else if (criteriaComboBox.SelectedItem.Equals("Vendor Name"))
+            {
+                searchTextBox.PlaceholderText = "Search for product based on Product's Vendor name";
+            }
+            else if (criteriaComboBox.SelectedItem.Equals("Selling Price"))
+            {
+                searchTextBox.PlaceholderText = "Search for product based on Product's Selling Price";
+            }
+            else if (criteriaComboBox.SelectedItem.Equals("Purchase Price"))
+            {
+                searchTextBox.PlaceholderText = "Search for product based on Product's Purchase Price";
+            }
+            else
+            {
+                searchTextBox.PlaceholderText = "Please select a criteria to Search for product based on";
+            }
         }
     }
 }

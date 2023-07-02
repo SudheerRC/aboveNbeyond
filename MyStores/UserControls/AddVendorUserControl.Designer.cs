@@ -56,10 +56,9 @@
             nameErrorLabel.AutoSize = true;
             nameErrorLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             nameErrorLabel.ForeColor = Color.Red;
-            nameErrorLabel.Location = new Point(73, 81);
-            nameErrorLabel.Margin = new Padding(2, 0, 2, 0);
+            nameErrorLabel.Location = new Point(119, 130);
             nameErrorLabel.Name = "nameErrorLabel";
-            nameErrorLabel.Size = new Size(70, 20);
+            nameErrorLabel.Size = new Size(111, 32);
             nameErrorLabel.TabIndex = 107;
             nameErrorLabel.Text = "Error text";
             nameErrorLabel.TextAlign = ContentAlignment.MiddleCenter;
@@ -70,10 +69,9 @@
             // 
             errorLabel.AutoSize = true;
             errorLabel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            errorLabel.Location = new Point(57, 462);
-            errorLabel.Margin = new Padding(2, 0, 2, 0);
+            errorLabel.Location = new Point(93, 739);
             errorLabel.Name = "errorLabel";
-            errorLabel.Size = new Size(81, 23);
+            errorLabel.Size = new Size(125, 37);
             errorLabel.TabIndex = 106;
             errorLabel.Text = "Error text";
             errorLabel.TextAlign = ContentAlignment.MiddleCenter;
@@ -84,10 +82,10 @@
             // 
             clearButton.BackColor = Color.White;
             clearButton.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            clearButton.Location = new Point(245, 497);
-            clearButton.Margin = new Padding(2, 1, 2, 1);
+            clearButton.Location = new Point(398, 795);
+            clearButton.Margin = new Padding(3, 2, 3, 2);
             clearButton.Name = "clearButton";
-            clearButton.Size = new Size(93, 39);
+            clearButton.Size = new Size(151, 62);
             clearButton.TabIndex = 105;
             clearButton.Text = "Clear";
             clearButton.UseVisualStyleBackColor = false;
@@ -97,12 +95,12 @@
             // 
             addButton.BackColor = Color.White;
             addButton.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            addButton.Location = new Point(57, 497);
-            addButton.Margin = new Padding(2, 1, 2, 1);
+            addButton.Location = new Point(93, 795);
+            addButton.Margin = new Padding(3, 2, 3, 2);
             addButton.Name = "addButton";
-            addButton.Size = new Size(93, 39);
+            addButton.Size = new Size(151, 62);
             addButton.TabIndex = 104;
-            addButton.Text = "Add Product";
+            addButton.Text = "Add";
             addButton.UseVisualStyleBackColor = false;
             addButton.Click += addButton_Click;
             // 
@@ -113,10 +111,10 @@
             // 
             // nameTextBox
             // 
-            nameTextBox.Location = new Point(181, 47);
-            nameTextBox.Margin = new Padding(2, 1, 2, 1);
+            nameTextBox.Location = new Point(294, 75);
+            nameTextBox.Margin = new Padding(3, 2, 3, 2);
             nameTextBox.Name = "nameTextBox";
-            nameTextBox.Size = new Size(180, 27);
+            nameTextBox.Size = new Size(290, 39);
             nameTextBox.TabIndex = 90;
             nameTextBox.GotFocus += NameTextBox_GotFocus;
             // 
@@ -124,10 +122,9 @@
             // 
             vendorNameLabel.AutoSize = true;
             vendorNameLabel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            vendorNameLabel.Location = new Point(47, 47);
-            vendorNameLabel.Margin = new Padding(2, 0, 2, 0);
+            vendorNameLabel.Location = new Point(76, 75);
             vendorNameLabel.Name = "vendorNameLabel";
-            vendorNameLabel.Size = new Size(120, 23);
+            vendorNameLabel.Size = new Size(186, 37);
             vendorNameLabel.TabIndex = 91;
             vendorNameLabel.Text = "Vendor name*";
             // 
@@ -136,10 +133,9 @@
             titleLabel.AutoSize = true;
             titleLabel.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
             titleLabel.ForeColor = SystemColors.ControlText;
-            titleLabel.Location = new Point(117, 5);
-            titleLabel.Margin = new Padding(2, 0, 2, 0);
+            titleLabel.Location = new Point(190, 8);
             titleLabel.Name = "titleLabel";
-            titleLabel.Size = new Size(144, 37);
+            titleLabel.Size = new Size(231, 58);
             titleLabel.TabIndex = 89;
             titleLabel.Text = "Add Vendor";
             titleLabel.UseCompatibleTextRendering = true;
@@ -149,10 +145,9 @@
             phoneErrorLabel.AutoSize = true;
             phoneErrorLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             phoneErrorLabel.ForeColor = Color.Red;
-            phoneErrorLabel.Location = new Point(73, 429);
-            phoneErrorLabel.Margin = new Padding(2, 0, 2, 0);
+            phoneErrorLabel.Location = new Point(119, 686);
             phoneErrorLabel.Name = "phoneErrorLabel";
-            phoneErrorLabel.Size = new Size(70, 20);
+            phoneErrorLabel.Size = new Size(111, 32);
             phoneErrorLabel.TabIndex = 120;
             phoneErrorLabel.Text = "Error text";
             phoneErrorLabel.TextAlign = ContentAlignment.MiddleCenter;
@@ -161,18 +156,18 @@
             // 
             // countryTextBox
             // 
-            countryTextBox.Location = new Point(181, 340);
-            countryTextBox.Margin = new Padding(2, 1, 2, 1);
+            countryTextBox.Location = new Point(294, 544);
+            countryTextBox.Margin = new Padding(3, 2, 3, 2);
             countryTextBox.Name = "countryTextBox";
-            countryTextBox.Size = new Size(180, 27);
+            countryTextBox.Size = new Size(290, 39);
             countryTextBox.TabIndex = 112;
             // 
             // zipcodeTextBox
             // 
-            zipcodeTextBox.Location = new Point(181, 285);
-            zipcodeTextBox.Margin = new Padding(2, 1, 2, 1);
+            zipcodeTextBox.Location = new Point(294, 456);
+            zipcodeTextBox.Margin = new Padding(3, 2, 3, 2);
             zipcodeTextBox.Name = "zipcodeTextBox";
-            zipcodeTextBox.Size = new Size(180, 27);
+            zipcodeTextBox.Size = new Size(290, 39);
             zipcodeTextBox.TabIndex = 111;
             zipcodeTextBox.TextChanged += ZipcodeTextBox_TextChanged;
             zipcodeTextBox.KeyPress += ZipcodeTextBox_KeyPress;
@@ -181,76 +176,72 @@
             // 
             zipcodeLabel.AutoSize = true;
             zipcodeLabel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            zipcodeLabel.Location = new Point(47, 284);
-            zipcodeLabel.Margin = new Padding(2, 0, 2, 0);
+            zipcodeLabel.Location = new Point(76, 454);
             zipcodeLabel.Name = "zipcodeLabel";
-            zipcodeLabel.Size = new Size(79, 23);
+            zipcodeLabel.Size = new Size(125, 37);
             zipcodeLabel.TabIndex = 119;
             zipcodeLabel.Text = "Zip Code";
             // 
             // stateTextBox
             // 
-            stateTextBox.Location = new Point(181, 229);
-            stateTextBox.Margin = new Padding(2, 1, 2, 1);
+            stateTextBox.Location = new Point(294, 366);
+            stateTextBox.Margin = new Padding(3, 2, 3, 2);
             stateTextBox.Name = "stateTextBox";
-            stateTextBox.Size = new Size(180, 27);
+            stateTextBox.Size = new Size(290, 39);
             stateTextBox.TabIndex = 110;
             // 
             // stateLabel
             // 
             stateLabel.AutoSize = true;
             stateLabel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            stateLabel.Location = new Point(47, 229);
-            stateLabel.Margin = new Padding(2, 0, 2, 0);
+            stateLabel.Location = new Point(76, 366);
             stateLabel.Name = "stateLabel";
-            stateLabel.Size = new Size(48, 23);
+            stateLabel.Size = new Size(76, 37);
             stateLabel.TabIndex = 118;
             stateLabel.Text = "State";
             // 
             // cityTextBox
             // 
-            cityTextBox.Location = new Point(181, 169);
-            cityTextBox.Margin = new Padding(2, 1, 2, 1);
+            cityTextBox.Location = new Point(294, 270);
+            cityTextBox.Margin = new Padding(3, 2, 3, 2);
             cityTextBox.Name = "cityTextBox";
-            cityTextBox.Size = new Size(180, 27);
+            cityTextBox.Size = new Size(290, 39);
             cityTextBox.TabIndex = 109;
             // 
             // cityLabel
             // 
             cityLabel.AutoSize = true;
             cityLabel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            cityLabel.Location = new Point(47, 168);
-            cityLabel.Margin = new Padding(2, 0, 2, 0);
+            cityLabel.Location = new Point(76, 269);
             cityLabel.Name = "cityLabel";
-            cityLabel.Size = new Size(39, 23);
+            cityLabel.Size = new Size(63, 37);
             cityLabel.TabIndex = 117;
             cityLabel.Text = "City";
             // 
             // streetAddressTextBox
             // 
-            streetAddressTextBox.Location = new Point(181, 110);
-            streetAddressTextBox.Margin = new Padding(2, 1, 2, 1);
+            streetAddressTextBox.Location = new Point(294, 176);
+            streetAddressTextBox.Margin = new Padding(3, 2, 3, 2);
             streetAddressTextBox.Name = "streetAddressTextBox";
-            streetAddressTextBox.Size = new Size(180, 27);
+            streetAddressTextBox.Size = new Size(290, 39);
             streetAddressTextBox.TabIndex = 108;
             // 
             // streetAddLabel
             // 
             streetAddLabel.AutoSize = true;
             streetAddLabel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            streetAddLabel.Location = new Point(47, 110);
-            streetAddLabel.Margin = new Padding(2, 0, 2, 0);
+            streetAddLabel.Location = new Point(76, 176);
             streetAddLabel.Name = "streetAddLabel";
-            streetAddLabel.Size = new Size(119, 23);
+            streetAddLabel.Size = new Size(186, 37);
             streetAddLabel.TabIndex = 116;
             streetAddLabel.Text = "Street Address";
             // 
             // phoneNumTextBox
             // 
-            phoneNumTextBox.Location = new Point(181, 394);
-            phoneNumTextBox.Margin = new Padding(2, 1, 2, 1);
+            phoneNumTextBox.Location = new Point(294, 630);
+            phoneNumTextBox.Margin = new Padding(3, 2, 3, 2);
             phoneNumTextBox.Name = "phoneNumTextBox";
-            phoneNumTextBox.Size = new Size(180, 27);
+            phoneNumTextBox.Size = new Size(290, 39);
             phoneNumTextBox.TabIndex = 113;
             phoneNumTextBox.TextChanged += PhoneNumTextBox_TextChanged;
             phoneNumTextBox.GotFocus += PhoneNumTextBox_GotFocus;
@@ -260,10 +251,9 @@
             // 
             phoneNumLabel.AutoSize = true;
             phoneNumLabel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            phoneNumLabel.Location = new Point(47, 393);
-            phoneNumLabel.Margin = new Padding(2, 0, 2, 0);
+            phoneNumLabel.Location = new Point(76, 629);
             phoneNumLabel.Name = "phoneNumLabel";
-            phoneNumLabel.Size = new Size(131, 23);
+            phoneNumLabel.Size = new Size(202, 37);
             phoneNumLabel.TabIndex = 115;
             phoneNumLabel.Text = "Phone number*";
             // 
@@ -271,16 +261,15 @@
             // 
             countryLabel.AutoSize = true;
             countryLabel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            countryLabel.Location = new Point(47, 341);
-            countryLabel.Margin = new Padding(2, 0, 2, 0);
+            countryLabel.Location = new Point(76, 546);
             countryLabel.Name = "countryLabel";
-            countryLabel.Size = new Size(71, 23);
+            countryLabel.Size = new Size(111, 37);
             countryLabel.TabIndex = 114;
             countryLabel.Text = "Country";
             // 
             // AddVendorUserControl
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             BackColor = Color.FromArgb(227, 211, 177);
@@ -304,9 +293,9 @@
             Controls.Add(nameTextBox);
             Controls.Add(vendorNameLabel);
             Controls.Add(titleLabel);
-            Margin = new Padding(3, 4, 3, 4);
+            Margin = new Padding(5, 6, 5, 6);
             Name = "AddVendorUserControl";
-            Size = new Size(405, 550);
+            Size = new Size(658, 880);
             ResumeLayout(false);
             PerformLayout();
         }

@@ -121,13 +121,22 @@
   <data name="searchButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DAAACwwBP0AiyAAAAWtJREFUSEvtlEtKA0EQhmfvY6MxSs8yKEy3wRv4ACGLdMmIHkXEhWh0420M8RxJ
-        vImauPVRNf1P1MSmZ0JEED8oQv7UaypVE/1NqvV0RRl7HRvbjzU9Z2ZsT2m6Wt1qVOA2HSqhI042iA29
-        fWfK0JPS9hDu5XDJ6TVLpOk2Ns3tan1/Tkzpgx3W2q6QfeHPFGHFkLGMOtd0AnkCtWlPXQP2cW29uQw5
-        jJu56xySF26kgyItSGE44D7rnscCyQs3set8bQ9SGHYeSlAlOZ6H5GVpgxZQYAApTD7/IgVqtcbiNAX6
-        EiTbAsmLSuweChQfkRyRK0BtSF7Y78752ktIYeRC5YiyQF5FyBPwtp0h+UPpq5YL5ceWI5LH78i2yH8i
-        hrFkneP3c4SVg4NTOaKPRF9NOpfkn74XH1OOXCgHtviiu5xsiBdeV7R8LGNFyxcJkb8yRqbpBj/Njv8i
-        pRgrcgF5tsg2/chG/SJR9A4VsbjGzKvOcAAAAABJRU5ErkJggg==
+        DwAACw8BkvkDpQAAAUVJREFUSEvtlEtOAkEYhGfvYwVeh8cNIF7FEBdGwI23keg5eNwEBFcQbb+a1CQT
+        sdPThhWxkko39Vf9f9MwU5wnQgg3h0N4gsv9PnyI7BdwSq1t299Ak1sablnDb6T2zjq0PQ8E1fzLjV5g
+        hxNfiGhdPs9c+2QdONYMuhaC5clZ7ywfgdrIng2ZluU0COnOy5NbigLPq7xwYikNzCsP6FiKAl/PAxaW
+        0qDxTiFwaSkKPFc+zNZSGjJnDLjOHkBgqRDsWooCT9/e5leEeaoQp5pZigLPmweMLaXB124T1EOkISPL
+        R6B2b89aGcvNQHBIUA+RGuiv2NNvIrLvo1UnV/3BsTwQHhDeVI1+ktpazWta82uqwIlbBCdwTrMd1Mtu
+        Lq26Fvb1wflDUmBo+cqo8dml0+F/SBbqQ9g/Wj4taD4W/fEsUBTfrhIRvPhs8SYAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="refreshListButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DwAACw8BkvkDpQAAAOVJREFUSEvtlMENgkAQRbmILZhYiQn1eKYLLEFvRjvxoI1IrEE4rA/4EwXUneiV
+        l0xgZv6f3U1gk4m/qKqQ13UInkBb8tyEEFLZxyBaN6G0hfwwHBaJQtY+DFoRd8VKZTd4smYBnqVKTzjW
+        gsbVdsH7jdpSbTfmV9rBoBnFkzVf4kJvLpkL8yrtoLCzxjA4yV4yF+ZTOiYqiDAtEGVa4C3oP37mxFay
+        DmsodfHlRz2PflRrKnXDIN9VQ6O5chtBppIbPPHLkuGF7cITDDrK2kI+uu57cKwUY4GoPYkn0OayT/xC
+        kjwAYhNBkqV/wm0AAAAASUVORK5CYII=
 </value>
   </data>
 </root>
