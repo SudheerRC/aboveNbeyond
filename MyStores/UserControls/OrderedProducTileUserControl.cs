@@ -1,20 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using MyStores.Model;
 
 namespace MyStores.UserControls
 {
-    public partial class OrderedProducTileUserControl : UserControl
+    public partial class OrderedProductTileUserControl : UserControl
     {
-        public OrderedProducTileUserControl()
+        private InventoryItem _inventoryItem;
+
+        public OrderedProductTileUserControl()
         {
             InitializeComponent();
+            _inventoryItem = new InventoryItem();
+        }
+
+        public void setInventoryItem(InventoryItem item)
+        {
+            _inventoryItem = item;
         }
 
         private void addButton_Click(object sender, EventArgs e)
@@ -39,6 +39,34 @@ namespace MyStores.UserControls
         private void productNameLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
 
+        }
+
+        private void OrderedProductTileUserControl_Load(object sender, EventArgs e)
+        {
+            productImagePictureBox.Image = MagicImageConverter.ConvertByteToImage(_inventoryItem.Item.Image);
+            productImagePictureBox.SizeMode = PictureBoxSizeMode.AutoSize;
+            productNameLinkLabel.Text = _inventoryItem.Item.Name;
+            descriptionLabel.Text = _inventoryItem.Item.Description;
+            priceTextBox.Text = _inventoryItem.PurchasePrice.ToString();
+            quantityTextBox.Text = _inventoryItem.Quantity.ToString();
+        }
+
+        private void priceTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            PositiveNumbersOnly();
+        }
+
+        private void quantityTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            PositiveNumbersOnly();
+        }
+
+        private void PositiveNumbersOnly()
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }
