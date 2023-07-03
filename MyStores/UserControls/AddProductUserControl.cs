@@ -81,14 +81,6 @@ namespace MyStores.UserControls
             }
         }
 
-        private void priceTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            //if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            //{
-            //    e.Handled = true;
-            //}
-        }
-
         private void BarcodeTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -156,6 +148,8 @@ namespace MyStores.UserControls
             {
                 var product = _controller.SearchProductWithId(_productId);
 
+                savedImage.Visible = true;
+                savedPicture.Visible = true;
                 nameTextBox.Text = product.Name;
                 descriptionTextBox.Text = product.Description;
                 sizeTextBox.Text = product.ProductSize;
@@ -171,6 +165,8 @@ namespace MyStores.UserControls
             {
                 addButton.Visible = true;
                 editButton.Visible = false;
+                savedImage.Visible = false;
+                savedPicture.Visible = false;
             }
 
         }

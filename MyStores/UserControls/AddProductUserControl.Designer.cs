@@ -161,7 +161,6 @@
             priceTextBox.Size = new Size(277, 39);
             priceTextBox.TabIndex = 76;
             priceTextBox.GotFocus += PriceTextBox_GotFocus;
-            priceTextBox.KeyPress += priceTextBox_KeyPress;
             // 
             // sellingPriceLabel
             // 

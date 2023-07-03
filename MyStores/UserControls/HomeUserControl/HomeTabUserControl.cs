@@ -1,9 +1,5 @@
-﻿using System.Net.Mail;
-using System.Reflection;
-using System.Windows.Forms.VisualStyles;
-using MyStores.Controller;
+﻿using MyStores.Controller;
 using MyStores.Model;
-using MyStores.UserControls.CustomButton;
 using MyStores.View;
 
 namespace MyStores.UserControls.HomeUserControl
@@ -18,7 +14,6 @@ namespace MyStores.UserControls.HomeUserControl
             InitializeComponent();
             _controller = new MyStoresController();
             _owner = new Users();
-            //loadHome();
         }
 
         public void SetOwner(Users setUser)
@@ -30,40 +25,12 @@ namespace MyStores.UserControls.HomeUserControl
         {
             homeFlowLayoutPanel.Controls.Clear();
 
-            NewStoreChipUserControl[] homeChips = new NewStoreChipUserControl[99];
-
             List<Store> storeList = _controller.GetUserStores(_owner.UserId);
 
             homeFlowLayoutPanel.Controls.Add(AddStoreButton);
 
             for (int i = 0; i < storeList.Count; i++)
             {
-                //homeChips[i] = new StoreChipUserControl();
-
-                //var managersNames = "Not Assigned";
-                //List<Users> managers = _controller.GetAllManagersOfStore(storeList[i].Id);
-                //managersNames = ManagersNames(managers, managersNames);
-
-                //homeChips[i].Controls = storeList[i].Name;
-                //homeChips[i].City = storeList[i].City;
-                //homeChips[i].Managers = managersNames;
-                //homeChips[i].Id = storeList[i].Id;
-
-                //homeFlowLayoutPanel.Controls.Add(homeChips[i]);
-
-                //Rectangle chipRectangle = new Rectangle((homeChips[i].Location), new Size(homeChips[i].Width, homeChips[i].Height));
-                //var clickPannel = new Panel
-                //{
-                //    Location = chipRectangle.Location,
-                //    Size = chipRectangle.Size,
-                //    BackColor = Color.Transparent
-                //};
-                //var zButton = new ButtonZ();
-                //zButton.Parent = clickPanel;
-                //zButton.Dock = DockStyle.Fill;
-
-                //zButton.Click += new EventHandler(StoreHomeChip_Click);
-
                 var storeButton = CreateCustomButton();
                 storeButton.Text = storeList[i].Name;
                 storeButton.Name = Convert.ToString(storeList[i].Id);

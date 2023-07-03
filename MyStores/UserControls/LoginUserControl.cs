@@ -84,10 +84,10 @@ namespace MyStores.UserControls
 
         private void LoginUserControl_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar.Equals(Convert.ToChar(13)))
-            {
-                LoginButton_Click(sender, e);
-            }
+            //if (e.key)
+            //{
+            //    LoginButton_Click(sender, e);
+            //}
         }
 
         public void SetLoginLabel()
@@ -100,6 +100,14 @@ namespace MyStores.UserControls
         private void LoginUserControl_Load(object sender, EventArgs e)
         {
             errorLabel.Visible = false;
+        }
+
+        private void LoginUserControl_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                LoginButton_Click(sender, e);
+            }
         }
     }
 }

@@ -28,114 +28,114 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.passwordTextBox = new System.Windows.Forms.MaskedTextBox();
-            this.errorLabel = new System.Windows.Forms.Label();
-            this.loginButton = new System.Windows.Forms.Button();
-            this.emailTextBox = new System.Windows.Forms.TextBox();
-            this.passwordLabel = new System.Windows.Forms.Label();
-            this.emailLabel = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.SuspendLayout();
+            passwordTextBox = new MaskedTextBox();
+            errorLabel = new Label();
+            loginButton = new Button();
+            emailTextBox = new TextBox();
+            passwordLabel = new Label();
+            emailLabel = new Label();
+            label1 = new Label();
+            SuspendLayout();
             // 
             // passwordTextBox
             // 
-            this.passwordTextBox.Location = new System.Drawing.Point(152, 106);
-            this.passwordTextBox.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.passwordTextBox.Name = "passwordTextBox";
-            this.passwordTextBox.PasswordChar = '*';
-            this.passwordTextBox.Size = new System.Drawing.Size(157, 23);
-            this.passwordTextBox.TabIndex = 12;
-            this.passwordTextBox.GotFocus += new System.EventHandler(this.PasswordTextBox_GotFocus);
+            passwordTextBox.Location = new Point(282, 226);
+            passwordTextBox.Margin = new Padding(4, 2, 4, 2);
+            passwordTextBox.Name = "passwordTextBox";
+            passwordTextBox.PasswordChar = '*';
+            passwordTextBox.Size = new Size(288, 39);
+            passwordTextBox.TabIndex = 12;
+            passwordTextBox.GotFocus += PasswordTextBox_GotFocus;
             // 
             // errorLabel
             // 
-            this.errorLabel.AutoSize = true;
-            this.errorLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.errorLabel.Location = new System.Drawing.Point(37, 137);
-            this.errorLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.errorLabel.Name = "errorLabel";
-            this.errorLabel.Size = new System.Drawing.Size(66, 19);
-            this.errorLabel.TabIndex = 15;
-            this.errorLabel.Text = "Error text";
-            this.errorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.errorLabel.UseWaitCursor = true;
+            errorLabel.AutoSize = true;
+            errorLabel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            errorLabel.Location = new Point(69, 292);
+            errorLabel.Margin = new Padding(4, 0, 4, 0);
+            errorLabel.Name = "errorLabel";
+            errorLabel.Size = new Size(125, 37);
+            errorLabel.TabIndex = 15;
+            errorLabel.Text = "Error text";
+            errorLabel.TextAlign = ContentAlignment.MiddleCenter;
+            errorLabel.UseWaitCursor = true;
             // 
             // loginButton
             // 
-            this.loginButton.BackColor = System.Drawing.Color.White;
-            this.loginButton.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.loginButton.Location = new System.Drawing.Point(130, 170);
-            this.loginButton.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.loginButton.Name = "loginButton";
-            this.loginButton.Size = new System.Drawing.Size(81, 27);
-            this.loginButton.TabIndex = 13;
-            this.loginButton.Text = "Login";
-            this.loginButton.UseVisualStyleBackColor = false;
-            this.loginButton.Click += new System.EventHandler(this.LoginButton_Click);
+            loginButton.BackColor = Color.White;
+            loginButton.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            loginButton.Location = new Point(241, 363);
+            loginButton.Margin = new Padding(4, 2, 4, 2);
+            loginButton.Name = "loginButton";
+            loginButton.Size = new Size(150, 58);
+            loginButton.TabIndex = 13;
+            loginButton.Text = "Login";
+            loginButton.UseVisualStyleBackColor = false;
+            loginButton.Click += LoginButton_Click;
             // 
             // emailTextBox
             // 
-            this.emailTextBox.Location = new System.Drawing.Point(152, 60);
-            this.emailTextBox.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.emailTextBox.Name = "emailTextBox";
-            this.emailTextBox.Size = new System.Drawing.Size(158, 23);
-            this.emailTextBox.TabIndex = 11;
-            this.emailTextBox.TextChanged += new System.EventHandler(this.EmailTextBox_GotFocus);
+            emailTextBox.Location = new Point(282, 128);
+            emailTextBox.Margin = new Padding(4, 2, 4, 2);
+            emailTextBox.Name = "emailTextBox";
+            emailTextBox.Size = new Size(290, 39);
+            emailTextBox.TabIndex = 11;
+            emailTextBox.TextChanged += EmailTextBox_GotFocus;
             // 
             // passwordLabel
             // 
-            this.passwordLabel.AutoSize = true;
-            this.passwordLabel.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.passwordLabel.Location = new System.Drawing.Point(37, 106);
-            this.passwordLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.passwordLabel.Name = "passwordLabel";
-            this.passwordLabel.Size = new System.Drawing.Size(70, 20);
-            this.passwordLabel.TabIndex = 10;
-            this.passwordLabel.Text = "Password";
+            passwordLabel.AutoSize = true;
+            passwordLabel.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            passwordLabel.Location = new Point(69, 226);
+            passwordLabel.Margin = new Padding(4, 0, 4, 0);
+            passwordLabel.Name = "passwordLabel";
+            passwordLabel.Size = new Size(143, 41);
+            passwordLabel.TabIndex = 10;
+            passwordLabel.Text = "Password";
             // 
             // emailLabel
             // 
-            this.emailLabel.AutoSize = true;
-            this.emailLabel.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.emailLabel.Location = new System.Drawing.Point(37, 59);
-            this.emailLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.emailLabel.Name = "emailLabel";
-            this.emailLabel.Size = new System.Drawing.Size(46, 20);
-            this.emailLabel.TabIndex = 9;
-            this.emailLabel.Text = "Email";
+            emailLabel.AutoSize = true;
+            emailLabel.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            emailLabel.Location = new Point(69, 126);
+            emailLabel.Margin = new Padding(4, 0, 4, 0);
+            emailLabel.Name = "emailLabel";
+            emailLabel.Size = new Size(88, 41);
+            emailLabel.TabIndex = 9;
+            emailLabel.Text = "Email";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(130, 13);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 31);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Login";
-            this.label1.UseCompatibleTextRendering = true;
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(241, 28);
+            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(114, 58);
+            label1.TabIndex = 8;
+            label1.Text = "Login";
+            label1.UseCompatibleTextRendering = true;
             // 
             // LoginUserControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.MistyRose;
-            this.Controls.Add(this.passwordTextBox);
-            this.Controls.Add(this.errorLabel);
-            this.Controls.Add(this.loginButton);
-            this.Controls.Add(this.emailTextBox);
-            this.Controls.Add(this.passwordLabel);
-            this.Controls.Add(this.emailLabel);
-            this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.Name = "LoginUserControl";
-            this.Size = new System.Drawing.Size(348, 223);
-            this.Load += new System.EventHandler(this.LoginUserControl_Load);
-            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.LoginUserControl_KeyPress);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.MistyRose;
+            Controls.Add(passwordTextBox);
+            Controls.Add(errorLabel);
+            Controls.Add(loginButton);
+            Controls.Add(emailTextBox);
+            Controls.Add(passwordLabel);
+            Controls.Add(emailLabel);
+            Controls.Add(label1);
+            Margin = new Padding(4, 2, 4, 2);
+            Name = "LoginUserControl";
+            Size = new Size(646, 476);
+            Load += LoginUserControl_Load;
+            KeyDown += LoginUserControl_KeyDown;
+            KeyPress += LoginUserControl_KeyPress;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
