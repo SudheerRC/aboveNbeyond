@@ -59,7 +59,7 @@ namespace MyStores.UserControls
             }
         }
 
-        private void PositiveNumbersOnly()
+        private void PositiveNumbersOnly(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
@@ -69,7 +69,7 @@ namespace MyStores.UserControls
 
         private void quantityTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            PositiveNumbersOnly();
+            PositiveNumbersOnly(sender, e);
         }
     }
 }
