@@ -26,7 +26,7 @@ CREATE TABLE [dbo].[Product](
 	[departmentName] [varchar](50),
 	[barcode] [varchar](20),
 	[sellingPrice] [decimal](7,2),
-	[image] [varbinary](max)
+	[productImage] [Image]
 	
  CONSTRAINT [PK_Product] PRIMARY KEY 
 (
