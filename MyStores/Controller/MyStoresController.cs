@@ -110,9 +110,9 @@ namespace MyStores.Controller
         /// </summary>
         /// <param name="productBarcode">The product barcode.</param>
         /// <returns></returns>
-        public List<Product> SearchProductBarcode(String productBarcode)
+        public List<Product> SearchProductWithBarcode(String productBarcode)
         {
-            return _storesDal.SearchProductBarcode(productBarcode);
+            return _storesDal.SearchProductWithBarcode(productBarcode);
         }
 
         /// <summary>
@@ -216,9 +216,39 @@ namespace MyStores.Controller
             return _storesDal.GetAllManagersOfStore(storeId);
         }
 
-        public List<InventoryItem> SearchInventoryWithVendorId(int vendorId)
+        public List<InventoryItem> SearchInventoryWithVendorId(int vendorId, int storeId)
         {
-            return _storesDal.SearchInventoryWithVendorId(vendorId);
+            return _storesDal.SearchInventoryWithVendorId(vendorId, storeId);
+        }
+
+        public List<InventoryItem> SearchProductWithStoreIdAndBarcode(int storeId, String barcode)
+        {
+            return _storesDal.SearchProductWithStoreIdAndBarcode(storeId, barcode);
+        }
+
+        public List<InventoryItem> SearchProductWithStoreIdAndDescription(int storeId, String description)
+        {
+            return _storesDal.SearchProductWithStoreIdAndDescription(storeId, description);
+        }
+
+        public List<InventoryItem> SearchProductWithStoreIdAndSize(int storeId, String size)
+        {
+            return _storesDal.SearchProductWithStoreIdAndSize(storeId, size);
+        }
+
+        public List<InventoryItem> SearchProductWithStoreIdAndVendorName(int storeId, String name)
+        {
+            return _storesDal.SearchProductWithStoreIdAndVendorName(storeId, name);
+        }
+
+        public List<InventoryItem> SearchProductWithStoreIdAndSellingPrice(int storeId, decimal price)
+        {
+            return _storesDal.SearchProductWithStoreIdAndSellingPrice(storeId, price);
+        }
+
+        public List<InventoryItem> SearchProductWithStoreIdAndPurchasePrice(int storeId, decimal price)
+        {
+            return _storesDal.SearchProductWithStoreIdAndPurchasePrice(storeId, price);
         }
     }
 }

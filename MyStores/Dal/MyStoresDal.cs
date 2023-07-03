@@ -349,7 +349,7 @@ namespace MyStores.Dal
         /// </summary>
         /// <param name="barCode">The bar code.</param>
         /// <returns></returns>
-        public List<Product> SearchProductBarcode(String barCode)
+        public List<Product> SearchProductWithBarcode(String barCode)
         {
             var products = new List<Product>();
             using var connection = DbConnection.GetConnection();
@@ -1016,7 +1016,7 @@ namespace MyStores.Dal
             return vendors;
         }
 
-        public List<InventoryItem> SearchInventoryWithVendorId(int vendorId)
+        public List<InventoryItem> SearchInventoryWithVendorId(int vendorId, int storeId)
         {
             var inventoryItems = new List<InventoryItem>();
             using var connection = DbConnection.GetConnection();
@@ -1024,11 +1024,14 @@ namespace MyStores.Dal
 
             string query =
                 "SELECT productName, description, productImage, purchasePrice, quantity, Inventory.productID FROM Product, Inventory " +
-                "WHERE Inventory.productID = Product.productID and Inventory.vendorId = @vendorId";
+                "WHERE Inventory.productID = Product.productID and Inventory.vendorId = @vendorId and Inventory.storeID = @storeId";
             using var command = new SqlCommand(query, connection);
 
             command.Parameters.Add("@vendorId", System.Data.SqlDbType.Int);
             command.Parameters["@vendorId"].Value = vendorId;
+
+            command.Parameters.Add("@storeId", System.Data.SqlDbType.Int);
+            command.Parameters["@storeId"].Value = storeId;
             using var reader = command.ExecuteReader();
 
             var productNameOrdinal = reader.GetOrdinal("productName");
@@ -1058,6 +1061,301 @@ namespace MyStores.Dal
                         Name = name,
                         Description = description,
                         Image = MagicImageConverter.GetBytesFromStream(imageStream),
+                    }
+
+                });
+            }
+
+            return inventoryItems;
+        }
+
+        public List<InventoryItem> SearchProductWithStoreIdAndBarcode(int storeId, String barcode)
+        {
+            var inventoryItems = new List<InventoryItem>();
+            using var connection = DbConnection.GetConnection();
+            connection.Open();
+
+            string query = "SELECT vendorID, purchasePrice, Inventory.sellingPrice, quantity, Inventory.productID " +
+                           "FROM Product,Inventory WHERE Inventory.productID = Product.productID " +
+                           "and Inventory.storeID = @storeID and barcode LIKE '%' + @barcode +'%'";
+            using var command = new SqlCommand(query, connection);
+
+            command.Parameters.Add("@storeID", System.Data.SqlDbType.Int);
+            command.Parameters["@storeID"].Value = storeId;
+            command.Parameters.Add("@barcode", System.Data.SqlDbType.VarChar);
+            command.Parameters["@barcode"].Value = barcode;
+
+            using var reader = command.ExecuteReader();
+
+            var vendorIdOrdinal = reader.GetOrdinal("vendorID");
+            var purchasePriceOrdinal = reader.GetOrdinal("purchasePrice");
+            var sellingPriceOrdinal = reader.GetOrdinal("sellingPrice");
+            var quantityOrdinal = reader.GetOrdinal("quantity");
+            var productIdOrdinal = reader.GetOrdinal("productID");
+
+            while (reader.Read())
+            {
+                var vendorId = reader.GetInt32(vendorIdOrdinal);
+                decimal purchasePrice = reader.GetDecimal(purchasePriceOrdinal);
+                decimal sellingPrice = reader.GetDecimal(sellingPriceOrdinal);
+                var quantity = reader.GetInt32(quantityOrdinal);
+                var productId = reader.GetInt32(productIdOrdinal);
+
+                inventoryItems.Add(new InventoryItem
+                {
+                    VendorId = vendorId,
+                    Quantity = quantity,
+                    SellingPrice = decimal.ToDouble(sellingPrice),
+                    PurchasePrice = decimal.ToDouble(purchasePrice),
+                    Item = new Product
+                    {
+                        Id = productId
+                    }
+
+                });
+            }
+
+            return inventoryItems;
+        }
+
+        public List<InventoryItem> SearchProductWithStoreIdAndDescription(int storeId, String description)
+        {
+            var inventoryItems = new List<InventoryItem>();
+            using var connection = DbConnection.GetConnection();
+            connection.Open();
+
+            string query = "SELECT vendorID, purchasePrice, Inventory.sellingPrice, quantity, Inventory.productID " +
+                           "FROM Product,Inventory WHERE Inventory.productID = Product.productID " +
+                           "and Inventory.storeID = @storeID and description LIKE '%' + @description +'%'";
+            using var command = new SqlCommand(query, connection);
+
+            command.Parameters.Add("@storeID", System.Data.SqlDbType.Int);
+            command.Parameters["@storeID"].Value = storeId;
+            command.Parameters.Add("@description", System.Data.SqlDbType.VarChar);
+            command.Parameters["@description"].Value = description;
+
+            using var reader = command.ExecuteReader();
+
+            var vendorIdOrdinal = reader.GetOrdinal("vendorID");
+            var purchasePriceOrdinal = reader.GetOrdinal("purchasePrice");
+            var sellingPriceOrdinal = reader.GetOrdinal("sellingPrice");
+            var quantityOrdinal = reader.GetOrdinal("quantity");
+            var productIdOrdinal = reader.GetOrdinal("productID");
+
+            while (reader.Read())
+            {
+                var vendorId = reader.GetInt32(vendorIdOrdinal);
+                decimal purchasePrice = reader.GetDecimal(purchasePriceOrdinal);
+                decimal sellingPrice = reader.GetDecimal(sellingPriceOrdinal);
+                var quantity = reader.GetInt32(quantityOrdinal);
+                var productId = reader.GetInt32(productIdOrdinal);
+
+                inventoryItems.Add(new InventoryItem
+                {
+                    VendorId = vendorId,
+                    Quantity = quantity,
+                    SellingPrice = decimal.ToDouble(sellingPrice),
+                    PurchasePrice = decimal.ToDouble(purchasePrice),
+                    Item = new Product
+                    {
+                        Id = productId
+                    }
+
+                });
+            }
+
+            return inventoryItems;
+        }
+
+        public List<InventoryItem> SearchProductWithStoreIdAndSize(int storeId, String size)
+        {
+            var inventoryItems = new List<InventoryItem>();
+            using var connection = DbConnection.GetConnection();
+            connection.Open();
+
+            string query = "SELECT vendorID, purchasePrice, Inventory.sellingPrice, quantity, Inventory.productID " +
+                           "FROM Product,Inventory WHERE Inventory.productID = Product.productID " +
+                           "and Inventory.storeID = @storeID and productSize LIKE '%' + @size +'%'";
+            using var command = new SqlCommand(query, connection);
+
+            command.Parameters.Add("@storeID", System.Data.SqlDbType.Int);
+            command.Parameters["@storeID"].Value = storeId;
+            command.Parameters.Add("@size", System.Data.SqlDbType.VarChar);
+            command.Parameters["@size"].Value = size;
+
+            using var reader = command.ExecuteReader();
+
+            var vendorIdOrdinal = reader.GetOrdinal("vendorID");
+            var purchasePriceOrdinal = reader.GetOrdinal("purchasePrice");
+            var sellingPriceOrdinal = reader.GetOrdinal("sellingPrice");
+            var quantityOrdinal = reader.GetOrdinal("quantity");
+            var productIdOrdinal = reader.GetOrdinal("productID");
+
+            while (reader.Read())
+            {
+                var vendorId = reader.GetInt32(vendorIdOrdinal);
+                decimal purchasePrice = reader.GetDecimal(purchasePriceOrdinal);
+                decimal sellingPrice = reader.GetDecimal(sellingPriceOrdinal);
+                var quantity = reader.GetInt32(quantityOrdinal);
+                var productId = reader.GetInt32(productIdOrdinal);
+
+                inventoryItems.Add(new InventoryItem
+                {
+                    VendorId = vendorId,
+                    Quantity = quantity,
+                    SellingPrice = decimal.ToDouble(sellingPrice),
+                    PurchasePrice = decimal.ToDouble(purchasePrice),
+                    Item = new Product
+                    {
+                        Id = productId
+                    }
+
+                });
+            }
+
+            return inventoryItems;
+        }
+
+        public List<InventoryItem> SearchProductWithStoreIdAndVendorName(int storeId, String name)
+        {
+            var inventoryItems = new List<InventoryItem>();
+            using var connection = DbConnection.GetConnection();
+            connection.Open();
+
+            string query = "SELECT Inventory.vendorID, purchasePrice, Inventory.sellingPrice, quantity, Inventory.productID " +
+                           "FROM Product,Inventory, Vendor WHERE Inventory.productID = Product.productID " +
+                           "and Inventory.vendorID = Vendor.vendorID and Inventory.storeID = @storeID " +
+                           "and Vendor.vendorName LIKE '%' + @name +'%'";
+            using var command = new SqlCommand(query, connection);
+
+            command.Parameters.Add("@storeID", System.Data.SqlDbType.Int);
+            command.Parameters["@storeID"].Value = storeId;
+            command.Parameters.Add("@name", System.Data.SqlDbType.VarChar);
+            command.Parameters["@name"].Value = name;
+
+            using var reader = command.ExecuteReader();
+
+            var vendorIdOrdinal = reader.GetOrdinal("vendorID");
+            var purchasePriceOrdinal = reader.GetOrdinal("purchasePrice");
+            var sellingPriceOrdinal = reader.GetOrdinal("sellingPrice");
+            var quantityOrdinal = reader.GetOrdinal("quantity");
+            var productIdOrdinal = reader.GetOrdinal("productID");
+
+            while (reader.Read())
+            {
+                var vendorId = reader.GetInt32(vendorIdOrdinal);
+                decimal purchasePrice = reader.GetDecimal(purchasePriceOrdinal);
+                decimal sellingPrice = reader.GetDecimal(sellingPriceOrdinal);
+                var quantity = reader.GetInt32(quantityOrdinal);
+                var productId = reader.GetInt32(productIdOrdinal);
+
+                inventoryItems.Add(new InventoryItem
+                {
+                    VendorId = vendorId,
+                    Quantity = quantity,
+                    SellingPrice = decimal.ToDouble(sellingPrice),
+                    PurchasePrice = decimal.ToDouble(purchasePrice),
+                    Item = new Product
+                    {
+                        Id = productId
+                    }
+
+                });
+            }
+
+            return inventoryItems;
+        }
+
+        public List<InventoryItem> SearchProductWithStoreIdAndSellingPrice(int storeId, decimal price)
+        {
+            var inventoryItems = new List<InventoryItem>();
+            using var connection = DbConnection.GetConnection();
+            connection.Open();
+
+            string query = "SELECT vendorID, purchasePrice, Inventory.sellingPrice, quantity, Inventory.productID " +
+                           "FROM Product,Inventory WHERE Inventory.productID = Product.productID " +
+                           "and Inventory.storeID = @storeID and Inventory.sellingPrice = @price";
+            using var command = new SqlCommand(query, connection);
+
+            command.Parameters.Add("@storeID", System.Data.SqlDbType.Int);
+            command.Parameters["@storeID"].Value = storeId;
+            command.Parameters.Add("@price", System.Data.SqlDbType.Decimal);
+            command.Parameters["@price"].Value = price;
+
+            using var reader = command.ExecuteReader();
+
+            var vendorIdOrdinal = reader.GetOrdinal("vendorID");
+            var purchasePriceOrdinal = reader.GetOrdinal("purchasePrice");
+            var sellingPriceOrdinal = reader.GetOrdinal("sellingPrice");
+            var quantityOrdinal = reader.GetOrdinal("quantity");
+            var productIdOrdinal = reader.GetOrdinal("productID");
+
+            while (reader.Read())
+            {
+                var vendorId = reader.GetInt32(vendorIdOrdinal);
+                decimal purchasePrice = reader.GetDecimal(purchasePriceOrdinal);
+                decimal sellingPrice = reader.GetDecimal(sellingPriceOrdinal);
+                var quantity = reader.GetInt32(quantityOrdinal);
+                var productId = reader.GetInt32(productIdOrdinal);
+
+                inventoryItems.Add(new InventoryItem
+                {
+                    VendorId = vendorId,
+                    Quantity = quantity,
+                    SellingPrice = decimal.ToDouble(sellingPrice),
+                    PurchasePrice = decimal.ToDouble(purchasePrice),
+                    Item = new Product
+                    {
+                        Id = productId
+                    }
+
+                });
+            }
+
+            return inventoryItems;
+        }
+
+        public List<InventoryItem> SearchProductWithStoreIdAndPurchasePrice(int storeId, decimal price)
+        {
+            var inventoryItems = new List<InventoryItem>();
+            using var connection = DbConnection.GetConnection();
+            connection.Open();
+
+            string query = "SELECT vendorID, purchasePrice, Inventory.sellingPrice, quantity, Inventory.productID " +
+                           "FROM Product,Inventory WHERE Inventory.productID = Product.productID " +
+                           "and Inventory.storeID = @storeID and Inventory.purchasePrice = @price";
+            using var command = new SqlCommand(query, connection);
+
+            command.Parameters.Add("@storeID", System.Data.SqlDbType.Int);
+            command.Parameters["@storeID"].Value = storeId;
+            command.Parameters.Add("@price", System.Data.SqlDbType.Decimal);
+            command.Parameters["@price"].Value = price;
+
+            using var reader = command.ExecuteReader();
+
+            var vendorIdOrdinal = reader.GetOrdinal("vendorID");
+            var purchasePriceOrdinal = reader.GetOrdinal("purchasePrice");
+            var sellingPriceOrdinal = reader.GetOrdinal("sellingPrice");
+            var quantityOrdinal = reader.GetOrdinal("quantity");
+            var productIdOrdinal = reader.GetOrdinal("productID");
+
+            while (reader.Read())
+            {
+                var vendorId = reader.GetInt32(vendorIdOrdinal);
+                decimal purchasePrice = reader.GetDecimal(purchasePriceOrdinal);
+                decimal sellingPrice = reader.GetDecimal(sellingPriceOrdinal);
+                var quantity = reader.GetInt32(quantityOrdinal);
+                var productId = reader.GetInt32(productIdOrdinal);
+
+                inventoryItems.Add(new InventoryItem
+                {
+                    VendorId = vendorId,
+                    Quantity = quantity,
+                    SellingPrice = decimal.ToDouble(sellingPrice),
+                    PurchasePrice = decimal.ToDouble(purchasePrice),
+                    Item = new Product
+                    {
+                        Id = productId
                     }
 
                 });
