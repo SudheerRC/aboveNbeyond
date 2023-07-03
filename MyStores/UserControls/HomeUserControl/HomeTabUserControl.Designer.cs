@@ -29,85 +29,87 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeTabUserControl));
-            this.homeFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.AddStoreButton = new System.Windows.Forms.Button();
-            this.mainStoreFrontUserControl = new MyStores.UserControls.HomeUserControl.StoreFrontUserControl();
-            this.VipButton = new System.Windows.Forms.Button();
-            this.homeFlowLayoutPanel.SuspendLayout();
-            this.SuspendLayout();
+            homeFlowLayoutPanel = new FlowLayoutPanel();
+            AddStoreButton = new Button();
+            VipButton = new Button();
+            mainStoreFrontUserControl = new StoreFrontUserControl();
+            homeFlowLayoutPanel.SuspendLayout();
+            SuspendLayout();
             // 
             // homeFlowLayoutPanel
             // 
-            this.homeFlowLayoutPanel.Controls.Add(this.AddStoreButton);
-            this.homeFlowLayoutPanel.Controls.Add(this.VipButton);
-            this.homeFlowLayoutPanel.Location = new System.Drawing.Point(0, 0);
-            this.homeFlowLayoutPanel.Margin = new System.Windows.Forms.Padding(18);
-            this.homeFlowLayoutPanel.Name = "homeFlowLayoutPanel";
-            this.homeFlowLayoutPanel.Padding = new System.Windows.Forms.Padding(18);
-            this.homeFlowLayoutPanel.Size = new System.Drawing.Size(881, 507);
-            this.homeFlowLayoutPanel.TabIndex = 0;
+            homeFlowLayoutPanel.Controls.Add(AddStoreButton);
+            homeFlowLayoutPanel.Controls.Add(VipButton);
+            homeFlowLayoutPanel.Location = new Point(0, 0);
+            homeFlowLayoutPanel.Margin = new Padding(33, 38, 33, 38);
+            homeFlowLayoutPanel.Name = "homeFlowLayoutPanel";
+            homeFlowLayoutPanel.Padding = new Padding(33, 38, 33, 38);
+            homeFlowLayoutPanel.Size = new Size(1636, 1082);
+            homeFlowLayoutPanel.TabIndex = 0;
             // 
             // AddStoreButton
             // 
-            this.AddStoreButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
-            this.AddStoreButton.FlatAppearance.BorderSize = 0;
-            this.AddStoreButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddStoreButton.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.AddStoreButton.ForeColor = System.Drawing.Color.White;
-            this.AddStoreButton.Image = ((System.Drawing.Image)(resources.GetObject("AddStoreButton.Image")));
-            this.AddStoreButton.Location = new System.Drawing.Point(21, 21);
-            this.AddStoreButton.Name = "AddStoreButton";
-            this.AddStoreButton.Padding = new System.Windows.Forms.Padding(6);
-            this.AddStoreButton.Size = new System.Drawing.Size(150, 170);
-            this.AddStoreButton.TabIndex = 1;
-            this.AddStoreButton.Text = "Add Store";
-            this.AddStoreButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.AddStoreButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.AddStoreButton.UseVisualStyleBackColor = false;
-            this.AddStoreButton.Click += new System.EventHandler(this.AddStoreButton_Click);
-            // 
-            // mainStoreFrontUserControl
-            // 
-            this.mainStoreFrontUserControl.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.mainStoreFrontUserControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(211)))), ((int)(((byte)(177)))));
-            this.mainStoreFrontUserControl.Location = new System.Drawing.Point(0, 0);
-            this.mainStoreFrontUserControl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.mainStoreFrontUserControl.Name = "mainStoreFrontUserControl";
-            this.mainStoreFrontUserControl.Size = new System.Drawing.Size(881, 507);
-            this.mainStoreFrontUserControl.TabIndex = 2;
+            AddStoreButton.BackColor = Color.FromArgb(28, 44, 78);
+            AddStoreButton.FlatAppearance.BorderSize = 0;
+            AddStoreButton.FlatStyle = FlatStyle.Flat;
+            AddStoreButton.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            AddStoreButton.ForeColor = Color.White;
+            AddStoreButton.Image = (Image)resources.GetObject("AddStoreButton.Image");
+            AddStoreButton.Location = new Point(39, 44);
+            AddStoreButton.Margin = new Padding(6, 6, 6, 6);
+            AddStoreButton.Name = "AddStoreButton";
+            AddStoreButton.Padding = new Padding(11, 13, 11, 13);
+            AddStoreButton.Size = new Size(279, 363);
+            AddStoreButton.TabIndex = 1;
+            AddStoreButton.Text = "Add Store";
+            AddStoreButton.TextAlign = ContentAlignment.BottomCenter;
+            AddStoreButton.TextImageRelation = TextImageRelation.ImageAboveText;
+            AddStoreButton.UseVisualStyleBackColor = false;
+            AddStoreButton.Click += AddStoreButton_Click;
             // 
             // VipButton
             // 
-            this.VipButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
-            this.VipButton.FlatAppearance.BorderSize = 0;
-            this.VipButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.VipButton.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.VipButton.ForeColor = System.Drawing.Color.White;
-            this.VipButton.Image = ((System.Drawing.Image)(resources.GetObject("VipButton.Image")));
-            this.VipButton.Location = new System.Drawing.Point(177, 21);
-            this.VipButton.Name = "VipButton";
-            this.VipButton.Padding = new System.Windows.Forms.Padding(6);
-            this.VipButton.Size = new System.Drawing.Size(150, 170);
-            this.VipButton.TabIndex = 2;
-            this.VipButton.Text = "Add Store";
-            this.VipButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.VipButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.VipButton.UseVisualStyleBackColor = false;
-            this.VipButton.Visible = false;
+            VipButton.BackColor = Color.FromArgb(28, 44, 78);
+            VipButton.FlatAppearance.BorderSize = 0;
+            VipButton.FlatStyle = FlatStyle.Flat;
+            VipButton.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            VipButton.ForeColor = Color.White;
+            VipButton.Image = (Image)resources.GetObject("VipButton.Image");
+            VipButton.Location = new Point(330, 44);
+            VipButton.Margin = new Padding(6, 6, 6, 6);
+            VipButton.Name = "VipButton";
+            VipButton.Padding = new Padding(11, 13, 11, 13);
+            VipButton.Size = new Size(279, 363);
+            VipButton.TabIndex = 2;
+            VipButton.Text = "Add Store";
+            VipButton.TextAlign = ContentAlignment.BottomCenter;
+            VipButton.TextImageRelation = TextImageRelation.ImageAboveText;
+            VipButton.UseVisualStyleBackColor = false;
+            VipButton.Visible = false;
+            // 
+            // mainStoreFrontUserControl
+            // 
+            mainStoreFrontUserControl.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            mainStoreFrontUserControl.BackColor = Color.FromArgb(227, 211, 177);
+            mainStoreFrontUserControl.Location = new Point(0, 0);
+            mainStoreFrontUserControl.Margin = new Padding(6, 9, 6, 9);
+            mainStoreFrontUserControl.Name = "mainStoreFrontUserControl";
+            mainStoreFrontUserControl.Size = new Size(1636, 1082);
+            mainStoreFrontUserControl.TabIndex = 2;
             // 
             // HomeTabUserControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(211)))), ((int)(((byte)(177)))));
-            this.Controls.Add(this.homeFlowLayoutPanel);
-            this.Controls.Add(this.mainStoreFrontUserControl);
-            this.Name = "HomeTabUserControl";
-            this.Size = new System.Drawing.Size(885, 510);
-            this.Load += new System.EventHandler(this.HomeTabUserControl_Load);
-            this.homeFlowLayoutPanel.ResumeLayout(false);
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(227, 211, 177);
+            Controls.Add(homeFlowLayoutPanel);
+            Controls.Add(mainStoreFrontUserControl);
+            Margin = new Padding(6, 6, 6, 6);
+            Name = "HomeTabUserControl";
+            Size = new Size(1644, 1088);
+            Load += HomeTabUserControl_Load;
+            homeFlowLayoutPanel.ResumeLayout(false);
+            ResumeLayout(false);
         }
 
         #endregion

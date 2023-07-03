@@ -49,13 +49,13 @@ namespace MyStores.UserControls
         private void loadListView(String searchTerm)
         {
             refreshListView();
-            if (_controller.SearchProduct(searchTerm).Count == 0)
+            if (_controller.SearchProductWithProductName(searchTerm).Count == 0)
             {
                 MessageBox.Show(@"There are no products with your search input. Please try again!");
             }
             else
             {
-                foreach (var currentProduct in _controller.SearchProduct(searchTerm))
+                foreach (var currentProduct in _controller.SearchProductWithProductName(searchTerm))
                 {
                     FeedListView(currentProduct);
                 }

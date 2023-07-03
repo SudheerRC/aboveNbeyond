@@ -401,7 +401,7 @@ namespace MyStores.Dal
         /// </summary>
         /// <param name="vendorName">Name of the vendor.</param>
         /// <returns></returns>
-        public List<Vendor> SearchVendor(String vendorName)
+        public List<Vendor> SearchVendorWithVendorName(String vendorName)
         {
             var vendors = new List<Vendor>();
             using var connection = DbConnection.GetConnection();

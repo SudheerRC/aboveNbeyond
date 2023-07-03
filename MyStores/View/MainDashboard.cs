@@ -193,10 +193,5 @@ namespace MyStores.View
         {
             MessageBox.Show("Coming soon!!!");
         }
-
-        private void searchButton_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

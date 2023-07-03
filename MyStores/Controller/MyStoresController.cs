@@ -90,7 +90,7 @@ namespace MyStores.Controller
         /// </summary>
         /// <param name="productName">Name of the product.</param>
         /// <returns></returns>
-        public List<Product> SearchProduct(String productName)
+        public List<Product> SearchProductWithProductName(String productName)
         {
             return _storesDal.SearchProductWithProductName(productName);
         }
@@ -100,9 +100,9 @@ namespace MyStores.Controller
         /// </summary>
         /// <param name="vendorName">Name of the vendor.</param>
         /// <returns></returns>
-        public List<Vendor> SearchVendors(String vendorName)
+        public List<Vendor> SearchVendorWithVendorName(String vendorName)
         {
-            return _storesDal.SearchVendor(vendorName);
+            return _storesDal.SearchVendorWithVendorName(vendorName);
         }
 
         /// <summary>
@@ -126,7 +126,7 @@ namespace MyStores.Controller
         }
 
         /// <summary>
-        /// Searches the name of the product with store identifier and.
+        /// Searches the product with store id and product name
         /// </summary>
         /// <param name="storeId">The store identifier.</param>
         /// <param name="productName">Name of the product.</param>
