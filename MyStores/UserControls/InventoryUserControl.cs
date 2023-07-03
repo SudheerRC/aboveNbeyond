@@ -1,7 +1,5 @@
 ﻿using MyStores.Controller;
 using MyStores.Model;
-using System.Diagnostics;
-using System.Windows.Forms;
 
 namespace MyStores.UserControls
 {
@@ -24,6 +22,8 @@ namespace MyStores.UserControls
         {
             inventoryListView.Items.Clear();
             inventoryListView.Refresh();
+            criteriaComboBox.SelectedItem = "Product Name";
+            searchTextBox.Clear();
         }
 
         public void loadListView()
