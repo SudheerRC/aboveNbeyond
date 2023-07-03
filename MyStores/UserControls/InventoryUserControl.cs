@@ -22,6 +22,8 @@ namespace MyStores.UserControls
         {
             inventoryListView.Items.Clear();
             inventoryListView.Refresh();
+            criteriaComboBox.SelectedItem = "Product Name";
+            searchTextBox.Clear();
         }
 
         public void loadListView()
@@ -45,8 +47,8 @@ namespace MyStores.UserControls
             var currentProduct = _controller.SearchProductWithId(ii.Item.Id);
             string[] row =
             {
-                currentProduct.Barcode, currentProduct.Name, currentProduct.Description, currentProduct.ProductSize, Convert.ToString(ii.SellingPrice),
-                Convert.ToString(ii.PurchasePrice), myVendorName, Convert.ToString(ii.Quantity), "", ""
+                currentProduct.Barcode, currentProduct.Name, currentProduct.Description, currentProduct.ProductSize,
+                Convert.ToString(ii.SellingPrice), Convert.ToString(ii.PurchasePrice), myVendorName, Convert.ToString(ii.Quantity), "", ""
             };
             var listItem = new ListViewItem(row);
             inventoryListView.Items.Add(listItem);
@@ -69,17 +71,20 @@ namespace MyStores.UserControls
                     FeedListView(ii);
                 }
                 searchTextBox.Clear();
+                criteriaComboBox.SelectedItem = "Product Name";
             }
             else
             {
                 MessageBox.Show(@"There are no products with your search input. Please try again!");
                 searchTextBox.Clear();
+                criteriaComboBox.SelectedItem = "Product Name";
                 refreshListView();
             }
         }
 
         private List<InventoryItem> GetInventoryItems()
         {
+            decimal price;
             var inputText = searchTextBox.Text;
             List<InventoryItem> inventoryItems = new List<InventoryItem>();
             if (criteriaComboBox.SelectedItem.Equals("Product Name"))
@@ -88,27 +93,29 @@ namespace MyStores.UserControls
             }
             else if (criteriaComboBox.SelectedItem.Equals("Description"))
             {
-
+                inventoryItems = _controller.SearchProductWithStoreIdAndDescription(_storeId, inputText);
             }
             else if (criteriaComboBox.SelectedItem.Equals("Barcode"))
             {
-                searchTextBox.PlaceholderText = "Search for product based on Product's Barcode";
+                inventoryItems = _controller.SearchProductWithStoreIdAndBarcode(_storeId, inputText);
             }
-            else if (criteriaComboBox.SelectedItem.Equals("Size"))
+            else if (criteriaComboBox.SelectedItem.Equals("Product Size"))
             {
-                searchTextBox.PlaceholderText = "Search for product based on Product's Size";
+                inventoryItems = _controller.SearchProductWithStoreIdAndSize(_storeId, inputText);
             }
             else if (criteriaComboBox.SelectedItem.Equals("Vendor Name"))
             {
-                searchTextBox.PlaceholderText = "Search for product based on Product's Vendor name";
+                inventoryItems = _controller.SearchProductWithStoreIdAndVendorName(_storeId, inputText);
             }
-            else if (criteriaComboBox.SelectedItem.Equals("Selling Price"))
+            else if (criteriaComboBox.SelectedItem.Equals("Selling Price") && decimal.TryParse(inputText, out price))
             {
-                searchTextBox.PlaceholderText = "Search for product based on Product's Selling Price";
+                decimal sPrice = Convert.ToDecimal(inputText);
+                inventoryItems = _controller.SearchProductWithStoreIdAndSellingPrice(_storeId, sPrice);
             }
-            else if (criteriaComboBox.SelectedItem.Equals("Purchase Price"))
+            else if (criteriaComboBox.SelectedItem.Equals("Purchase Price") && decimal.TryParse(inputText, out price))
             {
-                searchTextBox.PlaceholderText = "Search for product based on Product's Purchase Price";
+                decimal pPrice = Convert.ToDecimal(inputText);
+                inventoryItems = _controller.SearchProductWithStoreIdAndPurchasePrice(_storeId, pPrice);
             }
 
             return inventoryItems;
@@ -134,21 +141,21 @@ namespace MyStores.UserControls
             {
                 searchTextBox.PlaceholderText = "Search for product based on Product's Barcode";
             }
-            else if (criteriaComboBox.SelectedItem.Equals("Size"))
+            else if (criteriaComboBox.SelectedItem.Equals("Product Size"))
             {
                 searchTextBox.PlaceholderText = "Search for product based on Product's Size";
             }
             else if (criteriaComboBox.SelectedItem.Equals("Vendor Name"))
             {
-                searchTextBox.PlaceholderText = "Search for product based on Product's Vendor name";
+                searchTextBox.PlaceholderText = "Search for product based on Vendor name";
             }
             else if (criteriaComboBox.SelectedItem.Equals("Selling Price"))
             {
-                searchTextBox.PlaceholderText = "Search for product based on Product's Selling Price";
+                searchTextBox.PlaceholderText = "Search for product based on Selling Price";
             }
             else if (criteriaComboBox.SelectedItem.Equals("Purchase Price"))
             {
-                searchTextBox.PlaceholderText = "Search for product based on Product's Purchase Price";
+                searchTextBox.PlaceholderText = "Search for product based on Purchase Price";
             }
             else
             {

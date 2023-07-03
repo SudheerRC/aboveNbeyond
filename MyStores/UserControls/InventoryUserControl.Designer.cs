@@ -170,7 +170,7 @@
             criteriaComboBox.FlatStyle = FlatStyle.Flat;
             criteriaComboBox.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             criteriaComboBox.FormattingEnabled = true;
-            criteriaComboBox.Items.AddRange(new object[] { "Product Name", "Description", "Barcode", "Size", "Vendor Name", "Selling Price", "Purchase Price" });
+            criteriaComboBox.Items.AddRange(new object[] { "Product Name", "Description", "Barcode", "Product Size", "Vendor Name", "Selling Price", "Purchase Price" });
             criteriaComboBox.Location = new Point(22, 20);
             criteriaComboBox.Name = "criteriaComboBox";
             criteriaComboBox.Size = new Size(380, 53);
