@@ -30,6 +30,11 @@ namespace MyStores.View
             mainAddVendorUserControl.Dock = DockStyle.None;
         }
 
+        private void ClearUserControls()
+        {
+            mainProductsTabUserControl.ClearFields();
+        }
+
         private void CloseButton_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.OK;
@@ -39,12 +44,25 @@ namespace MyStores.View
         private void MainDashboard_Load(object sender, EventArgs e)
         {
             mainHomeTabUserControl.SetOwner(_owner);
+            globalSearchUserControl.SetUser(_owner);
+            globalSearchUserControl.OnUpdateStatus += GlobalSearchUserControl_OnUpdateStatus;
 
+            ClearUserControls();
             hideAllUserControls();
             anchorUserControls();
 
             mainHomeTabUserControl.Dock = DockStyle.Fill;
             mainHomeTabUserControl.Visible = true;
+        }
+
+        private void GlobalSearchUserControl_OnUpdateStatus(object sender, EventArgs e)
+        {
+            if (globalSearchUserControl.CategoryName.Equals("Product"))
+            {
+                mainProductsTabUserControl.SetProductId(globalSearchUserControl.CategoryId);
+                mainProductsTabUserControl.SetProductDetails();
+                addProductSubMenuButton_Click(sender, e);
+            }
         }
 
         private void anchorUserControls()
@@ -74,8 +92,10 @@ namespace MyStores.View
 
         private void homeMenuButton_Click(object sender, EventArgs e)
         {
+            ClearUserControls();
             hideAllUserControls();
             anchorUserControls();
+
             mainHomeTabUserControl.Dock = DockStyle.Fill;
             mainHomeTabUserControl.Visible = true;
         }
@@ -170,6 +190,7 @@ namespace MyStores.View
 
         private void searchVendorSubMenuButton_Click(object sender, EventArgs e)
         {
+            ClearUserControls();
             hideAllUserControls();
             anchorUserControls();
             mainVendorTabUserControl.Dock = DockStyle.Fill;
@@ -178,6 +199,7 @@ namespace MyStores.View
 
         private void addVendorSubMenuButton_Click(object sender, EventArgs e)
         {
+            ClearUserControls();
             hideAllUserControls();
             anchorUserControls();
             mainAddVendorUserControl.Dock = DockStyle.Fill;

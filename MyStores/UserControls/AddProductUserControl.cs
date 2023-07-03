@@ -30,6 +30,11 @@ namespace MyStores.UserControls
 
         private void ClearButton_Click(object sender, EventArgs e)
         {
+            ClearFields();
+        }
+
+        public void ClearFields()
+        {
             nameTextBox.Clear();
             descriptionTextBox.Clear();
             sizeTextBox.Clear();
@@ -41,6 +46,10 @@ namespace MyStores.UserControls
             priceErrorLabel.Visible = false;
             barcodeErrorLabel.Visible = false;
             errorLabel.Visible = false;
+            addButton.Visible = true;
+            editButton.Visible = false;
+            savedImage.Visible = false;
+            savedPicture.Visible = false;
         }
 
         private void AddButton_Click(object sender, EventArgs e)
@@ -67,7 +76,7 @@ namespace MyStores.UserControls
                         SellingPrice = Double.Parse(priceTextBox.Text)
                     };
                     _controller.AddProduct(newProduct);
-                    ClearButton_Click(sender, e);
+                    ClearFields();
                     errorLabel.Text = "Product has been added successfully";
                     errorLabel.ForeColor = Color.Green;
                     errorLabel.Visible = true;
@@ -144,6 +153,11 @@ namespace MyStores.UserControls
 
         private void AddProductUserControl_Load(object sender, EventArgs e)
         {
+            SetProductDetails();
+        }
+
+        public void SetProductDetails()
+        {
             if (_productId > 0)
             {
                 var product = _controller.SearchProductWithId(_productId);
@@ -163,12 +177,8 @@ namespace MyStores.UserControls
             }
             else
             {
-                addButton.Visible = true;
-                editButton.Visible = false;
-                savedImage.Visible = false;
-                savedPicture.Visible = false;
+                ClearFields();
             }
-
         }
     }
 }

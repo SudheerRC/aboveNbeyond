@@ -317,7 +317,7 @@
             windowOpPanel.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             windowOpPanel.Controls.Add(minPanel);
             windowOpPanel.Controls.Add(closePanel);
-            windowOpPanel.Location = new Point(70, 5);
+            windowOpPanel.Location = new Point(104, 3);
             windowOpPanel.Margin = new Padding(8, 6, 8, 6);
             windowOpPanel.Name = "windowOpPanel";
             windowOpPanel.Size = new Size(260, 69);

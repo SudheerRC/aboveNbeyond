@@ -49,6 +49,7 @@
             Margin = new Padding(5, 6, 5, 6);
             Name = "ProductsTabUserControl";
             Size = new Size(1429, 1338);
+            Load += ProductsTabUserControl_Load;
             ResumeLayout(false);
         }
 

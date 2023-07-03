@@ -326,7 +326,7 @@ namespace MyStores.Dal
                 var department = reader.IsDBNull(departmentNameOrdinal) ? "" : reader.GetString(departmentNameOrdinal);
                 var barcode = reader.IsDBNull(barcodeOrdinal) ? "" : reader.GetString(barcodeOrdinal);
                 var sellingPrice = reader.IsDBNull(sellingPriceOrdinal) ? -1 : reader.GetDecimal(sellingPriceOrdinal);
-                var imageStream = reader.GetStream(imageOrdinal);
+                var imageStream = reader.IsDBNull(imageOrdinal) ? Stream.Null : reader.GetStream(imageOrdinal);
 
                 foundProduct = new Product
                 {
@@ -608,19 +608,24 @@ namespace MyStores.Dal
         /// Search based on the store name.
         /// </summary>
         /// <param name="storeName">Name of the store.</param>
+        /// <param name="userId">User id of store.</param>
         /// <returns></returns>
-        public List<Store> SearchStoreWithStoreName(String storeName)
+        public List<Store> SearchStoreWithStoreNameAndUserId(String storeName, int userId)
         {
             var stores = new List<Store>();
             using var connection = DbConnection.GetConnection();
             connection.Open();
 
             string query =
-                "SELECT storeID, ownerID, storeName, streetAddress, city, state, zipCode, country FROM Stores WHERE storeName LIKE '%' + @storeName + '%'";
+                "SELECT storeID, ownerID, storeName, streetAddress, city, state, zipCode, country " +
+                "FROM Stores WHERE storeName LIKE '%' + @storeName + '%' and ownerID = @userId";
             using var command = new SqlCommand(query, connection);
 
             command.Parameters.Add("@storeName", System.Data.SqlDbType.VarChar);
             command.Parameters["@storeName"].Value = storeName;
+
+            command.Parameters.Add("@userId", System.Data.SqlDbType.Int);
+            command.Parameters["@userId"].Value = userId;
             using var reader = command.ExecuteReader();
 
             var storeIdOrdinal = reader.GetOrdinal("storeID");

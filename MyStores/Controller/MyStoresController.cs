@@ -119,10 +119,11 @@ namespace MyStores.Controller
         /// Searches the store.
         /// </summary>
         /// <param name="storeName">Name of the store.</param>
+        /// <param name="userId">user id of the store.</param>
         /// <returns></returns>
-        public List<Store> SearchStoreWithStoreName(String storeName)
+        public List<Store> SearchStoreWithStoreNameAndUserId(String storeName, int userId)
         {
-            return _storesDal.SearchStoreWithStoreName(storeName);
+            return _storesDal.SearchStoreWithStoreNameAndUserId(storeName, userId);
         }
 
         /// <summary>
@@ -341,5 +342,6 @@ namespace MyStores.Controller
         {
             return _storesDal.SearchProductWithStoreIdAndPurchasePrice(storeId, price);
         }
+        
     }
 }
