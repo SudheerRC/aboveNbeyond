@@ -104,7 +104,7 @@
             this.quantityTextBox.TabIndex = 5;
             this.quantityTextBox.Text = "4";
             this.quantityTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.quantityTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.quantityTextBox_KeyDown);
+            this.quantityTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.quantityTextBox_KeyPress);
             // 
             // removeButton
             // 

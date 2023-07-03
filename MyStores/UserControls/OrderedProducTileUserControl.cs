@@ -53,12 +53,10 @@ namespace MyStores.UserControls
 
         private void priceTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            PositiveNumbersOnly();
-        }
-
-        private void quantityTextBox_KeyDown(object sender, KeyEventArgs e)
-        {
-            PositiveNumbersOnly();
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && !(e.KeyChar.Equals('.')))
+            {
+                e.Handled = true;
+            }
         }
 
         private void PositiveNumbersOnly()
@@ -67,6 +65,11 @@ namespace MyStores.UserControls
             {
                 e.Handled = true;
             }
+        }
+
+        private void quantityTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            PositiveNumbersOnly();
         }
     }
 }
