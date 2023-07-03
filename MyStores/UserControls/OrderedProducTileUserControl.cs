@@ -61,10 +61,10 @@ namespace MyStores.UserControls
 
         private void PositiveNumbersOnly(object sender, KeyPressEventArgs e)
         {
-            //if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            //{
-            //    e.Handled = true;
-            //}
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
 
         private void quantityTextBox_KeyPress(object sender, KeyPressEventArgs e)
