@@ -1,6 +1,5 @@
 ﻿using MyStores.Controller;
 using MyStores.Model;
-using MyStores.View;
 
 namespace MyStores.UserControls
 {
@@ -105,7 +104,6 @@ namespace MyStores.UserControls
                 errorLabel.ForeColor = Color.Red;
                 errorLabel.Visible = true;
             }
-
         }
 
         private bool ValidateFields()

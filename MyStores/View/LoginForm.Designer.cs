@@ -29,93 +29,93 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
-            this.groupBox = new System.Windows.Forms.GroupBox();
-            this.signUpLinkLabel = new System.Windows.Forms.LinkLabel();
-            this.newLabel = new System.Windows.Forms.Label();
-            this.loginUserControl = new MyStores.UserControls.LoginUserControl();
-            this.signUpUserControl = new MyStores.UserControls.SignUpUserControl();
-            this.groupBox.SuspendLayout();
-            this.SuspendLayout();
+            groupBox = new GroupBox();
+            signUpLinkLabel = new LinkLabel();
+            newLabel = new Label();
+            loginUserControl = new UserControls.LoginUserControl();
+            signUpUserControl = new UserControls.SignUpUserControl();
+            groupBox.SuspendLayout();
+            SuspendLayout();
             // 
             // groupBox
             // 
-            this.groupBox.BackColor = System.Drawing.Color.MistyRose;
-            this.groupBox.Controls.Add(this.signUpLinkLabel);
-            this.groupBox.Controls.Add(this.newLabel);
-            this.groupBox.ForeColor = System.Drawing.Color.Black;
-            this.groupBox.Location = new System.Drawing.Point(340, 357);
-            this.groupBox.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.groupBox.Name = "groupBox";
-            this.groupBox.Padding = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.groupBox.Size = new System.Drawing.Size(348, 47);
-            this.groupBox.TabIndex = 0;
-            this.groupBox.TabStop = false;
+            groupBox.BackColor = Color.MistyRose;
+            groupBox.Controls.Add(signUpLinkLabel);
+            groupBox.Controls.Add(newLabel);
+            groupBox.ForeColor = Color.Black;
+            groupBox.Location = new Point(631, 762);
+            groupBox.Margin = new Padding(4, 2, 4, 2);
+            groupBox.Name = "groupBox";
+            groupBox.Padding = new Padding(4, 2, 4, 2);
+            groupBox.Size = new Size(646, 100);
+            groupBox.TabIndex = 0;
+            groupBox.TabStop = false;
             // 
             // signUpLinkLabel
             // 
-            this.signUpLinkLabel.AutoSize = true;
-            this.signUpLinkLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.signUpLinkLabel.Location = new System.Drawing.Point(164, 16);
-            this.signUpLinkLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.signUpLinkLabel.Name = "signUpLinkLabel";
-            this.signUpLinkLabel.Size = new System.Drawing.Size(100, 19);
-            this.signUpLinkLabel.TabIndex = 7;
-            this.signUpLinkLabel.TabStop = true;
-            this.signUpLinkLabel.Text = "Click to Signup";
-            this.signUpLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.SignUpLinkLabel_LinkClicked);
+            signUpLinkLabel.AutoSize = true;
+            signUpLinkLabel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            signUpLinkLabel.Location = new Point(305, 34);
+            signUpLinkLabel.Margin = new Padding(4, 0, 4, 0);
+            signUpLinkLabel.Name = "signUpLinkLabel";
+            signUpLinkLabel.Size = new Size(195, 37);
+            signUpLinkLabel.TabIndex = 7;
+            signUpLinkLabel.TabStop = true;
+            signUpLinkLabel.Text = "Click to Signup";
+            signUpLinkLabel.LinkClicked += SignUpLinkLabel_LinkClicked;
             // 
             // newLabel
             // 
-            this.newLabel.AutoSize = true;
-            this.newLabel.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.newLabel.Location = new System.Drawing.Point(81, 14);
-            this.newLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.newLabel.Name = "newLabel";
-            this.newLabel.Size = new System.Drawing.Size(79, 20);
-            this.newLabel.TabIndex = 8;
-            this.newLabel.Text = "New here?";
+            newLabel.AutoSize = true;
+            newLabel.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            newLabel.Location = new Point(150, 30);
+            newLabel.Margin = new Padding(4, 0, 4, 0);
+            newLabel.Name = "newLabel";
+            newLabel.Size = new Size(158, 41);
+            newLabel.TabIndex = 8;
+            newLabel.Text = "New here?";
             // 
             // loginUserControl
             // 
-            this.loginUserControl.BackColor = System.Drawing.Color.MistyRose;
-            this.loginUserControl.Location = new System.Drawing.Point(340, 98);
-            this.loginUserControl.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.loginUserControl.Name = "loginUserControl";
-            this.loginUserControl.Size = new System.Drawing.Size(348, 214);
-            this.loginUserControl.TabIndex = 1;
+            loginUserControl.BackColor = Color.MistyRose;
+            loginUserControl.Location = new Point(631, 209);
+            loginUserControl.Margin = new Padding(2, 0, 2, 0);
+            loginUserControl.Name = "loginUserControl";
+            loginUserControl.Size = new Size(646, 457);
+            loginUserControl.TabIndex = 1;
             // 
             // signUpUserControl
             // 
-            this.signUpUserControl.BackColor = System.Drawing.Color.MistyRose;
-            this.signUpUserControl.Location = new System.Drawing.Point(147, 41);
-            this.signUpUserControl.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.signUpUserControl.Name = "signUpUserControl";
-            this.signUpUserControl.Size = new System.Drawing.Size(725, 384);
-            this.signUpUserControl.TabIndex = 2;
-            this.signUpUserControl.Visible = false;
-            this.signUpUserControl.VisibleChanged += new System.EventHandler(this.signUpUserControl_VisibleChanged);
+            signUpUserControl.BackColor = Color.MistyRose;
+            signUpUserControl.Location = new Point(273, 87);
+            signUpUserControl.Margin = new Padding(2, 0, 2, 0);
+            signUpUserControl.Name = "signUpUserControl";
+            signUpUserControl.Size = new Size(1346, 819);
+            signUpUserControl.TabIndex = 2;
+            signUpUserControl.Visible = false;
+            signUpUserControl.VisibleChanged += signUpUserControl_VisibleChanged;
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1020, 471);
-            this.Controls.Add(this.signUpUserControl);
-            this.Controls.Add(this.loginUserControl);
-            this.Controls.Add(this.groupBox);
-            this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(1036, 510);
-            this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(1036, 510);
-            this.Name = "LoginForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MyStores Home Page";
-            this.groupBox.ResumeLayout(false);
-            this.groupBox.PerformLayout();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            ClientSize = new Size(1876, 937);
+            Controls.Add(signUpUserControl);
+            Controls.Add(loginUserControl);
+            Controls.Add(groupBox);
+            Margin = new Padding(4, 2, 4, 2);
+            MaximizeBox = false;
+            MaximumSize = new Size(1902, 1008);
+            MinimizeBox = false;
+            MinimumSize = new Size(1902, 1008);
+            Name = "LoginForm";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "MyStores Home Page";
+            KeyPress += LoginForm_KeyPress;
+            groupBox.ResumeLayout(false);
+            groupBox.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion

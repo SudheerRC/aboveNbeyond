@@ -1,17 +1,13 @@
-using MyStores.Controller;
-
 namespace MyStores.View
 {
     public partial class LoginForm : Form
     {
-        private readonly MyStoresController _controller;
         public LoginForm()
         {
             InitializeComponent();
             loginUserControl.Visible = true;
             groupBox.Visible = true;
             signUpUserControl.Visible = false;
-            _controller = new MyStoresController();
             signUpUserControl.Parent = this;
             loginUserControl.Parent = this;
         }
@@ -26,6 +22,14 @@ namespace MyStores.View
             if (signUpUserControl._isSignedIn)
             {
                 loginUserControl.SetLoginLabel();
+            }
+        }
+
+        private void LoginForm_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                loginUserControl.LoginUserControl_KeyPress(sender, e);
             }
         }
     }

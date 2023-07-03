@@ -33,8 +33,8 @@
             receiveOrderButton = new Button();
             mainPanel = new Panel();
             listPanel = new Panel();
-            vendorComboBox = new ComboBox();
             flowLayoutPanel1 = new FlowLayoutPanel();
+            vendorComboBox = new ComboBox();
             listPanel.SuspendLayout();
             SuspendLayout();
             // 
@@ -46,11 +46,11 @@
             placeOrderButton.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             placeOrderButton.ForeColor = Color.White;
             placeOrderButton.Image = (Image)resources.GetObject("placeOrderButton.Image");
-            placeOrderButton.Location = new Point(210, 160);
-            placeOrderButton.Margin = new Padding(3, 4, 3, 4);
+            placeOrderButton.Location = new Point(341, 256);
+            placeOrderButton.Margin = new Padding(5, 6, 5, 6);
             placeOrderButton.Name = "placeOrderButton";
-            placeOrderButton.Padding = new Padding(7, 8, 7, 8);
-            placeOrderButton.Size = new Size(171, 227);
+            placeOrderButton.Padding = new Padding(11, 13, 11, 13);
+            placeOrderButton.Size = new Size(278, 363);
             placeOrderButton.TabIndex = 3;
             placeOrderButton.Text = "Place new Order";
             placeOrderButton.TextAlign = ContentAlignment.BottomCenter;
@@ -66,11 +66,11 @@
             receiveOrderButton.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             receiveOrderButton.ForeColor = Color.White;
             receiveOrderButton.Image = (Image)resources.GetObject("receiveOrderButton.Image");
-            receiveOrderButton.Location = new Point(569, 160);
-            receiveOrderButton.Margin = new Padding(3, 4, 3, 4);
+            receiveOrderButton.Location = new Point(925, 256);
+            receiveOrderButton.Margin = new Padding(5, 6, 5, 6);
             receiveOrderButton.Name = "receiveOrderButton";
-            receiveOrderButton.Padding = new Padding(7, 8, 7, 8);
-            receiveOrderButton.Size = new Size(171, 227);
+            receiveOrderButton.Padding = new Padding(11, 13, 11, 13);
+            receiveOrderButton.Size = new Size(278, 363);
             receiveOrderButton.TabIndex = 4;
             receiveOrderButton.Text = "Receive an Order";
             receiveOrderButton.TextAlign = ContentAlignment.BottomCenter;
@@ -80,48 +80,53 @@
             // 
             // mainPanel
             // 
-            mainPanel.Location = new Point(66, 66);
+            mainPanel.Location = new Point(107, 106);
+            mainPanel.Margin = new Padding(5, 5, 5, 5);
             mainPanel.Name = "mainPanel";
-            mainPanel.Size = new Size(860, 465);
+            mainPanel.Size = new Size(1398, 744);
             mainPanel.TabIndex = 5;
             // 
             // listPanel
             // 
             listPanel.Controls.Add(flowLayoutPanel1);
             listPanel.Controls.Add(vendorComboBox);
-            listPanel.Location = new Point(80, 6);
+            listPanel.Location = new Point(130, 10);
+            listPanel.Margin = new Padding(5, 5, 5, 5);
             listPanel.Name = "listPanel";
-            listPanel.Size = new Size(833, 602);
+            listPanel.Size = new Size(1354, 963);
             listPanel.TabIndex = 6;
+            // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.Location = new Point(41, 157);
+            flowLayoutPanel1.Margin = new Padding(5, 5, 5, 5);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(1277, 712);
+            flowLayoutPanel1.TabIndex = 1;
             // 
             // vendorComboBox
             // 
             vendorComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             vendorComboBox.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             vendorComboBox.FormattingEnabled = true;
-            vendorComboBox.Location = new Point(255, 43);
+            vendorComboBox.Location = new Point(414, 69);
+            vendorComboBox.Margin = new Padding(5, 5, 5, 5);
             vendorComboBox.Name = "vendorComboBox";
-            vendorComboBox.Size = new Size(311, 33);
+            vendorComboBox.Size = new Size(503, 48);
             vendorComboBox.TabIndex = 0;
-            // 
-            // flowLayoutPanel1
-            // 
-            flowLayoutPanel1.Location = new Point(25, 98);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(786, 445);
-            flowLayoutPanel1.TabIndex = 1;
             // 
             // OrderUserControl
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(227, 211, 177);
-            Controls.Add(listPanel);
             Controls.Add(receiveOrderButton);
             Controls.Add(placeOrderButton);
+            Controls.Add(listPanel);
             Controls.Add(mainPanel);
+            Margin = new Padding(5, 5, 5, 5);
             Name = "OrderUserControl";
-            Size = new Size(999, 611);
+            Size = new Size(1623, 978);
             listPanel.ResumeLayout(false);
             ResumeLayout(false);
         }

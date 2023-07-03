@@ -120,9 +120,9 @@ namespace MyStores.Controller
         /// </summary>
         /// <param name="storeName">Name of the store.</param>
         /// <returns></returns>
-        public List<Store> SearchStore(String storeName)
+        public List<Store> SearchStoreWithStoreName(String storeName)
         {
-            return _storesDal.SearchStore(storeName);
+            return _storesDal.SearchStoreWithStoreName(storeName);
         }
 
         /// <summary>
@@ -136,16 +136,30 @@ namespace MyStores.Controller
             return _storesDal.SearchProductWithStoreIdAndName(storeId, productName);
         }
 
+        /// <summary>
+        /// Searches the inventory item.
+        /// </summary>
+        /// <param name="storeId">The store id.</param>
+        /// <returns></returns>
         public List<InventoryItem> SearchInventoryItem(int storeId)
         {
             return _storesDal.SearchInventory(storeId);
         }
 
+        /// <summary>
+        /// Adds the vendor.
+        /// </summary>
+        /// <param name="vendor">The vendor.</param>
         public void AddVendor(Vendor vendor)
         {
             _storesDal.AddVendor(vendor);
         }
 
+        /// <summary>
+        /// Adds the manager.
+        /// </summary>
+        /// <param name="userId">The user id.</param>
+        /// <param name="storeId">The store id.</param>
         public void AddManager(int userId, int storeId)
         {
             _storesDal.AddManager(userId, storeId);
@@ -181,71 +195,148 @@ namespace MyStores.Controller
             return _storesDal.GetStoreName(id);
         }
 
+        /// <summary>
+        /// Searches the vendor by store id.
+        /// </summary>
+        /// <param name="storeId">The store id.</param>
+        /// <returns></returns>
         public List<Vendor> SearchVendorByStoreId(int storeId)
         {
             return _storesDal.SearchVendorByStoreId(storeId);
         }
 
+        /// <summary>
+        /// Gets all vendors.
+        /// </summary>
+        /// <returns></returns>
         public List<Vendor> GetAllVendors()
         {
             return _storesDal.GetAllVendors();
         }
 
+        /// <summary>
+        /// Adds the vendor to store.
+        /// </summary>
+        /// <param name="vendorId">The vendor id.</param>
+        /// <param name="storeId">The store id.</param>
         public void AddVendorToStore(int vendorId, int storeId)
         {
             _storesDal.AddVendorToStore(vendorId, storeId);
         }
 
+        /// <summary>
+        /// Adds the inventory.
+        /// </summary>
+        /// <param name="inventoryItem">The inventory item.</param>
+        /// <param name="storeId">The store id.</param>
         public void AddInventory(InventoryItem inventoryItem, int storeId)
         {
             _storesDal.AddInventory(inventoryItem, storeId);
         }
 
+        /// <summary>
+        /// Checks the store vendor exists.
+        /// </summary>
+        /// <param name="storeId">The store id.</param>
+        /// <param name="vendorId">The vendor id.</param>
+        /// <returns></returns>
         public bool CheckStoreVendorExists(int storeId, int vendorId)
         {
             return _storesDal.CheckStoreVendorExists(storeId, vendorId);
         }
 
+        /// <summary>
+        /// Searches the vendors with vendor name
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <returns></returns>
         public List<Vendor> SearchVendorsWithName(string name)
         {
             return _storesDal.SearchVendorsWithName(name);
         }
 
+        /// <summary>
+        /// Gets all managers of store.
+        /// </summary>
+        /// <param name="storeId">The store id.</param>
+        /// <returns></returns>
         public List<Users> GetAllManagersOfStore(int storeId)
         {
             return _storesDal.GetAllManagersOfStore(storeId);
         }
 
+        /// <summary>
+        /// Searches the inventory with vendor id.
+        /// </summary>
+        /// <param name="vendorId">The vendor id.</param>
+        /// <param name="storeId">The store id.</param>
+        /// <returns></returns>
         public List<InventoryItem> SearchInventoryWithVendorId(int vendorId, int storeId)
         {
             return _storesDal.SearchInventoryWithVendorId(vendorId, storeId);
         }
 
+        /// <summary>
+        /// Searches the product with store id and barcode.
+        /// </summary>
+        /// <param name="storeId">The store id.</param>
+        /// <param name="barcode">The barcode.</param>
+        /// <returns></returns>
         public List<InventoryItem> SearchProductWithStoreIdAndBarcode(int storeId, String barcode)
         {
             return _storesDal.SearchProductWithStoreIdAndBarcode(storeId, barcode);
         }
 
+        /// <summary>
+        /// Searches the product with store id and description.
+        /// </summary>
+        /// <param name="storeId">The store id.</param>
+        /// <param name="description">The description.</param>
+        /// <returns></returns>
         public List<InventoryItem> SearchProductWithStoreIdAndDescription(int storeId, String description)
         {
             return _storesDal.SearchProductWithStoreIdAndDescription(storeId, description);
         }
 
+        /// <summary>
+        /// Searches the product with store id and size.
+        /// </summary>
+        /// <param name="storeId">The store id.</param>
+        /// <param name="size">The size.</param>
+        /// <returns></returns>
         public List<InventoryItem> SearchProductWithStoreIdAndSize(int storeId, String size)
         {
             return _storesDal.SearchProductWithStoreIdAndSize(storeId, size);
         }
 
+        /// <summary>
+        /// Searches the product with store id and vendor name.
+        /// </summary>
+        /// <param name="storeId">The store id.</param>
+        /// <param name="name">The name.</param>
+        /// <returns></returns>
         public List<InventoryItem> SearchProductWithStoreIdAndVendorName(int storeId, String name)
         {
             return _storesDal.SearchProductWithStoreIdAndVendorName(storeId, name);
         }
 
+        /// <summary>
+        /// Searches the product with store id and selling price.
+        /// </summary>
+        /// <param name="storeId">The store id.</param>
+        /// <param name="price">The price.</param>
+        /// <returns></returns>
         public List<InventoryItem> SearchProductWithStoreIdAndSellingPrice(int storeId, decimal price)
         {
             return _storesDal.SearchProductWithStoreIdAndSellingPrice(storeId, price);
         }
 
+        /// <summary>
+        /// Searches the product with store id and purchase price.
+        /// </summary>
+        /// <param name="storeId">The store id.</param>
+        /// <param name="price">The price.</param>
+        /// <returns></returns>
         public List<InventoryItem> SearchProductWithStoreIdAndPurchasePrice(int storeId, decimal price)
         {
             return _storesDal.SearchProductWithStoreIdAndPurchasePrice(storeId, price);

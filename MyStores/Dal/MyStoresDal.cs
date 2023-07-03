@@ -452,6 +452,11 @@ namespace MyStores.Dal
             return vendors;
         }
 
+        /// <summary>
+        /// Searches the vendor by store id.
+        /// </summary>
+        /// <param name="storeId">The store id.</param>
+        /// <returns></returns>
         public List<Vendor> SearchVendorByStoreId(int storeId)
         {
             var vendors = new List<Vendor>();
@@ -504,6 +509,10 @@ namespace MyStores.Dal
             return vendors;
         }
 
+        /// <summary>
+        /// Gets all vendors.
+        /// </summary>
+        /// <returns></returns>
         public List<Vendor> GetAllVendors()
         {
             var vendors = new List<Vendor>();
@@ -553,6 +562,11 @@ namespace MyStores.Dal
             return vendors;
         }
 
+        /// <summary>
+        /// Gets all managers of store.
+        /// </summary>
+        /// <param name="storeId">The store id.</param>
+        /// <returns></returns>
         public List<Users> GetAllManagersOfStore(int storeId)
         {
             var managers = new List<Users>();
@@ -595,7 +609,7 @@ namespace MyStores.Dal
         /// </summary>
         /// <param name="storeName">Name of the store.</param>
         /// <returns></returns>
-        public List<Store> SearchStore(String storeName)
+        public List<Store> SearchStoreWithStoreName(String storeName)
         {
             var stores = new List<Store>();
             using var connection = DbConnection.GetConnection();
@@ -719,6 +733,11 @@ namespace MyStores.Dal
             command.ExecuteNonQuery();
         }
 
+        /// <summary>
+        /// Adds the inventory.
+        /// </summary>
+        /// <param name="inventoryItem">The inventory item.</param>
+        /// <param name="storeId">The store id.</param>
         public void AddInventory(InventoryItem inventoryItem, int storeId)
         {
             using var connection = DbConnection.GetConnection();
@@ -748,6 +767,11 @@ namespace MyStores.Dal
             command.ExecuteNonQuery();
         }
 
+        /// <summary>
+        /// Adds the vendor to store.
+        /// </summary>
+        /// <param name="vendorId">The vendor id.</param>
+        /// <param name="storeId">The store id.</param>
         public void AddVendorToStore(int vendorId, int storeId)
         {
             using var connection = DbConnection.GetConnection();
@@ -786,6 +810,11 @@ namespace MyStores.Dal
             command.ExecuteNonQuery();
         }
 
+        /// <summary>
+        /// Searches the product with store id.
+        /// </summary>
+        /// <param name="storeId">The store id.</param>
+        /// <returns></returns>
         public List<Product> SearchProductWithStoreId(int storeId)
         {
             var products = new List<Product>();
@@ -833,6 +862,12 @@ namespace MyStores.Dal
             return products;
         }
 
+        /// <summary>
+        /// Searches the name of the product with store id and product name.
+        /// </summary>
+        /// <param name="storeId">The store id.</param>
+        /// <param name="productName">Name of the product.</param>
+        /// <returns></returns>
         public List<InventoryItem> SearchProductWithStoreIdAndName(int storeId, String productName)
         {
             var inventoryItems = new List<InventoryItem>();
@@ -881,6 +916,11 @@ namespace MyStores.Dal
             return inventoryItems;
         }
 
+        /// <summary>
+        /// Searches the inventory.
+        /// </summary>
+        /// <param name="storeId">The store id.</param>
+        /// <returns></returns>
         public List<InventoryItem> SearchInventory(int storeId)
         {
             var inventoryItems = new List<InventoryItem>();
@@ -926,6 +966,11 @@ namespace MyStores.Dal
             return inventoryItems;
         }
 
+        /// <summary>
+        /// Gets the name of the store.
+        /// </summary>
+        /// <param name="storeId">The store id.</param>
+        /// <returns></returns>
         public string GetStoreName(int storeId)
         {
             string name = "";
@@ -949,6 +994,12 @@ namespace MyStores.Dal
             return name;
         }
 
+        /// <summary>
+        /// Checks the store vendor exists.
+        /// </summary>
+        /// <param name="storeId">The store id.</param>
+        /// <param name="vendorId">The vendor id.</param>
+        /// <returns></returns>
         public bool CheckStoreVendorExists(int storeId, int vendorId)
         {
             using var connection = DbConnection.GetConnection();
@@ -965,6 +1016,11 @@ namespace MyStores.Dal
             return count >= 1;
         }
 
+        /// <summary>
+        /// Searches the name of the vendors with vendor name.
+        /// </summary>
+        /// <param name="inputName">Name of the vendor.</param>
+        /// <returns></returns>
         public List<Vendor> SearchVendorsWithName(string inputName)
         {
             var vendors = new List<Vendor>();
@@ -1016,6 +1072,12 @@ namespace MyStores.Dal
             return vendors;
         }
 
+        /// <summary>
+        /// Searches the inventory with vendor id.
+        /// </summary>
+        /// <param name="vendorId">The vendor id.</param>
+        /// <param name="storeId">The store id.</param>
+        /// <returns></returns>
         public List<InventoryItem> SearchInventoryWithVendorId(int vendorId, int storeId)
         {
             var inventoryItems = new List<InventoryItem>();
@@ -1069,6 +1131,12 @@ namespace MyStores.Dal
             return inventoryItems;
         }
 
+        /// <summary>
+        /// Searches the product with store id and barcode.
+        /// </summary>
+        /// <param name="storeId">The store id.</param>
+        /// <param name="barcode">The barcode.</param>
+        /// <returns></returns>
         public List<InventoryItem> SearchProductWithStoreIdAndBarcode(int storeId, String barcode)
         {
             var inventoryItems = new List<InventoryItem>();
@@ -1118,6 +1186,12 @@ namespace MyStores.Dal
             return inventoryItems;
         }
 
+        /// <summary>
+        /// Searches the product with store id and description.
+        /// </summary>
+        /// <param name="storeId">The store id.</param>
+        /// <param name="description">The description.</param>
+        /// <returns></returns>
         public List<InventoryItem> SearchProductWithStoreIdAndDescription(int storeId, String description)
         {
             var inventoryItems = new List<InventoryItem>();
@@ -1167,6 +1241,12 @@ namespace MyStores.Dal
             return inventoryItems;
         }
 
+        /// <summary>
+        /// Searches the product with store id and product size.
+        /// </summary>
+        /// <param name="storeId">The store identifier.</param>
+        /// <param name="size">The size.</param>
+        /// <returns></returns>
         public List<InventoryItem> SearchProductWithStoreIdAndSize(int storeId, String size)
         {
             var inventoryItems = new List<InventoryItem>();
@@ -1216,6 +1296,12 @@ namespace MyStores.Dal
             return inventoryItems;
         }
 
+        /// <summary>
+        /// Searches the product with store id and vendor name.
+        /// </summary>
+        /// <param name="storeId">The store id.</param>
+        /// <param name="name">The name.</param>
+        /// <returns></returns>
         public List<InventoryItem> SearchProductWithStoreIdAndVendorName(int storeId, String name)
         {
             var inventoryItems = new List<InventoryItem>();
@@ -1266,6 +1352,12 @@ namespace MyStores.Dal
             return inventoryItems;
         }
 
+        /// <summary>
+        /// Searches the product with store id and selling price.
+        /// </summary>
+        /// <param name="storeId">The store id.</param>
+        /// <param name="price">The price.</param>
+        /// <returns></returns>
         public List<InventoryItem> SearchProductWithStoreIdAndSellingPrice(int storeId, decimal price)
         {
             var inventoryItems = new List<InventoryItem>();
@@ -1315,6 +1407,12 @@ namespace MyStores.Dal
             return inventoryItems;
         }
 
+        /// <summary>
+        /// Searches the product with store id and purchase price.
+        /// </summary>
+        /// <param name="storeId">The store id.</param>
+        /// <param name="price">The price.</param>
+        /// <returns></returns>
         public List<InventoryItem> SearchProductWithStoreIdAndPurchasePrice(int storeId, decimal price)
         {
             var inventoryItems = new List<InventoryItem>();
