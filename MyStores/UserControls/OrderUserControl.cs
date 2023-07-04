@@ -40,31 +40,43 @@ namespace MyStores.UserControls
             listPanelComboBox.Items.Clear();
         }
 
-        private void LoadVendorComboBox()
+        private bool LoadVendorComboBox()
         {
             ClearComboBox();
             List<Vendor> vendorList = _controller.SearchVendorByStoreId(_storeId);
             if (vendorList.Count == 0)
             {
-                MessageBox.Show("There are no Products in your store for this vendor." + Environment.NewLine + "Please choose a different one!");
+                MessageBox.Show("There are no Vendors added to this store." +
+                    Environment.NewLine + "Please add on or more vendors to place an order with them");
+                return false;
             }
             listPanelComboBox.DataSource = vendorList;
             listPanelComboBox.SelectedItem = null;
             mainFlowLayoutPanel.Controls.Clear();
             totalAmountLabel.Text = @"$0.00";
+
+            return true;
         }
 
-        private void LoadOrderComboBox()
+        private bool LoadOrderComboBox()
         {
             ClearComboBox();
             List<Order> orderList = _controller.OpenOrdersForStore(_storeId);
+            if (orderList.Count == 0)
+            {
+                MessageBox.Show("There are no upcoming orders being delivered!" +
+                    Environment.NewLine + "Please place an order");
+                return false;
+            }
             listPanelComboBox.DataSource = orderList;
             listPanelComboBox.SelectedItem = null;
             mainFlowLayoutPanel.Controls.Clear();
             totalAmountLabel.Text = @"$0.00";
+
+            return true;
         }
 
-        private void LoadProductList()
+        private bool LoadProductList()
         {
             if (_isPlaceOrder)
             {
@@ -74,9 +86,18 @@ namespace MyStores.UserControls
                 {
                     List<InventoryItem> itemList = _controller.SearchInventoryWithVendorId(vendor.Id, _storeId);
 
+                    if (itemList.Count == 0)
+                    {
+                        MessageBox.Show("The selected vendor does not sell any product to you!" +
+                            Environment.NewLine + "Please add products to this store with this vendor to place an order");
+                        return false;
+                    }
+
                     mainFlowLayoutPanel.Controls.Clear();
 
                     LoadFlowPanel(itemList);
+
+                    return true;
                 }
             }
             else if (_isReceiveOrder)
@@ -90,9 +111,12 @@ namespace MyStores.UserControls
                     mainFlowLayoutPanel.Controls.Clear();
 
                     LoadFlowPanel(itemList);
+
+                    return true;
                 }
             }
 
+            return false;
         }
 
         private void LoadFlowPanel(List<InventoryItem> itemList)
@@ -147,28 +171,30 @@ namespace MyStores.UserControls
 
         private void placeOrderButton_Click(object sender, EventArgs e)
         {
-            finalListPanelButton.Text = @"Place Order";
-            panelHeadingLabel.Text = @"Please select a Vendor from this list to place an order";
+            if (LoadVendorComboBox())
+            {
+                finalListPanelButton.Text = @"Place Order";
+                panelHeadingLabel.Text = @"Please select a Vendor from this list to place an order";
 
-            _isPlaceOrder = true;
-            _isReceiveOrder = false;
+                _isPlaceOrder = true;
+                _isReceiveOrder = false;
 
-            LoadVendorComboBox();
-
-            SwitchPanels();
+                SwitchPanels();
+            }
         }
 
         private void receiveOrderButton_Click(object sender, EventArgs e)
         {
-            finalListPanelButton.Text = @"Receive Order";
-            panelHeadingLabel.Text = @"Please select an Order from the list below";
+            if (LoadOrderComboBox())
+            {
+                finalListPanelButton.Text = @"Receive Order";
+                panelHeadingLabel.Text = @"Please select an Order from the list below";
 
-            _isPlaceOrder = false;
-            _isReceiveOrder = true;
+                _isPlaceOrder = false;
+                _isReceiveOrder = true;
 
-            LoadOrderComboBox();
-
-            SwitchPanels();
+                SwitchPanels();
+            }
         }
 
         private void backButton_Click(object sender, EventArgs e)
