@@ -49,6 +49,7 @@
             phoneNumTextBox = new TextBox();
             phoneNumLabel = new Label();
             countryLabel = new Label();
+            editButton = new Button();
             SuspendLayout();
             // 
             // nameErrorLabel
@@ -267,6 +268,19 @@
             countryLabel.TabIndex = 114;
             countryLabel.Text = "Country";
             // 
+            // editButton
+            // 
+            editButton.BackColor = Color.White;
+            editButton.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            editButton.Location = new Point(93, 795);
+            editButton.Margin = new Padding(3, 2, 3, 2);
+            editButton.Name = "editButton";
+            editButton.Size = new Size(151, 62);
+            editButton.TabIndex = 121;
+            editButton.Text = "Edit";
+            editButton.UseVisualStyleBackColor = false;
+            editButton.Visible = false;
+            // 
             // AddVendorUserControl
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
@@ -293,9 +307,11 @@
             Controls.Add(nameTextBox);
             Controls.Add(vendorNameLabel);
             Controls.Add(titleLabel);
+            Controls.Add(editButton);
             Margin = new Padding(5, 6, 5, 6);
             Name = "AddVendorUserControl";
             Size = new Size(658, 880);
+            Load += AddVendorUserControl_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -323,5 +339,6 @@
         private TextBox phoneNumTextBox;
         private Label phoneNumLabel;
         private Label countryLabel;
+        private Button editButton;
     }
 }

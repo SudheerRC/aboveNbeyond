@@ -6,10 +6,16 @@ namespace MyStores.UserControls
     public partial class AddVendorUserControl : UserControl
     {
         private readonly MyStoresController _controller;
+        private int _vendorId;
         public AddVendorUserControl()
         {
             InitializeComponent();
             _controller = new MyStoresController();
+        }
+
+        public void SetVendorId(int id)
+        {
+            _vendorId = id;
         }
 
         private void PhoneNumTextBox_TextChanged(object sender, EventArgs e)
@@ -39,7 +45,7 @@ namespace MyStores.UserControls
             zipcodeTextBox.MaxLength = 6;
         }
 
-        private void ClearButton_Click(object sender, EventArgs e)
+        public void ClearFields()
         {
             nameTextBox.Clear();
             streetAddressTextBox.Clear();
@@ -50,6 +56,14 @@ namespace MyStores.UserControls
             phoneNumTextBox.Clear();
             nameErrorLabel.Visible = false;
             phoneErrorLabel.Visible = false;
+
+            addButton.Visible = true;
+            editButton.Visible = false;
+        }
+
+        private void ClearButton_Click(object sender, EventArgs e)
+        {
+            ClearFields();
             errorLabel.Visible = false;
         }
 
@@ -86,6 +100,7 @@ namespace MyStores.UserControls
 
                 _controller.AddVendor(newVendor);
                 errorLabel.Text = "Vendor has been added succesfully";
+                ClearFields();
                 errorLabel.ForeColor = Color.Green;
                 errorLabel.Visible = true;
             }
@@ -115,6 +130,34 @@ namespace MyStores.UserControls
             }
 
             return result;
+        }
+
+        private void AddVendorUserControl_Load(object sender, EventArgs e)
+        {
+            SetVendorDetails();
+        }
+
+        public void SetVendorDetails()
+        {
+            if (_vendorId > 0)
+            {
+                var vendor = _controller.SearchVendorWithVendorId(_vendorId);
+
+                addButton.Visible = false;
+                editButton.Visible = true;
+
+                nameTextBox.Text = vendor.Name;
+                streetAddressTextBox.Text = vendor.StreetAddress;
+                cityTextBox.Text = vendor.City;
+                stateTextBox.Text = vendor.State;
+                countryTextBox.Text = vendor.Country;
+                phoneNumTextBox.Text = vendor.PhoneNumber;
+                zipcodeTextBox.Text = vendor.ZipCode;
+            }
+            else
+            {
+               ClearFields();
+            }
         }
     }
 }

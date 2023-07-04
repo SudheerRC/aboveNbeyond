@@ -171,6 +171,7 @@ namespace MyStores.UserControls
                 priceTextBox.Text = Convert.ToString(product.SellingPrice);
                 barcodeTextBox.Text = product.Barcode;
                 savedPicture.Image = MagicImageConverter.ConvertByteToImage(product.Image);
+                pictureBox.Image = MagicImageConverter.ConvertByteToImage(product.Image);
 
                 addButton.Visible = false;
                 editButton.Visible = true;
@@ -178,6 +179,50 @@ namespace MyStores.UserControls
             else
             {
                 ClearFields();
+            }
+        }
+
+        private void EditButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!ValidateFields())
+                {
+                    nameErrorLabel.Visible = false;
+                    priceErrorLabel.Visible = false;
+                    barcodeErrorLabel.Visible = false;
+                    errorLabel.Visible = false;
+
+                    if (savedPicture.Image != null)
+                    {
+                        pictureBox.Image = savedPicture.Image;
+                    }
+
+                    pictureBox.Image ??= defaultProductPicture.Image;
+
+                    var newProduct = new Product
+                    {
+                        Id = _productId,
+                        Name = nameTextBox.Text,
+                        Description = descriptionTextBox.Text,
+                        ProductSize = sizeTextBox.Text,
+                        Barcode = barcodeTextBox.Text,
+                        DepartmentName = departmentTextBox.Text,
+                        Image = MagicImageConverter.ConvertImageToByte(pictureBox.Image),
+                        SellingPrice = Double.Parse(priceTextBox.Text)
+                    };
+                    _controller.EditProduct(newProduct);
+                    ClearFields();
+                    errorLabel.Text = "Product has been edited successfully";
+                    errorLabel.ForeColor = Color.Green;
+                    errorLabel.Visible = true;
+                }
+            }
+            catch (FormatException)
+            {
+                errorLabel.Text = "Please give all the details to add.";
+                errorLabel.ForeColor = Color.Red;
+                errorLabel.Visible = true;
             }
         }
     }

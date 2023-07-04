@@ -1,5 +1,4 @@
-﻿using Microsoft.VisualBasic.ApplicationServices;
-using MyStores.Controller;
+﻿using MyStores.Controller;
 using MyStores.Model;
 
 namespace MyStores.UserControls.HomeUserControl

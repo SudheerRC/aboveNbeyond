@@ -68,11 +68,15 @@ namespace MyStores.UserControls.HomeUserControl
             int id = int.Parse(current.Name);
             string name = _controller.GetStoreName(id);
 
-            mainStoreFrontUserControl.Visible = true;
+            ShowStoreFrontUserControl(id);
+        }
+
+        public void ShowStoreFrontUserControl(int id)
+        {
             mainStoreFrontUserControl.SetStoreId(id);
             mainStoreFrontUserControl.BringToFront();
             mainStoreFrontUserControl.SetOwner(_owner);
-
+            mainStoreFrontUserControl.Visible = true;
         }
 
         private static string ManagersNames(List<Users>? managers, string managersNames)

@@ -1466,5 +1466,100 @@ namespace MyStores.Dal
 
             return inventoryItems;
         }
+
+        /// <summary>
+        /// Search based on the vendor id.
+        /// </summary>
+        /// <param name="vendorId">Id of the vendor.</param>
+        /// <returns></returns>
+        public Vendor SearchVendorWithVendorId(int vendorId)
+        {
+            var vendor = new Vendor();
+            using var connection = DbConnection.GetConnection();
+            connection.Open();
+
+            string query =
+                "SELECT vendorName, streetAddress, city, state, zipCode, country, phoneNumber " +
+                "FROM Vendor WHERE vendorID = @vendorId";
+            using var command = new SqlCommand(query, connection);
+
+            command.Parameters.Add("@vendorId", System.Data.SqlDbType.Int);
+            command.Parameters["@vendorId"].Value = vendorId;
+            using var reader = command.ExecuteReader();
+            
+            var vendorNameOrdinal = reader.GetOrdinal("vendorName");
+            var streetAddressOrdinal = reader.GetOrdinal("streetAddress");
+            var cityOrdinal = reader.GetOrdinal("city");
+            var stateOrdinal = reader.GetOrdinal("state");
+            var zipCodeOrdinal = reader.GetOrdinal("zipCode");
+            var countryOrdinal = reader.GetOrdinal("country");
+            var phoneNumberOrdinal = reader.GetOrdinal("phoneNumber");
+
+            while (reader.Read())
+            {
+                var name = reader.GetString(vendorNameOrdinal);
+                var streetAddress = reader.GetString(streetAddressOrdinal);
+                var city = reader.GetString(cityOrdinal);
+                var state = reader.GetString(stateOrdinal);
+                var zipCode = reader.GetString(zipCodeOrdinal);
+                var country = reader.GetString(countryOrdinal);
+                var phoneNumber = reader.GetString(phoneNumberOrdinal);
+
+                vendor = new Vendor()
+                {
+                    Id = vendorId,
+                    Name = name,
+                    StreetAddress = streetAddress,
+                    City = city,
+                    State = state,
+                    ZipCode = zipCode,
+                    Country = country,
+                    PhoneNumber = phoneNumber
+
+                };
+            }
+
+            return vendor;
+        }
+
+        /// <summary>
+        /// Edit the product.
+        /// </summary>
+        /// <param name="newProduct">The new product.</param>
+        public void EditProduct(Product newProduct)
+        {
+            using var connection = DbConnection.GetConnection();
+            connection.Open();
+            string query = "UPDATE Product SET productName = @name, productSize = @size, " +
+                           "description = @description, departmentName = @department, barcode = @barcode, " +
+                           "sellingPrice = @price, productImage = @image where productID = @productId";
+            using var command = new SqlCommand(query, connection);
+
+            command.Parameters.Add("@productId", System.Data.SqlDbType.Int);
+            command.Parameters["@productId"].Value = newProduct.Id;
+
+            command.Parameters.Add("@name", System.Data.SqlDbType.VarChar);
+            command.Parameters["@name"].Value = newProduct.Name;
+
+            command.Parameters.Add("@size", System.Data.SqlDbType.VarChar);
+            command.Parameters["@size"].Value = newProduct.ProductSize;
+
+            command.Parameters.Add("@description", System.Data.SqlDbType.VarChar);
+            command.Parameters["@description"].Value = newProduct.Description;
+
+            command.Parameters.Add("@department", System.Data.SqlDbType.VarChar);
+            command.Parameters["@department"].Value = newProduct.DepartmentName;
+
+            command.Parameters.Add("@barcode", System.Data.SqlDbType.VarChar);
+            command.Parameters["@barcode"].Value = newProduct.Barcode;
+
+            command.Parameters.Add("@price", System.Data.SqlDbType.Decimal);
+            command.Parameters["@price"].Value = newProduct.SellingPrice;
+
+            command.Parameters.Add("@image", System.Data.SqlDbType.Image);
+            command.Parameters["@image"].Value = newProduct.Image;
+
+            command.ExecuteNonQuery();
+        }
     }
 }

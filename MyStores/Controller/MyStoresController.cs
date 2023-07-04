@@ -342,6 +342,15 @@ namespace MyStores.Controller
         {
             return _storesDal.SearchProductWithStoreIdAndPurchasePrice(storeId, price);
         }
-        
+
+        public Vendor SearchVendorWithVendorId(int vendorId)
+        {
+            return _storesDal.SearchVendorWithVendorId(vendorId);
+        }
+
+        public void EditProduct(Product product)
+        {
+            _storesDal.EditProduct(product);
+        }
     }
 }

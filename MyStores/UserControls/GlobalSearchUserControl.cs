@@ -64,6 +64,25 @@ namespace MyStores.UserControls
             }
         }
 
+        private void SetGroupBox(GroupBox groupBox, LinkLabel linkLabel, Label label)
+        {
+            groupBox.ForeColor = invisibleGroupBox.ForeColor;
+            groupBox.BackColor = invisibleGroupBox.BackColor;
+            groupBox.Size = invisibleGroupBox.Size;
+            groupBox.Font = invisibleGroupBox.Font;
+
+            linkLabel.ForeColor = invisibleLinkLabel.ForeColor;
+            linkLabel.Font = invisibleLinkLabel.Font;
+            linkLabel.VisitedLinkColor = invisibleLinkLabel.VisitedLinkColor;
+            linkLabel.Location = invisibleLinkLabel.Location;
+            linkLabel.AutoSize = true;
+            linkLabel.LinkColor = invisibleLinkLabel.LinkColor;
+
+            label.AutoSize = true;
+            label.Location = invisibleLabel.Location;
+            label.ForeColor = invisibleLabel.ForeColor;
+        }
+
         private GroupBox CreateNewProductGroupBox(Product currentProduct)
         {
             var groupBox = new GroupBox();
@@ -92,28 +111,10 @@ namespace MyStores.UserControls
             linkLabel.Text = currentVendor.Name;
             label.Text = currentVendor.PhoneNumber;
 
+            linkLabel.Click += new EventHandler(VendorLinkLabel_Click);
             groupBox.Controls.Add(linkLabel);
             groupBox.Controls.Add(label);
             return groupBox;
-        }
-
-        private void SetGroupBox(GroupBox groupBox, LinkLabel linkLabel, Label label)
-        {
-            groupBox.ForeColor = invisibleGroupBox.ForeColor;
-            groupBox.BackColor = invisibleGroupBox.BackColor;
-            groupBox.Size = invisibleGroupBox.Size;
-            groupBox.Font = invisibleGroupBox.Font;
-
-            linkLabel.ForeColor = invisibleLinkLabel.ForeColor;
-            linkLabel.Font = invisibleLinkLabel.Font;
-            linkLabel.VisitedLinkColor = invisibleLinkLabel.VisitedLinkColor;
-            linkLabel.Location = invisibleLinkLabel.Location;
-            linkLabel.AutoSize = true;
-            linkLabel.LinkColor = invisibleLinkLabel.LinkColor;
-
-            label.AutoSize = true;
-            label.Location = invisibleLabel.Location;
-            label.ForeColor = invisibleLabel.ForeColor;
         }
 
         private GroupBox CreateNewStoreGroupBox(Store currentStore)
@@ -127,6 +128,7 @@ namespace MyStores.UserControls
             linkLabel.Text = currentStore.Name;
             label.Text = currentStore.City;
 
+            linkLabel.Click += new EventHandler(StoreLinkLabel_Click);
             groupBox.Controls.Add(linkLabel);
             groupBox.Controls.Add(label);
             return groupBox;
@@ -140,6 +142,24 @@ namespace MyStores.UserControls
         private void ProductLinkLabel_Click(object sender, EventArgs e)
         {
             CategoryName = "Product";
+            LinkLabel current = (LinkLabel)sender;
+            int id = Convert.ToInt32(current.Name);
+            CategoryId = id;
+            UpdateStatus();
+        }
+
+        private void VendorLinkLabel_Click(object sender, EventArgs e)
+        {
+            CategoryName = "Vendor";
+            LinkLabel current = (LinkLabel)sender;
+            int id = Convert.ToInt32(current.Name);
+            CategoryId = id;
+            UpdateStatus();
+        }
+
+        private void StoreLinkLabel_Click(object sender, EventArgs e)
+        {
+            CategoryName = "Store";
             LinkLabel current = (LinkLabel)sender;
             int id = Convert.ToInt32(current.Name);
             CategoryId = id;

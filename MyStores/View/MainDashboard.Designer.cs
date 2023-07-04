@@ -417,6 +417,7 @@
             globalSearchUserControl.Name = "globalSearchUserControl";
             globalSearchUserControl.Size = new Size(229, 677);
             globalSearchUserControl.TabIndex = 6;
+            globalSearchUserControl.OnUpdateStatus += GlobalSearchUserControl_OnUpdateStatus;
             // 
             // leftPanel
             // 

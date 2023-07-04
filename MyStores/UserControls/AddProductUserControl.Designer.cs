@@ -351,6 +351,7 @@
             editButton.Text = "Edit";
             editButton.UseVisualStyleBackColor = false;
             editButton.Visible = false;
+            editButton.Click += EditButton_Click;
             // 
             // defaultProductPicture
             // 
