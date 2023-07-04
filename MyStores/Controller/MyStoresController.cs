@@ -376,9 +376,9 @@ namespace MyStores.Controller
         /// </summary>
         /// <param name="item">The item.</param>
         /// <param name="order">The order.</param>
-        public void PlaceOrder(InventoryItem item, Order order)
+        public int PlaceOrder(Order order)
         {
-            _storesDal.PlaceOrder(item, order);
+           return _storesDal.PlaceOrder(order);
         }
 
         /// <summary>
@@ -399,6 +399,11 @@ namespace MyStores.Controller
         public List<Order> OpenOrdersForStore(int storeId)
         {
             return _storesDal.OpenOrdersForStore(storeId);
+        }
+
+        public void InsertOrderItems(List<InventoryItem> items, int orderId)
+        {
+            _storesDal.InsertOrderItems(items, orderId);;
         }
     }
 }

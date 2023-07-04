@@ -79,23 +79,6 @@ namespace MyStores.UserControls.HomeUserControl
             mainStoreFrontUserControl.Visible = true;
         }
 
-        private static string ManagersNames(List<Users>? managers, string managersNames)
-        {
-            if (managers != null && managers.Count == 1)
-            {
-                managersNames = managers[0].FirstName + " " + managers[0].LastName;
-            }
-            else if (managers != null)
-            {
-                for (int i = 1; i < managers.Count; i++)
-                {
-                    managersNames += ", " + managers[i].FirstName + " " + managers[i].LastName;
-                }
-            }
-
-            return managersNames;
-        }
-
         private void HomeTabUserControl_Load(object sender, EventArgs e)
         {
             loadHome();

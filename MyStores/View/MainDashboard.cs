@@ -49,7 +49,7 @@ namespace MyStores.View
         {
             int id = _owner.UserId;
             _owner = _controller.GetUserDetails(id);
-            userNameLabel.Text = "Welcome, "+ Environment.NewLine + _owner.FirstName +" "+ _owner.LastName;
+            userNameLabel.Text = "Welcome, " + Environment.NewLine + _owner.FirstName + " " + _owner.LastName;
 
             mainHomeTabUserControl.SetOwner(_owner);
             globalSearchUserControl.SetUser(_owner);
