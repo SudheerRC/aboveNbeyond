@@ -21,7 +21,6 @@ namespace MyStores.UserControls.HomeUserControl
         {
             _storeId = id;
             var fullName = _controller.GetStoreName(_storeId);
-            storeNameLabel.Text = fullName;
         }
 
         public void SetOwner(Users setUser)
@@ -35,6 +34,7 @@ namespace MyStores.UserControls.HomeUserControl
             mainInventoryUserControl.Visible = false;
             mainAddVendorToStoreUserControl.Visible = false;
             mainAddManagerUserControl.Visible = false;
+            mainOrderUserControl.Visible = false;
         }
 
         private void backButton_Click(object sender, EventArgs e)
@@ -109,6 +109,10 @@ namespace MyStores.UserControls.HomeUserControl
 
         private void StoreFrontUserControl_Load(object sender, EventArgs e)
         {
+            List<Users> managers = _controller.GetAllManagersOfStore(_storeId);
+            string managersName = ManagersNames(managers);
+            managerNamesLabel.Text = managersName;
+
             backButtonPanel.Visible = false;
             mainInventoryUserControl.SetStore(_storeId);
 
@@ -128,6 +132,38 @@ namespace MyStores.UserControls.HomeUserControl
             mainOrderUserControl.Visible = true;
             backButtonPanel.BringToFront();
             backButtonPanel.Visible = true;
+        }
+
+        private void closeButton_Click(object sender, EventArgs e)
+        {
+            if (statusLabel.Text.Equals("Store Open"))
+            {
+                closeButton.BackColor = Color.Red;
+                statusLabel.Text = "Store Closed";
+            }
+            else
+            {
+                closeButton.BackColor = Color.Green;
+                statusLabel.Text = "Store Open";
+            }
+        }
+
+        private string ManagersNames(List<Users>? managers)
+        {
+            string managersNames = "";
+            if (managers != null && managers.Count == 1)
+            {
+                managersNames = managers[0].FirstName + " " + managers[0].LastName;
+            }
+            else if (managers != null)
+            {
+                for (int i = 1; i < managers.Count; i++)
+                {
+                    managersNames += ", " + managers[i].FirstName + " " + managers[i].LastName;
+                }
+            }
+
+            return managersNames;
         }
     }
 }

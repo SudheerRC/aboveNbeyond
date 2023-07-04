@@ -1523,7 +1523,7 @@ namespace MyStores.Dal
             command.Parameters.Add("@vendorId", System.Data.SqlDbType.Int);
             command.Parameters["@vendorId"].Value = vendorId;
             using var reader = command.ExecuteReader();
-            
+
             var vendorNameOrdinal = reader.GetOrdinal("vendorName");
             var streetAddressOrdinal = reader.GetOrdinal("streetAddress");
             var cityOrdinal = reader.GetOrdinal("city");
@@ -1602,17 +1602,13 @@ namespace MyStores.Dal
         /// <summary>
         /// Places the order.
         /// </summary>
-        /// <param name="item">The item.</param>
         /// <param name="order">The order.</param>
-        public void PlaceOrder(InventoryItem item, Order order)
+        public int PlaceOrder(Order order)
         {
             using var connection = DbConnection.GetConnection();
             connection.Open();
             using var command = new SqlCommand("placeOrder", connection);
             command.CommandType = CommandType.StoredProcedure;
-
-            command.Parameters.Add("@inventoryID", System.Data.SqlDbType.Int);
-            command.Parameters["@inventoryID"].Value = item.InventoryId;
 
             command.Parameters.Add("@orderDate", System.Data.SqlDbType.Date);
             command.Parameters["@orderDate"].Value = DateOnly.FromDateTime(DateTime.Now);
@@ -1629,13 +1625,40 @@ namespace MyStores.Dal
             command.Parameters.Add("@storeId", System.Data.SqlDbType.Int);
             command.Parameters["@storeId"].Value = order.StoreId;
 
-            command.Parameters.Add("@purchasePrice", System.Data.SqlDbType.Decimal);
-            command.Parameters["@purchasePrice"].Value = item.PurchasePrice;
-
-            command.Parameters.Add("@quantity", System.Data.SqlDbType.Int);
-            command.Parameters["@quantity"].Value = item.Quantity;
-
+            command.Parameters.Add("@orderId", System.Data.SqlDbType.Int);
+            int orderId = Convert.ToInt32(command.Parameters["@orderId"].Value);
             command.ExecuteNonQuery();
+            return orderId;
+        }
+
+        public void InsertOrderItems(List<InventoryItem> items, int orderId)
+        {
+            using var connection = DbConnection.GetConnection();
+            
+
+            string query = "INSERT INTO Orders(orderID, inventoryID, purchasePrice, quantity) " +
+                           "VALUES (@orderID, @inventoryID, @purchasePrice, @quantity)";
+            using var command = new SqlCommand(query, connection);
+
+            foreach (var currentItem in items)
+            {
+                command.Parameters.Add("@orderID", System.Data.SqlDbType.Int);
+                command.Parameters["@orderID"].Value = orderId;
+
+                command.Parameters.Add("@inventoryID", System.Data.SqlDbType.Int);
+                command.Parameters["@inventoryID"].Value = currentItem.InventoryId;
+
+                command.Parameters.Add("@purchasePrice", System.Data.SqlDbType.Decimal);
+                command.Parameters["@purchasePrice"].Value = currentItem.PurchasePrice;
+
+                command.Parameters.Add("@quantity", System.Data.SqlDbType.Int);
+                command.Parameters["@quantity"].Value = currentItem.Quantity;
+
+                connection.Open();
+                command.ExecuteNonQuery();
+                command.Parameters.Clear();
+                connection.Close();
+            }
         }
 
         /// <summary>
