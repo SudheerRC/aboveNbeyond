@@ -121,7 +121,12 @@ namespace MyStores.UserControls.HomeUserControl
 
         private void orderButton_Click(object sender, EventArgs e)
         {
-
+            expandPanel();
+            mainOrderUserControl.BringToFront();
+            mainOrderUserControl.SetStore(_storeId);
+            mainOrderUserControl.Visible = true;
+            backButtonPanel.BringToFront();
+            backButtonPanel.Visible = true;
         }
     }
 }
