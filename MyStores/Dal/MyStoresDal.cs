@@ -1,6 +1,8 @@
 ﻿using System.Data;
 using Microsoft.Data.SqlClient;
+using Microsoft.VisualBasic.ApplicationServices;
 using MyStores.Model;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace MyStores.Dal
 {
@@ -116,6 +118,43 @@ namespace MyStores.Dal
             }
 
             return userId;
+        }
+
+        public Users GetUserDetails(int userId)
+        {
+            var user = new Users();
+            using var connection = DbConnection.GetConnection();
+            connection.Open();
+            string query = "select firstName, lastName, dateOfBirth, gender from UserDetails where userID = @userId";
+            using var command = new SqlCommand(query, connection);
+
+            command.Parameters.Add("@userId", System.Data.SqlDbType.Int);
+            command.Parameters["@userId"].Value = userId;
+
+            using var reader = command.ExecuteReader();
+
+            var fNameOrdinal = reader.GetOrdinal("firstName");
+            var lNameOrdinal = reader.GetOrdinal("lastName");
+            var dobOrdinal = reader.GetOrdinal("dateOfBirth");
+            var genderOrdinal = reader.GetOrdinal("gender");
+
+            while (reader.Read())
+            {
+                var fName = reader.GetString(fNameOrdinal);
+                var lName = reader.GetString(lNameOrdinal);
+                var dob = reader.GetDateTime(dobOrdinal);
+                var gender = reader.GetString(genderOrdinal);
+
+                user = new Users()
+                {
+                    UserId = userId,
+                    FirstName = fName,
+                    LastName = lName,
+                    DOB = dob,
+                    Gender = gender
+                };
+            }
+            return user;
         }
 
         /// <summary>

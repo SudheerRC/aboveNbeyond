@@ -352,5 +352,10 @@ namespace MyStores.Controller
         {
             _storesDal.EditProduct(product);
         }
+
+        public Users GetUserDetails(int userId)
+        {
+            return _storesDal.GetUserDetails(userId);
+        }
     }
 }

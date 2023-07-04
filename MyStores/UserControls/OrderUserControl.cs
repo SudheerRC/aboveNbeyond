@@ -56,9 +56,29 @@ namespace MyStores.UserControls
                 var productTile = new OrderedProductTileUserControl();
                 productTile.setInventoryItem(t);
                 mainFlowLayoutPanel.Controls.Add(productTile);
-
-                _orderTotal += (itemList[i].PurchasePrice * itemList[i].Quantity);
             }
+            
+        }
+
+        private void CalculateOrderTotal()
+        {
+            _orderTotal = 0.0;
+
+            for (int i = 0; i < mainFlowLayoutPanel.Controls.Count; i++)
+            {
+                UserControl newControl = (OrderedProductTileUserControl)mainFlowLayoutPanel.Controls[i];
+                var quantity = Convert.ToInt32(newControl.Controls["quantityTextBox"].Text);
+                var purchasePrice = Convert.ToDouble(newControl.Controls["priceTextBox"].Text);
+
+                _orderTotal += (quantity * purchasePrice);
+            }
+
+            totalAmountLabel.Text = @"$" + _orderTotal.ToString();
+        }
+
+        private void OrderedProductTileUserControl_OnUpdateStatus(object sender, EventArgs e)
+        {
+            CalculateOrderTotal();
         }
 
         private void SwitchPanels()
@@ -116,6 +136,7 @@ namespace MyStores.UserControls
         private void listPanelComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             LoadProductList();
+            CalculateOrderTotal();
         }
     }
 }

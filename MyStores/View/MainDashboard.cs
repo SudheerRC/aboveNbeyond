@@ -1,13 +1,16 @@
-﻿using MyStores.Model;
+﻿using MyStores.Controller;
+using MyStores.Model;
 
 namespace MyStores.View
 {
     public partial class MainDashboard : Form
     {
         private Users _owner;
+        private MyStoresController _controller;
         public MainDashboard()
         {
             InitializeComponent();
+            _controller = new MyStoresController();
             _owner = new Users();
         }
 
@@ -44,6 +47,10 @@ namespace MyStores.View
 
         private void MainDashboard_Load(object sender, EventArgs e)
         {
+            int id = _owner.UserId;
+            _owner = _controller.GetUserDetails(id);
+            userNameLabel.Text = "Welcome, "+ Environment.NewLine + _owner.FirstName + _owner.LastName;
+
             mainHomeTabUserControl.SetOwner(_owner);
             globalSearchUserControl.SetUser(_owner);
 
@@ -222,13 +229,13 @@ namespace MyStores.View
         private void productsMenuButton_Click(object sender, EventArgs e)
         {
             ClearUserControls();
-            MessageBox.Show("Coming soon!!!");
+            MessageBox.Show("Collapsable Menu Coming soon!!!");
         }
 
         private void vendorsMenuButton_Click(object sender, EventArgs e)
         {
             ClearUserControls();
-            MessageBox.Show("Coming soon!!!");
+            MessageBox.Show("Collapsable Menu Coming soon!!!");
         }
     }
 }

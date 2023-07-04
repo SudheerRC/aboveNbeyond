@@ -1,10 +1,15 @@
 ﻿using MyStores.Model;
+using System.Data;
 
 namespace MyStores.UserControls
 {
     public partial class OrderedProductTileUserControl : UserControl
     {
         private InventoryItem _inventoryItem;
+
+        public delegate void StatusUpdateHandler(object sender, EventArgs e);
+        public event StatusUpdateHandler OnUpdateStatus;
+
 
         public OrderedProductTileUserControl()
         {
@@ -17,6 +22,13 @@ namespace MyStores.UserControls
             _inventoryItem = item;
         }
 
+        private void UpdateStatus()
+        {
+            EventArgs args = EventArgs.Empty;
+
+            OnUpdateStatus?.Invoke(this, args);
+        }
+
         private void addButton_Click(object sender, EventArgs e)
         {
             var quantity = Convert.ToInt32(quantityTextBox.Text);
@@ -27,13 +39,20 @@ namespace MyStores.UserControls
         private void minusButton_Click(object sender, EventArgs e)
         {
             var quantity = Convert.ToInt32(quantityTextBox.Text);
-            quantity = quantity - 1;
-            quantityTextBox.Text = quantity.ToString();
+
+            if (quantity > 0)
+            {
+                quantity = quantity - 1;
+                quantityTextBox.Text = quantity.ToString();
+            }
         }
 
         private void removeButton_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            quantityTextBox.Text = @"0";
+
+            UpdateStatus();
+            this.Parent.Controls.Remove(this);
         }
 
         private void productNameLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
