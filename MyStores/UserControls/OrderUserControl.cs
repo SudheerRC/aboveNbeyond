@@ -1,6 +1,7 @@
 ﻿using MyStores.Controller;
 using MyStores.Model;
 using System.Collections.Generic;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Header;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace MyStores.UserControls
@@ -61,22 +62,44 @@ namespace MyStores.UserControls
 
         private void LoadProductList()
         {
-            var vendor = listPanelComboBox.SelectedItem as Vendor;
-
-            if (vendor != null)
+            if (_isPlaceOrder)
             {
-                List<InventoryItem> itemList = _controller.SearchInventoryWithVendorId(vendor.Id, _storeId);
+                var vendor = listPanelComboBox.SelectedItem as Vendor;
 
-                mainFlowLayoutPanel.Controls.Clear();
-
-                foreach (var t in itemList)
+                if (vendor != null)
                 {
-                    var productTile = new OrderedProductTileUserControl();
-                    productTile.setInventoryItem(t);
-                    SetControlClickEvents(productTile);
+                    List<InventoryItem> itemList = _controller.SearchInventoryWithVendorId(vendor.Id, _storeId);
 
-                    mainFlowLayoutPanel.Controls.Add(productTile);
+                    mainFlowLayoutPanel.Controls.Clear();
+
+                    LoadFlowPanel(itemList);
                 }
+            }
+            else if (_isReceiveOrder)
+            {
+                var order = listPanelComboBox.SelectedItem as Order;
+
+                if (order != null)
+                {
+                    //List<InventoryItem> itemList = _controller.SearchInventoryWithVendorId(vendor.Id, _storeId);
+
+                    //mainFlowLayoutPanel.Controls.Clear();
+
+                    //LoadFlowPanel(itemList);
+                }
+            }
+            
+        }
+
+        private void LoadFlowPanel(List<InventoryItem> itemList)
+        {
+            foreach (var t in itemList)
+            {
+                var productTile = new OrderedProductTileUserControl();
+                productTile.setInventoryItem(t);
+                SetControlClickEvents(productTile);
+
+                mainFlowLayoutPanel.Controls.Add(productTile);
             }
         }
 
@@ -181,7 +204,8 @@ namespace MyStores.UserControls
             else if (_isReceiveOrder)
             {
                 List<InventoryItem> itemList = GetOrderItemList();
-                
+
+                _controller.ReceiveOrder(itemList);
 
                 MessageBox.Show(@"Order Received Successfully!\nYour Inventory has been updated!");
             }
