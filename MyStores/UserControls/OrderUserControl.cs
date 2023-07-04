@@ -1,8 +1,5 @@
 ﻿using MyStores.Controller;
 using MyStores.Model;
-using System.Collections.Generic;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Header;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace MyStores.UserControls
 {
