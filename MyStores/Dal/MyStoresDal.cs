@@ -1762,6 +1762,9 @@ namespace MyStores.Dal
                 command.Parameters.Add("@newQuantity", System.Data.SqlDbType.Int);
                 command.Parameters["@newQuantity"].Value = currentItem.Quantity;
 
+                command.Parameters.Add("@receivedDate", System.Data.SqlDbType.Date);
+                command.Parameters["@receivedDate"].Value = DateOnly.FromDateTime(DateTime.Now);
+
                 connection.Open();
                 command.ExecuteNonQuery();
                 command.Parameters.Clear();
