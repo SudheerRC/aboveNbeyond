@@ -131,6 +131,7 @@ namespace MyStores.UserControls.HomeUserControl
         {
             expandPanel();
             mainOrderUserControl.BringToFront();
+            mainOrderUserControl.SetUser(_owner.UserId);
             mainOrderUserControl.SetStore(_storeId);
             mainOrderUserControl.Visible = true;
             backButtonPanel.BringToFront();
