@@ -9,19 +9,31 @@
 
         private void placeOrderButton_Click(object sender, EventArgs e)
         {
+            finalListPanelButton.Text = @"Place Order";
+            panelHeadingLabel.Text = @"Please select a Vendor from this list to place an order";
+
             mainPanel.Visible = false;
             listPanel.Visible = true;
-            finalListPanelButton.Text = "Receive Order";
-            panelHeadingLabel.Text = "Please select an Order from the list below";
 
         }
 
         private void receiveOrderButton_Click(object sender, EventArgs e)
         {
+            finalListPanelButton.Text = @"Receive Order";
+            panelHeadingLabel.Text = @"Please select an Order from the list below";
+
             mainPanel.Visible = false;
             listPanel.Visible = true;
-            finalListPanelButton.Text = "Receive Order";
-            panelHeadingLabel.Text = "Please select an Order from the list below";
+        }
+
+        private void backButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void finalListPanelButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

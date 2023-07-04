@@ -33,12 +33,13 @@
             receiveOrderButton = new Button();
             mainPanel = new Panel();
             listPanel = new Panel();
+            backButton = new Button();
+            panelHeadingLabel = new Label();
             totalLabel = new Label();
             finalListPanelButton = new Button();
             totalAmountLabel = new Label();
             mainFlowLayoutPanel = new FlowLayoutPanel();
             vendorComboBox = new ComboBox();
-            panelHeadingLabel = new Label();
             listPanel.SuspendLayout();
             SuspendLayout();
             // 
@@ -93,6 +94,7 @@
             // 
             // listPanel
             // 
+            listPanel.Controls.Add(backButton);
             listPanel.Controls.Add(panelHeadingLabel);
             listPanel.Controls.Add(totalLabel);
             listPanel.Controls.Add(finalListPanelButton);
@@ -104,12 +106,38 @@
             listPanel.Size = new Size(833, 602);
             listPanel.TabIndex = 6;
             // 
+            // backButton
+            // 
+            backButton.BackColor = Color.FromArgb(28, 44, 78);
+            backButton.FlatAppearance.BorderSize = 0;
+            backButton.FlatStyle = FlatStyle.Flat;
+            backButton.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            backButton.ForeColor = Color.White;
+            backButton.Location = new Point(61, 549);
+            backButton.Margin = new Padding(3, 4, 3, 4);
+            backButton.Name = "backButton";
+            backButton.Size = new Size(131, 53);
+            backButton.TabIndex = 19;
+            backButton.Text = "Back";
+            backButton.UseVisualStyleBackColor = false;
+            backButton.Click += backButton_Click;
+            // 
+            // panelHeadingLabel
+            // 
+            panelHeadingLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            panelHeadingLabel.Location = new Point(3, 0);
+            panelHeadingLabel.Name = "panelHeadingLabel";
+            panelHeadingLabel.Size = new Size(827, 40);
+            panelHeadingLabel.TabIndex = 18;
+            panelHeadingLabel.Text = "Please select a Vendor from this list to place an order";
+            panelHeadingLabel.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // totalLabel
             // 
             totalLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            totalLabel.Location = new Point(219, 552);
+            totalLabel.Location = new Point(306, 555);
             totalLabel.Name = "totalLabel";
-            totalLabel.Size = new Size(74, 53);
+            totalLabel.Size = new Size(74, 49);
             totalLabel.TabIndex = 17;
             totalLabel.Text = "Total:";
             totalLabel.TextAlign = ContentAlignment.MiddleRight;
@@ -121,18 +149,19 @@
             finalListPanelButton.FlatStyle = FlatStyle.Flat;
             finalListPanelButton.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             finalListPanelButton.ForeColor = Color.White;
-            finalListPanelButton.Location = new Point(530, 549);
+            finalListPanelButton.Location = new Point(589, 550);
             finalListPanelButton.Margin = new Padding(3, 4, 3, 4);
             finalListPanelButton.Name = "finalListPanelButton";
             finalListPanelButton.Size = new Size(182, 53);
             finalListPanelButton.TabIndex = 16;
             finalListPanelButton.Text = "Place Order";
             finalListPanelButton.UseVisualStyleBackColor = false;
+            finalListPanelButton.Click += finalListPanelButton_Click;
             // 
             // totalAmountLabel
             // 
             totalAmountLabel.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            totalAmountLabel.Location = new Point(299, 549);
+            totalAmountLabel.Location = new Point(386, 550);
             totalAmountLabel.Name = "totalAmountLabel";
             totalAmountLabel.Size = new Size(108, 53);
             totalAmountLabel.TabIndex = 2;
@@ -156,25 +185,15 @@
             vendorComboBox.Size = new Size(311, 33);
             vendorComboBox.TabIndex = 0;
             // 
-            // panelHeadingLabel
-            // 
-            panelHeadingLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            panelHeadingLabel.Location = new Point(3, 0);
-            panelHeadingLabel.Name = "panelHeadingLabel";
-            panelHeadingLabel.Size = new Size(827, 40);
-            panelHeadingLabel.TabIndex = 18;
-            panelHeadingLabel.Text = "Please select a Vendor from this list to place an order";
-            panelHeadingLabel.TextAlign = ContentAlignment.MiddleCenter;
-            // 
             // OrderUserControl
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(227, 211, 177);
+            Controls.Add(listPanel);
             Controls.Add(receiveOrderButton);
             Controls.Add(placeOrderButton);
             Controls.Add(mainPanel);
-            Controls.Add(listPanel);
             Name = "OrderUserControl";
             Size = new Size(999, 611);
             listPanel.ResumeLayout(false);
@@ -193,5 +212,6 @@
         private Button finalListPanelButton;
         private Label totalLabel;
         private Label panelHeadingLabel;
+        private Button backButton;
     }
 }
