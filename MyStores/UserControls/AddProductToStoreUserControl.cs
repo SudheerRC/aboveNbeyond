@@ -12,6 +12,11 @@ namespace MyStores.UserControls
             InitializeComponent();
             _controller = new MyStoresController();
 
+            SetDefaultMessageLabel();
+        }
+
+        private void SetDefaultMessageLabel()
+        {
             messageLabel.Text = @"The above are vendors you have added to this store. If you don't find the vendor " +
                                 @"you are looking for, consider adding them to your list by going back and clicking on add vendors icon";
         }

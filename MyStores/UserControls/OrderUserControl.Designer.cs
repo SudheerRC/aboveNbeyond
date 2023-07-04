@@ -29,175 +29,173 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrderUserControl));
-            placeOrderButton = new Button();
-            receiveOrderButton = new Button();
-            mainPanel = new Panel();
-            listPanel = new Panel();
-            backButton = new Button();
-            panelHeadingLabel = new Label();
-            totalLabel = new Label();
-            finalListPanelButton = new Button();
-            totalAmountLabel = new Label();
-            mainFlowLayoutPanel = new FlowLayoutPanel();
-            vendorComboBox = new ComboBox();
-            listPanel.SuspendLayout();
-            SuspendLayout();
+            this.placeOrderButton = new System.Windows.Forms.Button();
+            this.receiveOrderButton = new System.Windows.Forms.Button();
+            this.mainPanel = new System.Windows.Forms.Panel();
+            this.listPanel = new System.Windows.Forms.Panel();
+            this.backButton = new System.Windows.Forms.Button();
+            this.panelHeadingLabel = new System.Windows.Forms.Label();
+            this.totalLabel = new System.Windows.Forms.Label();
+            this.finalListPanelButton = new System.Windows.Forms.Button();
+            this.totalAmountLabel = new System.Windows.Forms.Label();
+            this.mainFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.listPanelComboBox = new System.Windows.Forms.ComboBox();
+            this.listPanel.SuspendLayout();
+            this.SuspendLayout();
             // 
             // placeOrderButton
             // 
-            placeOrderButton.BackColor = Color.FromArgb(28, 44, 78);
-            placeOrderButton.FlatAppearance.BorderSize = 0;
-            placeOrderButton.FlatStyle = FlatStyle.Flat;
-            placeOrderButton.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            placeOrderButton.ForeColor = Color.White;
-            placeOrderButton.Image = (Image)resources.GetObject("placeOrderButton.Image");
-            placeOrderButton.Location = new Point(210, 160);
-            placeOrderButton.Margin = new Padding(3, 4, 3, 4);
-            placeOrderButton.Name = "placeOrderButton";
-            placeOrderButton.Padding = new Padding(7, 8, 7, 8);
-            placeOrderButton.Size = new Size(171, 227);
-            placeOrderButton.TabIndex = 3;
-            placeOrderButton.Text = "Place new Order";
-            placeOrderButton.TextAlign = ContentAlignment.BottomCenter;
-            placeOrderButton.TextImageRelation = TextImageRelation.ImageAboveText;
-            placeOrderButton.UseVisualStyleBackColor = false;
-            placeOrderButton.Visible = false;
-            placeOrderButton.Click += placeOrderButton_Click;
+            this.placeOrderButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
+            this.placeOrderButton.FlatAppearance.BorderSize = 0;
+            this.placeOrderButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.placeOrderButton.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.placeOrderButton.ForeColor = System.Drawing.Color.White;
+            this.placeOrderButton.Image = ((System.Drawing.Image)(resources.GetObject("placeOrderButton.Image")));
+            this.placeOrderButton.Location = new System.Drawing.Point(184, 120);
+            this.placeOrderButton.Name = "placeOrderButton";
+            this.placeOrderButton.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.placeOrderButton.Size = new System.Drawing.Size(150, 170);
+            this.placeOrderButton.TabIndex = 3;
+            this.placeOrderButton.Text = "Place new Order";
+            this.placeOrderButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.placeOrderButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.placeOrderButton.UseVisualStyleBackColor = false;
+            this.placeOrderButton.Visible = false;
             // 
             // receiveOrderButton
             // 
-            receiveOrderButton.BackColor = Color.FromArgb(28, 44, 78);
-            receiveOrderButton.FlatAppearance.BorderSize = 0;
-            receiveOrderButton.FlatStyle = FlatStyle.Flat;
-            receiveOrderButton.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            receiveOrderButton.ForeColor = Color.White;
-            receiveOrderButton.Image = (Image)resources.GetObject("receiveOrderButton.Image");
-            receiveOrderButton.Location = new Point(569, 160);
-            receiveOrderButton.Margin = new Padding(3, 4, 3, 4);
-            receiveOrderButton.Name = "receiveOrderButton";
-            receiveOrderButton.Padding = new Padding(7, 8, 7, 8);
-            receiveOrderButton.Size = new Size(171, 227);
-            receiveOrderButton.TabIndex = 4;
-            receiveOrderButton.Text = "Receive an Order";
-            receiveOrderButton.TextAlign = ContentAlignment.BottomCenter;
-            receiveOrderButton.TextImageRelation = TextImageRelation.ImageAboveText;
-            receiveOrderButton.UseVisualStyleBackColor = false;
-            receiveOrderButton.Visible = false;
-            receiveOrderButton.Click += receiveOrderButton_Click;
+            this.receiveOrderButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
+            this.receiveOrderButton.FlatAppearance.BorderSize = 0;
+            this.receiveOrderButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.receiveOrderButton.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.receiveOrderButton.ForeColor = System.Drawing.Color.White;
+            this.receiveOrderButton.Image = ((System.Drawing.Image)(resources.GetObject("receiveOrderButton.Image")));
+            this.receiveOrderButton.Location = new System.Drawing.Point(498, 120);
+            this.receiveOrderButton.Name = "receiveOrderButton";
+            this.receiveOrderButton.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.receiveOrderButton.Size = new System.Drawing.Size(150, 170);
+            this.receiveOrderButton.TabIndex = 4;
+            this.receiveOrderButton.Text = "Receive an Order";
+            this.receiveOrderButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.receiveOrderButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.receiveOrderButton.UseVisualStyleBackColor = false;
+            this.receiveOrderButton.Visible = false;
             // 
             // mainPanel
             // 
-            mainPanel.Location = new Point(66, 66);
-            mainPanel.Name = "mainPanel";
-            mainPanel.Size = new Size(860, 465);
-            mainPanel.TabIndex = 5;
+            this.mainPanel.Location = new System.Drawing.Point(58, 50);
+            this.mainPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.mainPanel.Name = "mainPanel";
+            this.mainPanel.Size = new System.Drawing.Size(752, 349);
+            this.mainPanel.TabIndex = 5;
             // 
             // listPanel
             // 
-            listPanel.Controls.Add(backButton);
-            listPanel.Controls.Add(panelHeadingLabel);
-            listPanel.Controls.Add(totalLabel);
-            listPanel.Controls.Add(finalListPanelButton);
-            listPanel.Controls.Add(totalAmountLabel);
-            listPanel.Controls.Add(mainFlowLayoutPanel);
-            listPanel.Controls.Add(vendorComboBox);
-            listPanel.Location = new Point(80, 6);
-            listPanel.Name = "listPanel";
-            listPanel.Size = new Size(833, 602);
-            listPanel.TabIndex = 6;
+            this.listPanel.Controls.Add(this.backButton);
+            this.listPanel.Controls.Add(this.panelHeadingLabel);
+            this.listPanel.Controls.Add(this.totalLabel);
+            this.listPanel.Controls.Add(this.finalListPanelButton);
+            this.listPanel.Controls.Add(this.totalAmountLabel);
+            this.listPanel.Controls.Add(this.mainFlowLayoutPanel);
+            this.listPanel.Controls.Add(this.listPanelComboBox);
+            this.listPanel.Location = new System.Drawing.Point(70, 4);
+            this.listPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.listPanel.Name = "listPanel";
+            this.listPanel.Size = new System.Drawing.Size(729, 452);
+            this.listPanel.TabIndex = 6;
             // 
             // backButton
             // 
-            backButton.BackColor = Color.FromArgb(28, 44, 78);
-            backButton.FlatAppearance.BorderSize = 0;
-            backButton.FlatStyle = FlatStyle.Flat;
-            backButton.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            backButton.ForeColor = Color.White;
-            backButton.Location = new Point(61, 549);
-            backButton.Margin = new Padding(3, 4, 3, 4);
-            backButton.Name = "backButton";
-            backButton.Size = new Size(131, 53);
-            backButton.TabIndex = 19;
-            backButton.Text = "Back";
-            backButton.UseVisualStyleBackColor = false;
-            backButton.Click += backButton_Click;
+            this.backButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
+            this.backButton.FlatAppearance.BorderSize = 0;
+            this.backButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backButton.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.backButton.ForeColor = System.Drawing.Color.White;
+            this.backButton.Location = new System.Drawing.Point(53, 412);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(115, 40);
+            this.backButton.TabIndex = 19;
+            this.backButton.Text = "Back";
+            this.backButton.UseVisualStyleBackColor = false;
             // 
             // panelHeadingLabel
             // 
-            panelHeadingLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            panelHeadingLabel.Location = new Point(3, 0);
-            panelHeadingLabel.Name = "panelHeadingLabel";
-            panelHeadingLabel.Size = new Size(827, 40);
-            panelHeadingLabel.TabIndex = 18;
-            panelHeadingLabel.Text = "Please select a Vendor from this list to place an order";
-            panelHeadingLabel.TextAlign = ContentAlignment.MiddleCenter;
+            this.panelHeadingLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.panelHeadingLabel.Location = new System.Drawing.Point(3, 0);
+            this.panelHeadingLabel.Name = "panelHeadingLabel";
+            this.panelHeadingLabel.Size = new System.Drawing.Size(724, 30);
+            this.panelHeadingLabel.TabIndex = 18;
+            this.panelHeadingLabel.Text = "Please select a Vendor from this list to place an order";
+            this.panelHeadingLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // totalLabel
             // 
-            totalLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            totalLabel.Location = new Point(306, 555);
-            totalLabel.Name = "totalLabel";
-            totalLabel.Size = new Size(74, 49);
-            totalLabel.TabIndex = 17;
-            totalLabel.Text = "Total:";
-            totalLabel.TextAlign = ContentAlignment.MiddleRight;
+            this.totalLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.totalLabel.Location = new System.Drawing.Point(268, 416);
+            this.totalLabel.Name = "totalLabel";
+            this.totalLabel.Size = new System.Drawing.Size(65, 37);
+            this.totalLabel.TabIndex = 17;
+            this.totalLabel.Text = "Total:";
+            this.totalLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // finalListPanelButton
             // 
-            finalListPanelButton.BackColor = Color.FromArgb(28, 44, 78);
-            finalListPanelButton.FlatAppearance.BorderSize = 0;
-            finalListPanelButton.FlatStyle = FlatStyle.Flat;
-            finalListPanelButton.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            finalListPanelButton.ForeColor = Color.White;
-            finalListPanelButton.Location = new Point(589, 550);
-            finalListPanelButton.Margin = new Padding(3, 4, 3, 4);
-            finalListPanelButton.Name = "finalListPanelButton";
-            finalListPanelButton.Size = new Size(182, 53);
-            finalListPanelButton.TabIndex = 16;
-            finalListPanelButton.Text = "Place Order";
-            finalListPanelButton.UseVisualStyleBackColor = false;
-            finalListPanelButton.Click += finalListPanelButton_Click;
+            this.finalListPanelButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
+            this.finalListPanelButton.FlatAppearance.BorderSize = 0;
+            this.finalListPanelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.finalListPanelButton.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.finalListPanelButton.ForeColor = System.Drawing.Color.White;
+            this.finalListPanelButton.Location = new System.Drawing.Point(515, 412);
+            this.finalListPanelButton.Name = "finalListPanelButton";
+            this.finalListPanelButton.Size = new System.Drawing.Size(159, 40);
+            this.finalListPanelButton.TabIndex = 16;
+            this.finalListPanelButton.Text = "Place Order";
+            this.finalListPanelButton.UseVisualStyleBackColor = false;
             // 
             // totalAmountLabel
             // 
-            totalAmountLabel.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            totalAmountLabel.Location = new Point(386, 550);
-            totalAmountLabel.Name = "totalAmountLabel";
-            totalAmountLabel.Size = new Size(108, 53);
-            totalAmountLabel.TabIndex = 2;
-            totalAmountLabel.Text = "$0.00";
-            totalAmountLabel.TextAlign = ContentAlignment.MiddleLeft;
+            this.totalAmountLabel.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.totalAmountLabel.Location = new System.Drawing.Point(338, 412);
+            this.totalAmountLabel.Name = "totalAmountLabel";
+            this.totalAmountLabel.Size = new System.Drawing.Size(94, 40);
+            this.totalAmountLabel.TabIndex = 2;
+            this.totalAmountLabel.Text = "$0.00";
+            this.totalAmountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // mainFlowLayoutPanel
             // 
-            mainFlowLayoutPanel.Location = new Point(25, 98);
-            mainFlowLayoutPanel.Name = "mainFlowLayoutPanel";
-            mainFlowLayoutPanel.Size = new Size(786, 445);
-            mainFlowLayoutPanel.TabIndex = 1;
+            this.mainFlowLayoutPanel.Location = new System.Drawing.Point(22, 74);
+            this.mainFlowLayoutPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.mainFlowLayoutPanel.Name = "mainFlowLayoutPanel";
+            this.mainFlowLayoutPanel.Size = new System.Drawing.Size(688, 334);
+            this.mainFlowLayoutPanel.TabIndex = 1;
             // 
-            // vendorComboBox
+            // listPanelComboBox
             // 
-            vendorComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
-            vendorComboBox.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            vendorComboBox.FormattingEnabled = true;
-            vendorComboBox.Location = new Point(255, 43);
-            vendorComboBox.Name = "vendorComboBox";
-            vendorComboBox.Size = new Size(311, 33);
-            vendorComboBox.TabIndex = 0;
+            this.listPanelComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.listPanelComboBox.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.listPanelComboBox.FormattingEnabled = true;
+            this.listPanelComboBox.Location = new System.Drawing.Point(223, 32);
+            this.listPanelComboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.listPanelComboBox.Name = "listPanelComboBox";
+            this.listPanelComboBox.Size = new System.Drawing.Size(273, 27);
+            this.listPanelComboBox.TabIndex = 0;
             // 
             // OrderUserControl
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(227, 211, 177);
-            Controls.Add(listPanel);
-            Controls.Add(receiveOrderButton);
-            Controls.Add(placeOrderButton);
-            Controls.Add(mainPanel);
-            Name = "OrderUserControl";
-            Size = new Size(999, 611);
-            listPanel.ResumeLayout(false);
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(211)))), ((int)(((byte)(177)))));
+            this.Controls.Add(this.listPanel);
+            this.Controls.Add(this.receiveOrderButton);
+            this.Controls.Add(this.placeOrderButton);
+            this.Controls.Add(this.mainPanel);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Name = "OrderUserControl";
+            this.Size = new System.Drawing.Size(874, 458);
+            this.listPanel.ResumeLayout(false);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
@@ -207,7 +205,7 @@
         private Panel mainPanel;
         private Panel listPanel;
         private FlowLayoutPanel mainFlowLayoutPanel;
-        private ComboBox vendorComboBox;
+        private ComboBox listPanelComboBox;
         private Label totalAmountLabel;
         private Button finalListPanelButton;
         private Label totalLabel;
