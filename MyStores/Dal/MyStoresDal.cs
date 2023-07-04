@@ -1762,5 +1762,58 @@ namespace MyStores.Dal
                 connection.Close();
             }
         }
+
+        public List<InventoryItem> SearchInventoryWithOrderId(int orderId)
+        {
+            var inventoryItems = new List<InventoryItem>();
+            using var connection = DbConnection.GetConnection();
+            connection.Open();
+
+            string query = "SELECT Inventory.inventoryID, productName, description, productImage, " +
+                           "Orders.purchasePrice, Orders.quantity, Inventory.productID " +
+                           "FROM Product, Inventory, Orders WHERE Inventory.productID = Product.productID " +
+                           "and Inventory.inventoryID = Orders.inventoryID and Orders.orderID = @orderID";
+            using var command = new SqlCommand(query, connection);
+
+            command.Parameters.Add("@orderID", System.Data.SqlDbType.Int);
+            command.Parameters["@orderID"].Value = orderId;
+            using var reader = command.ExecuteReader();
+
+            var inventoryIdOrdinal = reader.GetOrdinal("inventoryID");
+            var productNameOrdinal = reader.GetOrdinal("productName");
+            var descriptionOrdinal = reader.GetOrdinal("description");
+            var purchasePriceOrdinal = reader.GetOrdinal("purchasePrice");
+            var quantityOrdinal = reader.GetOrdinal("quantity");
+            var imageOrdinal = reader.GetOrdinal("productImage");
+            var productIdOrdinal = reader.GetOrdinal("productID");
+
+            while (reader.Read())
+            {
+                var inventoryId = reader.GetInt32(inventoryIdOrdinal);
+                var name = reader.GetString(productNameOrdinal);
+                var description = reader.IsDBNull(descriptionOrdinal) ? "" : reader.GetString(descriptionOrdinal);
+                decimal purchasePrice = reader.GetDecimal(purchasePriceOrdinal);
+                var quantity = reader.GetInt32(quantityOrdinal);
+                var imageStream = reader.GetStream(imageOrdinal);
+                var productId = reader.GetInt32(productIdOrdinal);
+
+                inventoryItems.Add(new InventoryItem
+                {
+                    InventoryId = inventoryId,
+                    Quantity = quantity,
+                    PurchasePrice = decimal.ToDouble(purchasePrice),
+                    Item = new Product
+                    {
+                        Id = productId,
+                        Name = name,
+                        Description = description,
+                        Image = MagicImageConverter.GetBytesFromStream(imageStream),
+                    }
+
+                });
+            }
+
+            return inventoryItems;
+        }
     }
 }

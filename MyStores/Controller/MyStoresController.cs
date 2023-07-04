@@ -403,12 +403,17 @@ namespace MyStores.Controller
 
         public void InsertOrderItems(List<InventoryItem> items, int orderId)
         {
-            _storesDal.InsertOrderItems(items, orderId);;
+            _storesDal.InsertOrderItems(items, orderId);
         }
 
         public void ReceiveOrder(List<InventoryItem> items)
         {
             _storesDal.ReceiveOrder(items);
+        }
+
+        public List<InventoryItem> SearchInventoryWithOrderId(int orderId)
+        {
+            return _storesDal.SearchInventoryWithOrderId(orderId);
         }
     }
 }
