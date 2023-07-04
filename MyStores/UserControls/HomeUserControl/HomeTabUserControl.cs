@@ -6,8 +6,12 @@ namespace MyStores.UserControls.HomeUserControl
 {
     public partial class HomeTabUserControl : UserControl
     {
+        private string _storeName;
         private Users _owner;
         private readonly MyStoresController _controller;
+
+        public delegate void StatusUpdateHandler(object sender, EventArgs e);
+        public event StatusUpdateHandler OnUpdateStatus;
 
         public HomeTabUserControl()
         {
@@ -16,9 +20,18 @@ namespace MyStores.UserControls.HomeUserControl
             _owner = new Users();
         }
 
+        public string StoreName { get; set; }
+
         public void SetOwner(Users setUser)
         {
             _owner = setUser;
+        }
+
+        private void UpdateStatus()
+        {
+            EventArgs args = EventArgs.Empty;
+
+            OnUpdateStatus?.Invoke(this, args);
         }
 
         private void loadHome()
@@ -69,6 +82,8 @@ namespace MyStores.UserControls.HomeUserControl
             string name = _controller.GetStoreName(id);
             mainStoreFrontUserControl.SetStoreHighlights(id);
             ShowStoreFrontUserControl(id);
+            StoreName = name;
+            UpdateStatus();
         }
 
         public void ShowStoreFrontUserControl(int id)

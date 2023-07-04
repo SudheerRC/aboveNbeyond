@@ -86,6 +86,11 @@ namespace MyStores.View
             }
         }
 
+        private void HomeTabUserControl_OnUpdateStatus(object sender, EventArgs e)
+        {
+            storeNameLabel.Text = mainHomeTabUserControl.StoreName;
+        }
+
         private void anchorUserControls()
         {
             mainHomeTabUserControl.Parent = mainPanel;

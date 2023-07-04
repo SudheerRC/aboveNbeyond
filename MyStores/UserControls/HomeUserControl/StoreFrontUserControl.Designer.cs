@@ -72,10 +72,10 @@
             AddVendorButton.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             AddVendorButton.ForeColor = Color.White;
             AddVendorButton.Image = (Image)resources.GetObject("AddVendorButton.Image");
-            AddVendorButton.Location = new Point(42, 18);
-            AddVendorButton.Margin = new Padding(5, 6, 5, 6);
+            AddVendorButton.Location = new Point(26, 11);
+            AddVendorButton.Margin = new Padding(3, 4, 3, 4);
             AddVendorButton.Name = "AddVendorButton";
-            AddVendorButton.Size = new Size(260, 320);
+            AddVendorButton.Size = new Size(160, 200);
             AddVendorButton.TabIndex = 2;
             AddVendorButton.Text = "Add Vendor";
             AddVendorButton.TextAlign = ContentAlignment.BottomCenter;
@@ -91,10 +91,10 @@
             addProductButton.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             addProductButton.ForeColor = Color.White;
             addProductButton.Image = (Image)resources.GetObject("addProductButton.Image");
-            addProductButton.Location = new Point(291, 405);
-            addProductButton.Margin = new Padding(5, 6, 5, 6);
+            addProductButton.Location = new Point(179, 253);
+            addProductButton.Margin = new Padding(3, 4, 3, 4);
             addProductButton.Name = "addProductButton";
-            addProductButton.Size = new Size(260, 320);
+            addProductButton.Size = new Size(160, 200);
             addProductButton.TabIndex = 4;
             addProductButton.Text = "Add Product";
             addProductButton.TextAlign = ContentAlignment.BottomCenter;
@@ -110,10 +110,10 @@
             inventoryButton.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             inventoryButton.ForeColor = Color.White;
             inventoryButton.Image = (Image)resources.GetObject("inventoryButton.Image");
-            inventoryButton.Location = new Point(549, 21);
-            inventoryButton.Margin = new Padding(5, 6, 5, 6);
+            inventoryButton.Location = new Point(338, 13);
+            inventoryButton.Margin = new Padding(3, 4, 3, 4);
             inventoryButton.Name = "inventoryButton";
-            inventoryButton.Size = new Size(260, 320);
+            inventoryButton.Size = new Size(160, 200);
             inventoryButton.TabIndex = 5;
             inventoryButton.Text = "Inventory";
             inventoryButton.TextAlign = ContentAlignment.BottomCenter;
@@ -129,10 +129,10 @@
             orderButton.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             orderButton.ForeColor = Color.White;
             orderButton.Image = (Image)resources.GetObject("orderButton.Image");
-            orderButton.Location = new Point(1074, 18);
-            orderButton.Margin = new Padding(5, 6, 5, 6);
+            orderButton.Location = new Point(661, 11);
+            orderButton.Margin = new Padding(3, 4, 3, 4);
             orderButton.Name = "orderButton";
-            orderButton.Size = new Size(260, 320);
+            orderButton.Size = new Size(160, 200);
             orderButton.TabIndex = 6;
             orderButton.Text = "Order";
             orderButton.TextAlign = ContentAlignment.BottomCenter;
@@ -148,10 +148,10 @@
             exitStoreButton.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             exitStoreButton.ForeColor = Color.White;
             exitStoreButton.Image = (Image)resources.GetObject("exitStoreButton.Image");
-            exitStoreButton.Location = new Point(1194, 683);
-            exitStoreButton.Margin = new Padding(5, 6, 5, 6);
+            exitStoreButton.Location = new Point(735, 427);
+            exitStoreButton.Margin = new Padding(3, 4, 3, 4);
             exitStoreButton.Name = "exitStoreButton";
-            exitStoreButton.Size = new Size(172, 147);
+            exitStoreButton.Size = new Size(106, 92);
             exitStoreButton.TabIndex = 7;
             exitStoreButton.Text = "Exit Store";
             exitStoreButton.TextAlign = ContentAlignment.BottomCenter;
@@ -167,48 +167,48 @@
             storeExpandedPanel.Controls.Add(mainAddManagerUserControl);
             storeExpandedPanel.Controls.Add(mainInventoryUserControl);
             storeExpandedPanel.Controls.Add(mainAddVendorToStoreUserControl);
-            storeExpandedPanel.Location = new Point(114, 94);
-            storeExpandedPanel.Margin = new Padding(5, 6, 5, 6);
+            storeExpandedPanel.Location = new Point(70, 59);
+            storeExpandedPanel.Margin = new Padding(3, 4, 3, 4);
             storeExpandedPanel.Name = "storeExpandedPanel";
-            storeExpandedPanel.Size = new Size(3757, 1242);
+            storeExpandedPanel.Size = new Size(2312, 776);
             storeExpandedPanel.TabIndex = 8;
             storeExpandedPanel.Visible = false;
             // 
             // mainOrderUserControl
             // 
             mainOrderUserControl.BackColor = Color.FromArgb(227, 211, 177);
-            mainOrderUserControl.Location = new Point(0, 2);
-            mainOrderUserControl.Margin = new Padding(8);
+            mainOrderUserControl.Location = new Point(0, 1);
+            mainOrderUserControl.Margin = new Padding(5, 5, 5, 5);
             mainOrderUserControl.Name = "mainOrderUserControl";
-            mainOrderUserControl.Size = new Size(1264, 1002);
+            mainOrderUserControl.Size = new Size(778, 626);
             mainOrderUserControl.TabIndex = 11;
             // 
             // mainAddProductToStoreUserControl
             // 
             mainAddProductToStoreUserControl.BackColor = Color.BlanchedAlmond;
             mainAddProductToStoreUserControl.Location = new Point(0, 0);
-            mainAddProductToStoreUserControl.Margin = new Padding(5, 8, 5, 8);
+            mainAddProductToStoreUserControl.Margin = new Padding(3, 5, 3, 5);
             mainAddProductToStoreUserControl.Name = "mainAddProductToStoreUserControl";
-            mainAddProductToStoreUserControl.Size = new Size(1186, 891);
+            mainAddProductToStoreUserControl.Size = new Size(730, 557);
             mainAddProductToStoreUserControl.TabIndex = 10;
             // 
             // mainAddManagerUserControl
             // 
             mainAddManagerUserControl.BackColor = Color.BlanchedAlmond;
-            mainAddManagerUserControl.Location = new Point(245, 2);
-            mainAddManagerUserControl.Margin = new Padding(5, 8, 5, 8);
+            mainAddManagerUserControl.Location = new Point(151, 1);
+            mainAddManagerUserControl.Margin = new Padding(3, 5, 3, 5);
             mainAddManagerUserControl.Name = "mainAddManagerUserControl";
-            mainAddManagerUserControl.Size = new Size(850, 403);
+            mainAddManagerUserControl.Size = new Size(523, 252);
             mainAddManagerUserControl.TabIndex = 8;
             // 
             // mainInventoryUserControl
             // 
             mainInventoryUserControl.AutoScroll = true;
             mainInventoryUserControl.BackColor = Color.FromArgb(227, 211, 177);
-            mainInventoryUserControl.Location = new Point(0, 2);
-            mainInventoryUserControl.Margin = new Padding(5, 8, 5, 8);
+            mainInventoryUserControl.Location = new Point(0, 1);
+            mainInventoryUserControl.Margin = new Padding(3, 5, 3, 5);
             mainInventoryUserControl.Name = "mainInventoryUserControl";
-            mainInventoryUserControl.Size = new Size(3682, 1235);
+            mainInventoryUserControl.Size = new Size(2266, 772);
             mainInventoryUserControl.TabIndex = 6;
             // 
             // mainAddVendorToStoreUserControl
@@ -216,18 +216,18 @@
             mainAddVendorToStoreUserControl.AutoScroll = true;
             mainAddVendorToStoreUserControl.BackColor = Color.BlanchedAlmond;
             mainAddVendorToStoreUserControl.Location = new Point(0, 0);
-            mainAddVendorToStoreUserControl.Margin = new Padding(5, 8, 5, 8);
+            mainAddVendorToStoreUserControl.Margin = new Padding(3, 5, 3, 5);
             mainAddVendorToStoreUserControl.Name = "mainAddVendorToStoreUserControl";
-            mainAddVendorToStoreUserControl.Size = new Size(1264, 1317);
+            mainAddVendorToStoreUserControl.Size = new Size(778, 823);
             mainAddVendorToStoreUserControl.TabIndex = 9;
             // 
             // backButtonPanel
             // 
             backButtonPanel.Controls.Add(backButton);
-            backButtonPanel.Location = new Point(23, 94);
-            backButtonPanel.Margin = new Padding(5, 6, 5, 6);
+            backButtonPanel.Location = new Point(14, 59);
+            backButtonPanel.Margin = new Padding(3, 4, 3, 4);
             backButtonPanel.Name = "backButtonPanel";
-            backButtonPanel.Size = new Size(81, 77);
+            backButtonPanel.Size = new Size(50, 48);
             backButtonPanel.TabIndex = 5;
             // 
             // backButton
@@ -244,10 +244,10 @@
             backButton.ForeColor = Color.FromArgb(252, 251, 255);
             backButton.Image = (Image)resources.GetObject("backButton.Image");
             backButton.ImageAlign = ContentAlignment.MiddleLeft;
-            backButton.Location = new Point(27, 0);
-            backButton.Margin = new Padding(5, 6, 5, 6);
+            backButton.Location = new Point(-4, 0);
+            backButton.Margin = new Padding(3, 4, 3, 4);
             backButton.Name = "backButton";
-            backButton.Size = new Size(54, 77);
+            backButton.Size = new Size(54, 48);
             backButton.TabIndex = 3;
             backButton.TextAlign = ContentAlignment.BottomCenter;
             backButton.UseVisualStyleBackColor = false;
@@ -261,10 +261,10 @@
             addManagerButton.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             addManagerButton.ForeColor = Color.White;
             addManagerButton.Image = (Image)resources.GetObject("addManagerButton.Image");
-            addManagerButton.Location = new Point(814, 405);
-            addManagerButton.Margin = new Padding(5, 6, 5, 6);
+            addManagerButton.Location = new Point(501, 253);
+            addManagerButton.Margin = new Padding(3, 4, 3, 4);
             addManagerButton.Name = "addManagerButton";
-            addManagerButton.Size = new Size(260, 320);
+            addManagerButton.Size = new Size(160, 200);
             addManagerButton.TabIndex = 9;
             addManagerButton.Text = "Add Manager";
             addManagerButton.TextAlign = ContentAlignment.BottomCenter;
@@ -280,27 +280,28 @@
             storeButtonsPanel.Controls.Add(inventoryButton);
             storeButtonsPanel.Controls.Add(exitStoreButton);
             storeButtonsPanel.Controls.Add(addProductButton);
-            storeButtonsPanel.Location = new Point(5, 77);
-            storeButtonsPanel.Margin = new Padding(5);
+            storeButtonsPanel.Location = new Point(3, 48);
             storeButtonsPanel.Name = "storeButtonsPanel";
-            storeButtonsPanel.Size = new Size(1373, 837);
+            storeButtonsPanel.Size = new Size(845, 523);
             storeButtonsPanel.TabIndex = 10;
             // 
             // salesPanel
             // 
             salesPanel.Controls.Add(salesLabel);
             salesPanel.Controls.Add(salesPictureBox);
-            salesPanel.Location = new Point(41, 3);
+            salesPanel.Location = new Point(25, 2);
+            salesPanel.Margin = new Padding(2, 2, 2, 2);
             salesPanel.Name = "salesPanel";
-            salesPanel.Size = new Size(266, 64);
+            salesPanel.Size = new Size(164, 40);
             salesPanel.TabIndex = 11;
             // 
             // salesLabel
             // 
             salesLabel.AutoSize = true;
-            salesLabel.Location = new Point(54, 15);
+            salesLabel.Location = new Point(33, 9);
+            salesLabel.Margin = new Padding(2, 0, 2, 0);
             salesLabel.Name = "salesLabel";
-            salesLabel.Size = new Size(207, 32);
+            salesLabel.Size = new Size(129, 20);
             salesLabel.TabIndex = 1;
             salesLabel.Text = "Total Sales: Soon!!";
             // 
@@ -309,8 +310,9 @@
             salesPictureBox.Dock = DockStyle.Left;
             salesPictureBox.Image = (Image)resources.GetObject("salesPictureBox.Image");
             salesPictureBox.Location = new Point(0, 0);
+            salesPictureBox.Margin = new Padding(2, 2, 2, 2);
             salesPictureBox.Name = "salesPictureBox";
-            salesPictureBox.Size = new Size(48, 64);
+            salesPictureBox.Size = new Size(48, 40);
             salesPictureBox.SizeMode = PictureBoxSizeMode.AutoSize;
             salesPictureBox.TabIndex = 0;
             salesPictureBox.TabStop = false;
@@ -320,17 +322,19 @@
             managersPanel.Controls.Add(managerNamesLabel);
             managersPanel.Controls.Add(managerLabel);
             managersPanel.Controls.Add(managerPictureBox);
-            managersPanel.Location = new Point(384, 5);
+            managersPanel.Location = new Point(236, 3);
+            managersPanel.Margin = new Padding(2, 2, 2, 2);
             managersPanel.Name = "managersPanel";
-            managersPanel.Size = new Size(674, 64);
+            managersPanel.Size = new Size(415, 40);
             managersPanel.TabIndex = 12;
             // 
             // managerNamesLabel
             // 
             managerNamesLabel.Font = new Font("Segoe UI", 10.125F, FontStyle.Regular, GraphicsUnit.Point);
-            managerNamesLabel.Location = new Point(248, 0);
+            managerNamesLabel.Location = new Point(153, 0);
+            managerNamesLabel.Margin = new Padding(2, 0, 2, 0);
             managerNamesLabel.Name = "managerNamesLabel";
-            managerNamesLabel.Size = new Size(426, 62);
+            managerNamesLabel.Size = new Size(262, 39);
             managerNamesLabel.TabIndex = 2;
             managerNamesLabel.Text = "names";
             managerNamesLabel.TextAlign = ContentAlignment.MiddleLeft;
@@ -339,9 +343,10 @@
             // 
             managerLabel.AutoSize = true;
             managerLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            managerLabel.Location = new Point(54, 13);
+            managerLabel.Location = new Point(33, 8);
+            managerLabel.Margin = new Padding(2, 0, 2, 0);
             managerLabel.Name = "managerLabel";
-            managerLabel.Size = new Size(200, 32);
+            managerLabel.Size = new Size(123, 20);
             managerLabel.TabIndex = 1;
             managerLabel.Text = "Store Managers:";
             // 
@@ -350,8 +355,9 @@
             managerPictureBox.Dock = DockStyle.Left;
             managerPictureBox.Image = (Image)resources.GetObject("managerPictureBox.Image");
             managerPictureBox.Location = new Point(0, 0);
+            managerPictureBox.Margin = new Padding(2, 2, 2, 2);
             managerPictureBox.Name = "managerPictureBox";
-            managerPictureBox.Size = new Size(48, 64);
+            managerPictureBox.Size = new Size(48, 40);
             managerPictureBox.SizeMode = PictureBoxSizeMode.AutoSize;
             managerPictureBox.TabIndex = 0;
             managerPictureBox.TabStop = false;
@@ -360,20 +366,23 @@
             // 
             closePanel.Controls.Add(statusLabel);
             closePanel.Controls.Add(closeButton);
-            closePanel.Location = new Point(1163, 5);
+            closePanel.Location = new Point(704, 3);
+            closePanel.Margin = new Padding(2, 2, 2, 2);
             closePanel.Name = "closePanel";
-            closePanel.Size = new Size(215, 62);
+            closePanel.Size = new Size(144, 39);
             closePanel.TabIndex = 13;
             // 
             // statusLabel
             // 
-            statusLabel.AutoSize = true;
+            statusLabel.Dock = DockStyle.Right;
             statusLabel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            statusLabel.Location = new Point(52, 13);
+            statusLabel.Location = new Point(44, 0);
+            statusLabel.Margin = new Padding(2, 0, 2, 0);
             statusLabel.Name = "statusLabel";
-            statusLabel.Size = new Size(150, 37);
+            statusLabel.Size = new Size(100, 39);
             statusLabel.TabIndex = 3;
             statusLabel.Text = "Store Open";
+            statusLabel.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // closeButton
             // 
@@ -382,15 +391,16 @@
             closeButton.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
             closeButton.ForeColor = SystemColors.ControlText;
             closeButton.Location = new Point(0, 0);
+            closeButton.Margin = new Padding(2, 2, 2, 2);
             closeButton.Name = "closeButton";
-            closeButton.Size = new Size(46, 62);
+            closeButton.Size = new Size(40, 39);
             closeButton.TabIndex = 0;
             closeButton.UseVisualStyleBackColor = false;
             closeButton.Click += closeButton_Click;
             // 
             // StoreFrontUserControl
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = Color.FromArgb(227, 211, 177);
@@ -400,9 +410,9 @@
             Controls.Add(storeExpandedPanel);
             Controls.Add(storeButtonsPanel);
             Controls.Add(backButtonPanel);
-            Margin = new Padding(5, 6, 5, 6);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "StoreFrontUserControl";
-            Size = new Size(1386, 1346);
+            Size = new Size(853, 841);
             Load += StoreFrontUserControl_Load;
             storeExpandedPanel.ResumeLayout(false);
             backButtonPanel.ResumeLayout(false);
@@ -415,7 +425,6 @@
             managersPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)managerPictureBox).EndInit();
             closePanel.ResumeLayout(false);
-            closePanel.PerformLayout();
             ResumeLayout(false);
         }
 
