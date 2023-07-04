@@ -343,29 +343,62 @@ namespace MyStores.Controller
             return _storesDal.SearchProductWithStoreIdAndPurchasePrice(storeId, price);
         }
 
+        /// <summary>
+        /// Searches the vendor with vendor id.
+        /// </summary>
+        /// <param name="vendorId">The vendor id.</param>
+        /// <returns></returns>
         public Vendor SearchVendorWithVendorId(int vendorId)
         {
             return _storesDal.SearchVendorWithVendorId(vendorId);
         }
 
+        /// <summary>
+        /// Edits the product.
+        /// </summary>
+        /// <param name="product">The product.</param>
         public void EditProduct(Product product)
         {
             _storesDal.EditProduct(product);
         }
 
+        /// <summary>
+        /// Edits the vendor.
+        /// </summary>
+        /// <param name="vendor">The vendor.</param>
         public void EditVendor(Vendor vendor)
         {
             _storesDal.EditVendor(vendor);
         }
 
-        public void PlaceOrder(InventoryItem item, int userId)
+        /// <summary>
+        /// Places the order.
+        /// </summary>
+        /// <param name="item">The item.</param>
+        /// <param name="order">The order.</param>
+        public void PlaceOrder(InventoryItem item, Order order)
         {
-            _storesDal.PlaceOrder(item, userId);
+            _storesDal.PlaceOrder(item, order);
         }
 
+        /// <summary>
+        /// Gets the user details.
+        /// </summary>
+        /// <param name="userId">The user id.</param>
+        /// <returns></returns>
         public Users GetUserDetails(int userId)
         {
             return _storesDal.GetUserDetails(userId);
+        }
+
+        /// <summary>
+        /// Open orders for store.
+        /// </summary>
+        /// <param name="storeId">The store id.</param>
+        /// <returns></returns>
+        public List<Order> OpenOrdersForStore(int storeId)
+        {
+            return _storesDal.OpenOrdersForStore(storeId);
         }
     }
 }

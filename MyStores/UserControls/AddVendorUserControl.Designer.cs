@@ -32,7 +32,6 @@
             errorLabel = new Label();
             clearButton = new Button();
             addButton = new Button();
-            openFileDialog = new OpenFileDialog();
             nameTextBox = new TextBox();
             vendorNameLabel = new Label();
             titleLabel = new Label();
@@ -105,11 +104,6 @@
             addButton.UseVisualStyleBackColor = false;
             addButton.Click += addButton_Click;
             // 
-            // openFileDialog
-            // 
-            openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.tif;...";
-            openFileDialog.Title = "Choose a image for product";
-            // 
             // nameTextBox
             // 
             nameTextBox.Location = new Point(294, 75);
@@ -136,9 +130,9 @@
             titleLabel.ForeColor = SystemColors.ControlText;
             titleLabel.Location = new Point(190, 8);
             titleLabel.Name = "titleLabel";
-            titleLabel.Size = new Size(231, 58);
+            titleLabel.Size = new Size(279, 58);
             titleLabel.TabIndex = 89;
-            titleLabel.Text = "Add Vendor";
+            titleLabel.Text = "Vendor Details";
             titleLabel.UseCompatibleTextRendering = true;
             // 
             // phoneErrorLabel
@@ -323,7 +317,6 @@
         private Label errorLabel;
         private Button clearButton;
         private Button addButton;
-        private OpenFileDialog openFileDialog;
         private TextBox nameTextBox;
         private Label vendorNameLabel;
         private Label titleLabel;

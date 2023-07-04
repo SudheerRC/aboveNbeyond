@@ -3,6 +3,8 @@ CREATE or alter PROCEDURE placeOrder
 	@orderDate DATE,
 	@expectedDate DATE,
 	@userId INT,
+	@vendorId INT,
+	@storeId INT,
 	@purchasePrice DECIMAL,
 	@quantity INT
 AS
@@ -15,8 +17,8 @@ BEGIN
     DECLARE @orderID INT;
 
     BEGIN TRY
-    INSERT INTO OrderDetails(orderDate, expectedDeliveryDate, userID) 
-    VALUES (@orderDate, @expectedDate, @userId);
+    INSERT INTO OrderDetails(orderDate, expectedDeliveryDate, userID, vendorID, storeID) 
+    VALUES (@orderDate, @expectedDate, @userId, @vendorId, @storeId);
 
     -- Get the newly added @userId primary key
     SET @orderID = SCOPE_IDENTITY();

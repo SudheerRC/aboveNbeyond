@@ -1,8 +1,6 @@
 ﻿using System.Data;
 using Microsoft.Data.SqlClient;
-using Microsoft.VisualBasic.ApplicationServices;
 using MyStores.Model;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace MyStores.Dal
 {
@@ -1601,7 +1599,12 @@ namespace MyStores.Dal
             command.ExecuteNonQuery();
         }
 
-        public void PlaceOrder(InventoryItem item, int userId)
+        /// <summary>
+        /// Places the order.
+        /// </summary>
+        /// <param name="item">The item.</param>
+        /// <param name="order">The order.</param>
+        public void PlaceOrder(InventoryItem item, Order order)
         {
             using var connection = DbConnection.GetConnection();
             connection.Open();
@@ -1612,13 +1615,19 @@ namespace MyStores.Dal
             command.Parameters["@inventoryID"].Value = item.InventoryId;
 
             command.Parameters.Add("@orderDate", System.Data.SqlDbType.Date);
-            command.Parameters["@orderDate"].Value = DateOnly.FromDateTime(DateTime.Now) ;
+            command.Parameters["@orderDate"].Value = DateOnly.FromDateTime(DateTime.Now);
 
             command.Parameters.Add("@expectedDate", System.Data.SqlDbType.Date);
             command.Parameters["@expectedDate"].Value = DateOnly.FromDateTime(DateTime.Now).AddDays(7);
 
             command.Parameters.Add("@userId", System.Data.SqlDbType.Int);
-            command.Parameters["@userId"].Value = userId;
+            command.Parameters["@userId"].Value = order.UserId;
+
+            command.Parameters.Add("@vendorId", System.Data.SqlDbType.Int);
+            command.Parameters["@vendorId"].Value = order.VendorId;
+
+            command.Parameters.Add("@storeId", System.Data.SqlDbType.Int);
+            command.Parameters["@storeId"].Value = order.StoreId;
 
             command.Parameters.Add("@purchasePrice", System.Data.SqlDbType.Decimal);
             command.Parameters["@purchasePrice"].Value = item.PurchasePrice;
@@ -1667,6 +1676,47 @@ namespace MyStores.Dal
             command.Parameters["@phoneNumber"].Value = vendor.PhoneNumber;
 
             command.ExecuteNonQuery();
+        }
+
+        /// <summary>
+        /// Open orders for store.
+        /// </summary>
+        /// <param name="storeId">The store id.</param>
+        /// <returns></returns>
+        public List<Order> OpenOrdersForStore(int storeId)
+        {
+            List<Order> orders = new List<Order>();
+            using var connection = DbConnection.GetConnection();
+            connection.Open();
+
+            string query = "select orderID, Vendor.vendorName, OrderDetails.orderDate " +
+                           "FROM OrderDetails, Vendor where OrderDetails.vendorID = Vendor.vendorID " +
+                           "and OrderDetails.storeID = @storeId and OrderDetails.deliveredDate IS NULL";
+            using var command = new SqlCommand(query, connection);
+
+            command.Parameters.Add("@storeId", System.Data.SqlDbType.Int);
+            command.Parameters["@storeId"].Value = storeId;
+            using var reader = command.ExecuteReader();
+
+            var vendorNameOrdinal = reader.GetOrdinal("vendorName");
+            var orderIdOrdinal = reader.GetOrdinal("orderID");
+            var dateOrdinal = reader.GetOrdinal("orderDate");
+
+            while (reader.Read())
+            {
+                var vendorName = reader.GetString(vendorNameOrdinal);
+                var orderId = reader.GetInt32(orderIdOrdinal);
+                var date = reader.GetDateTime(dateOrdinal);
+
+                orders.Add(new Order
+                {
+                    VendorName = vendorName,
+                    OrderId = orderId,
+                    OrderDate = DateOnly.FromDateTime(date)
+                });
+            }
+
+            return orders;
         }
     }
 }
