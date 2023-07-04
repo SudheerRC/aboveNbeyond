@@ -67,7 +67,7 @@ namespace MyStores.UserControls.HomeUserControl
             Button current = (Button)sender;
             int id = int.Parse(current.Name);
             string name = _controller.GetStoreName(id);
-
+            mainStoreFrontUserControl.SetStoreHighlights(id);
             ShowStoreFrontUserControl(id);
         }
 

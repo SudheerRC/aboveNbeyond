@@ -109,10 +109,6 @@ namespace MyStores.UserControls.HomeUserControl
 
         private void StoreFrontUserControl_Load(object sender, EventArgs e)
         {
-            List<Users> managers = _controller.GetAllManagersOfStore(_storeId);
-            string managersName = ManagersNames(managers);
-            managerNamesLabel.Text = managersName;
-
             backButtonPanel.Visible = false;
             mainInventoryUserControl.SetStore(_storeId);
 
@@ -122,6 +118,13 @@ namespace MyStores.UserControls.HomeUserControl
             mainAddManagerUserControl.SetStore(_storeId);
 
             mainAddProductToStoreUserControl.SetStore(_storeId);
+        }
+
+        public void SetStoreHighlights(int id)
+        {
+            List<Users> managers = _controller.GetAllManagersOfStore(id);
+            string managersName = ManagersNames(managers);
+            managerNamesLabel.Text = managersName;
         }
 
         private void orderButton_Click(object sender, EventArgs e)
