@@ -7,11 +7,14 @@ namespace MyStores.UserControls
     {
         private int _storeId;
         private readonly MyStoresController _controller;
+        private double _orderTotal;
 
         public OrderUserControl()
         {
             InitializeComponent();
             _controller = new MyStoresController();
+
+            _orderTotal = 0.0;
         }
 
         public void SetStore(int id)
@@ -30,7 +33,7 @@ namespace MyStores.UserControls
             ClearComboBox();
             List<Vendor> vendorList = _controller.SearchVendorByStoreId(_storeId);
             listPanelComboBox.DataSource = vendorList;
-            listPanelComboBox.SelectedIndex.Equals(0);
+            listPanelComboBox.SelectedIndex.Equals(-1);
         }
 
         private void LoadOrderComboBox()
@@ -38,7 +41,7 @@ namespace MyStores.UserControls
             ClearComboBox();
             List<Vendor> vendorList = _controller.SearchVendorByStoreId(_storeId);
             listPanelComboBox.DataSource = vendorList;
-            listPanelComboBox.SelectedIndex.Equals(0);
+            listPanelComboBox.SelectedIndex.Equals(-1);
         }
 
         private void LoadProductList()
@@ -53,6 +56,8 @@ namespace MyStores.UserControls
                 var productTile = new OrderedProductTileUserControl();
                 productTile.setInventoryItem(t);
                 mainFlowLayoutPanel.Controls.Add(productTile);
+
+                _orderTotal += (itemList[i].PurchasePrice * itemList[i].Quantity);
             }
         }
 
@@ -95,6 +100,7 @@ namespace MyStores.UserControls
             listPanel.Visible = false;
 
             mainFlowLayoutPanel.Controls.Clear();
+            finalListPanelButton.Enabled = false;
         }
 
         private void finalListPanelButton_Click(object sender, EventArgs e)
@@ -105,6 +111,11 @@ namespace MyStores.UserControls
         private void OrderUserControl_Load(object sender, EventArgs e)
         {
             ResetUserControl();
+        }
+
+        private void listPanelComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadProductList();
         }
     }
 }
