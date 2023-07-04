@@ -47,8 +47,8 @@ namespace MyStores.UserControls
             var currentProduct = _controller.SearchProductWithId(ii.Item.Id);
             string[] row =
             {
-                currentProduct.Barcode, currentProduct.Name, currentProduct.Description, currentProduct.ProductSize,
-                Convert.ToString(ii.SellingPrice), Convert.ToString(ii.PurchasePrice), myVendorName, Convert.ToString(ii.Quantity), "", ""
+                currentProduct.Barcode, currentProduct.Name, currentProduct.Description, Convert.ToString(ii.Quantity),
+                currentProduct.ProductSize, Convert.ToString(ii.SellingPrice), Convert.ToString(ii.PurchasePrice), myVendorName
             };
             var listItem = new ListViewItem(row);
             inventoryListView.Items.Add(listItem);

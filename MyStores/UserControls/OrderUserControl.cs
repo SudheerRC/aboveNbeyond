@@ -44,6 +44,10 @@ namespace MyStores.UserControls
         {
             ClearComboBox();
             List<Vendor> vendorList = _controller.SearchVendorByStoreId(_storeId);
+            if (vendorList.Count == 0)
+            {
+                MessageBox.Show("There are no Products in your store for this vendor." + Environment.NewLine + "Please choose a different one!");
+            }
             listPanelComboBox.DataSource = vendorList;
             listPanelComboBox.SelectedItem = null;
             mainFlowLayoutPanel.Controls.Clear();
@@ -81,14 +85,14 @@ namespace MyStores.UserControls
 
                 if (order != null)
                 {
-                    //List<InventoryItem> itemList = _controller.SearchInventoryWithVendorId(vendor.Id, _storeId);
+                    List<InventoryItem> itemList = _controller.SearchInventoryWithOrderId(order.OrderId);
 
-                    //mainFlowLayoutPanel.Controls.Clear();
+                    mainFlowLayoutPanel.Controls.Clear();
 
-                    //LoadFlowPanel(itemList);
+                    LoadFlowPanel(itemList);
                 }
             }
-            
+
         }
 
         private void LoadFlowPanel(List<InventoryItem> itemList)
@@ -179,38 +183,45 @@ namespace MyStores.UserControls
             listPanel.Visible = false;
 
             mainFlowLayoutPanel.Controls.Clear();
-            finalListPanelButton.Enabled = false;
         }
 
         private void finalListPanelButton_Click(object sender, EventArgs e)
         {
-            if (_isPlaceOrder)
+            var item = listPanelComboBox.SelectedItem;
+            if (item != null)
             {
-                var vendor = listPanelComboBox.SelectedItem as Vendor;
-                var newOrder = new Order
+                if (_isPlaceOrder)
                 {
-                    UserId = _userId,
-                    VendorId = vendor.Id,
-                    StoreId = _storeId,
-                };
+                    var vendor = listPanelComboBox.SelectedItem as Vendor;
+                    var newOrder = new Order
+                    {
+                        UserId = _userId,
+                        VendorId = vendor.Id,
+                        StoreId = _storeId,
+                    };
 
-                List<InventoryItem> itemList = GetOrderItemList();
+                    List<InventoryItem> itemList = GetOrderItemList();
 
-                var orderId = _controller.PlaceOrder(newOrder);
-                _controller.InsertOrderItems(itemList, orderId);
+                    var orderId = _controller.PlaceOrder(newOrder);
+                    _controller.InsertOrderItems(itemList, orderId);
 
-                MessageBox.Show(@"Order Placed Successfully!");
+                    ResetUserControl();
+                    MessageBox.Show(@"Order Placed Successfully!");
+                }
+                else if (_isReceiveOrder)
+                {
+                    List<InventoryItem> itemList = GetOrderItemList();
+
+                    _controller.ReceiveOrder(itemList);
+
+                    ResetUserControl();
+                    MessageBox.Show(@"Order Received Successfully!" + Environment.NewLine + "Your Inventory has been updated!");
+                }
             }
-            else if (_isReceiveOrder)
+            else
             {
-                List<InventoryItem> itemList = GetOrderItemList();
-
-                _controller.ReceiveOrder(itemList);
-
-                MessageBox.Show(@"Order Received Successfully!\nYour Inventory has been updated!");
+                MessageBox.Show("Please select an item from the drop down list!");
             }
-
-            ResetUserControl();
         }
 
         private List<InventoryItem> GetOrderItemList()

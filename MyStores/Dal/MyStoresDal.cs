@@ -1127,7 +1127,7 @@ namespace MyStores.Dal
             connection.Open();
 
             string query =
-                "SELECT productName, description, productImage, purchasePrice, quantity, Inventory.productID FROM Product, Inventory " +
+                "SELECT inventoryID, productName, description, productImage, purchasePrice, quantity, Inventory.productID FROM Product, Inventory " +
                 "WHERE Inventory.productID = Product.productID and Inventory.vendorId = @vendorId and Inventory.storeID = @storeId";
             using var command = new SqlCommand(query, connection);
 
@@ -1138,6 +1138,7 @@ namespace MyStores.Dal
             command.Parameters["@storeId"].Value = storeId;
             using var reader = command.ExecuteReader();
 
+            var inventoryIdOrdinal = reader.GetOrdinal("inventoryID");
             var productNameOrdinal = reader.GetOrdinal("productName");
             var descriptionOrdinal = reader.GetOrdinal("description");
             var purchasePriceOrdinal = reader.GetOrdinal("purchasePrice");
@@ -1150,12 +1151,14 @@ namespace MyStores.Dal
                 var name = reader.GetString(productNameOrdinal);
                 var description = reader.IsDBNull(descriptionOrdinal) ? "" : reader.GetString(descriptionOrdinal);
                 decimal purchasePrice = reader.GetDecimal(purchasePriceOrdinal);
+                var inventoryId = reader.GetInt32(inventoryIdOrdinal);
                 var quantity = reader.GetInt32(quantityOrdinal);
                 var imageStream = reader.GetStream(imageOrdinal);
                 var productId = reader.GetInt32(productIdOrdinal);
 
                 inventoryItems.Add(new InventoryItem
                 {
+                    InventoryId = inventoryId,
                     VendorId = vendorId,
                     Quantity = quantity,
                     PurchasePrice = decimal.ToDouble(purchasePrice),
@@ -1627,8 +1630,10 @@ namespace MyStores.Dal
 
             command.Parameters.Add("@orderId", System.Data.SqlDbType.Int).Direction 
                 = ParameterDirection.Output;
-            int orderId = Convert.ToInt32(command.Parameters["@orderId"].Value);
+            
             command.ExecuteNonQuery();
+            int orderId = Convert.ToInt32(command.Parameters["@orderId"].Value);
+
             return orderId;
         }
 
