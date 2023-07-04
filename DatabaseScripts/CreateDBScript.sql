@@ -193,6 +193,7 @@ CREATE TABLE [dbo].[OrderDetails](
 	[expectedDeliveryDate] [date],
 	[deliveredDate] [date],
 	[userID] [int] NOT NULL REFERENCES UserDetails(userID),
+	[vendorID] [int] NOT NULL REFERENCES Vendor(vendorID)
  CONSTRAINT [PK_OrderDetails] PRIMARY KEY 
 (
 	[orderID] ASC
