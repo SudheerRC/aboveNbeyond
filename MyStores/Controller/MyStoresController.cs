@@ -406,9 +406,9 @@ namespace MyStores.Controller
             _storesDal.InsertOrderItems(items, orderId);
         }
 
-        public void ReceiveOrder(List<InventoryItem> items)
+        public void ReceiveOrder(List<InventoryItem> items, int orderId)
         {
-            _storesDal.ReceiveOrder(items);
+            _storesDal.ReceiveOrder(items, orderId);
         }
 
         public List<InventoryItem> SearchInventoryWithOrderId(int orderId)

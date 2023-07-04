@@ -1747,23 +1747,26 @@ namespace MyStores.Dal
             return orders;
         }
 
-        public void ReceiveOrder(List<InventoryItem> items)
+        public void ReceiveOrder(List<InventoryItem> items, int orderId)
         {
             using var connection = DbConnection.GetConnection();
-
-            string query = "Update Inventory SET quantity = quantity + @newQuantity where inventoryID = @inventoryId;";
-            using var command = new SqlCommand(query, connection);
+            
+            using var command = new SqlCommand("receiveOrder", connection);
+            command.CommandType = CommandType.StoredProcedure;
 
             foreach (var currentItem in items)
             {
+                command.Parameters.Add("@orderId ", System.Data.SqlDbType.Int);
+                command.Parameters["@orderId "].Value = orderId;
+
                 command.Parameters.Add("@inventoryID", System.Data.SqlDbType.Int);
                 command.Parameters["@inventoryID"].Value = currentItem.InventoryId;
 
                 command.Parameters.Add("@newQuantity", System.Data.SqlDbType.Int);
                 command.Parameters["@newQuantity"].Value = currentItem.Quantity;
 
-                command.Parameters.Add("@receivedDate", System.Data.SqlDbType.Date);
-                command.Parameters["@receivedDate"].Value = DateOnly.FromDateTime(DateTime.Now);
+                command.Parameters.Add("@deliveredDate ", System.Data.SqlDbType.Date);
+                command.Parameters["@deliveredDate "].Value = DateOnly.FromDateTime(DateTime.Now);
 
                 connection.Open();
                 command.ExecuteNonQuery();
