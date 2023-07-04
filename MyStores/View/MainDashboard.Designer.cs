@@ -317,7 +317,7 @@
             windowOpPanel.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             windowOpPanel.Controls.Add(minPanel);
             windowOpPanel.Controls.Add(closePanel);
-            windowOpPanel.Location = new Point(69, 4);
+            windowOpPanel.Location = new Point(69, 2);
             windowOpPanel.Margin = new Padding(5, 4, 5, 4);
             windowOpPanel.Name = "windowOpPanel";
             windowOpPanel.Size = new Size(160, 43);
@@ -413,7 +413,7 @@
             // 
             globalSearchUserControl.BackColor = Color.FromArgb(28, 44, 78);
             globalSearchUserControl.Location = new Point(2, 86);
-            globalSearchUserControl.Margin = new Padding(1, 1, 1, 1);
+            globalSearchUserControl.Margin = new Padding(1);
             globalSearchUserControl.Name = "globalSearchUserControl";
             globalSearchUserControl.Size = new Size(229, 677);
             globalSearchUserControl.TabIndex = 6;

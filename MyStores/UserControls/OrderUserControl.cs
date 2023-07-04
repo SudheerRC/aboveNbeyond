@@ -1,20 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace MyStores.UserControls
+﻿namespace MyStores.UserControls
 {
     public partial class OrderUserControl : UserControl
     {
         public OrderUserControl()
         {
             InitializeComponent();
+        }
+
+        private void placeOrderButton_Click(object sender, EventArgs e)
+        {
+            mainPanel.Visible = false;
+            listPanel.Visible = true;
+            finalListPanelButton.Text = "Receive Order";
+            panelHeadingLabel.Text = "Please select an Order from the list below";
+
+        }
+
+        private void receiveOrderButton_Click(object sender, EventArgs e)
+        {
+            mainPanel.Visible = false;
+            listPanel.Visible = true;
+            finalListPanelButton.Text = "Receive Order";
+            panelHeadingLabel.Text = "Please select an Order from the list below";
         }
     }
 }
