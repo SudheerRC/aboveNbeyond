@@ -74,7 +74,7 @@
             // 
             minusButton.FlatStyle = FlatStyle.Flat;
             minusButton.Image = (Image)resources.GetObject("minusButton.Image");
-            minusButton.Location = new Point(363, 99);
+            minusButton.Location = new Point(352, 99);
             minusButton.Margin = new Padding(3, 4, 3, 4);
             minusButton.Name = "minusButton";
             minusButton.Size = new Size(41, 42);
@@ -86,7 +86,7 @@
             // 
             addButton.FlatStyle = FlatStyle.Flat;
             addButton.Image = (Image)resources.GetObject("addButton.Image");
-            addButton.Location = new Point(459, 99);
+            addButton.Location = new Point(485, 99);
             addButton.Margin = new Padding(3, 4, 3, 4);
             addButton.Name = "addButton";
             addButton.Size = new Size(41, 42);
@@ -97,10 +97,10 @@
             // quantityTextBox
             // 
             quantityTextBox.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            quantityTextBox.Location = new Point(411, 99);
+            quantityTextBox.Location = new Point(399, 99);
             quantityTextBox.Margin = new Padding(3, 4, 3, 4);
             quantityTextBox.Name = "quantityTextBox";
-            quantityTextBox.Size = new Size(41, 42);
+            quantityTextBox.Size = new Size(79, 42);
             quantityTextBox.TabIndex = 5;
             quantityTextBox.Text = "4";
             quantityTextBox.TextAlign = HorizontalAlignment.Center;
@@ -109,11 +109,12 @@
             // removeButton
             // 
             removeButton.BackColor = Color.FromArgb(28, 44, 78);
+            removeButton.FlatAppearance.BorderSize = 0;
             removeButton.FlatStyle = FlatStyle.Flat;
             removeButton.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             removeButton.ForeColor = Color.FromArgb(243, 239, 245);
             removeButton.Image = (Image)resources.GetObject("removeButton.Image");
-            removeButton.Location = new Point(507, 4);
+            removeButton.Location = new Point(533, 4);
             removeButton.Margin = new Padding(3, 4, 3, 4);
             removeButton.Name = "removeButton";
             removeButton.Size = new Size(102, 141);
@@ -127,10 +128,10 @@
             // priceTextBox
             // 
             priceTextBox.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            priceTextBox.Location = new Point(431, 7);
+            priceTextBox.Location = new Point(425, 7);
             priceTextBox.Margin = new Padding(3, 4, 3, 4);
             priceTextBox.Name = "priceTextBox";
-            priceTextBox.Size = new Size(69, 42);
+            priceTextBox.Size = new Size(101, 42);
             priceTextBox.TabIndex = 7;
             priceTextBox.Text = "4";
             priceTextBox.TextAlign = HorizontalAlignment.Center;
@@ -139,7 +140,7 @@
             // priceLabel
             // 
             priceLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            priceLabel.Location = new Point(363, 7);
+            priceLabel.Location = new Point(352, 7);
             priceLabel.Name = "priceLabel";
             priceLabel.Size = new Size(67, 49);
             priceLabel.TabIndex = 8;
@@ -149,7 +150,7 @@
             // quantityLabel
             // 
             quantityLabel.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            quantityLabel.Location = new Point(363, 56);
+            quantityLabel.Location = new Point(352, 56);
             quantityLabel.Name = "quantityLabel";
             quantityLabel.Size = new Size(99, 39);
             quantityLabel.TabIndex = 9;
@@ -160,6 +161,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ControlDark;
             Controls.Add(quantityLabel);
             Controls.Add(priceLabel);
             Controls.Add(priceTextBox);
@@ -172,7 +174,7 @@
             Controls.Add(productImagePictureBox);
             Margin = new Padding(3, 4, 3, 4);
             Name = "OrderedProductTileUserControl";
-            Size = new Size(614, 149);
+            Size = new Size(638, 149);
             Load += OrderedProductTileUserControl_Load;
             ((System.ComponentModel.ISupportInitialize)productImagePictureBox).EndInit();
             ResumeLayout(false);
