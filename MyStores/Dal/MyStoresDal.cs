@@ -1561,5 +1561,73 @@ namespace MyStores.Dal
 
             command.ExecuteNonQuery();
         }
+
+        public void PlaceOrder(InventoryItem item, int userId)
+        {
+            using var connection = DbConnection.GetConnection();
+            connection.Open();
+            using var command = new SqlCommand("placeOrder", connection);
+            command.CommandType = CommandType.StoredProcedure;
+
+            command.Parameters.Add("@inventoryID", System.Data.SqlDbType.Int);
+            command.Parameters["@inventoryID"].Value = item.InventoryId;
+
+            command.Parameters.Add("@orderDate", System.Data.SqlDbType.Date);
+            command.Parameters["@orderDate"].Value = DateOnly.FromDateTime(DateTime.Now) ;
+
+            command.Parameters.Add("@expectedDate", System.Data.SqlDbType.Date);
+            command.Parameters["@expectedDate"].Value = DateOnly.FromDateTime(DateTime.Now).AddDays(7);
+
+            command.Parameters.Add("@userId", System.Data.SqlDbType.Int);
+            command.Parameters["@userId"].Value = userId;
+
+            command.Parameters.Add("@purchasePrice", System.Data.SqlDbType.Decimal);
+            command.Parameters["@purchasePrice"].Value = item.PurchasePrice;
+
+            command.Parameters.Add("@quantity", System.Data.SqlDbType.Int);
+            command.Parameters["@quantity"].Value = item.Quantity;
+
+            command.ExecuteNonQuery();
+        }
+
+        /// <summary>
+        /// Edit the vendor.
+        /// </summary>
+        /// <param name="vendor">The vendor.</param>
+        public void EditVendor(Vendor vendor)
+        {
+            using var connection = DbConnection.GetConnection();
+            connection.Open();
+            string query = "UPDATE Vendor SET vendorName = @vendorName , streetAddress = @streetAddress, " +
+                           "city = @city, state = @state, zipCode = @zipCode, country = @country, " +
+                           "phoneNumber = @phoneNumber where vendorID = @vendorId";
+            using var command = new SqlCommand(query, connection);
+
+            command.Parameters.Add("@vendorId", System.Data.SqlDbType.Int);
+            command.Parameters["@vendorId"].Value = vendor.Id;
+
+            command.Parameters.Add("@vendorName", System.Data.SqlDbType.VarChar);
+            command.Parameters["@vendorName"].Value = vendor.Name;
+
+            command.Parameters.Add("@streetAddress", System.Data.SqlDbType.VarChar);
+            command.Parameters["@streetAddress"].Value = vendor.StreetAddress;
+
+            command.Parameters.Add("@city", System.Data.SqlDbType.VarChar);
+            command.Parameters["@city"].Value = vendor.City;
+
+            command.Parameters.Add("@state", System.Data.SqlDbType.VarChar);
+            command.Parameters["@state"].Value = vendor.State;
+
+            command.Parameters.Add("@zipCode", System.Data.SqlDbType.VarChar);
+            command.Parameters["@zipCode"].Value = vendor.ZipCode;
+
+            command.Parameters.Add("@country", System.Data.SqlDbType.VarChar);
+            command.Parameters["@country"].Value = vendor.Country;
+
+            command.Parameters.Add("@phoneNumber", System.Data.SqlDbType.VarChar);
+            command.Parameters["@phoneNumber"].Value = vendor.PhoneNumber;
+
+            command.ExecuteNonQuery();
+        }
     }
 }
