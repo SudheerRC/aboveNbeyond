@@ -52,8 +52,8 @@ namespace MyStores.UserControls
         private void LoadOrderComboBox()
         {
             ClearComboBox();
-            List<Vendor> vendorList = _controller.SearchVendorByStoreId(_storeId);
-            listPanelComboBox.DataSource = vendorList;
+            List<Order> orderList = _controller.OpenOrdersForStore(_storeId);
+            listPanelComboBox.DataSource = orderList;
             listPanelComboBox.SelectedItem = null;
             mainFlowLayoutPanel.Controls.Clear();
             totalAmountLabel.Text = @"$0.00";
@@ -173,12 +173,17 @@ namespace MyStores.UserControls
 
                 list<InventoryItem> itemList = GetOrderItemList();
 
+                var orderId = _controller.PlaceOrder(newOrder);
+                _controller.InsertOrderItems(itemList, orderId);
 
-                MessageBox.Show(@"Order Placed successfully!");
+                MessageBox.Show(@"Order Placed Successfully!");
             }
             else if (_isReceiveOrder)
             {
+                list<InventoryItem> itemList = GetOrderItemList();
+                
 
+                MessageBox.Show(@"Order Received Successfully!\nYour Inventory has been updated!");
             }
 
             ResetUserControl();

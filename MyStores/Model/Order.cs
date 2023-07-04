@@ -18,5 +18,10 @@
         public DateOnly DeliveredDate { get; set; }
 
         public List<InventoryItem>? InventoryItems { get; set; }
+
+        public override string ToString()
+        {
+            return OrderDate.ToShortDateString() + " | " + VendorName + " | " + OrderId.ToString();
+        }
     }
 }
