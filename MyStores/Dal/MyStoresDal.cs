@@ -1625,7 +1625,8 @@ namespace MyStores.Dal
             command.Parameters.Add("@storeId", System.Data.SqlDbType.Int);
             command.Parameters["@storeId"].Value = order.StoreId;
 
-            command.Parameters.Add("@orderId", System.Data.SqlDbType.Int);
+            command.Parameters.Add("@orderId", System.Data.SqlDbType.Int).Direction 
+                = ParameterDirection.Output;
             int orderId = Convert.ToInt32(command.Parameters["@orderId"].Value);
             command.ExecuteNonQuery();
             return orderId;
