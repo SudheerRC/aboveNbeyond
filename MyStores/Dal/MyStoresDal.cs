@@ -1635,7 +1635,6 @@ namespace MyStores.Dal
         {
             using var connection = DbConnection.GetConnection();
             
-
             string query = "INSERT INTO Orders(orderID, inventoryID, purchasePrice, quantity) " +
                            "VALUES (@orderID, @inventoryID, @purchasePrice, @quantity)";
             using var command = new SqlCommand(query, connection);
@@ -1740,6 +1739,28 @@ namespace MyStores.Dal
             }
 
             return orders;
+        }
+
+        public void ReceiveOrder(List<InventoryItem> items)
+        {
+            using var connection = DbConnection.GetConnection();
+
+            string query = "Update Inventory SET quantity = quantity + @newQuantity where inventoryID = @inventoryId;";
+            using var command = new SqlCommand(query, connection);
+
+            foreach (var currentItem in items)
+            {
+                command.Parameters.Add("@inventoryID", System.Data.SqlDbType.Int);
+                command.Parameters["@inventoryID"].Value = currentItem.InventoryId;
+
+                command.Parameters.Add("@newQuantity", System.Data.SqlDbType.Int);
+                command.Parameters["@newQuantity"].Value = currentItem.Quantity;
+
+                connection.Open();
+                command.ExecuteNonQuery();
+                command.Parameters.Clear();
+                connection.Close();
+            }
         }
     }
 }

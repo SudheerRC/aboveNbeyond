@@ -405,5 +405,10 @@ namespace MyStores.Controller
         {
             _storesDal.InsertOrderItems(items, orderId);;
         }
+
+        public void ReceiveOrder(List<InventoryItem> items)
+        {
+            _storesDal.ReceiveOrder(items);
+        }
     }
 }
