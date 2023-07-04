@@ -118,5 +118,10 @@ namespace MyStores.UserControls.HomeUserControl
 
             mainAddProductToStoreUserControl.SetStore(_storeId);
         }
+
+        private void orderButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
