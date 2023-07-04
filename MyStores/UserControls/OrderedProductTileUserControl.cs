@@ -1,5 +1,4 @@
 ﻿using MyStores.Model;
-using System.Data;
 
 namespace MyStores.UserControls
 {
@@ -22,6 +21,11 @@ namespace MyStores.UserControls
             _inventoryItem = item;
         }
 
+        public InventoryItem getInventoryItem()
+        {
+            return _inventoryItem;
+        }
+
         private void UpdateStatus()
         {
             EventArgs args = EventArgs.Empty;
@@ -34,6 +38,8 @@ namespace MyStores.UserControls
             var quantity = Convert.ToInt32(quantityTextBox.Text);
             quantity = quantity + 1;
             quantityTextBox.Text = quantity.ToString();
+
+            UpdateStatus();
         }
 
         private void minusButton_Click(object sender, EventArgs e)
@@ -45,12 +51,12 @@ namespace MyStores.UserControls
                 quantity = quantity - 1;
                 quantityTextBox.Text = quantity.ToString();
             }
+
+            UpdateStatus();
         }
 
         private void removeButton_Click(object sender, EventArgs e)
         {
-            quantityTextBox.Text = @"0";
-
             UpdateStatus();
             this.Parent.Controls.Remove(this);
         }

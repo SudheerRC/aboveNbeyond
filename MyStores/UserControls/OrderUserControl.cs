@@ -1,13 +1,19 @@
 ﻿using MyStores.Controller;
 using MyStores.Model;
+using System.Collections.Generic;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace MyStores.UserControls
 {
     public partial class OrderUserControl : UserControl
     {
+        private int _userId;
         private int _storeId;
         private readonly MyStoresController _controller;
         private double _orderTotal;
+
+        private bool _isPlaceOrder;
+        private bool _isReceiveOrder;
 
         public OrderUserControl()
         {
@@ -22,6 +28,11 @@ namespace MyStores.UserControls
             _storeId = id;
         }
 
+        public void SetUser(int id)
+        {
+            _userId = id;
+        }
+
         private void ClearComboBox()
         {
             listPanelComboBox.DataSource = null;
@@ -33,7 +44,9 @@ namespace MyStores.UserControls
             ClearComboBox();
             List<Vendor> vendorList = _controller.SearchVendorByStoreId(_storeId);
             listPanelComboBox.DataSource = vendorList;
-            listPanelComboBox.SelectedIndex.Equals(-1);
+            listPanelComboBox.SelectedItem = null;
+            mainFlowLayoutPanel.Controls.Clear();
+            totalAmountLabel.Text = @"$0.00";
         }
 
         private void LoadOrderComboBox()
@@ -41,23 +54,40 @@ namespace MyStores.UserControls
             ClearComboBox();
             List<Vendor> vendorList = _controller.SearchVendorByStoreId(_storeId);
             listPanelComboBox.DataSource = vendorList;
-            listPanelComboBox.SelectedIndex.Equals(-1);
+            listPanelComboBox.SelectedItem = null;
+            mainFlowLayoutPanel.Controls.Clear();
+            totalAmountLabel.Text = @"$0.00";
         }
 
         private void LoadProductList()
         {
             var vendor = listPanelComboBox.SelectedItem as Vendor;
-            List<InventoryItem> itemList = _controller.SearchInventoryWithVendorId(vendor.Id, _storeId);
 
-            mainFlowLayoutPanel.Controls.Clear();
-
-            foreach (var t in itemList)
+            if (vendor != null)
             {
-                var productTile = new OrderedProductTileUserControl();
-                productTile.setInventoryItem(t);
-                mainFlowLayoutPanel.Controls.Add(productTile);
+                List<InventoryItem> itemList = _controller.SearchInventoryWithVendorId(vendor.Id, _storeId);
+
+                mainFlowLayoutPanel.Controls.Clear();
+
+                foreach (var t in itemList)
+                {
+                    var productTile = new OrderedProductTileUserControl();
+                    productTile.setInventoryItem(t);
+                    SetControlClickEvents(productTile);
+
+                    mainFlowLayoutPanel.Controls.Add(productTile);
+                }
             }
-            
+        }
+
+        private void SetControlClickEvents(OrderedProductTileUserControl productTile)
+        {
+            productTile.Controls["removeButton"].Click += new EventHandler(OrderedProductTileUserControl_OnUpdateStatus);
+            productTile.Controls["addButton"].Click += new EventHandler(OrderedProductTileUserControl_OnUpdateStatus);
+            productTile.Controls["minusButton"].Click += new EventHandler(OrderedProductTileUserControl_OnUpdateStatus);
+            productTile.Controls["quantityTextBox"].TextChanged +=
+                new EventHandler(OrderedProductTileUserControl_OnUpdateStatus);
+            productTile.Controls["priceTextBox"].TextChanged += new EventHandler(OrderedProductTileUserControl_OnUpdateStatus);
         }
 
         private void CalculateOrderTotal()
@@ -93,6 +123,9 @@ namespace MyStores.UserControls
             finalListPanelButton.Text = @"Place Order";
             panelHeadingLabel.Text = @"Please select a Vendor from this list to place an order";
 
+            _isPlaceOrder = true;
+            _isReceiveOrder = false;
+
             LoadVendorComboBox();
 
             SwitchPanels();
@@ -102,6 +135,9 @@ namespace MyStores.UserControls
         {
             finalListPanelButton.Text = @"Receive Order";
             panelHeadingLabel.Text = @"Please select an Order from the list below";
+
+            _isPlaceOrder = false;
+            _isReceiveOrder = true;
 
             LoadOrderComboBox();
 
@@ -125,7 +161,49 @@ namespace MyStores.UserControls
 
         private void finalListPanelButton_Click(object sender, EventArgs e)
         {
+            if (_isPlaceOrder)
+            {
+                var vendor = listPanelComboBox.SelectedItem as Vendor;
+                var newOrder = new Order
+                {
+                    UserId = _userId,
+                    VendorId = vendor.Id,
+                    StoreId = _storeId,
+                };
 
+                list<InventoryItem> itemList = GetOrderItemList();
+
+
+                MessageBox.Show(@"Order Placed successfully!");
+            }
+            else if (_isReceiveOrder)
+            {
+
+            }
+
+            ResetUserControl();
+        }
+
+        private list<InventoryItem> GetOrderItemList()
+        {
+            var itemList = new list<InventoryItem>();
+
+            for (int i = 0; i < mainFlowLayoutPanel.Controls.Count; i++)
+            {
+                OrderedProductTileUserControl newControl = (OrderedProductTileUserControl)mainFlowLayoutPanel.Controls[i];
+                var quantity = Convert.ToInt32(newControl.Controls["quantityTextBox"].Text);
+                var purchasePrice = Convert.ToDouble(newControl.Controls["priceTextBox"].Text);
+                var item = newControl.getInventoryItem();
+
+                itemList.add(new InventoryItem
+                {
+                    InventoryId = item.InventoryId,
+                    PurchasePrice = purchasePrice,
+                    Quantity = quantity,
+                });
+            }
+
+            return itemList;
         }
 
         private void OrderUserControl_Load(object sender, EventArgs e)
