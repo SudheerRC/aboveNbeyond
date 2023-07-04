@@ -233,9 +233,11 @@ namespace MyStores.UserControls
                 }
                 else if (_isReceiveOrder)
                 {
+                    var order = listPanelComboBox.SelectedItem as Order;
+
                     List<InventoryItem> itemList = GetOrderItemList();
 
-                    _controller.ReceiveOrder(itemList);
+                    _controller.ReceiveOrder(itemList, order.OrderId);
 
                     ResetUserControl();
                     MessageBox.Show(@"Order Received Successfully!" + Environment.NewLine + "Your Inventory has been updated!");
@@ -276,7 +278,11 @@ namespace MyStores.UserControls
 
         private void listPanelComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LoadProductList();
+            if (!LoadProductList())
+            {
+                mainFlowLayoutPanel.Controls.Clear();
+                totalAmountLabel.Text = "$0.00";
+            }
             CalculateOrderTotal();
         }
     }
