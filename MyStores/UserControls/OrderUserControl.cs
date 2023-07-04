@@ -171,7 +171,7 @@ namespace MyStores.UserControls
                     StoreId = _storeId,
                 };
 
-                list<InventoryItem> itemList = GetOrderItemList();
+                List<InventoryItem> itemList = GetOrderItemList();
 
                 var orderId = _controller.PlaceOrder(newOrder);
                 _controller.InsertOrderItems(itemList, orderId);
@@ -180,7 +180,7 @@ namespace MyStores.UserControls
             }
             else if (_isReceiveOrder)
             {
-                list<InventoryItem> itemList = GetOrderItemList();
+                List<InventoryItem> itemList = GetOrderItemList();
                 
 
                 MessageBox.Show(@"Order Received Successfully!\nYour Inventory has been updated!");
@@ -189,9 +189,9 @@ namespace MyStores.UserControls
             ResetUserControl();
         }
 
-        private list<InventoryItem> GetOrderItemList()
+        private List<InventoryItem> GetOrderItemList()
         {
-            var itemList = new list<InventoryItem>();
+            var itemList = new List<InventoryItem>();
 
             for (int i = 0; i < mainFlowLayoutPanel.Controls.Count; i++)
             {
@@ -200,7 +200,7 @@ namespace MyStores.UserControls
                 var purchasePrice = Convert.ToDouble(newControl.Controls["priceTextBox"].Text);
                 var item = newControl.getInventoryItem();
 
-                itemList.add(new InventoryItem
+                itemList.Add(new InventoryItem
                 {
                     InventoryId = item.InventoryId,
                     PurchasePrice = purchasePrice,
