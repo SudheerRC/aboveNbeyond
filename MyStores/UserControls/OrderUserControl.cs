@@ -25,7 +25,7 @@ namespace MyStores.UserControls
             listPanelComboBox.Items.Clear();
         }
 
-        private void loadVendorComboBox()
+        private void LoadVendorComboBox()
         {
             ClearComboBox();
             List<Vendor> vendorList = _controller.SearchVendorByStoreId(_storeId);
@@ -33,7 +33,7 @@ namespace MyStores.UserControls
             listPanelComboBox.SelectedIndex.Equals(0);
         }
 
-        private void loadOrderComboBox()
+        private void LoadOrderComboBox()
         {
             ClearComboBox();
             List<Vendor> vendorList = _controller.SearchVendorByStoreId(_storeId);
@@ -59,6 +59,7 @@ namespace MyStores.UserControls
         private void SwitchPanels()
         {
             mainPanel.Visible = false;
+            listPanel.BringToFront();
             listPanel.Visible = true;
         }
 
@@ -66,6 +67,8 @@ namespace MyStores.UserControls
         {
             finalListPanelButton.Text = @"Place Order";
             panelHeadingLabel.Text = @"Please select a Vendor from this list to place an order";
+
+            LoadVendorComboBox();
 
             SwitchPanels();
         }
@@ -75,11 +78,19 @@ namespace MyStores.UserControls
             finalListPanelButton.Text = @"Receive Order";
             panelHeadingLabel.Text = @"Please select an Order from the list below";
 
+            LoadOrderComboBox();
+
             SwitchPanels();
         }
 
         private void backButton_Click(object sender, EventArgs e)
         {
+            ResetUserControl();
+        }
+
+        public void ResetUserControl()
+        {
+            mainPanel.BringToFront();
             mainPanel.Visible = true;
             listPanel.Visible = false;
 
@@ -89,6 +100,11 @@ namespace MyStores.UserControls
         private void finalListPanelButton_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void OrderUserControl_Load(object sender, EventArgs e)
+        {
+            ResetUserControl();
         }
     }
 }

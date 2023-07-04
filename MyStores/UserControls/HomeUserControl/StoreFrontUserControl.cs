@@ -47,6 +47,7 @@ namespace MyStores.UserControls.HomeUserControl
             mainInventoryUserControl.refreshListView();
             mainAddProductToStoreUserControl.resetControl();
             mainAddManagerUserControl.clearControl();
+            mainOrderUserControl.ResetUserControl();
         }
 
         private void addProductButton_Click(object sender, EventArgs e)
