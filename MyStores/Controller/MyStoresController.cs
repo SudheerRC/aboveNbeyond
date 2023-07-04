@@ -353,6 +353,16 @@ namespace MyStores.Controller
             _storesDal.EditProduct(product);
         }
 
+        public void EditVendor(Vendor vendor)
+        {
+            _storesDal.EditVendor(vendor);
+        }
+
+        public void PlaceOrder(InventoryItem item, int userId)
+        {
+            _storesDal.PlaceOrder(item, userId);
+        }
+
         public Users GetUserDetails(int userId)
         {
             return _storesDal.GetUserDetails(userId);

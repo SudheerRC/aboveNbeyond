@@ -156,7 +156,41 @@ namespace MyStores.UserControls
             }
             else
             {
-               ClearFields();
+                ClearFields();
+            }
+        }
+
+        private void EditButton_Click(object sender, EventArgs e)
+        {
+            if (!ValidateFields())
+            {
+                nameErrorLabel.Visible = false;
+                phoneErrorLabel.Visible = false;
+                errorLabel.Visible = false;
+
+                var newVendor = new Vendor
+                {
+                    Id = _vendorId,
+                    Name = nameTextBox.Text,
+                    StreetAddress = streetAddressTextBox.Text,
+                    City = cityTextBox.Text,
+                    State = stateTextBox.Text,
+                    Country = countryTextBox.Text,
+                    PhoneNumber = phoneNumTextBox.Text,
+                    ZipCode = zipcodeTextBox.Text
+                };
+
+                _controller.EditVendor(newVendor);
+                errorLabel.Text = "Vendor has been editted succesfully";
+                ClearFields();
+                errorLabel.ForeColor = Color.Green;
+                errorLabel.Visible = true;
+            }
+            else
+            {
+                errorLabel.Text = "Please meet the necessary requirements to edit successfully";
+                errorLabel.ForeColor = Color.Red;
+                errorLabel.Visible = true;
             }
         }
     }

@@ -72,7 +72,7 @@ namespace MyStores.UserControls
                         ProductSize = sizeTextBox.Text,
                         Barcode = barcodeTextBox.Text,
                         DepartmentName = departmentTextBox.Text,
-                        Image = MagicImageConverter.ConvertImageToByte(pictureBox.Image),
+                        Image = MagicImageConverter.ConvertImageToByte(pictureBox.Image, 50),
                         SellingPrice = Double.Parse(priceTextBox.Text)
                     };
                     _controller.AddProduct(newProduct);
@@ -208,7 +208,7 @@ namespace MyStores.UserControls
                         ProductSize = sizeTextBox.Text,
                         Barcode = barcodeTextBox.Text,
                         DepartmentName = departmentTextBox.Text,
-                        Image = MagicImageConverter.ConvertImageToByte(pictureBox.Image),
+                        Image = MagicImageConverter.ConvertImageToByte(pictureBox.Image, 50),
                         SellingPrice = Double.Parse(priceTextBox.Text)
                     };
                     _controller.EditProduct(newProduct);

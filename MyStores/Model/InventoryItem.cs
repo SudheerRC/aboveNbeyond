@@ -2,6 +2,8 @@
 {
     public class InventoryItem
     {
+        public int InventoryId { get; set; }
+
         public int VendorId { get; set; }
 
         public int Quantity { get; set; }
