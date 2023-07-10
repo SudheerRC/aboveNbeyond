@@ -6,7 +6,7 @@ namespace MyStores.View
     public partial class MainDashboard : Form
     {
         private Users _owner;
-        private MyStoresController _controller;
+        private readonly MyStoresController _controller;
         public MainDashboard()
         {
             InitializeComponent();

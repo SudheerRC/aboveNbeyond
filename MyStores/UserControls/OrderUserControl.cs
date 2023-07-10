@@ -44,7 +44,7 @@ namespace MyStores.UserControls
             if (vendorList.Count == 0)
             {
                 MessageBox.Show("There are no Vendors added to this store." +
-                    Environment.NewLine + "Please add on or more vendors to place an order with them");
+                    Environment.NewLine + "Please add one or more vendors to place an order with them");
                 return false;
             }
             listPanelComboBox.DataSource = vendorList;

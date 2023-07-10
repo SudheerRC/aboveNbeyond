@@ -1,4 +1,5 @@
-﻿using MyStores.Controller;
+﻿using Microsoft.IdentityModel.Tokens;
+using MyStores.Controller;
 using MyStores.Model;
 
 namespace MyStores.UserControls
@@ -7,8 +8,6 @@ namespace MyStores.UserControls
     {
         private readonly MyStoresController _controller;
         private Users _user;
-        private string _categoryName;
-        private int _categoryId;
 
         public delegate void StatusUpdateHandler(object sender, EventArgs e);
         public event StatusUpdateHandler OnUpdateStatus;
@@ -39,29 +38,66 @@ namespace MyStores.UserControls
                 List<Vendor> vendors = _controller.SearchVendorWithVendorName(inputText);
                 List<Store> stores = _controller.SearchStoreWithStoreNameAndUserId(inputText, _user.UserId);
 
-                foreach (var currentStore in stores)
-                {
-                    var groupBox = CreateNewStoreGroupBox(currentStore);
-                    groupBox.Text = "Store";
+                CreateClearLinkLabel();
 
-                    resultFlowLayoutPanel.Controls.Add(groupBox);
+                if (products.IsNullOrEmpty() && vendors.IsNullOrEmpty() && stores.IsNullOrEmpty())
+                {
+                    var errorLabel = new Label();
+                    errorLabel.AutoSize = true;
+                    errorLabel.ForeColor = Color.White;
+                    errorLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+                    errorLabel.Text = @"Couldn't find anything with your search input. Try Again";
+                    resultFlowLayoutPanel.Controls.Add(errorLabel);
                 }
-
-                foreach (var currentProduct in products)
+                else
                 {
-                    var groupBox = CreateNewProductGroupBox(currentProduct);
-                    groupBox.Text = "Product";
+                    foreach (var currentStore in stores)
+                    {
+                        var groupBox = CreateNewStoreGroupBox(currentStore);
+                        groupBox.Text = "Store";
 
-                    resultFlowLayoutPanel.Controls.Add(groupBox);
-                }
+                        resultFlowLayoutPanel.Controls.Add(groupBox);
+                    }
 
-                foreach (var currentVendor in vendors)
-                {
-                    var groupBox = CreateNewVendorGroupBox(currentVendor);
-                    groupBox.Text = "Vendor";
-                    resultFlowLayoutPanel.Controls.Add(groupBox);
+                    foreach (var currentProduct in products)
+                    {
+                        var groupBox = CreateNewProductGroupBox(currentProduct);
+                        groupBox.Text = "Product";
+
+                        resultFlowLayoutPanel.Controls.Add(groupBox);
+                    }
+
+                    foreach (var currentVendor in vendors)
+                    {
+                        var groupBox = CreateNewVendorGroupBox(currentVendor);
+                        groupBox.Text = "Vendor";
+                        resultFlowLayoutPanel.Controls.Add(groupBox);
+                    }
                 }
             }
+        }
+
+        private void CreateClearLinkLabel()
+        {
+            var linkLabel = new LinkLabel();
+            linkLabel.Name = "clearLinkLabel";
+            linkLabel.Text = "Clear";
+
+            linkLabel.ForeColor = invisibleLinkLabel.ForeColor;
+            linkLabel.Font = invisibleLinkLabel.Font;
+            linkLabel.VisitedLinkColor = invisibleLinkLabel.VisitedLinkColor;
+            linkLabel.Location = invisibleLinkLabel.Location;
+            linkLabel.AutoSize = true;
+            linkLabel.LinkColor = invisibleLinkLabel.LinkColor;
+            linkLabel.Click += new EventHandler(ClearLinkLabel_Click);
+
+            resultFlowLayoutPanel.Controls.Add(linkLabel);
+        }
+
+        private void ClearLinkLabel_Click(object sender, EventArgs e)
+        {
+            searchTextBox.Clear();
+            resultFlowLayoutPanel.Controls.Clear();
         }
 
         private void SetGroupBox(GroupBox groupBox, LinkLabel linkLabel, Label label)
@@ -93,7 +129,7 @@ namespace MyStores.UserControls
             linkLabel.Name = Convert.ToString(currentProduct.Id);
             linkLabel.Text = currentProduct.Name;
             label.Text = currentProduct.DepartmentName;
-            
+
             linkLabel.Click += new EventHandler(ProductLinkLabel_Click);
             groupBox.Controls.Add(linkLabel);
             groupBox.Controls.Add(label);
@@ -169,7 +205,7 @@ namespace MyStores.UserControls
         private void UpdateStatus()
         {
             EventArgs args = EventArgs.Empty;
-            
+
             OnUpdateStatus?.Invoke(this, args);
         }
     }

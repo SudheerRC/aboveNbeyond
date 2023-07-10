@@ -51,7 +51,7 @@
             invisibleGroupBox.ForeColor = SystemColors.ControlLightLight;
             invisibleGroupBox.Location = new Point(3, 58);
             invisibleGroupBox.Name = "invisibleGroupBox";
-            invisibleGroupBox.Size = new Size(362, 136);
+            invisibleGroupBox.Size = new Size(392, 136);
             invisibleGroupBox.TabIndex = 0;
             invisibleGroupBox.TabStop = false;
             invisibleGroupBox.Text = "groupBox1";
@@ -90,13 +90,13 @@
             searchInputPanel.Location = new Point(0, 0);
             searchInputPanel.Margin = new Padding(3, 2, 3, 2);
             searchInputPanel.Name = "searchInputPanel";
-            searchInputPanel.Size = new Size(368, 51);
+            searchInputPanel.Size = new Size(400, 51);
             searchInputPanel.TabIndex = 0;
             // 
             // searchButtonPanel
             // 
             searchButtonPanel.Controls.Add(searchButton);
-            searchButtonPanel.Location = new Point(300, 3);
+            searchButtonPanel.Location = new Point(332, 7);
             searchButtonPanel.Margin = new Padding(3, 2, 3, 2);
             searchButtonPanel.Name = "searchButtonPanel";
             searchButtonPanel.Size = new Size(65, 46);
@@ -107,10 +107,10 @@
             searchButton.BackColor = Color.White;
             searchButton.FlatStyle = FlatStyle.Flat;
             searchButton.Image = (Image)resources.GetObject("searchButton.Image");
-            searchButton.Location = new Point(-7, 5);
+            searchButton.Location = new Point(0, 0);
             searchButton.Margin = new Padding(8, 6, 8, 6);
             searchButton.Name = "searchButton";
-            searchButton.Size = new Size(72, 40);
+            searchButton.Size = new Size(63, 40);
             searchButton.TabIndex = 0;
             searchButton.UseVisualStyleBackColor = false;
             searchButton.Click += SearchButton_Click;
@@ -118,21 +118,21 @@
             // searchTextBox
             // 
             searchTextBox.BorderStyle = BorderStyle.FixedSingle;
-            searchTextBox.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            searchTextBox.Font = new Font("Segoe UI", 7.875F, FontStyle.Regular, GraphicsUnit.Point);
             searchTextBox.Location = new Point(3, 8);
             searchTextBox.Margin = new Padding(3, 2, 3, 2);
             searchTextBox.Name = "searchTextBox";
-            searchTextBox.PlaceholderText = "Search";
-            searchTextBox.Size = new Size(291, 39);
+            searchTextBox.PlaceholderText = "Enter name of product/store/vendor to search";
+            searchTextBox.Size = new Size(323, 35);
             searchTextBox.TabIndex = 6;
             // 
             // resultFlowLayoutPanel
             // 
             resultFlowLayoutPanel.AutoScroll = true;
             resultFlowLayoutPanel.Dock = DockStyle.Bottom;
-            resultFlowLayoutPanel.Location = new Point(0, 57);
+            resultFlowLayoutPanel.Location = new Point(0, 58);
             resultFlowLayoutPanel.Name = "resultFlowLayoutPanel";
-            resultFlowLayoutPanel.Size = new Size(368, 1023);
+            resultFlowLayoutPanel.Size = new Size(400, 1022);
             resultFlowLayoutPanel.TabIndex = 1;
             // 
             // GlobalSearchUserControl
@@ -144,7 +144,7 @@
             Controls.Add(searchInputPanel);
             Controls.Add(resultFlowLayoutPanel);
             Name = "GlobalSearchUserControl";
-            Size = new Size(368, 1080);
+            Size = new Size(400, 1080);
             Load += GlobalSearchUserControl_Load;
             invisibleGroupBox.ResumeLayout(false);
             invisibleGroupBox.PerformLayout();

@@ -127,7 +127,6 @@ namespace MyStores.UserControls
         {
             try
             {
-
                 if (!ValidateFields())
                 {
                     var selectedVendor = vendorComboBox.SelectedItem as Vendor;
@@ -276,6 +275,17 @@ namespace MyStores.UserControls
                 quantityErrorLabel.Text = @"Quantity must be a valid number";
                 quantityErrorLabel.Visible = true;
                 result = true;
+            }
+
+            if (!quantityErrorLabel.Visible)
+            {
+                quantity = Convert.ToInt32(quantityTextBox.Text);
+                if (quantity <= 0)
+                {
+                    quantityErrorLabel.Text = @"Quantity must be a valid positive number";
+                    quantityErrorLabel.Visible = true;
+                    result = true;
+                }
             }
 
             return result;
