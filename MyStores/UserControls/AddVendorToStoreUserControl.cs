@@ -33,6 +33,7 @@ namespace MyStores.UserControls
 
         private void loadListView()
         {
+            storeVendorListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
             refreshListView();
             var vendors = _controller.SearchVendorByStoreId(_storeId);
             if (vendors.Count != 0)

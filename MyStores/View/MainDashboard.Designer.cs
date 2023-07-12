@@ -302,7 +302,7 @@
             mainVendorTabUserControl.Location = new Point(3, 2);
             mainVendorTabUserControl.Margin = new Padding(11, 13, 11, 13);
             mainVendorTabUserControl.Name = "mainVendorTabUserControl";
-            mainVendorTabUserControl.Size = new Size(1412, 9838);
+            mainVendorTabUserControl.Size = new Size(1435, 9838);
             mainVendorTabUserControl.TabIndex = 2;
             // 
             // mainProductsTabUserControl

@@ -42,6 +42,8 @@ namespace MyStores.UserControls
 
         private void FeedListView(InventoryItem ii)
         {
+            inventoryListView.AutoResizeColumn(0, ColumnHeaderAutoResizeStyle.HeaderSize);
+            inventoryListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
             var vendorId = ii.VendorId;
             var myVendorName = _controller.NameOfVendorWithId(vendorId);
             var currentProduct = _controller.SearchProductWithId(ii.Item.Id);
@@ -87,6 +89,7 @@ namespace MyStores.UserControls
             decimal price;
             var inputText = searchTextBox.Text;
             List<InventoryItem> inventoryItems = new List<InventoryItem>();
+
             if (criteriaComboBox.SelectedItem.Equals("Product Name"))
             {
                 inventoryItems = _controller.SearchProductWithStoreIdAndName(_storeId, inputText);

@@ -63,6 +63,7 @@ namespace MyStores.UserControls
         private void VendorTabUserControl_Load(object sender, EventArgs e)
         {
             RefreshListView();
+            mainVendorListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
         }
 
         private void SearchTextBox_GotFocus(object sender, EventArgs e)
