@@ -29,174 +29,163 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VendorTabUserControl));
-            this.searchVendorPanel = new System.Windows.Forms.Panel();
-            this.refreshListButton = new System.Windows.Forms.Button();
-            this.mainVendorListView = new System.Windows.Forms.ListView();
-            this.vendorName = new System.Windows.Forms.ColumnHeader();
-            this.city = new System.Windows.Forms.ColumnHeader();
-            this.phoneNumber = new System.Windows.Forms.ColumnHeader();
-            this.stateName = new System.Windows.Forms.ColumnHeader();
-            this.zipCode = new System.Windows.Forms.ColumnHeader();
-            this.country = new System.Windows.Forms.ColumnHeader();
-            this.searchInputPanel = new System.Windows.Forms.Panel();
-            this.searchTextBox = new System.Windows.Forms.TextBox();
-            this.searchButtonPanel = new System.Windows.Forms.Panel();
-            this.searchButton = new System.Windows.Forms.Button();
-            this.searchVendorPanel.SuspendLayout();
-            this.searchInputPanel.SuspendLayout();
-            this.searchButtonPanel.SuspendLayout();
-            this.SuspendLayout();
+            searchVendorPanel = new Panel();
+            refreshListButton = new Button();
+            mainVendorListView = new ListView();
+            vendorName = new ColumnHeader();
+            city = new ColumnHeader();
+            phoneNumber = new ColumnHeader();
+            stateName = new ColumnHeader();
+            zipCode = new ColumnHeader();
+            country = new ColumnHeader();
+            searchInputPanel = new Panel();
+            searchTextBox = new TextBox();
+            searchButtonPanel = new Panel();
+            searchButton = new Button();
+            searchVendorPanel.SuspendLayout();
+            searchInputPanel.SuspendLayout();
+            searchButtonPanel.SuspendLayout();
+            SuspendLayout();
             // 
             // searchVendorPanel
             // 
-            this.searchVendorPanel.Controls.Add(this.refreshListButton);
-            this.searchVendorPanel.Controls.Add(this.mainVendorListView);
-            this.searchVendorPanel.Controls.Add(this.searchInputPanel);
-            this.searchVendorPanel.Location = new System.Drawing.Point(4, 3);
-            this.searchVendorPanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.searchVendorPanel.Name = "searchVendorPanel";
-            this.searchVendorPanel.Size = new System.Drawing.Size(744, 416);
-            this.searchVendorPanel.TabIndex = 1;
+            searchVendorPanel.Controls.Add(refreshListButton);
+            searchVendorPanel.Controls.Add(mainVendorListView);
+            searchVendorPanel.Controls.Add(searchInputPanel);
+            searchVendorPanel.Location = new Point(7, 6);
+            searchVendorPanel.Margin = new Padding(7, 6, 7, 6);
+            searchVendorPanel.Name = "searchVendorPanel";
+            searchVendorPanel.Size = new Size(1180, 887);
+            searchVendorPanel.TabIndex = 1;
             // 
             // refreshListButton
             // 
-            this.refreshListButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.refreshListButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(44)))), ((int)(((byte)(78)))));
-            this.refreshListButton.FlatAppearance.BorderSize = 0;
-            this.refreshListButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.refreshListButton.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.refreshListButton.ForeColor = System.Drawing.Color.White;
-            this.refreshListButton.Location = new System.Drawing.Point(627, 2);
-            this.refreshListButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.refreshListButton.Name = "refreshListButton";
-            this.refreshListButton.Size = new System.Drawing.Size(113, 34);
-            this.refreshListButton.TabIndex = 108;
-            this.refreshListButton.Text = "Refresh List";
-            this.refreshListButton.UseVisualStyleBackColor = false;
-            this.refreshListButton.Click += new System.EventHandler(this.RefreshListButton_Click);
+            refreshListButton.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            refreshListButton.BackColor = Color.FromArgb(28, 44, 78);
+            refreshListButton.FlatAppearance.BorderSize = 0;
+            refreshListButton.FlatStyle = FlatStyle.Flat;
+            refreshListButton.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            refreshListButton.ForeColor = Color.White;
+            refreshListButton.Location = new Point(904, 4);
+            refreshListButton.Margin = new Padding(7, 6, 7, 6);
+            refreshListButton.Name = "refreshListButton";
+            refreshListButton.Size = new Size(262, 73);
+            refreshListButton.TabIndex = 108;
+            refreshListButton.Text = "Refresh List";
+            refreshListButton.UseVisualStyleBackColor = false;
+            refreshListButton.Click += RefreshListButton_Click;
             // 
             // mainVendorListView
             // 
-            this.mainVendorListView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.mainVendorListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.vendorName,
-            this.city,
-            this.phoneNumber,
-            this.stateName,
-            this.zipCode,
-            this.country});
-            this.mainVendorListView.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.mainVendorListView.GridLines = true;
-            this.mainVendorListView.Location = new System.Drawing.Point(0, 44);
-            this.mainVendorListView.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.mainVendorListView.Name = "mainVendorListView";
-            this.mainVendorListView.Size = new System.Drawing.Size(744, 372);
-            this.mainVendorListView.TabIndex = 3;
-            this.mainVendorListView.UseCompatibleStateImageBehavior = false;
-            this.mainVendorListView.View = System.Windows.Forms.View.Details;
+            mainVendorListView.BorderStyle = BorderStyle.None;
+            mainVendorListView.Columns.AddRange(new ColumnHeader[] { vendorName, city, phoneNumber, stateName, zipCode, country });
+            mainVendorListView.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            mainVendorListView.GridLines = true;
+            mainVendorListView.Location = new Point(0, 94);
+            mainVendorListView.Margin = new Padding(7, 6, 7, 6);
+            mainVendorListView.Name = "mainVendorListView";
+            mainVendorListView.Size = new Size(1166, 794);
+            mainVendorListView.TabIndex = 3;
+            mainVendorListView.UseCompatibleStateImageBehavior = false;
+            mainVendorListView.View = System.Windows.Forms.View.Details;
             // 
             // vendorName
             // 
-            this.vendorName.Text = "Vendor Name";
-            this.vendorName.Width = 180;
+            vendorName.Text = "Vendor Name";
+            vendorName.Width = 240;
             // 
             // city
             // 
-            this.city.Text = "City";
-            this.city.Width = 110;
+            city.Text = "City";
+            city.Width = 180;
             // 
             // phoneNumber
             // 
-            this.phoneNumber.Text = "Phone Number";
-            this.phoneNumber.Width = 110;
+            phoneNumber.Text = "Phone Number";
+            phoneNumber.Width = 220;
             // 
             // stateName
             // 
-            this.stateName.Text = "State Name";
-            this.stateName.Width = 110;
+            stateName.Text = "State Name";
+            stateName.Width = 200;
             // 
             // zipCode
             // 
-            this.zipCode.Text = "Zip Code";
-            this.zipCode.Width = 110;
+            zipCode.Text = "Zip Code";
+            zipCode.Width = 130;
             // 
             // country
             // 
-            this.country.Text = "Country";
-            this.country.Width = 120;
+            country.Text = "Country";
+            country.Width = 180;
             // 
             // searchInputPanel
             // 
-            this.searchInputPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.searchInputPanel.Controls.Add(this.searchTextBox);
-            this.searchInputPanel.Controls.Add(this.searchButtonPanel);
-            this.searchInputPanel.Location = new System.Drawing.Point(4, 3);
-            this.searchInputPanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.searchInputPanel.Name = "searchInputPanel";
-            this.searchInputPanel.Size = new System.Drawing.Size(297, 35);
-            this.searchInputPanel.TabIndex = 2;
+            searchInputPanel.BorderStyle = BorderStyle.FixedSingle;
+            searchInputPanel.Controls.Add(searchTextBox);
+            searchInputPanel.Controls.Add(searchButtonPanel);
+            searchInputPanel.Location = new Point(7, 6);
+            searchInputPanel.Margin = new Padding(7, 6, 7, 6);
+            searchInputPanel.Name = "searchInputPanel";
+            searchInputPanel.Size = new Size(550, 72);
+            searchInputPanel.TabIndex = 2;
             // 
             // searchTextBox
             // 
-            this.searchTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.searchTextBox.Dock = System.Windows.Forms.DockStyle.Right;
-            this.searchTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.searchTextBox.Location = new System.Drawing.Point(-1, 0);
-            this.searchTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.searchTextBox.Multiline = true;
-            this.searchTextBox.Name = "searchTextBox";
-            this.searchTextBox.PlaceholderText = "Search for vendors";
-            this.searchTextBox.Size = new System.Drawing.Size(261, 33);
-            this.searchTextBox.TabIndex = 1;
-            this.searchTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.searchTextBox.GotFocus += new System.EventHandler(this.SearchTextBox_GotFocus);
+            searchTextBox.BorderStyle = BorderStyle.FixedSingle;
+            searchTextBox.Dock = DockStyle.Right;
+            searchTextBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            searchTextBox.Location = new Point(0, 0);
+            searchTextBox.Margin = new Padding(7, 6, 7, 6);
+            searchTextBox.Multiline = true;
+            searchTextBox.Name = "searchTextBox";
+            searchTextBox.PlaceholderText = "Search for vendors";
+            searchTextBox.Size = new Size(483, 70);
+            searchTextBox.TabIndex = 1;
+            searchTextBox.TextAlign = HorizontalAlignment.Center;
+            searchTextBox.GotFocus += SearchTextBox_GotFocus;
             // 
             // searchButtonPanel
             // 
-            this.searchButtonPanel.Controls.Add(this.searchButton);
-            this.searchButtonPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.searchButtonPanel.Location = new System.Drawing.Point(260, 0);
-            this.searchButtonPanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.searchButtonPanel.Name = "searchButtonPanel";
-            this.searchButtonPanel.Size = new System.Drawing.Size(35, 33);
-            this.searchButtonPanel.TabIndex = 0;
+            searchButtonPanel.Controls.Add(searchButton);
+            searchButtonPanel.Dock = DockStyle.Right;
+            searchButtonPanel.Location = new Point(483, 0);
+            searchButtonPanel.Margin = new Padding(7, 6, 7, 6);
+            searchButtonPanel.Name = "searchButtonPanel";
+            searchButtonPanel.Size = new Size(65, 70);
+            searchButtonPanel.TabIndex = 0;
             // 
             // searchButton
             // 
-            this.searchButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.searchButton.AutoSize = true;
-            this.searchButton.BackColor = System.Drawing.Color.White;
-            this.searchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.searchButton.Image = ((System.Drawing.Image)(resources.GetObject("searchButton.Image")));
-            this.searchButton.Location = new System.Drawing.Point(0, -1);
-            this.searchButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(36, 35);
-            this.searchButton.TabIndex = 2;
-            this.searchButton.UseVisualStyleBackColor = false;
-            this.searchButton.Click += new System.EventHandler(this.SearchButton_Click);
+            searchButton.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            searchButton.AutoSize = true;
+            searchButton.BackColor = Color.White;
+            searchButton.FlatStyle = FlatStyle.Flat;
+            searchButton.Image = (Image)resources.GetObject("searchButton.Image");
+            searchButton.Location = new Point(0, -2);
+            searchButton.Margin = new Padding(7, 6, 7, 6);
+            searchButton.Name = "searchButton";
+            searchButton.Size = new Size(67, 75);
+            searchButton.TabIndex = 2;
+            searchButton.UseVisualStyleBackColor = false;
+            searchButton.Click += SearchButton_Click;
             // 
             // VendorTabUserControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(211)))), ((int)(((byte)(177)))));
-            this.Controls.Add(this.searchVendorPanel);
-            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Name = "VendorTabUserControl";
-            this.Size = new System.Drawing.Size(751, 422);
-            this.Load += new System.EventHandler(this.VendorTabUserControl_Load);
-            this.searchVendorPanel.ResumeLayout(false);
-            this.searchInputPanel.ResumeLayout(false);
-            this.searchInputPanel.PerformLayout();
-            this.searchButtonPanel.ResumeLayout(false);
-            this.searchButtonPanel.PerformLayout();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(227, 211, 177);
+            Controls.Add(searchVendorPanel);
+            Margin = new Padding(7, 6, 7, 6);
+            Name = "VendorTabUserControl";
+            Size = new Size(1187, 900);
+            Load += VendorTabUserControl_Load;
+            searchVendorPanel.ResumeLayout(false);
+            searchInputPanel.ResumeLayout(false);
+            searchInputPanel.PerformLayout();
+            searchButtonPanel.ResumeLayout(false);
+            searchButtonPanel.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion

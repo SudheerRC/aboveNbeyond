@@ -29,12 +29,15 @@ namespace MyStores.UserControls
         {
             storeVendorListView.Items.Clear();
             storeVendorListView.Refresh();
+           
+            //storeVendorListView.Columns[0].Width = 140;
+            //storeVendorListView.Columns[1].Width = 130;
+            //storeVendorListView.Columns[2].Width = 120;
         }
 
         private void loadListView()
         {
-            storeVendorListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
-            refreshListView();
+            refreshListView();   
             var vendors = _controller.SearchVendorByStoreId(_storeId);
             if (vendors.Count != 0)
             {
@@ -51,6 +54,7 @@ namespace MyStores.UserControls
 
         private void FeedListView(Vendor vendor)
         {
+            storeVendorListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
             string[] row =
             {
                 vendor.Name, vendor.City, vendor.PhoneNumber

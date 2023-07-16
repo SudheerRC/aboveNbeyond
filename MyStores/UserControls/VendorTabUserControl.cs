@@ -25,7 +25,7 @@ namespace MyStores.UserControls
             RefreshListView();
         }
 
-        private void RefreshListView()
+        public void RefreshListView()
         {
             searchTextBox.Clear();
             List<Vendor> allVendors = _controller.GetAllVendors();
@@ -63,7 +63,6 @@ namespace MyStores.UserControls
         private void VendorTabUserControl_Load(object sender, EventArgs e)
         {
             RefreshListView();
-            mainVendorListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
         }
 
         private void SearchTextBox_GotFocus(object sender, EventArgs e)

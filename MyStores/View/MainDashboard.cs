@@ -47,9 +47,8 @@ namespace MyStores.View
 
         private void MainDashboard_Load(object sender, EventArgs e)
         {
-            int id = _owner.UserId;
-            _owner = _controller.GetUserDetails(id);
-            userNameLabel.Text = "Welcome, " + Environment.NewLine + _owner.FirstName + " " + _owner.LastName;
+            HideSubMenuPanels();
+            SetUserDetails();
 
             mainHomeTabUserControl.SetOwner(_owner);
             globalSearchUserControl.SetUser(_owner);
@@ -60,6 +59,13 @@ namespace MyStores.View
 
             mainHomeTabUserControl.Dock = DockStyle.Fill;
             mainHomeTabUserControl.Visible = true;
+        }
+
+        private void SetUserDetails()
+        {
+            int id = _owner.UserId;
+            _owner = _controller.GetUserDetails(id);
+            userNameLabel.Text = "Welcome, " + Environment.NewLine + _owner.FirstName + " " + _owner.LastName;
         }
 
         private void GlobalSearchUserControl_OnUpdateStatus(object sender, EventArgs e)
@@ -121,6 +127,7 @@ namespace MyStores.View
             ClearUserControls();
             hideAllUserControls();
             anchorUserControls();
+            HideSubMenuPanels();
 
             mainHomeTabUserControl.Dock = DockStyle.Fill;
             mainHomeTabUserControl.Visible = true;
@@ -234,13 +241,38 @@ namespace MyStores.View
         private void productsMenuButton_Click(object sender, EventArgs e)
         {
             ClearUserControls();
-            MessageBox.Show("Collapsable Menu Coming soon!!!");
+            vendorSubMenuPanel.Visible = false;
+            vendorsMenuButton.Dock = DockStyle.None;
+            if (productsSubMenuPanel.Visible)
+            {
+                productsSubMenuPanel.Visible = false;
+            }
+            else
+            {
+                productsSubMenuPanel.Visible = true;
+            }
         }
 
         private void vendorsMenuButton_Click(object sender, EventArgs e)
         {
             ClearUserControls();
-            MessageBox.Show("Collapsable Menu Coming soon!!!");
+            productsSubMenuPanel.Visible = false;
+            vendorsMenuButton.Dock = DockStyle.Top;
+            if (vendorSubMenuPanel.Visible)
+            {
+                vendorSubMenuPanel.Visible = false;
+            }
+            else
+            {
+                vendorSubMenuPanel.Visible = true;
+            }
+        }
+
+        private void HideSubMenuPanels()
+        {
+            productsSubMenuPanel.Visible = false;
+            vendorSubMenuPanel.Visible = false;
+            vendorsMenuButton.Dock = DockStyle.Top;
         }
     }
 }

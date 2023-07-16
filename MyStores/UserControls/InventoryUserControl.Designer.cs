@@ -38,8 +38,6 @@
             sellingPrice = new ColumnHeader();
             purchasePrice = new ColumnHeader();
             vendorName = new ColumnHeader();
-            edit = new ColumnHeader();
-            delete = new ColumnHeader();
             searchInputPanel = new Panel();
             searchButton = new Button();
             searchTextBox = new TextBox();
@@ -50,16 +48,15 @@
             // 
             // inventoryListView
             // 
-            inventoryListView.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             inventoryListView.BorderStyle = BorderStyle.None;
-            inventoryListView.Columns.AddRange(new ColumnHeader[] { barcode, productName, description, quantity, productSize, sellingPrice, purchasePrice, vendorName, edit, delete });
+            inventoryListView.Columns.AddRange(new ColumnHeader[] { barcode, productName, description, quantity, productSize, sellingPrice, purchasePrice, vendorName });
             inventoryListView.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             inventoryListView.GridLines = true;
             inventoryListView.Location = new Point(18, 85);
             inventoryListView.Margin = new Padding(5, 6, 5, 6);
             inventoryListView.MultiSelect = false;
             inventoryListView.Name = "inventoryListView";
-            inventoryListView.Size = new Size(2433, 699);
+            inventoryListView.Size = new Size(1205, 699);
             inventoryListView.TabIndex = 0;
             inventoryListView.UseCompatibleStateImageBehavior = false;
             inventoryListView.View = System.Windows.Forms.View.Details;
@@ -103,14 +100,6 @@
             // 
             vendorName.Text = "Vendor Name";
             vendorName.Width = 140;
-            // 
-            // edit
-            // 
-            edit.Text = "";
-            // 
-            // delete
-            // 
-            delete.Text = "";
             // 
             // searchInputPanel
             // 
@@ -168,12 +157,12 @@
             // 
             criteriaComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             criteriaComboBox.FlatStyle = FlatStyle.Flat;
-            criteriaComboBox.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            criteriaComboBox.Font = new Font("Segoe UI", 10.875F, FontStyle.Bold, GraphicsUnit.Point);
             criteriaComboBox.FormattingEnabled = true;
             criteriaComboBox.Items.AddRange(new object[] { "Product Name", "Description", "Barcode", "Product Size", "Vendor Name", "Selling Price", "Purchase Price" });
             criteriaComboBox.Location = new Point(23, 19);
             criteriaComboBox.Name = "criteriaComboBox";
-            criteriaComboBox.Size = new Size(379, 53);
+            criteriaComboBox.Size = new Size(379, 48);
             criteriaComboBox.TabIndex = 110;
             criteriaComboBox.SelectedValueChanged += criteriaComboBox_SelectedValueChanged;
             // 
@@ -189,7 +178,7 @@
             Controls.Add(inventoryListView);
             Margin = new Padding(5, 6, 5, 6);
             Name = "InventoryUserControl";
-            Size = new Size(2457, 787);
+            Size = new Size(1378, 787);
             Load += InventoryUserControl_Load;
             searchInputPanel.ResumeLayout(false);
             searchInputPanel.PerformLayout();
@@ -207,8 +196,6 @@
         private ColumnHeader description;
         private ColumnHeader productSize;
         private ColumnHeader sellingPrice;
-        private ColumnHeader edit;
-        private ColumnHeader delete;
         private ColumnHeader purchasePrice;
         private ColumnHeader vendorName;
         private ColumnHeader quantity;
