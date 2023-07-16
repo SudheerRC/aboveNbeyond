@@ -917,8 +917,9 @@ namespace MyStores.Dal
             connection.Open();
 
             string query =
-                "SELECT vendorID, purchasePrice, Inventory.sellingPrice, quantity, Inventory.productID FROM Product,Inventory " +
-                "WHERE Inventory.productID = Product.productID and Inventory.storeID = @storeID and ProductName LIKE '%' + @productName +'%'";
+                "SELECT inventoryID, vendorID, purchasePrice, Inventory.sellingPrice, quantity, Inventory.productID " +
+                "FROM Product,Inventory WHERE Inventory.productID = Product.productID and " +
+                "Inventory.storeID = @storeID and ProductName LIKE '%' + @productName +'%'";
             using var command = new SqlCommand(query, connection);
 
             command.Parameters.Add("@storeID", System.Data.SqlDbType.Int);
@@ -927,6 +928,7 @@ namespace MyStores.Dal
             command.Parameters["@productName"].Value = productName;
             using var reader = command.ExecuteReader();
 
+            var inventoryIdOrdinal = reader.GetOrdinal("inventoryID");
             var vendorIdOrdinal = reader.GetOrdinal("vendorID");
             var purchasePriceOrdinal = reader.GetOrdinal("purchasePrice");
             var sellingPriceOrdinal = reader.GetOrdinal("sellingPrice");
@@ -935,6 +937,7 @@ namespace MyStores.Dal
 
             while (reader.Read())
             {
+                var inventoryId = reader.GetInt32(inventoryIdOrdinal);
                 var vendorId = reader.GetInt32(vendorIdOrdinal);
                 decimal purchasePrice = reader.GetDecimal(purchasePriceOrdinal);
                 decimal sellingPrice = reader.GetDecimal(sellingPriceOrdinal);
@@ -943,6 +946,7 @@ namespace MyStores.Dal
 
                 inventoryItems.Add(new InventoryItem
                 {
+                    InventoryId = inventoryId,
                     VendorId = vendorId,
                     Quantity = quantity,
                     SellingPrice = decimal.ToDouble(sellingPrice),
@@ -970,13 +974,15 @@ namespace MyStores.Dal
             connection.Open();
 
             string query =
-                "SELECT vendorID, purchasePrice, sellingPrice, quantity, productID FROM Inventory WHERE Inventory.storeID = @storeID";
+                "SELECT inventoryID, vendorID, purchasePrice, sellingPrice, quantity, productID " +
+                "FROM Inventory WHERE Inventory.storeID = @storeID";
             using var command = new SqlCommand(query, connection);
 
             command.Parameters.Add("@storeID", System.Data.SqlDbType.VarChar);
             command.Parameters["@storeID"].Value = storeId;
             using var reader = command.ExecuteReader();
 
+            var inventoryIdOrdinal = reader.GetOrdinal("inventoryID");
             var vendorIdOrdinal = reader.GetOrdinal("vendorID");
             var purchasePriceOrdinal = reader.GetOrdinal("purchasePrice");
             var sellingPriceOrdinal = reader.GetOrdinal("sellingPrice");
@@ -985,6 +991,7 @@ namespace MyStores.Dal
 
             while (reader.Read())
             {
+                var inventoryId = reader.GetInt32(inventoryIdOrdinal);
                 var vendorId = reader.GetInt32(vendorIdOrdinal);
                 decimal purchasePrice = reader.GetDecimal(purchasePriceOrdinal);
                 decimal sellingPrice = reader.GetDecimal(sellingPriceOrdinal);
@@ -993,6 +1000,7 @@ namespace MyStores.Dal
 
                 inventoryItems.Add(new InventoryItem
                 {
+                    InventoryId = inventoryId,
                     VendorId = vendorId,
                     Quantity = quantity,
                     SellingPrice = decimal.ToDouble(sellingPrice),
@@ -1188,7 +1196,7 @@ namespace MyStores.Dal
             using var connection = DbConnection.GetConnection();
             connection.Open();
 
-            string query = "SELECT vendorID, purchasePrice, Inventory.sellingPrice, quantity, Inventory.productID " +
+            string query = "SELECT inventoryID, vendorID, purchasePrice, Inventory.sellingPrice, quantity, Inventory.productID " +
                            "FROM Product,Inventory WHERE Inventory.productID = Product.productID " +
                            "and Inventory.storeID = @storeID and barcode LIKE '%' + @barcode +'%'";
             using var command = new SqlCommand(query, connection);
@@ -1200,6 +1208,7 @@ namespace MyStores.Dal
 
             using var reader = command.ExecuteReader();
 
+            var inventoryIdOrdinal = reader.GetOrdinal("invetoryID");
             var vendorIdOrdinal = reader.GetOrdinal("vendorID");
             var purchasePriceOrdinal = reader.GetOrdinal("purchasePrice");
             var sellingPriceOrdinal = reader.GetOrdinal("sellingPrice");
@@ -1208,6 +1217,7 @@ namespace MyStores.Dal
 
             while (reader.Read())
             {
+                var inventoryId = reader.GetInt32(inventoryIdOrdinal);
                 var vendorId = reader.GetInt32(vendorIdOrdinal);
                 decimal purchasePrice = reader.GetDecimal(purchasePriceOrdinal);
                 decimal sellingPrice = reader.GetDecimal(sellingPriceOrdinal);
@@ -1216,6 +1226,7 @@ namespace MyStores.Dal
 
                 inventoryItems.Add(new InventoryItem
                 {
+                    InventoryId = inventoryId,
                     VendorId = vendorId,
                     Quantity = quantity,
                     SellingPrice = decimal.ToDouble(sellingPrice),
@@ -1243,7 +1254,7 @@ namespace MyStores.Dal
             using var connection = DbConnection.GetConnection();
             connection.Open();
 
-            string query = "SELECT vendorID, purchasePrice, Inventory.sellingPrice, quantity, Inventory.productID " +
+            string query = "SELECT inventoryID, vendorID, purchasePrice, Inventory.sellingPrice, quantity, Inventory.productID " +
                            "FROM Product,Inventory WHERE Inventory.productID = Product.productID " +
                            "and Inventory.storeID = @storeID and description LIKE '%' + @description +'%'";
             using var command = new SqlCommand(query, connection);
@@ -1255,6 +1266,7 @@ namespace MyStores.Dal
 
             using var reader = command.ExecuteReader();
 
+            var inventoryIdOrdinal = reader.GetOrdinal("inventoryID");
             var vendorIdOrdinal = reader.GetOrdinal("vendorID");
             var purchasePriceOrdinal = reader.GetOrdinal("purchasePrice");
             var sellingPriceOrdinal = reader.GetOrdinal("sellingPrice");
@@ -1263,6 +1275,7 @@ namespace MyStores.Dal
 
             while (reader.Read())
             {
+                var inventoryId = reader.GetInt32(inventoryIdOrdinal);
                 var vendorId = reader.GetInt32(vendorIdOrdinal);
                 decimal purchasePrice = reader.GetDecimal(purchasePriceOrdinal);
                 decimal sellingPrice = reader.GetDecimal(sellingPriceOrdinal);
@@ -1271,6 +1284,7 @@ namespace MyStores.Dal
 
                 inventoryItems.Add(new InventoryItem
                 {
+                    InventoryId = inventoryId,
                     VendorId = vendorId,
                     Quantity = quantity,
                     SellingPrice = decimal.ToDouble(sellingPrice),
@@ -1298,7 +1312,7 @@ namespace MyStores.Dal
             using var connection = DbConnection.GetConnection();
             connection.Open();
 
-            string query = "SELECT vendorID, purchasePrice, Inventory.sellingPrice, quantity, Inventory.productID " +
+            string query = "SELECT inventoryID, vendorID, purchasePrice, Inventory.sellingPrice, quantity, Inventory.productID " +
                            "FROM Product,Inventory WHERE Inventory.productID = Product.productID " +
                            "and Inventory.storeID = @storeID and productSize LIKE '%' + @size +'%'";
             using var command = new SqlCommand(query, connection);
@@ -1310,6 +1324,7 @@ namespace MyStores.Dal
 
             using var reader = command.ExecuteReader();
 
+            var inventoryIdOrdinal = reader.GetOrdinal("inventoryID");
             var vendorIdOrdinal = reader.GetOrdinal("vendorID");
             var purchasePriceOrdinal = reader.GetOrdinal("purchasePrice");
             var sellingPriceOrdinal = reader.GetOrdinal("sellingPrice");
@@ -1318,6 +1333,7 @@ namespace MyStores.Dal
 
             while (reader.Read())
             {
+                var inventoryId = reader.GetInt32(inventoryIdOrdinal);
                 var vendorId = reader.GetInt32(vendorIdOrdinal);
                 decimal purchasePrice = reader.GetDecimal(purchasePriceOrdinal);
                 decimal sellingPrice = reader.GetDecimal(sellingPriceOrdinal);
@@ -1326,6 +1342,7 @@ namespace MyStores.Dal
 
                 inventoryItems.Add(new InventoryItem
                 {
+                    InventoryId = inventoryId,
                     VendorId = vendorId,
                     Quantity = quantity,
                     SellingPrice = decimal.ToDouble(sellingPrice),
@@ -1353,7 +1370,7 @@ namespace MyStores.Dal
             using var connection = DbConnection.GetConnection();
             connection.Open();
 
-            string query = "SELECT Inventory.vendorID, purchasePrice, Inventory.sellingPrice, quantity, Inventory.productID " +
+            string query = "SELECT inventoryID, Inventory.vendorID, purchasePrice, Inventory.sellingPrice, quantity, Inventory.productID " +
                            "FROM Product,Inventory, Vendor WHERE Inventory.productID = Product.productID " +
                            "and Inventory.vendorID = Vendor.vendorID and Inventory.storeID = @storeID " +
                            "and Vendor.vendorName LIKE '%' + @name +'%'";
@@ -1366,6 +1383,7 @@ namespace MyStores.Dal
 
             using var reader = command.ExecuteReader();
 
+            var inventoryIdOrdinal = reader.GetOrdinal("inventoryID");
             var vendorIdOrdinal = reader.GetOrdinal("vendorID");
             var purchasePriceOrdinal = reader.GetOrdinal("purchasePrice");
             var sellingPriceOrdinal = reader.GetOrdinal("sellingPrice");
@@ -1374,6 +1392,7 @@ namespace MyStores.Dal
 
             while (reader.Read())
             {
+                var inventoryId = reader.GetInt32(inventoryIdOrdinal);
                 var vendorId = reader.GetInt32(vendorIdOrdinal);
                 decimal purchasePrice = reader.GetDecimal(purchasePriceOrdinal);
                 decimal sellingPrice = reader.GetDecimal(sellingPriceOrdinal);
@@ -1382,6 +1401,7 @@ namespace MyStores.Dal
 
                 inventoryItems.Add(new InventoryItem
                 {
+                    InventoryId = inventoryId,
                     VendorId = vendorId,
                     Quantity = quantity,
                     SellingPrice = decimal.ToDouble(sellingPrice),
@@ -1409,7 +1429,7 @@ namespace MyStores.Dal
             using var connection = DbConnection.GetConnection();
             connection.Open();
 
-            string query = "SELECT vendorID, purchasePrice, Inventory.sellingPrice, quantity, Inventory.productID " +
+            string query = "SELECT inventoryID, vendorID, purchasePrice, Inventory.sellingPrice, quantity, Inventory.productID " +
                            "FROM Product,Inventory WHERE Inventory.productID = Product.productID " +
                            "and Inventory.storeID = @storeID and Inventory.sellingPrice = @price";
             using var command = new SqlCommand(query, connection);
@@ -1421,6 +1441,7 @@ namespace MyStores.Dal
 
             using var reader = command.ExecuteReader();
 
+            var inventoryIdOrdinal = reader.GetOrdinal("inventoryID");
             var vendorIdOrdinal = reader.GetOrdinal("vendorID");
             var purchasePriceOrdinal = reader.GetOrdinal("purchasePrice");
             var sellingPriceOrdinal = reader.GetOrdinal("sellingPrice");
@@ -1429,6 +1450,7 @@ namespace MyStores.Dal
 
             while (reader.Read())
             {
+                var inventoryId = reader.GetInt32(inventoryIdOrdinal);
                 var vendorId = reader.GetInt32(vendorIdOrdinal);
                 decimal purchasePrice = reader.GetDecimal(purchasePriceOrdinal);
                 decimal sellingPrice = reader.GetDecimal(sellingPriceOrdinal);
@@ -1437,6 +1459,7 @@ namespace MyStores.Dal
 
                 inventoryItems.Add(new InventoryItem
                 {
+                    InventoryId = inventoryId,
                     VendorId = vendorId,
                     Quantity = quantity,
                     SellingPrice = decimal.ToDouble(sellingPrice),
@@ -1464,7 +1487,7 @@ namespace MyStores.Dal
             using var connection = DbConnection.GetConnection();
             connection.Open();
 
-            string query = "SELECT vendorID, purchasePrice, Inventory.sellingPrice, quantity, Inventory.productID " +
+            string query = "SELECT inventoryID, vendorID, purchasePrice, Inventory.sellingPrice, quantity, Inventory.productID " +
                            "FROM Product,Inventory WHERE Inventory.productID = Product.productID " +
                            "and Inventory.storeID = @storeID and Inventory.purchasePrice = @price";
             using var command = new SqlCommand(query, connection);
@@ -1476,6 +1499,7 @@ namespace MyStores.Dal
 
             using var reader = command.ExecuteReader();
 
+            var inventoryIdOrdinal = reader.GetOrdinal("inventoryID");
             var vendorIdOrdinal = reader.GetOrdinal("vendorID");
             var purchasePriceOrdinal = reader.GetOrdinal("purchasePrice");
             var sellingPriceOrdinal = reader.GetOrdinal("sellingPrice");
@@ -1484,6 +1508,7 @@ namespace MyStores.Dal
 
             while (reader.Read())
             {
+                var inventoryId = reader.GetInt32(inventoryIdOrdinal);
                 var vendorId = reader.GetInt32(vendorIdOrdinal);
                 decimal purchasePrice = reader.GetDecimal(purchasePriceOrdinal);
                 decimal sellingPrice = reader.GetDecimal(sellingPriceOrdinal);
@@ -1492,6 +1517,7 @@ namespace MyStores.Dal
 
                 inventoryItems.Add(new InventoryItem
                 {
+                    InventoryId = inventoryId,
                     VendorId = vendorId,
                     Quantity = quantity,
                     SellingPrice = decimal.ToDouble(sellingPrice),
@@ -1637,6 +1663,11 @@ namespace MyStores.Dal
             return orderId;
         }
 
+        /// <summary>
+        /// Inserts the order items.
+        /// </summary>
+        /// <param name="items">The inventory items.</param>
+        /// <param name="orderId">The order id.</param>
         public void InsertOrderItems(List<InventoryItem> items, int orderId)
         {
             using var connection = DbConnection.GetConnection();
@@ -1747,6 +1778,11 @@ namespace MyStores.Dal
             return orders;
         }
 
+        /// <summary>
+        /// Receives the order.
+        /// </summary>
+        /// <param name="items">The inventory items.</param>
+        /// <param name="orderId">The order id.</param>
         public void ReceiveOrder(List<InventoryItem> items, int orderId)
         {
             using var connection = DbConnection.GetConnection();
@@ -1775,6 +1811,11 @@ namespace MyStores.Dal
             }
         }
 
+        /// <summary>
+        /// Searches the inventory with order id.
+        /// </summary>
+        /// <param name="orderId">The order id.</param>
+        /// <returns></returns>
         public List<InventoryItem> SearchInventoryWithOrderId(int orderId)
         {
             var inventoryItems = new List<InventoryItem>();
@@ -1826,6 +1867,24 @@ namespace MyStores.Dal
             }
 
             return inventoryItems;
+        }
+
+        /// <summary>
+        /// Deletes the product from store.
+        /// </summary>
+        /// <param name="inventoryId">The inventory id.</param>
+        public void DeleteProductFromStore(int inventoryId)
+        {
+            using var connection = DbConnection.GetConnection();
+            connection.Open();
+
+            string query = "Delete FROM Inventory where inventoryID = @inventoryId";
+            using var command = new SqlCommand(query, connection);
+
+            command.Parameters.Add("@inventoryId", System.Data.SqlDbType.Int);
+            command.Parameters["@inventoryId"].Value = inventoryId;
+
+            command.ExecuteNonQuery();
         }
     }
 }

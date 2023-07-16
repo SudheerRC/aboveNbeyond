@@ -38,19 +38,22 @@
             sellingPrice = new ColumnHeader();
             purchasePrice = new ColumnHeader();
             vendorName = new ColumnHeader();
+            inventoryId = new ColumnHeader();
             searchInputPanel = new Panel();
             searchButton = new Button();
             searchTextBox = new TextBox();
             refreshListButton = new Button();
             criteriaComboBox = new ComboBox();
+            deleteProductButton = new Button();
             searchInputPanel.SuspendLayout();
             SuspendLayout();
             // 
             // inventoryListView
             // 
             inventoryListView.BorderStyle = BorderStyle.None;
-            inventoryListView.Columns.AddRange(new ColumnHeader[] { barcode, productName, description, quantity, productSize, sellingPrice, purchasePrice, vendorName });
+            inventoryListView.Columns.AddRange(new ColumnHeader[] { barcode, productName, description, quantity, productSize, sellingPrice, purchasePrice, vendorName, inventoryId });
             inventoryListView.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            inventoryListView.FullRowSelect = true;
             inventoryListView.GridLines = true;
             inventoryListView.Location = new Point(18, 85);
             inventoryListView.Margin = new Padding(5, 6, 5, 6);
@@ -60,6 +63,7 @@
             inventoryListView.TabIndex = 0;
             inventoryListView.UseCompatibleStateImageBehavior = false;
             inventoryListView.View = System.Windows.Forms.View.Details;
+            inventoryListView.SelectedIndexChanged += InventoryListView_SelectedIndexChanged;
             // 
             // barcode
             // 
@@ -100,6 +104,12 @@
             // 
             vendorName.Text = "Vendor Name";
             vendorName.Width = 140;
+            // 
+            // inventoryId
+            // 
+            inventoryId.Text = "Inventory ID";
+            inventoryId.TextAlign = HorizontalAlignment.Center;
+            inventoryId.Width = 0;
             // 
             // searchInputPanel
             // 
@@ -166,19 +176,36 @@
             criteriaComboBox.TabIndex = 110;
             criteriaComboBox.SelectedValueChanged += criteriaComboBox_SelectedValueChanged;
             // 
+            // deleteProductButton
+            // 
+            deleteProductButton.BackColor = Color.FromArgb(28, 44, 78);
+            deleteProductButton.Enabled = false;
+            deleteProductButton.FlatStyle = FlatStyle.Flat;
+            deleteProductButton.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            deleteProductButton.ForeColor = SystemColors.ControlLightLight;
+            deleteProductButton.Location = new Point(706, 806);
+            deleteProductButton.Margin = new Padding(8, 6, 8, 6);
+            deleteProductButton.Name = "deleteProductButton";
+            deleteProductButton.Size = new Size(260, 67);
+            deleteProductButton.TabIndex = 111;
+            deleteProductButton.Text = "Delete Product";
+            deleteProductButton.UseVisualStyleBackColor = false;
+            deleteProductButton.Click += DeleteProductButton_Click;
+            // 
             // InventoryUserControl
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             BackColor = Color.FromArgb(227, 211, 177);
+            Controls.Add(deleteProductButton);
             Controls.Add(criteriaComboBox);
             Controls.Add(refreshListButton);
             Controls.Add(searchInputPanel);
             Controls.Add(inventoryListView);
             Margin = new Padding(5, 6, 5, 6);
             Name = "InventoryUserControl";
-            Size = new Size(1378, 787);
+            Size = new Size(1378, 905);
             Load += InventoryUserControl_Load;
             searchInputPanel.ResumeLayout(false);
             searchInputPanel.PerformLayout();
@@ -201,5 +228,7 @@
         private ColumnHeader quantity;
         private Button refreshListButton;
         private ComboBox criteriaComboBox;
+        private ColumnHeader inventoryId;
+        private Button deleteProductButton;
     }
 }

@@ -40,10 +40,9 @@
             titleLabel.AutoSize = true;
             titleLabel.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
             titleLabel.ForeColor = SystemColors.ControlText;
-            titleLabel.Location = new Point(129, 20);
-            titleLabel.Margin = new Padding(2, 0, 2, 0);
+            titleLabel.Location = new Point(210, 32);
             titleLabel.Name = "titleLabel";
-            titleLabel.Size = new Size(162, 37);
+            titleLabel.Size = new Size(260, 58);
             titleLabel.TabIndex = 90;
             titleLabel.Text = "Add Manager";
             titleLabel.UseCompatibleTextRendering = true;
@@ -53,10 +52,9 @@
             emailErrorLabel.AutoSize = true;
             emailErrorLabel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             emailErrorLabel.ForeColor = Color.Red;
-            emailErrorLabel.Location = new Point(40, 121);
-            emailErrorLabel.Margin = new Padding(2, 0, 2, 0);
+            emailErrorLabel.Location = new Point(65, 194);
             emailErrorLabel.Name = "emailErrorLabel";
-            emailErrorLabel.Size = new Size(81, 23);
+            emailErrorLabel.Size = new Size(125, 37);
             emailErrorLabel.TabIndex = 93;
             emailErrorLabel.Text = "Error text";
             emailErrorLabel.TextAlign = ContentAlignment.MiddleCenter;
@@ -65,10 +63,10 @@
             // 
             // emailTextBox
             // 
-            emailTextBox.Location = new Point(181, 76);
-            emailTextBox.Margin = new Padding(2, 1, 2, 1);
+            emailTextBox.Location = new Point(294, 122);
+            emailTextBox.Margin = new Padding(3, 2, 3, 2);
             emailTextBox.Name = "emailTextBox";
-            emailTextBox.Size = new Size(209, 27);
+            emailTextBox.Size = new Size(337, 39);
             emailTextBox.TabIndex = 91;
             emailTextBox.GotFocus += EmailTextBox_GotFocus;
             // 
@@ -76,10 +74,9 @@
             // 
             emailLabel.AutoSize = true;
             emailLabel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            emailLabel.Location = new Point(40, 81);
-            emailLabel.Margin = new Padding(2, 0, 2, 0);
+            emailLabel.Location = new Point(65, 130);
             emailLabel.Name = "emailLabel";
-            emailLabel.Size = new Size(58, 23);
+            emailLabel.Size = new Size(93, 37);
             emailLabel.TabIndex = 92;
             emailLabel.Text = "Email*";
             // 
@@ -87,18 +84,18 @@
             // 
             addButton.BackColor = Color.White;
             addButton.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            addButton.Location = new Point(155, 169);
-            addButton.Margin = new Padding(2, 1, 2, 1);
+            addButton.Location = new Point(252, 270);
+            addButton.Margin = new Padding(3, 2, 3, 2);
             addButton.Name = "addButton";
-            addButton.Size = new Size(93, 39);
+            addButton.Size = new Size(151, 62);
             addButton.TabIndex = 105;
-            addButton.Text = "Add Product";
+            addButton.Text = "Add";
             addButton.UseVisualStyleBackColor = false;
             addButton.Click += addButton_Click;
             // 
             // AddManagerUserControl
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(227, 211, 177);
             Controls.Add(addButton);
@@ -106,9 +103,9 @@
             Controls.Add(emailTextBox);
             Controls.Add(emailLabel);
             Controls.Add(titleLabel);
-            Margin = new Padding(3, 4, 3, 4);
+            Margin = new Padding(5, 6, 5, 6);
             Name = "AddManagerUserControl";
-            Size = new Size(451, 224);
+            Size = new Size(733, 358);
             ResumeLayout(false);
             PerformLayout();
         }

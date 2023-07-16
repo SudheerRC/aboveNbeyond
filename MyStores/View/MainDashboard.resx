@@ -118,15 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="logoutButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DAAACwwBP0AiyAAAAMdJREFUSEvtlUsKAjEQBXMcF3oPxfPpAVUUlUkwn7UmPc2I9EOmE7KbglrNSwUG
-        P2ZBxcvGvXfxElx615jPnuMQd5yTlAE6qDE3TpyToAM1ck6CxjVyToLGX+PR23THz37lnASNR+OBng9h
-        PecSiiHQmLTpEWzYlI1/+pV36Qp3LMUQaDypuIRirfy7hCdt8AU31QVoPClfEYwXKYZAY1IRL1IMgcaj
-        vT+mZNcvmk7OSdC4Rs5Juv9clz+LlktKPDe2nFuYgzEfrLpeo8IgmQEAAAAASUVORK5CYII=
-</value>
-  </data>
   <data name="vendorsMenuButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
@@ -137,6 +128,15 @@
         v+x10e++NXwjawfgKL0d2SBbl6OdiegEvlzesvpvYW+bTDivcj+n0ECLHPD9i1+Dn8jz35ddMchseEtj
         158TjTXjr6Bl4u0yVryJPRkxn1YkwVJRALuqhBMaNNAiRx03nlCgJoEAhLFpTOVxzshRhLFpTOW/XGCO
         P0aSvAPrXF9Uvyu+iAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="logoutButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAAMdJREFUSEvtlUsKAjEQBXMcF3oPxfPpAVUUlUkwn7UmPc2I9EOmE7KbglrNSwUG
+        P2ZBxcvGvXfxElx615jPnuMQd5yTlAE6qDE3TpyToAM1ck6CxjVyToLGX+PR23THz37lnASNR+OBng9h
+        PecSiiHQmLTpEWzYlI1/+pV36Qp3LMUQaDypuIRirfy7hCdt8AU31QVoPClfEYwXKYZAY1IRL1IMgcaj
+        vT+mZNcvmk7OSdC4Rs5Juv9clz+LlktKPDe2nFuYgzEfrLpeo8IgmQEAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="productsMenuButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

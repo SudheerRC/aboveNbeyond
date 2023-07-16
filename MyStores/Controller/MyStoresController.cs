@@ -401,19 +401,43 @@ namespace MyStores.Controller
             return _storesDal.OpenOrdersForStore(storeId);
         }
 
+        /// <summary>
+        /// Inserts the order items.
+        /// </summary>
+        /// <param name="items">The items.</param>
+        /// <param name="orderId">The order id.</param>
         public void InsertOrderItems(List<InventoryItem> items, int orderId)
         {
             _storesDal.InsertOrderItems(items, orderId);
         }
 
+        /// <summary>
+        /// Receives the order.
+        /// </summary>
+        /// <param name="items">The items.</param>
+        /// <param name="orderId">The order id.</param>
         public void ReceiveOrder(List<InventoryItem> items, int orderId)
         {
             _storesDal.ReceiveOrder(items, orderId);
         }
 
+        /// <summary>
+        /// Searches the inventory with order id.
+        /// </summary>
+        /// <param name="orderId">The order id.</param>
+        /// <returns></returns>
         public List<InventoryItem> SearchInventoryWithOrderId(int orderId)
         {
             return _storesDal.SearchInventoryWithOrderId(orderId);
+        }
+
+        /// <summary>
+        /// Deletes the product from store.
+        /// </summary>
+        /// <param name="inventoryId">The inventory id.</param>
+        public void DeleteProductFromStore(int inventoryId)
+        {
+            _storesDal.DeleteProductFromStore(inventoryId);
         }
     }
 }

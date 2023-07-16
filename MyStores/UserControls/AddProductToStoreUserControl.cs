@@ -31,7 +31,7 @@ namespace MyStores.UserControls
             vendorPanel.Visible = false;
             pricePanel.Visible = false;
             productLookUpPanel.Visible = false;
-            
+
             quantityTextBox.Clear();
             purchasePriceTextBox.Clear();
             sellingPriceTextBox.Clear();

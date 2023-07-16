@@ -30,14 +30,16 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainDashboard));
             navigationPanel = new Panel();
+            VendorNavButtonPanel = new Panel();
+            vendorSubMenuPanel = new Panel();
+            searchVendorSubMenuButton = new Button();
+            addVendorSubMenuButton = new Button();
+            vendorsMenuButton = new Button();
             productsSubMenuPanel = new Panel();
             addProductSubMenuButton = new Button();
             logoutButton = new Button();
-            vendorsMenuButton = new Button();
             productsMenuButton = new Button();
             homeMenuButton = new Button();
-            addVendorSubMenuButton = new Button();
-            searchVendorSubMenuButton = new Button();
             logoPanel = new Panel();
             userNameLabel = new Label();
             storeNameLabel = new Label();
@@ -54,10 +56,10 @@
             rightPanel = new Panel();
             globalSearchUserControl = new UserControls.GlobalSearchUserControl();
             leftPanel = new Panel();
-            vendorSubMenuPanel = new Panel();
             headerPanel = new Panel();
-            VendorNavButtonPanel = new Panel();
             navigationPanel.SuspendLayout();
+            VendorNavButtonPanel.SuspendLayout();
+            vendorSubMenuPanel.SuspendLayout();
             productsSubMenuPanel.SuspendLayout();
             logoPanel.SuspendLayout();
             windowOpPanel.SuspendLayout();
@@ -66,9 +68,7 @@
             mainPanel.SuspendLayout();
             rightPanel.SuspendLayout();
             leftPanel.SuspendLayout();
-            vendorSubMenuPanel.SuspendLayout();
             headerPanel.SuspendLayout();
-            VendorNavButtonPanel.SuspendLayout();
             SuspendLayout();
             // 
             // navigationPanel
@@ -83,8 +83,96 @@
             navigationPanel.Location = new Point(0, 197);
             navigationPanel.Margin = new Padding(3, 2, 3, 2);
             navigationPanel.Name = "navigationPanel";
-            navigationPanel.Size = new Size(257, 1022);
+            navigationPanel.Size = new Size(257, 1013);
             navigationPanel.TabIndex = 2;
+            // 
+            // VendorNavButtonPanel
+            // 
+            VendorNavButtonPanel.Controls.Add(vendorSubMenuPanel);
+            VendorNavButtonPanel.Controls.Add(vendorsMenuButton);
+            VendorNavButtonPanel.Dock = DockStyle.Top;
+            VendorNavButtonPanel.Location = new Point(0, 238);
+            VendorNavButtonPanel.Name = "VendorNavButtonPanel";
+            VendorNavButtonPanel.Size = new Size(257, 198);
+            VendorNavButtonPanel.TabIndex = 11;
+            // 
+            // vendorSubMenuPanel
+            // 
+            vendorSubMenuPanel.Controls.Add(searchVendorSubMenuButton);
+            vendorSubMenuPanel.Controls.Add(addVendorSubMenuButton);
+            vendorSubMenuPanel.Dock = DockStyle.Top;
+            vendorSubMenuPanel.Location = new Point(0, 88);
+            vendorSubMenuPanel.Name = "vendorSubMenuPanel";
+            vendorSubMenuPanel.Size = new Size(257, 108);
+            vendorSubMenuPanel.TabIndex = 3;
+            vendorSubMenuPanel.Visible = false;
+            // 
+            // searchVendorSubMenuButton
+            // 
+            searchVendorSubMenuButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            searchVendorSubMenuButton.BackColor = Color.FromArgb(28, 44, 78);
+            searchVendorSubMenuButton.Dock = DockStyle.Top;
+            searchVendorSubMenuButton.FlatAppearance.BorderColor = Color.FromArgb(28, 44, 78);
+            searchVendorSubMenuButton.FlatAppearance.BorderSize = 0;
+            searchVendorSubMenuButton.FlatStyle = FlatStyle.Flat;
+            searchVendorSubMenuButton.Font = new Font("Segoe UI", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
+            searchVendorSubMenuButton.ForeColor = Color.FromArgb(252, 251, 255);
+            searchVendorSubMenuButton.ImageAlign = ContentAlignment.MiddleLeft;
+            searchVendorSubMenuButton.Location = new Point(0, 53);
+            searchVendorSubMenuButton.Margin = new Padding(3, 2, 3, 2);
+            searchVendorSubMenuButton.Name = "searchVendorSubMenuButton";
+            searchVendorSubMenuButton.Padding = new Padding(2, 0, 0, 0);
+            searchVendorSubMenuButton.Size = new Size(257, 53);
+            searchVendorSubMenuButton.TabIndex = 8;
+            searchVendorSubMenuButton.Text = "Search Vendor";
+            searchVendorSubMenuButton.TextAlign = ContentAlignment.MiddleRight;
+            searchVendorSubMenuButton.UseVisualStyleBackColor = false;
+            searchVendorSubMenuButton.Click += searchVendorSubMenuButton_Click;
+            // 
+            // addVendorSubMenuButton
+            // 
+            addVendorSubMenuButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            addVendorSubMenuButton.BackColor = Color.FromArgb(28, 44, 78);
+            addVendorSubMenuButton.Dock = DockStyle.Top;
+            addVendorSubMenuButton.FlatAppearance.BorderColor = Color.FromArgb(28, 44, 78);
+            addVendorSubMenuButton.FlatAppearance.BorderSize = 0;
+            addVendorSubMenuButton.FlatStyle = FlatStyle.Flat;
+            addVendorSubMenuButton.Font = new Font("Segoe UI", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
+            addVendorSubMenuButton.ForeColor = Color.FromArgb(252, 251, 255);
+            addVendorSubMenuButton.ImageAlign = ContentAlignment.MiddleLeft;
+            addVendorSubMenuButton.Location = new Point(0, 0);
+            addVendorSubMenuButton.Margin = new Padding(3, 2, 3, 2);
+            addVendorSubMenuButton.Name = "addVendorSubMenuButton";
+            addVendorSubMenuButton.Padding = new Padding(2, 0, 0, 0);
+            addVendorSubMenuButton.Size = new Size(257, 53);
+            addVendorSubMenuButton.TabIndex = 9;
+            addVendorSubMenuButton.Text = "Add Vendor";
+            addVendorSubMenuButton.TextAlign = ContentAlignment.MiddleRight;
+            addVendorSubMenuButton.UseVisualStyleBackColor = false;
+            addVendorSubMenuButton.Click += addVendorSubMenuButton_Click;
+            // 
+            // vendorsMenuButton
+            // 
+            vendorsMenuButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            vendorsMenuButton.BackColor = Color.FromArgb(28, 44, 78);
+            vendorsMenuButton.Dock = DockStyle.Top;
+            vendorsMenuButton.FlatAppearance.BorderColor = Color.FromArgb(28, 44, 78);
+            vendorsMenuButton.FlatAppearance.BorderSize = 0;
+            vendorsMenuButton.FlatStyle = FlatStyle.Flat;
+            vendorsMenuButton.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            vendorsMenuButton.ForeColor = Color.FromArgb(252, 251, 255);
+            vendorsMenuButton.Image = (Image)resources.GetObject("vendorsMenuButton.Image");
+            vendorsMenuButton.ImageAlign = ContentAlignment.MiddleLeft;
+            vendorsMenuButton.Location = new Point(0, 0);
+            vendorsMenuButton.Margin = new Padding(3, 2, 3, 2);
+            vendorsMenuButton.Name = "vendorsMenuButton";
+            vendorsMenuButton.Padding = new Padding(2, 0, 0, 0);
+            vendorsMenuButton.Size = new Size(257, 88);
+            vendorsMenuButton.TabIndex = 7;
+            vendorsMenuButton.Text = "Vendors";
+            vendorsMenuButton.TextAlign = ContentAlignment.MiddleRight;
+            vendorsMenuButton.UseVisualStyleBackColor = false;
+            vendorsMenuButton.Click += vendorsMenuButton_Click;
             // 
             // productsSubMenuPanel
             // 
@@ -130,7 +218,7 @@
             logoutButton.ForeColor = Color.FromArgb(252, 251, 255);
             logoutButton.Image = (Image)resources.GetObject("logoutButton.Image");
             logoutButton.ImageAlign = ContentAlignment.MiddleLeft;
-            logoutButton.Location = new Point(0, 934);
+            logoutButton.Location = new Point(0, 925);
             logoutButton.Margin = new Padding(3, 2, 3, 2);
             logoutButton.Name = "logoutButton";
             logoutButton.Padding = new Padding(2, 0, 0, 0);
@@ -140,29 +228,6 @@
             logoutButton.TextAlign = ContentAlignment.MiddleRight;
             logoutButton.UseVisualStyleBackColor = false;
             logoutButton.Click += LogoutButton_Click;
-            // 
-            // vendorsMenuButton
-            // 
-            vendorsMenuButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            vendorsMenuButton.BackColor = Color.FromArgb(28, 44, 78);
-            vendorsMenuButton.Dock = DockStyle.Top;
-            vendorsMenuButton.FlatAppearance.BorderColor = Color.FromArgb(28, 44, 78);
-            vendorsMenuButton.FlatAppearance.BorderSize = 0;
-            vendorsMenuButton.FlatStyle = FlatStyle.Flat;
-            vendorsMenuButton.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            vendorsMenuButton.ForeColor = Color.FromArgb(252, 251, 255);
-            vendorsMenuButton.Image = (Image)resources.GetObject("vendorsMenuButton.Image");
-            vendorsMenuButton.ImageAlign = ContentAlignment.MiddleLeft;
-            vendorsMenuButton.Location = new Point(0, 0);
-            vendorsMenuButton.Margin = new Padding(3, 2, 3, 2);
-            vendorsMenuButton.Name = "vendorsMenuButton";
-            vendorsMenuButton.Padding = new Padding(2, 0, 0, 0);
-            vendorsMenuButton.Size = new Size(257, 88);
-            vendorsMenuButton.TabIndex = 7;
-            vendorsMenuButton.Text = "Vendors";
-            vendorsMenuButton.TextAlign = ContentAlignment.MiddleRight;
-            vendorsMenuButton.UseVisualStyleBackColor = false;
-            vendorsMenuButton.Click += vendorsMenuButton_Click;
             // 
             // productsMenuButton
             // 
@@ -209,50 +274,6 @@
             homeMenuButton.TextAlign = ContentAlignment.MiddleRight;
             homeMenuButton.UseVisualStyleBackColor = false;
             homeMenuButton.Click += homeMenuButton_Click;
-            // 
-            // addVendorSubMenuButton
-            // 
-            addVendorSubMenuButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            addVendorSubMenuButton.BackColor = Color.FromArgb(28, 44, 78);
-            addVendorSubMenuButton.Dock = DockStyle.Top;
-            addVendorSubMenuButton.FlatAppearance.BorderColor = Color.FromArgb(28, 44, 78);
-            addVendorSubMenuButton.FlatAppearance.BorderSize = 0;
-            addVendorSubMenuButton.FlatStyle = FlatStyle.Flat;
-            addVendorSubMenuButton.Font = new Font("Segoe UI", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
-            addVendorSubMenuButton.ForeColor = Color.FromArgb(252, 251, 255);
-            addVendorSubMenuButton.ImageAlign = ContentAlignment.MiddleLeft;
-            addVendorSubMenuButton.Location = new Point(0, 0);
-            addVendorSubMenuButton.Margin = new Padding(3, 2, 3, 2);
-            addVendorSubMenuButton.Name = "addVendorSubMenuButton";
-            addVendorSubMenuButton.Padding = new Padding(2, 0, 0, 0);
-            addVendorSubMenuButton.Size = new Size(257, 53);
-            addVendorSubMenuButton.TabIndex = 9;
-            addVendorSubMenuButton.Text = "Add Vendor";
-            addVendorSubMenuButton.TextAlign = ContentAlignment.MiddleRight;
-            addVendorSubMenuButton.UseVisualStyleBackColor = false;
-            addVendorSubMenuButton.Click += addVendorSubMenuButton_Click;
-            // 
-            // searchVendorSubMenuButton
-            // 
-            searchVendorSubMenuButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            searchVendorSubMenuButton.BackColor = Color.FromArgb(28, 44, 78);
-            searchVendorSubMenuButton.Dock = DockStyle.Top;
-            searchVendorSubMenuButton.FlatAppearance.BorderColor = Color.FromArgb(28, 44, 78);
-            searchVendorSubMenuButton.FlatAppearance.BorderSize = 0;
-            searchVendorSubMenuButton.FlatStyle = FlatStyle.Flat;
-            searchVendorSubMenuButton.Font = new Font("Segoe UI", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
-            searchVendorSubMenuButton.ForeColor = Color.FromArgb(252, 251, 255);
-            searchVendorSubMenuButton.ImageAlign = ContentAlignment.MiddleLeft;
-            searchVendorSubMenuButton.Location = new Point(0, 53);
-            searchVendorSubMenuButton.Margin = new Padding(3, 2, 3, 2);
-            searchVendorSubMenuButton.Name = "searchVendorSubMenuButton";
-            searchVendorSubMenuButton.Padding = new Padding(2, 0, 0, 0);
-            searchVendorSubMenuButton.Size = new Size(257, 53);
-            searchVendorSubMenuButton.TabIndex = 8;
-            searchVendorSubMenuButton.Text = "Search Vendor";
-            searchVendorSubMenuButton.TextAlign = ContentAlignment.MiddleRight;
-            searchVendorSubMenuButton.UseVisualStyleBackColor = false;
-            searchVendorSubMenuButton.Click += searchVendorSubMenuButton_Click;
             // 
             // logoPanel
             // 
@@ -454,17 +475,6 @@
             leftPanel.Size = new Size(257, 1221);
             leftPanel.TabIndex = 9;
             // 
-            // vendorSubMenuPanel
-            // 
-            vendorSubMenuPanel.Controls.Add(searchVendorSubMenuButton);
-            vendorSubMenuPanel.Controls.Add(addVendorSubMenuButton);
-            vendorSubMenuPanel.Dock = DockStyle.Top;
-            vendorSubMenuPanel.Location = new Point(0, 88);
-            vendorSubMenuPanel.Name = "vendorSubMenuPanel";
-            vendorSubMenuPanel.Size = new Size(257, 108);
-            vendorSubMenuPanel.TabIndex = 3;
-            vendorSubMenuPanel.Visible = false;
-            // 
             // headerPanel
             // 
             headerPanel.BackColor = Color.FromArgb(28, 44, 78);
@@ -474,16 +484,6 @@
             headerPanel.Name = "headerPanel";
             headerPanel.Size = new Size(1498, 136);
             headerPanel.TabIndex = 9;
-            // 
-            // VendorNavButtonPanel
-            // 
-            VendorNavButtonPanel.Controls.Add(vendorSubMenuPanel);
-            VendorNavButtonPanel.Controls.Add(vendorsMenuButton);
-            VendorNavButtonPanel.Dock = DockStyle.Top;
-            VendorNavButtonPanel.Location = new Point(0, 238);
-            VendorNavButtonPanel.Name = "VendorNavButtonPanel";
-            VendorNavButtonPanel.Size = new Size(257, 198);
-            VendorNavButtonPanel.TabIndex = 11;
             // 
             // MainDashboard
             // 
@@ -503,6 +503,8 @@
             Text = "MyStores";
             Load += MainDashboard_Load;
             navigationPanel.ResumeLayout(false);
+            VendorNavButtonPanel.ResumeLayout(false);
+            vendorSubMenuPanel.ResumeLayout(false);
             productsSubMenuPanel.ResumeLayout(false);
             logoPanel.ResumeLayout(false);
             logoPanel.PerformLayout();
@@ -512,9 +514,7 @@
             mainPanel.ResumeLayout(false);
             rightPanel.ResumeLayout(false);
             leftPanel.ResumeLayout(false);
-            vendorSubMenuPanel.ResumeLayout(false);
             headerPanel.ResumeLayout(false);
-            VendorNavButtonPanel.ResumeLayout(false);
             ResumeLayout(false);
         }
 

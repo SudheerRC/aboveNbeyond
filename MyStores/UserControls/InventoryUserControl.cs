@@ -24,6 +24,7 @@ namespace MyStores.UserControls
             inventoryListView.Refresh();
             criteriaComboBox.SelectedItem = "Product Name";
             searchTextBox.Clear();
+            deleteProductButton.Enabled = false;
         }
 
         public void loadListView()
@@ -43,6 +44,7 @@ namespace MyStores.UserControls
         private void FeedListView(InventoryItem ii)
         {
             inventoryListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+            inventoryListView.Columns[8].Width = 0;
 
             var vendorId = ii.VendorId;
             var myVendorName = _controller.NameOfVendorWithId(vendorId);
@@ -50,7 +52,8 @@ namespace MyStores.UserControls
             string[] row =
             {
                 currentProduct.Barcode, currentProduct.Name, currentProduct.Description, Convert.ToString(ii.Quantity),
-                currentProduct.ProductSize, Convert.ToString(ii.SellingPrice), Convert.ToString(ii.PurchasePrice), myVendorName
+                currentProduct.ProductSize, Convert.ToString(ii.SellingPrice), Convert.ToString(ii.PurchasePrice),
+                myVendorName, Convert.ToString(ii.InventoryId)
             };
             var listItem = new ListViewItem(row);
             inventoryListView.Items.Add(listItem);
@@ -164,6 +167,29 @@ namespace MyStores.UserControls
             else
             {
                 searchTextBox.PlaceholderText = "Please select a criteria to Search for product based on";
+            }
+        }
+
+        private void InventoryListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            deleteProductButton.Enabled = true;
+        }
+
+        private void DeleteProductButton_Click(object sender, EventArgs e)
+        {
+            ListView.SelectedListViewItemCollection selectedItem = inventoryListView.SelectedItems;
+            int inventoryId = Convert.ToInt32(selectedItem[0].SubItems[8].Text);
+
+            DialogResult result = MessageBox.Show("Are you sure to delete the selected product from store?", "Confirm Product Deletion",
+                MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                _controller.DeleteProductFromStore(inventoryId);
+                refreshListButton_Click(sender, e);
+            }
+            else
+            {
+                refreshListButton_Click(sender, e);
             }
         }
     }
