@@ -181,6 +181,7 @@ CREATE TABLE [dbo].[Inventory](
 	[sellingPrice] [decimal](7,2),
 	[quantity] [int],
 	[defaultQuantity] [int],
+	[status] [BIT]
 	
  CONSTRAINT [PK_Inventory] PRIMARY KEY 
 (
