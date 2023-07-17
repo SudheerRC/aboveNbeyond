@@ -439,5 +439,24 @@ namespace MyStores.Controller
         {
             _storesDal.DeleteProductFromStore(inventoryId);
         }
+
+        /// <summary>
+        /// Updates the inventory item.
+        /// </summary>
+        /// <param name="inventoryItem">The inventory item.</param>
+        public void UpdateInventoryItem(InventoryItem inventoryItem)
+        {
+            _storesDal.UpdateInventoryItem(inventoryItem);
+        }
+
+        /// <summary>
+        /// Searches the inventory with inventory id.
+        /// </summary>
+        /// <param name="inventoryId">The inventory id.</param>
+        /// <returns></returns>
+        public InventoryItem SearchInventoryWithInventoryId(int inventoryId)
+        {
+            return _storesDal.SearchInventoryWithInventoryId(inventoryId);
+        }
     }
 }

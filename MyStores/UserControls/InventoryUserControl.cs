@@ -1,5 +1,6 @@
 ﻿using MyStores.Controller;
 using MyStores.Model;
+using MyStores.View;
 
 namespace MyStores.UserControls
 {
@@ -25,6 +26,7 @@ namespace MyStores.UserControls
             criteriaComboBox.SelectedItem = "Product Name";
             searchTextBox.Clear();
             deleteProductButton.Enabled = false;
+            editButton.Enabled = false;
         }
 
         public void loadListView()
@@ -44,7 +46,6 @@ namespace MyStores.UserControls
         private void FeedListView(InventoryItem ii)
         {
             inventoryListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
-            inventoryListView.Columns[8].Width = 0;
 
             var vendorId = ii.VendorId;
             var myVendorName = _controller.NameOfVendorWithId(vendorId);
@@ -196,7 +197,17 @@ namespace MyStores.UserControls
 
         private void EditButton_Click(object sender, EventArgs e)
         {
+            ListView.SelectedListViewItemCollection selectedItem = inventoryListView.SelectedItems;
+            int inventoryId = Convert.ToInt32(selectedItem[0].SubItems[8].Text);
 
+            var editForm = new EditInventoryItemForm();
+            editForm.SetInventoryId(inventoryId);
+            editForm.ShowDialog();
+            if (editForm.DialogResult == DialogResult.OK)
+            {
+                editForm.Close();
+            }
+            refreshListButton_Click(sender, e);
         }
     }
 }

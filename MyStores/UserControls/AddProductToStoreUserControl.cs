@@ -159,7 +159,7 @@ namespace MyStores.UserControls
                 }
 
             }
-            catch (FormatException)
+            catch (Exception)
             {
                 //MessageBox.Show(@"Please clear the errors and try again to add.");
             }
@@ -270,11 +270,14 @@ namespace MyStores.UserControls
                 }
             }
 
-            if (!int.TryParse(quantityTextBox.Text, out quantity))
+            if (!quantityErrorLabel.Visible)
             {
-                quantityErrorLabel.Text = @"Quantity must be a valid number";
-                quantityErrorLabel.Visible = true;
-                result = true;
+                if (!int.TryParse(quantityTextBox.Text, out quantity))
+                {
+                    quantityErrorLabel.Text = @"Quantity must be a valid number";
+                    quantityErrorLabel.Visible = true;
+                    result = true;
+                }
             }
 
             if (!quantityErrorLabel.Visible)

@@ -1886,5 +1886,80 @@ namespace MyStores.Dal
 
             command.ExecuteNonQuery();
         }
+
+        /// <summary>
+        /// Updates the inventory item.
+        /// </summary>
+        /// <param name="inventoryItem">The inventory item.</param>
+        public void UpdateInventoryItem(InventoryItem inventoryItem)
+        {
+            using var connection = DbConnection.GetConnection();
+            connection.Open();
+            string query = "UPDATE Inventory set purchasePrice = @purchasePrice, sellingPrice = @sellingPrice, " +
+                           "quantity = @quantity, defaultQuantity = @minQuantity where inventoryID = @inventoryId";
+            using var command = new SqlCommand(query, connection);
+
+            command.Parameters.Add("@inventoryId", System.Data.SqlDbType.Int);
+            command.Parameters["@inventoryId"].Value = inventoryItem.InventoryId;
+
+            command.Parameters.Add("@purchasePrice", System.Data.SqlDbType.Decimal);
+            command.Parameters["@purchasePrice"].Value = inventoryItem.PurchasePrice;
+
+            command.Parameters.Add("@sellingPrice", System.Data.SqlDbType.Decimal);
+            command.Parameters["@sellingPrice"].Value = inventoryItem.SellingPrice;
+
+            command.Parameters.Add("@quantity", System.Data.SqlDbType.Int);
+            command.Parameters["@quantity"].Value = inventoryItem.Quantity;
+
+            command.Parameters.Add("@minQuantity", System.Data.SqlDbType.Int);
+            command.Parameters["@minQuantity"].Value = inventoryItem.MinQuantity;
+
+            command.ExecuteNonQuery();
+        }
+
+        /// <summary>
+        /// Searches the inventory.
+        /// </summary>
+        /// <param name="inventoryId">The inventory id.</param>
+        /// <returns></returns>
+        public InventoryItem SearchInventoryWithInventoryId(int inventoryId)
+        {
+            var inventoryItem = new InventoryItem();
+            using var connection = DbConnection.GetConnection();
+            connection.Open();
+
+            string query =
+                "SELECT purchasePrice, sellingPrice, quantity, defaultQuantity " +
+                "FROM Inventory WHERE inventoryID = @inventoryId";
+            using var command = new SqlCommand(query, connection);
+
+            command.Parameters.Add("@inventoryId", System.Data.SqlDbType.VarChar);
+            command.Parameters["@inventoryId"].Value = inventoryId;
+            using var reader = command.ExecuteReader();
+            
+            var purchasePriceOrdinal = reader.GetOrdinal("purchasePrice");
+            var sellingPriceOrdinal = reader.GetOrdinal("sellingPrice");
+            var quantityOrdinal = reader.GetOrdinal("quantity");
+            var minQuantityOrdinal = reader.GetOrdinal("defaultQuantity");
+
+            while (reader.Read())
+            {
+                var minQuantity = reader.GetInt32(minQuantityOrdinal);
+                decimal purchasePrice = reader.GetDecimal(purchasePriceOrdinal);
+                decimal sellingPrice = reader.GetDecimal(sellingPriceOrdinal);
+                var quantity = reader.GetInt32(quantityOrdinal);
+
+                inventoryItem = new InventoryItem
+                {
+                    InventoryId = inventoryId,
+                    Quantity = quantity,
+                    SellingPrice = decimal.ToDouble(sellingPrice),
+                    PurchasePrice = decimal.ToDouble(purchasePrice),
+                    MinQuantity = minQuantity
+                };
+            }
+
+            return inventoryItem;
+        }
     }
 }
