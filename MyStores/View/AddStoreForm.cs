@@ -64,6 +64,7 @@ namespace MyStores.View
                     State = stateTextBox.Text,
                     Country = countryTextBox.Text,
                     ZipCode = zipcodeTextBox.Text,
+                    Status = true,
                 };
                 _controller.AddStore(newStore);
                 this.Close();

@@ -163,8 +163,8 @@ namespace MyStores.Dal
         {
             using var connection = DbConnection.GetConnection();
             connection.Open();
-            string query = "INSERT INTO Stores(ownerID, storeName, streetAddress, city, state, zipCode, country) " +
-                           "VALUES (@ownerId, @storeName, @streetAddress, @city, @state, @zipCode, @country)";
+            string query = "INSERT INTO Stores(ownerID, storeName, streetAddress, city, state, zipCode, country, status) " +
+                           "VALUES (@ownerId, @storeName, @streetAddress, @city, @state, @zipCode, @country, @status)";
             using var command = new SqlCommand(query, connection);
 
             command.Parameters.Add("@ownerId", System.Data.SqlDbType.Int);
@@ -188,6 +188,9 @@ namespace MyStores.Dal
             command.Parameters.Add("@country", System.Data.SqlDbType.VarChar);
             command.Parameters["@country"].Value = newStore.Country;
 
+            command.Parameters.Add("@status", System.Data.SqlDbType.Bit);
+            command.Parameters["@status"].Value = newStore.Status;
+
             command.ExecuteNonQuery();
         }
 
@@ -203,7 +206,7 @@ namespace MyStores.Dal
             connection.Open();
 
             string query =
-                "select storeID, ownerID, storeName, streetAddress, city, state, zipCode, country from Stores where ownerID = @ownerId;";
+                "select storeID, ownerID, storeName, streetAddress, city, state, zipCode, country from Stores where ownerID = @ownerId and status = 1;";
             using var command = new SqlCommand(query, connection);
 
             command.Parameters.Add("@ownerId", System.Data.SqlDbType.Int);
@@ -784,8 +787,8 @@ namespace MyStores.Dal
         {
             using var connection = DbConnection.GetConnection();
             connection.Open();
-            string query = "INSERT Inventory (vendorID, productID, storeID, purchasePrice, sellingPrice, quantity) " +
-                           "VALUES (@vendorID, @productID, @storeID, @purchasePrice, @sellingPrice, @quantity)";
+            string query = "INSERT Inventory (vendorID, productID, storeID, purchasePrice, sellingPrice, quantity, status) " +
+                           "VALUES (@vendorID, @productID, @storeID, @purchasePrice, @sellingPrice, @quantity, @status)";
             using var command = new SqlCommand(query, connection);
 
             command.Parameters.Add("@vendorID", System.Data.SqlDbType.Int);
@@ -805,6 +808,9 @@ namespace MyStores.Dal
 
             command.Parameters.Add("@quantity", System.Data.SqlDbType.Int);
             command.Parameters["@quantity"].Value = inventoryItem.Quantity;
+
+            command.Parameters.Add("@status", System.Data.SqlDbType.Bit);
+            command.Parameters["@status"].Value = inventoryItem.Status;
 
             command.ExecuteNonQuery();
         }
@@ -852,57 +858,6 @@ namespace MyStores.Dal
             command.ExecuteNonQuery();
         }
 
-        /// <summary>
-        /// Searches the product with store id.
-        /// </summary>
-        /// <param name="storeId">The store id.</param>
-        /// <returns></returns>
-        public List<Product> SearchProductWithStoreId(int storeId)
-        {
-            var products = new List<Product>();
-            using var connection = DbConnection.GetConnection();
-            connection.Open();
-
-            string query =
-                "SELECT productID, productName, productSize, description, departmentName, barcode, sellingPrice FROM Product,Inventory WHERE Inventory.productID = Product.productID and Inventory.storeID = @storeID";
-            using var command = new SqlCommand(query, connection);
-
-            command.Parameters.Add("@storeID", System.Data.SqlDbType.Int);
-            command.Parameters["@storeID"].Value = storeId;
-            using var reader = command.ExecuteReader();
-
-            var productIdOrdinal = reader.GetOrdinal("productID");
-            var productNameOrdinal = reader.GetOrdinal("productName");
-            var productSizeOrdinal = reader.GetOrdinal("productSize");
-            var descriptionOrdinal = reader.GetOrdinal("description");
-            var departmentNameOrdinal = reader.GetOrdinal("departmentName");
-            var barcodeOrdinal = reader.GetOrdinal("barcode");
-            var sellingPriceOrdinal = reader.GetOrdinal("sellingPrice");
-
-            while (reader.Read())
-            {
-                var productId = reader.GetInt32(productIdOrdinal);
-                var name = reader.GetString(productNameOrdinal);
-                var size = reader.GetString(productSizeOrdinal);
-                var description = reader.GetString(descriptionOrdinal);
-                var department = reader.GetString(departmentNameOrdinal);
-                var barcode = reader.GetString(barcodeOrdinal);
-                var sellingPrice = reader.GetInt32(sellingPriceOrdinal);
-
-                products.Add(new Product
-                {
-                    Id = productId,
-                    Description = description,
-                    Name = name,
-                    ProductSize = size,
-                    DepartmentName = department,
-                    SellingPrice = sellingPrice,
-                    Barcode = barcode
-                });
-            }
-
-            return products;
-        }
 
         /// <summary>
         /// Searches the name of the product with store id and product name.
@@ -1963,6 +1918,63 @@ namespace MyStores.Dal
             }
 
             return inventoryItem;
+        }
+
+        /// <summary>
+        /// Searches the vendor by store id.
+        /// </summary>
+        /// <param name="storeId">The store id.</param>
+        /// <returns></returns>
+        public List<Vendor> GetVendorsWithProductsByStoreId(int storeId)
+        {
+            var vendors = new List<Vendor>();
+            using var connection = DbConnection.GetConnection();
+            connection.Open();
+
+            string query =
+                "SELECT DISTINCT Vendor.vendorID, vendorName, streetAddress, city, state, zipCode, country, phoneNumber " +
+                "FROM Vendor, StoreVendors, Inventory WHERE Vendor.vendorID = StoreVendors.vendorID AND StoreVendors.vendorID = Inventory.VendorID AND Inventory.storeID = @storeId ";
+            using var command = new SqlCommand(query, connection);
+
+            command.Parameters.Add("@storeId", System.Data.SqlDbType.Int);
+            command.Parameters["@storeId"].Value = storeId;
+            using var reader = command.ExecuteReader();
+
+            var vendorIdOrdinal = reader.GetOrdinal("vendorID");
+            var vendorNameOrdinal = reader.GetOrdinal("vendorName");
+            var streetAddressOrdinal = reader.GetOrdinal("streetAddress");
+            var cityOrdinal = reader.GetOrdinal("city");
+            var stateOrdinal = reader.GetOrdinal("state");
+            var zipCodeOrdinal = reader.GetOrdinal("zipCode");
+            var countryOrdinal = reader.GetOrdinal("country");
+            var phoneNumberOrdinal = reader.GetOrdinal("phoneNumber");
+
+            while (reader.Read())
+            {
+                var vendorId = reader.GetInt32(vendorIdOrdinal);
+                var name = reader.GetString(vendorNameOrdinal);
+                var streetAddress = reader.GetString(streetAddressOrdinal);
+                var city = reader.GetString(cityOrdinal);
+                var state = reader.GetString(stateOrdinal);
+                var zipCode = reader.GetString(zipCodeOrdinal);
+                var country = reader.GetString(countryOrdinal);
+                var phoneNumber = reader.GetString(phoneNumberOrdinal);
+
+                vendors.Add(new Vendor
+                {
+                    Id = vendorId,
+                    Name = name,
+                    StreetAddress = streetAddress,
+                    City = city,
+                    State = state,
+                    ZipCode = zipCode,
+                    Country = country,
+                    PhoneNumber = phoneNumber
+
+                });
+            }
+
+            return vendors;
         }
     }
 }

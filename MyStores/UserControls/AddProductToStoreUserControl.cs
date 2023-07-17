@@ -144,6 +144,7 @@ namespace MyStores.UserControls
                     quantityErrorLabel.Visible = false;
 
                     inventoryItem.VendorId = currentVendorId;
+                    inventoryItem.Status = true;
                     inventoryItem.Item = new Product
                     {
                         Id = currentProductId
@@ -151,7 +152,7 @@ namespace MyStores.UserControls
                     inventoryItem.PurchasePrice = purchasePrice;
                     inventoryItem.SellingPrice = currentSellingPrice;
                     inventoryItem.Quantity = quantity;
-
+                   
                     _controller.AddInventory(inventoryItem, _storeId);
                     MessageBox.Show(@"Successfully added the product to your inventory!");
 

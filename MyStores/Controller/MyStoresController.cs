@@ -458,5 +458,10 @@ namespace MyStores.Controller
         {
             return _storesDal.SearchInventoryWithInventoryId(inventoryId);
         }
+
+        public List<Vendor> GetVendorsWithProductsByStoreId(int storeId)
+        {
+            return _storesDal.GetVendorsWithProductsByStoreId(storeId);
+        }
     }
 }

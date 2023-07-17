@@ -40,11 +40,11 @@ namespace MyStores.UserControls
         private bool LoadVendorComboBox()
         {
             ClearComboBox();
-            List<Vendor> vendorList = _controller.SearchVendorByStoreId(_storeId);
+            List<Vendor> vendorList = _controller.GetVendorsWithProductsByStoreId(_storeId);
             if (vendorList.Count == 0)
             {
-                MessageBox.Show("There are no Vendors added to this store." +
-                    Environment.NewLine + "Please add one or more vendors to place an order with them");
+                MessageBox.Show("There are no Vendors added or there are no products that your vendors sell to this store." +
+                    Environment.NewLine + "Please add one or more vendors and add the products that they sell to place an order with them");
                 return false;
             }
             listPanelComboBox.DataSource = vendorList;

@@ -77,6 +77,8 @@
             }
         }
 
+        public bool Status { get; set; }
+
         public Product? Item { get; set; }
     }
 }
