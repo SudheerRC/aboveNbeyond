@@ -100,7 +100,7 @@ CREATE TABLE [dbo].[Users](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 
-
+	
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -117,10 +117,51 @@ CREATE TABLE [dbo].[Stores](
 	[state] [varchar](50),
 	[zipCode] [varchar](50),
 	[country] [varchar](50),
+	[status] [BIT]
 	
  CONSTRAINT [PK_Stores] PRIMARY KEY 
 (
 	[storeID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[Sales](
+	[saleID] [int] IDENTITY(1,1) NOT NULL,
+	[saleDateTime] [datetime] NOT NULL,
+	[storeID] [int] NOT NULL REFERENCES Stores(storeID),
+	[total] [decimal](8,2) NOT NULL,
+	[tax] [decimal](8,2) NOT NULL,
+	[paymentType] [varchar](50)
+	
+CONSTRAINT [PK_Sales] PRIMARY KEY 
+(
+	[saleID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[SaleLineItem](
+	[saleID] [int] NOT NULL REFERENCES Sales(saleID),
+	[inventoryID] [int] NOT NULL REFERENCES Inventory(inventoryID),
+	[quantity] [int],
+	[discount] [decimal](8,2)
+CONSTRAINT [PK_SaleLineItem] PRIMARY KEY 
+(
+	[saleID] ASC,
+	[inventoryID] ASC
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 
