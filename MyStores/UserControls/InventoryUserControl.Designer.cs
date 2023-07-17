@@ -181,15 +181,16 @@
             // 
             deleteProductButton.BackColor = Color.FromArgb(28, 44, 78);
             deleteProductButton.Enabled = false;
+            deleteProductButton.FlatAppearance.BorderSize = 0;
             deleteProductButton.FlatStyle = FlatStyle.Flat;
             deleteProductButton.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             deleteProductButton.ForeColor = SystemColors.ControlLightLight;
-            deleteProductButton.Location = new Point(794, 806);
+            deleteProductButton.Location = new Point(730, 806);
             deleteProductButton.Margin = new Padding(8, 6, 8, 6);
             deleteProductButton.Name = "deleteProductButton";
             deleteProductButton.Size = new Size(260, 67);
             deleteProductButton.TabIndex = 111;
-            deleteProductButton.Text = "Delete Product";
+            deleteProductButton.Text = "Delete Item";
             deleteProductButton.UseVisualStyleBackColor = false;
             deleteProductButton.Click += DeleteProductButton_Click;
             // 
@@ -197,16 +198,18 @@
             // 
             editButton.BackColor = Color.FromArgb(28, 44, 78);
             editButton.Enabled = false;
+            editButton.FlatAppearance.BorderSize = 0;
             editButton.FlatStyle = FlatStyle.Flat;
             editButton.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             editButton.ForeColor = SystemColors.ControlLightLight;
-            editButton.Location = new Point(237, 806);
+            editButton.Location = new Point(157, 806);
             editButton.Margin = new Padding(8, 6, 8, 6);
             editButton.Name = "editButton";
             editButton.Size = new Size(260, 67);
             editButton.TabIndex = 112;
-            editButton.Text = "Edit Product";
+            editButton.Text = "Edit Item Details";
             editButton.UseVisualStyleBackColor = false;
+            editButton.Click += EditButton_Click;
             // 
             // InventoryUserControl
             // 

@@ -173,6 +173,7 @@ namespace MyStores.UserControls
         private void InventoryListView_SelectedIndexChanged(object sender, EventArgs e)
         {
             deleteProductButton.Enabled = true;
+            editButton.Enabled = true;
         }
 
         private void DeleteProductButton_Click(object sender, EventArgs e)
@@ -191,6 +192,11 @@ namespace MyStores.UserControls
             {
                 refreshListButton_Click(sender, e);
             }
+        }
+
+        private void EditButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
