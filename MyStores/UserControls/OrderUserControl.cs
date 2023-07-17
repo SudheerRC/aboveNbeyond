@@ -142,13 +142,20 @@ namespace MyStores.UserControls
         {
             _orderTotal = 0.0;
 
-            for (int i = 0; i < mainFlowLayoutPanel.Controls.Count; i++)
+            try
             {
-                UserControl newControl = (OrderedProductTileUserControl)mainFlowLayoutPanel.Controls[i];
-                var quantity = Convert.ToInt32(newControl.Controls["quantityTextBox"].Text);
-                var purchasePrice = Convert.ToDouble(newControl.Controls["priceTextBox"].Text);
+                for (int i = 0; i < mainFlowLayoutPanel.Controls.Count; i++)
+                {
+                    UserControl newControl = (OrderedProductTileUserControl)mainFlowLayoutPanel.Controls[i];
+                    var quantity = Convert.ToInt32(newControl.Controls["quantityTextBox"].Text);
+                    var purchasePrice = Convert.ToDouble(newControl.Controls["priceTextBox"].Text);
 
-                _orderTotal += (quantity * purchasePrice);
+                    _orderTotal += (quantity * purchasePrice);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Quantity or Price can not be empty");
             }
 
             totalAmountLabel.Text = @"$" + _orderTotal.ToString();

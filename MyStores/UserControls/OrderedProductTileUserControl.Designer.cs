@@ -48,6 +48,7 @@
             productImagePictureBox.Margin = new Padding(3, 4, 3, 4);
             productImagePictureBox.Name = "productImagePictureBox";
             productImagePictureBox.Size = new Size(95, 141);
+            productImagePictureBox.SizeMode = PictureBoxSizeMode.CenterImage;
             productImagePictureBox.TabIndex = 0;
             productImagePictureBox.TabStop = false;
             // 
