@@ -31,9 +31,9 @@
             productNameLabel = new Label();
             discountHeadingabel = new Label();
             discountValueLabel = new Label();
-            label3 = new Label();
-            quantityLabel = new Label();
-            unitPriceLabel = new Label();
+            sizeValueLabel = new Label();
+            quantityValueLabel = new Label();
+            unitPriceValueLabel = new Label();
             sizeLabel = new Label();
             quantityHeadingLabel = new Label();
             unitPriceHeadingLabel = new Label();
@@ -75,35 +75,35 @@
             discountValueLabel.TextAlign = ContentAlignment.MiddleRight;
             discountValueLabel.Visible = false;
             // 
-            // label3
+            // sizeValueLabel
             // 
-            label3.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(363, 37);
-            label3.Name = "label3";
-            label3.Size = new Size(76, 35);
-            label3.TabIndex = 5;
-            label3.Text = "20Oz";
-            label3.TextAlign = ContentAlignment.MiddleCenter;
+            sizeValueLabel.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            sizeValueLabel.Location = new Point(363, 37);
+            sizeValueLabel.Name = "sizeValueLabel";
+            sizeValueLabel.Size = new Size(76, 35);
+            sizeValueLabel.TabIndex = 5;
+            sizeValueLabel.Text = "20Oz";
+            sizeValueLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // quantityLabel
+            // quantityValueLabel
             // 
-            quantityLabel.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            quantityLabel.Location = new Point(445, 37);
-            quantityLabel.Name = "quantityLabel";
-            quantityLabel.Size = new Size(79, 35);
-            quantityLabel.TabIndex = 6;
-            quantityLabel.Text = "8";
-            quantityLabel.TextAlign = ContentAlignment.MiddleCenter;
+            quantityValueLabel.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            quantityValueLabel.Location = new Point(445, 37);
+            quantityValueLabel.Name = "quantityValueLabel";
+            quantityValueLabel.Size = new Size(79, 35);
+            quantityValueLabel.TabIndex = 6;
+            quantityValueLabel.Text = "8";
+            quantityValueLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // unitPriceLabel
+            // unitPriceValueLabel
             // 
-            unitPriceLabel.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            unitPriceLabel.Location = new Point(530, 37);
-            unitPriceLabel.Name = "unitPriceLabel";
-            unitPriceLabel.Size = new Size(89, 35);
-            unitPriceLabel.TabIndex = 7;
-            unitPriceLabel.Text = "$ 2.99";
-            unitPriceLabel.TextAlign = ContentAlignment.MiddleCenter;
+            unitPriceValueLabel.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            unitPriceValueLabel.Location = new Point(530, 37);
+            unitPriceValueLabel.Name = "unitPriceValueLabel";
+            unitPriceValueLabel.Size = new Size(89, 35);
+            unitPriceValueLabel.TabIndex = 7;
+            unitPriceValueLabel.Text = "$ 2.99";
+            unitPriceValueLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // sizeLabel
             // 
@@ -163,14 +163,15 @@
             Controls.Add(unitPriceHeadingLabel);
             Controls.Add(quantityHeadingLabel);
             Controls.Add(sizeLabel);
-            Controls.Add(unitPriceLabel);
-            Controls.Add(quantityLabel);
-            Controls.Add(label3);
+            Controls.Add(unitPriceValueLabel);
+            Controls.Add(quantityValueLabel);
+            Controls.Add(sizeValueLabel);
             Controls.Add(discountValueLabel);
             Controls.Add(discountHeadingabel);
             Controls.Add(productNameLabel);
             Name = "InvoiceLineItemUserControl";
             Size = new Size(622, 85);
+            Load += InvoiceLineItemUserControl_Load;
             ResumeLayout(false);
         }
 
@@ -179,9 +180,9 @@
         private Label productNameLabel;
         private Label discountHeadingabel;
         private Label discountValueLabel;
-        private Label label3;
-        private Label quantityLabel;
-        private Label unitPriceLabel;
+        private Label sizeValueLabel;
+        private Label quantityValueLabel;
+        private Label unitPriceValueLabel;
         private Label sizeLabel;
         private Label quantityHeadingLabel;
         private Label unitPriceHeadingLabel;
