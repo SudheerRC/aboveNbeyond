@@ -16,6 +16,7 @@
         private void ProductsTabUserControl_Load(object sender, EventArgs e)
         {
             mainAddProductUserControl.SetProductId(_productId);
+            messageLabel.Text = @"Please enter the details to add the product to the our database and not to your store.";
         }
 
         public void SetProductDetails()

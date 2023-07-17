@@ -35,11 +35,11 @@
             orderButton = new Button();
             exitStoreButton = new Button();
             storeExpandedPanel = new Panel();
-            mainOrderUserControl = new OrderUserControl();
             mainAddProductToStoreUserControl = new AddProductToStoreUserControl();
             mainAddManagerUserControl = new AddManagerUserControl();
             mainInventoryUserControl = new InventoryUserControl();
             mainAddVendorToStoreUserControl = new AddVendorToStoreUserControl();
+            mainOrderUserControl = new OrderUserControl();
             backButtonPanel = new Panel();
             backButton = new Button();
             addManagerButton = new Button();
@@ -174,15 +174,6 @@
             storeExpandedPanel.TabIndex = 8;
             storeExpandedPanel.Visible = false;
             // 
-            // mainOrderUserControl
-            // 
-            mainOrderUserControl.BackColor = Color.FromArgb(227, 211, 177);
-            mainOrderUserControl.Location = new Point(0, 2);
-            mainOrderUserControl.Margin = new Padding(8, 8, 8, 8);
-            mainOrderUserControl.Name = "mainOrderUserControl";
-            mainOrderUserControl.Size = new Size(1264, 1002);
-            mainOrderUserControl.TabIndex = 11;
-            // 
             // mainAddProductToStoreUserControl
             // 
             mainAddProductToStoreUserControl.BackColor = Color.BlanchedAlmond;
@@ -194,7 +185,7 @@
             // 
             // mainAddManagerUserControl
             // 
-            mainAddManagerUserControl.BackColor = Color.BlanchedAlmond;
+            mainAddManagerUserControl.BackColor = Color.FromArgb(227, 211, 177);
             mainAddManagerUserControl.Location = new Point(245, 2);
             mainAddManagerUserControl.Margin = new Padding(5, 8, 5, 8);
             mainAddManagerUserControl.Name = "mainAddManagerUserControl";
@@ -220,6 +211,15 @@
             mainAddVendorToStoreUserControl.Name = "mainAddVendorToStoreUserControl";
             mainAddVendorToStoreUserControl.Size = new Size(1264, 1317);
             mainAddVendorToStoreUserControl.TabIndex = 9;
+            // 
+            // mainOrderUserControl
+            // 
+            mainOrderUserControl.BackColor = Color.FromArgb(227, 211, 177);
+            mainOrderUserControl.Location = new Point(0, 2);
+            mainOrderUserControl.Margin = new Padding(8);
+            mainOrderUserControl.Name = "mainOrderUserControl";
+            mainOrderUserControl.Size = new Size(1264, 1002);
+            mainOrderUserControl.TabIndex = 11;
             // 
             // backButtonPanel
             // 
@@ -281,7 +281,7 @@
             storeButtonsPanel.Controls.Add(exitStoreButton);
             storeButtonsPanel.Controls.Add(addProductButton);
             storeButtonsPanel.Location = new Point(5, 93);
-            storeButtonsPanel.Margin = new Padding(5, 5, 5, 5);
+            storeButtonsPanel.Margin = new Padding(5);
             storeButtonsPanel.Name = "storeButtonsPanel";
             storeButtonsPanel.Size = new Size(1373, 837);
             storeButtonsPanel.TabIndex = 10;

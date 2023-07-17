@@ -974,7 +974,7 @@ namespace MyStores.Dal
             connection.Open();
 
             string query =
-                "SELECT inventoryID, vendorID, purchasePrice, sellingPrice, quantity, productID " +
+                "SELECT inventoryID, vendorID, purchasePrice, sellingPrice, quantity, productID, defaultQuantity " +
                 "FROM Inventory WHERE Inventory.storeID = @storeID";
             using var command = new SqlCommand(query, connection);
 
@@ -987,6 +987,7 @@ namespace MyStores.Dal
             var purchasePriceOrdinal = reader.GetOrdinal("purchasePrice");
             var sellingPriceOrdinal = reader.GetOrdinal("sellingPrice");
             var quantityOrdinal = reader.GetOrdinal("quantity");
+            var minQuantityOrdinal = reader.GetOrdinal("defaultQuantity");
             var productIdOrdinal = reader.GetOrdinal("productID");
 
             while (reader.Read())
@@ -997,12 +998,14 @@ namespace MyStores.Dal
                 decimal sellingPrice = reader.GetDecimal(sellingPriceOrdinal);
                 var quantity = reader.GetInt32(quantityOrdinal);
                 var productId = reader.GetInt32(productIdOrdinal);
+                var minQuantity = reader.GetInt32(minQuantityOrdinal);
 
                 inventoryItems.Add(new InventoryItem
                 {
                     InventoryId = inventoryId,
                     VendorId = vendorId,
                     Quantity = quantity,
+                    MinQuantity = minQuantity,
                     SellingPrice = decimal.ToDouble(sellingPrice),
                     PurchasePrice = decimal.ToDouble(purchasePrice),
                     Item = new Product

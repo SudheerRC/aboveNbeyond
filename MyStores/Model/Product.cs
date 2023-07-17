@@ -42,6 +42,7 @@
                 {
                     throw new ArgumentNullException("Barcode cannot be empty");
                 }
+                _barcode = value;
             }
         }
 

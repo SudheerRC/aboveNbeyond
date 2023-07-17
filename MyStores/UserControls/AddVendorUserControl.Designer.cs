@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddVendorUserControl));
             nameErrorLabel = new Label();
             errorLabel = new Label();
             clearButton = new Button();
@@ -49,6 +50,11 @@
             phoneNumLabel = new Label();
             countryLabel = new Label();
             editButton = new Button();
+            vendorInfoPanel = new Panel();
+            messageLabel = new Label();
+            infoGraphicPictureBox = new PictureBox();
+            vendorInfoPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)infoGraphicPictureBox).BeginInit();
             SuspendLayout();
             // 
             // nameErrorLabel
@@ -276,12 +282,45 @@
             editButton.Visible = false;
             editButton.Click += EditButton_Click;
             // 
+            // vendorInfoPanel
+            // 
+            vendorInfoPanel.Controls.Add(messageLabel);
+            vendorInfoPanel.Controls.Add(infoGraphicPictureBox);
+            vendorInfoPanel.Location = new Point(668, 75);
+            vendorInfoPanel.Margin = new Padding(5, 6, 5, 6);
+            vendorInfoPanel.Name = "vendorInfoPanel";
+            vendorInfoPanel.Padding = new Padding(15, 18, 15, 18);
+            vendorInfoPanel.Size = new Size(532, 330);
+            vendorInfoPanel.TabIndex = 122;
+            // 
+            // messageLabel
+            // 
+            messageLabel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            messageLabel.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            messageLabel.Location = new Point(150, 60);
+            messageLabel.Margin = new Padding(5, 0, 5, 0);
+            messageLabel.Name = "messageLabel";
+            messageLabel.Size = new Size(362, 169);
+            messageLabel.TabIndex = 13;
+            messageLabel.Text = "Info Message";
+            // 
+            // infoGraphicPictureBox
+            // 
+            infoGraphicPictureBox.Image = (Image)resources.GetObject("infoGraphicPictureBox.Image");
+            infoGraphicPictureBox.Location = new Point(21, 24);
+            infoGraphicPictureBox.Margin = new Padding(5, 6, 5, 6);
+            infoGraphicPictureBox.Name = "infoGraphicPictureBox";
+            infoGraphicPictureBox.Size = new Size(89, 102);
+            infoGraphicPictureBox.TabIndex = 0;
+            infoGraphicPictureBox.TabStop = false;
+            // 
             // AddVendorUserControl
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             BackColor = Color.FromArgb(227, 211, 177);
+            Controls.Add(vendorInfoPanel);
             Controls.Add(phoneErrorLabel);
             Controls.Add(countryTextBox);
             Controls.Add(zipcodeTextBox);
@@ -305,8 +344,10 @@
             Controls.Add(editButton);
             Margin = new Padding(5, 6, 5, 6);
             Name = "AddVendorUserControl";
-            Size = new Size(658, 880);
+            Size = new Size(1240, 880);
             Load += AddVendorUserControl_Load;
+            vendorInfoPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)infoGraphicPictureBox).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -334,5 +375,8 @@
         private Label phoneNumLabel;
         private Label countryLabel;
         private Button editButton;
+        private Panel vendorInfoPanel;
+        private Label messageLabel;
+        private PictureBox infoGraphicPictureBox;
     }
 }

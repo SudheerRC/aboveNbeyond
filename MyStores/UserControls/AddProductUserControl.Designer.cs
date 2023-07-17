@@ -324,7 +324,6 @@
             savedPicture.Location = new Point(710, 488);
             savedPicture.Name = "savedPicture";
             savedPicture.Size = new Size(366, 328);
-            savedPicture.SizeMode = PictureBoxSizeMode.AutoSize;
             savedPicture.TabIndex = 89;
             savedPicture.TabStop = false;
             // 
@@ -356,10 +355,9 @@
             // defaultProductPicture
             // 
             defaultProductPicture.Image = (Image)resources.GetObject("defaultProductPicture.Image");
-            defaultProductPicture.Location = new Point(824, 1077);
+            defaultProductPicture.Location = new Point(828, 1083);
             defaultProductPicture.Name = "defaultProductPicture";
-            defaultProductPicture.Size = new Size(96, 96);
-            defaultProductPicture.SizeMode = PictureBoxSizeMode.AutoSize;
+            defaultProductPicture.Size = new Size(96, 86);
             defaultProductPicture.TabIndex = 92;
             defaultProductPicture.TabStop = false;
             defaultProductPicture.Visible = false;

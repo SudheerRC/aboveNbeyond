@@ -135,6 +135,7 @@ namespace MyStores.UserControls
         private void AddVendorUserControl_Load(object sender, EventArgs e)
         {
             SetVendorDetails();
+            messageLabel.Text = @"Please enter the details to add the vendor to the our database and not to your store.";
         }
 
         public void SetVendorDetails()

@@ -325,7 +325,7 @@
             // mainAddVendorUserControl
             // 
             mainAddVendorUserControl.AutoScroll = true;
-            mainAddVendorUserControl.BackColor = Color.BlanchedAlmond;
+            mainAddVendorUserControl.BackColor = Color.FromArgb(227, 211, 177);
             mainAddVendorUserControl.Location = new Point(385, 8);
             mainAddVendorUserControl.Margin = new Padding(5, 8, 5, 8);
             mainAddVendorUserControl.Name = "mainAddVendorUserControl";

@@ -37,6 +37,7 @@
             productSize = new ColumnHeader();
             sellingPrice = new ColumnHeader();
             purchasePrice = new ColumnHeader();
+            minQuantity = new ColumnHeader();
             vendorName = new ColumnHeader();
             inventoryId = new ColumnHeader();
             searchInputPanel = new Panel();
@@ -52,7 +53,7 @@
             // inventoryListView
             // 
             inventoryListView.BorderStyle = BorderStyle.None;
-            inventoryListView.Columns.AddRange(new ColumnHeader[] { barcode, productName, description, quantity, productSize, sellingPrice, purchasePrice, vendorName, inventoryId });
+            inventoryListView.Columns.AddRange(new ColumnHeader[] { barcode, productName, description, quantity, productSize, sellingPrice, purchasePrice, minQuantity, vendorName, inventoryId });
             inventoryListView.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             inventoryListView.FullRowSelect = true;
             inventoryListView.GridLines = true;
@@ -60,7 +61,7 @@
             inventoryListView.Margin = new Padding(5, 6, 5, 6);
             inventoryListView.MultiSelect = false;
             inventoryListView.Name = "inventoryListView";
-            inventoryListView.Size = new Size(1205, 699);
+            inventoryListView.Size = new Size(1343, 699);
             inventoryListView.TabIndex = 0;
             inventoryListView.UseCompatibleStateImageBehavior = false;
             inventoryListView.View = System.Windows.Forms.View.Details;
@@ -100,6 +101,11 @@
             // 
             purchasePrice.Text = "Purchase Price";
             purchasePrice.Width = 110;
+            // 
+            // minQuantity
+            // 
+            minQuantity.Text = "Min Pref Quantity";
+            minQuantity.Width = 140;
             // 
             // vendorName
             // 
@@ -251,5 +257,6 @@
         private ColumnHeader inventoryId;
         private Button deleteProductButton;
         private Button editButton;
+        private ColumnHeader minQuantity;
     }
 }

@@ -46,6 +46,7 @@ namespace MyStores.UserControls
         private void FeedListView(InventoryItem ii)
         {
             inventoryListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+            inventoryListView.Columns[9].Width = 0;
 
             var vendorId = ii.VendorId;
             var myVendorName = _controller.NameOfVendorWithId(vendorId);
@@ -54,7 +55,7 @@ namespace MyStores.UserControls
             {
                 currentProduct.Barcode, currentProduct.Name, currentProduct.Description, Convert.ToString(ii.Quantity),
                 currentProduct.ProductSize, Convert.ToString(ii.SellingPrice), Convert.ToString(ii.PurchasePrice),
-                myVendorName, Convert.ToString(ii.InventoryId)
+                Convert.ToString(ii.MinQuantity), myVendorName, Convert.ToString(ii.InventoryId)
             };
             var listItem = new ListViewItem(row);
             inventoryListView.Items.Add(listItem);
@@ -180,7 +181,7 @@ namespace MyStores.UserControls
         private void DeleteProductButton_Click(object sender, EventArgs e)
         {
             ListView.SelectedListViewItemCollection selectedItem = inventoryListView.SelectedItems;
-            int inventoryId = Convert.ToInt32(selectedItem[0].SubItems[8].Text);
+            int inventoryId = Convert.ToInt32(selectedItem[0].SubItems[9].Text);
 
             DialogResult result = MessageBox.Show("Are you sure to delete the selected product from store?", "Confirm Product Deletion",
                 MessageBoxButtons.YesNo);
@@ -198,7 +199,7 @@ namespace MyStores.UserControls
         private void EditButton_Click(object sender, EventArgs e)
         {
             ListView.SelectedListViewItemCollection selectedItem = inventoryListView.SelectedItems;
-            int inventoryId = Convert.ToInt32(selectedItem[0].SubItems[8].Text);
+            int inventoryId = Convert.ToInt32(selectedItem[0].SubItems[9].Text);
 
             var editForm = new EditInventoryItemForm();
             editForm.SetInventoryId(inventoryId);
