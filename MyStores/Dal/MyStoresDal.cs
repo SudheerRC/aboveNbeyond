@@ -1976,5 +1976,75 @@ namespace MyStores.Dal
 
             return vendors;
         }
+
+        public Sale GetSaleDetailsBySaleId(int saleId)
+        {
+            var inventoryItems = new List<InventoryItem>();
+            using var connection = DbConnection.GetConnection();
+            connection.Open();
+
+            string query = "SELECT productName, SaleLineItem.quantity, Inventory.productID, " +
+                            "Product.productSize, Inventory.sellingPrice, SaleLineItem.discount, " +
+                            "Sales.saleDateTime, Sales.total, Sales.tax, Sales.paymentType" +
+                           "FROM Product, Inventory, Sales, SaleLineItem WHERE SaleLineItem.saleID = Sales.saleID " +
+                           "and Inventory.inventoryID = SaleLineItem.inventoryID and Inventory.productID = Product.productID " +
+                           "and Sales.saleID = @saleId";
+            using var command = new SqlCommand(query, connection);
+
+            command.Parameters.Add("@saleId", System.Data.SqlDbType.Int);
+            command.Parameters["@saleId"].Value = saleId;
+            using var reader = command.ExecuteReader();
+
+            var productIdOrdinal = reader.GetOrdinal("productID");
+            var productNameOrdinal = reader.GetOrdinal("productName");
+            var productSizeOrdinal = reader.GetOrdinal("productSize");
+            var sellingPriceOrdinal = reader.GetOrdinal("sellingPrice");
+            var quantityOrdinal = reader.GetOrdinal("quantity");
+            var discountOrdinal = reader.GetOrdinal("discount");
+            var saleDateTimeOrdinal = reader.GetOrdinal("saleDateTime");
+            var totalOrdinal = reader.GetOrdinal("total");
+            var taxOrdinal = reader.GetOrdinal("tax");
+            var paymentTypeOrdinal = reader.GetOrdinal("paymentType");
+
+            while (reader.Read())
+            {
+                var name = reader.GetString(productNameOrdinal);
+                var discount = reader.IsDBNull(discountOrdinal) ? 0 : reader.GetDecimal(discountOrdinal);
+                decimal sellingPrice = reader.GetDecimal(sellingPriceOrdinal);
+                var quantity = reader.GetInt32(quantityOrdinal);
+                var productId = reader.GetInt32(productIdOrdinal);
+                var productSize = reader.GetString(productSizeOrdinal);
+
+                inventoryItems.Add(new InventoryItem
+                {
+                    Quantity = quantity,
+                    SellingPrice = decimal.ToDouble(sellingPrice),
+                    Discount = decimal.ToDouble(discount),
+                    Item = new Product
+                    {
+                        Id = productId,
+                        Name = name,
+                        ProductSize = productSize
+                    }
+
+                });
+            }
+
+            var saleDateTime = reader.GetDateTime(saleDateTimeOrdinal);
+            decimal saleTax = reader.GetDecimal(taxOrdinal);
+            var paymentType = reader.GetString(paymentTypeOrdinal);
+            decimal total = reader.GetDecimal(totalOrdinal);
+
+            var currentSale = new Sale
+            {
+                SaleDateTime = saleDateTime,
+                Tax = decimal.ToDouble(saleTax),
+                PaymentType = paymentType,
+                Total = decimal.ToDouble(total),
+                Items = inventoryItems,
+            };
+
+            return currentSale;
+        }
     }
 }
