@@ -155,7 +155,7 @@ namespace MyStores.UserControls
             }
             catch
             {
-                MessageBox.Show("Quantity or Price can not be empty");
+                MessageBox.Show("Quantity and Price must be a valid positive number");
             }
 
             totalAmountLabel.Text = @"$" + _orderTotal.ToString();
