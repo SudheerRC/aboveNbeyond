@@ -45,6 +45,7 @@
             refreshListButton = new Button();
             criteriaComboBox = new ComboBox();
             deleteProductButton = new Button();
+            editButton = new Button();
             searchInputPanel.SuspendLayout();
             SuspendLayout();
             // 
@@ -183,7 +184,7 @@
             deleteProductButton.FlatStyle = FlatStyle.Flat;
             deleteProductButton.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             deleteProductButton.ForeColor = SystemColors.ControlLightLight;
-            deleteProductButton.Location = new Point(706, 806);
+            deleteProductButton.Location = new Point(794, 806);
             deleteProductButton.Margin = new Padding(8, 6, 8, 6);
             deleteProductButton.Name = "deleteProductButton";
             deleteProductButton.Size = new Size(260, 67);
@@ -192,12 +193,28 @@
             deleteProductButton.UseVisualStyleBackColor = false;
             deleteProductButton.Click += DeleteProductButton_Click;
             // 
+            // editButton
+            // 
+            editButton.BackColor = Color.FromArgb(28, 44, 78);
+            editButton.Enabled = false;
+            editButton.FlatStyle = FlatStyle.Flat;
+            editButton.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            editButton.ForeColor = SystemColors.ControlLightLight;
+            editButton.Location = new Point(237, 806);
+            editButton.Margin = new Padding(8, 6, 8, 6);
+            editButton.Name = "editButton";
+            editButton.Size = new Size(260, 67);
+            editButton.TabIndex = 112;
+            editButton.Text = "Edit Product";
+            editButton.UseVisualStyleBackColor = false;
+            // 
             // InventoryUserControl
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             BackColor = Color.FromArgb(227, 211, 177);
+            Controls.Add(editButton);
             Controls.Add(deleteProductButton);
             Controls.Add(criteriaComboBox);
             Controls.Add(refreshListButton);
@@ -230,5 +247,6 @@
         private ComboBox criteriaComboBox;
         private ColumnHeader inventoryId;
         private Button deleteProductButton;
+        private Button editButton;
     }
 }
