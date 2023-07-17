@@ -68,3 +68,58 @@ SET ANSI_PADDING OFF
 GO
 INSERT [dbo].[StoreManagers] ([storeID], [managerID]) VALUES (1, 1)
 INSERT [dbo].[StoreManagers] ([storeID], [managerID]) VALUES (2, 1)
+
+SET ANSI_PADDING OFF
+GO
+SET IDENTITY_INSERT [dbo].[Sales] ON
+INSERT [dbo].[Sales] ([saleID], [saleDateTime], [storeID], [total], [tax], [paymentType]) VALUES (1, '2023-07-15 13:23:44', 1, 106.46, 6.96, cash)
+INSERT [dbo].[Sales] ([saleID], [saleDateTime], [storeID], [total], [tax], [paymentType]) VALUES (2, '2023-07-14 10:23:44', 1, 47.24, 3.09, card)
+INSERT [dbo].[Sales] ([saleID], [saleDateTime], [storeID], [total], [tax], [paymentType]) VALUES (3, '2023-07-8 10:23:44', 1, 28.83, 1.88, card)
+INSERT [dbo].[Sales] ([saleID], [saleDateTime], [storeID], [total], [tax], [paymentType]) VALUES (4, '2023-07-8 8:23:44', 1, 37.8, 2.47, card)
+INSERT [dbo].[Sales] ([saleID], [saleDateTime], [storeID], [total], [tax], [paymentType]) VALUES (5, '2023-06-15 7:23:44', 1, 57.9, 4.05, cash)
+INSERT [dbo].[Sales] ([saleID], [saleDateTime], [storeID], [total], [tax], [paymentType]) VALUES (6, '2023-06-11 7:15:44', 1, 36.15, 2.53, cash)
+INSERT [dbo].[Sales] ([saleID], [saleDateTime], [storeID], [total], [tax], [paymentType]) VALUES (7, '2023-05-26 7:15:44', 1, 110.33, 7.21, card)
+INSERT [dbo].[Sales] ([saleID], [saleDateTime], [storeID], [total], [tax], [paymentType]) VALUES (8, '2023-05-16 7:15:44', 1, 115.96, 7.58, card)
+INSERT [dbo].[Sales] ([saleID], [saleDateTime], [storeID], [total], [tax], [paymentType]) VALUES (9, '2023-04-20 16:23:44', 1, 47.24, 3.09, cash)
+INSERT [dbo].[Sales] ([saleID], [saleDateTime], [storeID], [total], [tax], [paymentType]) VALUES (10, '2023-04-6 8:23:44', 1, 18.04, 1.18, cash)
+SET IDENTITY_INSERT [dbo].[Sales] OFF
+  
+SET ANSI_PADDING OFF
+GO
+SET IDENTITY_INSERT [dbo].[SaleLineItem] ON
+INSERT [dbo].[SaleLineItem] ([saleID], [inventoryID], [quantity], [discount]) VALUES (1, 1, 4, 1.29)
+INSERT [dbo].[SaleLineItem] ([saleID], [inventoryID], [quantity]) VALUES (1, 2, 3)
+INSERT [dbo].[SaleLineItem] ([saleID], [inventoryID], [quantity]) VALUES (1, 9, 2)
+INSERT [dbo].[SaleLineItem] ([saleID], [inventoryID], [quantity]) VALUES (1, 15, 5)
+INSERT [dbo].[SaleLineItem] ([saleID], [inventoryID], [quantity], [discount]) VALUES (1, 16, 4, 1.59)
+INSERT [dbo].[SaleLineItem] ([saleID], [inventoryID], [quantity], [discount]) VALUES (2, 1, 4, 1.29)
+INSERT [dbo].[SaleLineItem] ([saleID], [inventoryID], [quantity]) VALUES (2, 9, 3)
+INSERT [dbo].[SaleLineItem] ([saleID], [inventoryID], [quantity]) VALUES (2, 16, 2)
+INSERT [dbo].[SaleLineItem] ([saleID], [inventoryID], [quantity], [discount]) VALUES (3, 1, 4, 1.29)
+INSERT [dbo].[SaleLineItem] ([saleID], [inventoryID], [quantity]) VALUES (3, 2, 3)
+INSERT [dbo].[SaleLineItem] ([saleID], [inventoryID], [quantity]) VALUES (3, 15, 2)
+INSERT [dbo].[SaleLineItem] ([saleID], [inventoryID], [quantity], [discount]) VALUES (4, 1, 4, 1.29)
+INSERT [dbo].[SaleLineItem] ([saleID], [inventoryID], [quantity]) VALUES (4, 2, 2)
+INSERT [dbo].[SaleLineItem] ([saleID], [inventoryID], [quantity]) VALUES (4, 9, 5)
+INSERT [dbo].[SaleLineItem] ([saleID], [inventoryID], [quantity], [discount]) VALUES (5, 1, 4, 1.29)
+INSERT [dbo].[SaleLineItem] ([saleID], [inventoryID], [quantity]) VALUES (5, 2, 3)
+INSERT [dbo].[SaleLineItem] ([saleID], [inventoryID], [quantity]) VALUES (5, 9, 2)
+INSERT [dbo].[SaleLineItem] ([saleID], [inventoryID], [quantity]) VALUES (5, 15, 5)
+INSERT [dbo].[SaleLineItem] ([saleID], [inventoryID], [quantity], [discount]) VALUES (6, 2, 4, 1.29)
+INSERT [dbo].[SaleLineItem] ([saleID], [inventoryID], [quantity]) VALUES (6, 15, 3)
+INSERT [dbo].[SaleLineItem] ([saleID], [inventoryID], [quantity]) VALUES (6, 9, 2)
+INSERT [dbo].[SaleLineItem] ([saleID], [inventoryID], [quantity], [discount]) VALUES (7, 2, 4, 1.29)
+INSERT [dbo].[SaleLineItem] ([saleID], [inventoryID], [quantity], [discount]) VALUES (7, 16, 5, 1.59)
+INSERT [dbo].[SaleLineItem] ([saleID], [inventoryID], [quantity]) VALUES (7, 15, 3)
+INSERT [dbo].[SaleLineItem] ([saleID], [inventoryID], [quantity]) VALUES (7, 9, 5)
+INSERT [dbo].[SaleLineItem] ([saleID], [inventoryID], [quantity], [discount]) VALUES (8, 1, 5, 1.29)
+INSERT [dbo].[SaleLineItem] ([saleID], [inventoryID], [quantity]) VALUES (8, 2, 4)
+INSERT [dbo].[SaleLineItem] ([saleID], [inventoryID], [quantity]) VALUES (8, 9, 2)
+INSERT [dbo].[SaleLineItem] ([saleID], [inventoryID], [quantity]) VALUES (8, 15, 5)
+INSERT [dbo].[SaleLineItem] ([saleID], [inventoryID], [quantity], [discount]) VALUES (8, 16, 4, 1.59)
+INSERT [dbo].[SaleLineItem] ([saleID], [inventoryID], [quantity], [discount]) VALUES (9, 1, 4, 1.29)
+INSERT [dbo].[SaleLineItem] ([saleID], [inventoryID], [quantity]) VALUES (9, 9, 3)
+INSERT [dbo].[SaleLineItem] ([saleID], [inventoryID], [quantity]) VALUES (9, 16, 2)
+INSERT [dbo].[SaleLineItem] ([saleID], [inventoryID], [quantity], [discount]) VALUES (10, 1, 5, 1.29)
+INSERT [dbo].[SaleLineItem] ([saleID], [inventoryID], [quantity]) VALUES (10, 2, 4)
+SET IDENTITY_INSERT [dbo].[SaleLineItem] OFF
