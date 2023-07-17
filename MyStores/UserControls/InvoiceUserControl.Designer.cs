@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            shopNameLabel = new Label();
+            storeNameLabel = new Label();
             saleNumberLabel = new Label();
             dateTimeLabel = new Label();
             lineItemFlowLayoutPanel = new FlowLayoutPanel();
@@ -39,15 +39,15 @@
             lineItemFlowLayoutPanel.SuspendLayout();
             SuspendLayout();
             // 
-            // shopNameLabel
+            // storeNameLabel
             // 
-            shopNameLabel.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            shopNameLabel.Location = new Point(0, 11);
-            shopNameLabel.Name = "shopNameLabel";
-            shopNameLabel.Size = new Size(678, 39);
-            shopNameLabel.TabIndex = 0;
-            shopNameLabel.Text = "Store Name";
-            shopNameLabel.TextAlign = ContentAlignment.MiddleCenter;
+            storeNameLabel.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            storeNameLabel.Location = new Point(0, 11);
+            storeNameLabel.Name = "storeNameLabel";
+            storeNameLabel.Size = new Size(678, 39);
+            storeNameLabel.TabIndex = 0;
+            storeNameLabel.Text = "Store Name";
+            storeNameLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // saleNumberLabel
             // 
@@ -127,7 +127,7 @@
             Controls.Add(lineItemFlowLayoutPanel);
             Controls.Add(dateTimeLabel);
             Controls.Add(saleNumberLabel);
-            Controls.Add(shopNameLabel);
+            Controls.Add(storeNameLabel);
             Name = "InvoiceUserControl";
             Size = new Size(678, 579);
             lineItemFlowLayoutPanel.ResumeLayout(false);
@@ -136,7 +136,7 @@
 
         #endregion
 
-        private Label shopNameLabel;
+        private Label storeNameLabel;
         private Label saleNumberLabel;
         private Label dateTimeLabel;
         private FlowLayoutPanel lineItemFlowLayoutPanel;

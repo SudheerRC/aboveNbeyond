@@ -16,5 +16,7 @@
 
         public List<InventoryItem> Items { get; set; }
 
+        public string StoreName { get; set; }
+
     }
 }

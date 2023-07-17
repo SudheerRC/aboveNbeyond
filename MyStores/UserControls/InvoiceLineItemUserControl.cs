@@ -12,7 +12,7 @@ namespace MyStores.UserControls
             _inventoryItem = new InventoryItem();
         }
 
-        public void setInventoryId(InventoryItem inventoryItem)
+        public void setInventoryItem(InventoryItem inventoryItem)
         {
             this._inventoryItem = inventoryItem;
         }
