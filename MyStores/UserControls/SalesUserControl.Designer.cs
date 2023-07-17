@@ -63,7 +63,7 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(33, 204);
+            dataGridView1.Location = new Point(33, 185);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 29;
@@ -145,7 +145,7 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             button1.ForeColor = Color.FromArgb(243, 239, 245);
-            button1.Location = new Point(201, 526);
+            button1.Location = new Point(201, 507);
             button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
             button1.Size = new Size(197, 44);
@@ -157,7 +157,7 @@
             // listOfSalesLabel
             // 
             listOfSalesLabel.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            listOfSalesLabel.Location = new Point(0, 161);
+            listOfSalesLabel.Location = new Point(0, 142);
             listOfSalesLabel.Name = "listOfSalesLabel";
             listOfSalesLabel.Size = new Size(615, 30);
             listOfSalesLabel.TabIndex = 11;
@@ -167,7 +167,7 @@
             // noSalesMessageLabel
             // 
             noSalesMessageLabel.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            noSalesMessageLabel.Location = new Point(3, 213);
+            noSalesMessageLabel.Location = new Point(3, 194);
             noSalesMessageLabel.Name = "noSalesMessageLabel";
             noSalesMessageLabel.Size = new Size(612, 30);
             noSalesMessageLabel.TabIndex = 12;
@@ -192,7 +192,7 @@
             Controls.Add(rangeComboBox);
             Controls.Add(fromDateTimePicker);
             Name = "SalesUserControl";
-            Size = new Size(615, 593);
+            Size = new Size(615, 564);
             Load += SalesUserControl_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
