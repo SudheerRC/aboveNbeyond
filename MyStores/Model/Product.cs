@@ -22,7 +22,7 @@
             }
             set
             {
-                if (value <= 0)
+                if (value < 0)
                 {
                     throw new ArgumentOutOfRangeException("Selling price should be a valid positive number");
                 }

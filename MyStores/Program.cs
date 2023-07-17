@@ -1,4 +1,3 @@
-using MyStores.UserControls;
 using MyStores.View;
 
 namespace MyStores
