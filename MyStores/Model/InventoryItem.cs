@@ -80,5 +80,7 @@
         public bool Status { get; set; }
 
         public Product? Item { get; set; }
+
+        public double Discount { get; set; }
     }
 }

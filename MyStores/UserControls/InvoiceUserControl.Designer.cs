@@ -32,9 +32,9 @@
             saleNumberLabel = new Label();
             dateTimeLabel = new Label();
             lineItemFlowLayoutPanel = new FlowLayoutPanel();
+            invoiceLineItemUserControl1 = new InvoiceLineItemUserControl();
             totalValueLabel = new Label();
             totalHeadingLabel = new Label();
-            invoiceLineItemUserControl1 = new InvoiceLineItemUserControl();
             dateValueLabel = new Label();
             lineItemFlowLayoutPanel.SuspendLayout();
             SuspendLayout();
@@ -77,6 +77,15 @@
             lineItemFlowLayoutPanel.Size = new Size(643, 374);
             lineItemFlowLayoutPanel.TabIndex = 3;
             // 
+            // invoiceLineItemUserControl1
+            // 
+            invoiceLineItemUserControl1.BackColor = Color.FromArgb(227, 211, 177);
+            invoiceLineItemUserControl1.Location = new Point(3, 3);
+            invoiceLineItemUserControl1.Name = "invoiceLineItemUserControl1";
+            invoiceLineItemUserControl1.Size = new Size(621, 106);
+            invoiceLineItemUserControl1.TabIndex = 0;
+            invoiceLineItemUserControl1.Visible = false;
+            // 
             // totalValueLabel
             // 
             totalValueLabel.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
@@ -96,14 +105,6 @@
             totalHeadingLabel.TabIndex = 5;
             totalHeadingLabel.Text = "Total:";
             totalHeadingLabel.TextAlign = ContentAlignment.MiddleRight;
-            // 
-            // invoiceLineItemUserControl1
-            // 
-            invoiceLineItemUserControl1.BackColor = Color.FromArgb(227, 211, 177);
-            invoiceLineItemUserControl1.Location = new Point(3, 3);
-            invoiceLineItemUserControl1.Name = "invoiceLineItemUserControl1";
-            invoiceLineItemUserControl1.Size = new Size(621, 106);
-            invoiceLineItemUserControl1.TabIndex = 0;
             // 
             // dateValueLabel
             // 

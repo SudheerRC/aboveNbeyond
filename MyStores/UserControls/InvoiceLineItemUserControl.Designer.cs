@@ -61,6 +61,7 @@
             discountHeadingabel.TabIndex = 3;
             discountHeadingabel.Text = "Discount:";
             discountHeadingabel.TextAlign = ContentAlignment.MiddleRight;
+            discountHeadingabel.Visible = false;
             // 
             // discountValueLabel
             // 
@@ -72,6 +73,7 @@
             discountValueLabel.TabIndex = 4;
             discountValueLabel.Text = "$ 1.99";
             discountValueLabel.TextAlign = ContentAlignment.MiddleRight;
+            discountValueLabel.Visible = false;
             // 
             // label3
             // 
@@ -146,7 +148,7 @@
             // dividerPanel
             // 
             dividerPanel.BackColor = Color.FromArgb(28, 44, 78);
-            dividerPanel.Location = new Point(0, 76);
+            dividerPanel.Location = new Point(0, 80);
             dividerPanel.Name = "dividerPanel";
             dividerPanel.Size = new Size(622, 10);
             dividerPanel.TabIndex = 12;
