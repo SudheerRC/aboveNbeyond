@@ -49,9 +49,9 @@ SET IDENTITY_INSERT [dbo].[Stores] OFF
 SET ANSI_PADDING OFF
 GO
 SET IDENTITY_INSERT [dbo].[Inventory] ON
-INSERT [dbo].[Inventory] ([inventoryID], [vendorID], [productID], [storeID], [purchasePrice], [sellingPrice], [quantity], [defaultQuantity]) VALUES (1, 1, 2, 1, 2.29, 2.59, 120, 200)
-INSERT [dbo].[Inventory] ([inventoryID], [vendorID], [productID], [storeID], [purchasePrice], [sellingPrice], [quantity], [defaultQuantity]) VALUES (2, 1, 4, 1, 2.29, 2.59, 80, 150)
-INSERT [dbo].[Inventory] ([inventoryID], [vendorID], [productID], [storeID], [purchasePrice], [sellingPrice], [quantity], [defaultQuantity]) VALUES (3, 2, 5, 2, 1.99, 2.29, 100, 200)
+INSERT [dbo].[Inventory] ([inventoryID], [vendorID], [productID], [storeID], [purchasePrice], [sellingPrice], [quantity], [defaultQuantity], [status]) VALUES (1, 1, 2, 1, 2.29, 2.59, 120, 200, 1)
+INSERT [dbo].[Inventory] ([inventoryID], [vendorID], [productID], [storeID], [purchasePrice], [sellingPrice], [quantity], [defaultQuantity], [status]) VALUES (2, 1, 4, 1, 2.29, 2.59, 80, 150, 1)
+INSERT [dbo].[Inventory] ([inventoryID], [vendorID], [productID], [storeID], [purchasePrice], [sellingPrice], [quantity], [defaultQuantity], [status]) VALUES (3, 2, 5, 2, 1.99, 2.29, 100, 200, 1)
 SET IDENTITY_INSERT [dbo].[Inventory] OFF
 
 SET ANSI_PADDING OFF
