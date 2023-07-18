@@ -1,20 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace MyStores.View
+﻿namespace MyStores.View
 {
     public partial class InvoiceForm : Form
     {
+        private int _saleId;
+
         public InvoiceForm()
         {
             InitializeComponent();
+        }
+
+        public void setSaleId(int saleId)
+        {
+            this._saleId = saleId;
+            mainInvoiceUserControl.setSaleId(saleId);
         }
     }
 }

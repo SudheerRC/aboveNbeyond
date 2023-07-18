@@ -57,17 +57,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="saleId.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="saleDateTime.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="saleTotal.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="saleTax.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="paymentType.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="searchButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAFFSURBVEhL7ZRLTgJBGIRn72MFXofHDSBexRAXRsCNt5Ho
-        OXjcBARXEG2/mtQkE7HT04YVsZJKN/VX/X/TMFOcJ0IIN4dDeILL/T58iOwXcEqtbdvfQJNbGm5Zw2+k
-        9s46tD0PBNX8y41eYIcTX4hoXT7PXPtkHTjWDLoWguXJWe8sH4HayJ4NmZblNAjpzsuTW4oCz6u8cGIp
-        DcwrD+hYigJfzwMWltKg8U4hcGkpCjxXPszWUhoyZwy4zh5AYKkQ7FqKAk/f3uZXhHmqEKeaWYoCz5sH
-        jC2lwdduE9RDpCEjy0egdm/PWhnLzUBwSFAPkRror9jTbyKy76NVJ1f9wbE8EB4Q3lSNfpLaWs1rWvNr
-        qsCJWwQncE6zHdTLbi6tuhb29cH5Q1JgaPnKqPHZpdPhf0gW6kPYP1o+LWg+Fv3xLFAU364SEbz4bPEm
-        AAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DgAACw4BQL7hQQAAAUVJREFUSEvtlEtOAkEYhGfvYwVeh8cNIF7FEBdGwI23keg5eNwEBFcQbb+a1CQT
+        sdPThhWxkko39Vf9f9MwU5wnQgg3h0N4gsv9PnyI7BdwSq1t299Ak1sablnDb6T2zjq0PQ8E1fzLjV5g
+        hxNfiGhdPs9c+2QdONYMuhaC5clZ7ywfgdrIng2ZluU0COnOy5NbigLPq7xwYikNzCsP6FiKAl/PAxaW
+        0qDxTiFwaSkKPFc+zNZSGjJnDLjOHkBgqRDsWooCT9/e5leEeaoQp5pZigLPmweMLaXB124T1EOkISPL
+        R6B2b89aGcvNQHBIUA+RGuiv2NNvIrLvo1UnV/3BsTwQHhDeVI1+ktpazWta82uqwIlbBCdwTrMd1Mtu
+        Lq26Fvb1wflDUmBo+cqo8dml0+F/SBbqQ9g/Wj4taD4W/fEsUBTfrhIRvPhs8SYAAAAASUVORK5CYII=
 </value>
   </data>
 </root>

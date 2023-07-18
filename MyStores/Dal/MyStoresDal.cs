@@ -1,4 +1,5 @@
 ﻿using System.Data;
+using System.Security.Cryptography.X509Certificates;
 using Microsoft.Data.SqlClient;
 using MyStores.Model;
 
@@ -2048,6 +2049,48 @@ namespace MyStores.Dal
             };
 
             return currentSale;
+        }
+
+        public List<Sale> GetRecentSalesByStoreId(int storeId)
+        {
+            var sales = new List<Sale>();
+
+            using var connection = DbConnection.GetConnection();
+            connection.Open();
+
+            string query = "SELECT Sales.saleDateTime, Sales.total, Sales.tax, Sales.paymentType, saleID" +
+                           "FROM Sales WHERE Sales.storeID = @storeId ORDER BY saleDateTime DESC";
+            using var command = new SqlCommand(query, connection);
+
+            command.Parameters.Add("@storeId", System.Data.SqlDbType.Int);
+            command.Parameters["@storeId"].Value = storeId;
+            using var reader = command.ExecuteReader();
+
+            var saleIdOrdinal = reader.GetOrdinal("saleID");
+            var saleDateTimeOrdinal = reader.GetOrdinal("saleDateTime");
+            var totalOrdinal = reader.GetOrdinal("total");
+            var taxOrdinal = reader.GetOrdinal("tax");
+            var paymentTypeOrdinal = reader.GetOrdinal("paymentType");
+
+            while (reader.Read())
+            {
+                var saleDateTime = reader.GetDateTime(saleDateTimeOrdinal);
+                decimal saleTax = reader.GetDecimal(taxOrdinal);
+                var paymentType = reader.GetString(paymentTypeOrdinal);
+                decimal total = reader.GetDecimal(totalOrdinal);
+                var saleId = reader.GetInt32(saleIdOrdinal);
+
+                sales.Add(new Sale
+                {
+                    SaleId = saleId,
+                    SaleDateTime = saleDateTime,
+                    Tax = decimal.ToDouble(saleTax),
+                    PaymentType = paymentType,
+                    Total = decimal.ToDouble(total),
+                });
+            }
+
+            return sales;
         }
     }
 }

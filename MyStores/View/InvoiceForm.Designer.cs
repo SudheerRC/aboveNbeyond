@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            invoiceUserControl1 = new UserControls.InvoiceUserControl();
+            mainInvoiceUserControl = new UserControls.InvoiceUserControl();
             SuspendLayout();
             // 
-            // invoiceUserControl1
+            // mainInvoiceUserControl
             // 
-            invoiceUserControl1.BackColor = Color.FromArgb(227, 211, 177);
-            invoiceUserControl1.Location = new Point(3, 3);
-            invoiceUserControl1.Name = "invoiceUserControl1";
-            invoiceUserControl1.Size = new Size(848, 724);
-            invoiceUserControl1.TabIndex = 0;
+            mainInvoiceUserControl.BackColor = Color.FromArgb(227, 211, 177);
+            mainInvoiceUserControl.Location = new Point(3, 3);
+            mainInvoiceUserControl.Name = "mainInvoiceUserControl";
+            mainInvoiceUserControl.Size = new Size(848, 724);
+            mainInvoiceUserControl.TabIndex = 0;
             // 
             // InvoiceForm
             // 
@@ -45,7 +45,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(227, 211, 177);
             ClientSize = new Size(689, 579);
-            Controls.Add(invoiceUserControl1);
+            Controls.Add(mainInvoiceUserControl);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             MinimizeBox = false;
@@ -57,6 +57,6 @@
 
         #endregion
 
-        private UserControls.InvoiceUserControl invoiceUserControl1;
+        private UserControls.InvoiceUserControl mainInvoiceUserControl;
     }
 }
