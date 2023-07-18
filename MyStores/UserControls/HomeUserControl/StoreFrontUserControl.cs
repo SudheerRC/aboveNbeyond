@@ -35,6 +35,7 @@ namespace MyStores.UserControls.HomeUserControl
             mainAddVendorToStoreUserControl.Visible = false;
             mainAddManagerUserControl.Visible = false;
             mainOrderUserControl.Visible = false;
+            mainSalesUserControl.Visible = false;
         }
 
         private void backButton_Click(object sender, EventArgs e)
@@ -168,6 +169,21 @@ namespace MyStores.UserControls.HomeUserControl
             }
 
             return managersNames;
+        }
+
+        private void deleteStoreButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void salesButton_Click(object sender, EventArgs e)
+        {
+            expandPanel();
+            mainSalesUserControl.BringToFront();
+            mainSalesUserControl.setStoreId(_storeId);
+            mainSalesUserControl.Visible = true;
+            backButtonPanel.BringToFront();
+            backButtonPanel.Visible = true;
         }
     }
 }

@@ -45,5 +45,10 @@ namespace MyStores.UserControls
                 lineItemFlowLayoutPanel.Controls.Add(invoiceLineItem);
             }
         }
+
+        private void InvoiceUserControl_Load(object sender, EventArgs e)
+        {
+            setInvoice();
+        }
     }
 }

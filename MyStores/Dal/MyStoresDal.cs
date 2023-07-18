@@ -1982,6 +1982,7 @@ namespace MyStores.Dal
         public Sale GetSaleDetailsBySaleId(int saleId)
         {
             var inventoryItems = new List<InventoryItem>();
+            var currentSale = new Sale();
             using var connection = DbConnection.GetConnection();
             connection.Open();
 
@@ -2031,23 +2032,23 @@ namespace MyStores.Dal
                     }
 
                 });
+
+                var saleDateTime = reader.GetDateTime(saleDateTimeOrdinal);
+                decimal saleTax = reader.GetDecimal(taxOrdinal);
+                var paymentType = reader.GetString(paymentTypeOrdinal);
+                decimal total = reader.GetDecimal(totalOrdinal); ;
+                var storeName = reader.GetString(storeNameOrdinal);
+
+                currentSale = new Sale
+                {
+                    SaleDateTime = saleDateTime,
+                    Tax = decimal.ToDouble(saleTax),
+                    PaymentType = paymentType,
+                    Total = decimal.ToDouble(total),
+                    Items = inventoryItems,
+                    StoreName = storeName,
+                };
             }
-
-            var saleDateTime = reader.GetDateTime(saleDateTimeOrdinal);
-            decimal saleTax = reader.GetDecimal(taxOrdinal);
-            var paymentType = reader.GetString(paymentTypeOrdinal);
-            decimal total = reader.GetDecimal(totalOrdinal); ;
-            var storeName = reader.GetString(storeNameOrdinal);
-
-            var currentSale = new Sale
-            {
-                SaleDateTime = saleDateTime,
-                Tax = decimal.ToDouble(saleTax),
-                PaymentType = paymentType,
-                Total = decimal.ToDouble(total),
-                Items = inventoryItems,
-                StoreName = storeName,
-            };
 
             return currentSale;
         }
@@ -2059,7 +2060,7 @@ namespace MyStores.Dal
             using var connection = DbConnection.GetConnection();
             connection.Open();
 
-            string query = "SELECT Sales.saleDateTime, Sales.total, Sales.tax, Sales.paymentType, saleID" +
+            string query = "SELECT Sales.saleDateTime, Sales.total, Sales.tax, Sales.paymentType, saleID " +
                            "FROM Sales WHERE Sales.storeID = @storeId ORDER BY saleDateTime DESC";
             using var command = new SqlCommand(query, connection);
 

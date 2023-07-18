@@ -44,6 +44,8 @@
             backButton = new Button();
             addManagerButton = new Button();
             storeButtonsPanel = new Panel();
+            deleteStoreButton = new Button();
+            salesButton = new Button();
             salesPanel = new Panel();
             salesLabel = new Label();
             salesPictureBox = new PictureBox();
@@ -54,8 +56,7 @@
             closePanel = new Panel();
             statusLabel = new Label();
             closeButton = new Button();
-            salesButton = new Button();
-            deleteStoreButton = new Button();
+            mainSalesUserControl = new SalesUserControl();
             storeExpandedPanel.SuspendLayout();
             backButtonPanel.SuspendLayout();
             storeButtonsPanel.SuspendLayout();
@@ -93,7 +94,7 @@
             addProductButton.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             addProductButton.ForeColor = Color.White;
             addProductButton.Image = (Image)resources.GetObject("addProductButton.Image");
-            addProductButton.Location = new Point(26, 253);
+            addProductButton.Location = new Point(338, 15);
             addProductButton.Margin = new Padding(3, 4, 3, 4);
             addProductButton.Name = "addProductButton";
             addProductButton.Size = new Size(160, 180);
@@ -112,7 +113,7 @@
             inventoryButton.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             inventoryButton.ForeColor = Color.White;
             inventoryButton.Image = (Image)resources.GetObject("inventoryButton.Image");
-            inventoryButton.Location = new Point(338, 13);
+            inventoryButton.Location = new Point(661, 15);
             inventoryButton.Margin = new Padding(3, 4, 3, 4);
             inventoryButton.Name = "inventoryButton";
             inventoryButton.Size = new Size(160, 180);
@@ -131,7 +132,7 @@
             orderButton.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             orderButton.ForeColor = Color.White;
             orderButton.Image = (Image)resources.GetObject("orderButton.Image");
-            orderButton.Location = new Point(661, 11);
+            orderButton.Location = new Point(26, 253);
             orderButton.Margin = new Padding(3, 4, 3, 4);
             orderButton.Name = "orderButton";
             orderButton.Size = new Size(160, 180);
@@ -162,6 +163,7 @@
             // storeExpandedPanel
             // 
             storeExpandedPanel.BackColor = Color.FromArgb(227, 211, 177);
+            storeExpandedPanel.Controls.Add(mainSalesUserControl);
             storeExpandedPanel.Controls.Add(mainAddProductToStoreUserControl);
             storeExpandedPanel.Controls.Add(mainAddManagerUserControl);
             storeExpandedPanel.Controls.Add(mainInventoryUserControl);
@@ -216,7 +218,7 @@
             // 
             mainOrderUserControl.BackColor = Color.FromArgb(227, 211, 177);
             mainOrderUserControl.Location = new Point(0, 1);
-            mainOrderUserControl.Margin = new Padding(5, 5, 5, 5);
+            mainOrderUserControl.Margin = new Padding(5);
             mainOrderUserControl.Name = "mainOrderUserControl";
             mainOrderUserControl.Size = new Size(778, 626);
             mainOrderUserControl.TabIndex = 11;
@@ -287,12 +289,48 @@
             storeButtonsPanel.Size = new Size(845, 556);
             storeButtonsPanel.TabIndex = 10;
             // 
+            // deleteStoreButton
+            // 
+            deleteStoreButton.BackColor = Color.FromArgb(28, 44, 78);
+            deleteStoreButton.FlatAppearance.BorderSize = 0;
+            deleteStoreButton.FlatStyle = FlatStyle.Flat;
+            deleteStoreButton.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            deleteStoreButton.ForeColor = Color.White;
+            deleteStoreButton.Location = new Point(204, 468);
+            deleteStoreButton.Margin = new Padding(3, 4, 3, 4);
+            deleteStoreButton.Name = "deleteStoreButton";
+            deleteStoreButton.Size = new Size(105, 75);
+            deleteStoreButton.TabIndex = 11;
+            deleteStoreButton.Text = "Delete Store";
+            deleteStoreButton.TextImageRelation = TextImageRelation.ImageAboveText;
+            deleteStoreButton.UseVisualStyleBackColor = false;
+            deleteStoreButton.Click += deleteStoreButton_Click;
+            // 
+            // salesButton
+            // 
+            salesButton.BackColor = Color.FromArgb(28, 44, 78);
+            salesButton.FlatAppearance.BorderSize = 0;
+            salesButton.FlatStyle = FlatStyle.Flat;
+            salesButton.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            salesButton.ForeColor = Color.White;
+            salesButton.Image = (Image)resources.GetObject("salesButton.Image");
+            salesButton.Location = new Point(338, 253);
+            salesButton.Margin = new Padding(3, 4, 3, 4);
+            salesButton.Name = "salesButton";
+            salesButton.Size = new Size(160, 180);
+            salesButton.TabIndex = 10;
+            salesButton.Text = "Sales";
+            salesButton.TextAlign = ContentAlignment.BottomCenter;
+            salesButton.TextImageRelation = TextImageRelation.ImageAboveText;
+            salesButton.UseVisualStyleBackColor = false;
+            salesButton.Click += salesButton_Click;
+            // 
             // salesPanel
             // 
             salesPanel.Controls.Add(salesLabel);
             salesPanel.Controls.Add(salesPictureBox);
             salesPanel.Location = new Point(14, 2);
-            salesPanel.Margin = new Padding(2, 2, 2, 2);
+            salesPanel.Margin = new Padding(2);
             salesPanel.Name = "salesPanel";
             salesPanel.Size = new Size(192, 51);
             salesPanel.TabIndex = 11;
@@ -314,7 +352,7 @@
             salesPictureBox.Dock = DockStyle.Left;
             salesPictureBox.Image = (Image)resources.GetObject("salesPictureBox.Image");
             salesPictureBox.Location = new Point(0, 0);
-            salesPictureBox.Margin = new Padding(2, 2, 2, 2);
+            salesPictureBox.Margin = new Padding(2);
             salesPictureBox.Name = "salesPictureBox";
             salesPictureBox.Size = new Size(48, 51);
             salesPictureBox.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -327,7 +365,7 @@
             managersPanel.Controls.Add(managerLabel);
             managersPanel.Controls.Add(managerPictureBox);
             managersPanel.Location = new Point(221, 3);
-            managersPanel.Margin = new Padding(2, 2, 2, 2);
+            managersPanel.Margin = new Padding(2);
             managersPanel.Name = "managersPanel";
             managersPanel.Size = new Size(430, 50);
             managersPanel.TabIndex = 12;
@@ -361,7 +399,7 @@
             managerPictureBox.Dock = DockStyle.Left;
             managerPictureBox.Image = (Image)resources.GetObject("managerPictureBox.Image");
             managerPictureBox.Location = new Point(0, 0);
-            managerPictureBox.Margin = new Padding(2, 2, 2, 2);
+            managerPictureBox.Margin = new Padding(2);
             managerPictureBox.Name = "managerPictureBox";
             managerPictureBox.Size = new Size(48, 50);
             managerPictureBox.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -373,7 +411,7 @@
             closePanel.Controls.Add(statusLabel);
             closePanel.Controls.Add(closeButton);
             closePanel.Location = new Point(664, 3);
-            closePanel.Margin = new Padding(2, 2, 2, 2);
+            closePanel.Margin = new Padding(2);
             closePanel.Name = "closePanel";
             closePanel.Size = new Size(184, 50);
             closePanel.TabIndex = 13;
@@ -397,46 +435,20 @@
             closeButton.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
             closeButton.ForeColor = SystemColors.ControlText;
             closeButton.Location = new Point(0, 0);
-            closeButton.Margin = new Padding(2, 2, 2, 2);
+            closeButton.Margin = new Padding(2);
             closeButton.Name = "closeButton";
             closeButton.Size = new Size(51, 50);
             closeButton.TabIndex = 0;
             closeButton.UseVisualStyleBackColor = false;
             closeButton.Click += closeButton_Click;
             // 
-            // salesButton
+            // mainSalesUserControl
             // 
-            salesButton.BackColor = Color.FromArgb(28, 44, 78);
-            salesButton.FlatAppearance.BorderSize = 0;
-            salesButton.FlatStyle = FlatStyle.Flat;
-            salesButton.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            salesButton.ForeColor = Color.White;
-            salesButton.Image = (Image)resources.GetObject("salesButton.Image");
-            salesButton.Location = new Point(338, 253);
-            salesButton.Margin = new Padding(3, 4, 3, 4);
-            salesButton.Name = "salesButton";
-            salesButton.Size = new Size(160, 180);
-            salesButton.TabIndex = 10;
-            salesButton.Text = "Sales";
-            salesButton.TextAlign = ContentAlignment.BottomCenter;
-            salesButton.TextImageRelation = TextImageRelation.ImageAboveText;
-            salesButton.UseVisualStyleBackColor = false;
-            // 
-            // deleteStoreButton
-            // 
-            deleteStoreButton.BackColor = Color.FromArgb(28, 44, 78);
-            deleteStoreButton.FlatAppearance.BorderSize = 0;
-            deleteStoreButton.FlatStyle = FlatStyle.Flat;
-            deleteStoreButton.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            deleteStoreButton.ForeColor = Color.White;
-            deleteStoreButton.Location = new Point(204, 468);
-            deleteStoreButton.Margin = new Padding(3, 4, 3, 4);
-            deleteStoreButton.Name = "deleteStoreButton";
-            deleteStoreButton.Size = new Size(105, 75);
-            deleteStoreButton.TabIndex = 11;
-            deleteStoreButton.Text = "Delete Store";
-            deleteStoreButton.TextImageRelation = TextImageRelation.ImageAboveText;
-            deleteStoreButton.UseVisualStyleBackColor = false;
+            mainSalesUserControl.BackColor = Color.FromArgb(227, 211, 177);
+            mainSalesUserControl.Location = new Point(0, 3);
+            mainSalesUserControl.Name = "mainSalesUserControl";
+            mainSalesUserControl.Size = new Size(769, 705);
+            mainSalesUserControl.TabIndex = 12;
             // 
             // StoreFrontUserControl
             // 
@@ -444,12 +456,12 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = Color.FromArgb(227, 211, 177);
-            Controls.Add(storeButtonsPanel);
             Controls.Add(closePanel);
             Controls.Add(managersPanel);
             Controls.Add(salesPanel);
             Controls.Add(storeExpandedPanel);
             Controls.Add(backButtonPanel);
+            Controls.Add(storeButtonsPanel);
             Margin = new Padding(3, 4, 3, 4);
             Name = "StoreFrontUserControl";
             Size = new Size(853, 841);
@@ -496,5 +508,6 @@
         private Label statusLabel;
         private Button deleteStoreButton;
         private Button salesButton;
+        private SalesUserControl mainSalesUserControl;
     }
 }
