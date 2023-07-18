@@ -27,7 +27,6 @@ namespace MyStores.UserControls
 
             if (saleList != null && saleList.Count > 0)
             {
-
                 mainDataGridView.Visible = true;
                 listOfSalesLabel.Visible = true;
                 viewSaleButton.Visible = true;
