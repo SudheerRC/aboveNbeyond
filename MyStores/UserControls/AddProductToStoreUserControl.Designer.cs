@@ -145,7 +145,7 @@
             inventoryListView.Margin = new Padding(5, 6, 5, 6);
             inventoryListView.MultiSelect = false;
             inventoryListView.Name = "inventoryListView";
-            inventoryListView.Size = new Size(720, 375);
+            inventoryListView.Size = new Size(720, 230);
             inventoryListView.TabIndex = 5;
             inventoryListView.UseCompatibleStateImageBehavior = false;
             inventoryListView.View = System.Windows.Forms.View.Details;

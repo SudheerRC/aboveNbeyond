@@ -200,6 +200,7 @@ namespace MyStores.UserControls.HomeUserControl
             }
             else
             {
+                managersNames = managers[0].FirstName + " " + managers[0].LastName;
                 for (int i = 1; i < managers.Count; i++)
                 {
                     managersNames += ", " + managers[i].FirstName + " " + managers[i].LastName;
@@ -207,6 +208,11 @@ namespace MyStores.UserControls.HomeUserControl
             }
 
             return managersNames;
+        }
+
+        private void AddManagerUserControl_OnUpdateStatus(object sender, EventArgs e)
+        {
+            SetStoreHighlights(_storeId);
         }
 
         private void deleteStoreButton_Click(object sender, EventArgs e)

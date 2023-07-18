@@ -203,6 +203,7 @@
             mainAddManagerUserControl.Name = "mainAddManagerUserControl";
             mainAddManagerUserControl.Size = new Size(523, 252);
             mainAddManagerUserControl.TabIndex = 8;
+            mainAddManagerUserControl.OnUpdateStatus += AddManagerUserControl_OnUpdateStatus;
             // 
             // mainInventoryUserControl
             // 
@@ -491,6 +492,11 @@
             ((System.ComponentModel.ISupportInitialize)managerPictureBox).EndInit();
             closePanel.ResumeLayout(false);
             ResumeLayout(false);
+        }
+
+        private void MainAddManagerUserControl_OnUpdateStatus(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion

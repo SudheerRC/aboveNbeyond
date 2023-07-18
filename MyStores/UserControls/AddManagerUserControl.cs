@@ -7,6 +7,10 @@ namespace MyStores.UserControls
     {
         private readonly MyStoresController _controller;
         private int _storeId;
+
+        public delegate void StatusUpdateHandler(object sender, EventArgs e);
+        public event StatusUpdateHandler OnUpdateStatus;
+
         public AddManagerUserControl()
         {
             InitializeComponent();
@@ -24,6 +28,13 @@ namespace MyStores.UserControls
             emailTextBox.Text = string.Empty;
         }
 
+        private void UpdateStatus()
+        {
+            EventArgs args = EventArgs.Empty;
+
+            OnUpdateStatus?.Invoke(this, args);
+        }
+
         private void addButton_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(emailTextBox.Text))
@@ -37,13 +48,7 @@ namespace MyStores.UserControls
             {
                 if (_controller.CheckEmail(emailTextBox.Text))
                 {
-                    string email = emailTextBox.Text;
-                    int userId = _controller.GetUserId(email);
-                    int storeId = _storeId;
-                    _controller.AddManager(userId, storeId);
-                    emailErrorLabel.Text = email + " has been added as a manager to this store";
-                    emailErrorLabel.ForeColor = Color.Green;
-                    emailErrorLabel.Visible = true;
+                    CheckAndAddEmail();
                 }
                 else
                 {
@@ -51,6 +56,31 @@ namespace MyStores.UserControls
                     emailErrorLabel.Visible = true;
                     emailErrorLabel.ForeColor = Color.Red;
                 }
+            }
+        }
+
+        private void CheckAndAddEmail()
+        {
+            string email = emailTextBox.Text;
+            int userId = _controller.GetUserId(email);
+            int storeId = _storeId;
+
+            List<Users> storeManagers = _controller.GetAllManagersOfStore(storeId).FindAll(x => x.UserId == userId);
+
+            if (storeManagers.Count > 0)
+            {
+                emailErrorLabel.Text = email + " is already a manager to this store.";
+                emailErrorLabel.Visible = true;
+                emailErrorLabel.ForeColor = Color.Red;
+            }
+            else
+            {
+                _controller.AddManager(userId, storeId);
+                emailErrorLabel.Text = email + " has been added as a manager to this store";
+                emailErrorLabel.ForeColor = Color.Green;
+                emailErrorLabel.Visible = true;
+
+                UpdateStatus();
             }
         }
 
