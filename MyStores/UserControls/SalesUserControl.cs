@@ -9,10 +9,15 @@ namespace MyStores.UserControls
         private int _storeId;
         private readonly MyStoresController _controller;
 
+        private DateTime _fromDate;
+        private DateTime _toDate;
+
         public SalesUserControl()
         {
             InitializeComponent();
             _controller = new MyStoresController();
+            _fromDate = new DateTime();
+            _toDate = new DateTime();
         }
 
         public void setStoreId(int storeId)
@@ -125,56 +130,53 @@ namespace MyStores.UserControls
 
         private void searchButton_Click(object sender, EventArgs e)
         {
-            var fromDate = new DateTime();
-            var toDate = new DateTime();
-
             if (dateRadioButton.Checked)
             {
-                SetDates(out fromDate, out toDate);
+                SetDates();
             }
             else if (rangeRadioButton.Checked)
             {
-                SetDateRange(out toDate, out fromDate);
+                SetDateRange();
             }
 
-            List<Sale> saleList = _controller.GetSalesByStoreIdBetweenDates(_storeId, fromDate, toDate);
+            List<Sale> saleList = _controller.GetSalesByStoreIdBetweenDates(_storeId, _fromDate, _toDate);
 
             CheckAndLoadGridView(saleList, "There are no sales in the given date range!");
         }
 
-        private void SetDates(out DateTime fromDate, out DateTime toDate)
+        private void SetDates()
         {
-            fromDate = fromDateTimePicker.Value.AddDays(-1);
+            _fromDate = fromDateTimePicker.Value.AddDays(-1);
 
             if (toDateTimePicker.Enabled)
             {
-                toDate = toDateTimePicker.Value.AddDays(1);
+                _toDate = toDateTimePicker.Value.AddDays(1);
             }
             else
             {
-                toDate = DateTime.Today.AddDays(1);
+                _toDate = DateTime.Today.AddDays(1);
             }
         }
 
-        private void SetDateRange(out DateTime toDate, out DateTime fromDate)
+        private void SetDateRange()
         {
             var range = rangeComboBox.SelectedItem as string;
             if (range != null)
             {
                 if (range.Equals("This Week"))
                 {
-                    toDate = DateTime.Today.AddDays(1);
-                    fromDate = toDate.AddDays(-8);
+                    _toDate = DateTime.Today.AddDays(1);
+                    _fromDate = _toDate.AddDays(-8);
                 }
                 else if (range.Equals("This Month"))
                 {
-                    toDate = DateTime.Today.AddDays(1);
-                    fromDate = toDate.AddMonths(-1);
+                    _toDate = DateTime.Today.AddDays(1);
+                    _fromDate = _toDate.AddMonths(-1);
                 }
                 else if (range.Equals("This Year"))
                 {
-                    toDate = DateTime.Today.AddDays(1);
-                    fromDate = toDate.AddYears(-1);
+                    _toDate = DateTime.Today.AddDays(1);
+                    _fromDate = _toDate.AddYears(-1);
                 }
             }
         }
