@@ -51,8 +51,6 @@
             vendorComboBox = new ComboBox();
             vendorPanelTitleLabel = new Label();
             pricePanel = new Panel();
-            sellingPriceErrorLabel = new Label();
-            quantityErrorLabel = new Label();
             purchasePriceErrorLabel = new Label();
             quantityLabel = new Label();
             sellingPriceLabel = new Label();
@@ -61,11 +59,13 @@
             sellingPriceTextBox = new TextBox();
             purchasePriceTextBox = new TextBox();
             titleLabel = new Label();
+            minimumQuantityLabel = new Label();
+            minimumQuantityErrorLabel = new Label();
+            minimumQuantityTextBox = new TextBox();
+            sellingPriceErrorLabel = new Label();
+            quantityErrorLabel = new Label();
             previousButton = new Button();
             addButton = new Button();
-            minimumQuantityErrorLabel = new Label();
-            minimumQuantityLabel = new Label();
-            minimumQuantityTextBox = new TextBox();
             searchInputPanel.SuspendLayout();
             searchButtonPanel.SuspendLayout();
             productLookUpPanel.SuspendLayout();
@@ -141,13 +141,11 @@
             inventoryListView.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             inventoryListView.FullRowSelect = true;
             inventoryListView.GridLines = true;
-            inventoryListView.Location = new Point(0, 235);
-            inventoryListView.Margin = new Padding(3, 4, 3, 4);
-            inventoryListView.Location = new Point(0, 376);
+            inventoryListView.Location = new Point(0, 230);
             inventoryListView.Margin = new Padding(5, 6, 5, 6);
             inventoryListView.MultiSelect = false;
             inventoryListView.Name = "inventoryListView";
-            inventoryListView.Size = new Size(720, 229);
+            inventoryListView.Size = new Size(720, 375);
             inventoryListView.TabIndex = 5;
             inventoryListView.UseCompatibleStateImageBehavior = false;
             inventoryListView.View = System.Windows.Forms.View.Details;
@@ -314,36 +312,6 @@
             pricePanel.Size = new Size(723, 468);
             pricePanel.TabIndex = 8;
             // 
-            // sellingPriceErrorLabel
-            // 
-            sellingPriceErrorLabel.AutoSize = true;
-            sellingPriceErrorLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            sellingPriceErrorLabel.ForeColor = Color.Red;
-            sellingPriceErrorLabel.Location = new Point(352, 245);
-            sellingPriceErrorLabel.Margin = new Padding(2, 0, 2, 0);
-            sellingPriceErrorLabel.Name = "sellingPriceErrorLabel";
-            sellingPriceErrorLabel.Size = new Size(70, 20);
-            sellingPriceErrorLabel.TabIndex = 110;
-            sellingPriceErrorLabel.Text = "Error text";
-            sellingPriceErrorLabel.TextAlign = ContentAlignment.MiddleCenter;
-            sellingPriceErrorLabel.UseWaitCursor = true;
-            sellingPriceErrorLabel.Visible = false;
-            // 
-            // quantityErrorLabel
-            // 
-            quantityErrorLabel.AutoSize = true;
-            quantityErrorLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            quantityErrorLabel.ForeColor = Color.Red;
-            quantityErrorLabel.Location = new Point(352, 344);
-            quantityErrorLabel.Margin = new Padding(2, 0, 2, 0);
-            quantityErrorLabel.Name = "quantityErrorLabel";
-            quantityErrorLabel.Size = new Size(70, 20);
-            quantityErrorLabel.TabIndex = 109;
-            quantityErrorLabel.Text = "Error text";
-            quantityErrorLabel.TextAlign = ContentAlignment.MiddleCenter;
-            quantityErrorLabel.UseWaitCursor = true;
-            quantityErrorLabel.Visible = false;
-            // 
             // purchasePriceErrorLabel
             // 
             purchasePriceErrorLabel.AutoSize = true;
@@ -444,6 +412,75 @@
             titleLabel.Text = "Please enter product details to Add";
             titleLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // minimumQuantityLabel
+            // 
+            minimumQuantityLabel.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            minimumQuantityLabel.Location = new Point(3, 393);
+            minimumQuantityLabel.Name = "minimumQuantityLabel";
+            minimumQuantityLabel.Size = new Size(288, 47);
+            minimumQuantityLabel.TabIndex = 112;
+            minimumQuantityLabel.Text = "Pref. Minimum Quantity:";
+            minimumQuantityLabel.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // minimumQuantityErrorLabel
+            // 
+            minimumQuantityErrorLabel.AutoSize = true;
+            minimumQuantityErrorLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            minimumQuantityErrorLabel.ForeColor = Color.Red;
+            minimumQuantityErrorLabel.Location = new Point(352, 444);
+            minimumQuantityErrorLabel.Margin = new Padding(2, 0, 2, 0);
+            minimumQuantityErrorLabel.Name = "minimumQuantityErrorLabel";
+            minimumQuantityErrorLabel.Size = new Size(70, 20);
+            minimumQuantityErrorLabel.TabIndex = 113;
+            minimumQuantityErrorLabel.Text = "Error text";
+            minimumQuantityErrorLabel.TextAlign = ContentAlignment.MiddleCenter;
+            minimumQuantityErrorLabel.UseWaitCursor = true;
+            minimumQuantityErrorLabel.Visible = false;
+            // 
+            // minimumQuantityTextBox
+            // 
+            minimumQuantityTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            minimumQuantityTextBox.BorderStyle = BorderStyle.None;
+            minimumQuantityTextBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            minimumQuantityTextBox.Location = new Point(352, 393);
+            minimumQuantityTextBox.Margin = new Padding(3, 4, 3, 4);
+            minimumQuantityTextBox.Multiline = true;
+            minimumQuantityTextBox.Name = "minimumQuantityTextBox";
+            minimumQuantityTextBox.PlaceholderText = "Enter preferred min quantity";
+            minimumQuantityTextBox.Size = new Size(299, 43);
+            minimumQuantityTextBox.TabIndex = 111;
+            minimumQuantityTextBox.TextAlign = HorizontalAlignment.Center;
+            // 
+            // sellingPriceErrorLabel
+            // 
+            sellingPriceErrorLabel.AutoSize = true;
+            sellingPriceErrorLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            sellingPriceErrorLabel.ForeColor = Color.Red;
+            sellingPriceErrorLabel.Location = new Point(352, 245);
+            sellingPriceErrorLabel.Margin = new Padding(2, 0, 2, 0);
+            sellingPriceErrorLabel.Name = "sellingPriceErrorLabel";
+            sellingPriceErrorLabel.Size = new Size(70, 20);
+            sellingPriceErrorLabel.TabIndex = 110;
+            sellingPriceErrorLabel.Text = "Error text";
+            sellingPriceErrorLabel.TextAlign = ContentAlignment.MiddleCenter;
+            sellingPriceErrorLabel.UseWaitCursor = true;
+            sellingPriceErrorLabel.Visible = false;
+            // 
+            // quantityErrorLabel
+            // 
+            quantityErrorLabel.AutoSize = true;
+            quantityErrorLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            quantityErrorLabel.ForeColor = Color.Red;
+            quantityErrorLabel.Location = new Point(352, 344);
+            quantityErrorLabel.Margin = new Padding(2, 0, 2, 0);
+            quantityErrorLabel.Name = "quantityErrorLabel";
+            quantityErrorLabel.Size = new Size(70, 20);
+            quantityErrorLabel.TabIndex = 109;
+            quantityErrorLabel.Text = "Error text";
+            quantityErrorLabel.TextAlign = ContentAlignment.MiddleCenter;
+            quantityErrorLabel.UseWaitCursor = true;
+            quantityErrorLabel.Visible = false;
+            // 
             // previousButton
             // 
             previousButton.BackColor = Color.FromArgb(28, 44, 78);
@@ -477,45 +514,6 @@
             addButton.Text = "Add";
             addButton.UseVisualStyleBackColor = false;
             addButton.Click += addButton_Click;
-            // 
-            // minimumQuantityErrorLabel
-            // 
-            minimumQuantityErrorLabel.AutoSize = true;
-            minimumQuantityErrorLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            minimumQuantityErrorLabel.ForeColor = Color.Red;
-            minimumQuantityErrorLabel.Location = new Point(352, 444);
-            minimumQuantityErrorLabel.Margin = new Padding(2, 0, 2, 0);
-            minimumQuantityErrorLabel.Name = "minimumQuantityErrorLabel";
-            minimumQuantityErrorLabel.Size = new Size(70, 20);
-            minimumQuantityErrorLabel.TabIndex = 113;
-            minimumQuantityErrorLabel.Text = "Error text";
-            minimumQuantityErrorLabel.TextAlign = ContentAlignment.MiddleCenter;
-            minimumQuantityErrorLabel.UseWaitCursor = true;
-            minimumQuantityErrorLabel.Visible = false;
-            // 
-            // minimumQuantityLabel
-            // 
-            minimumQuantityLabel.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            minimumQuantityLabel.Location = new Point(3, 393);
-            minimumQuantityLabel.Name = "minimumQuantityLabel";
-            minimumQuantityLabel.Size = new Size(288, 47);
-            minimumQuantityLabel.TabIndex = 112;
-            minimumQuantityLabel.Text = "Pref. Minimum Quantity:";
-            minimumQuantityLabel.TextAlign = ContentAlignment.MiddleRight;
-            // 
-            // minimumQuantityTextBox
-            // 
-            minimumQuantityTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            minimumQuantityTextBox.BorderStyle = BorderStyle.None;
-            minimumQuantityTextBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            minimumQuantityTextBox.Location = new Point(352, 393);
-            minimumQuantityTextBox.Margin = new Padding(3, 4, 3, 4);
-            minimumQuantityTextBox.Multiline = true;
-            minimumQuantityTextBox.Name = "minimumQuantityTextBox";
-            minimumQuantityTextBox.PlaceholderText = "Enter preferred min quantity";
-            minimumQuantityTextBox.Size = new Size(299, 43);
-            minimumQuantityTextBox.TabIndex = 111;
-            minimumQuantityTextBox.TextAlign = HorizontalAlignment.Center;
             // 
             // AddProductToStoreUserControl
             // 
