@@ -61,6 +61,7 @@
             // 
             // rangeComboBox
             // 
+            rangeComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             rangeComboBox.Enabled = false;
             rangeComboBox.FormattingEnabled = true;
             rangeComboBox.Location = new Point(310, 47);
