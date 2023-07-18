@@ -19,28 +19,7 @@ namespace MyStores.UserControls
             string email = emailTextBox.Text;
             string password = passwordTextBox.Text;
 
-            var user = new Users
-            {
-                Email = email,
-                Password = password
-            };
-            if (_controller.CheckUserLogin(user))
-            {
-                user.UserId = _controller.GetUserId(email);
-                using var mainForm = new MainDashboard();
-                mainForm.SetOwner(user);
-                this.Parent.Hide();
-                var result = mainForm.ShowDialog();
-                if (result == DialogResult.OK)
-                {
-                    this.Parent.Show();
-                    errorLabel.Text = "You've been successfully logged out.";
-                    errorLabel.Visible = true;
-                    errorLabel.ForeColor = Color.Green;
-                    ClearFields();
-                }
-            }
-            else if (emailTextBox.Text == String.Empty)
+            if (emailTextBox.Text == String.Empty)
             {
                 errorLabel.Text = "Please enter your email";
                 errorLabel.Visible = true;
@@ -57,6 +36,35 @@ namespace MyStores.UserControls
                 errorLabel.Text = "It seems you're not registered." + Environment.NewLine + "Please register with us";
                 errorLabel.Visible = true;
                 errorLabel.ForeColor = Color.Red;
+            }
+            else
+            {
+                LoginUser(email, password);
+            }
+        }
+
+        private void LoginUser(string email, string password)
+        {
+            var user = new Users
+            {
+                Email = email,
+                Password = password
+            };
+            if (_controller.CheckUserLogin(user))
+            {
+                user.UserId = _controller.GetUserId(email);
+                using var mainForm = new MainDashboard();
+                mainForm.SetOwner(user);
+                this.Parent.Hide();
+                DialogResult result = mainForm.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    this.Parent.Show();
+                    errorLabel.Text = "You've been successfully logged out.";
+                    errorLabel.Visible = true;
+                    errorLabel.ForeColor = Color.Green;
+                    ClearFields();
+                }
             }
             else
             {

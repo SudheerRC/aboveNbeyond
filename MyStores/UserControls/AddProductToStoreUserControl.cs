@@ -89,6 +89,7 @@ namespace MyStores.UserControls
             }
             else if (productLookUpPanel.Visible)
             {
+                ClearErrorFields();
                 if (CheckProductExitsWithVendor())
                 {
                     MessageBox.Show(@"This vendor already supplies you this selected product." + Environment.NewLine +
@@ -118,6 +119,7 @@ namespace MyStores.UserControls
                 nextButton.Visible = true;
                 addButton.Enabled = false;
                 addButton.Visible = false;
+                ClearErrorFields();
             }
             else if (productLookUpPanel.Visible)
             {
@@ -168,11 +170,8 @@ namespace MyStores.UserControls
                     var purchasePrice = Convert.ToDouble(purchasePriceTextBox.Text);
                     var quantity = Convert.ToInt32(quantityTextBox.Text);
                     var minQuantity = Convert.ToInt32(minimumQuantityTextBox.Text);
-
-                    purchasePriceErrorLabel.Visible = false;
-                    sellingPriceErrorLabel.Visible = false;
-                    quantityErrorLabel.Visible = false;
-                    minimumQuantityErrorLabel.Visible = false;
+                    
+                    ClearErrorFields();
 
                     inventoryItem.VendorId = currentVendorId;
                     inventoryItem.Status = true;
@@ -211,10 +210,7 @@ namespace MyStores.UserControls
             quantityTextBox.Clear();
             minimumQuantityTextBox.Clear();
 
-            sellingPriceErrorLabel.Visible = false;
-            purchasePriceErrorLabel.Visible = false;
-            quantityErrorLabel.Visible = false;
-            minimumQuantityErrorLabel.Visible = false;
+            ClearErrorFields();
 
             inventoryListView.Items.Clear();
             searchTextBox.Text = "";
@@ -223,6 +219,14 @@ namespace MyStores.UserControls
             vendorPanel.BringToFront();
             vendorPanel.Visible = true;
             loadVendorComboBox();
+        }
+
+        private void ClearErrorFields()
+        {
+            sellingPriceErrorLabel.Visible = false;
+            purchasePriceErrorLabel.Visible = false;
+            quantityErrorLabel.Visible = false;
+            minimumQuantityErrorLabel.Visible = false;
         }
 
         private void searchButton_Click(object sender, EventArgs e)
