@@ -89,14 +89,22 @@ namespace MyStores.UserControls
             }
             else if (productLookUpPanel.Visible)
             {
-                hideAllPanels();
-                pricePanel.BringToFront();
-                pricePanel.Visible = true;
-                nextButton.Enabled = false;
-                addButton.BringToFront();
-                addButton.Enabled = true;
-                addButton.Visible = true;
-                nextButton.Visible = false;
+                if (CheckProductExitsWithVendor())
+                {
+                    MessageBox.Show(@"This vendor already supplies you this selected product." + Environment.NewLine +
+                                    @"Please go search in store's inventory if you want to edit it's details.");
+                }
+                else
+                {
+                    hideAllPanels();
+                    pricePanel.BringToFront();
+                    pricePanel.Visible = true;
+                    nextButton.Enabled = false;
+                    addButton.BringToFront();
+                    addButton.Enabled = true;
+                    addButton.Visible = true;
+                    nextButton.Visible = false;
+                }
             }
         }
 
@@ -121,6 +129,27 @@ namespace MyStores.UserControls
                 inventoryListView.Items.Clear();
                 searchTextBox.Clear();
             }
+        }
+
+        private bool CheckProductExitsWithVendor()
+        {
+            bool result;
+            try
+            {
+                var selectedVendor = vendorComboBox.SelectedItem as Vendor;
+                var selectedProduct = inventoryListView.SelectedItems;
+
+                var currentVendorId = selectedVendor.Id;
+                var currentProductId = Convert.ToInt32(selectedProduct[0].Text);
+
+                result = _controller.CheckProductExitsWithVendor(currentVendorId, currentProductId);
+            }
+            catch (Exception)
+            {
+                result = false;
+            }
+
+            return result;
         }
 
         private void addButton_Click(object sender, EventArgs e)
@@ -152,7 +181,7 @@ namespace MyStores.UserControls
                     inventoryItem.PurchasePrice = purchasePrice;
                     inventoryItem.SellingPrice = currentSellingPrice;
                     inventoryItem.Quantity = quantity;
-                   
+
                     _controller.AddInventory(inventoryItem, _storeId);
                     MessageBox.Show(@"Successfully added the product to your inventory!");
 

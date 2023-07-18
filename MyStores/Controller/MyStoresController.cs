@@ -468,5 +468,10 @@ namespace MyStores.Controller
         {
             return _storesDal.GetSaleDetailsBySaleId(saleId);
         }
+
+        public bool CheckProductExitsWithVendor(int vendorId, int productId)
+        {
+            return _storesDal.CheckProductExitsWithVendor(vendorId, productId);
+        }
     }
 }
