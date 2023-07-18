@@ -469,6 +469,11 @@ namespace MyStores.Controller
             return _storesDal.GetSaleDetailsBySaleId(saleId);
         }
 
+        public List<Sale> GetRecentSalesByStoreId(int storeId)
+        {
+            return _storesDal.GetRecentSalesByStoreId(storeId);
+        }
+
         public bool CheckProductExitsWithVendor(int vendorId, int productId)
         {
             return _storesDal.CheckProductExitsWithVendor(vendorId, productId);

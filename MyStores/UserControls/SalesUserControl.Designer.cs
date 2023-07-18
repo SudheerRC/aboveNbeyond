@@ -31,17 +31,22 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SalesUserControl));
             fromDateTimePicker = new DateTimePicker();
             rangeComboBox = new ComboBox();
-            dataGridView1 = new DataGridView();
+            mainDataGridView = new DataGridView();
             toDateTimePicker = new DateTimePicker();
             fromLabel = new Label();
             dateRadioButton = new RadioButton();
             rangeRadioButton = new RadioButton();
             toLabel = new Label();
             searchButton = new Button();
-            button1 = new Button();
+            viewSaleButton = new Button();
             listOfSalesLabel = new Label();
             noSalesMessageLabel = new Label();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            saleId = new DataGridViewTextBoxColumn();
+            saleDateTime = new DataGridViewTextBoxColumn();
+            saleTotal = new DataGridViewTextBoxColumn();
+            saleTax = new DataGridViewTextBoxColumn();
+            paymentType = new DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)mainDataGridView).BeginInit();
             SuspendLayout();
             // 
             // fromDateTimePicker
@@ -60,15 +65,16 @@
             rangeComboBox.Size = new Size(151, 28);
             rangeComboBox.TabIndex = 2;
             // 
-            // dataGridView1
+            // mainDataGridView
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(33, 185);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(550, 306);
-            dataGridView1.TabIndex = 3;
+            mainDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            mainDataGridView.Columns.AddRange(new DataGridViewColumn[] { saleId, saleDateTime, saleTotal, saleTax, paymentType });
+            mainDataGridView.Location = new Point(25, 185);
+            mainDataGridView.Name = "mainDataGridView";
+            mainDataGridView.RowHeadersWidth = 51;
+            mainDataGridView.RowTemplate.Height = 29;
+            mainDataGridView.Size = new Size(567, 306);
+            mainDataGridView.TabIndex = 3;
             // 
             // toDateTimePicker
             // 
@@ -137,22 +143,23 @@
             searchButton.TextImageRelation = TextImageRelation.ImageAboveText;
             searchButton.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // viewSaleButton
             // 
-            button1.BackColor = Color.FromArgb(28, 44, 78);
-            button1.Enabled = false;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.ForeColor = Color.FromArgb(243, 239, 245);
-            button1.Location = new Point(201, 507);
-            button1.Margin = new Padding(3, 4, 3, 4);
-            button1.Name = "button1";
-            button1.Size = new Size(197, 44);
-            button1.TabIndex = 10;
-            button1.Text = "View Sale Details";
-            button1.TextImageRelation = TextImageRelation.ImageAboveText;
-            button1.UseVisualStyleBackColor = false;
+            viewSaleButton.BackColor = Color.FromArgb(28, 44, 78);
+            viewSaleButton.Enabled = false;
+            viewSaleButton.FlatAppearance.BorderSize = 0;
+            viewSaleButton.FlatStyle = FlatStyle.Flat;
+            viewSaleButton.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            viewSaleButton.ForeColor = Color.FromArgb(243, 239, 245);
+            viewSaleButton.Location = new Point(201, 507);
+            viewSaleButton.Margin = new Padding(3, 4, 3, 4);
+            viewSaleButton.Name = "viewSaleButton";
+            viewSaleButton.Size = new Size(197, 44);
+            viewSaleButton.TabIndex = 10;
+            viewSaleButton.Text = "View Sale Details";
+            viewSaleButton.TextImageRelation = TextImageRelation.ImageAboveText;
+            viewSaleButton.UseVisualStyleBackColor = false;
+            viewSaleButton.Click += viewSaleButton_Click;
             // 
             // listOfSalesLabel
             // 
@@ -174,6 +181,42 @@
             noSalesMessageLabel.Text = "There are no sales yet for this store!";
             noSalesMessageLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // saleId
+            // 
+            saleId.HeaderText = "Sale Id";
+            saleId.MinimumWidth = 6;
+            saleId.Name = "saleId";
+            saleId.Visible = false;
+            saleId.Width = 125;
+            // 
+            // saleDateTime
+            // 
+            saleDateTime.HeaderText = "Sale Date";
+            saleDateTime.MinimumWidth = 6;
+            saleDateTime.Name = "saleDateTime";
+            saleDateTime.Width = 125;
+            // 
+            // saleTotal
+            // 
+            saleTotal.HeaderText = "Total";
+            saleTotal.MinimumWidth = 6;
+            saleTotal.Name = "saleTotal";
+            saleTotal.Width = 125;
+            // 
+            // saleTax
+            // 
+            saleTax.HeaderText = "Tax";
+            saleTax.MinimumWidth = 6;
+            saleTax.Name = "saleTax";
+            saleTax.Width = 125;
+            // 
+            // paymentType
+            // 
+            paymentType.HeaderText = "Payment Type";
+            paymentType.MinimumWidth = 6;
+            paymentType.Name = "paymentType";
+            paymentType.Width = 125;
+            // 
             // SalesUserControl
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -181,20 +224,20 @@
             BackColor = Color.FromArgb(227, 211, 177);
             Controls.Add(noSalesMessageLabel);
             Controls.Add(listOfSalesLabel);
-            Controls.Add(button1);
+            Controls.Add(viewSaleButton);
             Controls.Add(searchButton);
             Controls.Add(toLabel);
             Controls.Add(rangeRadioButton);
             Controls.Add(dateRadioButton);
             Controls.Add(fromLabel);
             Controls.Add(toDateTimePicker);
-            Controls.Add(dataGridView1);
+            Controls.Add(mainDataGridView);
             Controls.Add(rangeComboBox);
             Controls.Add(fromDateTimePicker);
             Name = "SalesUserControl";
             Size = new Size(615, 564);
             Load += SalesUserControl_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)mainDataGridView).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -203,15 +246,20 @@
 
         private DateTimePicker fromDateTimePicker;
         private ComboBox rangeComboBox;
-        private DataGridView dataGridView1;
+        private DataGridView mainDataGridView;
         private DateTimePicker toDateTimePicker;
         private Label fromLabel;
         private RadioButton dateRadioButton;
         private RadioButton rangeRadioButton;
         private Label toLabel;
         private Button searchButton;
-        private Button button1;
+        private Button viewSaleButton;
         private Label listOfSalesLabel;
         private Label noSalesMessageLabel;
+        private DataGridViewTextBoxColumn saleId;
+        private DataGridViewTextBoxColumn saleDateTime;
+        private DataGridViewTextBoxColumn saleTotal;
+        private DataGridViewTextBoxColumn saleTax;
+        private DataGridViewTextBoxColumn paymentType;
     }
 }
