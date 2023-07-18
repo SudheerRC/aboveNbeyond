@@ -102,7 +102,7 @@ namespace MyStores.View
             if (!purchasePriceErrorLabel.Visible)
             {
                 purchasePrice = Convert.ToDouble(purchasePriceTextBox.Text);
-                if (purchasePrice <= 0)
+                if (purchasePrice < 0)
                 {
                     purchasePriceErrorLabel.Text = @"Product's purchase price must be a valid positive number";
                     purchasePriceErrorLabel.Visible = true;
@@ -123,7 +123,7 @@ namespace MyStores.View
             if (!sellingPriceErrorLabel.Visible)
             {
                 sellingPrice = Convert.ToDouble(sellingPriceTextBox.Text);
-                if (sellingPrice <= 0)
+                if (sellingPrice < 0)
                 {
                     sellingPriceErrorLabel.Text = @"Product's selling price must be a valid positive number";
                     sellingPriceErrorLabel.Visible = true;
@@ -144,7 +144,7 @@ namespace MyStores.View
             if (!quantityErrorLabel.Visible)
             {
                 quantity = Convert.ToInt32(quantityTextBox.Text);
-                if (quantity <= 0)
+                if (quantity < 0)
                 {
                     quantityErrorLabel.Text = @"Quantity must be a valid positive number";
                     quantityErrorLabel.Visible = true;
@@ -165,7 +165,7 @@ namespace MyStores.View
             if (!defaultQuantityErrorLabel.Visible)
             {
                 minQuantity = Convert.ToInt32(defaultQuantityTextBox.Text);
-                if (minQuantity <= 0)
+                if (minQuantity < 0)
                 {
                     defaultQuantityErrorLabel.Text = @"Min Preferred Quantity must be a valid positive number";
                     defaultQuantityErrorLabel.Visible = true;

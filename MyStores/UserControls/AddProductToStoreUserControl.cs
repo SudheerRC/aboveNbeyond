@@ -167,10 +167,12 @@ namespace MyStores.UserControls
                     var currentSellingPrice = Convert.ToDouble(sellingPriceTextBox.Text);
                     var purchasePrice = Convert.ToDouble(purchasePriceTextBox.Text);
                     var quantity = Convert.ToInt32(quantityTextBox.Text);
+                    var minQuantity = Convert.ToInt32(minimumQuantityTextBox.Text);
 
                     purchasePriceErrorLabel.Visible = false;
                     sellingPriceErrorLabel.Visible = false;
                     quantityErrorLabel.Visible = false;
+                    minimumQuantityErrorLabel.Visible = false;
 
                     inventoryItem.VendorId = currentVendorId;
                     inventoryItem.Status = true;
@@ -181,6 +183,7 @@ namespace MyStores.UserControls
                     inventoryItem.PurchasePrice = purchasePrice;
                     inventoryItem.SellingPrice = currentSellingPrice;
                     inventoryItem.Quantity = quantity;
+                    inventoryItem.MinQuantity = minQuantity;
 
                     _controller.AddInventory(inventoryItem, _storeId);
                     MessageBox.Show(@"Successfully added the product to your inventory!");
@@ -206,7 +209,12 @@ namespace MyStores.UserControls
             sellingPriceTextBox.Clear();
             purchasePriceTextBox.Clear();
             quantityTextBox.Clear();
+            minimumQuantityTextBox.Clear();
 
+            sellingPriceErrorLabel.Visible = false;
+            purchasePriceErrorLabel.Visible = false;
+            quantityErrorLabel.Visible = false;
+            minimumQuantityErrorLabel.Visible = false;
 
             inventoryListView.Items.Clear();
             searchTextBox.Text = "";
@@ -237,6 +245,8 @@ namespace MyStores.UserControls
             double purchasePrice;
             double sellingPrice;
             int quantity;
+            int minQuantity;
+
             if (string.IsNullOrEmpty(purchasePriceTextBox.Text))
             {
                 purchasePriceErrorLabel.Text = @"Purchase price cannot be empty";
@@ -271,7 +281,7 @@ namespace MyStores.UserControls
             if (!purchasePriceErrorLabel.Visible)
             {
                 purchasePrice = Convert.ToDouble(purchasePriceTextBox.Text);
-                if (purchasePrice <= 0)
+                if (purchasePrice < 0)
                 {
                     purchasePriceErrorLabel.Text = @"Product's purchase price must be a valid positive number";
                     purchasePriceErrorLabel.Visible = true;
@@ -292,7 +302,7 @@ namespace MyStores.UserControls
             if (!sellingPriceErrorLabel.Visible)
             {
                 sellingPrice = Convert.ToDouble(sellingPriceTextBox.Text);
-                if (sellingPrice <= 0)
+                if (sellingPrice < 0)
                 {
                     sellingPriceErrorLabel.Text = @"Product's selling price must be a valid positive number";
                     sellingPriceErrorLabel.Visible = true;
@@ -313,7 +323,7 @@ namespace MyStores.UserControls
             if (!quantityErrorLabel.Visible)
             {
                 quantity = Convert.ToInt32(quantityTextBox.Text);
-                if (quantity <= 0)
+                if (quantity < 0)
                 {
                     quantityErrorLabel.Text = @"Quantity must be a valid positive number";
                     quantityErrorLabel.Visible = true;
@@ -321,12 +331,35 @@ namespace MyStores.UserControls
                 }
             }
 
-            return result;
-        }
+            if (string.IsNullOrEmpty(minimumQuantityTextBox.Text))
+            {
+                minimumQuantityErrorLabel.Text = @"Minimum Preferred Quantity cannot be empty";
+                minimumQuantityErrorLabel.Visible = true;
+                result = true;
+            }
 
-        private void addVendorToStoreButton_Click(object sender, EventArgs e)
-        {
-            this.Visible = false;
+            if (!minimumQuantityErrorLabel.Visible)
+            {
+                if (!int.TryParse(minimumQuantityTextBox.Text, out minQuantity))
+                {
+                    minimumQuantityErrorLabel.Text = @"Min Preferred Quantity must be a valid number";
+                    minimumQuantityErrorLabel.Visible = true;
+                    result = true;
+                }
+            }
+
+            if (!minimumQuantityErrorLabel.Visible)
+            {
+                minQuantity = Convert.ToInt32(minimumQuantityTextBox.Text);
+                if (minQuantity < 0)
+                {
+                    minimumQuantityErrorLabel.Text = @"Min Preferred Quantity must be a valid positive number";
+                    minimumQuantityErrorLabel.Visible = true;
+                    result = true;
+                }
+            }
+
+            return result;
         }
 
         private void purchasePriceTextBox_TextChanged(object sender, EventArgs e)
@@ -342,6 +375,11 @@ namespace MyStores.UserControls
         private void quantityTextBox_TextChanged(object sender, EventArgs e)
         {
             quantityErrorLabel.Visible = false;
+        }
+
+        private void minimumQuantityTextBox_TextChanged(object sender, EventArgs e)
+        {
+            minimumQuantityErrorLabel.Visible = false;
         }
 
         private void AddProductToStoreUserControl_Load(object sender, EventArgs e)

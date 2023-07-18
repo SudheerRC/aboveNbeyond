@@ -515,6 +515,46 @@
             addButton.UseVisualStyleBackColor = false;
             addButton.Click += addButton_Click;
             // 
+            // minimumQuantityErrorLabel
+            // 
+            minimumQuantityErrorLabel.AutoSize = true;
+            minimumQuantityErrorLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            minimumQuantityErrorLabel.ForeColor = Color.Red;
+            minimumQuantityErrorLabel.Location = new Point(352, 444);
+            minimumQuantityErrorLabel.Margin = new Padding(2, 0, 2, 0);
+            minimumQuantityErrorLabel.Name = "minimumQuantityErrorLabel";
+            minimumQuantityErrorLabel.Size = new Size(70, 20);
+            minimumQuantityErrorLabel.TabIndex = 113;
+            minimumQuantityErrorLabel.Text = "Error text";
+            minimumQuantityErrorLabel.TextAlign = ContentAlignment.MiddleCenter;
+            minimumQuantityErrorLabel.UseWaitCursor = true;
+            minimumQuantityErrorLabel.Visible = false;
+            // 
+            // minimumQuantityLabel
+            // 
+            minimumQuantityLabel.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            minimumQuantityLabel.Location = new Point(3, 393);
+            minimumQuantityLabel.Name = "minimumQuantityLabel";
+            minimumQuantityLabel.Size = new Size(288, 47);
+            minimumQuantityLabel.TabIndex = 112;
+            minimumQuantityLabel.Text = "Pref. Minimum Quantity:";
+            minimumQuantityLabel.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // minimumQuantityTextBox
+            // 
+            minimumQuantityTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            minimumQuantityTextBox.BorderStyle = BorderStyle.None;
+            minimumQuantityTextBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            minimumQuantityTextBox.Location = new Point(352, 393);
+            minimumQuantityTextBox.Margin = new Padding(3, 4, 3, 4);
+            minimumQuantityTextBox.Multiline = true;
+            minimumQuantityTextBox.Name = "minimumQuantityTextBox";
+            minimumQuantityTextBox.PlaceholderText = "Enter preferred min quantity";
+            minimumQuantityTextBox.Size = new Size(299, 43);
+            minimumQuantityTextBox.TabIndex = 111;
+            minimumQuantityTextBox.TextAlign = HorizontalAlignment.Center;
+            minimumQuantityTextBox.TextChanged += minimumQuantityTextBox_TextChanged;
+            // 
             // AddProductToStoreUserControl
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
