@@ -1985,10 +1985,10 @@ namespace MyStores.Dal
 
             string query = "SELECT productName, SaleLineItem.quantity, Inventory.productID, " +
                             "Product.productSize, Inventory.sellingPrice, SaleLineItem.discount, " +
-                            "Sales.saleDateTime, Sales.total, Sales.tax, Sales.paymentType" +
-                           "FROM Product, Inventory, Sales, SaleLineItem WHERE SaleLineItem.saleID = Sales.saleID " +
+                            "Sales.saleDateTime, Sales.total, Sales.tax, Sales.paymentType, storeName " +
+                           "FROM Product, Inventory, Sales, Stores, SaleLineItem WHERE SaleLineItem.saleID = Sales.saleID " +
                            "and Inventory.inventoryID = SaleLineItem.inventoryID and Inventory.productID = Product.productID " +
-                           "and Sales.saleID = @saleId";
+                           "and Sales.saleID = @saleId and Sales.storeID = Stores.storeID";
             using var command = new SqlCommand(query, connection);
 
             command.Parameters.Add("@saleId", System.Data.SqlDbType.Int);
@@ -2005,6 +2005,7 @@ namespace MyStores.Dal
             var totalOrdinal = reader.GetOrdinal("total");
             var taxOrdinal = reader.GetOrdinal("tax");
             var paymentTypeOrdinal = reader.GetOrdinal("paymentType");
+            var storeNameOrdinal = reader.GetOrdinal("storeName");
 
             while (reader.Read())
             {
@@ -2033,7 +2034,8 @@ namespace MyStores.Dal
             var saleDateTime = reader.GetDateTime(saleDateTimeOrdinal);
             decimal saleTax = reader.GetDecimal(taxOrdinal);
             var paymentType = reader.GetString(paymentTypeOrdinal);
-            decimal total = reader.GetDecimal(totalOrdinal);
+            decimal total = reader.GetDecimal(totalOrdinal); ;
+            var storeName = reader.GetString(storeNameOrdinal);
 
             var currentSale = new Sale
             {
@@ -2042,6 +2044,7 @@ namespace MyStores.Dal
                 PaymentType = paymentType,
                 Total = decimal.ToDouble(total),
                 Items = inventoryItems,
+                StoreName = storeName,
             };
 
             return currentSale;

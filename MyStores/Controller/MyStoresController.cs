@@ -378,7 +378,7 @@ namespace MyStores.Controller
         /// <param name="order">The order.</param>
         public int PlaceOrder(Order order)
         {
-           return _storesDal.PlaceOrder(order);
+            return _storesDal.PlaceOrder(order);
         }
 
         /// <summary>
@@ -462,6 +462,11 @@ namespace MyStores.Controller
         public List<Vendor> GetVendorsWithProductsByStoreId(int storeId)
         {
             return _storesDal.GetVendorsWithProductsByStoreId(storeId);
+        }
+
+        public Sale GetSaleDetailsBySaleId(int saleId)
+        {
+            return _storesDal.GetSaleDetailsBySaleId(saleId);
         }
     }
 }
