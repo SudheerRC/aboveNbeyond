@@ -80,5 +80,20 @@ namespace MyStores.UserControls
         {
             viewSaleButton.Enabled = true;
         }
+
+        private void dateRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rangeRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
