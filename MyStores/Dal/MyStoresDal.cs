@@ -207,7 +207,8 @@ namespace MyStores.Dal
             connection.Open();
 
             string query =
-                "select storeID, ownerID, storeName, streetAddress, city, state, zipCode, country from Stores where ownerID = @ownerId and status = 1;";
+                "select storeID, ownerID, storeName, streetAddress, city, state, zipCode, country from Stores " +
+                "where ownerID = @ownerId and status = 1;";
             using var command = new SqlCommand(query, connection);
 
             command.Parameters.Add("@ownerId", System.Data.SqlDbType.Int);
@@ -875,7 +876,7 @@ namespace MyStores.Dal
             string query =
                 "SELECT inventoryID, vendorID, purchasePrice, Inventory.sellingPrice, quantity, Inventory.productID " +
                 "FROM Product,Inventory WHERE Inventory.productID = Product.productID and " +
-                "Inventory.storeID = @storeID and ProductName LIKE '%' + @productName +'%'";
+                "Inventory.storeID = @storeID and Inventory.status = 1 and ProductName LIKE '%' + @productName +'%'";
             using var command = new SqlCommand(query, connection);
 
             command.Parameters.Add("@storeID", System.Data.SqlDbType.Int);
@@ -1095,7 +1096,7 @@ namespace MyStores.Dal
 
             string query =
                 "SELECT inventoryID, productName, description, productImage, purchasePrice, quantity, Inventory.productID FROM Product, Inventory " +
-                "WHERE Inventory.productID = Product.productID and Inventory.vendorId = @vendorId and Inventory.storeID = @storeId";
+                "WHERE Inventory.productID = Product.productID and Inventory.vendorId = @vendorId and Inventory.storeID = @storeId and Inventory.status = 1";
             using var command = new SqlCommand(query, connection);
 
             command.Parameters.Add("@vendorId", System.Data.SqlDbType.Int);
@@ -1215,7 +1216,7 @@ namespace MyStores.Dal
 
             string query = "SELECT inventoryID, vendorID, purchasePrice, Inventory.sellingPrice, quantity, Inventory.productID " +
                            "FROM Product,Inventory WHERE Inventory.productID = Product.productID " +
-                           "and Inventory.storeID = @storeID and description LIKE '%' + @description +'%'";
+                           "and Inventory.storeID = @storeID and Inventory.status = 1 and description LIKE '%' + @description +'%'";
             using var command = new SqlCommand(query, connection);
 
             command.Parameters.Add("@storeID", System.Data.SqlDbType.Int);
@@ -1273,7 +1274,7 @@ namespace MyStores.Dal
 
             string query = "SELECT inventoryID, vendorID, purchasePrice, Inventory.sellingPrice, quantity, Inventory.productID " +
                            "FROM Product,Inventory WHERE Inventory.productID = Product.productID " +
-                           "and Inventory.storeID = @storeID and productSize LIKE '%' + @size +'%'";
+                           "and Inventory.storeID = @storeID and Inventory.status = 1 and productSize LIKE '%' + @size +'%'";
             using var command = new SqlCommand(query, connection);
 
             command.Parameters.Add("@storeID", System.Data.SqlDbType.Int);
@@ -1332,7 +1333,7 @@ namespace MyStores.Dal
             string query = "SELECT inventoryID, Inventory.vendorID, purchasePrice, Inventory.sellingPrice, quantity, Inventory.productID " +
                            "FROM Product,Inventory, Vendor WHERE Inventory.productID = Product.productID " +
                            "and Inventory.vendorID = Vendor.vendorID and Inventory.storeID = @storeID " +
-                           "and Vendor.vendorName LIKE '%' + @name +'%'";
+                           "and Inventory.status = 1 and Vendor.vendorName LIKE '%' + @name +'%'";
             using var command = new SqlCommand(query, connection);
 
             command.Parameters.Add("@storeID", System.Data.SqlDbType.Int);
@@ -1390,7 +1391,7 @@ namespace MyStores.Dal
 
             string query = "SELECT inventoryID, vendorID, purchasePrice, Inventory.sellingPrice, quantity, Inventory.productID " +
                            "FROM Product,Inventory WHERE Inventory.productID = Product.productID " +
-                           "and Inventory.storeID = @storeID and Inventory.sellingPrice = @price";
+                           "and Inventory.storeID = @storeID and Inventory.status = 1 and Inventory.sellingPrice = @price";
             using var command = new SqlCommand(query, connection);
 
             command.Parameters.Add("@storeID", System.Data.SqlDbType.Int);
@@ -1448,7 +1449,7 @@ namespace MyStores.Dal
 
             string query = "SELECT inventoryID, vendorID, purchasePrice, Inventory.sellingPrice, quantity, Inventory.productID " +
                            "FROM Product,Inventory WHERE Inventory.productID = Product.productID " +
-                           "and Inventory.storeID = @storeID and Inventory.purchasePrice = @price";
+                           "and Inventory.storeID = @storeID and Inventory.status = 1 and Inventory.purchasePrice = @price";
             using var command = new SqlCommand(query, connection);
 
             command.Parameters.Add("@storeID", System.Data.SqlDbType.Int);
@@ -1837,7 +1838,7 @@ namespace MyStores.Dal
             using var connection = DbConnection.GetConnection();
             connection.Open();
 
-            string query = "Delete FROM Inventory where inventoryID = @inventoryId";
+            string query = "Update Inventory SET status = 0 where inventoryID = @inventoryId";
             using var command = new SqlCommand(query, connection);
 
             command.Parameters.Add("@inventoryId", System.Data.SqlDbType.Int);
@@ -2092,6 +2093,24 @@ namespace MyStores.Dal
             }
 
             return sales;
+        }
+
+        public bool CheckProductExitsWithVendor(int vendorId, int productId)
+        {
+            using var connection = DbConnection.GetConnection();
+            connection.Open();
+
+            string query = "Select count(*) from Inventory where vendorID = @vendorId and productID = @productId";
+            using var command = new SqlCommand(query, connection);
+
+            command.Parameters.Add("@vendorId", System.Data.SqlDbType.Int);
+            command.Parameters["@vendorId"].Value = vendorId;
+
+            command.Parameters.Add("@productId", System.Data.SqlDbType.Int);
+            command.Parameters["@productId"].Value = productId;
+
+            int count = Convert.ToInt32(command.ExecuteScalar());
+            return count == 1;
         }
     }
 }
