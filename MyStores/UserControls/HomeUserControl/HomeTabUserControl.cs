@@ -34,6 +34,14 @@ namespace MyStores.UserControls.HomeUserControl
             OnUpdateStatus?.Invoke(this, args);
         }
 
+        private void StoreFrontUserControl_OnUpdateStatus(object sender, EventArgs e)
+        {
+            StoreName = "My Stores";
+
+            loadHome();
+            UpdateStatus();
+        }
+
         private void loadHome()
         {
             homeFlowLayoutPanel.Controls.Clear();

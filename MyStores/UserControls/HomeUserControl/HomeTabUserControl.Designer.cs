@@ -96,6 +96,7 @@
             mainStoreFrontUserControl.Name = "mainStoreFrontUserControl";
             mainStoreFrontUserControl.Size = new Size(1636, 1082);
             mainStoreFrontUserControl.TabIndex = 2;
+            mainStoreFrontUserControl.OnUpdateStatus += StoreFrontUserControl_OnUpdateStatus;
             // 
             // HomeTabUserControl
             // 

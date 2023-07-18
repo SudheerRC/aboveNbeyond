@@ -483,5 +483,10 @@ namespace MyStores.Controller
         {
             return _storesDal.GetSalesByStoreIdBetweenDates(storeId, fromDate, toDate);
         }
+
+        public void DeleteStore(int storeId)
+        {
+            _storesDal.DeleteStore(storeId);
+        }
     }
 }

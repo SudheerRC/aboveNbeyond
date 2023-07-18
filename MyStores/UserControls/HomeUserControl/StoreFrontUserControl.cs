@@ -9,6 +9,9 @@ namespace MyStores.UserControls.HomeUserControl
         private Users _owner;
         private readonly MyStoresController _controller;
 
+        public delegate void StatusUpdateHandler(object sender, EventArgs e);
+        public event StatusUpdateHandler OnUpdateStatus;
+
         public StoreFrontUserControl()
         {
             InitializeComponent();
@@ -26,6 +29,13 @@ namespace MyStores.UserControls.HomeUserControl
         public void SetOwner(Users setUser)
         {
             _owner = setUser;
+        }
+
+        private void UpdateStatus()
+        {
+            EventArgs args = EventArgs.Empty;
+
+            OnUpdateStatus?.Invoke(this, args);
         }
 
         private void hideAllUserControls()
@@ -73,6 +83,8 @@ namespace MyStores.UserControls.HomeUserControl
         {
             this.Hide();
             this.Parent.Show();
+
+            UpdateStatus();
         }
 
         private void inventoryButton_Click(object sender, EventArgs e)
@@ -174,6 +186,18 @@ namespace MyStores.UserControls.HomeUserControl
 
         private void deleteStoreButton_Click(object sender, EventArgs e)
         {
+            DialogResult result = MessageBox.Show("Are you sure You want to delete this store from your list?", "Confirm Store Deletion",
+                MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.Yes)
+            {
+                _controller.DeleteStore(_storeId);
+
+                this.Hide();
+                this.Parent.Show();
+
+                UpdateStatus();
+            }
 
         }
 

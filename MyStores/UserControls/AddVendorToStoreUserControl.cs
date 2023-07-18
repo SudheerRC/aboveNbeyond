@@ -54,6 +54,7 @@ namespace MyStores.UserControls
 
         private void FeedListView(Vendor vendor)
         {
+            storeVendorListView.Scrollable = true;
             //storeVendorListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
             string[] row =
             {
@@ -113,5 +114,6 @@ namespace MyStores.UserControls
             loadVendorComboBox();
             loadListView();
         }
+
     }
 }

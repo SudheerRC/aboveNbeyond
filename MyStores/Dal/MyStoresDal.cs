@@ -165,7 +165,7 @@ namespace MyStores.Dal
             using var connection = DbConnection.GetConnection();
             connection.Open();
             string query = "INSERT INTO Stores(ownerID, storeName, streetAddress, city, state, zipCode, country, status) " +
-                           "VALUES (@ownerId, @storeName, @streetAddress, @city, @state, @zipCode, @country, @status)";
+                           "VALUES (@ownerId, @storeName, @streetAddress, @city, @state, @zipCode, @country, 1)";
             using var command = new SqlCommand(query, connection);
 
             command.Parameters.Add("@ownerId", System.Data.SqlDbType.Int);
@@ -188,9 +188,6 @@ namespace MyStores.Dal
 
             command.Parameters.Add("@country", System.Data.SqlDbType.VarChar);
             command.Parameters["@country"].Value = newStore.Country;
-
-            command.Parameters.Add("@status", System.Data.SqlDbType.Bit);
-            command.Parameters["@status"].Value = newStore.Status;
 
             command.ExecuteNonQuery();
         }
@@ -2161,6 +2158,20 @@ namespace MyStores.Dal
             }
 
             return sales;
+        }
+
+        public void DeleteStore(int storeId)
+        {
+            using var connection = DbConnection.GetConnection();
+            connection.Open();
+
+            string query = "Update Stores SET status = 0 where storeID = @storeId";
+            using var command = new SqlCommand(query, connection);
+
+            command.Parameters.Add("@storeId", System.Data.SqlDbType.Int);
+            command.Parameters["@storeId"].Value = storeId;
+
+            command.ExecuteNonQuery();
         }
     }
 }
