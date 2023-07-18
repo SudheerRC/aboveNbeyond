@@ -21,6 +21,29 @@ namespace MyStores.UserControls
             this._storeId = storeId;
         }
 
+        public void ResetUserControl()
+        {
+            List<Sale> saleList = _controller.GetRecentSalesByStoreId(_storeId);
+
+            if (saleList != null && saleList.Count > 0)
+            {
+
+                mainDataGridView.Visible = true;
+                listOfSalesLabel.Visible = true;
+                viewSaleButton.Visible = true;
+                noSalesMessageLabel.Visible = false;
+
+                loadDataGridView(saleList);
+            }
+            else
+            {
+                noSalesMessageLabel.Visible = true;
+                mainDataGridView.Visible = false;
+                listOfSalesLabel.Visible = false;
+                viewSaleButton.Visible = false;
+            }
+        }
+
         private void loadDataGridView(List<Sale> saleList)
         {
             mainDataGridView.Rows.Clear();
@@ -38,14 +61,7 @@ namespace MyStores.UserControls
 
         private void SalesUserControl_Load(object sender, EventArgs e)
         {
-            List<Sale> saleList = _controller.GetRecentSalesByStoreId(_storeId);
-
-            if (saleList != null && saleList.Count > 0)
-            {
-                noSalesMessageLabel.Visible = false;
-
-                loadDataGridView(saleList);
-            }
+            ResetUserControl();
         }
 
         private void viewSaleButton_Click(object sender, EventArgs e)

@@ -23,13 +23,13 @@ namespace MyStores.UserControls
             productNameLabel.Text = _inventoryItem.Item.Name;
             sizeValueLabel.Text = _inventoryItem.Item.ProductSize.ToString();
             quantityValueLabel.Text = _inventoryItem.Quantity.ToString();
-            unitPriceValueLabel.Text = _inventoryItem.SellingPrice.ToString();
+            unitPriceValueLabel.Text = "$" + _inventoryItem.SellingPrice.ToString();
 
             if (_inventoryItem.Discount != 0)
             {
                 discountHeadingabel.Visible = true;
                 discountValueLabel.Visible = true;
-                discountValueLabel.Text = _inventoryItem.Discount.ToString();
+                discountValueLabel.Text = "$" + _inventoryItem.Discount.ToString();
             }
             else
             {

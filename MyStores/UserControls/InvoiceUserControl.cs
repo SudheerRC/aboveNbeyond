@@ -1,6 +1,5 @@
 ﻿using MyStores.Controller;
 using MyStores.Model;
-using System.Security.Cryptography.X509Certificates;
 
 namespace MyStores.UserControls
 {
@@ -29,7 +28,7 @@ namespace MyStores.UserControls
                 storeNameLabel.Text = sale.StoreName;
                 saleNumberLabel.Text = "Sale #" + _saleId.ToString();
                 dateValueLabel.Text = sale.SaleDateTime.ToString();
-                totalValueLabel.Text = sale.Total.ToString();
+                totalValueLabel.Text = "$" + sale.Total.ToString();
 
                 LoadFlowPanel(sale.Items);
             }

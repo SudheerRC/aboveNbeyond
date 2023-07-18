@@ -181,6 +181,7 @@ namespace MyStores.UserControls.HomeUserControl
             expandPanel();
             mainSalesUserControl.BringToFront();
             mainSalesUserControl.setStoreId(_storeId);
+            mainSalesUserControl.ResetUserControl();
             mainSalesUserControl.Visible = true;
             backButtonPanel.BringToFront();
             backButtonPanel.Visible = true;
