@@ -23,16 +23,24 @@ namespace MyStores.UserControls
 
         public void ResetUserControl()
         {
+
+            LoadRangeComboBox();
+
             List<Sale> saleList = _controller.GetRecentSalesByStoreId(_storeId);
 
-            if (saleList != null && saleList.Count > 0)
+            CheckAndLoadGridView(saleList, "There are no sales yet for this store!");
+        }
+
+        private void CheckAndLoadGridView(List<Sale> saleList, string errorMessage)
+        {
+            if (saleList.Count > 0)
             {
                 mainDataGridView.Visible = true;
                 listOfSalesLabel.Visible = true;
                 viewSaleButton.Visible = true;
                 noSalesMessageLabel.Visible = false;
 
-                loadDataGridView(saleList);
+                LoadDataGridView(saleList);
             }
             else
             {
@@ -40,10 +48,12 @@ namespace MyStores.UserControls
                 mainDataGridView.Visible = false;
                 listOfSalesLabel.Visible = false;
                 viewSaleButton.Visible = false;
+
+                noSalesMessageLabel.Text = errorMessage;
             }
         }
 
-        private void loadDataGridView(List<Sale> saleList)
+        private void LoadDataGridView(List<Sale> saleList)
         {
             mainDataGridView.Rows.Clear();
 
@@ -61,6 +71,20 @@ namespace MyStores.UserControls
         private void SalesUserControl_Load(object sender, EventArgs e)
         {
             ResetUserControl();
+        }
+
+        private void LoadRangeComboBox()
+        {
+            rangeComboBox.DataSource = null;
+
+            var rangeList = new List<string>
+            {
+                "This Week",
+                "This Month",
+                "This Year"
+            };
+
+            rangeComboBox.DataSource = rangeList;
         }
 
         private void viewSaleButton_Click(object sender, EventArgs e)
@@ -83,17 +107,77 @@ namespace MyStores.UserControls
 
         private void dateRadioButton_CheckedChanged(object sender, EventArgs e)
         {
+            fromDateTimePicker.Enabled = true;
 
+            rangeComboBox.Enabled = false;
+
+            searchButton.Enabled = true;
         }
 
         private void rangeRadioButton_CheckedChanged(object sender, EventArgs e)
         {
+            rangeComboBox.Enabled = true;
 
+            fromDateTimePicker.Enabled = false;
+            toDateTimePicker.Enabled = false;
+
+            searchButton.Enabled = true;
         }
 
         private void searchButton_Click(object sender, EventArgs e)
         {
+            var fromDate = new DateTime();
+            var toDate = new DateTime();
 
+            if (dateRadioButton.Checked)
+            {
+                SetDates(out fromDate, out toDate);
+            }
+            else if (rangeRadioButton.Checked)
+            {
+                SetDateRange(out toDate, out fromDate);
+            }
+
+            List<Sale> saleList = _controller.GetSalesByStoreIdBetweenDates(_storeId, fromDate, toDate);
+
+            CheckAndLoadGridView(saleList, "There are no sales in the given date range!");
+        }
+
+        private void SetDates(out DateTime fromDate, out DateTime toDate)
+        {
+            fromDate = fromDateTimePicker.Value.AddDays(-1);
+
+            if (toDateTimePicker.Enabled)
+            {
+                toDate = toDateTimePicker.Value.AddDays(1);
+            }
+            else
+            {
+                toDate = DateTime.Today.AddDays(1);
+            }
+        }
+
+        private void SetDateRange(out DateTime toDate, out DateTime fromDate)
+        {
+            var range = rangeComboBox.SelectedItem as string;
+            if (range != null)
+            {
+                if (range.Equals("This Week"))
+                {
+                    toDate = DateTime.Today.AddDays(1);
+                    fromDate = toDate.AddDays(-8);
+                }
+                else if (range.Equals("This Month"))
+                {
+                    toDate = DateTime.Today.AddDays(1);
+                    fromDate = toDate.AddMonths(-1);
+                }
+                else if (range.Equals("This Year"))
+                {
+                    toDate = DateTime.Today.AddDays(1);
+                    fromDate = toDate.AddYears(-1);
+                }
+            }
         }
     }
 }
