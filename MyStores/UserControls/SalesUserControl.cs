@@ -1,7 +1,6 @@
 ﻿using MyStores.Controller;
 using MyStores.Model;
 using MyStores.View;
-using System.Windows.Forms;
 
 namespace MyStores.UserControls
 {
@@ -79,6 +78,12 @@ namespace MyStores.UserControls
         private void mainDataGridView_SelectionChanged(object sender, EventArgs e)
         {
             viewSaleButton.Enabled = true;
+        }
+
+        private void FromDateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            toDateTimePicker.Enabled = true;
+            toDateTimePicker.MinDate = fromDateTimePicker.Value;
         }
     }
 }

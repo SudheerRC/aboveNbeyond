@@ -32,6 +32,11 @@
             fromDateTimePicker = new DateTimePicker();
             rangeComboBox = new ComboBox();
             mainDataGridView = new DataGridView();
+            saleId = new DataGridViewTextBoxColumn();
+            saleDateTime = new DataGridViewTextBoxColumn();
+            saleTotal = new DataGridViewTextBoxColumn();
+            saleTax = new DataGridViewTextBoxColumn();
+            paymentType = new DataGridViewTextBoxColumn();
             toDateTimePicker = new DateTimePicker();
             fromLabel = new Label();
             dateRadioButton = new RadioButton();
@@ -41,11 +46,6 @@
             viewSaleButton = new Button();
             listOfSalesLabel = new Label();
             noSalesMessageLabel = new Label();
-            saleId = new DataGridViewTextBoxColumn();
-            saleDateTime = new DataGridViewTextBoxColumn();
-            saleTotal = new DataGridViewTextBoxColumn();
-            saleTax = new DataGridViewTextBoxColumn();
-            paymentType = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)mainDataGridView).BeginInit();
             SuspendLayout();
             // 
@@ -57,6 +57,7 @@
             fromDateTimePicker.Name = "fromDateTimePicker";
             fromDateTimePicker.Size = new Size(201, 39);
             fromDateTimePicker.TabIndex = 0;
+            fromDateTimePicker.ValueChanged += FromDateTimePicker_ValueChanged;
             // 
             // rangeComboBox
             // 
@@ -85,6 +86,47 @@
             mainDataGridView.Size = new Size(991, 490);
             mainDataGridView.TabIndex = 3;
             mainDataGridView.SelectionChanged += mainDataGridView_SelectionChanged;
+            // 
+            // saleId
+            // 
+            saleId.HeaderText = "Sale Id";
+            saleId.MinimumWidth = 6;
+            saleId.Name = "saleId";
+            saleId.ReadOnly = true;
+            saleId.Visible = false;
+            saleId.Width = 180;
+            // 
+            // saleDateTime
+            // 
+            saleDateTime.HeaderText = "Sale Date";
+            saleDateTime.MinimumWidth = 6;
+            saleDateTime.Name = "saleDateTime";
+            saleDateTime.ReadOnly = true;
+            saleDateTime.Width = 250;
+            // 
+            // saleTotal
+            // 
+            saleTotal.HeaderText = "Total";
+            saleTotal.MinimumWidth = 6;
+            saleTotal.Name = "saleTotal";
+            saleTotal.ReadOnly = true;
+            saleTotal.Width = 200;
+            // 
+            // saleTax
+            // 
+            saleTax.HeaderText = "Tax";
+            saleTax.MinimumWidth = 6;
+            saleTax.Name = "saleTax";
+            saleTax.ReadOnly = true;
+            saleTax.Width = 200;
+            // 
+            // paymentType
+            // 
+            paymentType.HeaderText = "Payment Type";
+            paymentType.MinimumWidth = 6;
+            paymentType.Name = "paymentType";
+            paymentType.ReadOnly = true;
+            paymentType.Width = 250;
             // 
             // toDateTimePicker
             // 
@@ -197,47 +239,6 @@
             noSalesMessageLabel.TabIndex = 12;
             noSalesMessageLabel.Text = "There are no sales yet for this store!";
             noSalesMessageLabel.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // saleId
-            // 
-            saleId.HeaderText = "Sale Id";
-            saleId.MinimumWidth = 6;
-            saleId.Name = "saleId";
-            saleId.ReadOnly = true;
-            saleId.Visible = false;
-            saleId.Width = 180;
-            // 
-            // saleDateTime
-            // 
-            saleDateTime.HeaderText = "Sale Date";
-            saleDateTime.MinimumWidth = 6;
-            saleDateTime.Name = "saleDateTime";
-            saleDateTime.ReadOnly = true;
-            saleDateTime.Width = 250;
-            // 
-            // saleTotal
-            // 
-            saleTotal.HeaderText = "Total";
-            saleTotal.MinimumWidth = 6;
-            saleTotal.Name = "saleTotal";
-            saleTotal.ReadOnly = true;
-            saleTotal.Width = 200;
-            // 
-            // saleTax
-            // 
-            saleTax.HeaderText = "Tax";
-            saleTax.MinimumWidth = 6;
-            saleTax.Name = "saleTax";
-            saleTax.ReadOnly = true;
-            saleTax.Width = 200;
-            // 
-            // paymentType
-            // 
-            paymentType.HeaderText = "Payment Type";
-            paymentType.MinimumWidth = 6;
-            paymentType.Name = "paymentType";
-            paymentType.ReadOnly = true;
-            paymentType.Width = 250;
             // 
             // SalesUserControl
             // 

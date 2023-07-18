@@ -137,9 +137,11 @@
             inventoryListView.BorderStyle = BorderStyle.None;
             inventoryListView.Columns.AddRange(new ColumnHeader[] { productId, barcode, productName, description, productSize, sellingPrice });
             inventoryListView.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            inventoryListView.FullRowSelect = true;
             inventoryListView.GridLines = true;
             inventoryListView.Location = new Point(0, 376);
             inventoryListView.Margin = new Padding(5, 6, 5, 6);
+            inventoryListView.MultiSelect = false;
             inventoryListView.Name = "inventoryListView";
             inventoryListView.Size = new Size(1170, 366);
             inventoryListView.TabIndex = 5;
