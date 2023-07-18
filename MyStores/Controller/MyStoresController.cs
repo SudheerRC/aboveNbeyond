@@ -478,5 +478,10 @@ namespace MyStores.Controller
         {
             return _storesDal.CheckProductExitsWithVendor(vendorId, productId);
         }
+
+        public List<Sale> GetSalesByStoreIdBetweenDates(int storeId, DateTime fromDate, DateTime toDate)
+        {
+            return _storesDal.GetSalesByStoreIdBetweenDates(storeId, fromDate, toDate);
+        }
     }
 }
