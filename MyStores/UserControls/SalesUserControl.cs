@@ -27,6 +27,11 @@ namespace MyStores.UserControls
 
         public void ResetUserControl()
         {
+            dateRadioButton.Checked = false;
+            rangeRadioButton.Checked = false;
+            fromDateTimePicker.Value = DateTime.Now; fromDateTimePicker.Enabled = false;
+            toDateTimePicker.Value = DateTime.Now; toDateTimePicker.Enabled = false;
+            searchButton.Enabled = false;
 
             LoadRangeComboBox();
 
