@@ -42,17 +42,28 @@ namespace MyStores.UserControls
 
             if (saleList != null && saleList.Count > 0)
             {
+                noSalesMessageLabel.Visible = false;
+
                 loadDataGridView(saleList);
             }
         }
 
         private void viewSaleButton_Click(object sender, EventArgs e)
         {
-            var saleId = Convert.ToInt32(mainDataGridView.SelectedColumns[0].ToString);
+            if (mainDataGridView.SelectedRows[0] != null)
+            {
+                var saleId = Convert.ToInt32(mainDataGridView.SelectedRows[0].Cells[0].Value.ToString());
 
-            var invoiceForm = new InvoiceForm();
-            invoiceForm.setSaleId(saleId);
-            invoiceForm.ShowDialog();
+                var invoiceForm = new InvoiceForm();
+                invoiceForm.setSaleId(saleId);
+                invoiceForm.ShowDialog();
+            }
+
+        }
+
+        private void mainDataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            viewSaleButton.Enabled = true;
         }
     }
 }

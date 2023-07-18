@@ -130,6 +130,7 @@
             Controls.Add(storeNameLabel);
             Name = "InvoiceUserControl";
             Size = new Size(678, 579);
+            Load += InvoiceUserControl_Load;
             lineItemFlowLayoutPanel.ResumeLayout(false);
             ResumeLayout(false);
         }
