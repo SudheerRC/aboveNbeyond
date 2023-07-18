@@ -57,6 +57,7 @@
             fromDateTimePicker.Name = "fromDateTimePicker";
             fromDateTimePicker.Size = new Size(125, 27);
             fromDateTimePicker.TabIndex = 0;
+            fromDateTimePicker.ValueChanged += FromDateTimePicker_ValueChanged;
             // 
             // rangeComboBox
             // 

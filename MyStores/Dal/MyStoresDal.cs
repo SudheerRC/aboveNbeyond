@@ -2118,7 +2118,7 @@ namespace MyStores.Dal
             connection.Open();
 
             string query = "SELECT Sales.saleDateTime, Sales.total, Sales.tax, Sales.paymentType, saleID" +
-                           "FROM Sales WHERE Sales.storeID = @storeId and salesDateTime BETWEEN @fromDate and @toDate " +
+                           "FROM Sales WHERE Sales.storeID = @storeId and saleDateTime BETWEEN @fromDate and @toDate " +
                            "ORDER BY saleDateTime DESC";
             using var command = new SqlCommand(query, connection);
 

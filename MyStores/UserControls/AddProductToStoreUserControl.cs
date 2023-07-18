@@ -140,7 +140,7 @@ namespace MyStores.UserControls
                 var selectedProduct = inventoryListView.SelectedItems;
 
                 var currentVendorId = selectedVendor.Id;
-                var currentProductId = Convert.ToInt32(selectedProduct[0].Text);
+                var currentProductId = Convert.ToInt32(selectedProduct[0].SubItems[0].Text);
 
                 result = _controller.CheckProductExitsWithVendor(currentVendorId, currentProductId);
             }
@@ -163,7 +163,7 @@ namespace MyStores.UserControls
                     var inventoryItem = new InventoryItem();
 
                     var currentVendorId = selectedVendor.Id;
-                    var currentProductId = Convert.ToInt32(selectedProduct[0].Text);
+                    var currentProductId = Convert.ToInt32(selectedProduct[0].SubItems[0].Text);
                     var currentSellingPrice = Convert.ToDouble(sellingPriceTextBox.Text);
                     var purchasePrice = Convert.ToDouble(purchasePriceTextBox.Text);
                     var quantity = Convert.ToInt32(quantityTextBox.Text);

@@ -57,6 +57,7 @@
             closePanel = new Panel();
             statusLabel = new Label();
             closeButton = new Button();
+            salesValueLabel = new Label();
             storeExpandedPanel.SuspendLayout();
             backButtonPanel.SuspendLayout();
             storeButtonsPanel.SuspendLayout();
@@ -180,7 +181,7 @@
             // 
             mainSalesUserControl.BackColor = Color.FromArgb(227, 211, 177);
             mainSalesUserControl.Location = new Point(0, 5);
-            mainSalesUserControl.Margin = new Padding(8, 8, 8, 8);
+            mainSalesUserControl.Margin = new Padding(8);
             mainSalesUserControl.Name = "mainSalesUserControl";
             mainSalesUserControl.Size = new Size(1250, 1128);
             mainSalesUserControl.TabIndex = 12;
@@ -227,7 +228,7 @@
             // 
             mainOrderUserControl.BackColor = Color.FromArgb(227, 211, 177);
             mainOrderUserControl.Location = new Point(0, 2);
-            mainOrderUserControl.Margin = new Padding(8, 8, 8, 8);
+            mainOrderUserControl.Margin = new Padding(8);
             mainOrderUserControl.Name = "mainOrderUserControl";
             mainOrderUserControl.Size = new Size(1264, 1002);
             mainOrderUserControl.TabIndex = 11;
@@ -294,7 +295,7 @@
             storeButtonsPanel.Controls.Add(exitStoreButton);
             storeButtonsPanel.Controls.Add(addProductButton);
             storeButtonsPanel.Location = new Point(5, 93);
-            storeButtonsPanel.Margin = new Padding(5, 5, 5, 5);
+            storeButtonsPanel.Margin = new Padding(5);
             storeButtonsPanel.Name = "storeButtonsPanel";
             storeButtonsPanel.Size = new Size(1373, 890);
             storeButtonsPanel.TabIndex = 10;
@@ -337,6 +338,7 @@
             // 
             // salesPanel
             // 
+            salesPanel.Controls.Add(salesValueLabel);
             salesPanel.Controls.Add(salesLabel);
             salesPanel.Controls.Add(salesPictureBox);
             salesPanel.Location = new Point(23, 3);
@@ -350,9 +352,9 @@
             salesLabel.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             salesLabel.Location = new Point(48, 0);
             salesLabel.Name = "salesLabel";
-            salesLabel.Size = new Size(231, 82);
+            salesLabel.Size = new Size(135, 82);
             salesLabel.TabIndex = 1;
-            salesLabel.Text = "Total Sales: Soon!!";
+            salesLabel.Text = "Total Sales: ";
             salesLabel.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // salesPictureBox
@@ -362,7 +364,7 @@
             salesPictureBox.Location = new Point(0, 0);
             salesPictureBox.Name = "salesPictureBox";
             salesPictureBox.Size = new Size(48, 82);
-            salesPictureBox.SizeMode = PictureBoxSizeMode.AutoSize;
+            salesPictureBox.SizeMode = PictureBoxSizeMode.CenterImage;
             salesPictureBox.TabIndex = 0;
             salesPictureBox.TabStop = false;
             // 
@@ -405,7 +407,7 @@
             managerPictureBox.Location = new Point(0, 0);
             managerPictureBox.Name = "managerPictureBox";
             managerPictureBox.Size = new Size(48, 80);
-            managerPictureBox.SizeMode = PictureBoxSizeMode.AutoSize;
+            managerPictureBox.SizeMode = PictureBoxSizeMode.CenterImage;
             managerPictureBox.TabIndex = 0;
             managerPictureBox.TabStop = false;
             // 
@@ -442,6 +444,16 @@
             closeButton.UseVisualStyleBackColor = false;
             closeButton.Click += closeButton_Click;
             // 
+            // salesValueLabel
+            // 
+            salesValueLabel.AutoSize = true;
+            salesValueLabel.Font = new Font("Segoe UI", 10.125F, FontStyle.Regular, GraphicsUnit.Point);
+            salesValueLabel.Location = new Point(189, 24);
+            salesValueLabel.Name = "salesValueLabel";
+            salesValueLabel.Size = new Size(90, 37);
+            salesValueLabel.TabIndex = 2;
+            salesValueLabel.Text = "label1";
+            // 
             // StoreFrontUserControl
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
@@ -466,7 +478,6 @@
             salesPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)salesPictureBox).EndInit();
             managersPanel.ResumeLayout(false);
-            managersPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)managerPictureBox).EndInit();
             closePanel.ResumeLayout(false);
             ResumeLayout(false);
@@ -501,5 +512,6 @@
         private Button deleteStoreButton;
         private Button salesButton;
         private SalesUserControl mainSalesUserControl;
+        private Label salesValueLabel;
     }
 }

@@ -1,7 +1,6 @@
 ﻿using MyStores.Controller;
 using MyStores.Model;
 using MyStores.View;
-using System.Windows.Forms;
 
 namespace MyStores.UserControls
 {
@@ -178,6 +177,12 @@ namespace MyStores.UserControls
                     fromDate = toDate.AddYears(-1);
                 }
             }
+        }
+
+        private void FromDateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            toDateTimePicker.Enabled = true;
+            toDateTimePicker.MinDate = fromDateTimePicker.Value;
         }
     }
 }

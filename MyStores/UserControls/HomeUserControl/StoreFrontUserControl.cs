@@ -139,6 +139,27 @@ namespace MyStores.UserControls.HomeUserControl
             List<Users> managers = _controller.GetAllManagersOfStore(id);
             string managersName = ManagersNames(managers);
             managerNamesLabel.Text = managersName;
+            SetStoreTotalSales(id);
+        }
+
+        private void SetStoreTotalSales(int id)
+        {
+            List<Sale> storeSales = _controller.GetRecentSalesByStoreId(id);
+            double totalSales = 0;
+
+            foreach (Sale sale in storeSales)
+            {
+                totalSales += sale.Total;
+            }
+
+            if (totalSales > 0)
+            {
+                salesValueLabel.Text = "$" + Math.Round(totalSales, 2);
+            }
+            else
+            {
+                salesValueLabel.Text = "N/A";
+            }
         }
 
         private void orderButton_Click(object sender, EventArgs e)
@@ -166,14 +187,18 @@ namespace MyStores.UserControls.HomeUserControl
             }
         }
 
-        private string ManagersNames(List<Users>? managers)
+        private string ManagersNames(List<Users> managers)
         {
             string managersNames = "";
-            if (managers != null && managers.Count == 1)
+            if (managers.Count == 0)
+            {
+                managersNames = "N/A";
+            }
+            else if (managers.Count == 1)
             {
                 managersNames = managers[0].FirstName + " " + managers[0].LastName;
             }
-            else if (managers != null)
+            else
             {
                 for (int i = 1; i < managers.Count; i++)
                 {
