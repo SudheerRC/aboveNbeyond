@@ -51,21 +51,21 @@
             // 
             // fromDateTimePicker
             // 
+            fromDateTimePicker.Enabled = false;
             fromDateTimePicker.Format = DateTimePickerFormat.Short;
-            fromDateTimePicker.Location = new Point(177, 77);
-            fromDateTimePicker.Margin = new Padding(5);
+            fromDateTimePicker.Location = new Point(109, 48);
             fromDateTimePicker.Name = "fromDateTimePicker";
-            fromDateTimePicker.Size = new Size(201, 39);
+            fromDateTimePicker.Size = new Size(125, 27);
             fromDateTimePicker.TabIndex = 0;
             fromDateTimePicker.ValueChanged += FromDateTimePicker_ValueChanged;
             // 
             // rangeComboBox
             // 
+            rangeComboBox.Enabled = false;
             rangeComboBox.FormattingEnabled = true;
-            rangeComboBox.Location = new Point(504, 75);
-            rangeComboBox.Margin = new Padding(5);
+            rangeComboBox.Location = new Point(310, 47);
             rangeComboBox.Name = "rangeComboBox";
-            rangeComboBox.Size = new Size(243, 40);
+            rangeComboBox.Size = new Size(151, 28);
             rangeComboBox.TabIndex = 2;
             // 
             // mainDataGridView
@@ -75,15 +75,14 @@
             mainDataGridView.BackgroundColor = SystemColors.ControlLightLight;
             mainDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             mainDataGridView.Columns.AddRange(new DataGridViewColumn[] { saleId, saleDateTime, saleTotal, saleTax, paymentType });
-            mainDataGridView.Location = new Point(41, 278);
-            mainDataGridView.Margin = new Padding(5);
+            mainDataGridView.Location = new Point(25, 174);
             mainDataGridView.MultiSelect = false;
             mainDataGridView.Name = "mainDataGridView";
             mainDataGridView.ReadOnly = true;
             mainDataGridView.RowHeadersWidth = 51;
             mainDataGridView.RowTemplate.Height = 29;
             mainDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            mainDataGridView.Size = new Size(991, 490);
+            mainDataGridView.Size = new Size(610, 306);
             mainDataGridView.TabIndex = 3;
             mainDataGridView.SelectionChanged += mainDataGridView_SelectionChanged;
             // 
@@ -130,54 +129,52 @@
             // 
             // toDateTimePicker
             // 
+            toDateTimePicker.Enabled = false;
             toDateTimePicker.Format = DateTimePickerFormat.Short;
-            toDateTimePicker.Location = new Point(177, 146);
-            toDateTimePicker.Margin = new Padding(5);
+            toDateTimePicker.Location = new Point(109, 91);
             toDateTimePicker.Name = "toDateTimePicker";
-            toDateTimePicker.Size = new Size(201, 39);
+            toDateTimePicker.Size = new Size(125, 27);
             toDateTimePicker.TabIndex = 4;
             // 
             // fromLabel
             // 
             fromLabel.AutoSize = true;
-            fromLabel.Location = new Point(68, 85);
-            fromLabel.Margin = new Padding(5, 0, 5, 0);
+            fromLabel.Location = new Point(42, 53);
             fromLabel.Name = "fromLabel";
-            fromLabel.Size = new Size(69, 32);
+            fromLabel.Size = new Size(43, 20);
             fromLabel.TabIndex = 5;
             fromLabel.Text = "From";
             // 
             // dateRadioButton
             // 
             dateRadioButton.AutoSize = true;
-            dateRadioButton.Location = new Point(177, 14);
-            dateRadioButton.Margin = new Padding(5);
+            dateRadioButton.Location = new Point(109, 9);
             dateRadioButton.Name = "dateRadioButton";
-            dateRadioButton.Size = new Size(206, 36);
+            dateRadioButton.Size = new Size(130, 24);
             dateRadioButton.TabIndex = 6;
             dateRadioButton.TabStop = true;
             dateRadioButton.Text = "Search by Date";
             dateRadioButton.UseVisualStyleBackColor = true;
+            dateRadioButton.CheckedChanged += dateRadioButton_CheckedChanged;
             // 
             // rangeRadioButton
             // 
             rangeRadioButton.AutoSize = true;
-            rangeRadioButton.Location = new Point(504, 14);
-            rangeRadioButton.Margin = new Padding(5);
+            rangeRadioButton.Location = new Point(310, 9);
             rangeRadioButton.Name = "rangeRadioButton";
-            rangeRadioButton.Size = new Size(223, 36);
+            rangeRadioButton.Size = new Size(140, 24);
             rangeRadioButton.TabIndex = 7;
             rangeRadioButton.TabStop = true;
             rangeRadioButton.Text = "Search by Range";
             rangeRadioButton.UseVisualStyleBackColor = true;
+            rangeRadioButton.CheckedChanged += rangeRadioButton_CheckedChanged;
             // 
             // toLabel
             // 
             toLabel.AutoSize = true;
-            toLabel.Location = new Point(68, 157);
-            toLabel.Margin = new Padding(5, 0, 5, 0);
+            toLabel.Location = new Point(42, 98);
             toLabel.Name = "toLabel";
-            toLabel.Size = new Size(39, 32);
+            toLabel.Size = new Size(25, 20);
             toLabel.TabIndex = 8;
             toLabel.Text = "To";
             // 
@@ -190,15 +187,16 @@
             searchButton.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             searchButton.ForeColor = Color.FromArgb(243, 239, 245);
             searchButton.Image = (Image)resources.GetObject("searchButton.Image");
-            searchButton.Location = new Point(902, 77);
-            searchButton.Margin = new Padding(5, 6, 5, 6);
+            searchButton.Location = new Point(555, 48);
+            searchButton.Margin = new Padding(3, 4, 3, 4);
             searchButton.Name = "searchButton";
-            searchButton.Size = new Size(130, 114);
+            searchButton.Size = new Size(80, 71);
             searchButton.TabIndex = 9;
             searchButton.Text = "Search";
             searchButton.TextAlign = ContentAlignment.BottomCenter;
             searchButton.TextImageRelation = TextImageRelation.ImageAboveText;
             searchButton.UseVisualStyleBackColor = false;
+            searchButton.Click += searchButton_Click;
             // 
             // viewSaleButton
             // 
@@ -208,10 +206,10 @@
             viewSaleButton.FlatStyle = FlatStyle.Flat;
             viewSaleButton.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             viewSaleButton.ForeColor = Color.FromArgb(243, 239, 245);
-            viewSaleButton.Location = new Point(362, 794);
-            viewSaleButton.Margin = new Padding(5, 6, 5, 6);
+            viewSaleButton.Location = new Point(223, 496);
+            viewSaleButton.Margin = new Padding(3, 4, 3, 4);
             viewSaleButton.Name = "viewSaleButton";
-            viewSaleButton.Size = new Size(320, 70);
+            viewSaleButton.Size = new Size(197, 44);
             viewSaleButton.TabIndex = 10;
             viewSaleButton.Text = "View Sale Details";
             viewSaleButton.TextImageRelation = TextImageRelation.ImageAboveText;
@@ -221,10 +219,9 @@
             // listOfSalesLabel
             // 
             listOfSalesLabel.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            listOfSalesLabel.Location = new Point(0, 210);
-            listOfSalesLabel.Margin = new Padding(5, 0, 5, 0);
+            listOfSalesLabel.Location = new Point(0, 131);
             listOfSalesLabel.Name = "listOfSalesLabel";
-            listOfSalesLabel.Size = new Size(1068, 48);
+            listOfSalesLabel.Size = new Size(657, 30);
             listOfSalesLabel.TabIndex = 11;
             listOfSalesLabel.Text = "List of Sales";
             listOfSalesLabel.TextAlign = ContentAlignment.MiddleCenter;
@@ -232,17 +229,16 @@
             // noSalesMessageLabel
             // 
             noSalesMessageLabel.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            noSalesMessageLabel.Location = new Point(5, 293);
-            noSalesMessageLabel.Margin = new Padding(5, 0, 5, 0);
+            noSalesMessageLabel.Location = new Point(3, 183);
             noSalesMessageLabel.Name = "noSalesMessageLabel";
-            noSalesMessageLabel.Size = new Size(1063, 48);
+            noSalesMessageLabel.Size = new Size(654, 30);
             noSalesMessageLabel.TabIndex = 12;
             noSalesMessageLabel.Text = "There are no sales yet for this store!";
             noSalesMessageLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // SalesUserControl
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(227, 211, 177);
             Controls.Add(noSalesMessageLabel);
@@ -257,9 +253,8 @@
             Controls.Add(mainDataGridView);
             Controls.Add(rangeComboBox);
             Controls.Add(fromDateTimePicker);
-            Margin = new Padding(5);
             Name = "SalesUserControl";
-            Size = new Size(1068, 902);
+            Size = new Size(657, 564);
             Load += SalesUserControl_Load;
             ((System.ComponentModel.ISupportInitialize)mainDataGridView).EndInit();
             ResumeLayout(false);
