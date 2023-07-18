@@ -6,6 +6,7 @@
         private double _sellingPrice;
         private double _purchasePrice;
         private int _minQuantity;
+        private double _discount;
 
         public int InventoryId { get; set; }
 
@@ -20,7 +21,7 @@
             }
             set
             {
-                if (value <= 0)
+                if (value < 0)
                 {
                     throw new ArgumentOutOfRangeException("Quantity should be a valid positive number");
                 }
@@ -37,7 +38,7 @@
             }
             set
             {
-                if (value <= 0)
+                if (value < 0)
                 {
                     throw new ArgumentOutOfRangeException("Min Preferred Quantity should be a valid positive number");
                 }
@@ -53,7 +54,7 @@
             }
             set
             {
-                if (value <= 0)
+                if (value < 0)
                 {
                     throw new ArgumentOutOfRangeException("Selling price should be a valid positive number");
                 }
@@ -69,7 +70,7 @@
             }
             set
             {
-                if (value <= 0)
+                if (value < 0)
                 {
                     throw new ArgumentOutOfRangeException("Purchase price should be a valid positive number");
                 }
@@ -81,6 +82,20 @@
 
         public Product? Item { get; set; }
 
-        public double Discount { get; set; }
+        public double Discount
+        {
+            get
+            {
+                return _discount;
+            }
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentOutOfRangeException("Discount should be a valid positive number");
+                }
+                _discount = value;
+            }
+        }
     }
 }
