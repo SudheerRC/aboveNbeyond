@@ -516,6 +516,7 @@
             minimumQuantityTextBox.Size = new Size(299, 43);
             minimumQuantityTextBox.TabIndex = 111;
             minimumQuantityTextBox.TextAlign = HorizontalAlignment.Center;
+            minimumQuantityTextBox.TextChanged += minimumQuantityTextBox_TextChanged;
             // 
             // AddProductToStoreUserControl
             // 

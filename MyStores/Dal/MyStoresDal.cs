@@ -289,7 +289,8 @@ namespace MyStores.Dal
             connection.Open();
 
             string query =
-                "SELECT productID, productName, productSize, description, departmentName, barcode, sellingPrice FROM PRODUCT WHERE ProductName LIKE '%'+ @productName +'%'";
+                "SELECT productID, productName, productSize, description, departmentName, barcode, sellingPrice " +
+                "FROM PRODUCT WHERE ProductName LIKE '%'+ @productName +'%'";
             using var command = new SqlCommand(query, connection);
 
             command.Parameters.Add("@productName", System.Data.SqlDbType.VarChar);
@@ -657,7 +658,7 @@ namespace MyStores.Dal
 
             string query =
                 "SELECT storeID, ownerID, storeName, streetAddress, city, state, zipCode, country " +
-                "FROM Stores WHERE storeName LIKE '%' + @storeName + '%' and ownerID = @userId";
+                "FROM Stores WHERE storeName LIKE '%' + @storeName + '%' and ownerID = @userId and status = 1";
             using var command = new SqlCommand(query, connection);
 
             command.Parameters.Add("@storeName", System.Data.SqlDbType.VarChar);
@@ -786,8 +787,8 @@ namespace MyStores.Dal
         {
             using var connection = DbConnection.GetConnection();
             connection.Open();
-            string query = "INSERT Inventory (vendorID, productID, storeID, purchasePrice, sellingPrice, quantity, status) " +
-                           "VALUES (@vendorID, @productID, @storeID, @purchasePrice, @sellingPrice, @quantity, @status)";
+            string query = "INSERT Inventory (vendorID, productID, storeID, purchasePrice, sellingPrice, quantity, status, defaultQuantity) " +
+                           "VALUES (@vendorID, @productID, @storeID, @purchasePrice, @sellingPrice, @quantity, @status, @minQuantity)";
             using var command = new SqlCommand(query, connection);
 
             command.Parameters.Add("@vendorID", System.Data.SqlDbType.Int);
@@ -807,6 +808,9 @@ namespace MyStores.Dal
 
             command.Parameters.Add("@quantity", System.Data.SqlDbType.Int);
             command.Parameters["@quantity"].Value = inventoryItem.Quantity;
+
+            command.Parameters.Add("@minQuantity", System.Data.SqlDbType.Int);
+            command.Parameters["@minQuantity"].Value = inventoryItem.MinQuantity;
 
             command.Parameters.Add("@status", System.Data.SqlDbType.Bit);
             command.Parameters["@status"].Value = inventoryItem.Status;
