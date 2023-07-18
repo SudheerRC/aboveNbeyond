@@ -218,7 +218,7 @@
             storeVendorListView.Margin = new Padding(5, 6, 5, 6);
             storeVendorListView.MultiSelect = false;
             storeVendorListView.Name = "storeVendorListView";
-            storeVendorListView.Size = new Size(688, 1170);
+            storeVendorListView.Size = new Size(684, 1170);
             storeVendorListView.TabIndex = 0;
             storeVendorListView.UseCompatibleStateImageBehavior = false;
             storeVendorListView.View = System.Windows.Forms.View.Details;
@@ -226,17 +226,17 @@
             // vendorName
             // 
             vendorName.Text = "Vendor Name";
-            vendorName.Width = 140;
+            vendorName.Width = 250;
             // 
             // city
             // 
             city.Text = "City";
-            city.Width = 130;
+            city.Width = 180;
             // 
             // phoneNumber
             // 
             phoneNumber.Text = "Phone Number";
-            phoneNumber.Width = 120;
+            phoneNumber.Width = 220;
             // 
             // AddVendorToStoreUserControl
             // 

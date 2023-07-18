@@ -1168,7 +1168,7 @@ namespace MyStores.Dal
 
             using var reader = command.ExecuteReader();
 
-            var inventoryIdOrdinal = reader.GetOrdinal("invetoryID");
+            var inventoryIdOrdinal = reader.GetOrdinal("inventoryID");
             var vendorIdOrdinal = reader.GetOrdinal("vendorID");
             var purchasePriceOrdinal = reader.GetOrdinal("purchasePrice");
             var sellingPriceOrdinal = reader.GetOrdinal("sellingPrice");

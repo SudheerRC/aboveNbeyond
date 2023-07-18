@@ -45,7 +45,7 @@ namespace MyStores.UserControls
 
         private void FeedListView(InventoryItem ii)
         {
-            inventoryListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+            //inventoryListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
             inventoryListView.Columns[9].Width = 0;
 
             var vendorId = ii.VendorId;

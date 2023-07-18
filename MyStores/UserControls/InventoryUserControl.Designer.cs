@@ -57,11 +57,11 @@
             inventoryListView.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             inventoryListView.FullRowSelect = true;
             inventoryListView.GridLines = true;
-            inventoryListView.Location = new Point(18, 85);
+            inventoryListView.Location = new Point(5, 85);
             inventoryListView.Margin = new Padding(5, 6, 5, 6);
             inventoryListView.MultiSelect = false;
             inventoryListView.Name = "inventoryListView";
-            inventoryListView.Size = new Size(1343, 699);
+            inventoryListView.Size = new Size(1368, 699);
             inventoryListView.TabIndex = 0;
             inventoryListView.UseCompatibleStateImageBehavior = false;
             inventoryListView.View = System.Windows.Forms.View.Details;
@@ -75,42 +75,42 @@
             // productName
             // 
             productName.Text = "Product Name";
-            productName.Width = 280;
+            productName.Width = 300;
             // 
             // description
             // 
             description.Text = "Description";
-            description.Width = 220;
+            description.Width = 300;
             // 
             // quantity
             // 
             quantity.Text = "Quantity";
-            quantity.Width = 90;
+            quantity.Width = 140;
             // 
             // productSize
             // 
             productSize.Text = "Size";
-            productSize.Width = 90;
+            productSize.Width = 120;
             // 
             // sellingPrice
             // 
             sellingPrice.Text = "Selling Price";
-            sellingPrice.Width = 110;
+            sellingPrice.Width = 160;
             // 
             // purchasePrice
             // 
             purchasePrice.Text = "Purchase Price";
-            purchasePrice.Width = 110;
+            purchasePrice.Width = 160;
             // 
             // minQuantity
             // 
             minQuantity.Text = "Min Pref Quantity";
-            minQuantity.Width = 140;
+            minQuantity.Width = 180;
             // 
             // vendorName
             // 
             vendorName.Text = "Vendor Name";
-            vendorName.Width = 140;
+            vendorName.Width = 200;
             // 
             // inventoryId
             // 

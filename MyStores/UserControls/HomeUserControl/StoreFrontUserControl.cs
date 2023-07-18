@@ -110,6 +110,7 @@ namespace MyStores.UserControls.HomeUserControl
 
         private void StoreFrontUserControl_Load(object sender, EventArgs e)
         {
+            exitStoreButton.Text = "Exit" + Environment.NewLine + "Store";
             backButtonPanel.Visible = false;
             mainInventoryUserControl.SetStore(_storeId);
 

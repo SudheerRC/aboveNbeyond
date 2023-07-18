@@ -151,36 +151,37 @@
             // 
             productId.DisplayIndex = 5;
             productId.Text = "ID";
+            productId.Width = 80;
             // 
             // barcode
             // 
             barcode.DisplayIndex = 0;
             barcode.Text = "Barcode";
-            barcode.Width = 180;
+            barcode.Width = 200;
             // 
             // productName
             // 
             productName.DisplayIndex = 1;
             productName.Text = "Product Name";
-            productName.Width = 260;
+            productName.Width = 300;
             // 
             // description
             // 
             description.DisplayIndex = 2;
             description.Text = "Description";
-            description.Width = 250;
+            description.Width = 300;
             // 
             // productSize
             // 
             productSize.DisplayIndex = 3;
             productSize.Text = "Product Size";
-            productSize.Width = 160;
+            productSize.Width = 180;
             // 
             // sellingPrice
             // 
             sellingPrice.DisplayIndex = 4;
             sellingPrice.Text = "Selling Price";
-            sellingPrice.Width = 150;
+            sellingPrice.Width = 160;
             // 
             // nextButton
             // 
