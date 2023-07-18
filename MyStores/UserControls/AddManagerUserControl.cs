@@ -88,5 +88,6 @@ namespace MyStores.UserControls
         {
             emailErrorLabel.Visible = false;
         }
+
     }
 }
